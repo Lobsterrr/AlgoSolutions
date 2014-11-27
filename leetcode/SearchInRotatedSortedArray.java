@@ -9,24 +9,27 @@
  * You may assume no duplicate exists in the array.
  */
 public class SearchInRotatedSortedArray {
+
     public int search(int[] A, int target) {
-        int low = 0, high = A.length - 1;
-        while(low <= high) {
-            int mid = low + (high - low) / 2;
-            if(A[mid] == target)
+        int start = 0; 
+        int end = A.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (target == A[mid])
                 return mid;
-            else if(A[low] <= A[mid]) {
-                if(A[low] <= target && target < A[mid])
-                    high = mid - 1;
-                else
-                    low = mid + 1;
-            } else {
-                if(A[mid] < target && target <= A[high])
-                    low = mid + 1;
+            else if (target < A[mid]) {
+                if (A[mid] >= A[end] && target < A[start])
+                    start = mid + 1;
                 else 
-                    high = mid - 1;
+                    end = mid - 1;
+            } else {                
+                if (A[mid] < A[end] && target > A[end])
+                    end = mid - 1;
+                else 
+                    start = mid + 1;
             }
         }
         return -1;
     }
+
 }
