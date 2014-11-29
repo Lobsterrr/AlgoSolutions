@@ -1,5 +1,6 @@
 /*
- * Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
+ * Given an integer n, generate a square matrix filled with elements from 1 to
+ *  n^2 in spiral order.
 
  * For example,
  * Given n = 3,
@@ -12,23 +13,21 @@
  * ] 
  */
 public class SpiralMatrixII {
+    
     public int[][] generateMatrix(int n) {
         int[][] result = new int[n][n];
         int value = 1;
-        for(int i = 0; i < (n + 1) / 2; i++) {
-            for(int j = i; j < n - i; j++) {
+        for (int i = 0; i < (n + 1) / 2; i++) {
+            for (int j = i; j < n - i; j++) 
                 result[i][j] = value++;
-            }
-            for(int j = i + 1; j < n - i; j++) {
+            for (int j = i + 1; j < n - 1 - i; j++)
                 result[j][n - 1 - i] = value++;
-            }
-            for(int j = n - 2 - i; j >= i; j--) {
+            for (int j = n - 1 - i; j > i; j--)
                 result[n - 1 - i][j] = value++;
-            }
-            for(int j = n - 2 - i; j > i; j--) {
+            for (int j = n - 1 - i; j > i; j--)
                 result[j][i] = value++;
-            }
         }
         return result;
     }
+
 }
