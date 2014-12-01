@@ -33,7 +33,61 @@
 public class IntersectionOfTwoLinkedLists {
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        
+        ListNode cur1 = headA;
+        while (cur1 != null && cur1.next != null) {
+            cur1 = cur1.next;
+        }
+        if (cur1 != null)
+            cur1.next = headA;
+        ListNode cur2 = headB;
+        ListNode cur3 = headB;
+        while (cur3 != null && cur3.next != null) {
+            cur2 = cur2.next;
+            cur3 = cur3.next.next;
+            if (cur2 == cur3)
+                break;
+        }
+        if (cur2 != cur3 || cur3 == headB)
+            return null;
+        cur2 = headB;
+        while (cur2 != null && cur2 != cur3) {
+            cur2 = cur2.next;
+            cur3 = cur3.next;
+        }
+        if (cur1 != null)
+            cur1.next = null;
+        return cur2;
+    }
+
+
+    public ListNode findIntersection(ListNode head) {
+        ListNode cur1 = head;
+        ListNode cur2 = head;
+        while (cur2 != null && cur2.next != null) {
+            cur1 = cur1.next;
+            cur2 = cur2.next.next;
+            if (cur1 == cur2)
+                return cur1;
+        }
+        return null;
+    }
+
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode cur1 = headA;
+        while (cur1 != null && cur1.next != null) {
+            cur1 = cur1.next;
+        }
+        if (cur1 == null)
+            return null;
+        cur1.next = headA;
+        ListNode cur2 = headB;
+        ListNode cur3 = findIntersection(headB);
+        while (cur3 != null && cur2 != cur3) {
+            cur2 = cur2.next;
+            cur3 = cur3.next;
+        }
+        cur1.next = null;
+        return cur3;
     }
     
 }
