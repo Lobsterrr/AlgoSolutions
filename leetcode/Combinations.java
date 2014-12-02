@@ -15,22 +15,22 @@
  * ]
  */
 public class Combinations {
-    public ArrayList<ArrayList<Integer>> combine(int n, int k) {
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        if(k == 1) {
-            for(int i = 1; i <= n; i++) {
-                ArrayList<Integer> list = new ArrayList<Integer>();
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (k == 1) {
+            for (int i = 1; i <= n; i++) {
+                List<Integer> list = new ArrayList<Integer>();
                 list.add(i);
-                res.add(list);
+                result.add(list);
             }
-            return res;
+            return result;
         }
-        for(int i = n; i >= k; i--) {
-            for(ArrayList<Integer> list : combine(i - 1, k - 1)) {
+        for (int i = k; i <= n; i++) {
+            for (List<Integer> list : combine(i - 1, k - 1)) {
                 list.add(i);
-                res.add(list);
+                result.add(list);
             }
         }
-        return res;
+        return result;
     }
 }
