@@ -4,36 +4,32 @@
 public class PlusOne {
 
     public int[] plusOne(int[] digits) {
-        int len = digits.length;
         int carrier = 1;
-        int i = len - 1;
-        while(carrier == 1 && i >= 0) {
-            digits[i] += carrier;
-            carrier = digits[i] / 10;
-            digits[i] %= 10;
-            i--;
+        for (int i = digits.length - 1; i >= 0 && carrier > 0; i--) {
+            digits[i] = (digits[i] + carrier) % 10;
+            carrier = digits[i] == 0 ? 1 : 0;
         }
-        if(carrier == 1) {
-            digits = new int[len + 1];
+        if (carrier > 0) {
+            digits = new int[digits.length + 1];
             digits[0] = 1;
         }
         return digits;
     }
 
-/*****************************************************************************/
+/********************************************************************/
 
-   public int[] plusOne(int[] digits) {
-        int len = digits.length;
-        int index = len - 1;
-        while(index >= 0 && digits[index] == 9) {
-            digits[index--] = 0;
+    public int[] plusOne(int[] digits) {
+        int i = digits.length - 1;
+        while (i >= 0 && digits[i] == 9) {
+            digits[i--] = 0;
         }
-        if(index >= 0)
-            digits[index]++;
+        if (i >= 0)
+            digits[i] += 1;
         else {
-            digits = new int[len + 1];
+            digits = new int[digits.length + 1];
             digits[0] = 1;
         }
         return digits;
     }
+
 }
