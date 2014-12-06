@@ -19,6 +19,7 @@
  */
 public class FindPeakElement {
 
+    // O(n) time cost.
     public int findPeakElement(int[] num) {
         for (int i = 1; i < num.length - 1; i++) {
             if (num[i] > num[i - 1] && num[i] > num[i + 1])
@@ -29,25 +30,7 @@ public class FindPeakElement {
 
 /*****************************************************************************/
 
-    public int findPeakElement(int[] num) {
-        return findPeakElement(num, 0, num.length - 1);
-    }
-
-    public int findPeakElement(int[] num, int start, int end) {
-        if (start == end)
-            return start;
-        if (start + 1 == end) 
-            return num[start] > num[end] ? start : end;
-        int mid = start + (end - start) / 2;
-        if (num[mid] > num[mid - 1] && num[mid] > num[mid + 1])
-            return mid;
-        else if (num[mid] < num[mid - 1])
-            return findPeakElement(num, start, mid);
-        return findPeakElement(num, mid, end);
-    }
-
-/*****************************************************************************/
-
+    //O(log(n)) time cost
     public int findPeakElement(int[] num) {
         int start = 0;
         int end = num.length - 1;
