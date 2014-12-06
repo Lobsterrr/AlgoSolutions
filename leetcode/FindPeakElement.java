@@ -27,4 +27,23 @@ public class FindPeakElement {
         return (num.length == 1 || num[0] > num[1]) ? 0 : num.length - 1;
     }   
 
+/*****************************************************************************/
+
+    public int findPeakElement(int[] num) {
+        return findPeakElement(num, 0, num.length - 1);
+    }
+
+    public int findPeakElement(int[] num, int start, int end) {
+        if (start == end)
+            return start;
+        if (start + 1 == end) 
+            return num[start] > num[end] ? start : end;
+        int mid = start + (end - start) / 2;
+        if (num[mid] > num[mid - 1] && num[mid] > num[mid + 1])
+            return mid;
+        else if (num[mid] < num[mid - 1])
+            return findPeakElement(num, start, mid);
+        return findPeakElement(num, mid, end);
+    }
+
 }
