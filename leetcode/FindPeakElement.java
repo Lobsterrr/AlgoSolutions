@@ -35,13 +35,11 @@ public class FindPeakElement {
         int start = 0;
         int end = num.length - 1;
         while (start < end) {
-            if (start + 1 == end)
-                return num[start] > num[end] ? start : end;
             int mid = start + (end - start) / 2;
-            if (num[mid] < num[mid - 1])
-                end = mid;
+            if (num[mid] < num[mid + 1])
+                start = mid + 1;
             else
-                start = mid;
+                end = mid;
         }
         return start;
     }
