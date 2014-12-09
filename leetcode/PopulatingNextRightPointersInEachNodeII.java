@@ -53,6 +53,7 @@ public PopulatingNextRightPointersInEachNodeII {
         }
     }
 
+/*****************************************************************************/
 
     public void connect(TreeLinkNode root) {
         if (root == null)
@@ -71,6 +72,39 @@ public PopulatingNextRightPointersInEachNodeII {
                     node.next = cur.get(i + 1);
             }
             cur = next;
+        }
+    }
+
+
+/*****************************************************************************/
+
+    public void connect(TreeLinkNode root) {
+        while (root != null) {
+            TreeLinkNode next = null;
+            TreeLinkNode cur = null;
+            for (; root != null; root = root.next) {
+                TreeLinkNode r = null;
+                if (root.left != null) {
+                    if (root.right != null)
+                        root.left.next = root.right;
+                    r = root.left;
+                } else if (root.right != null)
+                    r = root.right;
+                if (r != null) {
+                    if (next != null)
+                        next.next = r;
+                    else {
+                        cur = r;
+                        next = r;
+                    }
+                    if (next.next != null)
+                        next = next.next;
+     
+                    if (next.next!= null)
+                        next = next.next;
+                }
+            }
+            root = cur;
         }
     }
 }
