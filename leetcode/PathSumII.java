@@ -1,5 +1,6 @@
 /*
- * Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
+ * Given a binary tree and a sum, find all root-to-leaf 
+ * paths where each path's sum equals the given sum.
 
  * For example:
  * Given the below binary tree and sum = 22,
@@ -27,25 +28,24 @@
  * }
  */
 public class PathSumII {
-/***************************** updated 2012/12/05 *****************************/
-    public ArrayList<ArrayList<Integer>> pathSum(TreeNode root, int sum) {
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> path = new ArrayList<Integer>();
-        pathSumHelper(root, res, sum, path);
-        return res;
-    } 
 
-    public void pathSumHelper(TreeNode root, ArrayList<ArrayList<Integer>> res, 
-            int sum, ArrayList<Integer> path) {
-        if(root == null)
-            return ;
-        path.add(root.val);
-        if(root.left == null && root.right == null && root.val == sum) {
-            ArrayList<Integer> temp = new ArrayList<Integer>(path);
-            res.add(temp);
-        }
-        pathSumHelper(root.left, res, sum - root.val, path);
-        pathSumHelper(root.right, res, sum - root.val, path);
-        path.remove(path.size() - 1);
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<Integer> list = new ArrayList<Integer>();
+        dfs(result, list, root, sum);
+        return result;
     }
+
+    public void dfs(List<List<Integer>> result, List<Integer> list, 
+            TreeNode root, int sum) {
+        if (root == null)
+            return;
+        list.add(root.val);
+        if (sum == root.val && root.left == null && root.right == null) 
+            result.add(new ArrayList<Integer>(list));
+        dfs(result, list, root.left, sum - root.val);
+        dfs(result, list, root.right, sum - root.val);
+        list.remove(list.size() - 1);
+    }
+
 }
