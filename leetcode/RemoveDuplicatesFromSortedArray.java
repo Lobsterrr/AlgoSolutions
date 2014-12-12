@@ -34,4 +34,5 @@ public class RemoveDuplicatesFromSortedArray {
         }
         return A.length == 0 ? 0 : index;
     }
+
 }
