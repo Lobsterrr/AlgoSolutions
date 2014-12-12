@@ -12,6 +12,7 @@
  * 
  */
 public class RemoveDuplicatesFromSortedArray {
+
 	public int removeDuplicates(int[] A) {
 		int index = 0;
 		for(int i = 1; i < A.length; i++) {
@@ -23,25 +24,14 @@ public class RemoveDuplicatesFromSortedArray {
 		return A.length - index;
     }
 
-/*****************************************************************************/
+/********************************************************************/
 
     public int removeDuplicates(int[] A) {
-        if(A.length == 0)
-            return 0;
-        int cnt = 1;
-        for(int i = 1; i < A.length; i++) {
-            if(A[i] != A[i - 1])
-                A[cnt++] = A[i];
-        }
-        return cnt;
-    }
-
-    public int removeDuplicates(int[] A) {
-        int index = 0;
+        int index = 1;
         for (int i = 1; i < A.length; i++) {
-            if (A[index] != A[i]) 
-                A[++index] = A[i];
+            if (A[i] != A[i - 1])
+                A[index++] = A[i];
         }
-        return A.length == 0 ? 0 : index + 1;
+        return A.length == 0 ? 0 : index;
     }
 }
