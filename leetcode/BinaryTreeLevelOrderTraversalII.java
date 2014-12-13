@@ -28,29 +28,30 @@
  * }
  */
 public class BinaryTreeLevelOrderTraversalII {
-    public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-        if(root == null) 
-            return result;
-        ArrayList<Integer> saveNodeVal = new ArrayList<Integer>();
-        LinkedList<TreeNode> curLevel = new LinkedList<TreeNode>();
-        LinkedList<TreeNode> nextLevel = new LinkedList<TreeNode>();
-        curLevel.add(root);
-        while(!curLevel.isEmpty()) {
-            TreeNode cur = curLevel.remove();
-            saveNodeVal.add(cur.val);
-            if(cur.left != null)
-                nextLevel.add(cur.left);
-            if(cur.right != null) 
-                nextLevel.add(cur.right);
-            if(curLevel.isEmpty()) {
-                result.add(saveNodeVal);
-                saveNodeVal = new ArrayList<Integer>();
-                curLevel = nextLevel;
-                nextLevel = new LinkedList<TreeNode>();
+ 
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Queue<TreeNode> cur = new LinkedList<TreeNode>();
+        if (root != null)
+            cur.offer(root);
+        Queue<TreeNode> next = new LinkedList<TreeNode>();
+        List<Integer> list = new ArrayList<Integer>();
+        while (!cur.isEmpty()) {
+            TreeNode node = cur.poll();
+            list.add(node.val);
+            if (node.left != null)
+                next.offer(node.left);
+            if (node.right != null)
+                next.offer(node.right);
+            if (cur.isEmpty()) {
+                result.add(list);
+                list = new ArrayList<Integer>();
+                cur = next;
+                next = new LinkedList<TreeNode>();
             }
         }
         Collections.reverse(result);
         return result;
     }
+
 }
