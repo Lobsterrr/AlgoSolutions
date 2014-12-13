@@ -26,6 +26,28 @@
  * }
  */
 public class BinaryTreeLevelOrderTraversal {
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<TreeNode> cur = new ArrayList<TreeNode>();
+        if (root != null)
+            cur.add(root);
+        while (!cur.isEmpty()) {
+            List<Integer> list = new ArrayList<Integer>();
+            List<TreeNode> next = new ArrayList<TreeNode>();
+            for (TreeNode node : cur) {
+                list.add(node.val);
+                if (node.left != null) 
+                    next.add(node.left);
+                if (node.right != null)
+                    next.add(node.right);
+            }
+            result.add(list);
+            cur = next;
+        }
+        return result;
+    }
+
 /****************************** updated 2013/12/02 ********************************/
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
