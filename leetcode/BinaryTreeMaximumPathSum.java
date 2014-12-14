@@ -24,22 +24,24 @@
 import java.util.ArrayList;
 
 public class BinaryTreeMaximumPathSum {
-    int res = Integer.MIN_VALUE;
+
+    int result = Integer.MIN_VALUE;
+
     public int maxPathSum(TreeNode root) {
-        maxSum(root);
-        return res;
+    	maxSum(root);
+    	return result;
     }
 
     public int maxSum(TreeNode root) {
-        if(root == null)
-            return 0;
-        int L = maxSum(root.left);
-        int R = maxSum(root.right);
-        int subMax = root.val + Math.max(Math.max(0, Math.max(L, R)), L + R);
-        if(res < subMax)
-            res = subMax;
-        return root.val + Math.max(0, Math.max(L, R));
+    	if (root == null) 
+    		return 0;
+    	int L = maxSum(root.left);
+    	int R = maxSum(root.right);
+    	result = Math.max(result, root.val 
+                + Math.max(Math.max(0, L + R), Math.max(L, R)));
+    	return root.val + Math.max(0, Math.max(L, R));
     }
+    
 
 /*****************************************************************************/
 
