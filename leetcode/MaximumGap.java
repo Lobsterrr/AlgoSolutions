@@ -11,6 +11,7 @@
  */
 public class MaximumGap {
 
+    // O(n*log(n)) time cost.
     public int maximumGap(int[] num) {
         Arrays.sort(num);
         int result = 0;
