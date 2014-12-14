@@ -45,20 +45,21 @@ public class BinaryTreeMaximumPathSum {
 
 /*****************************************************************************/
 
-	/public int maxPathSum(TreeNode root) {
-		//pass the curmax in an array that contains only one value
-		ArrayList<Integer> curMax = new ArrayList<Integer>(1);
-		curMax.add(Integer.MIN_VALUE);
-		maxSubPath(root, curMax);
-		return curMax.get(0);
-	}
-	
-	private int maxSubPath(TreeNode root, ArrayList<Integer> curMax) {
-		if(root == null)
-			return 0;
-		int leftMax = Math.max(0, maxSubPath(root.left, curMax));
-		int rightMax = Math.max(0, maxSubPath(root.right, curMax));
-		curMax.set(0, Math.max(curMax.get(0), root.val + leftMax + rightMax));
-		return Math.max(root.val + leftMax, root.val + rightMax);
-	}
+    public int maxPathSum(TreeNode root) {
+    	List<Integer> result = new ArrayList<Integer>(1);
+    	result.add(Integer.MIN_VALUE);
+    	maxSum(root, result);
+    	return result.get(0);
+    }
+
+    public int maxSum(TreeNode root, List<Integer> result) {
+    	if (root == null) 
+    		return 0;
+    	int L = maxSum(root.left, result);
+    	int R = maxSum(root.right, result);
+    	result.set(0, Math.max(result.get(0), root.val 
+                    + Math.max(Math.max(0, L + R), Math.max(L, R))));
+    	return root.val + Math.max(0, Math.max(L, R));
+    }
+    
 }
