@@ -13,6 +13,8 @@ public class MaximumGap {
 
     // to be continued!
     public int maximumGap(int[] num) {
+        if (num.length < 2)
+            return 0;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < num.length; i++) {
