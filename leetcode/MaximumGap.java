@@ -33,7 +33,7 @@ public class MaximumGap {
         }
         int result = Integer.MIN_VALUE;
         for (int i = 1, j = 0; i < num.length - 1; i++) {
-            if (bucket[i][0] == Integer.MIN_VALUE)
+            if (bucket[0][i] == min)
                 continue;
             result = Math.max(result, bucket[1][i] - bucket[0][j]);
             j++;
