@@ -12,7 +12,7 @@
 public class MaximumGap {
 
     // to be continued!
-public static int maximumGap(int[] num) {
+    public  int maximumGap(int[] num) {
         if (num.length < 2)
             return 0;
         int max = Integer.MIN_VALUE;
@@ -28,18 +28,18 @@ public static int maximumGap(int[] num) {
         bucket[0][num.length - 2] = max;
         for (int i = 0; i < num.length - 1; i++) {
             int k = (int) Math.floor((num[i] - min) / oo);
-            bucket[k][0] = Math.max(bucket[k][0], num[i]);
-            bucket[k][1] = Math.min(bucket[k][1], num[i]);
+            bucket[0][k] = Math.max(bucket[0][k], num[i]);
+            bucket[1][k] = Math.min(bucket[1][k], num[i]);
         }
         int result = Integer.MIN_VALUE;
         for (int i = 1, j = 0; i < num.length - 1; i++) {
             if (bucket[i][0] == Integer.MIN_VALUE)
                 continue;
-            result = Math.max(result, bucket[i][1] - bucket[j][0]);
+            result = Math.max(result, bucket[1][i] - bucket[0][j]);
             j++;
         }
         return result;
-    }    
+    }
 
 /*******************************************************************/
 
