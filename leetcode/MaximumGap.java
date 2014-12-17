@@ -17,9 +17,9 @@ public class MaximumGap {
             return 0;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < num.length; i++) {
-            max = Math.max(max, num[i]);
-            min = Math.min(min, num[i]);
+        for (int value : num) {
+            max = Math.max(max, value);
+            min = Math.min(min, value);
         }
         double w = (double) (max - min) / (num.length + 1);
         int[][] bucket = new int[2][num.length + 1];
