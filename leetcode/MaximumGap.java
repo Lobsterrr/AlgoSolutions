@@ -15,26 +15,26 @@ public class MaximumGap {
     public int maximumGap(int[] num) {
         if (num.length < 2)
             return 0;
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
+        int maxValue = Integer.MIN_VALUE;
+        int minValue = Integer.MAX_VALUE;
         for (int value : num) {
-            max = Math.max(max, value);
-            min = Math.min(min, value);
+            maxValue = Math.max(maxValue, value);
+            minValue = Math.min(minValue, value);
         }
-        double w = (double) (max - min) / (num.length + 1);
+        double w = (double) (maxValue - minValue) / (num.length + 1);
         int[][] bucket = new int[2][num.length + 1];
-        Arrays.fill(bucket[0], min);
-        Arrays.fill(bucket[1], max);
-        for (int i = 0; i < num.length; i++) {
-            int k = (int) Math.floor((num[i] - min) / w);
+        Arrays.fill(bucket[0], minValue);
+        Arrays.fill(bucket[1], maxValue);
+        for (int value : num) {
+            int k = (int) Math.floor((value - minValue) / w);
             if (k == num.length + 1)
                 k--;
-            bucket[0][k] = Math.max(bucket[0][k], num[i]);
-            bucket[1][k] = Math.min(bucket[1][k], num[i]);
+            bucket[0][k] = Math.max(bucket[0][k], value);
+            bucket[1][k] = Math.min(bucket[1][k], value);
         }
         int result = Integer.MIN_VALUE;
         for (int i = 1, j = 0; i < num.length + 1; i++) {
-            if (bucket[0][i] != min) {
+            if (bucket[0][i] != minValue) {
                 result = Math.max(result, bucket[1][i] - bucket[0][j]);
                 j = i;
             }
