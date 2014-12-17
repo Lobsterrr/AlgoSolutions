@@ -34,7 +34,7 @@ public class MaximumGap {
         }
         int result = Integer.MIN_VALUE;
         for (int i = 1, j = 0; i < num.length + 1; i++) {
-            if (bucket[0][i] != min || bucket[1][i] != max) {
+            if (bucket[0][i] != min) {
                 result = Math.max(result, bucket[1][i] - bucket[0][j]);
                 j = i;
             }
