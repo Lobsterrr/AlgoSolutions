@@ -14,22 +14,27 @@
  * }
  */
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
+
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        if(preorder.length == 0)
-            return null;
-        return buildTreeHelper(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
+        return buildTree(preorder, 0, preorder.length - 1, 
+                inorder, 0, inorder.length - 1);
     }
 
-    public TreeNode buildTreeHelper(int[] preorder, int pStart, int pEnd, int[] inorder, int iStart, int iEnd) { 
-        int i = 0;
+    public TreeNode buildTree(int[] preorder, int pStart, int pEnd,
+           int[] inorder, int iStart, int iEnd) {
+        if (pEnd - pStart != iEnd - iStart || pStart > pEnd || iStart > iEnd)
+            return null;
         TreeNode root = new TreeNode(preorder[pStart]);
-        while(inorder[iStart + i] != preorder[pStart]) {
-            i++;
+        for (int i = iStart; i <= iEnd; i++) {
+            if (inorder[i] == preorder[pStart]) {
+                root.left = buildTree(preorder, pStart + 1, 
+                        pStart - iStart + i, inorder, iStart, i - 1);
+                root.right = buildTree(preorder, pStart - iStart + i + 1, 
+                        pEnd, inorder, i + 1, iEnd);
+                break;
+            }
         }
-        if(i != 0) 
-            root.left = buildTreeHelper(preorder, pStart + 1, pStart + i, inorder, iStart, iStart + i - 1);
-        if(pStart + i + 1 <= pEnd) 
-            root.right = buildTreeHelper(preorder, pStart + i + 1, pEnd, inorder, iStart + i + 1, iEnd);
         return root;
-    }
+    } 
+
 }
