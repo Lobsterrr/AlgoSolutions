@@ -21,19 +21,18 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
     }
 
     public TreeNode buildTree(int[] preorder, int pStart, int pEnd,
-           int[] inorder, int iStart, int iEnd) {
+            int[] inorder, int iStart, int iEnd) {
         if (pEnd - pStart != iEnd - iStart || pStart > pEnd || iStart > iEnd)
             return null;
         TreeNode root = new TreeNode(preorder[pStart]);
-        for (int i = iStart; i <= iEnd; i++) {
-            if (inorder[i] == preorder[pStart]) {
-                root.left = buildTree(preorder, pStart + 1, 
-                        pStart - iStart + i, inorder, iStart, i - 1);
-                root.right = buildTree(preorder, pStart - iStart + i + 1, 
-                        pEnd, inorder, i + 1, iEnd);
-                break;
-            }
+        int i = iStart;
+        while (i <= iEnd && inorder[i] != preorder[pStart]) {
+            i++;
         }
+        root.left = buildTree(preorder, pStart + 1, pStart - iStart + i, 
+                inorder, iStart, i - 1);
+        root.right = buildTree(preorder, pStart - iStart + i + 1, pEnd, 
+                inorder, i + 1, iEnd);
         return root;
     } 
 
