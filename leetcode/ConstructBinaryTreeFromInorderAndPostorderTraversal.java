@@ -14,22 +14,26 @@
  * }
  */
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
+
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        if(inorder.length == 0)
-            return null;
-        return buildTreeHelper(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
+        return buildTreeHelper(inorder, 0, inorder.length - 1, 
+                postorder, 0, postorder.length - 1);
     }
 
-    public TreeNode buildTreeHelper(int[] inorder, int iStart, int iEnd, int[] postorder, int pStart, int pEnd) {
-        TreeNode root = new TreeNode(postorder[pEnd]); 
-        int i = 0;
-        while(inorder[iEnd - i] != postorder[pEnd]) {
-            i++;
+    public TreeNode buildTreeHelper(int[] inorder, int iStart, int iEnd, 
+            int[] postorder, int pStart, int pEnd) {
+        if (iEnd - iStart != pEnd - pStart || iStart > iEnd || pStart > pEnd) 
+            return null;
+        TreeNode root = new TreeNode(postorder[pEnd]);
+        for (int i = iStart; i <= iEnd; i++) {
+            if (inorder[i] == postorder[pEnd]) {
+                root.left = buildTreeHelper(inorder, iStart, i - 1, 
+                        postorder, pStart, pStart - iStart + i - 1);
+                root.right = buildTreeHelper(inorder, i + 1, iEnd, 
+                        postorder, pStart - iStart + i, pEnd - 1);
+                break;
+            }
         }
-        if(i != 0)
-            root.right = buildTreeHelper(inorder, iEnd - i + 1, iEnd, postorder, pEnd - i, pEnd - 1);
-        if(iEnd - i - 1 >= iStart)
-            root.left = buildTreeHelper(inorder, iStart, iEnd - i - 1, postorder, pStart, pEnd - i - 1);
         return root;
     }
 }
