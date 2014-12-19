@@ -29,8 +29,10 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
         while (i <= iEnd && inorder[i] != postorder[pEnd]) {
             i++;
         }
-        root.left = buildTree(inorder, iStart, i - 1, postorder, pStart, pStart - iStart + i - 1);
-        root.right = buildTree(inorder, i + 1, iEnd, postorder, pStart - iStart + i, pEnd - 1);
+        root.left = buildTree(inorder, iStart, i - 1, 
+                postorder, pStart, pStart - iStart + i - 1);
+        root.right = buildTree(inorder, i + 1, iEnd, 
+                postorder, pStart - iStart + i, pEnd - 1);
         return root;
     }
 
