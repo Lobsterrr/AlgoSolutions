@@ -34,4 +34,21 @@ public class BestTimeToBuyAndSellStockIII {
         return result;
     }    
 
+/*****************************************************************************/
+
+    // I can't understand it!
+    public int maxProfit(int[] prices) {
+        int x = 0;
+        int xx = 0;
+        int y = Integer.MIN_VALUE;
+        int yy = Integer.MIN_VALUE;
+        for (int price : prices) {
+            y = Math.max(y, -price);       
+            x = Math.max(x, y + price);  
+            yy = Math.max(yy, x - price);  
+            xx = Math.max(xx, yy + price); 
+        }
+        return xx;
+    }
+
 }
