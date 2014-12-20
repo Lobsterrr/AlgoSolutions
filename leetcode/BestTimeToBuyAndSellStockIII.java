@@ -25,13 +25,13 @@ public class BestTimeToBuyAndSellStockIII {
         for (int i = 1; i < len; i++) {
             leftMax[i] = Math.max(leftMax[i - 1], prices[i] - min);
             min = Math.min(min, prices[i]);
-            rightMax[len - 1 - i] = Math.max(rightMax[len - i], 
-                    max - prices[len - 1 - i]);
+            rightMax[len - 1 - i] = Math.max(rightMax[len - i], max - prices[len - 1 - i]);
             max = Math.max(max, prices[len - 1 - i]);
         }
         int res = 0;
-        for (int i = 0; i < prices.length; i++) 
+        for (int i = 0; i < prices.length; i++) {
             res = Math.max(res, leftMax[i] + rightMax[i]);
+        }
         return res;
     }    
 
@@ -42,23 +42,16 @@ public class BestTimeToBuyAndSellStockIII {
         int len = prices.length;
         int[] leftMax = new int[len];
         int[] rightMax = new int[len];
-        int leftMinValue = Integer.MAX_VALUE;
-        int rightMaxValue = Integer.MIN_VALUE;
-        for (int i = 0; i < len; i++) {
+        int leftMinValue = prices[0];
+        int rightMaxValue = prices[len - 1];
+        for (int i = 1; i < len; i++) {
             leftMinValue = Math.min(leftMinValue, prices[i]);
             rightMaxValue = Math.max(rightMaxValue, prices[len - 1 - i]);
-            if (i > 0) {
-                leftMax[i] = Math.max(leftMax[i - 1], prices[i] - leftMinValue);
-                rightMax[len - 1 - i] = Math.max(rightMax[len - i], rightMaxValue - prices[len - 1 - i]);
-            }
+            leftMax[i] = Math.max(leftMax[i - 1], prices[i] - leftMinValue);
+            rightMax[len - 1 - i] = Math.max(rightMax[len - i], rightMaxValue - prices[len - 1 - i]);
         }
         for (int i = 0; i < len; i++) {
-            if (i == 0)
-                result = Math.max(result, rightMax[i]);
-            else if (i >= 1 && i <= len - 2)
-                result = Math.max(result, leftMax[i] + rightMax[i + 1]);
-            else if (i == len - 1)
-                result = Math.max(result, leftMax[i]);
+            result = Math.max(result, leftMax[i] + rightMax[i + 1]);
         }   
         return result;
     }
