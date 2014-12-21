@@ -37,20 +37,20 @@ public class Subsets {
     }
 
 /*****************************************************************************/
-    
-    public ArrayList<ArrayList<Integer>> subsets(int[] S) {
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+
+    public List<List<Integer>> subsets(int[] S) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(S);
-        res.add(new ArrayList<Integer>());
-        for(int i = 0; i < S.length; i++) {
-            int k = res.size();
-            for(int j = 0; j < k; j++) {
-                ArrayList<Integer> list = new ArrayList<Integer>(res.get(j));
+        result.add(new ArrayList<Integer>());
+        for (int i = 0; i < S.length; i++) {
+            int k = result.size();
+            for (int j = 0; j < k; j++) {
+                List<Integer> list = new ArrayList<Integer>(result.get(j));
                 list.add(S[i]);
-                res.add(list);
+                result.add(list);
             }
         }
-        return res;
+        return result;
     }
 
 /*****************************************************************************/
