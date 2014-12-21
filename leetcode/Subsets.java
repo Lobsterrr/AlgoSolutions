@@ -55,22 +55,21 @@ public class Subsets {
 
 /*****************************************************************************/
 
-    public void dfs(int[] S, int pos, ArrayList<ArrayList<Integer>> res, 
-            ArrayList<Integer> list) {
-        for(int i = pos; i < S.length; i++) {
-            list.add(S[i]);
-            res.add(new ArrayList<Integer>(list));
-            dfs(S, i + 1, res, list);
-            list.remove(list.size() - 1);
-        }
+    public List<List<Integer>> subsets(int[] S) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Arrays.sort(S);
+        List<Integer> list = new ArrayList<Integer>();
+        dfs(result, list, 0, S);
+        return result;
     }
 
-    public ArrayList<ArrayList<Integer>> subsets(int[] S) {
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        Arrays.sort(S);
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        res.add(list);
-        dfs(S, 0, res, list);
-        return res;
+    public void dfs(List<List<Integer>> result, List<Integer> list, 
+            int position, int[] S) {
+        result.add(new ArrayList<Integer>(list));
+        for (int i = position; i < S.length; i++) {
+            list.add(S[i]);
+            dfs(result, list, i + 1, S);
+            list.remove(list.size() - 1);
+        }
     }
 }
