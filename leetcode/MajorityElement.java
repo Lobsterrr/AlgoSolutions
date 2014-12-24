@@ -8,7 +8,20 @@
 public class MajorityElement {
 
     public int majorityElement(int[] num) {
-        // TODO
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < num.length; i++) {
+            map.put(num[i], 1 + (map.containsKey(num[i]) ? 
+                        map.get(num[i]) : 0));
+        }
+        int maxCount = 0;
+        int result = 0;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (maxCount < entry.getValue()) {
+                maxCount = entry.getValue();
+                result = entry.getKey();
+            }
+        }
+        return result;
     }
 
 }
