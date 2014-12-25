@@ -25,7 +25,7 @@ public class MajorityElement {
 /*****************************************************************************/
 
     public int majorityElement(int[] num) {
-        int result = Integer.MIN_VALUE;
+        int result = 0;
         int count = 0;
         for (int value : num) {
             count += value == result ? 1 : -1;
