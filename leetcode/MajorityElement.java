@@ -22,6 +22,8 @@ public class MajorityElement {
         return result;
     }
 
+/*****************************************************************************/
+
     public int majorityElement(int[] num) {
         int result = Integer.MIN_VALUE;
         int count = 0;
