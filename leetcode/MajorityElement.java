@@ -22,4 +22,17 @@ public class MajorityElement {
         return result;
     }
 
+    public int majorityElement(int[] num) {
+        int result = Integer.MIN_VALUE;
+        int count = 0;
+        for (int value : num) {
+            count += value == result ? 1 : -1;
+            if (count <= 0) {
+                result = value;
+                count = 1;
+            }
+        }
+        return result;
+    }
+
 }
