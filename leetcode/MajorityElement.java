@@ -9,23 +9,6 @@ public class MajorityElement {
 
     public int majorityElement(int[] num) {
         int result = 0;
-        int maxCount = 0;
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int i = 0; i < num.length; i++) {
-            map.put(num[i], 1 + (map.containsKey(num[i]) ? 
-                        map.get(num[i]) : 0));
-            if (maxCount < map.get(num[i])) {
-                maxCount = map.get(num[i]);
-                result = num[i];
-            }
-        }
-        return result;
-    }
-
-/*****************************************************************************/
-
-    public int majorityElement(int[] num) {
-        int result = 0;
         int count = 0;
         for (int value : num) {
             count += value == result ? 1 : -1;
