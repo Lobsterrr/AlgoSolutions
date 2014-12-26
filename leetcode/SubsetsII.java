@@ -69,23 +69,23 @@ public class SubsetsII {
 
 /*****************************************************************************/
 
-    public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] S) {
-        Arrays.sort(S);
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        res.add(new ArrayList<Integer>());
-        int old_size = 0;
-        for(int i = 0; i < S.length; i++) {
-            int new_size = res.size();
-            int start = (i > 0 && S[i] != S[i - 1]) ? 0 : old_size;
-            for(int j = start; j < new_size; j++) {
-                ArrayList<Integer> list = new ArrayList<Integer>(res.get(j));
-                list.add(S[i]);
-                res.add(list);
+    public List<List<Integer>> subsetsWithDup(int[] num) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Arrays.sort(num);
+        result.add(new ArrayList<Integer>());
+        int oldSize = 0;
+        for (int i = 0; i < num.length; i++) {
+            int newSize = result.size();
+            int start = (i > 0 && num[i] != num[i - 1]) ? 0 : oldSize;
+            for (int j = start; j < newSize; j++) {
+                List<Integer> list = new ArrayList<Integer>(result.get(j));
+                list.add(num[i]);
+                result.add(list);
             }
-            old_size = new_size;
+            oldSize = newSize;
         }
-        return res;
-    }    
+        return result;
+    }
 
 /*****************************************************************************/
 
