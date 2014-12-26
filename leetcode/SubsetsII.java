@@ -36,6 +36,20 @@ public class SubsetsII {
         return result;
     }
 
+    public List<List<Integer>> subsetsWithDup(int[] num) {
+        HashSet<List<Integer>> set = new HashSet<List<Integer>>();
+        Arrays.sort(num);
+        for (int i = 0; i < 1 << num.length; i++) {
+            List<Integer> list = new ArrayList<Integer>();
+            for (int j = 0; j < num.length; j++) {
+                if ((i & 1 << j) != 0) 
+                    list.add(num[j]);
+            }
+            set.add(list);
+        }
+        return new ArrayList<List<Integer>>(set);
+    }
+
 /*****************************************************************************/
 
     public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] S) {
