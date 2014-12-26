@@ -92,29 +92,24 @@ public class SubsetsII {
 
 /*****************************************************************************/
 
-     public void dfs(int[] S, int pos, ArrayList<ArrayList<Integer>> res, 
-            ArrayList<Integer> list) {
-        for(int i = pos; i < S.length; i++) {
-            list.add(S[i]);
-            res.add(new ArrayList<Integer>(list));
-            dfs(S, i + 1, res, list);
+    public List<List<Integer>> subsetsWithDup(int[] num) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<Integer> list = new ArrayList<Integer>();
+        Arrays.sort(num);
+        dfs(result, list, 0, num);
+        return result;
+    }
+
+    public void dfs(List<List<Integer>> result, List<Integer> list, 
+            int index, int[] num) {
+        result.add(new ArrayList<Integer>(list));
+        for (int i = index; i < num.length; i++) {
+            list.add(num[i]);
+            dfs(result, list, i + 1, num);
             list.remove(list.size() - 1);
-            while(i + 1 < S.length && S[i] == S[i + 1]) {
+            while (i < num.length - 1 && num[i] == num[i + 1]) {
                 i++;
             }
         }
-    }
-
-    public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] S) {
-        Arrays.sort(S);
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        res.add(list);
-        dfs(S, 0, res, list);
-        return res;
-    }
-
-    public List<List<Integer>> subsetsWithDup(int[] num) {
-
     }
 }
