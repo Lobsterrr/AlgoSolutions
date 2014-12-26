@@ -24,6 +24,26 @@ public class SubsetsII {
     public List<List<Integer>> subsetsWithDup(int[] num) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(num);
+        result.add(new ArrayList<Integer>());
+        int oldSize = 0;
+        for (int i = 0; i < num.length; i++) {
+            int newSize = result.size();
+            int start = (i > 0 && num[i] != num[i - 1]) ? 0 : oldSize;
+            for (int j = start; j < newSize; j++) {
+                List<Integer> list = new ArrayList<Integer>(result.get(j));
+                list.add(num[i]);
+                result.add(list);
+            }
+            oldSize = newSize;
+        }
+        return result;
+    }
+
+/*****************************************************************************/
+
+    public List<List<Integer>> subsetsWithDup(int[] num) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Arrays.sort(num);
         for (int i = 0; i < 1 << num.length; i++) {
             List<Integer> list = new ArrayList<Integer>();
             for (int j = 0; j < num.length; j++) {
@@ -35,6 +55,8 @@ public class SubsetsII {
         }
         return result;
     }
+
+/*****************************************************************************/
 
     public List<List<Integer>> subsetsWithDup(int[] num) {
         HashSet<List<Integer>> set = new HashSet<List<Integer>>();
@@ -67,25 +89,6 @@ public class SubsetsII {
         return new ArrayList<List<Integer>>(set);
     }
 
-/*****************************************************************************/
-
-    public List<List<Integer>> subsetsWithDup(int[] num) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-        Arrays.sort(num);
-        result.add(new ArrayList<Integer>());
-        int oldSize = 0;
-        for (int i = 0; i < num.length; i++) {
-            int newSize = result.size();
-            int start = (i > 0 && num[i] != num[i - 1]) ? 0 : oldSize;
-            for (int j = start; j < newSize; j++) {
-                List<Integer> list = new ArrayList<Integer>(result.get(j));
-                list.add(num[i]);
-                result.add(list);
-            }
-            oldSize = newSize;
-        }
-        return result;
-    }
 
 /*****************************************************************************/
 
@@ -109,5 +112,9 @@ public class SubsetsII {
         res.add(list);
         dfs(S, 0, res, list);
         return res;
+    }
+
+    public List<List<Integer>> subsetsWithDup(int[] num) {
+
     }
 }
