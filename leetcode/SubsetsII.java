@@ -52,19 +52,19 @@ public class SubsetsII {
 
 /*****************************************************************************/
 
-    public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] S) {
-        Arrays.sort(S);
-        HashSet<ArrayList<Integer>> set = new HashSet<ArrayList<Integer>>();
+    public List<List<Integer>> subsetsWithDup(int[] num) {
+        HashSet<List<Integer>> set = new HashSet<List<Integer>>();
+        Arrays.sort(num);
         set.add(new ArrayList<Integer>());
-        for(int i = 0; i < S.length; i++) {
-            HashSet<ArrayList<Integer>> list = new HashSet<ArrayList<Integer>>(set);
-            for(Iterator<ArrayList<Integer>> it = list.iterator(); it.hasNext(); ) {
-                ArrayList<Integer> new_list = new ArrayList<Integer>(it.next());
-                new_list.add(S[i]);
-                set.add(new_list);
+        for (int i = 0; i < num.length; i++) {
+            HashSet<List<Integer>> setCopy = new HashSet<List<Integer>>(set);
+            for (Iterator<List<Integer>> it = setCopy.iterator(); it.hasNext(); ) {
+                List<Integer> list = new ArrayList<Integer>(it.next());
+                list.add(num[i]);
+                set.add(list);
             }
         }
-        return new ArrayList<ArrayList<Integer>>(set);
+        return new ArrayList<List<Integer>>(set);
     }
 
 /*****************************************************************************/
