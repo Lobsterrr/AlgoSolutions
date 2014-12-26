@@ -19,35 +19,21 @@
  * ]
  */
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-
 public class SubsetsII {
-/**************************** updated 2014/01/01 *****************************/
 
-    public static String convertInt2BinStr(int n, int len) {
-        String s = Integer.toBinaryString(n);
-        while(s.length() < len) {
-            s = "0" + s;
-        }
-        return s;
-    }
-
-    public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] S) {
-        Arrays.sort(S);
-        HashSet<ArrayList<Integer>> set = new HashSet<ArrayList<Integer>>();
-        int len = S.length;
-        for(int i = 0; i < (1 << len); i++) {
-            String s = convertInt2BinStr(i, len);
-            ArrayList<Integer> list = new ArrayList<Integer>();
-            for(int j = 0; j < len; j++) {
-                if(s.charAt(j) == '1')
-                    list.add(S[j]);
+    public List<List<Integer>> subsetsWithDup(int[] num) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Arrays.sort(num);
+        for (int i = 0; i < 1 << num.length; i++) {
+            List<Integer> list = new ArrayList<Integer>();
+            for (int j = 0; j < num.length; j++) {
+                if ((i & 1 << j) != 0) 
+                    list.add(num[j]);
             }
-            set.add(list);
+            if (!result.contains(list))
+                result.add(list);
         }
-        return new ArrayList<ArrayList<Integer>>(set);
+        return result;
     }
 
 /*****************************************************************************/
