@@ -89,7 +89,6 @@ public class SubsetsII {
         return new ArrayList<List<Integer>>(set);
     }
 
-
 /*****************************************************************************/
 
     public List<List<Integer>> subsetsWithDup(int[] num) {
