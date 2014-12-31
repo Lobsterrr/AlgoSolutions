@@ -20,19 +20,31 @@
 
 public class BinarySearchTreeIterator {
 
-    public BinarySearchTreeIterator (TreeNode root) {
-
+    private TreeNode cur;
+    private Stack<TreeNode> stack = new Stack<TreeNode>();
+    
+    public BinarySearchTreeIterator(TreeNode root) {
+        cur = root;
     }
 
     /** @return whether we have a next smallest number */
     public boolean hasNext() {
-
+        return cur != null || !stack.isEmpty();
     }
 
     /** @return the next smallest number */
     public int next() {
-        
+        if (cur == null) 
+            throw new NosuchElementException();
+        while (cur != null) {
+            stack.push(cur);
+            cur = cur.left;
+        }
+        TreeNode node = stack.pop();
+        cur = node.right;
+        return node.val;
     }
+    
     
     
 }
