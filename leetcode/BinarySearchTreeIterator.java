@@ -34,8 +34,6 @@ public class BinarySearchTreeIterator {
 
     /** @return the next smallest number */
     public int next() {
-        if (cur == null) 
-            throw new NosuchElementException();
         while (cur != null) {
             stack.push(cur);
             cur = cur.left;
