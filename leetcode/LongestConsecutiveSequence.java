@@ -27,6 +27,7 @@ public class LongestConsecutiveSequence {
     }
 
 /*****************************************************************************/
+
 	// time: O(n); space: O(n)
     public int longestConsecutive(int[] num) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
