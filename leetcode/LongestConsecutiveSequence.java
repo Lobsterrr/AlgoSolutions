@@ -54,6 +54,7 @@ public class LongestConsecutiveSequence {
     }
 
 /*****************************************************************************/
+
 	// time: O(n); space: O(n)
     public int longestConsecutive(int[] num) {
         Set<Integer> set = new HashSet<Integer>();
