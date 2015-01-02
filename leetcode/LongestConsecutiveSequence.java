@@ -30,26 +30,26 @@ public class LongestConsecutiveSequence {
 
 	// time: O(n); space: O(n)
     public int longestConsecutive(int[] num) {
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        int max = 1;
-        for(int value : num) {
-            if(map.containsKey(value))
-                continue;
-            map.put(value, 1);
-            if(map.containsKey(value - 1))
-                max = Math.max(max, merge(map, value - 1, value));
-            if(map.containsKey(value + 1))
-                max = Math.max(max, merge(map, value, value + 1));
+        int result = 1;
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int value : num) {
+            if (!map.containsKey(value)) {
+                map.put(value, 1);
+                if (map.containsKey(value - 1)) 
+                    result = Math.max(result, merge(map, value - 1, value));
+                if (map.containsKey(value + 1)) 
+                    result = Math.max(result, merge(map, value, value + 1));
+            }
         }
-        return max;
+        return result;
     }
 
-    public int merge(HashMap<Integer, Integer> map, int left, int right) {
-        int upper = right + map.get(right) - 1;
-        int lower = left - map.get(left) + 1;
+    public int merge(Map<Integer, Integer> map, int low, int high) {
+        int upper = high + map.get(high) - 1;
+        int lower = low - map.get(low) + 1;
         int len = upper - lower + 1;
         map.put(upper, len);
-        map.put(lower, len);
+		map.put(lower, len);
         return len;
     }
 
