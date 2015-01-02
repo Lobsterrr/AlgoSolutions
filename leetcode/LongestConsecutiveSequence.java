@@ -57,23 +57,26 @@ public class LongestConsecutiveSequence {
 
 	// time: O(n); space: O(n)
     public int longestConsecutive(int[] num) {
+        int result = 1;
         Set<Integer> set = new HashSet<Integer>();
-        for(int value : num) 
+        for (int value : num) {
             set.add(value);
-        int max = 1;
-        for(int value : num) 
-            max = Math.max(max, getCount(set, value, false) + 
-                    getCount(set, value + 1, true));
-        return max;
+        }
+        for (int value : num) {
+            int left = getCount(set, value - 1, false);
+            int right = getCount(set, value + 1, true);
+            result = Math.max(result, left + right + 1);
+        }
+        return result;
     }
 
     public int getCount(Set<Integer> set, int value, boolean asc) {
-        int cnt = 0;
-        while(set.contains(value)) {
-            cnt++;
+        int count = 0;
+        while (set.contains(value)) {
+            count++;
             set.remove(value);
             value = asc ? value + 1 : value - 1;
         }
-        return cnt;
+        return count;
     }
 }
