@@ -11,24 +11,56 @@
  */
 public class LongestConsecutiveSequence {
 
-    // time complexity is O(nlogn)
+	// time: O(n); space: O(n)
     public int longestConsecutive(int[] num) {
-        Arrays.sort(num);
-        int result = 1;
-        int count = 1;
-        for (int i = 1; i < num.length; i++) {
-            if (num[i] == num[i - 1] + 1)
-                count++;
-            else if (num[i] != num[i - 1] && num[i] != num[i - 1] + 1)
-                count = 1;
-            result = Math.max(result, count);
+        int result = 0;
+        Set<Integer> set = new HashSet<Integer>();
+        for (int value : num) {
+            set.add(value);
+        }
+        for (int value : num) {
+            int low = value;
+            int high = value + 1;
+            while (set.contains(low - 1)) {
+                set.remove(low--);
+            }
+            while (set.contains(high)) {
+                set.remove(high++);
+            }
+            result = Math.max(result, high - low);
         }
         return result;
     }
 
 /*****************************************************************************/
 
-	// time: O(n); space: O(n)
+    public int longestConsecutive(int[] num) {
+        int result = 1;
+        Set<Integer> set = new HashSet<Integer>();
+        for (int value : num) {
+            set.add(value);
+        }
+        for (int value : num) {
+            int left = getCount(set, value - 1, false);
+            int right = getCount(set, value + 1, true);
+            result = Math.max(result, left + right + 1);
+        }
+        return result;
+    }
+
+    public int getCount(Set<Integer> set, int value, boolean asc) {
+        int count = 0;
+        while (set.contains(value)) {
+            count++;
+            set.remove(value);
+            value = asc ? value + 1 : value - 1;
+        }
+        return count;
+    }
+
+/*****************************************************************************/
+
+    // time: O(n); space: O(n)
     public int longestConsecutive(int[] num) {
         int result = 1;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -55,28 +87,19 @@ public class LongestConsecutiveSequence {
 
 /*****************************************************************************/
 
-	// time: O(n); space: O(n)
+    // time complexity is O(nlogn)
     public int longestConsecutive(int[] num) {
+        Arrays.sort(num);
         int result = 1;
-        Set<Integer> set = new HashSet<Integer>();
-        for (int value : num) {
-            set.add(value);
-        }
-        for (int value : num) {
-            int left = getCount(set, value - 1, false);
-            int right = getCount(set, value + 1, true);
-            result = Math.max(result, left + right + 1);
+        int count = 1;
+        for (int i = 1; i < num.length; i++) {
+            if (num[i] == num[i - 1] + 1)
+                count++;
+            else if (num[i] != num[i - 1] && num[i] != num[i - 1] + 1)
+                count = 1;
+            result = Math.max(result, count);
         }
         return result;
     }
 
-    public int getCount(Set<Integer> set, int value, boolean asc) {
-        int count = 0;
-        while (set.contains(value)) {
-            count++;
-            set.remove(value);
-            value = asc ? value + 1 : value - 1;
-        }
-        return count;
-    }
 }
