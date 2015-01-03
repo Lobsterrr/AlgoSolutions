@@ -9,20 +9,14 @@
  */
 public class PascalTriangleII {
 
-/**************************** updated 20141021 *******************************/
-
     public List<Integer> getRow(int rowIndex) {
         List<Integer> result = new ArrayList<Integer>();
-        result.add(1);
-        for (int i = 1; i <= rowIndex; i++) {
-            List<Integer> temp = new ArrayList<Integer>();
-            temp.add(1);
-            for (int j = 1; j < result.size(); j++) 
-                temp.add(result.get(j - 1) + result.get(j));
-            temp.add(1);
-            result = temp;
-        }
-        return result;
+		int nCk = 1;
+		for (int k = 0; k <= rowIndex; k++) {
+			result.add(nCk);
+			nCk = (int) ((long) nCk * (rowIndex - k) / (k + 1));
+		}
+		return result;
     }
 
 /*********************************************************************/
@@ -38,4 +32,5 @@ public class PascalTriangleII {
         }
         return res;
     }
+
 }
