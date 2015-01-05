@@ -6,15 +6,13 @@
 public class Sqrt {
 
     public int sqrt(int x) {
-        if(x < 0)
-            throw new IllegalArgumentException("negative input");
         double result = x;
         double last = 0;
-        while(last != result) {
+        while (last != result) {
             last = result;
             result = (result + x / result) / 2;
         }
-        return (int)result;
+        return (int) result;
     }
 
 /*******************************************************************/
