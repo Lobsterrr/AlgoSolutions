@@ -4,6 +4,36 @@
  */
 
 public class Sqrt {
+
+    public int sqrt(int x) {
+        if(x < 0)
+            throw new IllegalArgumentException("negative input");
+        double result = x;
+        double last = 0;
+        while(last != result) {
+            last = result;
+            result = (result + x / result) / 2;
+        }
+        return (int)result;
+    }
+
+/*******************************************************************/
+
+    public int sqrt(int x) {
+        int start = 1;
+        int end = x;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (mid == x / mid)
+                return mid;
+            else if (mid < x / mid)
+                start = mid + 1;
+            else
+                end = mid - 1;
+        }
+        return (start + end) / 2;
+    }
+
 /*  public int sqrt(int x) {
         if(x < 100) {
             int i = 0; 
@@ -35,38 +65,6 @@ public class Sqrt {
         }
         return result;
     }
-
-
-
-    public int sqrt(int x) {
-        if(x < 0)
-            throw new IllegalArgumentException("negative input");
-        if(x == 0 || x == 1)
-            return x;
-        int start = 1;
-        int end = x / 2 + 1;
-        while(start <= end) {
-            int mid = (start + end) / 2;
-            if(x / mid == mid)
-                return mid;
-            else if(mid < x / mid)
-                start = mid + 1;
-            else
-                end = mid - 1;
-        }
-        return (start + end) / 2;
-    }
 */
 
-    public int sqrt(int x) {
-        if(x < 0)
-            throw new IllegalArgumentException("negative input");
-        double result = x;
-        double last = 0;
-        while(last != result) {
-            last = result;
-            result = (result + x / result) / 2;
-        }
-        return (int)result;
-    }
 }
