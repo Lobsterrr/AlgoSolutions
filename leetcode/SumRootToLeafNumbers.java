@@ -29,21 +29,19 @@
 
 public class SumRootToLeafNumbers {
 
-/****************************** updated 2013/12/12 ***************************/
-
     public int sumNumbers(TreeNode root) {
-        if(root == null)
+        if (root == null)
             return 0;
-        if(root.left == null && root.right == null)
+        if (root.left == null && root.right == null)
             return root.val;
-        if(root.left != null)
+        if (root.left != null)
             root.left.val += 10 * root.val;
-        if(root.right != null)
+        if (root.right != null)
             root.right.val += 10 * root.val;
         return sumNumbers(root.left) + sumNumbers(root.right);
     }
 
-/*****************************************************************************/
+/*******************************************************************/
 
     public int sumNumbers(TreeNode root) {
         return dfs(root, 0);
