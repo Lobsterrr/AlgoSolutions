@@ -1,8 +1,9 @@
 /*
- * Given a binary tree containing digits from 0-9 only, each root-to-leaf path 
- * could represent a number.
+ * Given a binary tree containing digits from 0-9 only, 
+ * each root-to-leaf path could represent a number.
 
- * An example is the root-to-leaf path 1->2->3 which represents the number 123.
+ * An example is the root-to-leaf path 1->2->3 which 
+ * represents the number 123.
 
  * Find the total sum of all root-to-leaf numbers.
 
@@ -27,6 +28,7 @@
  */
 
 public class SumRootToLeafNumbers {
+
 /****************************** updated 2013/12/12 ***************************/
 
     public int sumNumbers(TreeNode root) {
