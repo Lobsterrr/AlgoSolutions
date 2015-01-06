@@ -48,11 +48,11 @@ public class SumRootToLeafNumbers {
     }
 
     public int dfs(TreeNode root, int sum) {
-        if(root == null)
+        if (root == null)
             return 0;
-        sum = 10 * sum + root.val;
-        if(root.left == null && root.right == null)
-            return sum;
-        return dfs(root.left, sum) + dfs(root.right, sum);
+        if (root.left == null && root.right == null)
+            return 10 * sum + root.val;
+        return dfs(root.left, 10 * sum + root.val) + 
+            dfs(root.right, 10 * sum + root.val);
     }
 }
