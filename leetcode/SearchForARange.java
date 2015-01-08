@@ -25,7 +25,6 @@ public class SearchForARange {
         return res;
     }
 */
-/*    O(log n)    */
     public int[] searchRange(int[] A, int target) {
         int[] res = new int[2];
         int low = 0, high = A.length - 1, mid = 0;
