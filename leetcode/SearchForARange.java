@@ -10,21 +10,7 @@
  * return [3, 4]. 
  */
 public class SearchForARange {
-/*   O(n)
- *  public int[] searchRange(int[] A, int target) {
-        int[] res = new int[2];
-        int start = 0, end = A.length - 1;
-        for(; start < A.length - 1 && A[start] != target; start++);
-        for(; end >= start && A[end] != target; end--);
-        if(start > end) {
-            start = -1;
-            end = -1;
-        }
-        res[0] = start;
-        res[1] = end;
-        return res;
-    }
-*/
+
     public int[] searchRange(int[] A, int target) {
         int[] res = new int[2];
         int low = 0, high = A.length - 1, mid = 0;
