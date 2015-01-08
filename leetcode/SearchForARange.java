@@ -13,46 +13,10 @@
  */
 public class SearchForARange {
 
-    public int[] searchRange(int[] A, int target) {
-        int[] res = new int[2];
-        int low = 0, high = A.length - 1, mid = 0;
-        while(low <= high) {
-            mid = low + (high - low) / 2;
-            if(A[mid] < target)
-                low = mid + 1;
-            else
-                high = mid - 1;
-        }
-        res[0] = (low >= A.length || A[low] != target) ? -1 : low;
-
-        high = A.length - 1;
-        while(low <= high) {
-            mid = low + (high - low) / 2;
-            if(A[mid] > target) 
-                high = mid - 1;
-            else
-                low = mid + 1;
-        }
-        res[1] = (high < 0 || A[high] != target) ? -1 : high; 
-        return res;
-    }
-
-
-
-
-    public int[] searchRange(int[] A, int target) {
+    public int[] searchReange(int[] A, int target) {
         int[] result = new int[2];
-        int start = 0; 
+        int start = 0;
         int end = A.length - 1;
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-            if (A[mid] > target)
-                end = mid - 1;
-            else 
-                start = mid + 1;
-        }
-        result[1] = (end >= 0 && A[end] == target) ? end : -1;
-        start = 0;
         while (start <= end) {
             int mid = start + (end - start) / 2;
             if (A[mid] < target)
@@ -61,6 +25,15 @@ public class SearchForARange {
                 end = mid - 1;
         }
         result[0] = (start < A.length && A[start] == target) ? start : -1;
+        end = A.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (A[mid] > target)
+                end = mid - 1;
+            else
+                start = mid + 1;
+        }
+        result[1] = (end >= 0 && A[end] == target) ? end : -1;
         return result;
     }
 
