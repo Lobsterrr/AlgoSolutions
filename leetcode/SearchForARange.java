@@ -34,4 +34,33 @@ public class SearchForARange {
         res[1] = (high < 0 || A[high] != target) ? -1 : high; 
         return res;
     }
+
+
+
+
+    public int[] searchRange(int[] A, int target) {
+        int[] result = new int[2];
+        int start = 0; 
+        int end = A.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (A[mid] > target)
+                end = mid - 1;
+            else 
+                start = mid + 1;
+        }
+        result[1] = (end >= 0 && A[end] == target) ? end : -1;
+        start = 0;
+        end = A.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (A[mid] < target)
+                start = mid + 1;
+            else
+                end = mid - 1;
+        }
+        result[0] = (start < A.length && A[start] == target) ? start : -1;
+        return result;
+    }
+
 }
