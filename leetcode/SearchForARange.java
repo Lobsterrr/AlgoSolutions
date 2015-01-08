@@ -1,7 +1,9 @@
 /*
- * Given a sorted array of integers, find the starting and ending position of a given target value.
+ * Given a sorted array of integers, find the starting 
+ * and ending position of a given target value.
 
- * Your algorithm's runtime complexity must be in the order of O(log n).
+ * Your algorithm's runtime complexity must be in the 
+ * order of O(log n).
 
  * If the target is not found in the array, return [-1, -1].
 
@@ -51,7 +53,6 @@ public class SearchForARange {
         }
         result[1] = (end >= 0 && A[end] == target) ? end : -1;
         start = 0;
-        end = A.length - 1;
         while (start <= end) {
             int mid = start + (end - start) / 2;
             if (A[mid] < target)
