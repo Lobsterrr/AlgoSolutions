@@ -23,28 +23,23 @@
 public class PartitionList {
 
     public ListNode partition(ListNode head, int x) {
-        ListNode cur = head;
-        List<Integer> list1 = new ArrayList<Integer>();
-        List<Integer> list2 = new ArrayList<Integer>();
-        while (cur != null) {
-            if (cur.val < x) {
-                list1.add(cur.val);
+        ListNode small = new ListNode(0);
+        ListNode large = new ListNode(0);
+        ListNode cur1 = small;
+        ListNode cur2 = large;
+        while (head != null) {
+            if (head.val < x) {
+                cur1.next = head;
+                cur1 = cur1.next;
             } else {
-                list2.add(cur.val);
-            }   
-            cur = cur.next;
+                cur2.next = head;
+                cur2 = cur2.next;
+            }
+            head = head.next;
         }
-        ListNode dummy = new ListNode(0);
-        cur = dummy;
-        for (int val : list1) {
-            cur.next = new ListNode(val);
-            cur = cur.next;
-        }
-        for (int val : list2) {
-            cur.next = new ListNode(val);
-            cur = cur.next;
-        }
-        return dummy.next;
+        cur1.next = large.next;
+        cur2.next = null;
+        return small.next;
     }
 
 /*******************************************************************/
