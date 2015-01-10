@@ -20,33 +20,33 @@
  * }
  */
 public class PartitionList {
-/*  public ListNode partition(ListNode head, int x) {
-        if(head == null || head.next == null)
-            return head;
-        ArrayList<Integer> small = new ArrayList<Integer>();
-        ArrayList<Integer> large = new ArrayList<Integer>();
+
+    public ListNode partition(ListNode head, int x) {
         ListNode cur = head;
-        while(cur != null) {
-            if(cur.val < x)
-                small.add(cur.val);
-            else 
-                large.add(cur.val);
-            cur = cur.next;
-        }
-        cur = head;
-        int i = 0, j = 0;
-        while(cur != null) {
-            if(i < small.size()) {
-                cur.val = small.get(i);
-                i++;
+        List<Integer> list1 = new ArrayList<Integer>();
+        List<Integer> list2 = new ArrayList<Integer>();
+        while (cur != null) {
+            if (cur.val < x) {
+                list1.add(cur.val);
             } else {
-                cur.val = large.get(j);
-                j++;
-            }
+                list2.add(cur.val);
+            }   
             cur = cur.next;
         }
-        return head;
-    } */
+        ListNode dummy = new ListNode(0);
+        cur = dummy;
+        for (int val : list1) {
+            cur.next = new ListNode(val);
+            cur = cur.next;
+        }
+        for (int val : list2) {
+            cur.next = new ListNode(val);
+            cur = cur.next;
+        }
+        return dummy.next;
+    }
+
+/*******************************************************************/
 
     public ListNode partition(ListNode head, int x) {
         ListNode small = new ListNode(0);
