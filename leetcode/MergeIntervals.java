@@ -49,4 +49,47 @@ public clss MergeIntervals {
         }
         return intervals;
     }    
+
+/*****************************************************************************/
+
+    public List<Interval> merge(List<Interval> intervals) {
+        List<Interval> result = new ArrayList<Interval>();
+        if (intervals.size() == 0)
+            return result;
+        quicksort(intervals, 0, intervals.size() - 1);
+        Interval prev = intervals.get(0);
+        for (int i = 1; i < intervals.size(); i++) {
+            if (prev.end < intervals.get(i).start) {
+                result.add(prev);
+                prev = intervals.get(i);
+            } else {
+                int start = prev.start;
+                int end = Math.max(prev.end, intervals.get(i).end);
+                prev = new Interval(start, end);
+            }
+        }
+        result.add(prev);
+        return result;
+    }
+
+    public void quicksort(List<Interval> intervals, int low, int high) {
+        if (low >= high)
+            return;
+        int i = low;
+        for (int j = i; j <= high; j++) {
+            if (intervals.get(j).start < intervals.get(high).start) {
+                swap(intervals, i++, j);
+            }
+        }
+        swap(intervals, i, high);
+        quicksort(intervals, low, i - 1);
+        quicksort(intervals, i, high);
+    }
+
+    public void swap(List<Interval> intervals, int i, int j) {
+        Interval tmp = intervals.get(i);
+        intervals.set(i, intervals.get(j));
+        intervals.set(j, tmp);
+    }
+
 }
