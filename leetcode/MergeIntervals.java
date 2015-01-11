@@ -63,9 +63,8 @@ public clss MergeIntervals {
                 result.add(prev);
                 prev = intervals.get(i);
             } else {
-                int start = prev.start;
                 int end = Math.max(prev.end, intervals.get(i).end);
-                prev = new Interval(start, end);
+                prev = new Interval(prev.start, end);
             }
         }
         result.add(prev);
@@ -76,8 +75,8 @@ public clss MergeIntervals {
         if (low >= high)
             return;
         int i = low;
-        for (int j = i; j <= high; j++) {
-            if (intervals.get(j).start < intervals.get(high).start) {
+        for (int j = low; j < high; j++) {
+            if (intervals.get(j).start <= intervals.get(high).start) {
                 swap(intervals, i++, j);
             }
         }
