@@ -69,6 +69,21 @@ public clss MergeIntervals {
         }
         result.add(prev);
         return result;
+
+//
+        List<Interval> result = new ArrayList<Interval>();
+        quicksort(intervals, 0, intervals.size() - 1);
+        for (int i = 0; i < intervals.size(); i++) {
+            if (i > 0 && intervals.get(i).start <= result.get(result.size() - 1).end) {
+                Interval last = result.get(result.size() - 1);
+                result.add(new Interval(last.start, Math.max(last.end, intervals.get(i).end)));
+                result.remove(result.size() - 2);
+            } else {
+                result.add(intervals.get(i));
+            }
+        } 
+        return result;
+
     }
 
     public void quicksort(List<Interval> intervals, int low, int high) {
