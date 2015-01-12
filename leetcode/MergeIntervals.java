@@ -17,6 +17,30 @@
 public clss MergeIntervals {
 
     public List<Interval> merge(List<Interval> intervals) {
+        Collections.sort(intervals, new IntervalComparator());
+        List<Interval> result = new ArrayList<Interval>();
+        for (int i = 0; i < intervals.size(); i++) {
+            if (i > 0 && intervals.get(i).start <= 
+                    result.get(result.size() - 1).end)
+                result.get(result.size() - 1).end = Math.max(result.
+                        get(result.size() - 1).end, intervals.get(i).end);
+            else
+                result.add(intervals.get(i));
+        } 
+        return result;
+    }
+
+    class IntervalComparator implements Comparator<Interval> {
+    
+        public int compare(Interval i1, Interval i2) {
+            return i1.start - i2.start;
+        }
+
+    }
+
+/*****************************************************************************/
+
+    public List<Interval> merge(List<Interval> intervals) {
         List<Interval> result = new ArrayList<Interval>();
         quicksort(intervals, 0, intervals.size() - 1);
         for (int i = 0; i < intervals.size(); i++) {
