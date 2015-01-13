@@ -30,19 +30,6 @@ public class ExcelSheetColumnTitle {
             n -= 
         }
 
-
-
-        while (n > Math.pow(26, exp + 1)) {
-            exp++;
-        }
-        while (n > 0) {
-            int coe = n / (int) Math.pow(26, exp);
-            if (n > 26 && n == coe * (int) Math.pow(26, exp))
-                coe--;
-            result += coe == 0 ? 'A' : (char) (64 + coe);
-            n -= coe * Math.pow(26, exp--);
-        }
-        return result;
     }
 
 }
