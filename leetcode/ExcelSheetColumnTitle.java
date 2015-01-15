@@ -17,20 +17,17 @@ public class ExcelSheetColumnTitle {
 
     public String convertToTitle(int n) {
         String result = "";
-        int exp = 0;
-        while (n * 25 > (26 * Math.pow(26, epx + 1) - 26)) {
-            exp++;
-        }
-        while (n > 0) {
-            int coe = n * 25 / (26 * (int) Math.pow(26, exp) - 26);
-            if (n == coe * (26 * (int) Math.pow(26, exp) - 26) / 25) {
-                coe--;
-            }
-            result += coe == 0 ? 'A' : (char) (64 + coe);
-            n -= 
-        }
-
-
+		int count = 0;
+		while (n > 0) {
+			int remainder = n % (int) Math.pow(26, count + 1);
+			if (remainder == 0)
+				remainder = (int) Math.pow(26, count + 1);
+			int c = remainder / (int) Math.pow(26, count);
+			result = (char) (c + 64) + result;
+			n -= remainder;
+			count++;
+		}
+		return result;
     }
 
 }
