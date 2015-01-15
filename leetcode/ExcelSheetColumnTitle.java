@@ -17,15 +17,14 @@ public class ExcelSheetColumnTitle {
 
     public String convertToTitle(int n) {
         String result = "";
-		int count = 0;
+		long exp = 1;
 		while (n > 0) {
-			int remainder = n % (int) Math.pow(26, count + 1);
+			int remainder = (int) (n % (26 * exp));
 			if (remainder == 0)
-				remainder = (int) Math.pow(26, count + 1);
-			int c = remainder / (int) Math.pow(26, count);
-			result = (char) (c + 64) + result;
+				remainder = (int) (26 * exp);
+			result = (char) (remainder / (int) exp + 64) + result;
 			n -= remainder;
-			count++;
+			exp *= 26;
 		}
 		return result;
     }
