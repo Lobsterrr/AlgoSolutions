@@ -37,4 +37,28 @@ public class RotateList {
         cur.next = null;
         return head;
     }
+
+
+
+
+    public ListNode rotateRight(ListNode head, int n) {
+        if (head == null)
+            return head;
+        int len = 1;
+        ListNode first = head;
+        while (first.next != null) {
+            len++;
+            first = first.next;
+        }
+        first.next = head;
+        int steps = len - n % len;
+        while (steps > 0) {
+            first = first.next;
+            steps--;
+        }
+        head = first.next;
+        first.next = null;
+        return head;
+    }
+
 }
