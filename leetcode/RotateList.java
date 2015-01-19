@@ -18,46 +18,24 @@
  * }
  */
 public class RotateList {
-    public ListNode rotateRight(ListNode head, int n) {
-        if(head == null)
-            return head;
-        int len = 1;
-        ListNode cur = head;
-        while(cur.next != null) {
-            cur = cur.next;
-            len++;
-        }
-        cur.next = head;
-        int toRunSteps = len - n % len;
-        while(toRunSteps > 0) {
-            cur = cur.next;
-            toRunSteps--;
-        }
-        head = cur.next;
-        cur.next = null;
-        return head;
-    }
-
-
-
 
     public ListNode rotateRight(ListNode head, int n) {
         if (head == null)
             return head;
         int len = 1;
-        ListNode first = head;
-        while (first.next != null) {
+        ListNode cur = head;
+        while (cur.next != null) {
             len++;
-            first = first.next;
+            cur = cur.next;
         }
-        first.next = head;
+        cur.next = head;
         int steps = len - n % len;
         while (steps > 0) {
-            first = first.next;
+            cur = cur.next;
             steps--;
         }
-        head = first.next;
-        first.next = null;
+        head = cur.next;
+        cur.next = null;
         return head;
     }
 
