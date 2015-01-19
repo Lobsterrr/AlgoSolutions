@@ -29,7 +29,7 @@ public class RotateList {
             cur = cur.next;
         }
         cur.next = head;
-        for (int i = 0; i < len - n % len; cur = cur.next, i++);
+        for (int i = 0; i < len - n % len; i++, cur = cur.next);
         head = cur.next;
         cur.next = null;
         return head;
