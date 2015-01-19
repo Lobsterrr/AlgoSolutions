@@ -13,15 +13,15 @@
  * A = [3,2,1,0,4], return false.
  */
 public class JumpGame {
+
     public boolean canJump(int[] A) {
-        int maxIndex = 0;
-        for(int i = 0; i < A.length - 1; i++) {
-            maxIndex = Math.max(A[i] + i, maxIndex);
-            if(maxIndex == i)
-                return false;
-            else if(maxIndex >= A.length - 1)
+        int end = 0;
+        for (int i = 0; end >= i && i < A.length; i++) {
+            end = Math.max(end, i + A[i]);
+            if (end >= A.length - 1)
                 return true;
         }
-        return maxIndex >= A.length - 1;
+        return false;
     }
+
 }
