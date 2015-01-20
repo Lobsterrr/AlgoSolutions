@@ -47,4 +47,18 @@ public class JumpGameII {
         return cnt;
     }
 
+    public int jump(int[] A) {
+        int result = 0;
+        int end = 0;
+        int maxIndex = 0;
+        for (int i = 0; end < A.length - 1; i++) {
+            maxIndex = Math.max(maxIndex, i + A[i]);
+            if (i >= end) {
+                result++;
+                end = maxIndex;
+            }
+        }
+        return result;
+    }
+
 }
