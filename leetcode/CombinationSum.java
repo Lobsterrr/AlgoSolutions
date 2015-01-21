@@ -17,24 +17,25 @@
  * [2, 2, 3] 
  */
 public class CombinationSum {
-    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+    
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
         Arrays.sort(candidates);
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        dfs(res, list, candidates, 0, 0, target);
-        return res;
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        dfs(result, new ArrayList<Integer>(), candidates, 0, target);
+        return result;
     }
 
-    public void dfs(ArrayList<ArrayList<Integer>> res, ArrayList<Integer> list,
-            int[] num, int pos, int sum, int target) {
-        if(sum == target)
-            res.add(new ArrayList<Integer>(list));
-        if(sum < target) {
-            for(int i = pos; i < num.length; i++) {
-                list.add(num[i]);
-                dfs(res, list, num, i, sum + num[i], target);
-                list.remove(list.size() - 1);
-            }
+    public void dfs(List<List<Integer>> result, List<Integer> list, 
+            int[] candidates, int position, int target) {
+        if (target == 0) {
+            result.add(new ArrayList<Integer>(list));
+            return;
+        } 
+        for (int i = position; i <= candidates.length - 1 && target > 0; i++) {
+            list.add(candidates[i]);
+            dfs(result, list, candidates, i, target - candidates[i]);
+            list.remove(list.size() - 1);
         }
     }
+
 }
