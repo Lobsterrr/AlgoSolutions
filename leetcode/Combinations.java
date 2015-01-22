@@ -1,6 +1,6 @@
 /*
- * Given two integers n and k, return all possible combinations of k numbers out 
- * of 1 ... n.
+ * Given two integers n and k, return all possible
+ * combinations of k numbers out of 1 ... n.
 
  * For example,
  * If n = 4 and k = 2, a solution is:
@@ -15,6 +15,7 @@
  * ]
  */
 public class Combinations {
+
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (k == 1) {
@@ -33,4 +34,5 @@ public class Combinations {
         }
         return result;
     }
+
 }
