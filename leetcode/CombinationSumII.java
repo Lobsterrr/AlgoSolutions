@@ -1,6 +1,6 @@
 /*
- * Given a collection of candidate numbers (C) and a target number (T), find all 
- * unique combinations in 
+ * Given a collection of candidate numbers (C) and a 
+ * target number (T), find all unique combinations in 
  * C where the candidate numbers sums to T.
 
  * Each number in C may only be used once in the combination.
@@ -19,26 +19,27 @@
  * [1, 1, 6] 
  */
 public class CombinationSumII {
-    public ArrayList<ArrayList<Integer>> combinationSum2(int[] num, int target) {
+
+    public List<List<Integer>> combinationSum2(int[] num, int target) {
         Arrays.sort(num);
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        dfs(res, list, num, 0, 0, target);
-        return res;
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        dfs(result, new ArrayList<Integer>(), num, 0, target);
+        return result;
     }
 
-    public void dfs(ArrayList<ArrayList<Integer>> res, ArrayList<Integer> list,
-            int[] num, int pos, int sum, int target) {
-        if(sum == target)
-            res.add(new ArrayList<Integer>(list));
-        if(sum < target) {
-            for(int i = pos; i < num.length; i++) {
-                if(i > pos && num[i] == num[i - 1])
-                    continue;
-                list.add(num[i]);
-                dfs(res, list, num, i + 1, sum + num[i], target);
-                list.remove(list.size() - 1);
-            }
+    public void dfs(List<List<Integer>> result, List<Integer> list, 
+            int[] num, int position, int target) {
+        if (target == 0) {
+            result.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for (int i = position; i <= num.length - 1 && target > 0; i++) {
+            if (i > position && num[i] == num[i - 1])
+                continue;
+            list.add(num[i]);
+            dfs(result, list, num, i + 1, target - num[i]);
+            list.remove(list.size() - 1);
         }
     }
+
 }
