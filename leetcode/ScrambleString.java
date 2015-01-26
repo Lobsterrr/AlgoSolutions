@@ -43,7 +43,6 @@
  */
 public class ScrambleString {
 
-
     public boolean isScramble(String s1, String s2) {
         if (s1.equals(s2))
             return true;
@@ -53,18 +52,20 @@ public class ScrambleString {
         Arrays.sort(array2);
         if (!new String(array1).equals(new String(array2)))
             return false;
-        for (int i = 1; i < s1.length(); i++) {
+        int len = s1.length();
+        for (int i = 1; i < len; i++) {
             if (isScramble(s1.substring(0, i), s2.substring(0, i)) && 
                     isScramble(s1.substring(i), s2.substring(i)) || 
-                    isScramble(s1.substring(0, i), s2.substring(s1.length() - i)) && 
-                    isScramble(s1.substring(i), s2.substring(0, s1.length() - i)))
+                    isScramble(s1.substring(0, i), s2.substring(len - i)) && 
+                    isScramble(s1.substring(i), s2.substring(0, len - i)))
                 return true;
         }
         return false;
     }
 
-
-/*  public boolean isScramble(String s1, String s2) {
+/*****************************************************************************/
+    
+    public boolean isScramble(String s1, String s2) {
         int N = s1.length();
         if(s2.length() != N)
             return false;
@@ -89,5 +90,5 @@ public class ScrambleString {
         }
         return dp[0][0][N - 1];
     }
-*/   
+  
 }
