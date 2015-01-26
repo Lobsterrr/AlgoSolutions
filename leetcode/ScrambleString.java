@@ -79,8 +79,9 @@ public class ScrambleString {
             for(int i = 0; i + len < N; i++) {
                 for(int j = 0; j + len < N; j++) {
                     for(int k = 0; k < len; k++) {
-                        if(dp[i][j][k] && dp[i + k + 1][j + k + 1][len - 1 - k] 
-                                || dp[i][j + len - k][k] && dp[i + k + 1][j][len - 1 - k]) {
+                        if(dp[i + k + 1][j + k + 1][len - 1 - k] && 
+                                dp[i][j][k] || dp[i][j + len - k][k] && 
+                                dp[i + k + 1][j][len - 1 - k]) {
                             dp[i][j][len] = true;
                             break;
                         }
