@@ -65,14 +65,14 @@ public class ScrambleString {
 */   
 
     public boolean isScramble(String s1, String s2) {
+        if (s1.equals(s2))
+            return true;
         char[] array1 = s1.toCharArray();
         char[] array2 = s2.toCharArray();
         Arrays.sort(array1);
         Arrays.sort(array2);
         if (!new String(array1).equals(new String(array2)))
             return false;
-        if (s1.length() == 1)
-            return true;
         for (int i = 1; i < s1.length(); i++) {
             if (isScramble(s1.substring(0, i), s2.substring(0, i)) && 
                     isScramble(s1.substring(i), s2.substring(i)) || 
