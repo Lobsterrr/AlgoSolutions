@@ -65,7 +65,7 @@ public class ScrambleString {
 */   
 
     public boolean isScramble(String s1, String s2) {
-        if (s1 == null || s2 == null || s1.length() != s2.length())
+        if (s1.length() != s2.length())
             return false;
         char[] array1 = s1.toCharArray();
         char[] array2 = s2.toCharArray();
