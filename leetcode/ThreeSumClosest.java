@@ -10,23 +10,27 @@
  * 
  */
 public class ThreeSumClosest {
+
     public int threeSumClosest(int[] num, int target) {
         int result = Integer.MAX_VALUE;
         Arrays.sort(num);
-        for(int i = 0; i < num.length - 2; i++) {
-            int left = i + 1, right = num.length - 1;
-            while(left < right) {
-                int threeSum = num[i] + num[left] + num[right];
-                if(threeSum == target)
+        for (int i = 0; i < num.length - 2; i++) {
+            int start = i + 1;
+            int end = num.length - 1;
+            while (start < end) {
+                int threeSum = num[i] + num[start] + num[end];
+                if (threeSum == target) 
                     return target;
-                else if(threeSum < target)
-                    left++;
-                else 
-                    right--;
-                if(result == Integer.MAX_VALUE || Math.abs(result - target) > Math.abs(threeSum - target))
+                else if (threeSum < target)
+                    start++;
+                else
+                    end--;
+                if (result == Integer.MAX_VALUE || 
+                        Math.abs(threeSum - target) < Math.abs(result - target))
                     result = threeSum;
             }
         }
         return result;
     }
+
 }
