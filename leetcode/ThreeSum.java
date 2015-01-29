@@ -49,4 +49,37 @@ public class ThreeSum {
         return res;
     }
 
+
+    public List<List<Integer>> threeSum(int[] num) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Arrays.sort(num);
+        for (int i = 0; i < num.length; i++) {
+            if (i > 0 && num[i] == num[i - 1])
+                continue;
+            int start = i + 1;
+            int end = num.length - 1;
+            while (start < end) {
+                int threeSum = num[i] + num[start] + num[end];
+                if (threeSum == 0) {
+                    List<Integer> list = new ArrayList<Integer>();
+                    list.add(num[i]);
+                    list.add(num[start]);
+                    list.add(num[end]);
+                    result.add(list);
+                    do {
+                        start++;
+                    } while (start < end && num[start] == num[start - 1]);
+                    do {
+                        end--;
+                    } while (start < end && num[end] == num[end + 1]);
+                } else if (threeSum < 0) {
+                    start++;
+                } else if (threeSum > 0) {
+                    end--;
+                }
+            }
+        }
+        return result;
+    } 
+
 }
