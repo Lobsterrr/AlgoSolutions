@@ -32,24 +32,22 @@
 public class StringToInteger {
 
     public int atoi(String str) {
-        long result = 0;
-        int sign = 1;
-        int i = 0;
-        for (; i < str.length() && str.charAt(i) == ' '; i++);
-        if (i < str.length() && (str.charAt(i) == '+' || str.charAt(i) == '-')) {
-            sign = str.charAt(i) == '+' ? 1 : -1;
-            i++;
-        }
-        for (; i < str.length(); i++) {
+        str = str.trim();
+        double result = 0;
+        int sign = 0;
+        for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
-            if (c < '0' || c > '9')
+            if (sign == 0 && (c == '+' || c == '-'))
+                sign = c == '+' ? 1 : -1;
+            else if (c < '0' || c > '9')
                 break;
-            result = 10 * result + (c - '0');
+            else
+                result = 10 * result + (c - '0');
         }
-        result *= sign;
+        result *= (sign == - 1 ? -1 : 1);
         result = Math.min(result, Integer.MAX_VALUE);
         result = Math.max(result, Integer.MIN_VALUE);
-        return (int)result;
+        return (int) result;
     }
 
 }
