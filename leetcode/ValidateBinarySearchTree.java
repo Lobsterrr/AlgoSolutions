@@ -52,27 +52,23 @@ public class ValidateBinarySearchTree {
 /*****************************************************************************/
 
     public boolean isValidBST(TreeNode root) {
-        if(root == null)
+        if (root == null)
             return true;
-        if(root.left != null) {
-            TreeNode p = root.left;
-            if(p.val >= root.val)
-                return false;
-            while(p.right != null) {
-                if(p.right.val >= root.val)
-                    return false;
-                p = p.right;
+        if (root.left != null) {
+            TreeNode cur = root.left;
+            while (cur.right != null) {
+                cur = cur.right;
             }
+            if (root.val <= root.left.val || root.val <= cur.val)
+                return false;
         }
-        if(root.right != null) {
-            TreeNode p = root.right;
-            if(p.val <= root.val)
-                return false;
-            while(p.left != null) {
-                if(p.left.val <= root.val)
-                    return false;
-                p = p.left;
+        if (root.right != null) {
+            TreeNode cur = root.right;
+            while (cur.left != null) {
+                cur = cur.left;
             }
+            if (root.val >= root.right.val || root.val >= cur.val)
+                return false;
         }
         return isValidBST(root.left) && isValidBST(root.right);
     }
