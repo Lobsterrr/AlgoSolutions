@@ -77,29 +77,30 @@ public class ValidateBinarySearchTree {
         return isValidBST(root.left) && isValidBST(root.right);
     }
 
-/****************************** updated 2014.01.22 ***************************/
-
+/*****************************************************************************/
+    
     public boolean isValidBST(TreeNode root) {
-        if(root == null || root.left == null && root.right == null)
+        if (root == null || root.left == null && root.right == null)
             return true;
         boolean isLeftValid = true;
         boolean isRightValid = true;
-        if(root.left != null) {
-            TreeNode curLeftMax = root.left;
-            while(curLeftMax.right != null) {
-                curLeftMax = curLeftMax.right;
+        if (root.left != null) {
+            TreeNode leftMaxNode = root.left;
+            while (leftMaxNode.right != null) {
+                leftMaxNode = leftMaxNode.right;
             }
-            isLeftValid = root.val > root.left.val && root.val > curLeftMax.val 
-                && isValidBST(root.left);
+            isLeftValid = root.val > root.left.val && 
+                root.val > leftMaxNode.val && isValidBST(root.left);
         }
-        if(root.right != null) {
-            TreeNode curRightMin = root.right;
-            while(curRightMin.left != null) {
-                curRightMin = curRightMin.left;
+        if (root.right != null) {
+            TreeNode rightMinNode = root.right;
+            while (rightMinNode.left != null) {
+                rightMinNode = rightMinNode.left;
             }
-            isRightValid = root.val < root.right.val && root.val < curRightMin.val 
-                && isValidBST(root.right);
+            isRightValid = root.val < root.right.val && 
+                root.val < rightMinNode.val && isValidBST(root.right);
         }
         return isLeftValid && isRightValid;
     }
+
 }
