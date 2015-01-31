@@ -36,16 +36,15 @@
  * }
  */
 public class ValidateBinarySearchTree {
+
     public boolean isValidBST(TreeNode root) {
-        return isValidBSTHelper(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
-    public boolean isValidBSTHelper(TreeNode root, int min, int max) {
-        if(root == null)
+    public boolean isValidBST(TreeNode root, long min, long max) {
+        if (root == null)
             return true;
-        return root.val > min && root.val < max && 
-            isValidBSTHelper(root.left, min, root.val) && 
-            isValidBSTHelper(root.right, root.val, max);
+        return min < root.val && root.val < max && isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
     }
 
 /*****************************************************************************/
