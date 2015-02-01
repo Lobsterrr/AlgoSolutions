@@ -6,23 +6,6 @@
  * [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
  */
 public class PermutationsII {
-	public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
-		ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        res.add(new ArrayList<Integer>());
-		for(int i = 0; i < num.length; i++) {
-			HashSet<ArrayList<Integer>> set = new HashSet<ArrayList<Integer>>();
-			for(int j = 0; j < res.size(); j++) {
-				for(int k = 0; k <= res.get(j).size(); k++) {
-					ArrayList<Integer> list = new ArrayList<Integer>(res.get(j));
-					list.add(k, num[i]);
-					set.add(list);
-				}
-			}
-			res = new ArrayList<ArrayList<Integer>>(set);
-		}
-		return res;
-    }
-
 
     public List<List<Integer>> permuteUnique(int[] num) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
