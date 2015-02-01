@@ -5,8 +5,6 @@
  * [1,2,3] have the following permutations:
  * [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
  */
-import java.util.*;
-
 public class PermutationsII {
 	public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
 		ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
@@ -23,6 +21,25 @@ public class PermutationsII {
 			res = new ArrayList<ArrayList<Integer>>(set);
 		}
 		return res;
+    }
+
+
+    public List<List<Integer>> permuteUnique(int[] num) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        result.add(new ArrayList<Integer>());
+        for (int i = 0; i < num.length; i++) {
+            List<List<Integer>> tmp = new ArrayList<List<Integer>>();
+            for (List<Integer> list : result) {
+                for (int j = 0; j <= list.size(); j++) {
+                    List<Integer> item = new ArrayList<Integer>(list);
+                    item.add(j, num[i]);
+                    if (!tmp.contains(item))
+                        tmp.add(item);
+                }
+            }
+            result = tmp;
+        }
+        return result;
     }
 
 /***************************** updated 2014/01/06 ****************************/
