@@ -27,7 +27,6 @@ public class Permutations {
 
 /*****************************************************************************/
 
-    // This method cannot handle cases that the array of num has same elements;
     public List<List<Integer>> permute(int[] num) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         dfs(result, new ArrayList<Integer>(), num);
