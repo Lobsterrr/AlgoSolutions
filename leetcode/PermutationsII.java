@@ -25,34 +25,33 @@ public class PermutationsII {
         return result;
     }
 
-/***************************** updated 2014/01/06 ****************************/
+/*****************************************************************************/
 
-    public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> list = new ArrayList<Integer>();
+    public List<List<Integer>> permuteUnique(int[] num) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(num);
         boolean[] isVisited = new boolean[num.length];
-        dfs(res, list, num, isVisited);
-        return res; 
+        dfs(result, new ArrayList<Integer>(), num, isVisited);
+        return result;
     }
 
-    public void dfs(ArrayList<ArrayList<Integer>> res , ArrayList<Integer> list, 
+    public void dfs(List<List<Integer>> result, List<Integer> list, 
             int[] num, boolean[] isVisited) {
-        if(list.size() == num.length) {
-            res.add(new ArrayList<Integer>(list));
-            return ;
+        if (list.size() == num.length) {
+            result.add(new ArrayList<Integer>(list));
+            return;
         }
-        for(int i = 0; i < num.length; i++) {
-            if(isVisited[i] == false) {
+        for (int i = 0; i < num.length; i++) {
+            if (!isVisited[i]) {
                 isVisited[i] = true;
                 list.add(num[i]);
-                dfs(res, list, num, isVisited);
-                isVisited[i] = false;
+                dfs(result, list, num, isVisited);
                 list.remove(list.size() - 1);
-                while(i < num.length - 1 && num[i] == num[i + 1]) {
+                isVisited[i] = false;
+                while (i < num.length - 1 && num[i] == num[i + 1]) {
                     i++;
                 }
-            }   
+            }
         }
     }
 
