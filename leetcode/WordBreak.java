@@ -9,19 +9,18 @@
  * Return true because "leetcode" can be segmented as "leet code".
  */
 public class WordBreak {
-/*
+
     public boolean wordBreak(String s, Set<String> dict) {
         boolean[] dp = new boolean[s.length() + 1];
-        for(int i = 0; i < s.length(); i++) {
-            if(i > 0 && !dp[i])
-                continue;
-            for(int j = s.length(); j > i; j--) {
-                dp[j] = dp[j] || dict.contains(s.substring(i, j));
-            }  
+        for (int i = 0; i < s.length(); i++) {
+            if (i == 0 || dp[i]) {
+                for (int j = i + 1; j <= s.length(); j++) {
+                    dp[j] = dp[j] || dict.contains(s.substring(i, j));
+                }
+            }
         }
         return dp[s.length()];
-    }
-*/
+    } 
 
     public boolean wordBreak(String s, Set<String> dict) {
         boolean[] dp = new boolean[s.length() + 1];
