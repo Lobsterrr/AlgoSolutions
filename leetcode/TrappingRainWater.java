@@ -6,18 +6,21 @@
  * Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
  */
 public class TrappingRainWater {
-    public int trap_1(int[] A) {
-        int[] lMax = new int[A.length], rMax = new int[A.length];
-        for(int i = 0; i < A.length; i++) {
-            lMax[i] = Math.max(lMax[i == 0 ? i : i - 1], A[i]); 
-            rMax[A.length - 1 - i] = Math.max(rMax[A.length - i - (i == 0 ? 1 : 0)], A[A.length - 1 - i]);
+
+    public int trap(int[] A) {
+        int[] leftMax = new int[A.length];
+        int[] rightMax = new int[A.length];
+        for (int i = 0; i < A.length; i++) {
+            leftMax[i] = Math.max(leftMax[i - (i == 0 ? 0 : 1)], A[i]);
+            rightMax[A.length - 1 - i] = Math.max(rightMax[A.length - 
+                    (i == 0 ? 1 : 0) - i], A[A.length - 1 - i]);
         }
-        int res = 0;
-        for(int i = 1; i < A.length - 1; i++) {
-            res += Math.min(lMax[i], rMax[i]) - A[i];
+        int result = 0 ;
+        for (int i = 0; i < A.length; i++) {
+            result += Math.min(leftMax[i], rightMax[i]) - A[i];
         }
-        return res;
-    } 
+        return result;
+    }
 
 
     public int trap_2(int[] A) {
