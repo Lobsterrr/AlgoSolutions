@@ -24,26 +24,27 @@ public class TrappingRainWater {
 
 /*****************************************************************************/
 
-    public int trap_2(int[] A) {
-        int res = 0, i = 0, j = A.length - 1;
-        while(i < j) {
+    public int trap(int[] A) {
+        int result = 0;
+        int start = 0; 
+        int end = A.length - 1;
+        while (start < end) {
             int k;
-            if(A[i] < A[j]) {
-                k = i + 1;
-                while(A[i] > A[k]) {
-                    res += A[i] - A[k];
-                    k++;
+            if (A[start] < A[end]) {
+                k = start + 1;
+                while (A[k] < A[start]) {
+                    result += A[start] - A[k++];
                 }
-                i = k;
+                start = k;
             } else {
-                k = j - 1;
-                while(A[j] > A[k]) {
-                    res += A[j] - A[k];
-                    k--;
+                k = end - 1;
+                while (A[k] < A[end]) {
+                    result += A[end] - A[k--];
                 }
-                j = k;
+                end = k;
             }
         }
-        return res;
+        return result;
     }
+
 }
