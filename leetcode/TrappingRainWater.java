@@ -47,4 +47,24 @@ public class TrappingRainWater {
         return result;
     }
 
+/*****************************************************************************/
+
+    public int trap(int[] A) {
+        int result = 0;
+        int start = 0;
+        int end = A.length;
+        int leftMax = 0;
+        int rightMax = 0;
+        while (start < end) {
+            if (leftMax < rightMax) {
+                result += Math.max(Math.min(leftMax, rightMax) - A[start], 0);
+                leftMax = Math.max(leftMax, A[start++]);
+            } else {
+                result += Math.max(Math.min(leftMax, rightMax) - A[--end], 0);
+                rightMax = Math.max(rightMax, A[end]);
+            }
+        }
+        return result;
+    }
+
 }
