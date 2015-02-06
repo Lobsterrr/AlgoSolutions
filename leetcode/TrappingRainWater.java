@@ -22,6 +22,7 @@ public class TrappingRainWater {
         return result;
     }
 
+/*****************************************************************************/
 
     public int trap_2(int[] A) {
         int res = 0, i = 0, j = A.length - 1;
