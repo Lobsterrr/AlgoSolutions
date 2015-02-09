@@ -29,4 +29,17 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		return Math.max(max, len - i);
     }
 
+    public int lengthOfLongestSubstring(String s) {
+        boolean[] occur = new boolean[127];
+        int result = 0;
+        for (int i = 0, j = 0; j < s.length(); i++) {
+            for (; j < s.length() && !occur[s.charAt(j)]; j++) {
+                occur[s.charAt(j)] = true;
+            }
+            result = Math.max(result, j - i);
+            occur[s.charAt(i)] = false;
+        }
+        return result;
+    }
+
 }
