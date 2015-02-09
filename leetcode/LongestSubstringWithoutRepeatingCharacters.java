@@ -4,8 +4,8 @@
  * "bbbbb" the longest substring is "b", with the length of 1.
  */
 public class LongestSubstringWithoutRepeatingCharacters {
-	public int lengthOfLongestSubstring(String s) {
 
+	public int lengthOfLongestSubstring(String s) {
 		int len = s.length();
 		int max = 0;
 		boolean[] occur = new boolean[256];
