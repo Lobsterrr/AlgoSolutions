@@ -3,11 +3,6 @@
  * the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For 
  * "bbbbb" the longest substring is "b", with the length of 1.
  */
- 
-package info.mitcc.leetcode;
-
-import java.util.ArrayList;
-
 public class LongestSubstringWithoutRepeatingCharacters {
 	public int lengthOfLongestSubstring(String s) {
 
