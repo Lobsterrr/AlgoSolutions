@@ -8,7 +8,7 @@
 public class LongestSubstringWithoutRepeatingCharacters {
 
     public int lengthOfLongestSubstring(String s) {
-        boolean[] occur = new boolean[256];
+        boolean[] occur = new boolean[127];
         int result = 0;
         int i = 0; 
         int j = 0;
