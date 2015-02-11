@@ -24,8 +24,7 @@ public class MedianOfTwoSortedArrays {
         while (b < B.length) {
             C[c++] = B[b++];
         }
-        double result = 0;
-        result = C[C.length / 2];
+        double result = C[C.length / 2];
         if (C.length % 2 == 0) {
             result += C[C.length / 2 - 1];
             result /= 2;
