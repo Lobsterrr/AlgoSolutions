@@ -49,7 +49,7 @@ public class MedianOfTwoSortedArrays {
         if (k == 0)
             return Math.min(A[aStart], B[bStart]);
         int aMid = aStart + aLen * k / (aLen + bLen);
-        int bMid = bStart + k - aMid - 1 + aStart;
+        int bMid = bStart + k - aLen * k / (aLen + bLen) - 1;
         if (A[aMid] > B[bMid]) {
             k -= (bMid - bStart + 1);
             aEnd = aMid;
