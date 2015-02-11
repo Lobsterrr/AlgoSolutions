@@ -12,11 +12,7 @@ public class MedianOfTwoSortedArrays {
         int b = 0;
         int c = 0;
         while (a < A.length && b < B.length) {
-            if (A[a] < B[b]) {
-                C[c++] = A[a++];
-            } else {
-                C[c++] = B[b++];
-            }
+            C[c++] = A[a] < B[b] ? A[a++] : B[b++];
         }
         while (a < A.length) {
             C[c++] = A[a++];
