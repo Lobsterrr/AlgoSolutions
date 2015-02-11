@@ -20,10 +20,8 @@ public class MedianOfTwoSortedArrays {
                 C[c++] = B[b++];
         }
         double result = C[C.length / 2];
-        if (C.length % 2 == 0) {
-            result += C[C.length / 2 - 1];
-            result /= 2;
-        }
+        if (C.length % 2 == 0) 
+            result = (result + C[C.length / 2 - 1]) / 2;
         return result;
     }
 
