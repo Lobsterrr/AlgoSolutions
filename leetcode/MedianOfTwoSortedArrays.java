@@ -7,7 +7,6 @@
 public class MedianOfTwoSortedArrays {
 
     public double findMediaSortedArrays(int A[], int B[]) {
-        double result = 0;
         int[] C = new int[A.length + B.length];
         int a = 0;
         int b = 0;
@@ -25,10 +24,13 @@ public class MedianOfTwoSortedArrays {
         while (b < B.length) {
             C[c++] = B[b++];
         }
-        if (C.length % 2 == 0)
-            return (double) (C[C.length / 2 - 1] + C[C.length / 2]) / 2;
-        else
-            return (double) C[C.length / 2];
+        double result = 0;
+        result = C[C.length / 2];
+        if (C.length % 2 == 0) {
+            result += C[C.length / 2 - 1];
+            result /= 2;
+        }
+        return result;
     }
 
 }
