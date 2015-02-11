@@ -25,4 +25,43 @@ public class MedianOfTwoSortedArrays {
         return result;
     }
 
+/*****************************************************************************/
+
+    public double findMedianSortedArrays(int A[], int B[]) {
+        int aLen = A.length;
+        int bLen = B.length;
+        if ((aLen + bLen) % 2 == 1)
+            return findKth(A, 0, aLen - 1, B, 0, bLen - 1, (aLen + bLen) / 2);
+        else
+            return (findKth(A, 0, aLen - 1, B, 0, bLen - 1, 
+                        (aLen + bLen) / 2) + findKth(A, 0, aLen - 1, 
+                            B, 0, bLen - 1, (aLen + bLen) / 2 - 1)) / 2;
+    }
+
+    public double findKth(int[] A, int aStart, int aEnd, 
+            int[] B, int bStart, int bEnd, int k) {
+        int aLen = aEnd - aStart + 1;
+        int bLen = bEnd - bStart + 1;
+        if (aLen == 0)
+            return B[bStart + k];
+        if (bLen == 0)
+            return A[aStart + k];
+        if (k == 0)
+            return Math.min(A[aStart], B[bStart]);
+        int aMid = aLen * k / (aLen + bLen);
+        int bMid = k - aMid - 1;
+        aMid += aStart;
+        bMid += bStart;
+        if (A[aMid] > B[bMid]) {
+            k -= (bMid - bStart + 1);
+            aEnd = aMid;
+            bStart = bMid + 1;
+        } else {
+            k -= (aMid - aStart + 1);
+            bEnd = bMid;
+            aStart = aMid + 1;
+        }
+        return findKth(A, aStart, aEnd, B, bStart, bEnd, k);
+    }
+
 }
