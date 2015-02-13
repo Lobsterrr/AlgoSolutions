@@ -32,7 +32,6 @@ public class PalindromePartitioning {
 			}
 		}
 		return result;
-        
     }
 
     public boolean isPalindrome(String s) {
