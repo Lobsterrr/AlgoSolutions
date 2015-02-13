@@ -25,8 +25,7 @@ public class PalindromePartitioning {
         }
 		for (int i = 1; i < s.length(); i++) {
 			if (isPalindrome(s.substring(0, i))) {
-				List<List<String>> tmp = tmp = partition(s.substring(i));
-				for (List<String> list : tmp) {
+				for (List<String> list : partition(s.substring(i))) {
 					list.add(0, s.substring(0, i));
 					result.add(list);
 				}
