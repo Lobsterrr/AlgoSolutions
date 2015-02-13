@@ -15,35 +15,32 @@
 
 
 public class PalindromePartitioning {
-    
-    public ArrayList<ArrayList<String>> partition(String s) {
-        ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
-        ArrayList<String> list = new ArrayList<String>();
-        if (s.length() == 1) {
-            list.add(s);
-            res.add(list);
-            return res;
-        }
+
+    public List<List<String>> partition(String s) {
+        List<List<String>> result = new ArrayList<List<String>>();
         if (isPalindrome(s)) {
+		    List<String> list = new ArrayList<String>();
             list.add(s);
-            res.add(list);
+            result.add(list);
         }
-        for (int i = 1; i < s.length(); i++) {
-            if (isPalindrome(s.substring(0, i))) {
-                ArrayList<ArrayList<String>> temp = partition(s.substring(i));
-                for (ArrayList<String> subList : temp) {
-                    subList.add(0, s.substring(0, i));
-                    res.add(subList);
-                }
-            }
-        }
-        return res;
+		for (int i = 1; i < s.length(); i++) {
+			if (isPalindrome(s.substring(0, i))) {
+				List<List<String>> tmp = tmp = partition(s.substring(i));
+				for (List<String> list : tmp) {
+					list.add(0, s.substring(0, i));
+					result.add(list);
+				}
+			}
+		}
+		return result;
+        
     }
 
     public boolean isPalindrome(String s) {
-        for (int i = 0; i < s.length() / 2; i++) 
+        for (int i = 0; i < s.length() / 2; i++) {
             if (s.charAt(i) != s.charAt(s.length() - 1 - i))
                 return false;
+        }
         return true;
     }
 
