@@ -26,4 +26,23 @@ public class PalindromePartitioningII {
 		}
 		return dp[0] - 1;
 	}
+
+
+    public int minCut(String s) {
+        int[] dp = new int[s.length() + 1];
+        boolean[][] isPalindrome = new boolean[s.length()][s.length()];
+        for (int i = 0; i <= s.length(); i++) {
+            dp[i] = s.length() - i;
+        }
+        for (int i = s.length() - 1; i >= 0; i--) {
+            for (int j = i; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j) && (j - i <= 1 || isPalindrome[i + 1][j - 1])) {
+                    dp[i] = Math.min(dp[i], dp[j + 1] + 1);
+                    isPalindrome[i][j] = true;
+                }
+            }       
+        }
+        return dp[0] - 1;
+    } 
+
 }
