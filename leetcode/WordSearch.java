@@ -38,10 +38,10 @@ public class WordSearch {
             return true;
         String s = word.substring(1);
         board[i][j] = '#';
-        boolean flag = dfs(board, i - 1, j, s) || dfs(board, i + 1, j, s) || 
+        boolean result = dfs(board, i - 1, j, s) || dfs(board, i + 1, j, s) || 
                     dfs(board, i, j - 1, s) || dfs(board, i, j + 1, s);
         board[i][j] = word.charAt(0);
-        return flag;
+        return result;
     }
 
 }
