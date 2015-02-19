@@ -9,7 +9,7 @@ __author__ = 'SUN'
 
 import time
 
-def calculate_1():
+def calculate():
     cnt = 0
     for i in range(0, 1000, 3):
         cnt += i
@@ -24,5 +24,5 @@ def calculate_1():
 
 if __name__ == '__main__':
     start = time.clock()
-    calculate_1()
+    calculate()
     print("Run time is", time.clock() - start)
