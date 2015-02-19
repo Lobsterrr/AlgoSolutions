@@ -10,16 +10,8 @@ __author__ = 'SUN'
 import time
 
 def calculate():
-    cnt = 0
-    for i in range(0, 1000, 3):
-        cnt += i
-    for i in range(0, 1000, 5):
-        if i % 3 != 0:
-            cnt += i
-
-    count = 0
-    count += [i for i in (0, 1000, 3)]
-    print(cnt)
+    count = sum(x for x in range(0, 1000, 3)) + \
+            sum(x if x % 3 != 0 else 0 for x in range(0, 1000, 5))
     print(count)
 
 if __name__ == '__main__':
