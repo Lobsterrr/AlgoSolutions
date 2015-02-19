@@ -7,12 +7,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 __author__ = 'SUN'
 
-def calculate():
-    cnt = 0
-    for i in range(0, 1000):
-        if i % 3 == 0 or i % 5 == 0:
-            cnt += i
-    print(cnt)
+import time
 
 def calculate_1():
     cnt = 0
@@ -21,8 +16,13 @@ def calculate_1():
     for i in range(0, 1000, 5):
         if i % 3 != 0:
             cnt += i
+
+    count = 0
+    count += [i for i in (0, 1000, 3)]
     print(cnt)
+    print(count)
 
 if __name__ == '__main__':
-    calculate()
+    start = time.clock()
     calculate_1()
+    print("Run time is", time.clock() - start)
