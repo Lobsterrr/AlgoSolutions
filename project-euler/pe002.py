@@ -5,12 +5,13 @@ terms will be: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 By considering the terms in the Fibonacci sequence whose values
 do not exceed four million, find the sum of the even-valued terms.
 '''
+import time
 
 __author__ = 'SUN'
 
 def calculate():
     total = 0
-    a,b = 1, 1
+    a, b = 1, 1
     while b <= 4000000:
         a, b = b, a + b
         if b % 2 == 0:
@@ -18,5 +19,7 @@ def calculate():
     print(total)
 
 if __name__ == '__main__':
+    start = time.clock()
     calculate()
+    print('Run time is', time.clock() - start)
 
