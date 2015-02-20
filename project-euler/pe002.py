@@ -10,13 +10,11 @@ import time
 __author__ = 'SUN'
 
 def calculate():
-    total = 0
-    a, b = 1, 1
+    result, a, b = 0, 1, 1
     while b <= 4000000:
         a, b = b, a + b
-        if b % 2 == 0:
-            total += b
-    print(total)
+        result += b if b % 2 == 0 else 0
+    print(result)
 
 if __name__ == '__main__':
     start = time.clock()
