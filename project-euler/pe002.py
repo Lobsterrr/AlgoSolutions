@@ -20,4 +20,3 @@ if __name__ == '__main__':
     start = time.clock()
     calculate()
     print('Run time is', time.clock() - start)
-
