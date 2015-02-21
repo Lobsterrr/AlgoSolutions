@@ -13,7 +13,7 @@ def largest_prime_factor(n):
             n //= i
         else:
             i += 1
-    print(n)
+    return n
 
 if __name__ == '__main__':
-    largest_prime_factor(600851475143)
+    print(largest_prime_factor(600851475143))
