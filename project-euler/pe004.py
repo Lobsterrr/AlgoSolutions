@@ -1,3 +1,5 @@
+import time
+
 __author__ = 'SUN'
 
 '''
@@ -40,4 +42,6 @@ def find_max_palindrome_1(min, max):
     return max_palindrome
 
 if __name__ == '__main__':
+    start = time.clock()
     print(find_max_palindrome(100, 999))
+    print('Runtime is', time.clock() - start)
