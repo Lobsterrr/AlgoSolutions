@@ -9,10 +9,7 @@ divisible by all of the numbers from 1 to 20?
 '''
 
 def gcd(a, b):
-    if b == 0:
-        return  a
-    else:
-        return gcd(b, a % b)
+    return a if b == 0 else gcd(b, a % b)
 
 def gcd_1(a, b):
     while b != 0:
