@@ -23,5 +23,5 @@ def lcm_result(start, end):
         return lcm(start, lcm_result(start + 1, end))
 
 if __name__ == '__main__':
-    print(pow(2,4) * pow(3, 2) * 5 * 7 * 11 * 13 * 17 * 19)
+    print(pow(2, 4) * pow(3, 2) * 5 * 7 * 11 * 13 * 17 * 19)
     print(lcm_result(1, 20))
