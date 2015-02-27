@@ -12,7 +12,7 @@ if __name__ == '__main__':
     prime[0] = prime[1] = False
     for i in range(2, (int)(200000 ** 0.5)):
         if prime[i]:
-            j = i * i;
+            j = i * i
             while j < 200000:
                 prime[j] = False
                 j += i;
