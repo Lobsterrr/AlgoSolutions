@@ -15,7 +15,7 @@ if __name__ == '__main__':
             j = i * i
             while j < 200000:
                 prime[j] = False
-                j += i;
+                j += i
     cnt = 0
     for i in range(200000):
         if prime[i]:
