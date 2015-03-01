@@ -10,6 +10,4 @@ from pe069 import prime_sieve
 __author__ = 'SUN'
 
 if __name__ == '__main__':
-    prime = prime_sieve(150000)
-    print(prime.__len__())
-    print(prime[10000])
+    print(prime_sieve(150000)[10000])
