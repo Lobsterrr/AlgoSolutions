@@ -10,22 +10,6 @@ from pe069 import prime_sieve
 __author__ = 'SUN'
 
 if __name__ == '__main__':
-    prime = [True] * 200000
-    prime[0] = prime[1] = False
-    for i in range(2, (int)(200000 ** 0.5)):
-        if prime[i]:
-            j = i * i
-            while j < 200000:
-                prime[j] = False
-                j += i
-    cnt = 0
-    for i in range(200000):
-        if prime[i]:
-            cnt += 1
-        if cnt == 10001:
-            print(i)
-            break
-
     prime = prime_sieve(150000)
     print(prime.__len__())
     print(prime[10000])
