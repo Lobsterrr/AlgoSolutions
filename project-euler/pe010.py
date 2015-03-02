@@ -6,21 +6,11 @@ Find the sum of all the primes below two million.
 '''
 
 import time
+from pe069 import prime_sieve
 
 __author__ = 'SUN'
 
 if __name__ == '__main__':
     start = time.clock()
-    prime = [True] * 2000000
-    prime[0] = prime[1] = False
-    for i in range(2, int(2000000 ** 0.5)):
-        if prime[i]:
-            for j in range(i * i, 2000000, i):
-                prime[j] = False
-
-    primeSum = 0
-    for i in range(2000000):
-        if prime[i]:
-            primeSum += i
-    print(primeSum)
+    print(sum(prime_sieve(2000000)))
     print('Runtime is', time.clock() - start)
