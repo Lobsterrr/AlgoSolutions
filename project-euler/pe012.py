@@ -22,10 +22,12 @@ over five divisors.
 What is the value of the first triangle number to have over
 five hundred divisors?
 '''
+import time
 
 __author__ = 'SUN'
 
 if __name__ == '__main__':
+    start = time.clock()
     i = 1
     tria = 0
     cnt = 2
@@ -39,3 +41,5 @@ if __name__ == '__main__':
         if int(tria ** 0.5) ** 2 == tria:
             cnt -= 1
     print(tria)
+
+    print('Runtime is', time.clock() - start)
