@@ -27,10 +27,7 @@ import time
 __author__ = 'SUN'
 
 def number_of_divisors(n):
-    count = 2
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            count += 2
+    count = sum(2 if n % i == 0 else 0 for i in range(2, int(n ** 0.5) + 1))
     if int(n ** 0.5) ** 2 == n:
         count -= 1
     return count
@@ -42,19 +39,5 @@ if __name__ == '__main__':
     while number_of_divisors(tria) <= 500:
         tria += i
         i += 1
-    print(tria)
-
-
-    # cnt = 2
-    # while cnt <= 500:
-    #     tria += i
-    #     i += 1
-    #     cnt = 2
-    #     for j in range(2, int(tria ** 0.5) + 1):
-    #         if tria % j == 0:
-    #             cnt += 2
-    #     if int(tria ** 0.5) ** 2 == tria:
-    #         cnt -= 1
     # print(tria)
-
-    print('Runtime is', time.clock() - start)
+    print(tria,'\n','Runtime is', time.clock() - start)
