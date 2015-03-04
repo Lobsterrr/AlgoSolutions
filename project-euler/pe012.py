@@ -39,5 +39,4 @@ if __name__ == '__main__':
     while number_of_divisors(tria) <= 500:
         tria += i
         i += 1
-    # print(tria)
     print(tria,'\n','Runtime is', time.clock() - start)
