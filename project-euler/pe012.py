@@ -27,10 +27,22 @@ import time
 __author__ = 'SUN'
 
 def number_of_divisors(n):
-    count = sum(2 if n % i == 0 else 0 for i in range(2, int(n ** 0.5) + 1))
-    if int(n ** 0.5) ** 2 == n:
-        count -= 1
-    return count
+    divisors = 1
+    count = 0
+    while n % 2 == 0:
+        count += 1
+        n //= 2
+    divisors *= (count + 1)
+    p = 3
+    while n != 1:
+        count = 0
+        while n % p == 0:
+            count += 1
+            n //= p
+        divisors *= (count + 1)
+        p += 2
+    return divisors
+
 
 if __name__ == '__main__':
     start = time.clock()
