@@ -34,9 +34,7 @@ def number_of_divisors(n):
 
 if __name__ == '__main__':
     start = time.clock()
-    step = 1
-    tria = 0
-    while number_of_divisors(tria) <= 500:
-        tria += step
-        step += 1
-    print(tria,'\n','Runtime is', time.clock() - start)
+    i = 1
+    while number_of_divisors(i * (i + 1) // 2) <= 500:
+        i += 1
+    print(i * (i + 1) // 2,'\n','Runtime is', time.clock() - start)
