@@ -112,7 +112,3 @@ if __name__ == '__main__':
         res += int(s[i][0:12])
     res = str(res)[0:10]
     print(res)
-
-	result = sum(int(s[i][0:12]) for i in range(len(s)))
-	result = str(result[0:10])
-	print(result)
