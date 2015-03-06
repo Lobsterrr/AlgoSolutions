@@ -1,7 +1,8 @@
 '''
 Large sum
 Problem 13
-Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+Work out the first ten digits of the sum of
+the following one-hundred 50-digit numbers.
 '''
 __author__ = 'SUN'
 
@@ -111,3 +112,7 @@ if __name__ == '__main__':
         res += int(s[i][0:12])
     res = str(res)[0:10]
     print(res)
+
+	result = sum(int(s[i][0:12]) for i in range(len(s)))
+	result = str(result[0:10])
+	print(result)
