@@ -42,3 +42,5 @@ if __name__ == '__main__':
     for i in range(1, 1001):
         res += letter_count(i)
     print(res)
+
+    print(sum(letter_count(i) for i in range(1, 1001)))
