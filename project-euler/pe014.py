@@ -49,4 +49,4 @@ if __name__ == '__main__':
             max_length = collatz(i)
             res = i
     print(res)
-    print("Runtime is", time.clock() - start, 'seconds')
+    print("Runtime is", time.clock() - start)
