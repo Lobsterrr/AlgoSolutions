@@ -8,8 +8,8 @@ __author__ = 'SUN'
 
 if __name__ == '__main__':
     num = 2 ** 1000
-    res = 0
+    result = 0
     while num > 0:
-        res += num % 10
+        result += num % 10
         num //= 10
-    print(res)
+    print(result)
