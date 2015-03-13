@@ -11,7 +11,7 @@ How many such routes are there through a 20×20 grid?
 __author__ = 'SUN'
 
 if __name__ == '__main__':
-    res = 1
+    result = 1
     for i in range(1, 21):
-        res = res * (41 - i) // i
-    print(res)
+        result = result * (41 - i) // i
+    print(result)
