@@ -9,9 +9,13 @@
 public class NumberOfOneBits {
 
     public int hammingWeight(int n) {
+        return hammingWeight(n);
+    }
+
+    public int helper(long n) {
         if (n == 0 || n == 1)
-            return n;
-        return 1 + hammingWeight(n - (int) Math.pow(2, (int) (Math.log(n) / Math.log(2))));
+            return (int) n;
+        return 1 + helper(n - (long) Math.pow(2, (long) (Math.log(n) / Math.log(2))));
     }
 
 }
