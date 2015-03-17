@@ -17,5 +17,4 @@ public class NumberOfOneBits {
         n = (n & 0x0000ffff) + ((n >>> 16) & 0x0000ffff);
         return n;
     }
-
 }
