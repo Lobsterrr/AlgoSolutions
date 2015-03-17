@@ -8,7 +8,7 @@ public class NumberOfOneBits {
         n = (n & 0x33333333) + ((n >>> 2) & 0x33333333);
         n = (n & 0x0f0f0f0f) + ((n >>> 4) & 0x0f0f0f0f);
         n = (n & 0x00ff00ff) + ((n >>> 8) & 0x00ff00ff);
-        n = (n >>> 16);
+        n = (n & 0x0000ffff) + ((n >>> 16) & 0x0000ffff);
         return n;
     }
 
