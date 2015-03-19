@@ -10,10 +10,7 @@ public class RotateArray {
             list.add(nums[i]);
         }
         for (int i = nums.length - 1; i >= 0; i--) {
-            if (i >= k)
-                nums[i] = nums[i - k];
-            else 
-                nums[i] = list.get(i);
+            nums[i] = i >= k ? nums[i - k] : list.get(i);
         }
     }
 
