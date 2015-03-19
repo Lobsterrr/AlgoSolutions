@@ -22,7 +22,14 @@ public class RotateArray {
     }
 
     public void rotate(int[] nums, int k) {
-        k = k 
+        k %= nums.length;
+        int[] tmp = new int[k];
+        for (int i = 0; i < k; i++) {
+            tmp[i] = nums[nums.length - k + i];
+        }
+        for (int i = nums.length - 1; i >= 0; i--) {
+            nums[i] = i >= k ? nums[i - k] : tmp[i];
+        }
     }
 
 }
