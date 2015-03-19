@@ -4,19 +4,16 @@
 public class RotateArray {
 
     public void rotate(int[] nums, int k) {
-        List<Integer> l1 = new ArrayList<Integer>();
-        List<Integer> l2 = new ArrayList<Integer>();
-        for (int i = 0; i < nums.length; i++) {
-            if (i < nums.length - k) 
-                l1.add(nums[i]);
-            else 
-                l2.add(nums[i]);
+        k = k % nums.length;
+        List<Integer> list = new ArrayList<Integer>();
+        for (int i = nums.length - k; i < nums.length; i++) {
+            list.add(nums[i]);
         }
-        for (int i = 0; i < nums.length; i++) {
-            if (i < nums.length - k)
-                num[i] = l2.get(i);
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (i >= k)
+                nums[i] = nums[i - k];
             else 
-                num[i] = l1.get(nums.length - i);
+                nums[i] = list.get(i);
         }
     }
 
