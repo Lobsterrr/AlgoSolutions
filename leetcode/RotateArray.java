@@ -10,6 +10,7 @@
  */
 public class RotateArray {
 
+    // O(n) time, O(k) space
     public void rotate(int[] nums, int k) {
         k %= nums.length;
         int[] tmp = new int[k];
@@ -21,7 +22,7 @@ public class RotateArray {
         }
     }
 
-
+    // O(k * n) time, O(1) space
     public void rotate(int[] nums, int k) {
 		k %= nums.length;
 		for (int i = 0; i < k; i++) {
