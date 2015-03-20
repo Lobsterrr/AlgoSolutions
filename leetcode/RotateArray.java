@@ -10,7 +10,7 @@
  */
 public class RotateArray {
 
-    // O(n) time, O(k) space
+/********************* O(n) time, O(k) space ***********************/
     public void rotate(int[] nums, int k) {
         k %= nums.length;
         int[] tmp = new int[k];
@@ -22,7 +22,8 @@ public class RotateArray {
         }
     }
 
-    // O(k * n) time, O(1) space
+/******************* O(k * n) time, O(1) space *********************/
+
     public void rotate(int[] nums, int k) {
 		k %= nums.length;
 		for (int i = 0; i < k; i++) {
@@ -33,16 +34,8 @@ public class RotateArray {
 		}
 	}
 
+/************************** O(n) time, O(1) space ******************/
     
-    public int gcd(int a, int b) {
-        while (b != 0) {
-            int tmp = a;
-            a = b;
-            b = tmp % a;
-        }
-        return a;
-    }
-
     public void rotate(int[] nums, int k) {
         for (int i = 0; i < gcd(nums.length, k); i++) {
             int tmp = nums[i];
@@ -58,20 +51,13 @@ public class RotateArray {
         }
     }
 
-    public void rotate(int[] nums, int k) {
-        int d = gcd(nums.length, k);
-        for (int i = 0; i < d; i++) {
-            int tmp = nums[nums.length - 1 - i];
-            int j = nums.length - 1 - i;
-            while (true) {
-                int p = (j - d) % nums.length;
-                if (p < 0 || p == j)
-                    break;
-                nums[j] = nums[p];
-                j = p;
-            }
-            nums[j] = tmp;
+    public int gcd(int a, int b) {
+        while (b != 0) {
+            int tmp = a;
+            a = b;
+            b = tmp % a;
         }
+        return a;
     }
 
 }
