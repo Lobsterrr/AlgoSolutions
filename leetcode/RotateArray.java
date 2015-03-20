@@ -33,5 +33,45 @@ public class RotateArray {
 		}
 	}
 
+    
+    public int gcd(int a, int b) {
+        while (b != 0) {
+            int tmp = a;
+            a = b;
+            b = tmp % a;
+        }
+        return a;
+    }
+
+    public void rotate(int[] nums, int k) {
+        for (int i = 0; i < gcd(nums.length, k); i++) {
+            int tmp = nums[i];
+            int j = i;
+            while (true) {
+                int p = (j + nums.length - k % nums.length) % nums.length;
+                if (p == i)
+                    break;
+                nums[j] = nums[p];
+                j = p;
+            }
+            nums[j] = tmp;
+        }
+    }
+
+    public void rotate(int[] nums, int k) {
+        int d = gcd(nums.length, k);
+        for (int i = 0; i < d; i++) {
+            int tmp = nums[nums.length - 1 - i];
+            int j = nums.length - 1 - i;
+            while (true) {
+                int p = (j - d) % nums.length;
+                if (p < 0 || p == j)
+                    break;
+                nums[j] = nums[p];
+                j = p;
+            }
+            nums[j] = tmp;
+        }
+    }
 
 }
