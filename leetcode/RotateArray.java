@@ -9,6 +9,7 @@
  * at least 3 different ways to solve this problem.
  */
 public class RotateArray {
+
 /********************* O(n) time, O(k) space ***********************/
 
     public void rotate(int[] nums, int k) {
