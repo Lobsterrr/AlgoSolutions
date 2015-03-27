@@ -22,20 +22,17 @@ public class Random {
         return result;
     }
 
-
-
     public int rand10() {
-        int temp1, temp2;
-        do {
-            temp1 = rand7();
-        } while(temp1 > 5);
-        do {
-            temp2 = rand7();
-        } while(temp2 > 2);
-        return temp1 + 5 * (temp2 - 1);
+        int i = Integer.MAX_VALUE;
+        int j = Integer.MAX_VALUE;
+        while (i > 5) {
+            i = rand7();
+        }
+        while (j > 2) {
+            j = rand7();
+        }
+        return i + 5 * (j - 1);
     }
-
-
 
     public int rand10() {
         int i;
