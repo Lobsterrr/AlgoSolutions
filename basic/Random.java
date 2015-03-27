@@ -33,10 +33,10 @@ public class Random {
     }
 
     public int rand10() {
-        int i;
-        do {
+        int i = Integer.MAX_VALUE;
+        while (i > 40) {
             i = 7 * (rand7() - 1) + rand7();
-        } while(i > 40);
+        }
         return i % 10 + 1;
     }
 }
