@@ -21,6 +21,10 @@ public class Random {
         return result;
     }
 
+    public int rand10() {
+        
+    }
+
 
 
     public int rand10() {
