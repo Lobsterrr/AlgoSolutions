@@ -2,27 +2,24 @@ public class Random {
     public int rand7();
 
     //Use rand7() to generate rand10()
+
     public int rand10() {
-        int vals[7][7] = {
+        int array[7][7] = {
             {1, 2, 3, 4, 5, 6, 7},
             {8, 9, 10, 1, 2, 3, 4},
             {5, 6, 7, 8, 9, 10, 1},
             {2, 3, 4, 5, 6, 7, 8},
             {9, 10, 1, 2, 3, 4, 5},
             {6, 7, 8, 9, 10, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0},
-        };
+            {0, 0, 0, 0, 0, 0, 0}
+        }        
         int result = 0;
-        while(result = 0) {
+        while (result == 0) {
             int i = rand7();
             int j = rand7();
-            result = vals[i - 1][j - 1];
+            result = array[i - 1][j - 1];
         }
         return result;
-    }
-
-    public int rand10() {
-        
     }
 
 
