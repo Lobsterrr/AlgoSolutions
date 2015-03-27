@@ -15,9 +15,7 @@ public class Random {
         }        
         int result = 0;
         while (result == 0) {
-            int i = rand7();
-            int j = rand7();
-            result = array[i - 1][j - 1];
+            result = array[rand7() - 1][rand7() - 1];
         }
         return result;
     }
