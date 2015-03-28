@@ -6,19 +6,20 @@ public class Library {
 
     public int gcd(int a, int b) {
         while (b != 0) {
-            int temp = a;
+            int tmp = a;
             a = b;
-            b = temp % a;
+            b = tmp % a;
         }
         return a;
     }
 
     public int log2(int a) {
-        int res = 0;
-        while(a >= 2) {
-            res++;
+        int result = 0;
+        while (a >= 2) {
+            result++;
             a >>= 1;
         }
-        return res;
+        return result;
     }
+
 }
