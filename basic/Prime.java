@@ -14,13 +14,13 @@ public class Prime {
         return true;
     }
 
-    public static boolean[] isPrimeArray(int n) {
+    public boolean[] isPrimeArray(int n) {
         boolean[] prime = new boolean[n + 1];
         Arrays.fill(prime, true);
         prime[0] = prime[1] = false;
-        for(int i = 2; i * i <= n; i++) {
-            if(prime[i]) {
-                for(int j = i * i; j <= n; j += i) {
+        for (int i = 2; i * i <= n; i++) {
+            if (prime[i]) {
+                for (int j = i * i; j <= n; j += i) {
                     prime[j] = false;
                 }
             }
@@ -28,23 +28,25 @@ public class Prime {
         return prime;
     }
 
-    public static int[] primeList(int n) {
-        TreeSet<Integer> set = new TreeSet<Integer>();
-        boolean[] list = new boolean[n + 1];
-        for(int i = 0; i <= n; i++)
-            list[i] = true;
-        for(int i = 2; i <= n; i++) {
-            if(list[i]) {
-                set.add(i);
-                for(int j = i * i; j <= n; j += i) {
-                    list[j] = false;
+    public int[] primes(int n) {
+        boolean[] isPrime = new boolean[n + 1];
+        Arrays.fill(isPrime, true);
+        isPrime[0] = isPrime[1] = false;
+        int primeCount = 0;
+        for (int i = 2; i <= n; i++) {
+            if (isPrime[i]) {
+                primeCount++;
+                for (int j = i * i; j <= n; j += i) {
+                    isPrime[j] = false;
                 }
             }
         }
-        int[] primes = new int[set.size()];
+        int[] primes = new int[primeCount];
         int i = 0;
-        for(int value : set) {
-            primes[i++] = value;
+        for (int j = 0; j < n + 1; j++) {
+            if (isPrime[j]) {
+                primes[i++] = j;
+            }
         }
         return primes;
     }
