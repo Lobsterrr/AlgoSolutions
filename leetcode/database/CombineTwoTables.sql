@@ -1,1 +1,2 @@
-SELECT Person.FirstName, Person.LastName, Address.City, Address.State FROM Person, Address WHERE Person.PersonId = Address.PersonId;
+SELECT Person.FirstName, Person.LastName, Address.City, Address.State
+FROM Person LEFT JOIN Address ON Person.PersonId = Address.PersonId;
