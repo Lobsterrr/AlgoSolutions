@@ -8,36 +8,39 @@
 public class HouseRobber {
 
     public int rob(int[] num) {
-        if (num.length == 0)
-            return 0;
-        int[] dp = new int[num.length];
-        boolean[] isUsed = new boolean[num.length];
+        int result = 0;
+        boolean isPreUsed = false;
+        int pre = 0;
         for (int i = 0; i < num.length; i++) {
             if (i == 0) {
-                dp[i] += num[i];
-                isUsed[i] = true;
+                result = num[i];
+                isPreUsed = true;
             } else if (i == 1) {
                 if (num[i] > num[i - 1]) {
-                    dp[i] = num[i];
-                    isUsed[i] = true;
+                    pre = result;
+                    result = num[i];
+                    isPreUsed = true;
                 } else {
-                    dp[i] = dp[i - 1];
+                    isPreUsed = false;
                 }
             } else {
-                if (!isUsed[i - 1]) {
-                    dp[i] = dp[i - 1] + num[i];
-                    isUsed[i] = true;
+                if (!isPreUsed) {
+                    pre = result;
+                    result += num[i];
+                    isPreUsed = true;
                 } else {
-                    if (dp[i - 1] >= dp[i - 2] + num[i]) {
-                        dp[i] = dp[i - 1];
+                    if (result >= pre + num[i]) {
+                        isPreUsed = false;
                     } else {
-                        dp[i] = dp[i - 2] + num[i];
-                        isUsed[i] = true;
+                        int tmp = result;
+                        result = pre + num[i];
+                        pre = tmp;
+                        isPreUsed = true;
                     }
                 }
             }
         }
-        return dp[num.length - 1];
+        return result;
     }
     
 }
