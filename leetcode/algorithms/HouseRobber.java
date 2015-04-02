@@ -20,11 +20,9 @@ public class HouseRobber {
             return 0;
         if (num.length == 1)
             return num[0];
-        if (num.length == 2)
-            return Math.max(num[0], num[1]);
-        int pre = num[0];
-        int result = Math.max(num[0], num[1]);
-        for (int i = 2; i < num.length; i++) {
+        int result = num[0];
+        int pre = 0;
+        for (int i = 1; i < num.length; i++) {
             int tmp = result;
             result = Math.max(result, pre + num[i]);
             pre = tmp;
