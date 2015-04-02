@@ -8,27 +8,36 @@
 public class HouseRobber {
 
     public int rob(int[] num) {
-        int sum1 = num[0];
-        int sum2 = num[1];
-        int i = 0;
-        while (i + 2 < num.length) {
-            if (i + 3 < num.length) {
-                i = num[i + 2] >= num[i + 3] ? i + 2 : i + 3;
+        if (num.length == 0)
+            return 0;
+        int[] dp = new int[num.length];
+        boolean[] isUsed = new boolean[num.length];
+        for (int i = 0; i < num.length; i++) {
+            if (i == 0) {
+                dp[i] += num[i];
+                isUsed[i] = true;
+            } else if (i == 1) {
+                if (num[i] > num[i - 1]) {
+                    dp[i] = num[i];
+                    isUsed[i] = true;
+                } else {
+                    dp[i] = dp[i - 1];
+                }
             } else {
-                i += 2;
+                if (!isUsed[i - 1]) {
+                    dp[i] = dp[i - 1] + num[i];
+                    isUsed[i] = true;
+                } else {
+                    if (dp[i - 1] >= dp[i - 2] + num[i]) {
+                        dp[i] = dp[i - 1];
+                    } else {
+                        dp[i] = dp[i - 2] + num[i];
+                        isUsed[i] = true;
+                    }
+                }
             }
-            sum1 += num[i];
         }
-        i = 1;
-        while (i + 2 < num.length) {
-            if (i + 3 < num.length) {
-                i = num[i + 2] >= num[i + 3] ? i + 2 : i + 3;
-            } else {
-                i += 2;
-            }
-            sum2 += num[i];
-        }
-        return Math.max(sum1, sum2);
+        return dp[num.length - 1];
     }
     
 }
