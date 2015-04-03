@@ -18,8 +18,6 @@ public class HouseRobber {
     public int rob(int[] num) {
         if (num.length == 0)
             return 0;
-        if (num.length == 1)
-            return num[0];
         int result = num[0];
         int pre = 0;
         for (int i = 1; i < num.length; i++) {
