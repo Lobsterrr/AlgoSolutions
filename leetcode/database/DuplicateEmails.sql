@@ -1,5 +1,6 @@
 /*
- * Write a SQL query to find all duplicate emails in a table named Person.
+ * Write a SQL query to find all duplicate 
+emails in a table named Person.
 
  * +----+---------+
  * | Id | Email   |
@@ -8,7 +9,8 @@
  * | 2  | c@d.com |
  * | 3  | a@b.com |
  * +----+---------+
- * For example, your query should return the following for the above table:
+ * For example, your query should return 
+the following for the above table:
 
  * +---------+
  * | Email   |
@@ -18,4 +20,4 @@
  * Note: All emails are in lowercase.
 */
 
-
+SELECT email FROM Person GROUP BY email HAVING COUNT(*) > 1
