@@ -35,6 +35,11 @@ C.Id = O.CustomerId WHERE CustomerId IS NULL;
 
 /***********************************************************/
 
+SELECT Name FROM Customers C WHERE C.Id 
+NOT IN (SELECT CustomerId FROM Orders O);
+
+/***********************************************************/
+
 SELECT Name FROM Customers C LEFT JOIN Orders O ON 
 C.id = O.CustomerId WHERE O.Id IS NULL;
 
