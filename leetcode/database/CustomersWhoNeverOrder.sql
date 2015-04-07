@@ -30,5 +30,15 @@ customers who never order anything.
  * +-----------+
  */
 
-SELECT Name AS Customers FROM Customers C LEFT JOIN Orders O
-ON C.Id = O.CustomerId WHERE CustomerId IS NULL
+SELECT Name FROM Customers C LEFT JOIN Orders O ON 
+C.Id = O.CustomerId WHERE CustomerId IS NULL;
+
+/***********************************************************/
+
+SELECT Name FROM Customers C LEFT JOIN Orders O ON 
+C.id = O.CustomerId WHERE O.Id IS NULL;
+
+/***********************************************************/
+
+SELECT Name FROM Customers C WHERE NOT EXISTS (SELECT 
+CustomerId FROM Orders O WHERE O.CustomerId = C.Id);
