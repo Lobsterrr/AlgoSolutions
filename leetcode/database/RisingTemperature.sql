@@ -18,3 +18,5 @@ For example, return the following Ids for the above Weather table:
 +----+
 
 */
+
+SELECT W1.Id FROM Weather W1 INNER JOIN Weather W2 ON TO_DAYS(W1.Date) = TO_DAYS(W2.Date) + 1 AND W1.Temperature > W2.Temperature;
