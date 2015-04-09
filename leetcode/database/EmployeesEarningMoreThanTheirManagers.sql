@@ -1,6 +1,7 @@
 /*
-The Employee table holds all employees including their managers. Every 
-employee has an Id, and there is also a column for the manager Id.
+The Employee table holds all employees including their 
+managers. Every employee has an Id, and there is also 
+a column for the manager Id.
 
 +----+-------+--------+-----------+
 | Id | Name  | Salary | ManagerId |
@@ -10,9 +11,10 @@ employee has an Id, and there is also a column for the manager Id.
 | 3  | Sam   | 60000  | NULL      |
 | 4  | Max   | 90000  | NULL      |
 +----+-------+--------+-----------+
-Given the Employee table, write a SQL query that finds out employees 
-who earn more than their managers. For the above table, Joe is the 
-only employee who earns more than his manager.
+Given the Employee table, write a SQL query that finds 
+out employees who earn more than their managers. For 
+the above table, Joe is the only employee who earns 
+more than his manager.
 
 +----------+
 | Employee |
@@ -22,4 +24,4 @@ only employee who earns more than his manager.
  */
 
 SELECT e.Name FROM Employee e LEFT JOIN Employee m 
-on e.ManagerId = m.Id WHERE e.Salary > m.Salary;
+ON e.ManagerId = m.Id WHERE e.Salary > m.Salary;
