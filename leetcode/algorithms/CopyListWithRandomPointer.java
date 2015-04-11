@@ -7,8 +7,24 @@
  * Return a deep copy of the list.
  * 
  */
+/**
+ * Definition for singly-linked list with a random pointer.
+ * class RandomListNode {
+ *     int label;
+ *     RandomListNode next, random;
+ *     RandomListNode(int x) { this.label = x; }
+ * };
+ */
 public class CopyListWithRandomPointer {
 
-    
+    public RandomListNode copyRandomList(RandomListNode head) {
+        List<RandomListNode> list = new ArrayList<RandomListNode>();
+        RandomListNode cur = head;
+        while (cur != null) {
+            list.add(cur);
+            cur = cur.next;
+        }
+        RandomListNode copy = new RandomListNode(head.label);
+    }
 
 }
