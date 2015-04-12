@@ -18,13 +18,26 @@
 public class CopyListWithRandomPointer {
 
     public RandomListNode copyRandomList(RandomListNode head) {
-        List<RandomListNode> list = new ArrayList<RandomListNode>();
+        Map<RandomListNode, RandomListNode> map = 
+            new HashMap<RandomListNode, RandomListNode>();
+        RandomListNode dummy = new RandomListNode(0);
         RandomListNode cur = head;
+        RandomListNode cur1 = dummy;
         while (cur != null) {
-            list.add(cur);
+            RandomListNode node = new RandomListNode(cur.label);
+            map.put(cur, node);
             cur = cur.next;
+            cur1.next = node;
+            cur1 = cur1.next;
         }
-        RandomListNode copy = new RandomListNode(head.label);
+        cur = head;
+        cur1 = dummy.next;
+        while (cur != null) {
+            cur1.random = map.get(cur.random);
+            cur = cur.next;
+            cur1 = cur1.next;
+        }
+        return dummy.next;
     }
 
 }
