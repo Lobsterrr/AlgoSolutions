@@ -20,4 +20,4 @@ the following for the above table:
  * Note: All emails are in lowercase.
 */
 
-SELECT email FROM Person GROUP BY email HAVING COUNT(*) > 1
+SELECT email FROM Person GROUP BY email HAVING COUNT(*) > 1;
