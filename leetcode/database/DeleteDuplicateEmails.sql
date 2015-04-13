@@ -1,5 +1,7 @@
 /*
-Write a SQL query to delete all duplicate email entries in a table named Person, keeping only unique emails based on its smallest Id.
+Write a SQL query to delete all duplicate email 
+entries in a table named Person, keeping only 
+unique emails based on its smallest Id.
 
 +----+------------------+
 | Id | Email            |
@@ -9,7 +11,8 @@ Write a SQL query to delete all duplicate email entries in a table named Person,
 | 3  | john@example.com |
 +----+------------------+
 Id is the primary key column for this table.
-For example, after running your query, the above Person table should have the following rows:
+For example, after running your query, the above 
+Person table should have the following rows:
 
 +----+------------------+
 | Id | Email            |
@@ -18,4 +21,5 @@ For example, after running your query, the above Person table should have the fo
 | 2  | bob@example.com  |
 +----+------------------+
 */
-DELETE P1 FROM Person P1 INNER JOIN Person P2 ON P1.Email = P2.Email WHERE P1.Id > P2.Id;
+DELETE P1 FROM Person P1 INNER JOIN Person P2 
+ON P1.Email = P2.Email WHERE P1.Id > P2.Id;
