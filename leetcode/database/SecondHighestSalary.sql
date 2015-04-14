@@ -17,3 +17,8 @@ should return null.
 
 SELECT MAX(Salary) FROM Employee WHERE 
 Salary < (SELECT MAX(Salary) FROM Employee); 
+
+/***********************************************/
+
+SELECT MAX(Salary) FROM Employee WHERE 
+Salary <> (SELECT MAX(Salary) FROM Employee);
