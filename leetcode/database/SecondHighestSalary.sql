@@ -10,3 +10,5 @@ Write a SQL query to get the second highest salary from the Employee table.
 +----+--------+
 For example, given the above Employee table, the second highest salary is 200. If there is no second highest salary, then the query should return null.
 */
+
+SELECT MAX(Salary) FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee); 
