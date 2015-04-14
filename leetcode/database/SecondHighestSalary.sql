@@ -27,3 +27,8 @@ Salary <> (SELECT MAX(Salary) FROM Employee);
 
 SELECT MAX(Salary) FROM Employee WHERE Salary 
 NOT IN (SELECT MAX(Salary) FROM Employee);
+
+/***********************************************/
+
+SELECT (SELECT Salary FROM Employee GROUP BY 
+    Salary DESC LIMIT 1, 1);
