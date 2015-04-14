@@ -22,3 +22,8 @@ Salary < (SELECT MAX(Salary) FROM Employee);
 
 SELECT MAX(Salary) FROM Employee WHERE 
 Salary <> (SELECT MAX(Salary) FROM Employee);
+
+/***********************************************/
+
+SELECT MAX(Salary) FROM Employee WHERE Salary 
+NOT IN (SELECT MAX(Salary) FROM Employee);
