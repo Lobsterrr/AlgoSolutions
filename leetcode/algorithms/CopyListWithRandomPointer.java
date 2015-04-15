@@ -14,6 +14,7 @@
  */
 public class CopyListWithRandomPointer {
 
+    // O(n) time, O(1) space
     public RandomListNode copyRandomList(RandomListNode head) {
         RandomListNode cur = head;
         while (cur != null) {
@@ -40,6 +41,7 @@ public class CopyListWithRandomPointer {
     
 /*******************************************************************/
 
+    // O(n) time, O(n) space
     public RandomListNode copyRandomList(RandomListNode head) {
         Map<RandomListNode, RandomListNode> map = 
             new HashMap<RandomListNode, RandomListNode>();
