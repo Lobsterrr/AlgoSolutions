@@ -15,31 +15,6 @@
 public class CopyListWithRandomPointer {
 
     public RandomListNode copyRandomList(RandomListNode head) {
-        Map<RandomListNode, RandomListNode> map = 
-            new HashMap<RandomListNode, RandomListNode>();
-        RandomListNode dummy = new RandomListNode(0);
-        RandomListNode cur = head;
-        RandomListNode cur1 = dummy;
-        while (cur != null) {
-            RandomListNode node = new RandomListNode(cur.label);
-            map.put(cur, node);
-            cur = cur.next;
-            cur1.next = node;
-            cur1 = cur1.next;
-        }
-        cur = head;
-        cur1 = dummy.next;
-        while (cur != null) {
-            cur1.random = map.get(cur.random);
-            cur = cur.next;
-            cur1 = cur1.next;
-        }
-        return dummy.next;
-    }
-
-/*******************************************************************/
-
-    public RandomListNode copyRandomList(RandomListNode head) {
         RandomListNode cur = head;
         while (cur != null) {
             RandomListNode next = cur.next;
@@ -62,6 +37,31 @@ public class CopyListWithRandomPointer {
             cur = next;
         }
         return copy;
+    }
+    
+/*******************************************************************/
+
+    public RandomListNode copyRandomList(RandomListNode head) {
+        Map<RandomListNode, RandomListNode> map = 
+            new HashMap<RandomListNode, RandomListNode>();
+        RandomListNode dummy = new RandomListNode(0);
+        RandomListNode cur = head;
+        RandomListNode cur1 = dummy;
+        while (cur != null) {
+            RandomListNode node = new RandomListNode(cur.label);
+            map.put(cur, node);
+            cur = cur.next;
+            cur1.next = node;
+            cur1 = cur1.next;
+        }
+        cur = head;
+        cur1 = dummy.next;
+        while (cur != null) {
+            cur1.random = map.get(cur.random);
+            cur = cur.next;
+            cur1 = cur1.next;
+        }
+        return dummy.next;
     }
 
 }
