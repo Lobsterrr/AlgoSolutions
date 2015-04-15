@@ -37,4 +37,18 @@ public class CopyListWithRandomPointer {
         return dummy.next;
     }
 
+/*******************************************************************/
+
+    public RandomListNode copyRandomList(RandomListNode head) {
+        RandomListNode cur = head;
+        while (cur != null) {
+            RandomListNode node = new RandomListNode(cur.label);
+            RandomListNode next = cur.next;
+            cur.next = node;
+            node.next = next;
+            cur = next;
+        }
+
+    }
+
 }
