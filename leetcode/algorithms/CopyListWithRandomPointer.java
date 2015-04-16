@@ -38,6 +38,34 @@ public class CopyListWithRandomPointer {
         }
         return copy;
     }
+
+
+
+
+
+
+     public RandomListNode copyRandomList(RandomListNode head) {
+        RandomListNode cur = head;
+        while (cur != null) {
+            RandomListNode next = cur.next;
+            cur.next = new RandomListNode(cur.label);
+            cur.next.next = next;
+            if (cur.random != null)
+                cur.next.random = cur.random;
+            cur = next;
+        }
+        cur = head;
+        RandomListNode copy = head == null ? null : head.next;
+        while (cur != null && cur.next != null) {
+            RandomListNode next = cur.next;
+            cur.next = next.next;
+            if (cur.random != null)
+                next.random = cur.random.next;
+            cur = next.next;
+            next.next = cur == null ? null : cur.next;
+        }
+        return copy;
+    }
     
 /*******************************************************************/
 
