@@ -7,13 +7,11 @@
 public class MultiplyStrings {
 
     public String multiply(String num1, String num2) {
-        int len1 = num1.length();
-        int len2 = num2.length();
-        int[] data = new int[len1 + len2];
-        for (int i = len1 - 1; i >= 0; i--) {
+        int[] data = new int[num1.length() + num2.length()];
+        for (int i = num1.length() - 1; i >= 0; i--) {
             int carrier = 0;
             int a = num1.charAt(i) - '0';
-            for (int j = len2 - 1; j >= 0; j--) {
+            for (int j = num2.length() - 1; j >= 0; j--) {
                 int b = num2.charAt(j) - '0';
                 int tmp = data[i + j + 1];
                 data[i + j + 1] = (tmp + carrier + a * b) % 10;
