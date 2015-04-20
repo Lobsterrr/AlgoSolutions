@@ -10,7 +10,7 @@ public class BitwiseANDOfNumbersRange {
         int result = 0;
         for (int i = 0; i < 32; i++) {
             int mask = 1 << 31 - i;
-            if ((m & mask) != 0 && (n & mask) != 0 && (n - m) <= mask)
+            if ((m & n & mask) != 0 && (n - m) <= mask)
                 result += mask;
         }
         return result;
