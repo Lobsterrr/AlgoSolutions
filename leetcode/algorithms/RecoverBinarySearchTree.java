@@ -57,4 +57,18 @@ public class RecoverBinarySearchTree {
         inorderTraversal(root.right, list);
     }
 
+
+
+
+
+    public void recoverTree(TreeNode root) {
+        List<Integer> list = inorderTraversal(root);
+
+    }
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<Integer>();
+
+    }
+
 }
