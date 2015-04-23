@@ -7,7 +7,15 @@
  * A solution using O(n) space is pretty straight forward. Could you 
  * devise a constant space solution?
  */
-
+/**
+ * Definition for binary tree
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
 public class RecoverBinarySearchTree {
 
 /*
