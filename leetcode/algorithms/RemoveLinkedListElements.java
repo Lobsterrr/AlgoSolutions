@@ -7,6 +7,14 @@
  * Return: 1 --> 2 --> 3 --> 4 --> 5
  * 
  */
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
 public class RemoveLinkedListElements {
 
     public ListNode removeElements(ListNode head, int val) {
@@ -23,6 +31,17 @@ public class RemoveLinkedListElements {
         }
         pre.next = cur;
         return dummy.next;
+    }
+
+
+
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode cur = dummy;
+        while (cur.next != null) {
+            
+        }
     }
 
 }
