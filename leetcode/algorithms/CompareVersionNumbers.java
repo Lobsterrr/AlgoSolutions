@@ -14,7 +14,6 @@
  * Here is an example of version numbers ordering:
  * 
  * 0.1 < 1.1 < 1.2 < 13.37
- * 
  */
 public class CompareVersionNumbers {
 
@@ -37,6 +36,8 @@ public class CompareVersionNumbers {
             else if (a < b)
                 return -1;
             else {
+
+
                 if (end1 == version1.length() && end2 == version2.length())
                     return 0;
                 if (end1 == version1.length() && end2 != version2.length())
