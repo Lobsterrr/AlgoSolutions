@@ -36,8 +36,6 @@ public class CompareVersionNumbers {
             else if (a < b)
                 return -1;
             else {
-
-
                 if (end1 == version1.length() && end2 == version2.length())
                     return 0;
                 if (end1 == version1.length() && end2 != version2.length())
@@ -50,6 +48,32 @@ public class CompareVersionNumbers {
                 }
             }
         }
+    }
+
+    public int compareVersion(String version1, String version2) {
+        if (version1.length() == 0) {
+            if (version2.length() == 0)
+                return 0;
+            else 
+                return 
+        }
+
+        int start1 = 0;
+        int end1 = 0;
+        int start2 = 0;
+        int end2 = 0;
+        for (; end1 < version1.length() && version1.charAt(end1) != '.'; end1++);
+        for (; end2 < version2.length() && version2.charAt(end2) != '.'; end2++);
+        int a = Integer.parseInt(version1.substring(start1, end1));
+        int b = Integer.parseInt(version2.substring(start2, end2));
+        if (a > b)
+            return 1;
+        else if (a < b)
+            return -1;
+        else {
+            
+        }
+
     }
 
 }
