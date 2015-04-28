@@ -51,35 +51,46 @@ public class CompareVersionNumbers {
     }
 
     public int compareVersion(String version1, String version2) {
-        if (version1.length() == 0) {
-            if (version2.length() == 0)
-                return 0;
-            else {
-                
-
-            }
-
-        }
         int start1 = 0;
         int end1 = 0;
         int start2 = 0;
         int end2 = 0;
+        if (version1.length() == 0) {
+            if (version2.length() == 0)
+                return 0;
+            else {
+                for (; end2 < version2.length() && version2.charAt(end2) != '.'; end2++);
+                int b = Integer.parseInt(version2.substring(start2, end2));
+                if (b > 0)
+                    return -1;
+                else
+                    return compareVersion(version1, version2.substring(end2 + 1));
+            }
 
+        }
+        if (version2.length() == 0) {
+            if (version1.length() == 0)
+                return 0;
+            else {
+                for (; end1 < version1.length() && version1.charAt(end1) != '.'; end1++);
+                int a = Integer.parseInt(version1.substring(start1, end1));
+                if (a > 0)
+                    return 1;
+                else
+                    return compareVersion(version1.substring(end1 + 1), version2);
+            }
+        }
         while (true) {
             for (; end1 < version1.length() && version1.charAt(end1) != '.'; end1++);
             for (; end2 < version2.length() && version2.charAt(end2) != '.'; end2++);
-
-            if (start1 == end1) {
-                if (start2 == end2)
-                    return 0;
-                else {
-                    int b = Integer.parseInt(version2.substring(start1, end1));
-                    if (b > 0)
-                        return -1;
-                    else if (b == 0)
-                        return 0;
-                    else if (
-                }
+            int a = Integer.parseInt(version1.substring(start1, end1));
+            int b = Integer.parseInt(version2.substring(start2, end2));
+            if (a > b)
+                return 1;
+            else if (a < b)
+                return -1;
+            else {
+                return compareVersion(version1.substring(end1 + 1), version2.substring(end2 + 1));
             }
         }
     }
