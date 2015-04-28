@@ -17,6 +17,8 @@
  */
 public class CompareVersionNumbers {
 
+    // There is a bug to be fixed.
+
     public int compareVersion(String version1, String version2) {
         int start1 = 0;
         int end1 = 0;
