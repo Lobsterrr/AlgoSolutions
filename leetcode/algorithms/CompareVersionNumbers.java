@@ -54,8 +54,10 @@ public class CompareVersionNumbers {
         if (version1.length() == 0) {
             if (version2.length() == 0)
                 return 0;
-            else 
-                return 
+            else {
+                
+            }
+
         }
         int start1 = 0;
         int end1 = 0;
