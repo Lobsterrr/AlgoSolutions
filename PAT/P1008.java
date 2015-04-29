@@ -59,4 +59,5 @@ public class P1008 {
         }
         System.out.println(sum);
     }
+
 }
