@@ -47,10 +47,9 @@ import java.util.Scanner;
 
 public class P1007 {
 
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-
         int l = 0;
         int r = 0;
         int max = Integer.MIN_VALUE;
@@ -58,7 +57,6 @@ public class P1007 {
         int thisL = 0;
         int[] data = new int[n];
         boolean flag = false;
-        
         for (int i = 0; i < n; i++) {
             data[i] = in.nextInt();
             thisSum += data[i];
@@ -81,5 +79,6 @@ public class P1007 {
             r = n - 1;
         }
         System.out.println(max + " " + data[l] + " " + data[r]);
-	}
+    }
+
 }	
