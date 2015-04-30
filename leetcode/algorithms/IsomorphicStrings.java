@@ -17,7 +17,6 @@
  * Given "foo", "bar", return false.
  * 
  * Given "paper", "title", return true.
- * 
  */
 public class IsomorphicStrings {
 
