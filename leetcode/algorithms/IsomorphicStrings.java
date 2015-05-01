@@ -38,4 +38,19 @@ public class IsomorphicStrings {
         return true;
     }
 
+    public booleana isIsomorphic(String s, String t) {
+        int[] array1 = new int[128];
+        int[] array2 = new int[128];
+        for (int i = 0; i < s.length(); i++) {
+            int c1 = (int) s.charAt(i);
+            int c2 = (int) t.charAt(i);
+            if (array1[c1] != 0 && array1[c1] != c2 ||
+                    array2[c2] != 0 && array2[c2] != c1)
+                return false;
+            array1[c1] = c2;
+            array2[c2] = c1;
+        }
+        return true;
+    }
+
 }
