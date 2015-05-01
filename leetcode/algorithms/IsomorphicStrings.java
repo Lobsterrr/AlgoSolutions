@@ -24,11 +24,13 @@ public class IsomorphicStrings {
         if (s.length() != t.length())
             return false;
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) != t.charAt(i)) {
-                s = s.replace(s.charAt(i), t.charAt(i));
+            for (int j = i + 1; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j) && t.charAt(i) != t.charAt(j) ||
+                        s.charAt(i) != s.charAt(j) && t.charAt(i) == t.charAt(j))
+                    return false;
             }
         }
-        return s.equals(t);
+        return true;
     }
 
 }
