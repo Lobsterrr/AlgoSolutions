@@ -24,30 +24,6 @@
 public class IsomorphicStrings {
 
     public boolean isIsomorphic(String s, String t) {
-        Map<Character, List<Integer>> map1 = new LinkedHashMap<Character, List<Integer>>();
-        Map<Character, List<Integer>> map2 = new LinkedHashMap<Character, List<Integer>>();
-        for (int i = 0; i < s.length(); i++) {
-            if (map1.containsKey(s.charAt(i))) {
-                map1.get(s.charAt(i)).add(i);
-            } else {
-                List<Integer> list = new ArrayList<Integer>();
-                list.add(i);
-                map1.put(s.charAt(i), list);
-            }
-            if (map2.containsKey(t.charAt(i))) {
-                map2.get(t.charAt(i)).add(i);
-            } else {
-                List<Integer> list = new ArrayList<Integer>();
-                list.add(i);
-                map2.put(t.charAt(i), list);
-            }
-        }
-        return new ArrayList<List<Integer>>(map1.values()).equals(new ArrayList<List<Integer>>(map2.values()));
-    }
-
-/*****************************************************************************/
-
-    public boolean isIsomorphic(String s, String t) {
         Map<Character, Character> map1 = new HashMap<Character, Character>();
         Map<Character, Character> map2 = new HashMap<Character, Character>();
         for (int i = 0; i < s.length(); i++) {
