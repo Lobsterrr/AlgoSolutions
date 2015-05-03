@@ -25,7 +25,7 @@ public class CompareVersionNumbers {
                     Integer.parseInt(array1[i]) > Integer.parseInt(array2[i]) || 
                     i == array2.length && Integer.parseInt(array1[i]) != 0)
                 return 1;
-            if (i < array1.length && i < array2.length && 
+            else if (i < array1.length && i < array2.length && 
                     Integer.parseInt(array1[i]) < Integer.parseInt(array2[i]) || 
                     i == array1.length && Integer.parseInt(array2[i]) != 0)
                 return -1;
