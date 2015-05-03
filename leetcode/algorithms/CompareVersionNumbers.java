@@ -29,7 +29,7 @@ public class CompareVersionNumbers {
                 return 0;
             else {
                 for (; end2 < version2.length() && version2.charAt(end2) != '.'; end2++);
-                int b = Integer.parseInt(version2.substring(start2, end2));
+                int b = end2 == start2 ? 0 : Integer.parseInt(version2.substring(start2, end2));
                 if (b > 0)
                     return -1;
                 else
@@ -42,7 +42,7 @@ public class CompareVersionNumbers {
                 return 0;
             else {
                 for (; end1 < version1.length() && version1.charAt(end1) != '.'; end1++);
-                int a = Integer.parseInt(version1.substring(start1, end1));
+                int a = end1 == start1 ? 0 : Integer.parseInt(version1.substring(start1, end1));
                 if (a > 0)
                     return 1;
                 else
