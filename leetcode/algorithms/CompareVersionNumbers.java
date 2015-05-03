@@ -32,6 +32,8 @@ public class CompareVersionNumbers {
                 int b = end2 == start2 ? 0 : Integer.parseInt(version2.substring(start2, end2));
                 if (b > 0)
                     return -1;
+                else if (end2 == version2.length())
+                    return 0;
                 else
                     return compareVersion(version1, version2.substring(end2 + 1));
             }
@@ -45,6 +47,8 @@ public class CompareVersionNumbers {
                 int a = end1 == start1 ? 0 : Integer.parseInt(version1.substring(start1, end1));
                 if (a > 0)
                     return 1;
+                else if (end1 == version1.length())
+                    return 0;
                 else
                     return compareVersion(version1.substring(end1 + 1), version2);
             }
@@ -61,7 +65,7 @@ public class CompareVersionNumbers {
             else {
                 start1 = end1 == version1.length() ? end1 : end1 + 1;
                 start2 = end2 == version2.length() ? end2 : end2 + 1;
-                return compareVersion(version1.substring(start1), version2.substring(start1));
+                return compareVersion(version1.substring(start1), version2.substring(start2));
             }
         }
     }
