@@ -18,16 +18,14 @@
 public class CompareVersionNumbers {
 
     public int compareVersion(String version1, String version2) {
-        int start1 = 0;
         int end1 = 0;
-        int start2 = 0;
         int end2 = 0;
         if (version1.length() == 0) {
             if (version2.length() == 0)
                 return 0;
             else {
                 for (; end2 < version2.length() && version2.charAt(end2) != '.'; end2++);
-                int b = end2 == start2 ? 0 : Integer.parseInt(version2.substring(start2, end2));
+                int b = end2 == 0 ? 0 : Integer.parseInt(version2.substring(0, end2));
                 if (b > 0)
                     return -1;
                 else if (end2 == version2.length())
@@ -42,7 +40,7 @@ public class CompareVersionNumbers {
                 return 0;
             else {
                 for (; end1 < version1.length() && version1.charAt(end1) != '.'; end1++);
-                int a = end1 == start1 ? 0 : Integer.parseInt(version1.substring(start1, end1));
+                int a = end1 == 0 ? 0 : Integer.parseInt(version1.substring(0, end1));
                 if (a > 0)
                     return 1;
                 else if (end1 == version1.length())
@@ -54,16 +52,16 @@ public class CompareVersionNumbers {
         while (true) {
             for (; end1 < version1.length() && version1.charAt(end1) != '.'; end1++);
             for (; end2 < version2.length() && version2.charAt(end2) != '.'; end2++);
-            int a = Integer.parseInt(version1.substring(start1, end1));
-            int b = Integer.parseInt(version2.substring(start2, end2));
+            int a = Integer.parseInt(version1.substring(0, end1));
+            int b = Integer.parseInt(version2.substring(0, end2));
             if (a > b)
                 return 1;
             else if (a < b)
                 return -1;
             else {
-                start1 = end1 == version1.length() ? end1 : end1 + 1;
-                start2 = end2 == version2.length() ? end2 : end2 + 1;
-                return compareVersion(version1.substring(start1), version2.substring(start2));
+                end1 = end1 == version1.length() ? end1 : end1 + 1;
+                end2 = end2 == version2.length() ? end2 : end2 + 1;
+                return compareVersion(version1.substring(end1), version2.substring(end2));
             }
         }
     }
