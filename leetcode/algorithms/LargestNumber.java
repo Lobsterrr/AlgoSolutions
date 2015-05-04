@@ -46,9 +46,7 @@ public class LargestNumber {
     public int compare(int a, int b) {
         long ab = Long.parseLong("" + a + b);
         long ba = Long.parseLong("" + b + a);
-        if (ab == ba)
-            return 0;
-        return ab > ba ? 1 : -1;
+        return ab - ba;
     }
 
 }
