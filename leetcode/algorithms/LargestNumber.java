@@ -43,7 +43,7 @@ public class LargestNumber {
         array[j] = tmp;
     }
 
-    public int compare(int a, int b) {
+    public long compare(int a, int b) {
         long ab = Long.parseLong("" + a + b);
         long ba = Long.parseLong("" + b + a);
         return ab - ba;
