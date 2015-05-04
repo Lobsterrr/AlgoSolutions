@@ -14,6 +14,12 @@ public class LargestNumber {
         for (int i = nums.length - 1; i >= 0; i--) {
             result += nums[i];
         }
+        int i = 0;
+        for (; i < result.length() && result.charAt(i) == '0'; i++);
+        if (i == result.length())
+            result = "0";
+        else 
+            result = result.substring(i);
         return result;
     }
 
@@ -38,6 +44,11 @@ public class LargestNumber {
     }
 
     public int compare(int a, int b) {
+        if (a * b == 0) {
+            if (a == 0 && b == 0)
+                return 0;
+            return a > 0 ? 1 : -1;
+        }
         long ab = (long) Math.pow(10, (int) Math.log10(b) + 1) * a + b;
         long ba = (long) Math.pow(10, (int) Math.log10(a) + 1) * b + a;
         if (ab > ba)
