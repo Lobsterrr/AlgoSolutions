@@ -19,10 +19,8 @@ public class LargestNumber {
         int i = 0;
         for (; i < result.length() && result.charAt(i) == '0'; i++);
         if (i == result.length())
-            result = "0";
-        else 
-            result = result.substring(i);
-        return result;
+            i--;
+        return result.substring(i);
     }
 
     public void quicksort(int[] array, int start, int end) {
@@ -46,19 +44,11 @@ public class LargestNumber {
     }
 
     public int compare(int a, int b) {
-        if (a * b == 0) {
-            if (a == 0 && b == 0)
-                return 0;
-            return a > 0 ? 1 : -1;
-        }
-        long ab = (long) Math.pow(10, (int) Math.log10(b) + 1) * a + b;
-        long ba = (long) Math.pow(10, (int) Math.log10(a) + 1) * b + a;
-        if (ab > ba)
-            return 1;
-        else if (ab == ba)
+        long ab = Long.parseLong("" + a + b);
+        long ba = Long.parseLong("" + b + a);
+        if (ab == ba)
             return 0;
-        else
-            return -1;
+        return ab > ba ? 1 : -1;
     }
 
 }
