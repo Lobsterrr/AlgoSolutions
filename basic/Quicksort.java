@@ -1,7 +1,5 @@
 public class Quicksort {
 
-/*************************** updated 20150111 **********************/
-
     public void quicksort(int[] array, int low, int high) {
         if (low >= high)
             return;
