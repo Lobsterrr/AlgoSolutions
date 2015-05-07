@@ -29,11 +29,11 @@ public class ReverseLinkedListII {
         ListNode cur = dummy;
         ListNode middle;
         ListNode tail;
-        for (; cur.next != null && n > 1; cur = cur.next, n--);
+        for (; cur.next != null && n > 0; cur = cur.next, n--);
         tail = cur.next;
         cur.next = null;
         cur = dummy;
-        for (; cur.next != null && m > 1; cur = cur.next, m--);
+        for (; cur.next != null && m > 0; cur = cur.next, m--);
         middle = cur.next;
         cur.next = null;
         reverse(middle);
@@ -82,29 +82,6 @@ public class ReverseLinkedListII {
             int temp = mNode.val;
             mNode.val = nNode.val;
             nNode.val = temp;
-        }
-        return head;
-    }
-
-/*****************************************************************************/
-
-    public ListNode reverseBetween(ListNode head, int m, int n) {
-        if(head == null)
-            return head;
-        ListNode runner = head, first = null;
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        while(n > 0) {
-            if(m == 1)
-                first = runner;
-            if(m <= 1)
-                list.add(runner.val);
-            m--;
-            n--;
-            runner = runner.next;
-        }
-        for(int i = list.size() - 1; i >= 0; i--) {
-            first.val = list.get(i);
-            first = first.next;
         }
         return head;
     }
