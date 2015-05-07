@@ -26,10 +26,32 @@ public class ReverseLinkedListII {
     public ListNode reverseBetween(ListNode head, int m, int n) {
         ListNode cur = head;
         ListNode middle;
-        ListNode third;
+        ListNode tail;
+        for (; cur.next != null && n > 1; cur = cur.next, n--);
+        tail = cur.next;
+        cur.next = null;
+        cur = head;
         for (; cur.next != null && m > 1; cur = cur.next, m--);
+        middle = cur.next;
+        cur.next = null;
+        reverse(middle);
+        cur.next = middle;
+        for (cur = head; cur.next != null; cur = cur.next);
+        cur.next = tail;
+        return head;
+    }
 
-
+    public void reverse(ListNode head) {
+        if (head == null)
+            return;
+        ListNode pre = head;
+        ListNode cur = head.next;
+        while (cur != null) {
+            pre.next = cur.next;
+            cur.next = head;
+            head = cur;
+            cur = pre.next;
+        }
     }
 
 
