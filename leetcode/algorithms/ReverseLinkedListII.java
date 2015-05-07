@@ -8,7 +8,7 @@
 
  * Note:
  * Given m, n satisfy the following condition:
- * 1 ? m ? n ? length of list.
+ * 1 <= m <= n <= length of list.
  */
 /**
  * Definition for singly-linked list.
@@ -22,6 +22,25 @@
  * }
  */
 public class ReverseLinkedListII {
+    
+    public ListNode reverseBetween(ListNode head, int m, int n) {
+        ListNode cur = head;
+        ListNode middle;
+        ListNode third;
+        for (; cur.next != null && m > 1; cur = cur.next, m--);
+
+
+    }
+
+
+
+
+
+
+
+
+
+
     public ListNode reverseBetween(ListNode head, int m, int n) {
         for(int i = 0; i <= (n - m) / 2; i++) {
             int curM = m + i;
