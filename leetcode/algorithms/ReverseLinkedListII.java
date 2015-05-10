@@ -74,32 +74,4 @@ public class ReverseLinkedListII {
         return head;
     }
 
-/*****************************************************************************/
-
-    public ListNode reverseBetween(ListNode head, int m, int n) {
-        if(m == n)
-            return head;
-        ListNode prev = null, current = head, next = null;
-        for(int i = 0; i < m - 1; i++) {
-            prev = current;
-            current = current.next;
-        }
-        ListNode low = prev, high = current;
-        prev = current;
-        current = current.next;
-        for(int i = m; i < n; i++) {
-            next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-        }
-        if(high != null)
-            high.next = current;
-        if(low != null)
-            low.next = prev;
-        else
-            head = prev;
-        return head;
-    }
-
 }
