@@ -33,14 +33,27 @@ public class ReverseLinkedListII {
         tail = cur.next;
         cur.next = null;
         cur = dummy;
-        for (; cur.next != null && m > 0; cur = cur.next, m--);
+        for (; cur.next != null && m > 1; cur = cur.next, m--);
         middle = cur.next;
         cur.next = null;
-        reverse(middle);
-        cur.next = middle;
-        for (cur = dummy; cur.next != null; cur = cur.next);
+        cur.next = reverse(middle);
+        for (; cur.next != null; cur = cur.next);
         cur.next = tail;
         return dummy.next;
+    }
+
+    public ListNode reverse(ListNode head) {
+        if (head == null)
+            return head;
+        ListNode pre = head;
+        ListNode cur = head.next;
+        while (cur != null) {
+            pre.next = cur.next;
+            cur.next = head;
+            head = cur;
+            cur = pre.next;
+        }
+        return head;
     }
 
     public void reverse(ListNode head) {
