@@ -56,23 +56,7 @@ public class ReverseLinkedListII {
         return head;
     }
 
-    public void reverse(ListNode head) {
-        if (head == null)
-            return;
-        ListNode pre = head;
-        ListNode cur = head.next;
-        while (cur != null) {
-            pre.next = cur.next;
-            cur.next = head;
-            head = cur;
-            cur = pre.next;
-        }
-    }
-
-
-
-
-
+/*******************************************************************/
 
     public ListNode reverseBetween(ListNode head, int m, int n) {
         for(int i = 0; i <= (n - m) / 2; i++) {
