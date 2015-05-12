@@ -27,8 +27,8 @@ public class DecodeWays {
         for (int i = 2; i <= s.length(); i++) {
             if (s.charAt(i - 1) != '0')
                 dp[i] += dp[i - 1];
-            if (s.charAt(i - 2) == '1' || s.charAt(i - 1) <= '6' 
-                    && s.charAt(i - 2) == '2')
+            if (s.charAt(i - 2) == '1' || s.charAt(i - 1) <= '6' && 
+                    s.charAt(i - 2) == '2')
                 dp[i] += dp[i - 2];
         }
         return dp[s.length()];
@@ -46,8 +46,8 @@ public class DecodeWays {
             int next = 0;
             if (s.charAt(i - 1) != '0')
                 next += cur;
-            if (s.charAt(i - 2) == '1' || s.charAt(i - 1) <= '6'
-                    && s.charAt(i - 2) == '2')
+            if (s.charAt(i - 2) == '1' || s.charAt(i - 1) <= '6' && 
+                    s.charAt(i - 2) == '2')
                 next += pre;
             pre = cur;
             cur = next;
