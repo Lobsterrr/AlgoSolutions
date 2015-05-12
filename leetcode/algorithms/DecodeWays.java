@@ -17,52 +17,18 @@
 
 public class DecodeWays {
 
-    public int numDecodings(String s) {
-        if (s.length() == 0 || s.charAt(0) == '0')
-            return 0;
-        int[] dp = new int[s.length() + 1];
-        dp[0] = dp[1] = 1;
-        for (int i = 2; i <= s.length(); i++) {
-            char p = s.charAt(i - 2);
-            char c = s.charAt(i - 1);
-            if (p != '1' && p != '2' && c == '0')
-                return 0;
-            dp[i] += dp[i - 1];
-            if (p == '1' || p == '2') {
-                if (p == '1' || p == '2' && '1' <= c && c <= '6')
-                    dp[i]++;
-                if (c == '0')
-                    dp[i] = dp[i - 2];
-            }
-        }
-        return dp[s.length()];
-    }
-
-
-
-
-
-
-
-
-
-    
     // O(n) time; O(n) space.
     public int numDecodings(String s) {
         if (s.length() == 0 || s.charAt(0) == '0')
             return 0;
         int[] dp = new int[s.length() + 1];
         dp[0] = dp[1] = 1;
-        for (int i = 1; i < s.length(); i++) {
-            if (s.charAt(i) == '0' && (s.charAt(i - 1) == '1' 
-                        || s.charAt(i - 1) == '2'))
-                dp[i + 1] += dp[i - 1];
-            else if (s.charAt(i) != '0') {
-                dp[i + 1] += dp[i];
-                if (s.charAt(i - 1) == '1' 
-                        || s.charAt(i - 1) == '2' && s.charAt(i) <= '6')
-                    dp[i + 1] += dp[i - 1];     
-            }
+        for (int i = 2; i <= s.length(); i++) {
+            if (s.charAt(i - 1) != '0')
+                dp[i] += dp[i - 1];
+            if (s.charAt(i - 2) == '1' || s.charAt(i - 1) <= '6' 
+                    && s.charAt(i - 2) == '2')
+                dp[i] += dp[i - 2];
         }
         return dp[s.length()];
     }
