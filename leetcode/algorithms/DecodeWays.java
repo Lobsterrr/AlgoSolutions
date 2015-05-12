@@ -18,7 +18,7 @@
 
 public class DecodeWays {
 
-    // O(n) time; O(n) space.
+    // O(n) time, O(n) space.
     public int numDecodings(String s) {
         if (s.length() == 0 || s.charAt(0) == '0')
             return 0;
@@ -36,7 +36,7 @@ public class DecodeWays {
 
 /*******************************************************************/
 
-    // O(n) time; O(1) space.
+    // O(n) time, O(1) space.
     public int numDecodings(String s) {
         if (s.length() == 0 || s.charAt(0) == '0')
             return 0;
