@@ -20,14 +20,14 @@ public class MinimumSizeSubarraySum {
     public int minSubArrayLen(int s, int[] nums) {
         int result = Integer.MAX_VALUE;
         int left = 0;
-        int right = -1;
+        int right = 0;
         int sum = 0; 
-        while (right < nums.length - 1) {
-            while (sum < s && right < nums.length - 1) {
-                sum += nums[++right];
+        while (right < nums.length) {
+            while (sum < s && right < nums.length) {
+                sum += nums[right++];
             }
             while (sum >= s) {
-                result = Math.min(result, right - left + 1);
+                result = Math.min(result, right - left);
                 sum -= nums[left++];
             }
         }
