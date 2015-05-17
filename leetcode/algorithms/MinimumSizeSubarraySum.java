@@ -36,7 +36,6 @@ public class MinimumSizeSubarraySum {
 
 /*********************************************************/    
 
-
     public int minSubArrayLen(int s, int[] nums) {
         int result = Integer.MAX_VALUE;
         for (int i = 0; i < nums.length; i++) {
