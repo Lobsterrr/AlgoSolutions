@@ -38,24 +38,6 @@ public class HouseRobberII {
         return Math.max(r0, r1);
     }
 
-    public int rob(int[] nums) {
-        if (nums.length == 0)
-            return 0;
-        if (nums.length == 1)
-            return nums[0];
-        int even = nums[0];
-        int odd = nums[1];
-        for (int i = 2; i < nums.length; i++) {
-            if (i % 2 == 0) {
-                if (i < nums.length - 1)
-                    even = Math.max(odd, even + nums[i]);
-            } else {
-                odd = Math.max(even, odd + nums[i]);
-            }
-        }
-        return Math.max(even, odd);
-    }
-
 /*****************************************************************************/
 
     public int rob(int[] nums) {
