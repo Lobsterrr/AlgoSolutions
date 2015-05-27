@@ -18,20 +18,18 @@ public class HouseRobberII {
 
     public int rob(int[] nums) {
         return Math.max(rob(nums, 0, nums.length - 2), 
-                rob(nums, 1, nums.length - 1)); 
+                rob(nums, 1, nums.length - 1));
     }
 
     public int rob(int[] nums, int start, int end) {
-        if (nums.length == 0)
-            return 0;
         if (nums.length == 1)
             return nums[0];
-        int result = nums[start];
+        int result = 0;
         int pre = 0;
-        for (int i = start + 1; i <= end; i++) {
-            int tmp = result;
-            result = Math.max(result, pre + nums[i]);
-            pre = tmp;
+        for (int i = start; i <= end; i++) {
+            int tmp = pre;
+            pre = Math.max(pre, result);
+            result = Math.max(result, tmp + nums[i]);
         }
         return result;
     }
