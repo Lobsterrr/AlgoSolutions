@@ -17,25 +17,23 @@
 public class HouseRobberII {
 
     public int rob(int[] nums) {
+        return Math.max(rob(nums, 0, nums.length - 2), 
+                rob(nums, 1, nums.length - 1)); 
+    }
+
+    public int rob(int[] nums, int start, int end) {
         if (nums.length == 0)
             return 0;
         if (nums.length == 1)
             return nums[0];
+        int result = nums[start];
         int pre = 0;
-        int r0 = nums[0];
-        for (int i = 1; i < nums.length - 1; i++) {
-            int tmp = r0;
-            r0 = Math.max(r0, pre + nums[i]);
+        for (int i = start + 1; i <= end; i++) {
+            int tmp = result;
+            result = Math.max(result, pre + nums[i]);
             pre = tmp;
         }
-        int r1 = nums[1];
-        pre = 0;
-        for (int i = 2; i < nums.length; i++) {
-            int tmp = r1;
-            r1 = Math.max(r1, pre + nums[i]);
-            pre = tmp;
-        }
-        return Math.max(r0, r1);
+        return result;
     }
 
 /*****************************************************************************/
