@@ -7,12 +7,25 @@
  */
 public class ContainsDuplicate {
 
+    // O(n) time, O(n) space.
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<Integer>();
         for (int value : nums) {
             if (!set.contains(value))
                 set.add(value);
             else 
+                return true;
+        }
+        return false;
+    }
+
+/*********************************************************/
+
+    // O(n * lg(n)) time, O(1) space.
+    public boolean containDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1])
                 return true;
         }
         return false;
