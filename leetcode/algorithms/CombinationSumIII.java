@@ -5,7 +5,6 @@
  * 
  * Ensure that numbers within the set are sorted in ascending order.
  * 
- * 
  * Example 1:
  * 
  * Input: k = 3, n = 7
