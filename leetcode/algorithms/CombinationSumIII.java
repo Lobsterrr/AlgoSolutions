@@ -25,10 +25,10 @@
 public class CombinationSumIII {
 
     public List<List<Integer>> combinationSum3(int k, int n) {
-        return combinationSum3(k, n, 1);
+        return dfs(k, n, 1);
     }
 
-    public List<List<Integer>> combinationSum3(int k, int n, int start) {
+    public List<List<Integer>> dfs(int k, int n, int start) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (k == 1 && start <= n && n <= 9) {
             List<Integer> list = new ArrayList<Integer>();
@@ -37,7 +37,7 @@ public class CombinationSumIII {
             return result;
         }
         for (int i = start; i <= n; i++) {
-            List<List<Integer>> sub = combinationSum3(k - 1, n - i, i + 1);
+            List<List<Integer>> sub = dfs(k - 1, n - i, i + 1);
             for (List<Integer> list : sub) {
                 list.add(0, i);
                 result.add(list);
