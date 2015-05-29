@@ -37,8 +37,7 @@ public class CombinationSumIII {
             return result;
         }
         for (int i = start; i <= n; i++) {
-            List<List<Integer>> sub = dfs(k - 1, n - i, i + 1);
-            for (List<Integer> list : sub) {
+            for (List<Integer> list : dfs(k - 1, n - i, i + 1)) {
                 list.add(0, i);
                 result.add(list);
             }
