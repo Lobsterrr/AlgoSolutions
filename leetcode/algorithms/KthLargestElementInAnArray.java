@@ -13,15 +13,15 @@ public class KthLargestElementInAnArray {
 
     public int findKthLargest(int[] nums, int k) {
         for (int i = 0; i < k; i++) {
-            for (int j = 1; j < nums.length - i; j++) {
-                if (nums[j - 1] > nums[j]) {
+            for (int j = nums.length - 2; j >= i; j--) {
+                if (nums[j] < nums[j + 1]) {
                     int tmp = nums[j];
-                    nums[j] = nums[j - 1];
-                    nums[j - 1] = tmp;
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = tmp;
                 }
             }
         }
-        return nums[nums.length - k];
+        return nums[k - 1];
     }
         
 }
