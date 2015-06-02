@@ -17,8 +17,26 @@ public class ContainsDuplicateIII {
         return false;
     }
 
-    class BST {
+    
 
+}
+
+class BST {
+
+    class Node<T> {
+        private T data;
+        private Node<T> left;
+        private Node<T> right;
+        
+        public Node(T data, Node<T> l, Node<T> r) {
+            left = l;
+            right = r;
+            this.data = data;
+        }
+
+        public Node(T data) {
+            this(data, null, null);
+        }
     }
 
 }
