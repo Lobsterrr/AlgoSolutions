@@ -39,4 +39,18 @@ class BST {
         }
     }
 
+    public void insert(Node node) {
+
+    }
+
+    public boolean search(T value) {
+
+    }
+
+    public void delete(T value) {
+
+    }
+
+
+
 }
