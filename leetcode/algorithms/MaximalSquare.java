@@ -27,7 +27,8 @@ public class MaximalSquare {
             int k = 0;
             Stack<Integer> stack = new Stack<Integer>();
             while (k < yLen || !stack.isEmpty()) {
-                if (k < yLen && (stack.isEmpty() || height[k] >= height[stack.peek()])) {
+                if (k < yLen && (stack.isEmpty() || 
+                            height[k] >= height[stack.peek()])) {
                     stack.push(k++);
                 } else {
                     int a = Math.min(height[stack.pop()], 
