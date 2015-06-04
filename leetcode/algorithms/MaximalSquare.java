@@ -30,9 +30,8 @@ public class MaximalSquare {
                 if (k < yLen && (stack.isEmpty() || height[k] >= height[stack.peek()])) {
                     stack.push(k++);
                 } else {
-                    int y = height[stack.pop()];
-                    int x = stack.isEmpty() ? k : k - 1 - stack.peek();
-                    int a = Math.min(x, y);
+                    int a = Math.min(height[stack.pop()], 
+                            stack.isEmpty() ? k : k - stack.peek() - 1);
                     result = Math.max(result, a * a);
                 }
             }
@@ -40,5 +39,4 @@ public class MaximalSquare {
         return result;
     }
 
-    
 }
