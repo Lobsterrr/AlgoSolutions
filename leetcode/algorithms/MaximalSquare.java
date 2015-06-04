@@ -12,6 +12,8 @@
 public class MaximalSquare {
 
     public int maximalSquare(char[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0)
+            return 0;
         int xLen = matrix.length;
         int yLen = matrix[0].length;
         int[] height = new int[yLen];
@@ -22,13 +24,13 @@ public class MaximalSquare {
             }
             int k = 0;
             Stack<Integer> stack = new Stack<Integer>();
-            while (k < yLen) {
-                if (stack.isEmpty() || height[k] >= height[stack.peek()]) {
+            while (k < yLen || !stack.isEmpty()) {
+                if (k < yLen && (stack.isEmpty() || height[k] >= height[stack.peek()])) {
                     stack.push(k++);
                 } else {
-                    int x = k - 1 - stack.pop();
-                    int y = height[k];
-                    int a = Math.max(x, y);
+                    int y = height[stack.pop()];
+                    int x = stack.isEmpty() ? k : k - 1 - stack.peek();
+                    int a = Math.min(x, y);
                     result = Math.max(result, a * a);
                 }
             }
