@@ -28,15 +28,12 @@ class BST {
         private Node<T> left;
         private Node<T> right;
         
-        public Node(T data, Node<T> l, Node<T> r) {
-            left = l;
-            right = r;
-            this.data = data;
-        }
-
         public Node(T data) {
-            this(data, null, null);
-        }
+            this.data = data;
+            left = right = null;
+        }       
+
+
     }
 
     public void insert(Node node) {
