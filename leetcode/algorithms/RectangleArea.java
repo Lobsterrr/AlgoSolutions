@@ -17,7 +17,14 @@ public class RectangleArea {
 
     public int computeArea(int A, int B, int C, int D, 
             int E, int F, int G, int H) {
-        if (A <= E && E <= C && 
+        if (A <= E && E <= C) {
+            if (B <= F && F <= D) {
+                int a = Math.min(C, G) - E;
+                int b = Math.min(D, H) - F;
+                return a * b;
+            }
+            if (
+        }
 
     }
 
