@@ -29,9 +29,19 @@ public class RectangleArea {
                 return a * b;
             }
         }
-
-
-
+        if (A <= G && G <= C) {
+            if (B <= H && H <= D) {
+                int a = G - Math.max(A, E);
+                int b = H - Math.max(B, F);
+                return a * b;
+            }
+            if (B <= F && F <= D) {
+                int a = G - Math.max(A, E);
+                int b = Math.min(D, H) - F;
+                return a * b;
+            }
+        }
+        return 0;
     }
 
 }
