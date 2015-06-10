@@ -23,8 +23,14 @@ public class RectangleArea {
                 int b = Math.min(D, H) - F;
                 return a * b;
             }
-            if (
+            if (B <= H && H <= D) {
+                int a = Math.min(C, G) - E;
+                int b = H - Math.max(B, F);
+                return a * b;
+            }
         }
+
+
 
     }
 
