@@ -33,24 +33,22 @@ public class InvertBinaryTree {
         return root;
     }
 
+/*********************************************************/
 
     public TreeNode invertTree(TreeNode root) {
-        if (root == null) 
-            return root;
-        Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
-        stack.push(root);
-        while (cur != null && cur.left != null || !stack.isEmpty()) {
-            if (cur.left != null) {
-                stack.push(cur.left);
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
                 cur = cur.left;
             } else if (!stack.isEmpty()) {
                 TreeNode node = stack.pop();
                 TreeNode tmp = node.left;
                 node.left = node.right;
                 node.right = tmp;
-                cur = node;
-            } 
+                cur = node.left;
+            }
         }
         return root;
     }
