@@ -40,17 +40,17 @@ public class InvertBinaryTree {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
         stack.push(root);
-        while (!stack.isEmpty()) {
+        while (cur != null && cur.left != null || !stack.isEmpty()) {
             if (cur.left != null) {
                 stack.push(cur.left);
                 cur = cur.left;
-            } else {
+            } else if (!stack.isEmpty()) {
                 TreeNode node = stack.pop();
                 TreeNode tmp = node.left;
                 node.left = node.right;
                 node.right = tmp;
                 cur = node;
-            }
+            } 
         }
         return root;
     }
