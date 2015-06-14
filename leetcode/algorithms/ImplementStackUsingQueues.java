@@ -23,6 +23,7 @@ public class ImplementStackUsingQueues {
         Queue<Integer> queue1 = new LinkedList<Integer>();
         Queue<Integer> queue2 = new LinkedList<Integer>();
         int size = 0;
+
         // Push element x onto stack.
         public void push(int x) {
             queue1.add(x);
