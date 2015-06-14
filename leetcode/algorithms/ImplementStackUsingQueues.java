@@ -32,10 +32,8 @@ public class ImplementStackUsingQueues {
 
         // Removes the element on top of the stack.
         public void pop() {
-            int count = size;
-            while (count > 1) {
+            for (int i = size; i > 1; i--) {
                 queue2.offer(queue1.poll());
-                count--;
             }
             queue1 = queue2;
             queue2 = new LinkedList<Integer>();
@@ -47,10 +45,8 @@ public class ImplementStackUsingQueues {
         public int top() {
             if (size <= 0)
                 return Integer.parseInt(null);
-            int count = size;
-            while (count > 1) {
+            for (int i = size; i > 1; i--) {
                 queue2.offer(queue1.poll());
-                count--;
             }
             int topValue = queue1.poll();
             queue2.offer(topValue);
