@@ -15,38 +15,19 @@
  */
 public class RectangleArea {
 
-    public int computeArea(int A, int B, int C, int D, 
+    public int computeArea(int A, int B, int C, int D,
             int E, int F, int G, int H) {
-        return (C - A) * (D - B) + (G - E) * (H - F) - computeOverlapArea(A, B, C, D, E, F, G, H);
+        return (C - A) * (D - B) + (G - E) * (H - F) - 
+            computeOverlapArea(A, B, C, D, E, F, G, H);
     }
 
-    public int computeOverlapArea(int A, int B, int C, int D, 
-            int E, int F, int G, int H) {
-        if (A <= E && E <= C) {
-            if (B <= F && F <= D) {
-                int a = Math.min(C, G) - E;
-                int b = Math.min(D, H) - F;
-                return a * b;
-            }
-            if (B <= H && H <= D) {
-                int a = Math.min(C, G) - E;
-                int b = H - Math.max(B, F);
-                return a * b;
-            }
-        }
-        if (A <= G && G <= C) {
-            if (B <= H && H <= D) {
-                int a = G - Math.max(A, E);
-                int b = H - Math.max(B, F);
-                return a * b;
-            }
-            if (B <= F && F <= D) {
-                int a = G - Math.max(A, E);
-                int b = Math.min(D, H) - F;
-                return a * b;
-            }
-        }
-        return 0;
+    public int computeOverlapArea(int A, int B, int C, int D,
+        int E, int F, int G, int H) {
+        int a = Math.max(A, E);
+        int b = Math.min(C, G);
+        int c = Math.max(B, F);
+        int d = Math.min(D, H);
+        return a >= b || c >= d ? 0 : (b - a) * (d - c);
     }
 
 }
