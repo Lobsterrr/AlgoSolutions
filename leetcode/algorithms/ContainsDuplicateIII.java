@@ -31,7 +31,17 @@ class BST {
     }   
 
     public void insert(TreeNode node) {
+        root = insert(root, node);
+    }
 
+    private TreeNode<Integer> insert(TreeNode<Integer> root, TreeNode<Integer> node) {
+        if (root == null)
+            root = node;
+        else if (node.value <= root.value) 
+            root.left = insert(root.left, node);
+        else
+            root.right = insert(root.right, node);
+        return root;
     }
 
 
