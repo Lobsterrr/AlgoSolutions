@@ -15,6 +15,8 @@ public class ContainsDuplicateIII {
 
 class BST {
 
+    private TreeNode root;
+
     class TreeNode<Integer> {
         
         private Integer value;
@@ -28,15 +30,16 @@ class BST {
         }
     }   
 
-    public void insert(Node node) {
+    public void insert(TreeNode node) {
 
     }
 
-    public boolean search(T value) {
+
+    public boolean search(int value) {
 
     }
 
-    public void delete(T value) {
+    public void delete(int value) {
 
     }
 
