@@ -21,18 +21,18 @@ public class ContainsDuplicateIII {
 
 class BST {
 
-    class Node<T> {
-        private T data;
-        private Node<T> left;
-        private Node<T> right;
+    class TreeNode<Integer> {
         
-        public Node(T data) {
-            this.data = data;
-            left = right = null;
-        }       
-
-
-    }
+        private Integer value;
+        private TreeNode<Integer> left;
+        private TreeNode<Integer> right;    
+        
+        TreeNode(Integer value) {
+            this.value = value;
+            left = null;
+            right = null;
+        }
+    }   
 
     public void insert(Node node) {
 
