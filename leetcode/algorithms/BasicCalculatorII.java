@@ -25,7 +25,20 @@ public class BasicCalculatorII {
                 }
                 list.add(Integer.parseInt(s.substring(start, i);
             } else if (c == '+' || c == '-' || c == '*' || c == '/') {
-                
+                list.add(c);
+            }
+        }
+        for (int i = 0; i < list.size(); i++) {
+            Object obj = list.get(i);
+            if (obj == '*' || obj == '/') {
+                int value = 0;
+                if (obj == '*') {
+                    value = list.get(i - 1) * list.get(i + 1);
+                } else {
+                    value = list.get(i - 1) / list.get(i + 1);
+                }
+                list.remove(i - 1, i + 1);
+                list.add(i - 1, value);
             }
         }
     }
