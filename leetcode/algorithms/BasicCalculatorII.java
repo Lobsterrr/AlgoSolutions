@@ -21,27 +21,37 @@ public class BasicCalculatorII {
             char c = s.charAt(i);
             if ('0' <= c && c <= '9') {
                 start = i;
-                while ('0' <= s.charAt(i) && s.charAt(i) <= '9') {
+                while (i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9') {
                     i++;
                 }
-                list.add(Integer.parseInt(s.substring(start, i);
+                list.add(Long.parseLong(s.substring(start, i--)));
             } else if (c == '+' || c == '-' || c == '*' || c == '/') {
                 list.add(c);
             }
         }
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = list.size() - 2; i >= 0; i -= 2) {
             Object obj = list.get(i);
-            if (obj == '*' || obj == '/') {
-                int value = 0;
-                if (obj == '*') {
-                    value = list.get(i - 1) * list.get(i + 1);
+            if (obj.equals('*') || obj.equals('/')) {
+                long value = 0;
+                if (obj.equals('*')) {
+                    value = (long) list.get(i - 1) * (long) list.get(i + 1);
                 } else {
-                    value = list.get(i - 1) / list.get(i + 1);
+                    value = (long) list.get(i - 1) / (long) list.get(i + 1);
                 }
-                list.remove(i - 1, i + 1);
+                list.remove(i + 1);
+                list.remove(i);
+                list.remove(i - 1);
                 list.add(i - 1, value);
             }
         }
+        long result = (long) list.get(0);
+        for (int i = 1; i < list.size(); i += 2) {
+            if (list.get(i).equals('+'))
+                result += (long) list.get(i + 1);
+            else
+                result -= (long) list.get(i + 1);
+        }
+        return (int) result;
     }
 
 }
