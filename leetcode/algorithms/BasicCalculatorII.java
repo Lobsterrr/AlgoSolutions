@@ -20,7 +20,8 @@ public class BasicCalculatorII {
             char c = s.charAt(i);
             if ('0' <= c && c <= '9') {
                 start = i;
-                for (; i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9'; i++);
+                for (; i < s.length() && '0' <= s.charAt(i) && 
+                        s.charAt(i) <= '9'; i++);
                 list.add(Long.parseLong(s.substring(start, i--)));
             } else if (c == '+' || c == '-' || c == '*' || c == '/') {
                 list.add(c);
