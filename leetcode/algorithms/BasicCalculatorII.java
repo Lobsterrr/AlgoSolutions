@@ -29,21 +29,24 @@ public class BasicCalculatorII {
                 list.add(c);
             }
         }
-        for (int i = list.size() - 2; i >= 0; i -= 2) {
-            Object obj = list.get(i);
-            if (obj.equals('*') || obj.equals('/')) {
+        for (int i = 1; i + 1 < list.size(); ) {
+            Object operator = list.get(i);
+            if (operator.equals('*') || operator.equals('/')) {
                 long value = 0;
-                if (obj.equals('*')) {
+                if (operator.equals('*')) {
                     value = (long) list.get(i - 1) * (long) list.get(i + 1);
                 } else {
                     value = (long) list.get(i - 1) / (long) list.get(i + 1);
                 }
-                list.remove(i + 1);
-                list.remove(i);
+                list.remove(i - 1);
+                list.remove(i - 1);
                 list.remove(i - 1);
                 list.add(i - 1, value);
+            } else {
+                i += 2;
             }
         }
+
         long result = (long) list.get(0);
         for (int i = 1; i < list.size(); i += 2) {
             if (list.get(i).equals('+'))
@@ -53,6 +56,5 @@ public class BasicCalculatorII {
         }
         return (int) result;
     }
-
 
 }
