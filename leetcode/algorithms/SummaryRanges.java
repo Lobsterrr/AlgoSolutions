@@ -1,5 +1,8 @@
 /*
+ * Given a sorted integer array without duplicates, return the 
+ * summary of its ranges.
  *
+ * For example, given [0,1,2,4,5,7], return ["0->2","4->5","7"].
  */
 
 public class SummaryRanges {
@@ -8,14 +11,10 @@ public class SummaryRanges {
         List<String> result = new ArrayList<String>();
         for (int i = 0; i < nums.length; i++) {
             int start = i;
-            while (i + 1 < nums.length && nums[i + 1] == nums[i] + 1) {
-                i++;
-            }
-            String s = "";
+            for (; i + 1 < nums.length && nums[i] + 1 == nums[i + 1]; i++);
+            String s = "" + nums[start];
             if (start < i)
-                s = nums[start] + "->" + nums[i];
-            else
-                s += nums[start];
+                s += "->" + nums[i];
             result.add(s);
         }
         return result;
