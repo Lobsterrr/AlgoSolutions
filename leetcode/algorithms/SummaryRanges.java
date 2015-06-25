@@ -12,10 +12,10 @@ public class SummaryRanges {
         for (int i = 0; i < nums.length; i++) {
             int start = i;
             for (; i + 1 < nums.length && nums[i] + 1 == nums[i + 1]; i++);
-            String s = "" + nums[start];
+            String range = "" + nums[start];
             if (start < i)
-                s += "->" + nums[i];
-            result.add(s);
+                range += "->" + nums[i];
+            result.add(range);
         }
         return result;
     }
