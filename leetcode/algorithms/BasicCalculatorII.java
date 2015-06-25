@@ -16,14 +16,11 @@ public class BasicCalculatorII {
 
     public int calculate(String s) {
         List<Object> list = new ArrayList<Object>();
-        int start = 0;
-        for (int i = 0; i < s.length(); i++) {
+        for (int start = 0, i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if ('0' <= c && c <= '9') {
                 start = i;
-                while (i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9') {
-                    i++;
-                }
+                for (; i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9'; i++);
                 list.add(Long.parseLong(s.substring(start, i--)));
             } else if (c == '+' || c == '-' || c == '*' || c == '/') {
                 list.add(c);
@@ -46,7 +43,6 @@ public class BasicCalculatorII {
                 i += 2;
             }
         }
-
         long result = (long) list.get(0);
         for (int i = 1; i < list.size(); i += 2) {
             if (list.get(i).equals('+'))
