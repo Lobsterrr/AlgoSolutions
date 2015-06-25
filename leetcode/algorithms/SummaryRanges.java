@@ -20,4 +20,20 @@ public class SummaryRanges {
         return result;
     }
 
+    //TODO debug
+    public List<String> summaryRanges(int[] nums) {
+        List<String> result = new ArrayList<String>();
+        int start = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i + 1 < nums.length && nums[i] + 1 != nums[i + 1]) {
+                String range = "" + nums[start];
+                if (start < i)
+                    range += "->" + nums[i];
+                result.add(range);
+                start = i + 1;
+            }
+        }
+        return result;
+    }
+
 }
