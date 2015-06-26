@@ -30,6 +30,7 @@ class BST {
         }
     }   
 
+    // insert
     public void insert(TreeNode node) {
         root = insert(root, node);
     }
@@ -44,11 +45,23 @@ class BST {
         return root;
     }
 
+    // search
     public boolean search(int value) {
-
-
+        return search(root, value);
     }
 
+    public boolean search(TreeNode root, int value) {
+        if (root == null)
+            return false;
+        else if (root.value == value)
+            return true;
+        else if (root.value < value)
+            return search(root.right, value);
+        else
+            return search(root.left, value);
+    }
+
+    // delete
     public void delete(int value) {
 
     }
