@@ -11,12 +11,12 @@ public class ContainsDuplicateIII {
         BST bst = new BST();
         for (int i = 0; i < nums.length; i++) {
             bst.insert(nums[i]);
-            if (i >= k) {
-                if (bst.getMax() - bst.getMin() <= t)
-                    return true;
-                bst.deleteMin();
-            }
+            if (i > 0 && bst.getMax().value - bst.getMin().value <= t)
+                return true;
+            if (i >= k)
+                bst.delete(nums[i - k]);
         }
+        return false;
     }
 
 }
@@ -73,18 +73,6 @@ class BST {
             return search(root.left, value);
     }
 
-    // deleteMin
-    public void deleteMin() {
-        root = deleteMin(root);
-    }
-
-    public TreeNode deleteMin(TreeNode root) {
-        if (root.left == null) 
-            return root.right;
-        root.left = deleteMin(root.left);
-        return root;
-    }
-
     // delete
     public void delete(int value) {
         root = delete(root, value);
@@ -107,6 +95,18 @@ class BST {
             root.right = deleteMin(t.right);
             root.left = t.left;
         }
+        return root;
+    }
+
+    // deleteMin
+    public void deleteMin() {
+        root = deleteMin(root);
+    }
+
+    public TreeNode deleteMin(TreeNode root) {
+        if (root.left == null) 
+            return root.right;
+        root.left = deleteMin(root.left);
         return root;
     }
 
