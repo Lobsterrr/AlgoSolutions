@@ -20,11 +20,11 @@ class BST {
 
     private TreeNode root;
 
-    class TreeNode<Integer> {
+    class TreeNode {
         
-        private Integer value;
-        private TreeNode<Integer> left;
-        private TreeNode<Integer> right;    
+        private int value;
+        private TreeNode left;
+        private TreeNode right;    
         
         TreeNode(Integer value) {
             this.value = value;
@@ -34,17 +34,17 @@ class BST {
     }   
 
     // insert
-    public void insert(TreeNode node) {
-        root = insert(root, node);
+    public void insert(int value) {
+        root = insert(root, value);
     }
 
-    private TreeNode<Integer> insert(TreeNode<Integer> root, TreeNode<Integer> node) {
+    private TreeNode insert(TreeNode root, int value) {
         if (root == null)
-            root = node;
-        else if (node.value <= root.value) 
-            root.left = insert(root.left, node);
-        else
-            root.right = insert(root.right, node);
+            root = new TreeNode(value);
+        else if (value <= root.value)
+            root.left = insert(root.left, value);
+        else 
+            root.right = insert(root.right, value);
         return root;
     }
 
@@ -78,7 +78,7 @@ class BST {
 
     // delete
     public void delete(int value) {
-        
+        root = delete(root, value);
     }
 
     public TreeNode delete(TreeNode root, int value) {
@@ -99,6 +99,17 @@ class BST {
             root.left = t.left;
         }
         return root;
+    }
+
+    // getMin
+    public TreeNode getMin() {
+        return getMin(root);
+    }
+
+    public TreeNode getMin(TreeNode root) {
+        if (root.left == null)
+            return root;
+        return getMin(root.left);
     }
 
 }
