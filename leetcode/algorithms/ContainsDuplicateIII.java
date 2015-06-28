@@ -7,6 +7,7 @@
  */
 public class ContainsDuplicateIII {
 
+    // TODO
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         BST bst = new BST();
         for (int i = 0; i < nums.length; i++) {
@@ -22,17 +23,17 @@ public class ContainsDuplicateIII {
 }
 
 class TreeNode {
-        
+
     int value;
     TreeNode left;
-    TreeNode right;    
-        
+    TreeNode right;
+
     TreeNode(int value) {
         this.value = value;
         left = null;
         right = null;
     }
-}   
+}
 
 class BST {
 
@@ -52,25 +53,9 @@ class BST {
             root = new TreeNode(value);
         else if (value <= root.value)
             root.left = insert(root.left, value);
-        else 
+        else
             root.right = insert(root.right, value);
         return root;
-    }
-
-    // search
-    public boolean search(int value) {
-        return search(root, value);
-    }
-
-    public boolean search(TreeNode root, int value) {
-        if (root == null)
-            return false;
-        else if (root.value == value)
-            return true;
-        else if (root.value < value)
-            return search(root.right, value);
-        else
-            return search(root.left, value);
     }
 
     // delete
@@ -81,7 +66,7 @@ class BST {
     public TreeNode delete(TreeNode root, int value) {
         if (root == null)
             return null;
-        if (value < root.value) 
+        if (value < root.value)
             root.left = delete(root.left, value);
         else if (value > root.value)
             root.right = delete(root.right, value);
@@ -99,12 +84,8 @@ class BST {
     }
 
     // deleteMin
-    public void deleteMin() {
-        root = deleteMin(root);
-    }
-
     public TreeNode deleteMin(TreeNode root) {
-        if (root.left == null) 
+        if (root.left == null)
             return root.right;
         root.left = deleteMin(root.left);
         return root;
