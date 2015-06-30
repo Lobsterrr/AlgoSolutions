@@ -14,13 +14,8 @@ public class MajorityElementII {
                 count = map.get(value);
             map.put(value, count + 1);
         }
-        int maxCount = 0;
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (maxCount < entry.getValue())
-                maxCount = entry.getValue();
-        }
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (maxCount == entry.getValue())
+            if (entry.getValue() > nums.length / 3)
                 result.add(entry.getKey());
         }
         return result;
