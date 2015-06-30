@@ -5,6 +5,7 @@
  */
 public class MajorityElementII {
 
+    // O(n) time, O(n) space.
     public List<Integer> majorityElement(int[] nums) {
         List<Integer> result = new ArrayList<Integer>();
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
