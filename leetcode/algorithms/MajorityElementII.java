@@ -5,6 +5,10 @@
  */
 public class MajorityElementII {
 
+    public List<Integer> majorityElement(int[] nums) {
+
+    }
+
     // O(n) time, O(n) space.
     public List<Integer> majorityElement(int[] nums) {
         List<Integer> result = new ArrayList<Integer>();
