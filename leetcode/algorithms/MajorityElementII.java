@@ -6,7 +6,47 @@
 public class MajorityElementII {
 
     public List<Integer> majorityElement(int[] nums) {
-
+        List<Integer> result = new ArrayList<Integer>();
+        int candidate0 = 0;
+        int candidate1 = 0;
+        int count0 = 0;
+        int count1 = 0;
+        for (int value : nums) {
+            if (value == candidate0)
+                count0++;
+            else if (value == candidate1)
+                count1++;
+            else {
+                if (count0 > count1) {
+                    if (count1 > 1)
+                        count1--;
+                    else {
+                        candidate1 = value;
+                        count1 = 1;
+                    }
+                } else {
+                    if (count0 > 1)
+                        count0--;
+                    else {
+                        candidate0 = value;
+                        count0 = 1;
+                    }
+                }
+            }
+        }
+        count0 = 0;
+        count1 = 0;
+        for (int value : nums) {
+            if (value == candidate0)
+                count0++;
+            if (value == candidate1)
+                count1++;
+        }
+        if (count0 > nums.length / 3)
+            result.add(candidate0);
+        if (candidate0 != candidate1 && count1 > nums.length / 3)
+            result.add(candidate1);
+        return result;
     }
 
     // O(n) time, O(n) space.
