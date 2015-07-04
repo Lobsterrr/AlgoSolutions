@@ -5,6 +5,7 @@
  */
 public class MajorityElementII {
 
+    // O(n) time and O(1) space.
     public List<Integer> majorityElement(int[] nums) {
         List<Integer> result = new ArrayList<Integer>();
         int candidate0 = 0;
@@ -12,14 +13,27 @@ public class MajorityElementII {
         int count0 = 0;
         int count1 = 0;
         for (int value : nums) {
-            if (    
+            if (value == candidate0)
+                count0++;
+            else if (value == candidate1)
+                count1++;
+            else if (count0 == 0) {
+                candidate0 = value;
+                count0 = 1;
+            } else if (count1 == 0) {
+                candidate1 = value;
+                count1 = 1;
+            } else {
+                count0--;
+                count1--;
+            }
         }
         count0 = 0;
         count1 = 0;
         for (int value : nums) {
             if (value == candidate0)
                 count0++;
-            if (value == candidate1)
+             else if (value == candidate1)
                 count1++;
         }
         if (count0 > nums.length / 3)
