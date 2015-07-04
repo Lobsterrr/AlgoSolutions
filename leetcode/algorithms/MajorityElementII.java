@@ -17,17 +17,15 @@ public class MajorityElementII {
                 count0++;
             else if (value == candidate1)
                 count1++;
-            else {
-                if (count0 == 0) {
-                    candidate0 = value;
-                    count0 = 1;
-                } else if (count1 == 0) {
-                    candidate1 = value;
-                    count1 = 1;
-                } else {
-                    count0--;
-                    count1--;
-                }
+            else if (count0 == 0) {
+                candidate0 = value;
+                count0 = 1;
+            } else if (count1 == 0) {
+                candidate1 = value;
+                count1 = 1;
+            } else {
+                count0--;
+                count1--;
             }
         }
         count0 = 0;
