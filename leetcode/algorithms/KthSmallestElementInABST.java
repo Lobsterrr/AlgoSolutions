@@ -23,7 +23,12 @@ public class KthSmallestElementInABST {
 
     public int kthSmallest(TreeNode root, int k) {
         int leftSize = treeSize(root.left);
-
+        if (k - 1 == leftSize)
+            return root.val;
+        else if (k - 1 < leftSize)
+            return kthSmallest(root.left, k);
+        else
+            return kthSmallest(root.right, k - leftSize - 1);
     }
 
     public int treeSize(TreeNode root) {
