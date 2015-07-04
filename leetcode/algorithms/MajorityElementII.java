@@ -12,27 +12,7 @@ public class MajorityElementII {
         int count0 = 0;
         int count1 = 0;
         for (int value : nums) {
-            if (value == candidate0)
-                count0++;
-            else if (value == candidate1)
-                count1++;
-            else {
-                if (count0 > count1) {
-                    if (count1 > 1)
-                        count1--;
-                    else {
-                        candidate1 = value;
-                        count1 = 1;
-                    }
-                } else {
-                    if (count0 > 1)
-                        count0--;
-                    else {
-                        candidate0 = value;
-                        count0 = 1;
-                    }
-                }
-            }
+            if (    
         }
         count0 = 0;
         count1 = 0;
