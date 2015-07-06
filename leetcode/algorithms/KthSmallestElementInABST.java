@@ -22,19 +22,22 @@
 public class KthSmallestElementInABST {
 
     public int kthSmallest(TreeNode root, int k) {
-        int leftSize = treeSize(root.left);
-        if (k - 1 == leftSize)
-            return root.val;
-        else if (k - 1 < leftSize)
-            return kthSmallest(root.left, k);
-        else
-            return kthSmallest(root.right, k - leftSize - 1);
-    }
-
-    public int treeSize(TreeNode root) {
-        if (root == null)
-            return 0;
-        return 1 + treeSize(root.left) + treeSize(root.right);
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode cur = root;
+        int count = k;
+        while (stack.size() > 0 || cur != null) {
+            if (cur != null) {
+                stack.add(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                count--;
+                if (count == 0)
+                    return cur.val;
+                cur = cur.right;
+            }
+        }
+        return 0;
     }
 
 /*******************************************************************/
@@ -52,22 +55,23 @@ public class KthSmallestElementInABST {
         return kthSmallest(root.right, k);
     }
 
+
+/*******************************************************************/
+
     public int kthSmallest(TreeNode root, int k) {
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode cur = root;
-        int index = k;
-        while (stack.size() > 0 || cur != null) {
-            if (cur != null) {
-                stack.add(cur);
-                cur = cur.left;
-            } else {
-                cur = stack.pop();
-                index--;
-                if (index == 0)
-                    return cur.val;
-                cur = cur.right;
-            }
-        }
-        return 0;
+        int leftSize = treeSize(root.left);
+        if (k - 1 == leftSize)
+            return root.val;
+        else if (k - 1 < leftSize)
+            return kthSmallest(root.left, k);
+        else
+            return kthSmallest(root.right, k - leftSize - 1);
     }
+
+    public int treeSize(TreeNode root) {
+        if (root == null)
+            return 0;
+        return 1 + treeSize(root.left) + treeSize(root.right);
+    }
+
 }
