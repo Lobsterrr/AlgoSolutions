@@ -53,6 +53,21 @@ public class KthSmallestElementInABST {
     }
 
     public int kthSmallest(TreeNode root, int k) {
-        
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode cur = root;
+        int index = k;
+        while (stack.size() > 0 || cur != null) {
+            if (cur != null) {
+                stack.add(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                index--;
+                if (index == 0)
+                    return cur.val;
+                cur = cur.right;
+            }
+        }
+        return 0;
     }
 }
