@@ -14,7 +14,26 @@
 public class BasicCalculator {
 
     public int calculate(String s) {
+        Stack<Object> stack0 = new Stack<Object>();
+        Stack<Object> stack1 = new Stack<Object>();
+        s = s.replaceAll(" ", "");
+        for (int i = 0; i < s.length(); i++) {
+            if ('0' <= s.charAt(i) && s.charAt(i) <= '9') {
+                int start = i;
+                while (i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9') {
+                    i++;
+                }
+                stack1.push(Integer.parseInt(s.substring(start, i));
+            } else if (s.charAt(i) == '(') {
 
+            } else if (s.charAt(i) == ')') {
+
+            } else if (s.charAt(i) == '+' || s.charAt(i) == '-') {
+
+            } else if (s.charAt(i) == '*' || s.charAt(i) == '/') {
+
+            }
+        }
     }
 
 }
