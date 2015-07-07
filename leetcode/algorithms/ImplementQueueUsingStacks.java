@@ -16,21 +16,28 @@
  * You may assume that all operations are valid (for example, 
  * no pop or peek operations will be called on an empty queue).
  */
-public class MyQueue {
+public class ImplementQueueUsingStacks {
 
-    public void push(int x) {
+    class MyQueue {
+        // Push element x to the back of queue.
+        public void push(int x) {
+            
+        }
 
-    }
+        // Removes the element from in front of queue.
+        public void pop() {
+            
+        }
 
-    public void pop() {
+        // Get the front element.
+        public int peek() {
+            
+        }
 
-    }
-
-    public int peek() {
-
-    }
-
-    public boolean empty() {
+        // Return whether the queue is empty.
+        public boolean empty() {
+            
+        }
 
     }
 
