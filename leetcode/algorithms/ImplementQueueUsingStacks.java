@@ -19,24 +19,44 @@
 public class ImplementQueueUsingStacks {
 
     class MyQueue {
+
+        Stack<Integer> stack0 = new Stack<Integer>();
+        Stack<Integer> stack1 = new Stack<Integer>();
+        private int size = 0;
+
         // Push element x to the back of queue.
         public void push(int x) {
-            
+            stack0.push(x);
+            size++;
         }
 
         // Removes the element from in front of queue.
         public void pop() {
-            
+            while (!stack0.isEmpty()) {
+                stack1.push(stack0.pop());
+            }
+            stack1.pop();
+            size--;
+            while (!stack1.isEmpty()) {
+                stack0.push(stack1.pop());
+            }
         }
 
         // Get the front element.
         public int peek() {
-            
+            while (!stack0.isEmpty()) {
+                stack1.push(stack0.pop());
+            }
+            int top = stack1.peek();
+            while (!stack1.isEmpty()) {
+                stack0.push(stack1.pop());
+            }
+            return top;
         }
 
         // Return whether the queue is empty.
         public boolean empty() {
-            
+            return size == 0;
         }
 
     }
