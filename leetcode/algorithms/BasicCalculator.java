@@ -25,13 +25,13 @@ public class BasicCalculator {
                 }
                 stack1.push(Integer.parseInt(s.substring(start, i));
             } else if (s.charAt(i) == '(') {
-
+                stack0.push(s.charAt(i));
             } else if (s.charAt(i) == ')') {
 
             } else if (s.charAt(i) == '+' || s.charAt(i) == '-') {
 
             } else if (s.charAt(i) == '*' || s.charAt(i) == '/') {
-
+                stack0.push(s.charAt(i));
             }
         }
     }
