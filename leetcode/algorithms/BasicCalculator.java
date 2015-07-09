@@ -14,35 +14,42 @@
 public class BasicCalculator {
 
     public int calculate(String s) {
-        Stack<Object> stack0 = new Stack<Object>();
-        Stack<Object> stack1 = new Stack<Object>();
-        s = s.replaceAll(" ", "");
+        Stack<Character> stackOpt = new Stack<Character>();
+        Stack<Integer> stackNum = new Stack<Integer>();
         for (int i = 0; i < s.length(); i++) {
-            if ('0' <= s.charAt(i) && s.charAt(i) <= '9') {
-                int start = i;
+            char c = s.charAt(i);
+            if ('0' <= c && c <= '9') {
+                int num = 0;
                 while (i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9') {
+                    num = num * 10 + s.charAt(i) - '0';
                     i++;
                 }
-                stack1.push(Integer.parseInt(s.substring(start, i)));
-            } else if (s.charAt(i) == '(') {
-                stack0.push(s.charAt(i));
-            } else if (s.charAt(i) == ')') {
-                while (!stack0.isEmpty() && stack0.peek() != '(') {
-                    char operator = stack0.pop();
-                    int calcValue = calc(stack1.pop(), operator, stack1.pop());
-                    stack1.push(calcValue);
+                i--;
+                stackNum.push(num);
+            } else if (c == '(' || c == '*' || c == '/') {
+                stackOpt.push(c);
+            } else if (c == ')') {
+                while (!stackOpt.isEmpty() && stackOpt.peek() != '(') {
+                    calc(stackOpt, stackNum);
                 }
-                stack0.pop(); // pop '('.
-            } else if (s.charAt(i) == '+' || s.charAt(i) == '-') {
-                while (!stack0.isEmpty() && (stack0.peek() == '*' || stack0.peek() == '/')) {
-                    char operator = stack0.pop();
-                    int calcValue = calc(stack1.pop(), operator, stack1.pop());
-                    stack1.push(calcValue);
+                stackOpt.pop(); // pop '('.
+            } else if (c == '+' || c == '-') {
+                while (!stackOpt.isEmpty() && (stackOpt.peek() == '*' || stackOpt.peek() == '/')) {
+                    calc(stackOpt, stackNum);
                 }
-            } else if (s.charAt(i) == '*' || s.charAt(i) == '/') {
-                stack0.push(s.charAt(i));
+                stackOpt.push(c);
             }
         }
+        while (!stackOpt.isEmpty()) {
+            calc(stackOpt, stackNum);
+        }
+        return stackNum.pop();
+    }
+
+    public void calc(Stack<Character> stackOpt, Stack<Integer> stackNum) {
+        int num2 = stackNum.pop();
+        int num1 = stackNum.pop();
+        stackNum.push(calc(num1, stackOpt.pop(), num2));
     }
 
     public int calc(int num1, char operator, int num2) {
@@ -59,4 +66,5 @@ public class BasicCalculator {
                 return Integer.parseInt(null);
         }
     }
+
 }
