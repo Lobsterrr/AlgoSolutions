@@ -23,17 +23,40 @@ public class BasicCalculator {
                 while (i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9') {
                     i++;
                 }
-                stack1.push(Integer.parseInt(s.substring(start, i));
+                stack1.push(Integer.parseInt(s.substring(start, i)));
             } else if (s.charAt(i) == '(') {
                 stack0.push(s.charAt(i));
             } else if (s.charAt(i) == ')') {
-
+                while (!stack0.isEmpty() && stack0.peek() != '(') {
+                    char operator = stack0.pop();
+                    int calcValue = calc(stack1.pop(), operator, stack1.pop());
+                    stack1.push(calcValue);
+                }
+                stack0.pop(); // pop '('.
             } else if (s.charAt(i) == '+' || s.charAt(i) == '-') {
-
+                while (!stack0.isEmpty() && (stack0.peek() == '*' || stack0.peek() == '/')) {
+                    char operator = stack0.pop();
+                    int calcValue = calc(stack1.pop(), operator, stack1.pop());
+                    stack1.push(calcValue);
+                }
             } else if (s.charAt(i) == '*' || s.charAt(i) == '/') {
                 stack0.push(s.charAt(i));
             }
         }
     }
 
+    public int calc(int num1, char operator, int num2) {
+        switch (operator) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            case '/':
+                return num1 / num2;
+            default:
+                return Integer.parseInt(null);
+        }
+    }
 }
