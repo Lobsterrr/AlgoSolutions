@@ -13,6 +13,9 @@
  */
 public class BasicCalculator {
 
+    //TODO
+    // fix bug -->  2 * 2 * 2 * 2 / 4 = 0
+
     public int calculate(String s) {
         Stack<Character> stackOpt = new Stack<Character>();
         Stack<Integer> stackNum = new Stack<Integer>();
@@ -34,10 +37,29 @@ public class BasicCalculator {
                 }
                 stackOpt.pop(); // pop '('.
             } else if (c == '+' || c == '-') {
+                if (!stackOpt.isEmpty() && (stackOpt.peek() == '*' || stackOpt.peek() == '/')) {
+                    Stack<Character> stackOptTmp = new Stack<Character>();
+                    Stack<Integer> stackNumTmp = new Stack<Integer>();
+                    while (!stackOpt.isEmpty() && (stackOpt.peek() == '*' || stackOpt.peek() == '/')) {
+                        stackOptTmp.push(stackOpt.pop());
+                        stackNumTmp.push(stackNum.pop());
+                    }
+                    stackNumTmp.push(stackNum.pop());
+                    while (!stackOptTmp.isEmpty()) {
+                        calc(stackOptTmp, stackNumTmp);
+                    }
+                    stackNum.push(stackNumTmp.pop());
+                }
+
+
+
+/*
+
                 while (!stackOpt.isEmpty() && (stackOpt.peek() == '*' || stackOpt.peek() == '/')) {
                     calc(stackOpt, stackNum);
                 }
                 stackOpt.push(c);
+*/
             }
         }
         while (!stackOpt.isEmpty()) {
