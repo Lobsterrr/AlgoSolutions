@@ -25,9 +25,27 @@ public class LowestCommonAncestorOfABinarySearchTree {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         TreeNode cur = root;
-        while (true) {
-            if (root.val
+        while (cur != null) {
+            if (p.val > cur.val && q.val > cur.val)
+                cur = cur.right;
+            else if (p.val > cur.val && q.val == cur.val)
+                return cur;
+            else if (p.val > cur.val && q.val < cur.val)
+                return cur;
+            else if (p.val == cur.val && q.val > cur.val)
+                return cur;
+            else if (p.val == cur.val && q.val == cur.val)
+                return cur;
+            else if (p.val == cur.val && q.val < cur.val)
+                return cur;
+            else if (p.val < cur.val && q.val > cur.val)
+                return cur;
+            else if (p.val < cur.val && q.val == cur.val)
+                return cur;
+            else 
+                cur = cur.left;
         }
+        return cur;
     }
 
 }
