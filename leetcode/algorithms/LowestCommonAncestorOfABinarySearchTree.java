@@ -31,12 +31,10 @@ public class LowestCommonAncestorOfABinarySearchTree {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, 
             TreeNode q) {
-        TreeNode cur = root;
-        while (cur != null && (p.val > cur.val && q.val > cur.val || 
-                    p.val < cur.val && q.val < cur.val)) {
-            cur = p.val < cur.val && q.val < cur.val ? cur.left : cur.right;
+        while (p.val > root.val && q.val > root.val || p.val < root.val && q.val < root.val) {
+            root = p.val < root.val && q.val < root.val ? root.left : root.right;
         }
-        return cur;
+        return root;
     }
 
 }
