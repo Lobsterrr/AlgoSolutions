@@ -20,9 +20,8 @@ public class PalindromeLinkedList {
             list.add(head.val);
             head = head.next;
         }
-        int size = list.size();
-        for (int i = 0; i < (size + 1) / 2; i++) {
-            if (!list.get(i).equals(list.get(size - 1 - i)))
+        for (int i = 0; i < list.size() / 2; i++) {
+            if (!list.get(i).equals(list.get(list.size() - 1 - i)))
                 return false;
         }
         return true;
