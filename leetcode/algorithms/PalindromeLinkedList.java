@@ -21,7 +21,7 @@ public class PalindromeLinkedList {
             head = head.next;
         }
         int size = list.size();
-        for (int i = 0; i < size / 2; i++) {
+        for (int i = 0; i < (size + 1) / 2; i++) {
             if (list.get(i) != list.get(size - 1 - i))
                 return false;
         }
