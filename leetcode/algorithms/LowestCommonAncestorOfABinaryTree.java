@@ -57,20 +57,12 @@ public class LowestCommonAncestorOfABinaryTree {
 
     // TLE
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        TreeNode cur = root;
-        while (cur != null) {
-            if (p.val == root.val || q.val == root.val)
-                return cur;
-            else if (onLeft(root, p) && onLeft(root, q))
-                cur = cur.left;    
-            else if (onLeft(root, p) && onRight(root, q))
-                return cur;
-            else if (onRight(root, p) && onLeft(root, q))
-                return cur;
-            else
-                return cur = cur.right;
-        }
-        return cur;
+        if (root == null || p.val == root.val || q.val == root.val || onLeft(root, p) && onRight(root, q) || onLeft(root, q) && onRight(root, p))
+            return root;
+        else if (onLeft(root, p) && onLeft(root,q))
+            return lowestCommonAncestor(root.left, p, q);
+        else
+            return lowestCommonAncestor(root.right, p, q);
     }
 
     public boolean onLeft(TreeNode root, TreeNode p) {
