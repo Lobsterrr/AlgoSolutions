@@ -31,7 +31,8 @@
  */
 public class LowestCommonAncestorOfABinaryTree {
 
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor(TreeNode root, 
+            TreeNode p, TreeNode q) {
         if (root == p || root == q)
             return root;
         int totalMatches = countMatchesPQ(root.left, p, q);
@@ -46,81 +47,12 @@ public class LowestCommonAncestorOfABinaryTree {
     public int countMatchesPQ(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null)
             return 0;
-        int matches = countMatchesPQ(root.left, p, q) + countMatchesPQ(root.right, p, q);
+        int matches = countMatchesPQ(root.left, p, q) + 
+            countMatchesPQ(root.right, p, q);
         if (root == p || root == q)
             return 1 + matches;
         else
             return matches;
     }
 
-/*******************************************************************/
-
-    // TLE
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || p.val == root.val || q.val == root.val || onLeft(root, p) && onRight(root, q) || onLeft(root, q) && onRight(root, p))
-            return root;
-        else if (onLeft(root, p) && onLeft(root,q))
-            return lowestCommonAncestor(root.left, p, q);
-        else
-            return lowestCommonAncestor(root.right, p, q);
-    }
-
-    public boolean onLeft(TreeNode root, TreeNode p) {
-        return root != null && search(root.left, p);
-    }
-
-    public boolean onRight(TreeNode root, TreeNode p) {
-        return root != null && search(root.right, p);
-    }
-
-    public boolean search(TreeNode root, TreeNode p) {
-        if (root == null)
-            return false;
-        if (p.val == root.val)
-            return true;
-        return search(root.left, p) || search(root.right, p);
-    }
-
-/*******************************************************************/
-
-    // TODO not finished.
-
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        List<TreeNode> path0 = new ArrayList<TreeNode>();
-        List<TreeNode> path1 = new ArrayList<TreeNode>();
-        if (!findPath(root, p, path0) || !findPath(root, q, path1))
-            return null;
-        int i = 0;
-        for (; i < Math.min(path0.size(), path1.size()); i++) {
-            if (path0.get(i).val != path1.get(i).val)
-                break;
-        }
-        return path0.get(i - 1);
-    }
-
-    public boolean findPath(TreeNode root, TreeNode p, List<TreeNode> path) {
-        if (root == null)
-            return false;
-        path.add(root);
-        if (root.val == p.val)
-            return true;
-        if ((root.left != null && findPath(root.left, p, path)) || (root.right != null && findPath(root.right, p, path)))
-            return true;
-        path.remove(path.size() - 1);
-        return false;
-    }
-
-/*******************************************************************/
-
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null)
-            return null;
-        if (root.val == p.val || root.val == q.val)
-            return root;
-        TreeNode L = lowestCommonAncestor(root.left, p, q);
-        TreeNode R = lowestCommonAncestor(root.right, p, q);
-        if (L != null && R != null)
-            return root;
-        return L != null ? L : R;
-    }
 }
