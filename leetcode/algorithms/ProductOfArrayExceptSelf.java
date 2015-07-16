@@ -21,12 +21,9 @@ public class ProductOfArrayExceptSelf {
         int[] leftProduct = new int[len];
         int[] rightProduct = new int[len];
         for (int i = 0; i < len; i++) {
-            if (i == 0) {
-                leftProduct[i] = 1;
-                rightProduct[len - 1 - i] = 1;
-            } else if (i == 1) {
-                leftProduct[i] = nums[i - 1];
-                rightProduct[len - 1 - i] = nums[len - i];
+            if (i < 2) {
+                leftProduct[i] = i == 0 ? 1 : nums[0];
+                rightProduct[len - 1 - i] = i == 0 ? 1 : nums[len - 1];
             } else {
                 leftProduct[i] = nums[i - 1] * leftProduct[i - 1];
                 rightProduct[len - 1 - i] = nums[len - i] * 
