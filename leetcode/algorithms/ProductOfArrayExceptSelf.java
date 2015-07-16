@@ -16,23 +16,18 @@
  */
 public class ProductOfArrayExceptSelf {
 
-    public int[] productExceptSelf(int[] nums) {
-        int len = nums.length;
-        int[] leftProduct = new int[len];
-        int[] rightProduct = new int[len];
-        for (int i = 0; i < len; i++) {
-            if (i < 2) {
-                leftProduct[i] = i == 0 ? 1 : nums[0];
-                rightProduct[len - 1 - i] = i == 0 ? 1 : nums[len - 1];
-            } else {
-                leftProduct[i] = nums[i - 1] * leftProduct[i - 1];
-                rightProduct[len - 1 - i] = nums[len - i] * 
-                    rightProduct[len - i];
-            }
+    public int[] productExceptSeft(int[] nums) {
+        int[] result = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            if (i < 2)
+                result[i] = i == 0 ? 1 : nums[0];
+            else
+                result[i] = result[i - 1] * nums[i - 1];
         }
-        int[] result = new int[len];
-        for (int i = 0; i < len; i++) {
-            result[i] = leftProduct[i] * rightProduct[i];
+        int product = 1;
+        for (int i = 1; i < nums.length; i++) {
+            product *= nums[nums.length - i];
+            result[nums.length - 1 - i] *= product;
         }
         return result;
     }
