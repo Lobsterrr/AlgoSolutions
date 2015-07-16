@@ -19,10 +19,7 @@ public class ProductOfArrayExceptSelf {
     public int[] productExceptSeft(int[] nums) {
         int[] result = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            if (i < 2)
-                result[i] = i == 0 ? 1 : nums[0];
-            else
-                result[i] = result[i - 1] * nums[i - 1];
+            result[i] = i == 0 ? 1 : result[i - 1] * nums[i - 1];
         }
         int product = 1;
         for (int i = 1; i < nums.length; i++) {
