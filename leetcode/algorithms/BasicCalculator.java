@@ -51,8 +51,6 @@ public class BasicCalculator {
                     stackNum.push(stackNumTmp.pop());
                 }
 
-
-
 /*
 
                 while (!stackOpt.isEmpty() && (stackOpt.peek() == '*' || stackOpt.peek() == '/')) {
