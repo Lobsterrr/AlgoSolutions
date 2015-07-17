@@ -50,20 +50,37 @@ public class BasicCalculator {
                     }
                     stackNum.push(stackNumTmp.pop());
                 }
-
-/*
-
                 while (!stackOpt.isEmpty() && (stackOpt.peek() == '*' || stackOpt.peek() == '/')) {
                     calc(stackOpt, stackNum);
                 }
                 stackOpt.push(c);
-*/
             }
         }
         while (!stackOpt.isEmpty()) {
             calc(stackOpt, stackNum);
         }
         return stackNum.pop();
+    }
+
+    public int calculate(String s) {
+        List<Character> optList = new LinkedList<Character>();
+        List<Integer> numList = new LinkedList<Character>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if ('0' <= c && c <= '9') {
+                int num = 0;
+                while (i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9') {
+                    num = num * 10 + s.charAt(i) - '0';
+                    i++;
+                }
+                i--;
+                numList.add(num);
+            } else if (c == '(' || c == '*' || c == '/') {
+                optList.add(c);
+            } else if (c == ')') {
+                calc(optList, numList);
+            }
+        }
     }
 
     public void calc(Stack<Character> stackOpt, Stack<Integer> stackNum) {
