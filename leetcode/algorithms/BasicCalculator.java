@@ -78,12 +78,26 @@ public class BasicCalculator {
             } else if (c == '(' || c == '*' || c == '/') {
                 optList.add(c);
             } else if (c == ')') {
-                calc(optList, numList);
-                //
-                optList.pop(); // pop the '(' character.
+                int j = i;
+                for (; optList.get(j) != '('; j--);
+                optList.remove(j);
+                int k = numList.size();
+                for (; numList.size() - k < optList.size() - j; k--);
+                while (j < optList.size()) {
+                    char opt = optList.remove();
+                    int num1 = numList.get(k - 1);
+                    int num2 = numList.get(k);
+                    numList.insert(k, calc(num1, num2, opt));
+                }
             } else if (c == '+' || c == '-') {
 
             }
+        }
+        while (optList.size() != 0) {
+            char opt = optList.remove(0);
+            int num1 = numList.remove(0);
+            int num2 = numList.remove(0);
+            numList.insert(0, calc(num1, num2, opt);
         }
     }
 
@@ -127,6 +141,34 @@ public class BasicCalculator {
                 return num1 / num2;
             default:
                 return Integer.parseInt(null);
+        }
+    }
+
+
+
+
+
+
+    public int calculate(String s) {
+        List<Integer> numList = new LinkedList<Integer>();
+        List<Character> optList = new LinkedList<Character>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if ('0' <= c && c <= '9') {
+                int num = 0;
+                while (i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9') {
+                    num = num * 10 + s.charAt(i) - '0';
+                    i++;
+                }
+                i--;
+                numList.add(num);
+            } else if (c == '(') {
+                optList.add(c);
+            } else if (c == '+' || c == '-') {
+                
+            } else if (c == ')') {
+
+            }
         }
     }
 
