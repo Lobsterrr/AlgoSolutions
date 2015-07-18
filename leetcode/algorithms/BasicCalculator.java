@@ -79,9 +79,35 @@ public class BasicCalculator {
                 optList.add(c);
             } else if (c == ')') {
                 calc(optList, numList);
+                //
+                optList.pop(); // pop the '(' character.
+            } else if (c == '+' || c == '-') {
+
             }
         }
     }
+
+    public void calc(List<Character> optList, List<Integer> numList) {
+        int num2 = numList.remove(list.size() - 1);
+        int num1 = numList.remove(list.size() - 1);
+        numList.add(calc(num1, num2, optList.remove(optList.size() - 1));
+    }
+    
+    public int calc(int num1, int num2, char operator) {
+        switch (operator) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            case '/':
+                return num1 / num2;
+            default:
+                return Integer.parseInt(null);
+        }
+    }
+
 
     public void calc(Stack<Character> stackOpt, Stack<Integer> stackNum) {
         int num2 = stackNum.pop();
