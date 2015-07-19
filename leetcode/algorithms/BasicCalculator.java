@@ -106,7 +106,7 @@ public class BasicCalculator {
         int num1 = numList.remove(list.size() - 1);
         numList.add(calc(num1, num2, optList.remove(optList.size() - 1));
     }
-    
+
     public int calc(int num1, int num2, char operator) {
         switch (operator) {
             case '+':
@@ -165,9 +165,13 @@ public class BasicCalculator {
             } else if (c == '(') {
                 optList.add(c);
             } else if (c == '+' || c == '-') {
-                
+                optList.add(c);
             } else if (c == ')') {
-
+                int j = optList.size();
+                while (optList.get(j) != '(') {
+                    j--;
+                }
+                int 
             }
         }
     }
