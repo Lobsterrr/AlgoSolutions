@@ -8,7 +8,15 @@
 public class NumberOfDigitOne {
 
     public int countDigitOne(int n) {
-
+        int count = 0;
+        long i = 1;
+        while (i <= n) {
+            int a = (int) (n / i);
+            int b = (int) (n % i);
+            count += (a + 8) / 10 * i + (a % 10 == 1 ? 1 : 0) * (b + 1);
+            i *= 10;
+        }
+        return count;
     }
 
 }
