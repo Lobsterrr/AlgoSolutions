@@ -148,7 +148,6 @@ public class BasicCalculator {
 
 
 
-
     public int calculate(String s) {
         List<Integer> numList = new LinkedList<Integer>();
         List<Character> optList = new LinkedList<Character>();
