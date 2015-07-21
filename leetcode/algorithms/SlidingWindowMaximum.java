@@ -24,18 +24,14 @@ public class SlidingWindowMaximum {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
         int[] result = new int[nums.length - k + 1];
-        int maxIndex = 0;
-        int j = 0;
-        for (int i = 0; i < nums.length; i++) {
-            while (i < k) {
-                if (nums[i] > nums[maxIndex]) {
-                    maxIndex = i;
-                }
-                i++;
-            }
-            i--;
-            result[j++] = nums[maxIndex];
+        for (int i = 0; i < nums.length - k + 1; i++) {
+            int tmpMax = Integer.MIN_VALUE;
+            for (int j = i; j < i + k; j++) {
+                tmpMax = Math.max(tmpMax, nums[j]);
+            } 
+            result[i] = tmpMax;
         }
+        return result;
     }
 
 }
