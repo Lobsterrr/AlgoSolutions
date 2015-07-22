@@ -26,7 +26,7 @@
  */
 public class SlidingWindowMaximum {
 
-
+    // O(n) time and O(k) space.
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums.length == 0)
             return new int[0];
@@ -49,6 +49,7 @@ public class SlidingWindowMaximum {
 
 /*****************************************************************************/
 
+    // O(k * n) time and O(1) space.
     public int[] maxSlidingWindow(int[] nums, int k) {
         int len = k == 0 ? 0 : nums.length - k + 1;
         int[] result = new int[len];
