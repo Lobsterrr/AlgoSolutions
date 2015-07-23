@@ -24,15 +24,13 @@ public class SearchA2DMatrixII {
     public boolean searchMatrix(int[][] matrix, int target) {
         int i = matrix.length - 1;
         int j = 0;
-        while (0 <= i && j <= matrix[0].length - 1) {
-            if (matrix[i][j] == target)
-                return true;
-            else if (matrix[i][j] < target)
+        while (0 <= i && j < matrix[0].length && matrix[i][j] != target) {
+            if (matrix[i][j] < target)
                 j++;
             else
                 i--;
         }
-        return false;
+        return 0 <= i && j < matrix[0].length && matrix[i][j] == target;
     }
 
 }
