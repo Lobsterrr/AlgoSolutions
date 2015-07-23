@@ -21,6 +21,7 @@
  */
 public class SearchA2DMatrixII {
 
+    // O(m + n)
     public boolean searchMatrix(int[][] matrix, int target) {
         int i = matrix.length - 1;
         int j = 0;
