@@ -34,4 +34,10 @@ public class SearchA2DMatrixII {
         return 0 <= i && j < matrix[0].length && matrix[i][j] == target;
     }
 
+/*****************************************************************************/
+    // TODO
+    public boolean searchMatrix(int[][] matrix, int target) {
+
+    }
+
 }
