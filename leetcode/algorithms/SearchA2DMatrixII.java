@@ -22,7 +22,19 @@
 public class SearchA2DMatrixII {
 
     public boolean searchMatrix(int[][] matrix, int target) {
-
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+        int i = xLen - 1;
+        int j = 0;
+        while (0 <= i && j <= yLen - 1) {
+            if (matrix[i][j] == target)
+                return true;
+            else if (matrix[i][j] < target)
+                j++;
+            else
+                i--;
+        }
+        return false;
     }
 
 }
