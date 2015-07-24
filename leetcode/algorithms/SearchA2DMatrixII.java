@@ -37,6 +37,10 @@ public class SearchA2DMatrixII {
 /*****************************************************************************/
     // TODO
     public boolean searchMatrix(int[][] matrix, int target) {
+        
+    }
+
+    public boolean binarySearch(int[] matrix, int target, int rowLow, int rowHigh, int colLow, int colHigh) {
 
     }
 
