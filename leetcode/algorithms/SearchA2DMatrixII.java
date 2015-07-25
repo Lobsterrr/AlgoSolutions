@@ -44,21 +44,21 @@ public class SearchA2DMatrixII {
         if (rowLow > rowHigh || colLow > colHigh)
             return false;
         int row = rowLow + (rowHigh - rowLow) / 2;
-        int start = colLow;
-        int end = colHigh;
-        int j = start + (end - start) / 2;
-        while (start <= end && colLow <= j && j <= colHigh) {
+        int j = 0;
+        while (colLow <= j && j <= colHigh) {
             if (colLow <= j && j < colHigh && matrix[row][j] < target && target < matrix[row][j + 1])
                 break;
             else if (matrix[row][j] == target)
                 return true;
             else if (matrix[row][j] < target)
-                start = j + 1;
+                j++;
             else
-                end = j - 1;
-            j = start + (end - start) / 2;
+                j--;
         }
-        if (j > colHigh)
+        if (colLow == j && colHigh == j) 
+            return matrix[row][j] < target ? binarySearch(matrix, target, row + 1, rowHigh, colLow, colHigh) : 
+                binarySearch(matrix, target, rowLow, row - 1, colLow, colHigh);
+        else if (j > colHigh)
             return binarySearch(matrix, target, row + 1, rowHigh, colLow, colHigh);
         else if (j < colLow) 
             return binarySearch(matrix, target, rowLow, row - 1, colLow, colHigh);
