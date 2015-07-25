@@ -48,7 +48,9 @@ public class SearchA2DMatrixII {
         int end = colHigh;
         int j = start + (end - start) / 2;
         while (start <= end && colLow <= j && j <= colHigh) {
-            if (matrix[row][j] == target)
+            if (colLow <= j && j < colHigh && matrix[row][j] < target && target < matrix[row][j + 1])
+                break;
+            else if (matrix[row][j] == target)
                 return true;
             else if (matrix[row][j] < target)
                 start = j + 1;
