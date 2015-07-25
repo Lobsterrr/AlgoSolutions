@@ -55,6 +55,13 @@ public class SearchA2DMatrixII {
             else
                 j--;
         }
+
+        if (colLow < j) 
+ 
+
+        else if (j > colHigh)
+
+
         if (colLow == j && colHigh == j) 
             return matrix[row][j] < target ? binarySearch(matrix, target, row + 1, rowHigh, colLow, colHigh) : 
                 binarySearch(matrix, target, rowLow, row - 1, colLow, colHigh);
