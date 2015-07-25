@@ -47,48 +47,21 @@ public class SearchA2DMatrixII {
         int start = colLow;
         int end = colHigh;
         int j = start + (end - start) / 2;
-        while () {
+        while (start <= end && colLow <= j && j <= colHigh) {
             if (matrix[row][j] == target)
                 return true;
+            else if (matrix[row][j] < target)
+                start = j + 1;
+            else
+                end = j - 1;
+            j = start + (end - start) / 2;
         }
-
         if (j > colHigh)
             return binarySearch(matrix, target, row + 1, rowHigh, colLow, colHigh);
         else if (j < colLow) 
             return binarySearch(matrix, target, rowLow, row - 1, colLow, colHigh);
-        else if (
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        while (colLow <= j && j <= colHigh) {
-            if (matrix[row][j] == target)
-                return true;
-            else if (colLow <= j && j < colHigh && matrix[row][j] < target && target < matrix[row][j + 1]) 
-                return binarySearch(matrix, target, row + 1, rowHigh, colLow, j) || binarySearch(matrix, target, rowLow, row - 1, j, colHigh);
-            else if (colLow == colHigh && matrix[row][j] < target)
-                return binarySearch(matrix, target, row + 1, rowHigh, colLow, colHigh);
-            else if (colLow == colHigh && matrix[row][j] > target)
-                return binarySearch(matrix, target, rowLow, row - 1, colLow, colHigh);
-            else if (matrix[row][j] < target) 
-                start = j + 1;
-            else if (matrix[row][j] > target)
-                end = j - 1;
-            if (start > colHigh || end < colLow)
-                return false;
-            j = start + (end - start) / 2;
-        }
+        else if (colLow <= j && j < colHigh && matrix[row][j] < target && target < matrix[row][j + 1])
+            return binarySearch(matrix, target, row + 1, rowHigh, colLow, j) || binarySearch(matrix, target, rowLow, row - 1, j + 1, colHigh);
         return false;
     }
 
