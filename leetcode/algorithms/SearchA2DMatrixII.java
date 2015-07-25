@@ -47,6 +47,31 @@ public class SearchA2DMatrixII {
         int start = colLow;
         int end = colHigh;
         int j = start + (end - start) / 2;
+        while () {
+            if (matrix[row][j] == target)
+                return true;
+        }
+
+        if (j > colHigh)
+            return binarySearch(matrix, target, row + 1, rowHigh, colLow, colHigh);
+        else if (j < colLow) 
+            return binarySearch(matrix, target, rowLow, row - 1, colLow, colHigh);
+        else if (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         while (colLow <= j && j <= colHigh) {
             if (matrix[row][j] == target)
                 return true;
