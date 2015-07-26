@@ -35,47 +35,6 @@ public class SearchA2DMatrixII {
     }
 
 /*****************************************************************************/
-    // TODO
-    public boolean searchMatrix(int[][] matrix, int target) {
-        return binarySearch(matrix, target, 0, matrix.length - 1, 0, matrix[0].length - 1);
-    }
-
-    public boolean binarySearch(int[][] matrix, int target, int rowLow, int rowHigh, int colLow, int colHigh) {
-        if (rowLow > rowHigh || colLow > colHigh)
-            return false;
-        int row = rowLow + (rowHigh - rowLow) / 2;
-        int j = colLow;
-        while (colLow <= j && j <= colHigh) {
-            if (colLow <= j && j < colHigh && matrix[row][j] < target && target < matrix[row][j + 1])
-                break;
-            else if (matrix[row][j] == target)
-                return true;
-            else if (matrix[row][j] < target)
-                j++;
-            else
-                j--;
-        }
-        if (j < colLow) {
-            return binarySearch(matrix, target, rowLow, row - 1, colLow, colHigh);
-        } else if (j == colLow) {
-            return binarySearch(matrix, target, row + 1, rowHigh, colLow, j) || binarySearch(matrix, target, rowLow, row - 1, j + 1, colHigh);
-        } else if (colLow < j && j < colHigh) {
-            return binarySearch(matrix, target, row + 1, rowHigh, colLow, j) || binarySearch(matrix, target, rowLow, row - 1, j + 1, colHigh);
-        } else if (j == colHigh) {
-            return binarySearch(matrix, target, row + 1, rowHigh, colLow, j);
-        } else if (j > colHigh) {
-            return binarySearch(matrix, target, row + 1, rowHigh, colLow, colHigh);
-        }
-        return false;
-    }
-
-
-
-
-
-
-
-
 
     public boolean searchMatrix(int[][] matrix, int target) {
         return binarySearch(matrix, target, 0, matrix.length - 1, 0, matrix[0].length - 1);
@@ -96,11 +55,6 @@ public class SearchA2DMatrixII {
             else
                 j--;
         }
-        if (j < colHigh) {
-            return binarySearch(matrix, target, row + 1, rowHigh, colLow, j) || binarySearch(matrix, target, rowLow, row - 1, j + 1, colHigh);
-        } else if (j >= colHigh) {
-            return binarySearch(matrix, target, row + 1, rowHigh, colLow, colHigh);
-        }
-        return false;
+        return binarySearch(matrix, target, row + 1, rowHigh, colLow, Math.min(j, colHigh)) || binarySearch(matrix, target, rowLow, row - 1, j + 1, colHigh);
     }
 }
