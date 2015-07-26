@@ -44,29 +44,29 @@ public class SearchA2DMatrixII {
         if (rowLow > rowHigh || colLow > colHigh)
             return false;
         int row = rowLow + (rowHigh - rowLow) / 2;
-        int j = colLow;
         int start = colLow;
         int end = colHigh;
-        while (colLow <= j && j <= colHigh) {
-            if (colLow <= j && j < colHigh && matrix[row][j] < target && target < matrix[row][j + 1])
+        int mid = start + (end - start) / 2;
+        while (colLow <= mid && mid <= colHigh) {
+            if (colLow <= mid && mid < colHigh && matrix[row][mid] < target && target < matrix[row][mid + 1])
                 break;
-            else if (matrix[row][j] == target)
+            else if (matrix[row][mid] == target)
                 return true;
-            else if (matrix[row][j] < target) {
-                start = j + 1;
+            else if (matrix[row][mid] < target) {
+                start = mid + 1;
                 if (start > colHigh) {
-                    j = start;
+                    mid = start;
                     break;
                 }
             } else {
-                end = j - 1;
+                end = mid - 1;
                 if (end < colLow) {
-                    j = end;
+                    mid = end;
                     break;
                 }
             }
-            j = start + (end - start) / 2;
+            mid = start + (end - start) / 2;
         }
-        return binarySearch(matrix, target, row + 1, rowHigh, colLow, Math.min(j, colHigh)) || binarySearch(matrix, target, rowLow, row - 1, j + 1, colHigh);
+        return binarySearch(matrix, target, row + 1, rowHigh, colLow, Math.min(mid, colHigh)) || binarySearch(matrix, target, rowLow, row - 1, mid + 1, colHigh);
     }
 }
