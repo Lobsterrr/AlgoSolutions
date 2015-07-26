@@ -37,10 +37,12 @@ public class SearchA2DMatrixII {
 /*****************************************************************************/
 
     public boolean searchMatrix(int[][] matrix, int target) {
-        return binarySearch(matrix, target, 0, matrix.length - 1, 0, matrix[0].length - 1);
+        return binarySearch(matrix, target, 0, matrix.length - 1, 0, 
+                matrix[0].length - 1);
     }
 
-    public boolean binarySearch(int[][] matrix, int target, int rowLow, int rowHigh, int colLow, int colHigh) {
+    public boolean binarySearch(int[][] matrix, int target, int rowLow, 
+            int rowHigh, int colLow, int colHigh) {
         if (rowLow > rowHigh || colLow > colHigh)
             return false;
         int row = rowLow + (rowHigh - rowLow) / 2;
@@ -48,7 +50,8 @@ public class SearchA2DMatrixII {
         int end = colHigh;
         int mid = start + (end - start) / 2;
         while (colLow <= mid && mid <= colHigh) {
-            if (colLow <= mid && mid < colHigh && matrix[row][mid] < target && target < matrix[row][mid + 1])
+            if (colLow <= mid && mid < colHigh && matrix[row][mid] < target 
+                    && target < matrix[row][mid + 1])
                 break;
             else if (matrix[row][mid] == target)
                 return true;
@@ -67,6 +70,8 @@ public class SearchA2DMatrixII {
             }
             mid = start + (end - start) / 2;
         }
-        return binarySearch(matrix, target, row + 1, rowHigh, colLow, Math.min(mid, colHigh)) || binarySearch(matrix, target, rowLow, row - 1, mid + 1, colHigh);
+        return binarySearch(matrix, target, row + 1, rowHigh, colLow, 
+                Math.min(mid, colHigh)) || binarySearch(matrix, target, 
+                rowLow, row - 1, mid + 1, colHigh);
     }
 }
