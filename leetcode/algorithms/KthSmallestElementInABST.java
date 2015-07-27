@@ -56,30 +56,6 @@ public class KthSmallestElementInABST {
             return kthSmallest(root.right, k);
     }
 
-
-    private int count;
-    
-    public int kthSmallest(TreeNode root, int k) {
-        if (root == null)
-            return 0;
-        int kth = kthSmallest(root.left, k);
-        if (count == k)
-            return kth;
-        /********** section A *************/
-        else if (++count == k)
-            return root.val;
-        /********** section A end *********/
-        /********** section B *************/
-        /*
-        else if (count == k - 1) 
-            return root.val;
-        count++;
-        */
-        /********** section B end *********/
-        else
-            return kthSmallest(root.right, k);
-    }
-
 /*******************************************************************/
 
     public int kthSmallest(TreeNode root, int k) {
