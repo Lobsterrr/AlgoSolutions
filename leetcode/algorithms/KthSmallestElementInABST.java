@@ -52,8 +52,7 @@ public class KthSmallestElementInABST {
             return kth;
         else if (++count == k)
             return root.val;
-        else
-            return kthSmallest(root.right, k);
+        return kthSmallest(root.right, k);
     }
 
 /*******************************************************************/
