@@ -30,4 +30,20 @@ public class DifferentWaysToAddParentheses {
 
     }
 
+    public int calc(int a, int b, char operator) {
+        switch (operator) {
+            case '+':
+                return a + b;
+            case '-':
+                return a - b;
+            case '*':
+                return a * b;
+            case '/':
+                return a / b;
+            default:
+                break;
+        }
+        return Integer.parseInt(null);
+    }
+
 }
