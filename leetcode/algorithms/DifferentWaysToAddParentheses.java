@@ -26,6 +26,7 @@
 public class DifferentWaysToAddParentheses {
 
     public List<Integer> diffWaysToCompute(String input) {
+        List<Integer> result = new ArrayList<Integer>();
 
     }
 
