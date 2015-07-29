@@ -27,6 +27,7 @@ public class DifferentWaysToAddParentheses {
 
     public List<Integer> diffWaysToCompute(String input) {
         List<Integer> result = new ArrayList<Integer>();
+        boolean isAllDigit = true;
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
             if (c == '+' || c == '-' || c == '*') {
@@ -38,7 +39,8 @@ public class DifferentWaysToAddParentheses {
                         result.add(calc(lValue, rValue, c));
                     }
                 }
-            } else if (i == input.length() - 1) {
+            }
+            if (i == input.length() - 1 && isAllDigit) {
                 result.add(Integer.parseInt(input));
             }
         }
