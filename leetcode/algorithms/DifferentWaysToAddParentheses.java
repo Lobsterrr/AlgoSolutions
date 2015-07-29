@@ -23,18 +23,34 @@
  * (((2*3)-4)*5) = 10
  * Output: [-34, -14, -10, -10, 10]
  */
+
+f(1) = 1
+f(2) = 1
+f(3) = 2
+f(4) = f(1) * f(3) + f(2) * f(2) + f(3) * f(1) = 2 + 1 + 2 = 5
+
 public class DifferentWaysToAddParentheses {
 
     public List<Integer> diffWaysToCompute(String input) {
         List<Integer> result = new ArrayList<Integer>();
-        for (int i = 0; i < input.length; i++) {
+        boolean isAllDigit = true;
+        for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
             if (c == '+' || c == '-' || c == '*') {
+                isAllDigit = false;
                 List<Integer> left = diffWaysToCompute(input.substring(0, i));
                 List<Integer> right = diffWaysToCompute(input.substring(i + 1));
-                for (int 
+                for (int lValue : left) {
+                    for (int rValue : right) {
+                        result.add(calc(lValue, rValue, c));
+                    }
+                }
+            }
+            if (i == input.length() - 1 && isAllDigit) {
+                result.add(Integer.parseInt(input));
             }
         }
+        return result;
     }
 
     public int calc(int a, int b, char operator) {
