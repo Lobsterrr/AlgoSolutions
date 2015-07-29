@@ -40,25 +40,18 @@ public class DifferentWaysToAddParentheses {
                     }
                 }
             }
-            if (i == input.length() - 1 && isAllDigit) {
+            if (i == input.length() - 1 && isAllDigit) 
                 result.add(Integer.parseInt(input));
-            }
         }
         return result;
     }
 
     public int calc(int a, int b, char operator) {
         switch (operator) {
-            case '+':
-                return a + b;
-            case '-':
-                return a - b;
-            case '*':
-                return a * b;
-            case '/':
-                return a / b;
-            default:
-                break;
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': return a / b;
         }
         return Integer.parseInt(null);
     }
