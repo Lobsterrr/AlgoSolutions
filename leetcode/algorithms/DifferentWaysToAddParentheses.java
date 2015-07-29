@@ -40,7 +40,6 @@ public class DifferentWaysToAddParentheses {
                     }
                 }
             }
-
             if (i == input.length() - 1 && isAllDigit) 
                 result.add(Integer.parseInt(input));
         }
