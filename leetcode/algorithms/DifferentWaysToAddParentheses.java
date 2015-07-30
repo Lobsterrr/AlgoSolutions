@@ -55,4 +55,5 @@ public class DifferentWaysToAddParentheses {
         }
         return Integer.parseInt(null);
     }
+
 }
