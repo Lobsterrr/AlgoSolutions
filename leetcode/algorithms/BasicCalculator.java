@@ -146,7 +146,7 @@ public class BasicCalculator {
 
 
 
-
+/*****************************************************************************/
 
     public int calculate(String s) {
         List<Integer> numList = new LinkedList<Integer>();
