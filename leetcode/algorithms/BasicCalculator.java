@@ -62,67 +62,6 @@ public class BasicCalculator {
         return stackNum.pop();
     }
 
-    public int calculate(String s) {
-        List<Character> optList = new LinkedList<Character>();
-        List<Integer> numList = new LinkedList<Character>();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if ('0' <= c && c <= '9') {
-                int num = 0;
-                while (i < s.length() && '0' <= s.charAt(i) && s.charAt(i) <= '9') {
-                    num = num * 10 + s.charAt(i) - '0';
-                    i++;
-                }
-                i--;
-                numList.add(num);
-            } else if (c == '(' || c == '*' || c == '/') {
-                optList.add(c);
-            } else if (c == ')') {
-                int j = i;
-                for (; optList.get(j) != '('; j--);
-                optList.remove(j);
-                int k = numList.size();
-                for (; numList.size() - k < optList.size() - j; k--);
-                while (j < optList.size()) {
-                    char opt = optList.remove();
-                    int num1 = numList.get(k - 1);
-                    int num2 = numList.get(k);
-                    numList.insert(k, calc(num1, num2, opt));
-                }
-            } else if (c == '+' || c == '-') {
-
-            }
-        }
-        while (optList.size() != 0) {
-            char opt = optList.remove(0);
-            int num1 = numList.remove(0);
-            int num2 = numList.remove(0);
-            numList.insert(0, calc(num1, num2, opt);
-        }
-    }
-
-    public void calc(List<Character> optList, List<Integer> numList) {
-        int num2 = numList.remove(list.size() - 1);
-        int num1 = numList.remove(list.size() - 1);
-        numList.add(calc(num1, num2, optList.remove(optList.size() - 1));
-    }
-
-    public int calc(int num1, int num2, char operator) {
-        switch (operator) {
-            case '+':
-                return num1 + num2;
-            case '-':
-                return num1 - num2;
-            case '*':
-                return num1 * num2;
-            case '/':
-                return num1 / num2;
-            default:
-                return Integer.parseInt(null);
-        }
-    }
-
-
     public void calc(Stack<Character> stackOpt, Stack<Integer> stackNum) {
         int num2 = stackNum.pop();
         int num1 = stackNum.pop();
