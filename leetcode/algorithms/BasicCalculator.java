@@ -172,6 +172,7 @@ public class BasicCalculator {
                     stackOpt.push(optList.remove(optList.size() - 1));
                     stackNum.push(numList.remove(numList.size() - 1));
                 }
+                optList.remove(optList.size() - 1);
                 int tmpRes = numList.remove(numList.size() - 1);
                 while (!stackNum.isEmpty()) {
                     tmpRes = calc(tmpRes, stackNum.pop(), stackOpt.pop());
