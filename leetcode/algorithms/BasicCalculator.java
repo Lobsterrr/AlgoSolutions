@@ -166,10 +166,22 @@ public class BasicCalculator {
             } else if (c == '+' || c == '-') {
                 optList.add(c);
             } else if (c == ')') {
-                int j = optList.size();
-                while (optList.get(j) != '(') {
-                    j--;
+                Stack<Integer> stackNum = new Stack<Integer>();
+                Stack<Character> stackOpt = new Stack<Character>();
+                while (optList.peekLast() != '(') {
+                    stackOpt.push(optList.pollLast());
+                    stackNum.push(numList.pollLast());
                 }
+                int tmpRes = numList.pollLast();
+                while (!stackNum.isEmpty()) {
+                    char opt = stackOpt.pop();
+                    int num = stackNum.pop();
+                    if (opt == '+')
+                        tmpRes += num;
+                    else
+                        tmpRes -= num;
+                }
+                numList.add(tmpRes);
             }
         }
     }
