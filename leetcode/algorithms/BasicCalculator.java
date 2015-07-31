@@ -13,9 +13,6 @@
  */
 public class BasicCalculator {
 
-    //TODO
-    // fix bug -->  2 * 2 * 2 * 2 / 4 = 0
-
     public int calculate(String s) {
         Stack<Character> stackOpt = new Stack<Character>();
         Stack<Integer> stackNum = new Stack<Integer>();
@@ -125,6 +122,44 @@ public class BasicCalculator {
             result = calc(result, numList.remove(0), optList.remove(0));
         }
         return result;
+    }
+
+
+
+
+
+
+    public calculate(String s) {
+        Stack<Character> stackOpt = new Stack<Character>();
+        Stack<Integer> stackNum = new Stack<Integer>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (Character.isDigit(c)) {
+                int num = 0; 
+                while (i < s.length() && Character.isDigit(s.charAt(i))) {
+                    num = 10 * num + s.charAt(i) - '0';
+                    i++;
+                }
+                i--;
+                stackNum.push(num);
+            } else if (c == '(' || c == '+' || c == '-') {
+                stackOpt.push(c);
+            } else if (c == ')') {
+                Stack<Character> stackOptTmp = new Stack<Character>();
+                Stack<Integer> stackNumTmp = new Stack<Integer>();
+                while (stackOpt.peek() != '(') {
+                    stackOptTmp.push(stackOpt.pop());
+                    stackNumTmp.push(stackNum.pop());
+                }
+                stackOpt.pop();
+                int tmpRes = stackNum.pop();
+                while (!stackOptTmp.empty()) {
+                    tmpRes = calc(tmpRes, stackNumTmp.pop(), stackOptTmp.pop());
+                }
+                stackNum.push(tmpRes);
+            }
+        }
+
     }
 
     public int calc(int num1, int num2, char operator) {
