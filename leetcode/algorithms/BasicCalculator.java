@@ -170,7 +170,6 @@ public class BasicCalculator {
                 while (optList.get(j) != '(') {
                     j--;
                 }
-                int 
             }
         }
     }
