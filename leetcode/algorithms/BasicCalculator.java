@@ -174,16 +174,15 @@ public class BasicCalculator {
                 }
                 int tmpRes = numList.pollLast();
                 while (!stackNum.isEmpty()) {
-                    char opt = stackOpt.pop();
-                    int num = stackNum.pop();
-                    if (opt == '+')
-                        tmpRes += num;
-                    else
-                        tmpRes -= num;
+                    tmpRes = calc(tmpRes, stackNum.pop(), stackOpt.pop());
                 }
                 numList.add(tmpRes);
             }
         }
+    }
+
+    public int calc(int num1, int num2, char operator) {
+        return num1 + (operator == '+' ? 1 : -1) * num2;
     }
 
 }
