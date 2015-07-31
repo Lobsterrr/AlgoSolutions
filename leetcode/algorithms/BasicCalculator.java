@@ -168,17 +168,23 @@ public class BasicCalculator {
             } else if (c == ')') {
                 Stack<Integer> stackNum = new Stack<Integer>();
                 Stack<Character> stackOpt = new Stack<Character>();
-                while (optList.peekLast() != '(') {
-                    stackOpt.push(optList.pollLast());
-                    stackNum.push(numList.pollLast());
+                while (optList.get(optList.size() -1) != '(') {
+                    stackOpt.push(optList.remove(optList.size() - 1));
+                    stackNum.push(numList.remove(numList.size() - 1));
                 }
-                int tmpRes = numList.pollLast();
+                int tmpRes = numList.remove(numList.size() - 1);
                 while (!stackNum.isEmpty()) {
                     tmpRes = calc(tmpRes, stackNum.pop(), stackOpt.pop());
                 }
                 numList.add(tmpRes);
             }
         }
+
+        int result = numList.remove(0);
+        while (!optList.isEmpty()) {
+            result = calc(result, numList.remove(0), optList.remove(0));
+        }
+        return result;
     }
 
     public int calc(int num1, int num2, char operator) {
