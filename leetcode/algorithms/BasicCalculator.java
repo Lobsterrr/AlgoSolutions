@@ -176,4 +176,43 @@ public class BasicCalculator {
         return num1 + (operator == '+' ? 1 : -1) * num2;
     }
 
+/*****************************************************************************/
+
+    public int calculate(String s) {
+        Deque<Integer> numList = new LinkedList<Integer>();
+        Deque<Character> optList = new LinkedList<Character>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (Character.isDigit(c)) {
+                int num = 0;
+                while (i < s.length() && Character.isDigit(s.charAt(i))) {
+                    num = 10 * num + s.charAt(i) - '0';
+                    i++;
+                }
+                i--;
+                numList.add(num);
+            } else if (c == '(' || c == '+' || c == '-') {
+                optList.add(c);
+            } else if (c == ')') {
+                Stack<Integer> stackNum = new Stack<Integer>();
+                Stack<Character> stackOpt = new Stack<Character>();
+                while (optList.peekLast() != '(') {
+                    stackNum.push(numList.pollLast());
+                    stackOpt.push(optList.pollLast());
+                }
+                optList.pollLast();
+                int tmpRes = numList.pollLast();
+                while (!stackOpt.empty()) {
+                    tmpRes = calc(tmpRes, stackNum.pop(), stackOpt.pop());
+                }
+                numList.add(tmpRes);
+            }
+        }
+        int result = numList.pollFirst();
+        while (optList.size() > 0) {
+            result = calc(result, numList.pollFirst(), optList.pollFirst());
+        }
+        return result;
+    }
+
 }
