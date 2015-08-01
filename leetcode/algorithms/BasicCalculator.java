@@ -129,7 +129,7 @@ public class BasicCalculator {
 
 
 
-    public calculate(String s) {
+    public int calculate(String s) {
         Stack<Character> stackOpt = new Stack<Character>();
         Stack<Integer> stackNum = new Stack<Integer>();
         for (int i = 0; i < s.length(); i++) {
