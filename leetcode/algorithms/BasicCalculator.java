@@ -159,7 +159,17 @@ public class BasicCalculator {
                 stackNum.push(tmpRes);
             }
         }
-
+        Stack<Character> stackOptTmp = new Stack<Character>();
+        Stack<Integer> stackNumTmp = new Stack<Integer>();
+        while (!stackOpt.empty()) {
+            stackOptTmp.push(stackOpt.pop());
+            stackNumTmp.push(stackNum.pop());
+        }
+        int result = stackNum.pop();
+        while (!stackOptTmp.empty()) {
+            result = calc(result, stackNumTmp.pop(), stackOptTmp.pop());
+        }
+        return result;
     }
 
     public int calc(int num1, int num2, char operator) {
