@@ -16,7 +16,8 @@
  */
 
 public class BalancedBinaryTree {
-
+    
+    // O(nlgn) time.
     public boolean isBalanced(TreeNode root) {
         if (root == null)
             return true;
