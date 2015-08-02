@@ -25,8 +25,10 @@ public class BalancedBinaryTree {
         if (root == null)
             return 0;
         int left = checkDepth(root.left);
+        if (left == -1)
+            return -1;
         int right = checkDepth(root.right);
-        if (left == -1 || right == -1 || Math.abs(left - right) > 1)
+        if (right == -1 || Math.abs(left - right) > 1)
             return -1;
         return 1 + Math.max(left, right);
     }
