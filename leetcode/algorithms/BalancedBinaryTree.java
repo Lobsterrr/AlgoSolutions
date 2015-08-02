@@ -16,6 +16,22 @@
  */
 
 public class BalancedBinaryTree {
+
+    public boolean isBalanced(TreeNode root) {
+        return checkDepth(root) != -1;
+    }
+
+    public int checkDepth(TreeNode root) {
+        if (root == null)
+            return 0;
+        int left = checkDepth(root.left);
+        int right = checkDepth(root.right);
+        if (left == -1 || right == -1 || Math.abs(left - right) > 1)
+            return -1;
+        return 1 + Math.max(left, right);
+    }
+
+/*******************************************************************/
     
     // O(nlgn) time.
     public boolean isBalanced(TreeNode root) {
