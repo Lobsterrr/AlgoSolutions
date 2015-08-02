@@ -6,16 +6,21 @@
  */
 public class BitwiseANDOfNumbersRange {
 
+    /*
+     * Analysis:
+     * 
+     * To find the binary common prefix of m and n.
+     */
+
     public int rangeBitwiseAnd(int m, int n) {
-        int result = 0;
-        for (int i = 0; i < 32; i++) {
-            int mask = 1 << i;
-            if ((m & n & mask) != 0 && (n - m) <= mask)
-                result += mask;
+        int mask = Integer.MAX_VALUE;
+        while ((m & mask) != (n & mask)) {
+            mask <<= 1;
         }
-        return result;
+        return m & mask;
     }
 
+/*********************************************************/
     
     public int rangeBitwiseAnd(int m, int n) {
         int count = 0;
@@ -25,6 +30,18 @@ public class BitwiseANDOfNumbersRange {
             count++;
         }
         return m << count;
+    }
+
+/*********************************************************/
+    
+    public int rangeBitwiseAnd(int m, int n) {
+        int result = 0;
+        for (int i = 0; i < 32; i++) {
+            int mask = 1 << i;
+            if ((m & n & mask) != 0 && (n - m) <= mask)
+                result += mask;
+        }
+        return result;
     }
 
 }
