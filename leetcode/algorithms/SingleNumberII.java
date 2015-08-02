@@ -48,7 +48,7 @@ public class SingleNumberII {
         int result = 0;
         for (int i = 0; i < 32; i++) {
             for (int j = 0; j < A.length; j++) {
-                bits[i] = bits[i] + ((A[j] >> i) & 1);
+                bits[i] += (A[j] >> i) & 1;
             }
             result |= (bits[i] % 3) << i;
         }
