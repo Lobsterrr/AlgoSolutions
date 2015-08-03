@@ -34,20 +34,6 @@ public class NumberOfDigitOne {
             last = (int) (last * 10 + i);
         }
         return count;
-
-
-
-        while (i <= n) {
-            int index = (int) (n / i) % 10;
-            count += index * last;
-            if (index > 1)
-                count += i;
-            else if (index == 1)
-                count += n % i + 1;
-            last = (int) (last * 10 + i);
-            i *= 10;
-        }
-        return count;
     }
 
 }
