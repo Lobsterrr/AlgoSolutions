@@ -21,4 +21,9 @@ public class NumberOfDigitOne {
         return count;
     }
 
+
+    public int countDigitOne(int n) {
+        
+    }
+
 }
