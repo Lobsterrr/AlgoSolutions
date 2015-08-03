@@ -9,6 +9,7 @@
  */
 public class NumberOfDigitOne {
 
+    // Reference: https://leetcode.com/discuss/46366/ac-short-java-solution
     public int countDigitOne(int n) {
         int count = 0;
         for (long i = 1; i <= n; i *= 10) {
