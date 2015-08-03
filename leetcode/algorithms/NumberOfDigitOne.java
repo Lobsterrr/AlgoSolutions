@@ -21,6 +21,16 @@ public class NumberOfDigitOne {
         return count;
     }
 
+    public int countDigitOne(int n) {
+        int count = 0;
+        for (long i = 1; i <= n; i *= 10) {
+            int a = (int) (n / i);
+            int b = (int) (n % i);
+            count += (a + 8) / 10 * i + (a % 10 == 1 ? b + 1 : 0);
+        }
+        return count;
+    }
+
 
     public int countDigitOne(int n) {
         int count = 0;
