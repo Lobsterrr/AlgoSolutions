@@ -23,7 +23,20 @@ public class NumberOfDigitOne {
 
 
     public int countDigitOne(int n) {
-        
+        int count = 0;
+        long i = 1;
+        int last = 0;
+        while (i <= n) {
+            int index = (int) (n / i) % 10;
+            count += index * last;
+            if (index > 1)
+                count += i;
+            else if (index == 1)
+                count += n % i + 1;
+            last = (int) (last * 10 + i);
+            i *= 10;
+        }
+        return count;
     }
 
 }
