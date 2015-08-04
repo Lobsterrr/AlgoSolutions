@@ -21,9 +21,24 @@ public class CountCompleteTreeNodes {
     public int countNodes(TreeNode root) {
         if (root == null)
             return 0;
-        else if (root.left == null && root.right == null)
-            return 1;
+        int count = checkCompleteTreeNode(root);
+        if (count > 0)
+            return count;
         return 1 + countNodes(root.left) + countNodes(root.right);
     }
+
+    public int checkCompleteTreeNode(TreeNode root) {
+        int leftHeight = 0;
+        int rightHeight = 0;
+        for (TreeNode cur = root; cur != null; cur = cur.left) {
+            leftHeight++;
+        }
+        for (TreeNode cur = root; cur != null; cur = cur.right) {
+            rightHeight++;
+        }
+        if (leftHeight != rightHeight)
+            return 0;
+        return (int) Math.pow(2, leftHeight) - 1;
+    }   
 
 }
