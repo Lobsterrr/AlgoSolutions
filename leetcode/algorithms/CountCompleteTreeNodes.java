@@ -19,6 +19,33 @@
 public class CountCompleteTreeNodes {
 
     public int countNodes(TreeNode root) {
+        int count = 0;
+        int height = getCompBinTreeHeight(root);
+        while (root != null) {
+            if (getCompBinTreeHeight(root.right) == height - 1) {
+                count += (1 << (height - 1));
+                root = root.right;
+            } else {
+                count += (1 << (height - 2));
+                root = root.left; 
+            }
+            height--;
+        }
+        return count;
+    }
+
+    public int getCompBinTreeHeight(TreeNode root) {
+        int height = 0;
+        while (root != null) {
+            height++;
+            root = root.left;
+        }
+        return height;
+    }   
+
+/*******************************************************************/
+
+    public int countNodes(TreeNode root) {
         if (root == null)
             return 0;
         int leftHeight = getCompBinTreeHeight(root.left);
@@ -36,6 +63,7 @@ public class CountCompleteTreeNodes {
         }
         return height;
     }   
+
 
 /*******************************************************************/
 
