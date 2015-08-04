@@ -64,7 +64,6 @@ public class CountCompleteTreeNodes {
         return height;
     }   
 
-
 /*******************************************************************/
 
     public int countNodes(TreeNode root) {
