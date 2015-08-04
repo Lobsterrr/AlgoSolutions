@@ -51,8 +51,7 @@ public class LowestCommonAncestorOfABinaryTree {
             countMatchesPQ(root.right, p, q);
         if (root == p || root == q)
             return 1 + matches;
-        else
-            return matches;
+        return matches;
     }
 
 }
