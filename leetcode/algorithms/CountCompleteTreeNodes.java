@@ -23,10 +23,10 @@ public class CountCompleteTreeNodes {
         int height = getCompBinTreeHeight(root);
         while (root != null) {
             if (getCompBinTreeHeight(root.right) == height - 1) {
-                count += (1 << (height - 1));
+                count += 1 << (height - 1);
                 root = root.right;
             } else {
-                count += (1 << (height - 2));
+                count += 1 << (height - 2);
                 root = root.left; 
             }
             height--;
