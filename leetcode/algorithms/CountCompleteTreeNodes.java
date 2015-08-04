@@ -48,8 +48,8 @@ public class CountCompleteTreeNodes {
         int leftHeight = getCompBinTreeHeight(root.left);
         int rightHeight = getCompBinTreeHeight(root.right);
         if (leftHeight == rightHeight)
-            return (int) Math.pow(2, leftHeight) + countNodes(root.right);
-        return countNodes(root.left) + (int) Math.pow(2, rightHeight);
+            return (1 << leftHeight) + countNodes(root.right);
+        return countNodes(root.left) + (1 << rightHeight);
     }
 
     public int getCompBinTreeHeight(TreeNode root) {
