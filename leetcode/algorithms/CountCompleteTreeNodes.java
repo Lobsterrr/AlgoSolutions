@@ -89,4 +89,17 @@ public class CountCompleteTreeNodes {
         return (1 << leftHeight) - 1;
     }   
 
+    public int countNodes(TreeNode root) {
+        int left = 0;
+        int right = 0;
+        for (TreeNode cur = root; cur != null; cur = cur.left) {
+            left++;
+        }
+        for (TreeNode cur = root; cur != null; cur = cur.right) {
+            right++;
+        }
+        if (left == right)
+            return (1 << left) - 1;
+        return 1 + countNodes(root.left) + countNodes(root.right);
+    }
 }
