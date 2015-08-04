@@ -7,10 +7,22 @@
  * last level are as far left as possible. It can have 
  * between 1 and 2h nodes inclusive at the last level h.
  */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
 public class CountCompleteTreeNodes {
 
     public int countNodes(TreeNode root) {
-
+        if (root == null)
+            return 0;
+        else if (root.left == null && root.right == null)
+            return 1;
     }
 
 }
