@@ -12,7 +12,7 @@ public class ContainsDuplicateIII {
         BST bst = new BST();
         for (int i = 0; i < nums.length; i++) {
             bst.insert(nums[i]);
-            if (i > 0 && bst.getMax().value - bst.getMin().value <= t)
+            if (i > 0 && bst.getMax().value - nums[i] <= t)
                 return true;
             if (i >= k)
                 bst.delete(nums[i - k]);
