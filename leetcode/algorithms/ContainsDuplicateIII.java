@@ -9,11 +9,20 @@ public class ContainsDuplicateIII {
 
     // TODO
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        if (k == 0)
+            return false;
         BST bst = new BST();
         for (int i = 0; i < nums.length; i++) {
             bst.insert(nums[i]);
-            if (i > 0 && bst.getMax().value - nums[i] <= t)
-                return true;
+            
+
+
+            if (i > 0) {
+                int maxValue = bst.getMax().value;
+                int minValue = bst.getMin().value;
+                if ((int) Math.abs(maxValue - nums[i]) <= t && (int) Math.abs(minValue - nums[i]) <= t)
+                    return true;
+            }
             if (i >= k)
                 bst.delete(nums[i - k]);
         }
@@ -111,6 +120,28 @@ class BST {
         if (root.left == null)
             return root;
         return getMin(root.left);
+    }
+
+    public TreeNode getKthMin(int k) {
+        return getKthMin(root, k);
+    }
+
+    public TreeNode getKthMin(TreeNode root, int k) {
+        Stack<TreeNode stack = new Stack<TreeNode>();
+        TreeNode cur = root;
+        while (cur != null || stack.size() > 0) {
+            if (cur != null) {
+                stack.add(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                k--;
+                if (k == 0)
+                    return cur;
+                cur = cur.right;
+            }
+        }
+        return null;
     }
 
 }
