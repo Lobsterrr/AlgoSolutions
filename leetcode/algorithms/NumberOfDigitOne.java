@@ -26,11 +26,11 @@ public class NumberOfDigitOne {
         int count = 0;
         int last = 0;
         for (long i = 1; i <= n; i *= 10) {
-            int index = (int) (n / i) % 10;
-            count += index * last;
-            if (index > 1)
+            int digit = (int) (n / i) % 10;
+            count += digit * last;
+            if (digit > 1)
                 count += i;
-            else if (index == 1)
+            else if (digit == 1)
                 count += n % i + 1;
             last = (int) (last * 10 + i);
         }
