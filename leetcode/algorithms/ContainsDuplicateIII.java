@@ -26,9 +26,10 @@ public class ContainsDuplicateIII {
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         TreeSet<Integer> set = new TreeSet<Integer>();
         for (int i = 0; i < nums.length; ++i) {
-            if (t >= 0 && (set.floor(nums[i]) != null && nums[i] <= set.floor(nums[i]) + t || set.ceiling(nums[i]) != null && nums[i] >= set.ceiling(nums[i]) - t))
+            int v = nums[i];
+            if (t >= 0 && (set.floor(v) != null && v <= set.floor(v) + t || set.ceiling(v) != null && v >= set.ceiling(v) - t))
                 return true;
-            set.add(nums[i]);
+            set.add(v);
             if (i >= k)
                 set.remove(nums[i - k]);
         }
