@@ -8,13 +8,15 @@
 public class ContainsDuplicateIII {
 
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        if (k < 1 || t < 0)
+            return false;
         TreeSet<Integer> set = new TreeSet<Integer>();
         for (int i = 0; i < nums.length; ++i) {
-            set.add(nums[i]);
-            int floor = nums[i] < Integer.MIN_VALUE + t ? Integer.MIN_VALUE : nums[i] - t;
-            int ceil = nums[i] > Integer.MAX_VALUE - t ? Integer.MAX_VALUE : nums[i] + t;
-            if (i > 0 && set.subSet(floor, ceil).size() > 0)
+            int floor = nums[i] <= Integer.MIN_VALUE + t ? Integer.MIN_VALUE : nums[i] - t;
+            int ceil = nums[i] >= Integer.MAX_VALUE - t ? Integer.MAX_VALUE : nums[i] + t + 1;
+            if (set.subSet(floor, ceil).size() > 0)
                 return true;
+            set.add(nums[i]);
             if (i >= k) 
                 set.remove(nums[i - k]);
         }
