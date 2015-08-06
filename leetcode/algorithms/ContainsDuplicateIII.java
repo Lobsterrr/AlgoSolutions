@@ -26,10 +26,14 @@ public class ContainsDuplicateIII {
     }
 
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        if (k < 1 || t < 0)
+            return false;
         TreeSet<Integer> set = new TreeSet<Integer>();
         for (int i = 0; i < nums.length; ++i) {
-            Integer floor = nums[i] < Integer.MIN_VALUE + t ? Integer.MIN_VALUE : nums[i] - t;
-            Integer ceiling = nums[i] >= Integer.MAX_VALUE - t - 1 ? Integer.MAX_VALUE : nums[i] + t + 1;
+            Integer floor = nums[i] < Integer.MIN_VALUE + t ? 
+                Integer.MIN_VALUE : nums[i] - t;
+            Integer ceiling = nums[i] >= Integer.MAX_VALUE - t - 1 ? 
+                Integer.MAX_VALUE : nums[i] + t + 1;
             if (set.subSet(floor, ceiling).size() > 0)
                 return true;
             set.add(nums[i]);
