@@ -23,6 +23,8 @@ public class ContainsDuplicateIII {
         return false;
     }
 
+/*****************************************************************************/
+
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         TreeSet<Integer> set = new TreeSet<Integer>();
         for (int i = 0; i < nums.length; ++i) {
