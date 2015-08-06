@@ -23,21 +23,6 @@ public class ContainsDuplicateIII {
         return false;
     }
 
-    // TODO
-    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
-        if (k == 0)
-            return false;
-        BST bst = new BST();
-        for (int i = 0; i < nums.length; i++) {
-            bst.insert(nums[i]);
-            if (i > 0 && bst.getKthMin(2).value - bst.getMin().value <= t)
-                return true;
-            if (i >= k)
-                bst.delete(nums[i - k]);
-        }
-        return false;
-    }
-
 }
 
 class TreeNode {
