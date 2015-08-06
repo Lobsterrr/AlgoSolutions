@@ -7,6 +7,20 @@
  */
 public class ContainsDuplicateIII {
 
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        TreeSet<Integer> set = new TreeSet<Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+            set.add(nums[i]);
+            int floor = nums[i] < Integer.MIN_VALUE + t ? Integer.MIN_VALUE : nums[i] - t;
+            int ceil = nums[i] > Integer.MAX_VALUE - t ? Integer.MAX_VALUE : nums[i] + t;
+            if (i > 0 && set.subSet(floor, ceil).size() > 0)
+                return true;
+            if (i >= k) 
+                set.remove(nums[i - k]);
+        }
+        return false;
+    }
+
     // TODO
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         if (k == 0)
