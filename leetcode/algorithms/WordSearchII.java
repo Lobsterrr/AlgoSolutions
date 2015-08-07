@@ -41,7 +41,8 @@ public class WordSearchII {
     }
 
     public boolean dfs(char[][] board, int i, int j, String word) {
-        if (0 <= i && i < board.length && 0 <= j && j < board[0].length && word.charAt(0) == board[i][j]) {
+        if (0 <= i && i < board.length && 0 <= j && j < board[0].length && 
+                word.charAt(0) == board[i][j]) {
             if (word.length() == 1)
                 return true;
             board[i][j] = '#';
