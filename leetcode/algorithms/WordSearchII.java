@@ -52,6 +52,7 @@ public class WordSearchII {
                 return true;
             board[i][j] = c;
         }
+        return false;
     }
 
 }
