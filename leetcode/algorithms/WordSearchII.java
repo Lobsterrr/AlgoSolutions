@@ -26,5 +26,17 @@
  */
 public class WordSearchII {
 
+    public List<String> findWords(char[][] board, String[] words) {
+        List<String> result = new ArrayList<String>();
+        for (int k = 0; k < words.length; k++) {
+            for (int i = 0; i < board.length; ++i) {
+                for (int j = 0; j < board[0].length; ++j) {
+                    if (dfs(board, i, j, words[k]))
+                        result.add(words[k]);
+                }
+            }
+        }
+        return result;
+    }
 
 }
