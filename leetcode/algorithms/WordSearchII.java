@@ -43,14 +43,14 @@ public class WordSearchII {
         if (0 <= i && i < board.length && 0 <= j && j < board[0].length && word.charAt(0) == board[i][j]) {
             if (word.length() == 1)
                 return true;
-            char c = board[i][j];
             board[i][j] = '#';
-            if (dfs(board, i + 1, j, word.substring(1)) || 
+            boolean check = dfs(board, i + 1, j, word.substring(1)) || 
                     dfs(board, i - 1, j, word.substring(1)) || 
                     dfs(board, i, j + 1, word.substring(1)) || 
-                    dfs(board, i, j - 1, word.substring(1)))
+                    dfs(board, i, j - 1, word.substring(1));
+            board[i][j] = word.charAt(0);
+            if (check)
                 return true;
-            board[i][j] = c;
         }
         return false;
     }
