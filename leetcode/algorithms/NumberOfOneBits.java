@@ -18,15 +18,4 @@ public class NumberOfOneBits {
         return n;
     }
 
-/*********************************************************/
-
-    // just for unsigned number.
-    public int hammingWeight(int n) {
-        int result = n;
-        for (int i = 1; i <= 31; ++i) {
-            result -= n / (1 << i);
-        }
-        return result;
-    }
-
 }
