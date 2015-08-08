@@ -59,6 +59,7 @@ public class WordSearchII {
 /*****************************************************************************/
     public List<String> findWords(char[][] board, String[] words) {
         List<String> result = new ArrayList<String>();
+        Trie trie = new Trie();
 
     }
 
