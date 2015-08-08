@@ -58,3 +58,11 @@ public class WordSearchII {
     }
 
 }
+
+class TrieNode {
+
+    public TrieNode() {
+
+    }
+
+}
