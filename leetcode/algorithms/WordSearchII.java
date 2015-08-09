@@ -61,7 +61,9 @@ public class WordSearchII {
         List<String> result = new ArrayList<String>();
         Trie trie = new Trie();
         for (int i = 0; i < words.length(); i++) {
+            if (trie.search(words[i])) {
 
+            }
         }
     }
 
