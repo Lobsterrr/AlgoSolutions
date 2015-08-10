@@ -39,12 +39,19 @@ public class ImplementTrie {
         for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] == null)
                 return false;
-
+            cur = cur.children[c - 'a'];
         }
+        return cur.item.equals(word);
     }
 
     public boolean startsWith(String prefix) {
-
+        TrieNode cur = root;
+        for (char c : prefix.toCharArray()) {
+            if (cur.children[c - 'a'] == null)
+                return false;
+            cur = cur.children[c - 'a'];
+        }
+        return true;
     }
 
 }
