@@ -42,7 +42,6 @@ class Trie {
         }
         return cur.item.equals(word);
 
-
     }
 
     public boolean startsWith(String prefix) {

@@ -1,17 +1,17 @@
-public class QuickSort {
+public class Quicksort {
 
-    public void quickSort(int[] array, int low, int high) {
+    public void quicksort(int[] array, int low, int high) {
         if (low >= high)
-            return ;
+            return;
         int i = low;
-        for (int j = low; j < high; ++j) {
+        for (int j = low; j < high; j++) {
             if (array[j] <= array[high]) {
                 swap(array, i++, j);
             }
         }
         swap(array, i, high);
-        quickSort(array, low, i - 1);
-        quickSort(array, i + 1, high);
+        quicksort(array, low, i - 1);
+        quicksort(array, i, high);
     }
 
     public void swap(int[] array, int i, int j) {
@@ -19,5 +19,5 @@ public class QuickSort {
         array[i] = array[j];
         array[j] = tmp;
     }
-
+    
 }
