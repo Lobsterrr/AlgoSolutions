@@ -27,9 +27,8 @@ public class ImplementTrie {
     public void insert(String word) {
         TrieNode cur = root;
         for (char c : word.toCharArray()) {
-            if (cur.children[c - 'a'] == null) {
+            if (cur.children[c - 'a'] == null)
                 cur.children[c - 'a'] = new TrieNode();
-            }
             cur = cur.children[c - 'a'];
         }
         cur.item = word;
@@ -38,6 +37,8 @@ public class ImplementTrie {
     public boolean search(String word) {
         TrieNode cur = roo;
         for (char c : word.toCharArray()) {
+            if (cur.children[c - 'a'] == null)
+                return false;
 
         }
     }
