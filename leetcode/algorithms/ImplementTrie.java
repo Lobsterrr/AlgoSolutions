@@ -16,7 +16,7 @@ class TrieNode {
 
 }
 
-public class ImplementTrie {
+class Trie {
 
     private TrieNode root;
 
@@ -53,5 +53,9 @@ public class ImplementTrie {
         }
         return true;
     }
+
+}
+
+public class ImplementTrie {
 
 }
