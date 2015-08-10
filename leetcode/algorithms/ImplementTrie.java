@@ -37,11 +37,12 @@ class Trie {
     public boolean search(String word) {
         TrieNode cur = root;
         for (char c : word.toCharArray()) {
-            if (cur.children[c - 'a'] == null)
-                return false;
-            cur = cur.children[c - 'a'];
+            if (cur.children[c - 'a'] != null)
+                cur = cur.children[c - 'a'];
         }
         return cur.item.equals(word);
+
+
     }
 
     public boolean startsWith(String prefix) {
