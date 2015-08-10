@@ -2,10 +2,8 @@ public class InsertSort {
 
     public void insertSort(int[] array, int low, int high) {
         for (int i = low + 1; i <= high; ++i) {
-            for (int j = i; j >= low; --j) {
-                if (array[j] < array[i]) {
-                    swap(array, i, j);
-                }
+            for (int j = i; j > low && array[j] < array[j - 1]; --j) {
+                swap(array, j, j - 1);
             }
         }
     }
