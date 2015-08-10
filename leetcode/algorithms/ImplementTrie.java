@@ -35,7 +35,7 @@ public class ImplementTrie {
     }
 
     public boolean search(String word) {
-        TrieNode cur = roo;
+        TrieNode cur = root;
         for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] == null)
                 return false;
