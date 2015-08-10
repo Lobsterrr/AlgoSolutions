@@ -6,8 +6,12 @@
  */
 class TrieNode {
     
-    public TrieNode() {
+    public TrieNode[] children;
+    public String item;
 
+    public TrieNode() {
+        children = new TrieNode[26];
+        item = "";
     }
 
 }
@@ -21,11 +25,21 @@ public class ImplementTrie {
     }
 
     public void insert(String word) {
-
+        TrieNode cur = root;
+        for (char c : word.toCharArray()) {
+            if (cur.children[c - 'a'] == null) {
+                cur.children[c - 'a'] = new TrieNode();
+            }
+            cur = cur.children[c - 'a'];
+        }
+        cur.item = word;
     }
 
     public boolean search(String word) {
+        TrieNode cur = roo;
+        for (char c : word.toCharArray()) {
 
+        }
     }
 
     public boolean startsWith(String prefix) {
