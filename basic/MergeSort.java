@@ -11,10 +11,17 @@ public class MergeSort {
         int j = mid + 1;
         int k = low;
         while (i <= mid && j <= high) {
-            array[k++] = array[j] < firstHalf[i - low] ? array[j++] : firstHalf[i++ - low];
+            if (firstHalf[i - low] < array[j]) {
+                array[k++] = firstHalf[i - low];
+                i++;
+            } else {
+                array[k++] = array[j];
+                j++;
+            }
         }
         while (i <= mid) {
-            array[k++] = firstHalf[i++ - low];
+            array[k++] = firstHalf[i - low];
+            i++;
         }
     }
 
