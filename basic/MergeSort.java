@@ -1,7 +1,7 @@
 public class MergeSort {
 
     public void mergeSort(int[] array, int low, int high) {
-        if (low >= high - 1)
+        if (low >= high)
             return;
         int mid = low + (high - low) / 2;
         mergeSort(array, low, mid);
