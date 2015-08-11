@@ -2,10 +2,15 @@ public class BubbleSort {
 
     public void bubbleSort(int[] array, int low, int high) {
         for (int i = low; i <= high; ++i) {
+            boolean swapped = false;
             for (int j = high; j >= low + 1; --j) {
-                if (array[j] < array[j - 1]) 
+                if (array[j] < array[j - 1]) {
                     swap(array, j, j - 1);
+                    swapped = true;
+                }
             }
+            if (!swapped)
+                break;
         }
     }
 
