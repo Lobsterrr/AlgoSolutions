@@ -7,18 +7,18 @@
  * Return "100". 
  */
 public class AddBinary {
+
     public String addBinary(String a, String b) {
+        String result = "";
         int len = Math.max(a.length(), b.length());
-        String res = "";
-        int carry = 0;
-        for (int i = 0; i < len; i++) {
-            int ca = i < a.length() ? a.charAt(a.length() - i - 1) - '0' : 0;
-            int cb = i < b.length() ? b.charAt(b.length() - i - 1) - '0' : 0;
-            res = (ca + cb + carry) % 2 + res;
-            carry = (ca + cb + carry) / 2;
+        int carrier = 0;
+        for (int i = 0; i < len; ++i) {
+            int ca = i < a.length() ? a.charAt(a.length() - 1 - i) - '0' : 0;
+            int cb = i < b.length() ? b.charAt(b.length() - 1 - i) - '0' : 0;
+            result = (ca + cb + carrier) % 2 + result;
+            carrier = (ca + cb + carrier) / 2;
         }
-        if (carry > 0)
-            res = carry + res;
-        return res;
+        return carrier == 0 ? result : carrier + result;
     }
+
 }
