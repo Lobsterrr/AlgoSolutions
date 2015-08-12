@@ -1,4 +1,5 @@
 public class Random {
+
     public int rand7();
 
     //Use rand7() to generate rand10()
@@ -39,4 +40,5 @@ public class Random {
         }
         return i % 10 + 1;
     }
+
 }
