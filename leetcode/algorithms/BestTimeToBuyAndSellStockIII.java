@@ -36,7 +36,6 @@ public class BestTimeToBuyAndSellStockIII {
 
 /*****************************************************************************/
 
-    // I can't understand it!
     public int maxProfit(int[] prices) {
         int x = 0;
         int xx = 0;
