@@ -22,6 +22,8 @@ public class AddDigits {
 
     public int addDigits(int num) {
         return (num - 1) % 9 + 1;
+
+        return num - (num - 1) / 9 * 9;
     }
 
 /*********************************************************/
