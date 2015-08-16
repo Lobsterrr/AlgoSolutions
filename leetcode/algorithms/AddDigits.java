@@ -19,11 +19,9 @@
 public class AddDigits {
 
     //https://en.wikipedia.org/wiki/Digital_root
-
     public int addDigits(int num) {
+        //return num - (num - 1) / 9 * 9;
         return (num - 1) % 9 + 1;
-
-        return num - (num - 1) / 9 * 9;
     }
 
 /*********************************************************/
