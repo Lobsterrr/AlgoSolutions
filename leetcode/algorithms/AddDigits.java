@@ -18,6 +18,14 @@
  */
 public class AddDigits {
 
+    //https://en.wikipedia.org/wiki/Digital_root
+
+    public int addDigits(int num) {
+        return (num - 1) % 9 + 1;
+    }
+
+/*********************************************************/
+
     public int addDigits(int num) {
         while (num >= 10) {
             int digitSum = 0;
