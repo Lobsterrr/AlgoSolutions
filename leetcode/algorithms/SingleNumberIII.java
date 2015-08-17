@@ -29,9 +29,20 @@ public class SingleNumberIII {
 
     public int[] singleNumber(int[] nums) {
         int[] result = new int[2];
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; ++i) {
-            
+            int count = 1;
+            if (map.containsKey(nums[i])) {
+                count += map.get(nums[i]);
+            }
+            map.put(nums[i], count);
         }
+        int k = 0;
+        for (int i = 0; i < nums.length; ++i) {
+            if (map.get(nums[i]) == 1)
+                result[k++] = nums[i];
+        }
+        return result;
     }
 
 }
