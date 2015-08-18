@@ -19,6 +19,24 @@ public class SingleNumberIII {
 
     public int[] singleNumber(int[] nums) {
         int[] result = new int[2];
+        int xor = 0;
+        for (int value : nums) {
+            xor ^= value;
+        }
+        int mask = xor & ~(xor - 1);
+        for (int value : nums) {
+            if ((mask & value) != 0)
+                result[0] ^= value;
+            else
+                result[1] ^= value;
+        }
+        return result;
+    }
+
+/*******************************************************************/
+
+    public int[] singleNumber(int[] nums) {
+        int[] result = new int[2];
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; ++i) {
             int count = 1;
