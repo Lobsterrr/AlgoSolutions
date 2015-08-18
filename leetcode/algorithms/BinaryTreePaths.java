@@ -32,7 +32,11 @@ public class BinaryTreePaths {
     public void bfs(TreeNode root, List<String> result, String path) {
         if (root == null) 
             return ;
-
+        if (root.left == null && root.right == null) {
+            path += "->" + root.val;
+            result.add(path);
+            return ;
+        }
     }
 
 }
