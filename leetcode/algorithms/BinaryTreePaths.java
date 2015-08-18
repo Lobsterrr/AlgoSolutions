@@ -40,7 +40,13 @@ public class BinaryTreePaths {
     }
 
     public void bfs(TreeNode root, List<String> result, String path) {
-        if (root == null) 
+        if (root == null)
+            return;
+        path += "->" + root.val;
+        if (root.left == null && root.right == null) 
+            result.add(path.substring(2));
+        bfs(root.left, result, path);
+        bfs(root.right, result, path);
     }
 
 
