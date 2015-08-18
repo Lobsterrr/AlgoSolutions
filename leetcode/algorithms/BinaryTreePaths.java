@@ -34,7 +34,7 @@ public class BinaryTreePaths {
             return ;
         path += "->" + root.val;
         if (root.left == null && root.right == null) {
-            result.add(path.substring(2);
+            result.add(path.substring(2));
             return ;
         }
         bfs(root.left, result, path);
