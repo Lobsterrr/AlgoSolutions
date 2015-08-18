@@ -25,8 +25,12 @@ public class BinaryTreePaths {
 
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<String>();
-        String path = "";
-
+        if (root == null)
+            return result;
+        String path = "" + root.val;
+        bfs(root.left, result, path);
+        bfs(root.right, result, path);
+        return result;
     }
 
     public void bfs(TreeNode root, List<String> result, String path) {
