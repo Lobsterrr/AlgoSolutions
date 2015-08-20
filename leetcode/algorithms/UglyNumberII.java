@@ -48,19 +48,7 @@ public class UglyNumberII {
                 next5 = result[i5] * 5;
             }
         }
-        return next;
-    }
-
-    public int nthUglyNumber(int n) {
-        int[] result = new int[n];
-        result[0] = 1;
-        int i2 = 0;
-        int i3 = 0;
-        int i5 = 0;
-        int next;
-        for (int i = 1; i < n; ++i) {
-            
-        }
+        return result[n - 1];
     }
 
 }
