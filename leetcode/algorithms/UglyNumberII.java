@@ -28,9 +28,9 @@ public class UglyNumberII {
         int i2 = 0;
         int i3 = 0;
         int i5 = 0;
-        int next2 = result[0];
-        int next3 = result[0];
-        int next5 = result[0];
+        int next2 = 2;
+        int next3 = 3;
+        int next5 = 5;
         int next;
         for (int i = 1; i < n; ++i) {
             next = Math.min(next2, Math.min(next3, next5));
