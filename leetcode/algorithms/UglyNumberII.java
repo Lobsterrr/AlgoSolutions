@@ -57,8 +57,8 @@ public class UglyNumberII {
         int i3 = 1;
         int i5 = 1;
         for (int i = 5; i < k; ++i) {
-            result[i] = Math.min(result[i2] * 2, Math.min(result[i3] * 3, 
-                        result[i5] * 5));
+            result[i] = Math.min(result[i2] * 2, 
+                    Math.min(result[i3] * 3, result[i5] * 5));
             if (result[i] == result[i2] * 2) 
                 i2++;
             if (result[i] == result[i3] * 3) 
