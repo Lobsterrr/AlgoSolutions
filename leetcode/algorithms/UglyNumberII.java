@@ -33,7 +33,7 @@ public class UglyNumberII {
         int next5 = result[0];
         int next = result[0];
         for (int i = 1; i < n; ++i) {
-            
+
         }
     }
 
