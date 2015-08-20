@@ -25,7 +25,16 @@ public class UglyNumberII {
     public int nthUglyNumber(int n) {
         int[] result = new int[n];
         result[0] = 1;
-
+        int i2 = 0;
+        int i3 = 0;
+        int i5 = 0;
+        int next2 = result[0];
+        int next3 = result[0];
+        int next5 = result[0];
+        int next = result[0];
+        for (int i = 1; i < n; ++i) {
+            
+        }
     }
 
 }
