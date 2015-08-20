@@ -23,6 +23,8 @@
 public class UglyNumberII {
 
     public int nthUglyNumber(int n) {
+        int[] result = new int[n];
+        result[0] = 1;
 
     }
 
