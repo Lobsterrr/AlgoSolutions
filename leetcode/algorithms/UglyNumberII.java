@@ -43,4 +43,30 @@ public class UglyNumberII {
         return result[n - 1];
     }
 
+/*******************************************************************/
+
+    public int nthUglyNumber(int n) {
+        int k = n < 5 ? 5 : n;
+        int[] result = new int[k];
+        result[0] = 1;
+        result[1] = 2;
+        result[2] = 3;
+        result[3] = 4;
+        result[4] = 5;
+        int i2 = 2;
+        int i3 = 1;
+        int i5 = 1;
+        for (int i = 5; i < k; ++i) {
+            result[i] = Math.min(result[i2] * 2, Math.min(result[i3] * 3, 
+                        result[i5] * 5));
+            if (result[i] == result[i2] * 2) 
+                i2++;
+            if (result[i] == result[i3] * 3) 
+                i3++;
+            if (result[i] == result[i5] * 5) 
+                i5++;
+        }
+        return result[n - 1];
+    }
+
 }
