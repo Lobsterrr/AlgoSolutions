@@ -16,3 +16,8 @@ class WordDictionary {
     }
 
 }
+
+class Trie {
+
+
+}
