@@ -6,6 +6,12 @@ public class AddAndSearchWordDataStructureDesign {
 }
 
 class WordDictionary {
+
+    private Trie trie;
+
+    public WordDictionary() {
+        trie = new Trie();
+    }
     
     public void addWord(String word) {
 
