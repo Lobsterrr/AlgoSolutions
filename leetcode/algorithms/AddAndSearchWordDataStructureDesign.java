@@ -14,11 +14,27 @@ class WordDictionary {
     }
     
     public void addWord(String word) {
-
+        trie.insert(word);
     }
 
     public boolean search(String word) {
+        TrieNode cur = trie.root;
+        for (char c : word.toCharArray()) {
+            if (c == '.') {
 
+            } else {
+
+            }
+        }
+    }
+
+    public boolean search(Trie root, String word) {
+        Trie cur = trie.root;
+        for (char c : word.toCharArray()) {
+            if (cur.children[c - 'a'] != null) 
+                cur = cur.children[c - 'a'];
+
+        }
     }
 
 }
