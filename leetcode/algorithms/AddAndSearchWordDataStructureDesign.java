@@ -16,6 +16,9 @@
  * search("bad") -> true
  * search(".ad") -> true
  * search("b..") -> true
+ *
+ * Note:
+ * You may assume that all words are consist of lowercase letters a-z.
  */
 public class AddAndSearchWordDataStructureDesign {
 
