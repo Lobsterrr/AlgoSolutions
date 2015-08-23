@@ -25,18 +25,18 @@ public class BinaryTreePaths {
 
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<String>();
-        bfs(root, result, "");
+        dfs(root, result, "");
         return result;
     }
 
-    public void bfs(TreeNode root, List<String> result, String path) {
+    public void dfs(TreeNode root, List<String> result, String path) {
         if (root == null)
             return;
         path += "->" + root.val;
         if (root.left == null && root.right == null) 
             result.add(path.substring(2));
-        bfs(root.left, result, path);
-        bfs(root.right, result, path);
+        dfs(root.left, result, path);
+        dfs(root.right, result, path);
     }
 
 }
