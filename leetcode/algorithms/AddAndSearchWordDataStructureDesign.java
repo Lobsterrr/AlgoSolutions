@@ -47,7 +47,8 @@ class WordDictionary {
         if (word.length() == 1) {
             if (word.charAt(0) == '.') {
                 for (int i = 0; i < 26; ++i) {
-                    
+                    if (root.children[i] != null && root.children[i].isLeaf)
+                        return true;
                 }
                 return false;
             } else {
@@ -55,7 +56,7 @@ class WordDictionary {
                 return node != null && node.isLeaf;
             }
         } else {
-
+            
         }
 
 
