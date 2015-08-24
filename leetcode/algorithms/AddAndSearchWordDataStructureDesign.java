@@ -71,7 +71,6 @@ class WordDictionary {
 
 }
 
-
 class TrieNode {
     
     public TrieNode[] children;
