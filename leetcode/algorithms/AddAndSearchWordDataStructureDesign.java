@@ -46,9 +46,12 @@ class WordDictionary {
         if (word.length() == 1 && root.children[word.charAt(0) - 'a'] != null && root.isLeaf)
             return true;
         if (word.char(0) == '.') {
-            
+            for (int i = 0; i < 26; ++i) {
+                if (dfs(root.children[i], word.substring(1)))
+                    return true;
+            }
         } else {
-            if (root.chidren[word.charAt(0) - 'a'] == null)
+            if (root.children[word.charAt(0) - 'a'] == null)
                 return false;
             dfs(root.children[word.charAt(0) - 'a'], word.substring(1));
         }
