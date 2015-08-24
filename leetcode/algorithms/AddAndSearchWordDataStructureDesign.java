@@ -24,7 +24,6 @@ public class AddAndSearchWordDataStructureDesign {
 
 }
 
-
 class WordDictionary {
 
     TrieNode root = new TrieNode();
