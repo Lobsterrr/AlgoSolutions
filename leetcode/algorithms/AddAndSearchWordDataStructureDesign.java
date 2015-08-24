@@ -44,7 +44,23 @@ class WordDictionary {
     }
 
     public boolean dfs(TrieNode root, String word) {
-        if (word.length() == 1 && root.children[word.charAt(0) - 'a'] != null && root.isLeaf)
+        if (word.length() == 1) {
+            if (word.charAt(0) == '.') {
+                for (int i = 0; i < 26; ++i) {
+                    
+                }
+                return false;
+            } else {
+                TrieNode node = root.children[word.charAt(0) - 'a'];
+                return node != null && node.isLeaf;
+            }
+        } else {
+
+        }
+
+
+
+        if (word.length() == 1 && (word.equals(".") || root.children[word.charAt(0) - 'a'] != null) && root.isLeaf)
             return true;
         if (word.charAt(0) == '.') {
             for (int i = 0; i < 26; ++i) {
