@@ -40,7 +40,7 @@ class WordDictionary {
     }
 
     public boolean search(String word) {
-        dfs(root, word);
+        return dfs(root, word);
     }
 
     public boolean dfs(TrieNode root, String word) {
