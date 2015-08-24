@@ -24,6 +24,7 @@ public class AddAndSearchWordDataStructureDesign {
 
 }
 
+
 class WordDictionary {
 
     TrieNode root = new TrieNode();
@@ -39,13 +40,13 @@ class WordDictionary {
     }
 
     public boolean search(String word) {
-
+        dfs(root, word);
     }
 
     public boolean dfs(TrieNode root, String word) {
         if (word.length() == 1 && root.children[word.charAt(0) - 'a'] != null && root.isLeaf)
             return true;
-        if (word.char(0) == '.') {
+        if (word.charAt(0) == '.') {
             for (int i = 0; i < 26; ++i) {
                 if (dfs(root.children[i], word.substring(1)))
                     return true;
@@ -55,6 +56,7 @@ class WordDictionary {
                 return false;
             dfs(root.children[word.charAt(0) - 'a'], word.substring(1));
         }
+        return false;
     }
 
 }
