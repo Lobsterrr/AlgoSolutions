@@ -32,7 +32,7 @@ class WordDictionary {
         TrieNode cur = root;
         for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] == null)
-                cur.children[c - 'a'] = new char[26];
+                cur.children[c - 'a'] = new Trie();
             cur = cur.children[c - 'a'];
         }
         cur.isLeaf = true;
@@ -63,7 +63,7 @@ class WordDictionary {
 class TrieNode {
     
     public TrieNode[] children;
-    public isLeaf;
+    public boolean isLeaf;
 
     public TrieNode() {
         children = new Trie[26];
