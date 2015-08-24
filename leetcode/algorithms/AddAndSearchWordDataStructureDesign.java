@@ -56,24 +56,17 @@ class WordDictionary {
                 return node != null && node.isLeaf;
             }
         } else {
-            
-        }
-
-
-
-        if (word.length() == 1 && (word.equals(".") || root.children[word.charAt(0) - 'a'] != null) && root.isLeaf)
-            return true;
-        if (word.charAt(0) == '.') {
-            for (int i = 0; i < 26; ++i) {
-                if (dfs(root.children[i], word.substring(1)))
-                    return true;
-            }
-        } else {
-            if (root.children[word.charAt(0) - 'a'] == null)
+            if (word.charAt(0) == '.') {
+                for (int i = 0; i < 26; ++i) {
+                    if (root.children[i] != null && dfs(root.children[i], word.substring(1)))
+                        return true;
+                }
                 return false;
-            dfs(root.children[word.charAt(0) - 'a'], word.substring(1));
+            } else {
+                TrieNode node = root.children[word.charAt(0) - 'a'];
+                return node != null && dfs(node, word.substring(1));
+            }
         }
-        return false;
     }
 
 }
