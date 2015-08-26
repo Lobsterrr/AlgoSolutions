@@ -70,9 +70,13 @@ public class WordSearchII {
 }
 
 class TrieNode {
-    TrieNode[] chi
-    public TrieNode() {
 
+    TrieNode[] children;
+    boolean isLeaf;
+
+    public TrieNode() {
+        children = new TrieNode[26];
+        isLeaf = false;
     }
 
 }
