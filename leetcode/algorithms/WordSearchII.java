@@ -90,7 +90,12 @@ class Trie {
     }
 
     public void insert(String word) {
-
+        TrieNode cur = root;
+        for (char c : word.toCharArray()) {
+            if (cur.children[c - 'a'] == null) 
+                cur.children[c - 'a'] = new TrieNode[26];
+            cur = cur.children[c - 'a'];
+        }
     }
 
     public boolean search(String word) {
