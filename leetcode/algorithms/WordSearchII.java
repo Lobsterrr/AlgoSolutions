@@ -93,7 +93,7 @@ class Trie {
         TrieNode cur = root;
         for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] == null) 
-                cur.children[c - 'a'] = new TrieNode[26];
+                cur.children[c - 'a'] = new TrieNode();
             cur = cur.children[c - 'a'];
         }
     }
