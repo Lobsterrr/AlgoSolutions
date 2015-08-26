@@ -69,18 +69,6 @@ public class WordSearchII {
 
 }
 
-class TrieNode {
-
-    TrieNode[] children;
-    boolean isLeaf;
-
-    public TrieNode() {
-        children = new TrieNode[26];
-        isLeaf = false;
-    }
-
-}
-
 class Trie {
 
     private TrieNode root;
@@ -115,6 +103,18 @@ class Trie {
             cur = cur.children[c - 'a'];
         }
         return true;
+    }
+
+}
+
+class TrieNode {
+
+    TrieNode[] children;
+    boolean isLeaf;
+
+    public TrieNode() {
+        children = new TrieNode[26];
+        isLeaf = false;
     }
 
 }
