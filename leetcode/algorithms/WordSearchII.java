@@ -64,7 +64,31 @@ public class WordSearchII {
         for (String word : words) {
             trie.insert(word);
         }
+        boolean[][] isVisited = new boolean[board.length][board[0].length];
+        for (int i = 0; i < board.length; ++i) {
+            for (int j = 0; j < board[0].length; ++j) {
+                dfs(board, isVisited, i, j, "", trie, result);
+            }
+        }
+        return result;
+    }
 
+    public void dfs(char[][] board, int[][] isVisited, int i, int j, String s, Trie trie, List<String> result) {
+        int xLen = board.length; 
+        int yLen = board[0].length;
+        if (i < 0 || i >= xLen || j < 0 || j >= yLen || isVisited[i][j])
+            return;
+        s += board[i][j];
+        if (!trie.startsWith(s))
+            return;
+        if (trie.search(s))
+            result.add(s);
+        isVisited[i][j] = true;
+        dfs(board, isVisited, i + 1, j, s, trie, result);
+        dfs(board, isVisited, i - 1, j, s, trie, result);
+        dfs(board, isVisited, i, j + 1, s, trie, result);
+        dfs(board, isVisited, i, j - 1, s, trie, result);
+        isVisited[i][j] = false;
     }
 
 }
