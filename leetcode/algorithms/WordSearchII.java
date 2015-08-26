@@ -73,7 +73,7 @@ public class WordSearchII {
         return result;
     }
 
-    public void dfs(char[][] board, int[][] isVisited, int i, int j, String s, Trie trie, List<String> result) {
+    public void dfs(char[][] board, boolean[][] isVisited, int i, int j, String s, Trie trie, List<String> result) {
         int xLen = board.length; 
         int yLen = board[0].length;
         if (i < 0 || i >= xLen || j < 0 || j >= yLen || isVisited[i][j])
