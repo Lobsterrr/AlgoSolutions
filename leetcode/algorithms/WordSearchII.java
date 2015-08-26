@@ -61,11 +61,10 @@ public class WordSearchII {
     public List<String> findWords(char[][] board, String[] words) {
         List<String> result = new ArrayList<String>();
         Trie trie = new Trie();
-        for (int i = 0; i < words.length(); i++) {
-            if (trie.search(words[i])) {
-
-            }
+        for (String word : words) {
+            trie.insert(word);
         }
+
     }
 
 }
