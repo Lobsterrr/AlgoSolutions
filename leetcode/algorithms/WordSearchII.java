@@ -59,7 +59,7 @@ public class WordSearchII {
 /*****************************************************************************/
     
     public List<String> findWords(char[][] board, String[] words) {
-        List<String> result = new ArrayList<String>();
+        Set<String> set = new HashSet<String>();
         Trie trie = new Trie();
         for (String word : words) {
             trie.insert(word);
@@ -67,13 +67,13 @@ public class WordSearchII {
         boolean[][] isVisited = new boolean[board.length][board[0].length];
         for (int i = 0; i < board.length; ++i) {
             for (int j = 0; j < board[0].length; ++j) {
-                dfs(board, isVisited, i, j, "", trie, result);
+                dfs(board, isVisited, i, j, "", trie, set);
             }
         }
-        return result;
+        return new ArrayList<String>(set);
     }
 
-    public void dfs(char[][] board, boolean[][] isVisited, int i, int j, String s, Trie trie, List<String> result) {
+    public void dfs(char[][] board, boolean[][] isVisited, int i, int j, String s, Trie trie, Set<String> set) {
         int xLen = board.length; 
         int yLen = board[0].length;
         if (i < 0 || i >= xLen || j < 0 || j >= yLen || isVisited[i][j])
@@ -82,12 +82,12 @@ public class WordSearchII {
         if (!trie.startsWith(s))
             return;
         if (trie.search(s))
-            result.add(s);
+            set.add(s);
         isVisited[i][j] = true;
-        dfs(board, isVisited, i + 1, j, s, trie, result);
-        dfs(board, isVisited, i - 1, j, s, trie, result);
-        dfs(board, isVisited, i, j + 1, s, trie, result);
-        dfs(board, isVisited, i, j - 1, s, trie, result);
+        dfs(board, isVisited, i + 1, j, s, trie, set);
+        dfs(board, isVisited, i - 1, j, s, trie, set);
+        dfs(board, isVisited, i, j + 1, s, trie, set);
+        dfs(board, isVisited, i, j - 1, s, trie, set);
         isVisited[i][j] = false;
     }
 
