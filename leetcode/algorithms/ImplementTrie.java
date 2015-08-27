@@ -4,6 +4,11 @@
  * Note:
  * You may assume that all inputs are consist of lowercase letters a-z.
  */
+
+public class ImplementTrie {
+
+}
+
 class TrieNode {
     
     public TrieNode[] children;
@@ -53,9 +58,5 @@ class Trie {
         }
         return true;
     }
-
-}
-
-public class ImplementTrie {
 
 }
