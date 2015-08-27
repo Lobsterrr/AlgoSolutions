@@ -73,7 +73,8 @@ public class WordSearchII {
         return new ArrayList<String>(set);
     }
 
-    public void dfs(char[][] board, boolean[][] isVisited, int i, int j, String s, Trie trie, Set<String> set) {
+    public void dfs(char[][] board, boolean[][] isVisited, int i, int j, 
+            String s, Trie trie, Set<String> set) {
         int xLen = board.length; 
         int yLen = board[0].length;
         if (i < 0 || i >= xLen || j < 0 || j >= yLen || isVisited[i][j])
@@ -89,7 +90,6 @@ public class WordSearchII {
         dfs(board, isVisited, i, j + 1, s, trie, set);
         dfs(board, isVisited, i, j - 1, s, trie, set);
         isVisited[i][j] = false;
-        s = s.substring(0, s.length() - 1);
     }
 
 }
@@ -109,6 +109,7 @@ class Trie {
                 cur.children[c - 'a'] = new TrieNode();
             cur = cur.children[c - 'a'];
         }
+        cur.isLeaf = true;
     }
 
     public boolean search(String word) {
