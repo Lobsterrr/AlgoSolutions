@@ -32,7 +32,8 @@
  *     int label;
  *     List<UndirectedGraphNode> neighbors;
  *     UndirectedGraphNode(int x) { 
- *          label = x; neighbors = new ArrayList<UndirectedGraphNode>(); 
+ *          label = x; 
+ *          neighbors = new ArrayList<UndirectedGraphNode>(); 
  *     }
  * };
  */
