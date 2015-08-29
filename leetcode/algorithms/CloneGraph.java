@@ -40,7 +40,7 @@
 public class CloneGraph {
 
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-
+        List<UndirectedGraphNode> list = new ArrayList<UndirectedGraphNode>();
     }
 
 }
