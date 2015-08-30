@@ -73,12 +73,23 @@ public class CloneGraph {
             return null;
         UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
         Stack<UndirectedGraphNode> stack = new Stack<UndirectedGraphNode>();
-        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
-        stack.push(copy);
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = 
+            new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        stack.push(node);
         map.put(node, copy);
         while (!stack.isEmpty()) {
-
+            UndirectedGraphNode cur = stack.pop();
+            for (UndirectedGraphNode neighbor : cur.neighbors) {
+                if (!map.containsKey(neighbor)) {
+                    UndirectedGraphNode copyNode = 
+                        new UndirectedGraphNode(neighbor.label);
+                    map.put(neighbor, copyNode);
+                    stack.push(neighbor);
+                }
+                map.get(cur).neighbors.add(map.get(neighbor));
+            }
         }
+        return copy;
     }
 
 }
