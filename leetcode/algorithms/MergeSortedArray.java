@@ -23,11 +23,38 @@ public class MergeSortedArray {
 
 /**************************** updated 2014.11.25 *****************************/
 
-    public void merge(int A[], int m, int B[], int n) {
+    public void merge(int nums1[], int m, int nums2[], int n) {
         int i = m - 1;
         int j = n - 1;
         for (int k = m + n - 1; k >= 0; k--) 
-            A[k] = (j < 0 || i >= 0 && A[i] > B[j]) ? A[i--] : B[j--];
+            nums1[k] = (j < 0 || i >= 0 && nums1[i] > nums2[j]) ? nums1[i--] : nums2[j--];
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i1 = m - 1;
+        int i2 = n - 1;
+        for (int i = i1 + i2 - 1; i >= 0; --i) {
+            nums1[i] = (i2 < 0 || i1 >= 0 && nums1[i1] > nums2[i2]) ? nums1[i1--] : nums2[i2--];
+        }
     }
 
 }
