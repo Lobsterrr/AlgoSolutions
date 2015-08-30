@@ -65,4 +65,20 @@ public class CloneGraph {
         return copy;
     }
 
+/*****************************************************************************/
+
+    // DFS
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        if (node == null)
+            return null;
+        UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
+        Stack<UndirectedGraphNode> stack = new Stack<UndirectedGraphNode>();
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        stack.push(copy);
+        map.put(node, copy);
+        while (!stack.isEmpty()) {
+
+        }
+    }
+
 }
