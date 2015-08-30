@@ -50,7 +50,7 @@ public class CloneGraph {
         while (queue.peek() != null) {
             UndirectedGraphNode cur = queue.poll();
             for (UndirectedGraphNode neighbor : cur.neighbors) {
-                if (!map.containsKey(neighbor) {
+                if (!map.containsKey(neighbor)) {
                     UndirectedGraphNode copyNode = new UndirectedGraphNode(neighbor.label);
                     map.put(neighbor, copyNode);
                     queue.offer(neighbor);
