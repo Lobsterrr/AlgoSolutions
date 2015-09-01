@@ -41,7 +41,7 @@ public class IntegerToEnglishWords {
             throw new IllegalArgumentException("illegal input");
         String result = "";
         if (num > 99) {
-            result += ones[num / 100] + " Hundred";
+            result += ones[num / 100 - 1] + " Hundred";
             num %= 100;
         }
         if (10 <= num && num < 20) {
