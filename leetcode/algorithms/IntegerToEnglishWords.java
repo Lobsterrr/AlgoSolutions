@@ -26,7 +26,9 @@ public class IntegerToEnglishWords {
     public String numberToWords(int num) {
         String result = "";
         int len = ("" + num).length();
-
+        if (len / 3 > 2) {
+            int subValue = 
+        } 
     }
     
     static String[] units = {"Thousand", "Million", "Billion"};
