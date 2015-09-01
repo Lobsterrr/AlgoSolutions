@@ -8,6 +8,7 @@
  * 12345 -> "Twelve Thousand Three Hundred Forty Five"
  * 1234567 -> "One Million Two Hundred Thirty Four 
  * Thousand Five Hundred Sixty Seven"
+ *
  * Hint:
  * 
  * Did you see a pattern in dividing the number into 
@@ -24,6 +25,23 @@ public class IntegerToEnglishWords {
 
     public String numberToWords(int num) {
 
+    }
+    
+    static String[] ones = {"One", "Two", "Three", "Four", 
+        "Five", "Six", "Seven", "Eight", "Nine"};
+    
+    static String[] teens = {"Ten", "Eleven", "Twelve"; "Thirteen", 
+        "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+
+    public String helper(int num) {
+        if (num < 0 || num > 999)
+            throw new IllegalArgumentException("illegal input");
+        String result = "";
+        if (num > 99) {
+            result += ones[num / 100] + " Hundred";
+            num %= 100;
+        }
+        if (
     }
 
 }
