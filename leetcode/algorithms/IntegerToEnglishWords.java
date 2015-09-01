@@ -45,14 +45,20 @@ public class IntegerToEnglishWords {
             num %= 100;
         }
         if (10 <= num && num < 20) {
-            result += " " + teens[num - 10];
+            if (result.length() > 0)
+                result += " ";
+            result += teens[num - 10];
         } else {
             if (num >= 20) {
-                result += " " + ties[num / 10 - 2];
+                if (result.length() > 0)
+                    result += " ";
+                result += ties[num / 10 - 2];
                 num %= 10;
             }
             if (0 < num && num < 10) {
-                result += " " + ones[num - 1];
+                if (result.length() > 0)
+                    result += " ";
+                result += ones[num - 1];
             }
         }
         return result;
