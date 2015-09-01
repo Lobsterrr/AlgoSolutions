@@ -30,7 +30,7 @@ public class IntegerToEnglishWords {
     static String[] ones = {"One", "Two", "Three", "Four", 
         "Five", "Six", "Seven", "Eight", "Nine"};
     
-    static String[] teens = {"Ten", "Eleven", "Twelve"; "Thirteen", 
+    static String[] teens = {"Ten", "Eleven", "Twelve", "Thirteen", 
         "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
 
     static String[] ties = {"Twenty", "Thirty", "Forty", 
