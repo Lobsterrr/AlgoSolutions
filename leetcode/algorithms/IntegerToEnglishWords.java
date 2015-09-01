@@ -24,9 +24,13 @@
 public class IntegerToEnglishWords {
 
     public String numberToWords(int num) {
+        String result = "";
+        int len = ("" + num).length();
 
     }
     
+    static String[] units = {"Thousand", "Million", "Billion"};
+
     static String[] ones = {"One", "Two", "Three", "Four", 
         "Five", "Six", "Seven", "Eight", "Nine"};
     
