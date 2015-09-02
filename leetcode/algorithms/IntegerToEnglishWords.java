@@ -25,20 +25,17 @@ public class IntegerToEnglishWords {
 
     public String numberToWords(int num) {
         String result = "";
-        int len = ("" + num).length();
-        for (int i = len / 3; i >= 0; --i) {
+        for (int i = 3; i >= 0; --i) {
             int pow = (int) Math.pow(10, 3 * i);
-            int value = num / pow;
-            result += helper(value);
-            if (i > 0) {
-                result += " " + 
+            if (num >= pow) {
+                result += helper(num / pow);
+                if (i > 0) {
+                    result += " " + units[i - 1];
+                }
+                num %= pow;
             }
         }
-
-
-        if (len / 3 > 2) {
-            int subValue = 
-        } 
+        return result;
     }
     
     static String[] units = {"Thousand", "Million", "Billion"};
