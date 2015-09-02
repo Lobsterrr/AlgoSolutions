@@ -54,6 +54,7 @@ public class IntegerToEnglishWords {
         "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
 
     public String helper(int num) {
+        // deal with number between 1 and 999
         if (num < 0 || num > 999)
             throw new IllegalArgumentException("illegal input");
         String result = "";
