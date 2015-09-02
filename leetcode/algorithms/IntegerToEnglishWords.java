@@ -26,6 +26,16 @@ public class IntegerToEnglishWords {
     public String numberToWords(int num) {
         String result = "";
         int len = ("" + num).length();
+        for (int i = len / 3; i >= 0; --i) {
+            int pow = (int) Math.pow(10, 3 * i);
+            int value = num / pow;
+            result += helper(value);
+            if (i > 0) {
+                result += " " + 
+            }
+        }
+
+
         if (len / 3 > 2) {
             int subValue = 
         } 
