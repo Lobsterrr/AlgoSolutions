@@ -74,32 +74,4 @@ public class IntegerToEnglishWords {
         return result.trim();
     }
 
-    public String helper(int num) {
-        // deal with number between 1 and 999
-        if (num < 0 || num > 999)
-            throw new IllegalArgumentException("illegal input");
-        String result = "";
-        if (num > 99) {
-            result += ones[num / 100 - 1] + " Hundred";
-            num %= 100;
-        }
-        if (num >= 20) {
-            if (result.length() > 0)
-                result += " ";
-            result += ties[num / 10 - 2];
-            num %= 10;
-        }
-        if (10 <= num && num < 20) {
-            if (result.length() > 0)
-                result += " ";
-            result += teens[num - 10];
-        }
-        if (0 < num && num < 10) {
-            if (result.length() > 0)
-                result += " ";
-            result += ones[num - 1];
-        }
-        return result;
-    }
-
 }
