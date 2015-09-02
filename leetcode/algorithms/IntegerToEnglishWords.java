@@ -24,6 +24,8 @@
 public class IntegerToEnglishWords {
 
     public String numberToWords(int num) {
+        if (num == 0)
+            return "Zero";
         String result = "";
         for (int i = 3; i >= 0; --i) {
             int pow = (int) Math.pow(10, 3 * i);
