@@ -23,25 +23,6 @@
  */
 public class IntegerToEnglishWords {
 
-    public String numberToWords(int num) {
-        if (num == 0)
-            return "Zero";
-        String result = "";
-        for (int i = 3; i >= 0; --i) {
-            int pow = (int) Math.pow(10, 3 * i);
-            if (num >= pow) {
-                if (result.length() > 0)
-                    result += " ";
-                result += helper(num / pow);
-                if (i > 0) {
-                    result += " " + units[i - 1];
-                }
-                num %= pow;
-            }
-        }
-        return result;
-    }
-    
     static String[] units = {"Thousand", "Million", "Billion"};
 
     static String[] ones = {"One", "Two", "Three", "Four", 
@@ -53,6 +34,24 @@ public class IntegerToEnglishWords {
     static String[] ties = {"Twenty", "Thirty", "Forty", 
         "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
 
+    public String numberToWords(int num) {
+        if (num == 0)
+            return "Zero";
+        String result = "";
+        for (int i = 3; i >= 0; --i) {
+            int pow = (int) Math.pow(10, 3 * i);
+            if (num >= pow) {
+                if (result.length() > 0)
+                    result += " ";
+                result += helper(num / pow);
+                if (i > 0)
+                    result += " " + units[i - 1];
+                num %= pow;
+            }
+        }
+        return result;
+    }
+    
     public String helper(int num) {
         // deal with number between 1 and 999
         if (num < 0 || num > 999)
