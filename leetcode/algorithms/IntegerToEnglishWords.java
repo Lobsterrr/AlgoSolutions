@@ -28,6 +28,8 @@ public class IntegerToEnglishWords {
         for (int i = 3; i >= 0; --i) {
             int pow = (int) Math.pow(10, 3 * i);
             if (num >= pow) {
+                if (result.length() > 0)
+                    result += " ";
                 result += helper(num / pow);
                 if (i > 0) {
                     result += " " + units[i - 1];
