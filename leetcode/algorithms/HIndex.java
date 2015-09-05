@@ -13,8 +13,7 @@ public class HIndex {
             }
         }
         for (int i = 0; i < citations.length; ++i) {
-            if (count[i] <= citations[i] && count[i] >= result)
-                result = Math.min(count[i], citations[i]);
+            result = Math.max(result, Math.min(count[i], citations[i]));
         }
         return result;
     }
