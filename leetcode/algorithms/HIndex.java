@@ -38,4 +38,10 @@ public class HIndex {
         return result;
     }
 
+    public int hIndex(int[] citations) {
+        int result = 0;
+        Arrays.sort(citations);
+
+    }
+
 }
