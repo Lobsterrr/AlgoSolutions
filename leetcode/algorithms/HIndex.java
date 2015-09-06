@@ -42,16 +42,11 @@ public class HIndex {
     // O(n * log(n)) time, O(1) space
     public int hIndex(int[] citations) {
         Arrays.sort(citations);
-        int left = 0;
-        int right = citations.length - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            if (citations[mid] < citations.length - mid) 
-                left = mid + 1;
-            else 
-                right = mid - 1;
+        for (int i = 0; i < citations.length; ++i) {
+            if (citations[i] >= citations.length - i)
+                return citations.length - i;
         }
-        return citations.length - left;
+        return 0;
     }
 
 }
