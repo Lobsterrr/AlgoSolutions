@@ -23,9 +23,34 @@
  */
 public class HIndex {
 
-    // O(n) time, O(n) space
     public int hIndex(int[] citations) {
+        int result = 0;
+        int[] count = new int[citations.length];
+        for (int i = 0; i < citations.length; ++i) {
+            for (int j = 0; j < citations.length; ++j) {
+                if (citations[j] >= citations[i])
+                    count[i]++;
+            }
+        }
+        for (int i = 0; i < citations.length; ++i) {
+            result = Math.max(result, Math.min(count[i], citations[i]));
+        }
+        return result;
+    }
 
+    // O(n) time and O(n) space
+    public int hIndex(int[] citations) {
+        int[] count = new int[citations.length + 1];
+        for (int c : citations) {
+            count[Math.min(c, citations.length)]++;
+        }
+        int total = 0;
+        for (int i = citations.length; i >= 0; i--) {
+            total += count[i];
+            if (total >= i)
+                return i;
+        }
+        return 0;
     }
 
 /*****************************************************************************/
