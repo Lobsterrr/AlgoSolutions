@@ -44,8 +44,7 @@ public class HIndex {
         for (int c : citations) {
             count[Math.min(c, citations.length)]++;
         }
-        int total = 0;
-        for (int i = citations.length; i >= 0; i--) {
+        for (int i = citations.length, total = 0; i >= 0; i--) {
             total += count[i];
             if (total >= i)
                 return i;
