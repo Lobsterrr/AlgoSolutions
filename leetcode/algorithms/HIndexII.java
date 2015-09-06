@@ -8,6 +8,7 @@
  */
 public class HIndexII {
 
+    // O(log n)
     public int hIndex(int[] citations) {
         int left = 0;
         int right = citations.length - 1;
@@ -23,6 +24,7 @@ public class HIndexII {
 
 /*****************************************************************************/
 
+    // O(n)
     public int hIndex(int[] citations) {
         int result = 0;
         for (int i = 0; i < citations.length; ++i) {
