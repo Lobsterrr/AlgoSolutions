@@ -9,15 +9,6 @@
 public class HIndexII {
 
     public int hIndex(int[] citations) {
-        int result = 0;
-        for (int i = 0; i < citations.length; ++i) {
-            result = Math.max(result, 
-                    Math.min(citations[i], citations.length - i));
-        }
-        return result;
-    }
-
-    public int hIndex(int[] citations) {
         int left = 0;
         int right = citations.length - 1;
         while (left <= right) {
@@ -28,6 +19,17 @@ public class HIndexII {
                 right = mid - 1;
         }
         return citations.length - left;
+    }
+
+/*****************************************************************************/
+
+    public int hIndex(int[] citations) {
+        int result = 0;
+        for (int i = 0; i < citations.length; ++i) {
+            result = Math.max(result, 
+                    Math.min(citations[i], citations.length - i));
+        }
+        return result;
     }
 
 }
