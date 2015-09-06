@@ -41,7 +41,6 @@ public class HIndex {
 /*****************************************************************************/
 
     public int hIndex(int[] citations) {
-        int result = 0;
         Arrays.sort(citations);
         int result = 0;
         for (int i = 0; i < citations.length; ++i) {
