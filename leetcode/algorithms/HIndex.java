@@ -38,10 +38,20 @@ public class HIndex {
         return result;
     }
 
+/*****************************************************************************/
+
     public int hIndex(int[] citations) {
         int result = 0;
         Arrays.sort(citations);
-
+        int result = 0;
+        for (int i = 0; i < citations.length; ++i) {
+            int j = i;
+            while (j < citations.length && citations[j] == citations[i]) {
+                j++;
+            }
+            result = Math.max(result, Math.min(citations[i], j - i));
+        }
+        return result;
     }
 
 }
