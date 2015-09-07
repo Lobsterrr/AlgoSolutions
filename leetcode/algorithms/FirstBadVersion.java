@@ -16,7 +16,16 @@ version. You should minimize the number of calls to the API.
 public class FirstBadVersion {
 
     public int firstBadVersion(int n) {
-
+        int left = 1;
+        int right = n;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (isBadVersion(mid))
+                right = mid - 1;
+            else 
+                left = mid + 1;
+        }
+        return (left + right) / 2;
     }
 
 }
