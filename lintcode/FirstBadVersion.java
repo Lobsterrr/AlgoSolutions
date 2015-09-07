@@ -8,7 +8,6 @@ You can call isBadVersion to help you determine which version is
 the first bad one. The details interface can be found in the 
 code's annotation part.
 
-Have you met this question in a real interview? Yes
 Example
 Given n = 5:
 
