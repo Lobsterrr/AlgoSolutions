@@ -25,7 +25,7 @@ public class FirstBadVersion {
             else 
                 left = mid + 1;
         }
-        return left + (right - left) / 2;
+        return left;
     }
 
 }
