@@ -22,6 +22,10 @@ the triangle.
  */
 public class Triangle {
 
+    /**
+     * @param triangle: a list of lists of integers.
+     * @return: An integer, minimum path sum.
+     */
     public int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
         int xLen = triangle.size();
         int[] dp = new int[xLen];
