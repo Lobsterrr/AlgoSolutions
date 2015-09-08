@@ -15,7 +15,8 @@ public class WordBreakII {
 
     public List<String> wordBreak(String s, Set<String> wordDict) {
         List<String> result = new ArrayList<String>();
-        
+        dfs(result, s, wordDict);
+        return result;
     }
 
     public void dfs(List<String> result, String s, Set<String> wordDict) {
