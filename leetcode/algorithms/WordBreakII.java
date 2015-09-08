@@ -33,4 +33,25 @@ public class WordBreakII {
         }
     }
 
+
+
+
+
+
+    public List<String> wordBreak(String s, Set<String> wordDict) {
+        List<String> result = new ArrayList<String>();
+        if (s.length() == 0) {
+            
+        }
+        for (int i = 1; i <= s.length(); ++i) {
+            if (wordDict.contains(s.substring(0, i))) {
+                List<String> list = wordBreak(s.substring(i), wordDict);
+                for (String sub : list) {
+                    result.add(s.substring(0, i) + " " + sub);
+                }
+            }
+        }
+        return result;
+    }
+
 }
