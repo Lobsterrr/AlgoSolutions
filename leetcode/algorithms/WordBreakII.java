@@ -15,18 +15,20 @@ public class WordBreakII {
 
     public List<String> wordBreak(String s, Set<String> wordDict) {
         List<String> result = new ArrayList<String>();
-        dfs(result, s, wordDict);
+        dfs(result, s, "", wordDict);
         return result;
     }
 
-    public void dfs(List<String> result, String s, Set<String> wordDict) {
-        if (s.length() == 0)
+    public void dfs(List<String> result, String s, String sub, Set<String> wordDict) {
+        if (s.length() == 0) {
+            result.add(sub.trim());
             return;
+        }
         for (int i = 1; i <= s.length(); ++i) {
             if (wordDict.contains(s.substring(0, i))) {
-                result.add(s.substring(0, i));
-                dfs(result, s.substring(i), wordDict);
-                result.remove(result.size() - 1);
+                sub += " " + s.substring(0, i);
+                dfs(result, s.substring(i), sub, wordDict);
+                sub = sub.substring(0, sub.length() - i - 1);
             }
         }
     }
