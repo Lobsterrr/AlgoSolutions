@@ -39,6 +39,8 @@ public class WordBreakII {
 
 
     public List<String> wordBreak(String s, Set<String> wordDict) {
+        if (wordDict.contains(s))
+            result.add(s);
         List<String> result = new ArrayList<String>();
         for (int i = 1; i <= s.length(); ++i) {
             if (wordDict.contains(s.substring(0, i))) {
@@ -48,8 +50,6 @@ public class WordBreakII {
                 }
             }
         }
-        if (wordDict.contains(s))
-            result.add(s);
         return result;
     }
 
