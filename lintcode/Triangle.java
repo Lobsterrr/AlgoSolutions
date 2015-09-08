@@ -21,7 +21,6 @@ extra space, where n is the total number of rows in
 the triangle.
  */
 public class Triangle {
-    
     /**
      * @param triangle: a list of lists of integers.
      * @return: An integer, minimum path sum.
