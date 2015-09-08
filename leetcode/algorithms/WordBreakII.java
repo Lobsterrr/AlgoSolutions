@@ -25,9 +25,9 @@ public class WordBreakII {
             return;
         }
         for (int i = 1; i <= s.length(); ++i) {
-            if (wordDict.contains(s.substring(0, i))) {
+            if (wordDict.contains(s.substring(0, i)) && possible[i + 1]) {
                 sub += " " + s.substring(0, i);
-                dfs(result, s.substring(i), sub, wordDict);
+                dfs(result, s.substring(i), sub, wordDict, possible);
                 sub = sub.substring(0, sub.length() - i - 1);
             }
         }
