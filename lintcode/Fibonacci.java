@@ -9,7 +9,6 @@ The first ten numbers in Fibonacci sequence is:
 
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...
 
-Have you met this question in a real interview? Yes
 Example
 Given 1, return 0
 
