@@ -10,7 +10,9 @@
 public class PerfectSquares {
 
     public int numSquares(int n) {
-        
+        int k = (int) Math.sqrt(n);
+        if (k * k == n)
+            return 1;
     }
 
 }
