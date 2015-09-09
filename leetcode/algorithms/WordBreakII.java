@@ -15,13 +15,13 @@ public class WordBreakII {
 
     public List<String> wordBreak(String s, Set<String> wordDict) {
         List<String> result = new ArrayList<String>();
-        if (canBreak(s, wordDict)) {
+        if (isWordBreak(s, wordDict))
             dfs(result, s, "", wordDict);
-        }
         return result;
     }
 
-    public void dfs(List<String> result, String s, String sub, Set<String> wordDict) {
+    public void dfs(List<String> result, String s, String sub, 
+            Set<String> wordDict) {
         if (s.length() == 0) {
             result.add(sub.trim());
             return;
@@ -35,76 +35,20 @@ public class WordBreakII {
         }
     }
 
-    public boolean canBreak(String s, Set<String> wordDict) {
+    public boolean isWordBreak(String s, Set<String> wordDict) {
         if (s == null || s.length() == 0)
             return false;
         boolean[] dp = new boolean[s.length()];
         for (int i = 0; i < s.length(); ++i) {
             for (int j = 0; j <= i; ++j) {
-                if (wordDict.contains(s.substring(j, i + 1)) && (j == 0 || dp[j - 1])) {
+                if (wordDict.contains(s.substring(j, i + 1)) && 
+                        (j == 0 || dp[j - 1])) {
                     dp[i] = true;
                     break;
                 }
             }
         }
         return dp[s.length() - 1];
-    }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*****************************************************************************/
-
-    public List<String> wordBreak(String s, Set<String> wordDict) {
-        if (wordDict.contains(s))
-            result.add(s);
-        List<String> result = new ArrayList<String>();
-        for (int i = 1; i <= s.length(); ++i) {
-            if (wordDict.contains(s.substring(0, i))) {
-                List<String> list = wordBreak(s.substring(i), wordDict);
-                for (String sub : list) {
-                    result.add(s.substring(0, i) + " " + sub);
-                }
-            }
-        }
-        return result;
     }
 
 }
