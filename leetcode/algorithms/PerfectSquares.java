@@ -12,11 +12,11 @@ public class PerfectSquares {
     // https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem
 
     public int numSquares(int n) {
+        if (Math.pow((int) Math.sqrt(n), 2)  == n)
+            return 1;
         while (n % 4 == 0) {
             n /= 4;
         }
-        if (Math.pow((int) Math.sqrt(n), 2)  == n)
-            return 1;
         if (n % 8 == 7)
             return 4;
         for (int i = 1; i * i <= n; ++i) {
