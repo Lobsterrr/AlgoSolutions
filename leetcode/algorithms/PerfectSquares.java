@@ -10,9 +10,11 @@
 public class PerfectSquares {
 
     public int numSquares(int n) {
-        int k = (int) Math.sqrt(n);
-        if (k * k == n)
-            return 1;
+        int[] dp = new int[n + 1];
+        for (int i = 0; i * i <= n; ++i) {
+            dp[i * i] = 1;
+        }
+
     }
 
 }
