@@ -14,7 +14,15 @@ public class PerfectSquares {
         for (int i = 0; i * i <= n; ++i) {
             dp[i * i] = 1;
         }
-
+        for (int i = 2; i <= n; ++i) {
+            if (dp[i] == 0) {
+                dp[i] = Integer.MAX_VALUE;
+                for (int j = 1; j <= i / 2; ++j) {
+                    dp[i] = Math.min(dp[i], dp[j] + dp[i - j]);
+                }
+            }
+        }
+        return dp[n];
     }
 
 }
