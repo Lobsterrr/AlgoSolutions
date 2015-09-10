@@ -20,7 +20,7 @@ public class PerfectSquares {
         if (n % 8 == 7)
             return 4;
         for (int i = 1; i * i <= n; ++i) {
-            int j = n - i * i;
+            int j = (int) Math.sqrt(n - i * i);
             if (Math.pow((int) Math.sqrt(j), 2) == j)
                 return 2;
         }
