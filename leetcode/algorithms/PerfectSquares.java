@@ -21,7 +21,7 @@ public class PerfectSquares {
             return 4;
         for (int i = 1; i * i <= n; ++i) {
             int j = (int) Math.sqrt(n - i * i);
-            if (Math.pow((int) Math.sqrt(j), 2) == j)
+            if (i * i + j * j == n)
                 return 2;
         }
         return 3;
