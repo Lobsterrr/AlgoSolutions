@@ -24,4 +24,20 @@ public class PerfectSquares {
         return dp[n];
     }
 
+    public int numSquares(int n) {
+        while (n % 4 == 0) {
+            n /= 4;
+        }
+        if (Math.pow((int) Math.sqrt(n), 2)  == n)
+            return 1;
+        if (n % 8 == 7)
+            return 4;
+        for (int i = 1; i * i <= n; ++i) {
+            int j = n - i * i;
+            if (Math.pow((int) Math.sqrt(j), 2) == j)
+                return 2;
+        }
+        return 3;
+    }
+
 }
