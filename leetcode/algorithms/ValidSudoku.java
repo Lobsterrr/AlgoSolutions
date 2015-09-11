@@ -49,4 +49,27 @@ public class ValidSudoku {
         return true;
     }
 
+    public boolean isValidSudoku(char[][] board) {
+        if (board == null || board.length == 0)
+            return false;
+        int xLen = board.length;
+        int yLen = board[0].length;
+        int[] col = new int[9];
+        int[] block = new int[9];
+        for (int i = 0; i < xLen; ++i) {
+            int row = 0;
+            for (int j = 0; j < yLen; ++j) {
+                if (board[i][j] == '.')
+                    continue;
+                int mask = 1 << (boar[i][j] - '1');
+                if (row & mask != 0 || col[j] & mask != 0 || block[i / 3 * 3 + j / 3] & mask != 0)
+                    return false;
+                row |= mask;
+                col[j] |= mask;
+                block[i / 3 * 3 + j / 3] |= 3;
+            }
+        }
+        return true;
+    }
+
 }
