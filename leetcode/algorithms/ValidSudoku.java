@@ -29,15 +29,11 @@ public class ValidSudoku {
 /*****************************************************************************/
 
     public boolean isValidSudoku(char[][] board) {
-        if (board == null || board.length == 0)
-            return false;
-        int xLen = board.length;
-        int yLen = board[0].length;
-        boolean[][] row = new boolean[xLen][yLen];
-        boolean[][] col = new boolean[xLen][yLen];
-        boolean[][] block = new boolean[xLen][yLen];
-        for (int i = 0; i < xLen; ++i) {
-            for (int j = 0; j < yLen; ++j) {
+        boolean[][] row = new boolean[9][9];
+        boolean[][] col = new boolean[9][9];
+        boolean[][] block = new boolean[9][9];
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
                 if (board[i][j] == '.')
                     continue;
                 int c = board[i][j] - '1';
