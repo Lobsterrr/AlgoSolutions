@@ -50,7 +50,17 @@ public class ValidSudoku {
         boolean[][] row = new boolean[xLen][yLen];
         boolean[][] col = new boolean[xLen][yLen];
         boolean[][] block = new boolean[xLen][yLen];
-
+        for (int i = 0; i < xLen; ++i) {
+            for (int j = 0; j < yLen; ++j) {
+                if (board[i][j] == '.')
+                    continue;
+                int c = board[i][j] - '1';
+                if (row[i][c] || col[c][j] || block[i / 3 * 3 + j / 3][c])
+                    return false;
+                row[i][c] = col[j][c] = block[i / 3 * 3 + j / 3][c] = true;
+            }
+        }
+        return true;
     }
 
 }
