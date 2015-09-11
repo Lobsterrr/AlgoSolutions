@@ -7,15 +7,11 @@
 public class ValidSudoku {
 
     public boolean isValidSudoku(char[][] board) {
-        if (board == null || board.length == 0)
-            return false;
-        int xLen = board.length;
-        int yLen = board[0].length;
         int[] col = new int[9];
         int[] block = new int[9];
-        for (int i = 0; i < xLen; ++i) {
+        for (int i = 0; i < 9; ++i) {
             int row = 0;
-            for (int j = 0; j < yLen; ++j) {
+            for (int j = 0; j < 9; ++j) {
                 if (board[i][j] == '.')
                     continue;
                 int mask = 1 << (board[i][j] - '1');
