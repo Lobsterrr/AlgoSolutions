@@ -55,7 +55,7 @@ public class ValidSudoku {
                 if (board[i][j] == '.')
                     continue;
                 int c = board[i][j] - '1';
-                if (row[i][c] || col[c][j] || block[i / 3 * 3 + j / 3][c])
+                if (row[i][c] || col[j][c] || block[i / 3 * 3 + j / 3][c])
                     return false;
                 row[i][c] = col[j][c] = block[i / 3 * 3 + j / 3][c] = true;
             }
