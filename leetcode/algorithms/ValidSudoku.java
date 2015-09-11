@@ -1,25 +1,10 @@
 /*
- * Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
- * The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
+ * Determine if a Sudoku is valid, according to: 
+ * Sudoku Puzzles - The Rules.
+ * The Sudoku board could be partially filled, where 
+ * empty cells are filled with the character '.'.
  */
 public class ValidSudoku {
-/*  public boolean isValidSudoku(char[][] board) {
-        boolean[][] rows = new boolean[9][9];
-        boolean[][] cols = new boolean[9][9];
-        boolean[][] blocks = new boolean[9][9];
-        for(int i = 0; i < 9; i++) {
-            for(int j = 0; j < 9; j++) {
-                if(board[i][j] == '.')
-                    continue;
-                int c = board[i][j] - '1';
-                if(rows[i][c] || cols[j][c] || blocks[i - i % 3 + j / 3][c])
-                    return false;
-                rows[i][c] = cols[j][c] = blocks[i - i % 3 + j / 3][c] = true;
-            }
-        }
-        return true;
-    }
-*/
 
     public boolean isValidSudoku(char[][] board) {
         int row;
@@ -41,6 +26,7 @@ public class ValidSudoku {
         return true;
     }
 
+/*****************************************************************************/
 
     public boolean isValidSudoku(char[][] board) {
         if (board == null || board.length == 0)
@@ -55,9 +41,9 @@ public class ValidSudoku {
                 if (board[i][j] == '.')
                     continue;
                 int c = board[i][j] - '1';
-                if (row[i][c] || col[j][c] || block[i / 3 * 3 + j / 3][c])
+                if (row[i][c] || col[c][j] || block[i / 3 * 3 + j / 3][c])
                     return false;
-                row[i][c] = col[j][c] = block[i / 3 * 3 + j / 3][c] = true;
+                row[i][c] = col[c][j] = block[i / 3 * 3 + j / 3][c] = true;
             }
         }
         return true;
