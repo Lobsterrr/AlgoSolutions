@@ -40,4 +40,17 @@ public class ValidSudoku {
         }
         return true;
     }
+
+
+    public boolean isValidSudoku(char[][] board) {
+        if (board == null || board.length == 0)
+            return false;
+        int xLen = board.length;
+        int yLen = board[0].length;
+        boolean[][] row = new boolean[xLen][yLen];
+        boolean[][] col = new boolean[xLen][yLen];
+        boolean[][] block = new boolean[xLen][yLen];
+
+    }
+
 }
