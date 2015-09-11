@@ -61,7 +61,7 @@ public class ValidSudoku {
             for (int j = 0; j < yLen; ++j) {
                 if (board[i][j] == '.')
                     continue;
-                int mask = 1 << (boar[i][j] - '1');
+                int mask = 1 << (board[i][j] - '1');
                 if (row & mask != 0 || col[j] & mask != 0 || block[i / 3 * 3 + j / 3] & mask != 0)
                     return false;
                 row |= mask;
