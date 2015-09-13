@@ -43,7 +43,8 @@ public class NQueensII {
 
     public int totalNQueens(int n) {
         int[] board = new int[n];
-
+        dfs(board, 0);
+        return result;
     }
 
     public void dfs(in[] board, int row) {
