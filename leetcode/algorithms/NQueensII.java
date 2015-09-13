@@ -39,4 +39,19 @@ public class NQueensII {
 
 /*****************************************************************************/
 
+    int result = 0;
+
+    public int totalNQueens(int n) {
+        int[] board = new int[n];
+
+    }
+
+    public void dfs(in[] board, int row) {
+
+    }
+
+    public boolean canPlace(int[] board, int row, int col) {
+
+    }
+
 }
