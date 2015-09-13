@@ -51,7 +51,7 @@ public class NQueensII {
         if (row == board.length)
             result++;
         else {
-            
+            for (int i = 0; i <  
         }
     }
 
