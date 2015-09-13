@@ -48,11 +48,19 @@ public class NQueensII {
     }
 
     public void dfs(in[] board, int row) {
-
+        if (row == board.length)
+            result++;
+        else {
+            
+        }
     }
 
     public boolean canPlace(int[] board, int row, int col) {
-
+        for (int i = 0; i < row; ++i) {
+            if (board[i] == col || Math.abs(row - i) == Math.abs(board[i] - col))
+                return false;
+        }
+        return true;
     }
 
 }
