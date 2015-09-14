@@ -63,5 +63,4 @@ public class NQueensII {
         return true;
     }
 
-
 }
