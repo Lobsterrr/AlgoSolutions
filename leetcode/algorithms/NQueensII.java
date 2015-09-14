@@ -48,15 +48,15 @@ public class NQueensII {
     }
 
     public void dfs(int[] board, int row) {
-        if (row == board.length)
+        if (row == board.length) {
             result++;
-        else {
-            for (int col = 0; col < board.length; ++col) {
-                if (canPlace(board, row, col)) {
-                    board[row] = col;
-                    dfs(board, row + 1);
-                    board[row] = 0;
-                }
+            return;
+        }
+        for (int col = 0; col < board.length; ++col) {
+            if (canPlace(board, row, col)) {
+                board[row] = col;
+                dfs(board, row + 1);
+                board[row] = 0;
             }
         }
     }
