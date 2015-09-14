@@ -47,7 +47,7 @@ public class NQueensII {
         return result;
     }
 
-    public void dfs(in[] board, int row) {
+    public void dfs(int[] board, int row) {
         if (row == board.length)
             result++;
         else {
