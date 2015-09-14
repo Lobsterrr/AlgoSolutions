@@ -51,7 +51,13 @@ public class NQueensII {
         if (row == board.length)
             result++;
         else {
-            for (int i = 0; i <  
+            for (int col = 0; col < board.length; ++col) {
+                if (canPlace(board, row, col)) {
+                    board[row] = col;
+                    dfs(board, row + 1);
+                    board[row] = 0;
+                }
+            }
         }
     }
 
