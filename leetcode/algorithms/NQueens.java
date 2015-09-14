@@ -37,14 +37,15 @@ public class NQueens {
 
     public void dfs(List<List<String>> result, int[] board, int row) {
         if (row == board.length) {
-            String[] lines = new String[board.length];
+            List<String> list = new ArrayList<String>();
             for (int i = 0; i < board.length; ++i) {
-                lines[i] = "";
+                String line = "";
                 for (int j = 0; j < board.length; ++j) {
-                    lines[i] += board[i] != j ? "." : "Q";
+                    line += board[i] != j ? "." : "Q";
                 }
+                list.add(line);
             }
-            result.add(Arrays.asList(lines));
+            result.add(list);
             return;
         }
         for (int col = 0; col < board.length; ++col) {
