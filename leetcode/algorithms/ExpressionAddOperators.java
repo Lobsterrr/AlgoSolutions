@@ -18,7 +18,7 @@ public class ExpressionAddOperators {
     }
 
     public void dfs(List<String> result, String sub, String num, int target) {
-        for (int i = 1; i < Math.min(10, num.length()); ++i) {
+        for (int i = 1; i <= Math.min(10, num.length()); ++i) {
             if (Long.parseLong(num.substring(0, i)) > Integer.MAX_VALUE)
                 break;
             int a = Integer.parseInt(num.substring(0, i));
