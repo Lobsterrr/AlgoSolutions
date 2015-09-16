@@ -29,7 +29,7 @@ public class ExpressionAddOperators {
                 }
             } else {
                 dfs(result, sub + a + "+", num.substring(i), target - a);
-                dfs(result, sub + a + "-", num.substring(i), target + a);
+                dfs(result, sub + a + "-", num.substring(i), a - target);
                 if (a != 0)
                     dfs(result, sub + a + "*", num.substring(i), target / a);
             }
