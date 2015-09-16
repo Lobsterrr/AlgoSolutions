@@ -16,15 +16,29 @@ public class ExpressionAddOperators {
 
     }
 
-    public void dfs(List<String> result, String num, int target) {
+    public List<String> dfs(List<String> result, String num, int target) {
         for (int i = 1; i < Math.min(10, num.length()); ++i) {
-            if (Long.parseLong(num.substring(i) > Integer.MAX_VALUE) 
+            if (Long.parseLong(num.substring(i)) > Integer.MAX_VALUE)
                 break;
-            if (i == num.length() && Integer.parseInt(num.substringi) == target) {
-                result.add(num.substring(i));
-                return;
+            int a = Integer.parseInt(num.substring(i));
+            if (i == num.length()) {
+                if (a == target) {
+                    result.add(num.substring(i));
+                    return result;
+                }
+            } else {
+                for (String s : dfs(result, num.substring(i), target - a)) {
+
+                }
+                for (String s : dfs(result, num.sustring(i), target + a)) {
+
+                }
+                if (a != 0) {
+                    for (String s : dfs(result, num.substring(i), target / a)) {
+
+                    }
+                } 
             }
-            for (
         }
     }
 
