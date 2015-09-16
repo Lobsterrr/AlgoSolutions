@@ -13,10 +13,11 @@ public class ExpressionAddOperators {
 
     public List<String> addOperators(String num, int target) {
         List<String> result = new ArrayList<String>();
-
+        dfs(result, num, target);
+        return result;
     }
 
-    public List<String> dfs(List<String> result, String num, int target) {
+    public void dfs(List<String> result, String num, int target) {
         for (int i = 1; i < Math.min(10, num.length()); ++i) {
             if (Long.parseLong(num.substring(i)) > Integer.MAX_VALUE)
                 break;
@@ -24,20 +25,13 @@ public class ExpressionAddOperators {
             if (i == num.length()) {
                 if (a == target) {
                     result.add(num.substring(i));
-                    return result;
+                    return;
                 }
             } else {
-                for (String s : dfs(result, num.substring(i), target - a)) {
-
-                }
-                for (String s : dfs(result, num.sustring(i), target + a)) {
-
-                }
-                if (a != 0) {
-                    for (String s : dfs(result, num.substring(i), target / a)) {
-
-                    }
-                } 
+                dfs(result, num.substring(i), target - a);
+                dfs(result, num.substring(i), target + a);
+                if (a != 0)
+                    dfs(result, num.substring(i), target / a);
             }
         }
     }
