@@ -19,12 +19,12 @@ public class ExpressionAddOperators {
 
     public void dfs(List<String> result, String num, int target) {
         for (int i = 1; i < Math.min(10, num.length()); ++i) {
-            if (Long.parseLong(num.substring(i)) > Integer.MAX_VALUE)
+            if (Long.parseLong(num.substring(0, i)) > Integer.MAX_VALUE)
                 break;
-            int a = Integer.parseInt(num.substring(i));
+            int a = Integer.parseInt(num.substring(0, i));
             if (i == num.length()) {
                 if (a == target) {
-                    result.add(num.substring(i));
+                    result.add(num.substring(0, i));
                     return;
                 }
             } else {
