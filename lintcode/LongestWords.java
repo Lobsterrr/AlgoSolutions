@@ -33,10 +33,16 @@ public class LongestWords {
      * @return: an arraylist of strings
      */
     ArrayList<String> longestWords(String[] dictionary) {
+        ArrayList<String> result = new ArrayList<String>();
         int maxLength = 0;
-        for (int i = 0; i < dictionary; ++i) {
-            
+        for (String s : dictionary) {
+            if (s.length() >= maxLength) {
+                if (s.length() > maxLength)
+                    result.clear();
+                result.add(s);
+            }
         }
+        return result;
     }
 
 }
