@@ -37,8 +37,10 @@ public class LongestWords {
         int maxLength = 0;
         for (String s : dictionary) {
             if (s.length() >= maxLength) {
-                if (s.length() > maxLength)
+                if (s.length() > maxLength) {
                     result.clear();
+                    maxLength = s.length();
+                }
                 result.add(s);
             }
         }
