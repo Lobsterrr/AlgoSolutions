@@ -1,5 +1,16 @@
 /*
- *
+ *Easy Invert Binary Tree Show result 
+
+Invert a binary tree.
+
+Example
+  1         1
+ / \       / \
+2   3  => 3   2
+   /       \
+  4         4
+Challenge
+Do it in recursion is acceptable, can you do it without recursion?
  */
 /**
  * Definition of TreeNode:
