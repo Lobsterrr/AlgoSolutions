@@ -20,9 +20,31 @@ public class InvertBinaryTree {
      */
     public void invertBinaryTree(TreeNode root) {
         if (root != null) {
-            TreeNode tmp = invertBinaryTree(root.left);
-            root.left = invertBinaryTree(root.right);
-            root.right = tmp;
+            TreeNode left = root.left;
+            invertBinaryTree(left);
+            TreeNode right = root.right;
+            invertBinaryTree(right);
+            root.left = right;
+            root.right = left;
+        }
+    }
+
+/*******************************************************************/
+
+    public void invertBinaryTree(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode cur = root;
+        while (!stack.isEmpty() || cur != null) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                TreeNode node = stack.pop();
+                TreeNode tmp = node.left;
+                node.left = node.right;
+                node.right = tmp;
+                cur = node.left;
+            }
         }
     }
 
