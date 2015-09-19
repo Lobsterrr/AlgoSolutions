@@ -13,7 +13,7 @@ public class MoveZeros {
                 nums[k++] = nums[i];
         }
         for (int i = 0; i < count; ++i) {
-            nums[nums.length - 1 - count] = 0;
+            nums[nums.length - 1 - i] = 0;
         }
     }
 
