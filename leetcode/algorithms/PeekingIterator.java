@@ -22,7 +22,7 @@
 public class PeekingIterator implements Iterator<Integer> {
 
     private final Iterator<Integer> iterator;
-    private Integer nextItem;
+    private Integer nextElement;
 
     public PeekingIterator(Iterator<Integer> iterator) {
         // initialize any member here.
@@ -31,23 +31,14 @@ public class PeekingIterator implements Iterator<Integer> {
 
     // Returns the next element in the iteration without advancing the iterator.
     public Integer peek() {
-        return nextItem;
     }
 
     @Override
     public Integer next() {
-        Integer toReturn = nextItem;
-        nextItem = null;
-        return toReturn;
     }
 
     @Override
     public boolean hasNext() {
-        if (nextItem != null)
-            return true;
-        if (iterator.hasNext())
-            nextItem = iterator.next();
-        return nextItem != null;
     }
 
 }
