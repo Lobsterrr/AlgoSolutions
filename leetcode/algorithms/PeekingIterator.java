@@ -25,9 +25,11 @@ public class PeekingIterator implements Iterator<Integer> {
     private Integer nextItem;
 
     public PeekingIterator(Iterator<Integer> iterator) {
+        // initialize any member here.
         this.iterator = iterator;
     }
 
+    // Returns the next element in the iteration without advancing the iterator.
     public Integer peek() {
         if (!hasNext()) {
             throw new NoSuchElementException("Iterator has no elements left.");
