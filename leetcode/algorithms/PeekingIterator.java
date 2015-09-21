@@ -21,6 +21,22 @@
 // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 public class PeekingIterator implements Iterator<Integer> {
 
-    public Peeking
+    public PeekingIterator(Iterator<Integer> iterator) {
+
+    }
+
+    public Integer peek() {
+
+    }
+
+    @Override
+    public Integer next() {
+
+    }
+
+    @Override
+    public boolean hasNext() {
+
+    }
 
 }
