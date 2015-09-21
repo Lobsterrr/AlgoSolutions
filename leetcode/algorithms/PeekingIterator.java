@@ -21,26 +21,37 @@
 // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 public class PeekingIterator implements Iterator<Integer> {
 
-    private PeekingIterator<Integer> iterator;
+    private final Iterator<Integer> iterator;
+    private Integer nextItem;
 
     public PeekingIterator(Iterator<Integer> iterator) {
         this.iterator = iterator;
     }
 
     public Integer peek() {
-        if (iterator.hasNext()) {
-            
+        if (!hasNext()) {
+            throw new NoSuchElementException("Iterator has no elements left.");
         }
+        return nextItem;
     }
 
     @Override
     public Integer next() {
-
+        if (!hasNext()) {
+            throw new NoSuchElementException("Iterator has no elements left.");
+        }
+        Integer toReturn = nextItem;
+        nextItem = null;
+        return toReturn;
     }
 
     @Override
     public boolean hasNext() {
-
+        if (nextItem != null)
+            return true;
+        if (iterator.hasNext())
+            nextItem = iterator.next();
+        return nextItem != null;
     }
 
 }
