@@ -14,11 +14,11 @@ public class FindTheMissingNumber {
      */
     public int findMissing(int[] nums) {
         long sum = 0;
-        for (num : nums) {
+        for (int num : nums) {
             sum += num;
         }
         int n = nums.length;
-        return n * (n - 1) / 2 - sum;
+        return (int) (n * (n + 1) / 2 - sum);
     }
 
 }
