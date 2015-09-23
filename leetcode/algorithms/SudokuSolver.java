@@ -30,24 +30,6 @@ public class SudokuSolver {
     }
 
     public boolean canPlace(char[][] board, int row, int col) {
-        for (int i = 0; i < board.length; i++) {
-            if (i != row && board[i][col] == board[row][col])
-                return false;
-        }
-        for (int j = 0; j < board[0].length; ++j) {
-            if (j != col && board[row][j] == board[row][col])
-                return false;
-        }
-        for (int i = row / 3 * 3; i < row / 3 * 3 + 3; ++i) {
-            for (int j = col / 3 * 3; j < col / 3 * 3 + 3; ++j) {
-                if (i != row && j != col && board[i][j] == board[row][col])
-                    return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean canPlace(char[][] board, int row, int col) {
         for (int i = 0; i < 9; ++i) {
             if (i != row && board[i][col] == board[row][col] 
                     || i != col && board[row][i] == board[row][col])
