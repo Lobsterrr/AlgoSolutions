@@ -8,35 +8,45 @@
 public class SudokuSolver {
 
     public void solveSudoku(char[][] board) {
-
+        dfs(board, 0, 0);
     }
 
-    public void dfs(char[][] board, int row, int col) {
-        if (row == board.length - 1 && col == board[0].length - 1)
-            return;
-        if (board[row][col] != '.') {
-            if (col == board[0].length - 1)
-                dfs(board, row + 1, 0);
-            else
-                dfs(board, row, col + 1);
-        } else {
+    public boolean dfs(char[][] board, int row, int col) {
+        if (col >= board[0].length)
+            return dfs(board, row + 1, 0);
+        if (row >= board.length)
+            return true;
+        if (board[row][col] == '.') {
             for (char c = '1'; c <= '9'; ++c) {
-                if (canPlace(board, row, col, c)) {
-                    board[row][col] = c;
-                    if (col = board[0].length - 1)
-                        dfs(board, row + 1, 0);
-                    else
-                        dfs(board, row, col + 1);
-                    board[row][col] = '.';
+                board[row][col] = c;
+                if (canPlace(board, row, col)) {
+                    if (dfs(board, row, col + 1))
+                        return true;
                 }
+                board[row][col] = '.';
+            }
+        } else {
+            return dfs(board, row, col + 1);
+        }
+        return false;
+    }
+
+    public boolean canPlace(int[][] board, int row, int col) {
+        for (int i = 0; i < board.length; i++) {
+            if (i != row && board[i][col] == board[row][col])
+                return false;
+        }
+        for (int j = 0; j < board[0].length; ++j) {
+            if (j != col && board[row][j] == board[row][col])
+                return false;
+        }
+        for (int i = row / 3 * 3; i < row / 3 * 3 + 3; ++i) {
+            for (int j = col / 3 * 3; j < col / 3 * 3 + 3; ++j) {
+                if (i != row && j != col && board[i][j] == board[row][col])
+                    return false;
             }
         }
-    }
-
-    public boolean canPlace(int[][] board, int row, int col, char c) {
-        for (int col = 0; col < board.length; ++col) {
-            
-        }
+        return true;
     }
 
 }
