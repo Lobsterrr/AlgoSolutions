@@ -64,12 +64,14 @@ public class SudokuSolver {
     public boolean dfs(char[][] board, List<Integer> list, int index) {
         if (index == list.size())
             return true;
+        int row = list.get(index) / 9;
+        int col = list.get(index) % 9;
         for (char c = '1'; c <= '9'; ++c) {
-            if (canPlace(board, index / 9, index % 9, c)) {
-                board[index / 9][index % 9] = c;
+            if (canPlace(board, row, col, c)) {
+                board[row][col] = c;
                 if (dfs(board, list, index + 1))
                     return true;
-                board[index / 9][index % 9] = '.';
+                board[row][col] = '.';
             }
         }
         return false;
