@@ -78,11 +78,8 @@ public class SudokuSolver {
 
     public boolean canPlace(char[][] board, int row, int col, char value) {
         for (int i = 0; i < 9; ++i) {
-            if (board[i][col] == value || board[row][i] == value)
-                return false;
-            int m = row / 3 * 3 + i / 3;
-            int n = col / 3 * 3 + i % 3;
-            if (board[m][n] == value)
+            if (board[i][col] == value || board[row][i] == value || 
+                    board[row / 3 * 3 + i / 3][col / 3 * 3 + i % 3] == value)
                 return false;
         }
         return true;
