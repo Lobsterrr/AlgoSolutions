@@ -31,7 +31,7 @@ public class SudokuSolver {
         return false;
     }
 
-    public boolean canPlace(int[][] board, int row, int col) {
+    public boolean canPlace(char[][] board, int row, int col) {
         for (int i = 0; i < board.length; i++) {
             if (i != row && board[i][col] == board[row][col])
                 return false;
