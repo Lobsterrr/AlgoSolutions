@@ -19,7 +19,7 @@ public class SudokuSolver {
         if (board[row][col] == '.') {
             for (char c = '1'; c <= '9'; ++c) {
                 board[row][col] = c;
-                if (canPlace(board, row, col) && dfs(board, row, col + 1)) 
+                if (isValid(board, row, col) && dfs(board, row, col + 1)) 
                     return true;
                 board[row][col] = '.';
             }
@@ -29,7 +29,7 @@ public class SudokuSolver {
         return false;
     }
 
-    public boolean canPlace(char[][] board, int row, int col) {
+    public boolean isValid(char[][] board, int row, int col) {
         for (int i = 0; i < 9; ++i) {
             if (i != row && board[i][col] == board[row][col] 
                     || i != col && board[row][i] == board[row][col])
@@ -66,7 +66,7 @@ public class SudokuSolver {
         int row = list.get(index) / 9;
         int col = list.get(index) % 9;
         for (char c = '1'; c <= '9'; ++c) {
-            if (canPlace(board, row, col, c)) {
+            if (isValid(board, row, col, c)) {
                 board[row][col] = c;
                 if (dfs(board, list, index + 1))
                     return true;
@@ -76,7 +76,7 @@ public class SudokuSolver {
         return false;
     }
 
-    public boolean canPlace(char[][] board, int row, int col, char value) {
+    public boolean isValid(char[][] board, int row, int col, char value) {
         for (int i = 0; i < 9; ++i) {
             if (board[i][col] == value || board[row][i] == value || 
                     board[row / 3 * 3 + i / 3][col / 3 * 3 + i % 3] == value)
