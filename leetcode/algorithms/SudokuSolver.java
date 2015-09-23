@@ -42,4 +42,50 @@ public class SudokuSolver {
         return true;
     }
 
+
+/*****************************************************************************/
+
+    public void solveSudoku(char[][] board) {
+        List<Integer> list = getBlankPositions(board);
+        dfs(board, list, 0);
+    }
+
+    public List<Integer> getBlankPositions(char[][] board) {
+        List<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < board.length; ++i) {
+            for (int j = 0; j < board[0].length; ++j) {
+                if (board[i][j] == '.')
+                    result.add(i * 9 + j);
+            }
+        }
+        return result;
+    }
+
+    public boolean dfs(char[][] board, List<Integer> list, int index) {
+        if (index == list.size())
+            return true;
+        for (char c = '1'; c <= '9'; ++c) {
+            if (canPlace(board, index / 9, index % 9, c)) {
+                board[index / 9][index % 9] = c;
+                if (dfs(board, list, index + 1))
+                    return true;
+                board[index / 9][index % 9] = '.';
+            }
+        }
+        return false;
+    }
+
+    public boolean canPlace(char[][] board, int row, int col, char value) {
+        for (int i = 0; i < 9; ++i) {
+            if (board[i][col] == value || board[row][i] == value)
+                return false;
+            int m = row / 3 * 3 + i / 3;
+            int n = col / 3 * 3 + i % 3;
+            if (board[m][n] == value)
+                return false;
+        }
+        return true;
+    }
+
+
 }
