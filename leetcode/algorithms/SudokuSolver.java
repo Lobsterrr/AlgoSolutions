@@ -19,10 +19,8 @@ public class SudokuSolver {
         if (board[row][col] == '.') {
             for (char c = '1'; c <= '9'; ++c) {
                 board[row][col] = c;
-                if (canPlace(board, row, col)) {
-                    if (dfs(board, row, col + 1))
-                        return true;
-                }
+                if (canPlace(board, row, col) && dfs(board, row, col + 1)) 
+                    return true;
                 board[row][col] = '.';
             }
         } else {
@@ -45,6 +43,19 @@ public class SudokuSolver {
                 if (i != row && j != col && board[i][j] == board[row][col])
                     return false;
             }
+        }
+        return true;
+    }
+
+    public boolean canPlace(char[][] board, int row, int col) {
+        for (int i = 0; i < 9; ++i) {
+            if (i != row && board[i][col] == board[row][col] 
+                    || i != col && board[row][i] == board[row][col])
+                return false;
+            int m = i / 3 + row / 3 * 3;
+            int n = i % 3 + col / 3 * 3;
+            if (m != row && n != col && board[m][n] == board[row][col])
+                return false;
         }
         return true;
     }
