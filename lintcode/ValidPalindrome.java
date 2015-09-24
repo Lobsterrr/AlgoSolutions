@@ -27,9 +27,9 @@ public class ValidPalindrome {
         while (i < j) {
             char ci = s.charAt(i);
             char cj = s.charAt(j);
-            if (isLetterOrNumber(ci))
+            if (!isLetterOrNumber(ci))
                 i++;
-            else if (isLetterOrNumber(cj))
+            else if (!isLetterOrNumber(cj))
                 j--;
             else if (ci != cj && Math.abs(ci - cj) != 32)
                 return false;
