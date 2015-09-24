@@ -20,9 +20,11 @@ public class ValidPalindrome {
         while (i < j) {
             char ci = s.charAt(i);
             char cj = s.charAt(j);
-            if (ci < '0' || ci > '9' && ci < 'A' || ci > 'Z' && ci < 'a' || ci > 'z')
+            if (ci < '0' || ci > '9' && ci < 'A' || 
+                    ci > 'Z' && ci < 'a' || ci > 'z')
                 i++;
-            else if (cj < '0' || cj > '9' && cj < 'A' || cj > 'Z' && cj < 'a' || cj > 'z')
+            else if (cj < '0' || cj > '9' && cj < 'A' || 
+                    cj > 'Z' && cj < 'a' || cj > 'z')
                 j--;
             else if (ci != cj && Math.abs(ci - cj) != 32)
                 return false;
