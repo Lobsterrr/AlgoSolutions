@@ -25,17 +25,15 @@ public class ValidPalindrome {
         int i = 0; 
         int j = s.length() - 1;
         while (i < j) {
-            if (!isLetter(s.charAt(i)) && !isNumber(s.charAt(i)))
+            char ci = s.charAt(i);
+            char cj = s.charAt(j);
+            if (isLetterOrNumber(ci))
                 i++;
-            else if (!isLetter(s.charAt(j)) && !isNumber(s.charAt(j)))
+            else if (isLetterOrNumber(cj))
                 j--;
+            else if (ci != cj && Math.abs(ci - cj) != 32)
+                return false;
             else {
-                if (isLetter(s.charAt(i)) && isNumber(s.charAt(j))
-                        || isLetter(s.charAt(j)) && isNumber(s.charAt(i)))
-                    return false;
-                int diff = Math.abs(s.charAt(i) - s.charAt(j));
-                if (diff != 'a' - 'a' && diff != 'a' - 'A')
-                    return false;
                 i++;
                 j--;
             }
@@ -43,12 +41,8 @@ public class ValidPalindrome {
         return true;
     }
 
-    public boolean isLetter(char c) {
-        return 'a' <= c && c <= 'z' || 'A' <= c && c <= 'Z';
-    }
-
-    public boolean isNumber(char c) {
-        return '0' <= c && c <= '9';
+    public boolean isLetterOrNumber(char c) {
+        return 'a' <= c && c <= 'z' || 'A' <= c && c <= 'Z' || '0' <= c && c <= '9';
     }
 
 }
