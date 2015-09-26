@@ -35,7 +35,12 @@
 public class CourseSchedule {
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        
+        List<Integer> node = new ArrayList<Integer>();
+        for (int i = 0; i < prequisites.length; ++i) {
+            for (int j = 0; j < prequisites[0].length; ++j) {
+                
+            }
+        }
     }
 
 }
