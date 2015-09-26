@@ -47,10 +47,18 @@ public class CourseSchedule {
         }
         int noPreCourseCount = queue.size();
         while (!queue.isEmpty()) {
+            int top = queue.remove();
             for (int i = 0; i < prerequisites.length; ++i) {
-                
+                if (prerequisites[i][1] == top) {
+                    inDegree[prerequisites[i]]--;
+                    if (inDegree[prerequisites[i]] == 0) {
+                        onPreCourseCount++;
+                        queue.add(prerequisites[i]);
+                    }
+                }
             }
         }
+        return noPreCourseCount == numCourse;
     }
 
 }
