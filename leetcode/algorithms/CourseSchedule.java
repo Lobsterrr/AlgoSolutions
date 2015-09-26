@@ -35,24 +35,21 @@
 public class CourseSchedule {
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        List<Integer> nodes = new ArrayList<Integer>();
-        for (int i = 0; i < prequisites.length; ++i) {
-            for (int j = 0; j < prequisites[0].length; ++j) {
-                if (!nodes.contains(prequisites[i][j])) {
-                    nodes.add(prequisites[i][j]);
-                }
+        int[] inDegree = new int[numCourse];
+        for (int i = 0; i < prerequisites.length; ++i) {
+            inDegree[prerequisites[i][0]]++;
+        }
+        Queue<Integer> queue = new LinkedList<Integer>();
+        for (int value : inDegree) {
+            if (value == 0) {
+                queue.add(value);
             }
         }
-        Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
-        for (int i = 0; i < nodes.size(); ++i) {
-            map.put(nodes.get(i), new ArrayList<Integer>());
-        }
-        for (int i = 0; i < prequisites.length; ++i) {
-            int key = prequisites[i][0];
-            int value = prequites[i][1];
-            List<Integer> list = map.get(key);
-            list.add(value);
-            map.put(key, list);
+        int noPreCourseCount = queue.size();
+        while (!queue.isEmpty()) {
+            for (int i = 0; i < prerequisites.length; ++i) {
+                
+            }
         }
     }
 
