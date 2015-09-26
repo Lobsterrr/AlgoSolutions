@@ -34,6 +34,7 @@
  */
 public class CourseSchedule {
 
+    // BFS
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         int[] degree = new int[numCourses];
         for (int i = 0; i < prerequisites.length; ++i) {
