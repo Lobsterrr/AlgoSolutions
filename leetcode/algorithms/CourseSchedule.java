@@ -35,11 +35,24 @@
 public class CourseSchedule {
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        List<Integer> node = new ArrayList<Integer>();
+        List<Integer> nodes = new ArrayList<Integer>();
         for (int i = 0; i < prequisites.length; ++i) {
             for (int j = 0; j < prequisites[0].length; ++j) {
-                
+                if (!nodes.contains(prequisites[i][j])) {
+                    nodes.add(prequisites[i][j]);
+                }
             }
+        }
+        Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
+        for (int i = 0; i < nodes.size(); ++i) {
+            map.put(nodes.get(i), new ArrayList<Integer>());
+        }
+        for (int i = 0; i < prequisites.length; ++i) {
+            int key = prequisites[i][0];
+            int value = prequites[i][1];
+            List<Integer> list = map.get(key);
+            list.add(value);
+            map.put(key, list);
         }
     }
 
