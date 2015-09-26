@@ -40,9 +40,9 @@ public class CourseSchedule {
             inDegree[prerequisites[i][0]]++;
         }
         Queue<Integer> queue = new LinkedList<Integer>();
-        for (int value : inDegree) {
-            if (value == 0) {
-                queue.add(value);
+        for (int i = 0; i < inDegree.length; ++i) {
+            if (inDegree[i] == 0) {
+                queue.add(i);
             }
         }
         int noPreCourseCount = queue.size();
