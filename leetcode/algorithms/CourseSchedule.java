@@ -35,13 +35,13 @@
 public class CourseSchedule {
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        int[] inDegree = new int[numCourses];
+        int[] degree = new int[numCourses];
         for (int i = 0; i < prerequisites.length; ++i) {
-            inDegree[prerequisites[i][0]]++;
+            degree[prerequisites[i][0]]++;
         }
         Queue<Integer> queue = new LinkedList<Integer>();
-        for (int i = 0; i < inDegree.length; ++i) {
-            if (inDegree[i] == 0) {
+        for (int i = 0; i < degree.length; ++i) {
+            if (degree[i] == 0) {
                 queue.add(i);
             }
         }
@@ -50,8 +50,8 @@ public class CourseSchedule {
             int top = queue.remove();
             for (int i = 0; i < prerequisites.length; ++i) {
                 if (prerequisites[i][1] == top) {
-                    inDegree[prerequisites[i][0]]--;
-                    if (inDegree[prerequisites[i][0]] == 0) {
+                    degree[prerequisites[i][0]]--;
+                    if (degree[prerequisites[i][0]] == 0) {
                         noPreCourseCount++;
                         queue.add(prerequisites[i][0]);
                     }
