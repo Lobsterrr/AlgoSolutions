@@ -64,6 +64,7 @@ public class CourseSchedule {
 
 /*******************************************************************/
 
+    // DFS
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         Map<Integer, List<Integer>> map = 
             new HashMap<Integer, List<Integer>>();
