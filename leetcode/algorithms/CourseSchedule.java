@@ -66,7 +66,15 @@ public class CourseSchedule {
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         Map<Integer, List<Integer>> map = new HashMap<Integer, ArrayList<Integer>>();
-
+        for (int i = 0; i < prerequisites.length; ++i) {
+            if (map.containsKey(prerequisites[i][1])) {
+                map.put(prerequisites[i][1], map.get(i).add(prerequisites[i][0]));
+            } else {
+                List<Integer> list = new ArrayList<Integer>();
+                list.add(prerequisites[i][0]);
+                map.put(prerequisites[i][1], list);
+            }
+        }
     }
 
     public boolean canFinish(Map<Integer, List<Integer>> map, int[] visited, int i) {
