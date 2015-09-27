@@ -65,10 +65,10 @@ public class CourseSchedule {
 /*******************************************************************/
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        Map<Integer, List<Integer>> map = new HashMap<Integer, ArrayList<Integer>>();
+        Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
         for (int i = 0; i < prerequisites.length; ++i) {
             if (map.containsKey(prerequisites[i][1])) {
-                map.put(prerequisites[i][1], map.get(i).add(prerequisites[i][0]));
+                map.get(prerequisites[i][1]).add(prerequisites[i][0]);
             } else {
                 List<Integer> list = new ArrayList<Integer>();
                 list.add(prerequisites[i][0]);
@@ -77,7 +77,7 @@ public class CourseSchedule {
         }
         int[] visited = new int[numCourses];
         for (int i = 0; i < numCourses; ++i) {
-            if (!canFinish(map, visited, 0))
+            if (!canFinish(map, visited, i))
                 return false;
         }
         return true;
@@ -89,9 +89,11 @@ public class CourseSchedule {
         if (visited[i] == 1)
             return true;
         visited[i] = -1;
-        for (int v : map.get(i)) {
-            if (!canFinish(map, visited, v))
-                return false;
+        if (map.containsKey(i)) {
+            for (int v : map.get(i)) {
+                if (!canFinish(map, visited, v))
+                    return false;
+            }
         }
         visited[i] = 1;
         return true;
