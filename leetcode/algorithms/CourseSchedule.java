@@ -62,7 +62,7 @@ public class CourseSchedule {
         return noPreCourseCount == numCourses;
     }
 
-/*******************************************************************/
+/*****************************************************************************/
 
     // DFS
     public boolean canFinish(int numCourses, int[][] prerequisites) {
