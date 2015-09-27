@@ -75,6 +75,12 @@ public class CourseSchedule {
                 map.put(prerequisites[i][1], list);
             }
         }
+        int[] visited = new int[numCourses];
+        for (int i = 0; i < numCourses; ++i) {
+            if (!canFinish(map, visited, 0))
+                return false;
+        }
+        return true;
     }
 
     public boolean canFinish(Map<Integer, List<Integer>> map, int[] visited, int i) {
