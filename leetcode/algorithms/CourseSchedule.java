@@ -65,7 +65,22 @@ public class CourseSchedule {
 /*******************************************************************/
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
+        Map<Integer, List<Integer>> map = new HashMap<Integer, ArrayList<Integer>>();
 
+    }
+
+    public boolean canFinish(Map<Integer, List<Integer>> map, int[] visited, int i) {
+        if (visited[i] == -1)
+            return false;
+        if (visited[i] == 1)
+            return true;
+        visited[i] = -1;
+        for (int v : map.get(i)) {
+            if (!canFinish(map, visited, v))
+                return false;
+        }
+        visited[i] = 1;
+        return true;
     }
 
 }
