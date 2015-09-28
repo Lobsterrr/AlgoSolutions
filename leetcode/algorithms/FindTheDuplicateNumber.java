@@ -22,6 +22,8 @@ public class FindTheDuplicateNumber {
         return -1;
     }
 
+/*******************************************************************/
+
     public int findDuplicate(int[] nums) {
         Arrays.sort(nums);
         for (int i = 1; i < nums.length; ++i) {
