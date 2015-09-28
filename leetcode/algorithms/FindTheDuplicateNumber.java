@@ -11,6 +11,7 @@
  */
 public class FindTheDuplicateNumber {
 
+    // O(n) time, O(1) space
     public int findDuplicate(int[] nums) {
         for (int i = 0; i < nums.length; ++i) {
             int index = Math.abs(nums[i]);
@@ -24,6 +25,7 @@ public class FindTheDuplicateNumber {
 
 /*******************************************************************/
 
+    // O(n * lg(n)) time, O(1) space
     public int findDuplicate(int[] nums) {
         Arrays.sort(nums);
         for (int i = 1; i < nums.length; ++i) {
