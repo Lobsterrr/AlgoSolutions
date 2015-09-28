@@ -13,11 +13,11 @@ public class FindTheDuplicateNumber {
 
     public int findDuplicate(int[] nums) {
         for (int i = 0; i < nums.length; ++i) {
-            int v = nums[i];
-            if (nums[v] < 0)
-                return v;
-            if (nums[v] > 0)
-                nums[v] *= -1;
+            int index = Math.abs(nums[i]);
+            if (nums[index] < 0)
+                return index;
+            else if (nums[index] > 0)
+                nums[index] *= -1;
         }
         return -1;
     }
