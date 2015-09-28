@@ -12,6 +12,17 @@
 public class FindTheDuplicateNumber {
 
     public int findDuplicate(int[] nums) {
+        for (int i = 0; i < nums.length; ++i) {
+            int v = nums[nums[i]];
+            if (v < 0)
+                return nums[i];
+            if (v > 0)
+                nums[nums[i]] *= -1;
+        }
+        return -1;
+    }
+
+    public int findDuplicate(int[] nums) {
         Arrays.sort(nums);
         for (int i = 1; i < nums.length; ++i) {
             if (nums[i] == nums[i - 1])
