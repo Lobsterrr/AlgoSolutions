@@ -55,9 +55,10 @@ public class CourseScheduleII {
             for (int i = 0; i < prerequisites.length; ++i) {
                 if (prerequisites[i][1] == top) {
                     degree[prerequisites[i][0]]--;
-                    if (degree[prerequisites[i][0] == 0) {
+                    if (degree[prerequisites[i][0]] == 0) {
                         queue.offer(prerequisites[i][0]);
                         noPreCourseCount++;
+                    }
                 }
             }
         }
