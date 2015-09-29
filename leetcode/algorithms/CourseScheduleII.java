@@ -20,6 +20,34 @@
  */
 public class CourseScheduleII {
 
-    
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        int[] degree = new int[numCourses];
+        for (int i = 0; i < prerequisites.length; ++i) {
+            degree[prerequisites[i][0]]++;
+        }
+        Queue<Integer> queue = new LinkedList<Integer>();
+        for (int i = 0; i < degree.length; ++i) {
+            if (degree[i] == 0)
+                queue.offer(i);
+        }
+        int[] result = new int[numCourses];
+        int index = 0;
+        int noPreCourseCount = queue.size();
+        while (!queue.isEmpty()) {
+            int top = queue.remove();
+            result[index++] = top;
+            for (int i = 0; i < prerequisites.length; ++i) {
+                if (prerequisites[i][1] == top) {
+                    degree[prerequisites[i][0]]--;
+                    if (degree[prerequisites[i][0] == 0) {
+                        queue.offer(prerequisites[i][0]);
+                        noPreCourseCount++;
+                }
+            }
+        }
+        if (noPreCourseCount == numCourses)
+            return result;
+        return new int[0];
+    }
 
 }
