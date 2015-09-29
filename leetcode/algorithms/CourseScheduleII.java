@@ -48,21 +48,18 @@ public class CourseScheduleII {
         }
         int[] result = new int[numCourses];
         int index = 0;
-        int noPreCourseCount = queue.size();
         while (!queue.isEmpty()) {
             int top = queue.remove();
             result[index++] = top;
             for (int i = 0; i < prerequisites.length; ++i) {
                 if (prerequisites[i][1] == top) {
                     degree[prerequisites[i][0]]--;
-                    if (degree[prerequisites[i][0]] == 0) {
+                    if (degree[prerequisites[i][0]] == 0) 
                         queue.offer(prerequisites[i][0]);
-                        noPreCourseCount++;
-                    }
                 }
             }
         }
-        if (noPreCourseCount == numCourses)
+        if (index == numCourses)
             return result;
         return new int[0];
     }
