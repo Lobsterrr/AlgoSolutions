@@ -49,15 +49,14 @@ public class RepeatedDNASequences {
 
         int hash = 0;
         for (int i = 0; i < s.length(); ++i) {
-            hash <<= 2;
             if (s.charAt(i) == 'A')
-                hash = hash | 0;
+                hash = (hash << 2) | 0;
             else if (s.charAt(i) == 'C')
-                hash = hash | 1;
+                hash = (hash << 2) | 1;
             else if (s.charAt(i) == 'G')
-                hash = hash | 2;
+                hash = (hash << 2) | 2;
             else if (s.charAt(i) == 'T')
-                hash = hash | 3;
+                hash = (hash << 2) | 3;
         }
         return hash;
     }
