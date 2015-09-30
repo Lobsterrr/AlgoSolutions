@@ -50,7 +50,7 @@ public class RepeatedDNASequences {
 
     public int strToHash(String s) {
         String decoder = "";
-        for (char c : s) {
+        for (char c : s.toCharArray()) {
             if (c == 'A')
                 decoder += "0";
             else if (c == 'C')
