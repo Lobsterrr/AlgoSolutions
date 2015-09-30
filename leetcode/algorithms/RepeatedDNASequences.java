@@ -50,14 +50,14 @@ public class RepeatedDNASequences {
 
     public int strToHash(String s) {
         String decoder = "";
-        for (char c : s.toCharArray()) {
-            if (c == 'A')
+        for (int i = 0; i < s.length(); ++i) {
+            if (s.charAt(i) == 'A')
                 decoder += "0";
-            else if (c == 'C')
+            else if (s.charAt(i) == 'C')
                 decoder += "1";
-            else if (c == 'G')
+            else if (s.charAt(i) == 'G')
                 decoder += "2";
-            else if (c == 'T')
+            else if (s.charAt(i) == 'T')
                 decoder += "3";
         }
         return Integer.parseInt(decoder, 4);
