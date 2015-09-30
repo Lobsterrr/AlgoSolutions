@@ -32,11 +32,20 @@ public class RepeatedDNASequences {
 
 
     public List<String> findRepeatedDnaSequences(String s) {
-        Map<Long, Integer> map = new HashMap<Long, Integer>();
+        List<String> result = new ArrayList<String>();
+        Map<Integer, Boolean> map = new HashMap<Integer, Boolean>();
         for (int i = 0; i <= s.length() - 10; ++i) {
-            
-
+            int hash = strToHash(s.substring(i, i + 10));
+            if (map.containsKey(hash)) {
+                if (!map.get(hash)) {
+                    result.add(s.substring(i, i + 10));
+                    map.put(hash, true);
+                }
+            } else {
+                map.put(hash, false);
+            }
         }
+        return result;
     }
 
     public int strToHash(String s) {
