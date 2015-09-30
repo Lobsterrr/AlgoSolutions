@@ -24,6 +24,7 @@ public class RepeatedDNASequences {
                 map.put(sub, map.get(sub) + 1);
             else 
                 map.put(sub, 1);
+            map.put(sub, map.containsKey(sub) ? 1 + map.get(sub) : 1;
         }
         List<String> result = new ArrayList<String>();
         for (String key : map.keySet()) {
