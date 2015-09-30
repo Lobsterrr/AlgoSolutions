@@ -17,7 +17,19 @@
 public class RepeatedDNASequences {
 
     public List<String> findRepeatedDnaSequences(String s) {
-
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        for (int i = 0; i < s.length() - 9; ++i) {
+            String sub = s.substring(i, 10);
+            if (map.containsKey(sub))
+                map.put(sub, map.get(sub) + 1);
+            else 
+                map.put(sub, 1);
+        }
+        List<String> result = new ArrayList<String>();
+        for (String key : map.keySet()) {
+            if (map.get(key) > 1)
+                result.add(key);
+        }
+        return result;
     }
-
 }
