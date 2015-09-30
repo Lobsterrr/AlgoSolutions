@@ -37,4 +37,19 @@ public class RepeatedDNASequences {
             
         }
     }
+
+    public int strToHash(String s) {
+        String decoder = "";
+        for (char c : s) {
+            if (c == 'A')
+                decoder += "0";
+            else if (c == 'C')
+                decoder += "1";
+            else if (c == 'G')
+                decoder += "2";
+            else if (c == 'T')
+                decoder += "3";
+        }
+        return Integer.parseInt(decoder, 4);
+    }
 }
