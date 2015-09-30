@@ -29,4 +29,12 @@ public class RepeatedDNASequences {
         }
         return result;
     }
+
+
+    public List<String> findRepeatedDnaSequences(String s) {
+        Map<Long, Integer> map = new HashMap<Long, Integer>();
+        for (int i = 0; i <= s.length() - 10; ++i) {
+            
+        }
+    }
 }
