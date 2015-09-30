@@ -34,19 +34,6 @@ public class RepeatedDNASequences {
     }
 
     public int strToHash(String s) {
-        String decoder = "";
-        for (int i = 0; i < s.length(); ++i) {
-            if (s.charAt(i) == 'A')
-                decoder += "0";
-            else if (s.charAt(i) == 'C')
-                decoder += "1";
-            else if (s.charAt(i) == 'G')
-                decoder += "2";
-            else if (s.charAt(i) == 'T')
-                decoder += "3";
-        }
-        return Integer.parseInt(decoder, 4);
-
         int hash = 0;
         for (int i = 0; i < s.length(); ++i) {
             if (s.charAt(i) == 'A')
