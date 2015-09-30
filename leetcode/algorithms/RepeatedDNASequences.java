@@ -46,6 +46,20 @@ public class RepeatedDNASequences {
                 decoder += "3";
         }
         return Integer.parseInt(decoder, 4);
+
+        int hash = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            hash <<= 2;
+            if (s.charAt(i) == 'A')
+                hash = hash | 0;
+            else if (s.charAt(i) == 'C')
+                hash = hash | 1;
+            else if (s.charAt(i) == 'G')
+                hash = hash | 2;
+            else if (s.charAt(i) == 'T')
+                hash = hash | 3;
+        }
+        return hash;
     }
 
 }
