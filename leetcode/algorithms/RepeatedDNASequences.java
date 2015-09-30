@@ -47,4 +47,5 @@ public class RepeatedDNASequences {
         }
         return Integer.parseInt(decoder, 4);
     }
+
 }
