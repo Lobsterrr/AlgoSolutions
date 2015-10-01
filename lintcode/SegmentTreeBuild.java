@@ -13,7 +13,11 @@
  * }
  */
 public class SegmentTreeBuild {
-
+    
+    /**
+     *@param start, end: Denote an segment / interval
+     *@return: The root of Segment Tree
+     */
     public SegmentTreeNode build(int start, int end) {
 
     }
