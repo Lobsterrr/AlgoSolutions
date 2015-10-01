@@ -19,7 +19,12 @@ public class SegmentTreeBuild {
      *@return: The root of Segment Tree
      */
     public SegmentTreeNode build(int start, int end) {
-
+        SegmentTreeNode root = new SegmentTreeNode(start, end);
+        if (end - start >= 2) {
+            root.left = build(start, (start + end) / 2);
+            root.right = build((start + end) / 2 + 1, end);
+        }
+        return root;
     }
 
 }
