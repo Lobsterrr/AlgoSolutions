@@ -19,8 +19,10 @@ public class SegmentTreeBuild {
      *@return: The root of Segment Tree
      */
     public SegmentTreeNode build(int start, int end) {
+        if (start > end) 
+            return null;
         SegmentTreeNode root = new SegmentTreeNode(start, end);
-        if (end - start >= 2) {
+        if (start < end) {
             root.left = build(start, (start + end) / 2);
             root.right = build((start + end) / 2 + 1, end);
         }
