@@ -19,7 +19,7 @@ public class SimplifyPath {
     public String simplifyPath(String path) {
         String[] pathElem = path.split("/");
         Deque<String> deque = new LinkedList<String>();
-        for (int i = 0; i < pathElem.length(); ++i) {
+        for (int i = 0; i < pathElem.length; ++i) {
             if (pathElem[i].equals("") || pathElem[i].equals("."))
                 continue;
             if (pathElem[i].equals("..")) {
