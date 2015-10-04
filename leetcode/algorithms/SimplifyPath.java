@@ -36,6 +36,8 @@ public class SimplifyPath {
         for (int i = 0; i < list.size(); ++i) {
             result += "/" + list.get(i);
         }
+        if (result.length() == 0)
+            result += "/";
         return result;
     }
 
