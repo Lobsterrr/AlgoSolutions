@@ -17,19 +17,14 @@
 public class SimplifyPath {
 
     public String simplifyPath(String path) {
-        String[] pathElem = path.split("/");
+        String[] pathElems = path.split("/");
         LinkedList<String> list = new LinkedList<String>();
-        for (int i = 0; i < pathElem.length; ++i) {
-            if (pathElem[i].equals("") || pathElem[i].equals("."))
-                continue;
-            if (pathElem[i].equals("..")) {
-                if (list.size() == 0)
-                    continue;
-                else 
+        for (String pathElem : pathElems) {
+            if (pathElem.equals("..")) {
+                if (list.size() > 0)
                     list.removeLast();
-            }
-            else {
-                list.add(pathElem[i]);
+            } else if (!pathElem.equals("") && !pathElem.equals(".")) {
+                list.add(pathElem);
             }
         }
         String result = "";
