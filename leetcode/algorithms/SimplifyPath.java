@@ -20,8 +20,23 @@ public class SimplifyPath {
         String[] pathElem = path.split("/");
         Stack<String> stack = new ArrayList<String>();
         for (int i = 0; i < pathElem.length(); ++i) {
-            
+            if (pathElem[i].equals("") || pathElem[i].equals("."))
+                continue;
+            if (pathElem[i].equals("..")) {
+                if (stack.isEmpty())
+                    continue;
+                else 
+                    stack.pop();
+            }
+            else {
+                stack.push(pathElem[i]);
+            }
         }
+        String result = "/";
+        for (int i = stack.size() - 1; i >= 0; --i) {
+            result += stack.get(i);
+        }
+        return result;
     }
 
 }
