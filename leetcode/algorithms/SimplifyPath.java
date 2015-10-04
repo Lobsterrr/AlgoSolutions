@@ -18,7 +18,7 @@ public class SimplifyPath {
 
     public String simplifyPath(String path) {
         String[] pathElem = path.split("/");
-        List<String> list = new LinkedList<String>();
+        LinkedList<String> list = new LinkedList<String>();
         for (int i = 0; i < pathElem.length; ++i) {
             if (pathElem[i].equals("") || pathElem[i].equals("."))
                 continue;
