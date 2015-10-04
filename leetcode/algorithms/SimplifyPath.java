@@ -33,7 +33,7 @@ public class SimplifyPath {
             }
         }
         String result = "/";
-        for (int i = list.size() - 1; i >= 0; --i) {
+        for (int i = 0; i < list.size(); --i) {
             result +=list.get(i);
         }
         return result;
