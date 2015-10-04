@@ -18,23 +18,23 @@ public class SimplifyPath {
 
     public String simplifyPath(String path) {
         String[] pathElem = path.split("/");
-        Deque<String> deque = new LinkedList<String>();
+        List<String> list = new LinkedList<String>();
         for (int i = 0; i < pathElem.length; ++i) {
             if (pathElem[i].equals("") || pathElem[i].equals("."))
                 continue;
             if (pathElem[i].equals("..")) {
-                if (deque.size() == 0)
+                if (list.size() == 0)
                     continue;
                 else 
-                    deque.removeLast();
+                    list.removeLast();
             }
             else {
-                deque.addLast(pathElem[i]);
+                list.add(pathElem[i]);
             }
         }
         String result = "/";
-        for (int i = deque.size() - 1; i >= 0; --i) {
-            result += deque.get(i);
+        for (int i = list.size() - 1; i >= 0; --i) {
+            result +=list.get(i);
         }
         return result;
     }
