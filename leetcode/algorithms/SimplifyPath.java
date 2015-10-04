@@ -17,7 +17,11 @@
 public class SimplifyPath {
 
     public String simplifyPath(String path) {
-
+        String[] pathElem = path.split("/");
+        Stack<String> stack = new ArrayList<String>();
+        for (int i = 0; i < pathElem.length(); ++i) {
+            
+        }
     }
 
 }
