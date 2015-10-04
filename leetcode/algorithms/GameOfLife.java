@@ -40,7 +40,7 @@ public class GameOfLife {
         }
         for (int i = 0; i < xLen; ++i) {
             for (int j = 0; j < yLen; ++j) {
-                if (check(board, i, j)) 
+                if (check(copy, i, j)) 
                     board[i][j] = 1;
                 else 
                     board[i][j] = 0;
