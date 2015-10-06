@@ -15,6 +15,9 @@
 public class WordPattern {
 
     public boolean wordPattern(String pattern, String str) {
+        Map<Character, String> map1 = new HashMap<Character, String>();
+        Map<String, Character> map2 = new HashMap<String, Character>();
+        String[] s = str.split(" ");
 
     }
 
