@@ -21,7 +21,10 @@ public class WordPattern {
         if (pattern.length() != s.length)
             return false;
         for (int i = 0; i < s.length; ++i) {
-            if (map1.containsKey(pattern.charAt(i)) && !map1.get(pattern.charAt(i)).equals(s[i]) || map2.containsKey(s[i]) && map2.get(s[i]) != pattern.charAt(i))
+            if (map1.containsKey(pattern.charAt(i)) && 
+                    !map1.get(pattern.charAt(i)).equals(s[i]) || 
+                    map2.containsKey(s[i]) && 
+                    map2.get(s[i]) != pattern.charAt(i))
                 return false;
             map1.put(pattern.charAt(i), s[i]);
             map2.put(s[i], pattern.charAt(i));
