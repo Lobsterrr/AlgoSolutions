@@ -32,7 +32,7 @@ public class GameOfLife {
     public void gameOfLife(int[][] board) {
         int xLen = board.length;
         int yLen = board[0].length;
-        for (int i = 0; < xLen; ++i) {
+        for (int i = 0; i < xLen; ++i) {
             for (int j = 0; j < yLen; ++j) {
                 if (check(board, i, j)) {
                     board[i][j] |= 1 << 1;
