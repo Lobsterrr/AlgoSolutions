@@ -53,7 +53,7 @@ public class GameOfLife {
                 if (a == 0 && b == 0 || i + a < 0 || i + a >= board.length || 
                         j + b < 0 || j + b >= board[0].length)
                     continue;
-                count += board[i + a][j + b] & 1 == 1 ? 1 : 0;
+                count += (board[i + a][j + b] & 1) == 1 ? 1 : 0;
             }
         }
         return board[i][j] == 0 && count == 3 || 
