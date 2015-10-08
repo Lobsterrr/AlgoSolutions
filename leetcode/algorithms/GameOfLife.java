@@ -47,7 +47,16 @@ public class GameOfLife {
     }
 
     public int isAlive(int[][] board, int row, int col) {
-        
+        int count = 0;
+        for (int i = -1; i <= 1; ++i) {
+            for (int j = -1; j <= 1; ++j) {
+                if (i == 0 && j == 0 || row + i < 0 || row + i >= board.length
+                        || col + j < 0 || col + j >= board[0].length)
+                    continue;
+                count += board[row + i][col + j] == 1 ? 1 : 0;
+            }
+        }
+
     }
 
     public void gameOfLife(int[][] board) {
