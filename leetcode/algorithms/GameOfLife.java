@@ -30,17 +30,15 @@
 public class GameOfLife {
 
     public void gameOfLife(int[][] board) {
-        int xLen = board.length;
-        int yLen = board[0].length;
-        for (int i = 0; i < xLen; ++i) {
-            for (int j = 0; j < yLen; ++j) {
+        for (int i = 0; i < board.length; ++i) {
+            for (int j = 0; j < board[0].length; ++j) {
                 if (check(board, i, j)) {
                     board[i][j] |= 1 << 1;
                 }
             }
         }
-        for (int i = 0; i < xLen; ++i) {
-            for (int j = 0; j < yLen; j++) {
+        for (int i = 0; i < board.length; ++i) {
+            for (int j = 0; j < board[0].length; j++) {
                 board[i][j] >>= 1;
             }
         }
