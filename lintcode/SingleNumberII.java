@@ -8,9 +8,9 @@ public class SingleNumberII {
         int result = 0;
         for (int i = 0; i < 32; ++i) {
             for (int a : A) {
-                bits[i] += a & (1 << i);
+                bits[i] += (a & (1 << i)) >> i;
             }
-            result |= bits[i] % 3;
+            result |= (bits[i] % 3) << i;
         }
         return result;
     }
