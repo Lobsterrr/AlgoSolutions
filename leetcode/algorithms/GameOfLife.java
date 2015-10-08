@@ -41,7 +41,7 @@ public class GameOfLife {
         }
         for (int i = 0; i < xLen; ++i) {
             for (int j = 0; j < yLen; j++) {
-                board[i][j] /= 2;
+                board[i][j] >>= 1;
             }
         }
     }
