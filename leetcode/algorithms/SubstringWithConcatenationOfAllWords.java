@@ -25,7 +25,7 @@ public class SubstringWithConcatenationOfAllWords {
             int j;
             for (j = 0; j < words.length; ++j) {
                 int k = i + j * words[0].length();
-                String sub = s.substring(k, k + words[0].length);
+                String sub = s.substring(k, k + words[0].length());
                 if (!toFind.containsKey(sub))
                     break;
                 found.put(sub, found.containsKey(sub) ? 
