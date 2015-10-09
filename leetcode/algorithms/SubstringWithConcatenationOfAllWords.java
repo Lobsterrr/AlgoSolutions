@@ -35,7 +35,7 @@ public class SubstringWithConcatenationOfAllWords {
                     break;
             }
             if (j == words.length)
-                result.add(j);
+                result.add(i);
         }
         return result;
     }
