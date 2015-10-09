@@ -23,7 +23,7 @@ public class SubstringWithConcatenationOfAllWords {
         }
         for (int i = 0; i < s.length(); ++i) {
             int j;
-            for (j = 0; j < words.legnth; ++j) {
+            for (j = 0; j < words.length; ++j) {
                 int k = i + j * word[0].length();
                 String sub = s.substring(k, k + word[0].length);
                 if (!toFind.containsKey(sub))
