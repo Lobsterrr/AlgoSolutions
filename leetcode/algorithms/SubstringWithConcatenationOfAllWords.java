@@ -16,14 +16,13 @@ public class SubstringWithConcatenationOfAllWords {
     public List<Integer> findSubstring(String s, String[] words) {
         List<Integer> result = new ArrayList<Integer>();
         Map<String, Integer> toFind = new HashMap<String, Integer>();
-        Map<String, Integer> found = new HashMap<String, Integer>();
         for (String word : words) {
             toFind.put(word, toFind.containsKey(word) ? 
                     toFind.get(word) + 1 : 1);
         }
         for (int i = 0; i <= s.length() - words.length * words[0].length(); 
                 ++i) {
-            found.clear();
+            Map<String, Integer> found = new HashMap<String, Integer>();
             int j;
             for (j = 0; j < words.length; ++j) {
                 int k = i + j * words[0].length();
