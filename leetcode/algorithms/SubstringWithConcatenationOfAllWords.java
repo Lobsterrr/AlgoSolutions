@@ -21,10 +21,10 @@ public class SubstringWithConcatenationOfAllWords {
             toFind.put(word, toFind.containsKey(word) ? 
                     toFind.get(word) + 1 : 1);
         }
-        for (int i = 0; i < s.length(); ++i) {
+        for (int i = 0; i < s.length() - words.length * words[0].length(); ++i) {
             found.clear();
             int j;
-            for (j = 0; j < s.length() - words.length * words[0].length(); ++j) {
+            for (j = 0; j < words.length; ++j) {
                 int k = i + j * words[0].length();
                 String sub = s.substring(k, k + words[0].length());
                 if (!toFind.containsKey(sub))
