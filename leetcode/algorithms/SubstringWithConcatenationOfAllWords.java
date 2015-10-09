@@ -18,8 +18,25 @@ public class SubstringWithConcatenationOfAllWords {
         Map<String, Integer> toFind = new HashMap<String, Integer>();
         Map<String, Integer> found = new HashMap<String, Integer>();
         for (String word : words) {
-            toFind.put(word, toFind.containsKey(word) ? toFind.get(word) + 1 : 1);
+            toFind.put(word, toFind.containsKey(word) ? 
+                    toFind.get(word) + 1 : 1);
         }
+        for (int i = 0; i < s.length(); ++i) {
+            int j;
+            for (j = 0; j < words.legnth; ++j) {
+                int k = i + j * word[0].length();
+                String sub = s.substring(k, k + word[0].length);
+                if (!toFind.containsKey(sub))
+                    break;
+                found.put(sub, found.containsKey(sub) ? 
+                        found.get(sub) + 1 : 1);
+                if (found.get(sub) > toFind.get(sub))
+                    break;
+            }
+            if (j == words.length)
+                result.add(j);
+        }
+        return result;
     }
 
 }
