@@ -22,6 +22,7 @@ public class SubstringWithConcatenationOfAllWords {
                     toFind.get(word) + 1 : 1);
         }
         for (int i = 0; i < s.length(); ++i) {
+            found.clear();
             int j;
             for (j = 0; j < s.length() - words.length * words[0].length(); ++j) {
                 int k = i + j * words[0].length();
