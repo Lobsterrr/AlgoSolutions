@@ -52,4 +52,29 @@ public class MaximumDepthOfBinaryTree {
         }
         return depth;
     }
+
+/*****************************************************************************/
+
+    public int maxDepth(TreeNode root) {
+        if (root == null) 
+            return 0;
+        int depth = 0;
+        Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
+        Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
+        curLevel.offer(root);
+        while (!curLevel.isEmpty()) {
+            TreeNode node = curLevel.poll();
+            if (node.left != null)
+                nextLevel.offer(node.left);
+            if (node.right != null)
+                nextLevel.offer(node.right);
+            if (curLevel.isEmpty()) {
+                depth++;
+                curLevel = nextLevel;
+                nextLevel = new LinkedList<TreeNode>();
+            }
+        }
+        return depth;
+    }
+
 }   
