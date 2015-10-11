@@ -14,6 +14,17 @@ Given a binary tree as follow:
   4   5
 The maximum depth is 3.
  */
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
 public class MaximumDepthOfBinaryTree {
 
     /**
