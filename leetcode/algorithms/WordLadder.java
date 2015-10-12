@@ -35,19 +35,17 @@ public class WordLadder {
             result = Math.min(result, count);
             return;
         }
-        char[] array = cur.toCharArray();
-        char[] tmp = cur.toCharArray();
-        for (int i = 0; i < tmp.length; ++i) {
+        for (int i = 0; i < cur.length(); ++i) {
+            char[] array = cur.toCharArray();
             for (char c = 'a'; c <= 'z'; ++c) {
-                tmp[i] = c;
-                String s = new String(tmp);
+                array[i] = c;
+                String s = new String(array);
                 if (wordList.contains(s)) {
                     count++;
                     wordList.remove(s);
                     dfs(s, endWord, wordList, count);
                     wordList.add(s);
                 }
-                tmp[i] = array[i];
             }
         }
     }
