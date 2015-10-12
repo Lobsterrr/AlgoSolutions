@@ -32,6 +32,7 @@ public class WordLadder {
 
     public void dfs(String cur, String endWord, Set<String> wordList, int count) {
         if (cur.equals(endWord)) {
+            count++;
             result = Math.min(result, count);
             return;
         }
