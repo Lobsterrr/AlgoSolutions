@@ -25,13 +25,13 @@ public class WordLadder {
 
     public int ladderLength(String beginWord, String endWord, 
             Set<String> wordList) {
+        wordList.add(endWord);
         dfs(beginWord, endWord, wordList, 0);
         return result;
     }
 
     public void dfs(String cur, String endWord, Set<String> wordList, int count) {
         if (cur.equals(endWord)) {
-            count++;
             result = Math.min(result, count);
             return;
         }
