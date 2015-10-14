@@ -21,8 +21,19 @@
  */
 public class WordLadder {
 
-    public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
-
+    public int ladderLength(String beginWord, String endWord, 
+            Set<String> wordList) {
+        int distance = 0;
+        Queue<String> queue = new LinkedList<String>();
+        Map<String, Integer> map = HashMap<String, Integer>();
+        queue.offer(beginWord);
+        map.put(beginWord, 1);
+        while (!queue.isEmpty()) {
+            String cur = queue.poll();
+            for (int i = 0; i < cur.length(); ++i) {
+                
+            }
+        }
     }
 
 /*****************************************************************************/
