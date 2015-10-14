@@ -25,15 +25,28 @@ public class WordLadder {
             Set<String> wordList) {
         int distance = 0;
         Queue<String> queue = new LinkedList<String>();
-        Map<String, Integer> map = HashMap<String, Integer>();
+        Map<String, Integer> map = new HashMap<String, Integer>();
         queue.offer(beginWord);
         map.put(beginWord, 1);
         while (!queue.isEmpty()) {
             String cur = queue.poll();
             for (int i = 0; i < cur.length(); ++i) {
-                
+                for (int c = 'a'; c <= 'z'; ++c) {
+                    if (c == cur.charAt(i))
+                        continue;
+                    StringBuilder sb = new StringBuilder(cur);
+                    sb.setCharAt(i, c);
+                    if (sb.toString().equals(endWord))
+                        return distance + 1;
+                    if (wordList.contains(sb.toString()) && !map.containsKey(sb.toString())) {
+                        queue.offer(sb.toString());
+                        map.put(sb.toString(), distance + 1);
+                    }
+                }
+                distance++;
             }
         }
+        return 0;
     }
 
 /*****************************************************************************/
