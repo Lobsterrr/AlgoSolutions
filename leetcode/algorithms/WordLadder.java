@@ -23,13 +23,13 @@ public class WordLadder {
 
     public int ladderLength(String beginWord, String endWord, 
             Set<String> wordList) {
-        int distance = 0;
         Queue<String> queue = new LinkedList<String>();
         Map<String, Integer> map = new HashMap<String, Integer>();
         queue.offer(beginWord);
         map.put(beginWord, 1);
         while (!queue.isEmpty()) {
             String cur = queue.poll();
+            int distance = map.get(cur);
             for (int i = 0; i < cur.length(); ++i) {
                 for (char c = 'a'; c <= 'z'; ++c) {
                     if (c == cur.charAt(i))
@@ -43,7 +43,6 @@ public class WordLadder {
                         map.put(sb.toString(), distance + 1);
                     }
                 }
-                distance++;
             }
         }
         return 0;
