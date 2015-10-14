@@ -31,7 +31,7 @@ public class WordLadder {
         while (!queue.isEmpty()) {
             String cur = queue.poll();
             for (int i = 0; i < cur.length(); ++i) {
-                for (int c = 'a'; c <= 'z'; ++c) {
+                for (char c = 'a'; c <= 'z'; ++c) {
                     if (c == cur.charAt(i))
                         continue;
                     StringBuilder sb = new StringBuilder(cur);
