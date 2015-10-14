@@ -45,6 +45,8 @@ public class WordLadder {
         for (int i = 0; i < cur.length(); ++i) {
             char[] array = cur.toCharArray();
             for (char c = 'a'; c <= 'z'; ++c) {
+                if (array[i] == c)
+                    continue;
                 array[i] = c;
                 String s = new String(array);
                 if (wordList.contains(s)) {
