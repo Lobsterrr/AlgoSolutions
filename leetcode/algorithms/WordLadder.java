@@ -34,35 +34,6 @@ public class WordLadder {
                 for (char c = 'a'; c <= 'z'; ++c) {
                     if (c == cur.charAt(i))
                         continue;
-                    StringBuilder sb = new StringBuilder(cur);
-                    sb.setCharAt(i, c);
-                    if (sb.toString().equals(endWord))
-                        return distance + 1;
-                    if (wordList.contains(sb.toString()) && !map.containsKey(sb.toString())) {
-                        queue.offer(sb.toString());
-                        map.put(sb.toString(), distance + 1);
-                    }
-                }
-            }
-        }
-        return 0;
-    }
-
-/*****************************************************************************/
-
-    public int ladderLength(String beginWord, String endWord, 
-            Set<String> wordList) {
-        Queue<String> queue = new LinkedList<String>();
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        queue.offer(beginWord);
-        map.put(beginWord, 1);
-        while (!queue.isEmpty()) {
-            String cur = queue.poll();
-            int distance = map.get(cur);
-            for (int i = 0; i < cur.length(); ++i) {
-                for (char c = 'a'; c <= 'z'; ++c) {
-                    if (c == cur.charAt(i))
-                        continue;
                     char[] array = cur.toCharArray();
                     array[i] = c;
                     String next = new String(array);
