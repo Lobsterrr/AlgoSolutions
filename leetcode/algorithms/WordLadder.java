@@ -50,36 +50,31 @@ public class WordLadder {
 
 /*****************************************************************************/
 
-    int result = Integer.MAX_VALUE;
-
     public int ladderLength(String beginWord, String endWord, 
             Set<String> wordList) {
-        wordList.add(endWord);
-        dfs(beginWord, endWord, wordList, 0);
-        return result;
-    }
-
-    public void dfs(String cur, String endWord, Set<String> wordList, int count) {
-        if (cur.equals(endWord)) {
-            count++;
-            result = Math.min(result, count);
-            return;
-        }
-        for (int i = 0; i < cur.length(); ++i) {
-            char[] array = cur.toCharArray();
-            for (char c = 'a'; c <= 'z'; ++c) {
-                if (array[i] == c)
-                    continue;
-                array[i] = c;
-                String s = new String(array);
-                if (wordList.contains(s)) {
-                    count++;
-                    wordList.remove(s);
-                    dfs(s, endWord, wordList, count);
-                    wordList.add(s);
+        Queue<String> queue = new LinkedList<String>();
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        queue.offer(beginWord);
+        map.put(beginWord, 1);
+        while (!queue.isEmpty()) {
+            String cur = queue.poll();
+            int distance = map.get(cur);
+            for (int i = 0; i < cur.length(); ++i) {
+                for (char c = 'a'; c <= 'z'; ++c) {
+                    if (c == cur.charAt(i))
+                        continue;
+                    char[] array = cur.toCharArray();
+                    array[i] = c;
+                    String next = new String(array);
+                    if (next.equals(endWord))
+                        return distance + 1;
+                    if (wordList.contains(next) && !map.containsKey(next)) {
+                        queue.offer(next);
+                        map.put(next, distance + 1);
+                    }
                 }
             }
         }
+        return 0;
     }
-
 }
