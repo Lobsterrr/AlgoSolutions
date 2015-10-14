@@ -63,9 +63,7 @@ public class WordLadder {
                 for (char c = 'a'; c <= 'z'; ++c) {
                     if (c == cur.charAt(i))
                         continue;
-                    char[] array = cur.toCharArray();
-                    array[i] = c;
-                    String next = new String(array);
+                    String next = cur.substring(0, i) + c + cur.substring(i + 1);
                     if (next.equals(endWord))
                         return distance + 1;
                     if (wordList.contains(next) && !map.containsKey(next)) {
