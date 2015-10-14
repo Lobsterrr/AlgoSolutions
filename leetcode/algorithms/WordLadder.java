@@ -21,6 +21,12 @@
  */
 public class WordLadder {
 
+    public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
+
+    }
+
+/*****************************************************************************/
+
     int result = Integer.MAX_VALUE;
 
     public int ladderLength(String beginWord, String endWord, 
