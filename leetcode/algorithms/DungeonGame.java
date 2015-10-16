@@ -38,7 +38,7 @@ public class DungeonGame {
     public int calculateMinimumHP(int[][] dungeon) {
         int xLen = dungeon.length;
         int yLen = dungeon[0].length;
-        int[][] dp = new int[xLen][yLen];
+        int[][][] dp = new int[xLen][yLen][2];
     }
 
 }
