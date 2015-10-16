@@ -39,6 +39,20 @@ public class DungeonGame {
         int xLen = dungeon.length;
         int yLen = dungeon[0].length;
         int[][][] dp = new int[xLen][yLen][2];
+        for (int i = 0; i < xLen; ++i) {
+            for (int j = 0; j < yLen; ++j) {
+                if (i == 0 && j == 0) {
+                    dp[i][j][0] = Math.min(0, dungeon[i][j]);
+                    dp[i][j][1] = dungeon[i][j];
+                } else if (i == 0 && j > 0) {
+                    dp[i][j][0] = 
+                } else if (i > 0 && j == 0) {
+
+                } else {
+
+                }
+            }
+        }
     }
 
 }
