@@ -49,7 +49,7 @@ public class DungeonGame {
                 } else if (i > 0 && j == 0) {
 
                 } else {
-
+                    dp[i][j][0] = 
                 }
             }
         }
