@@ -60,10 +60,16 @@ public class DungeonGame {
                         dp[i][j][0] = dp[i - 1][j][0];
                     dp[i][j][1] = dp[i - 1][j][1] + dungeon[i][j];
                 } else {
-                    if (dungeon[i][j] < 0) {
-                        if (dp[i][j][1] + dungeon[i][j] < 0) {
-                            dp[i][j][0] = 
+                    if (dungeon[i][j] >= 0) {
+                        if (dp[i - 1][j][0] < dp[i][j - 1][0]) {
+                            dp[i][j][0] = dp[i - 1][j][0];
+                            dp[i][j][1] = dp[i - 1][j][1] + dungeon[i][j];
+                        } else {
+                            dp[i][j][0] = dp[i][j - 1][0];
+                            dp[i][j][0] = dp[i][j - 1][1] + dungeon[i][j];
                         }
+                    } else {
+                        
                     }
                 }
             }
