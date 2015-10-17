@@ -42,14 +42,29 @@ public class DungeonGame {
         for (int i = 0; i < xLen; ++i) {
             for (int j = 0; j < yLen; ++j) {
                 if (i == 0 && j == 0) {
-                    dp[i][j][0] = Math.min(0, dungeon[i][j]);
-                    dp[i][j][1] = dungeon[i][j];
+                    if (dungeon[i][j] < 0)
+                        dp[i][j][0] = -dungeon[i][j];
+                    else 
+                        dp[i][j][0] = 0;
+                    dp[i][j][1] += dungeon[i][j];
                 } else if (i == 0 && j > 0) {
-                    dp[i][j][0] = 
+                    if (dungeon[i][j] < 0 && dp[i][j - 1][1] + dungeon[i][j] < 0)
+                        dp[i][j][0] = dp[i][j - 1][0] - dungeon[i][j];
+                    else 
+                        dp[i][j][0] = dp[i][j - 1][0];
+                    dp[i][j][1] = dp[i][j - 1][1] + dungeon[i][j];
                 } else if (i > 0 && j == 0) {
-
+                    if (dungeon[i][j] < 0 && dp[i - 1][j][1] + dungeon[i][j] < 0)
+                        dp[i][j][0] = dp[i - 1][j][0] - dungeon[i][j];
+                    else
+                        dp[i][j][0] = dp[i - 1][j][0];
+                    dp[i][j][1] = dp[i - 1][j][1] + dungeon[i][j];
                 } else {
-                    dp[i][j][0] = 
+                    if (dungeon[i][j] < 0) {
+                        if (dp[i][j][1] + dungeon[i][j] < 0) {
+                            dp[i][j][0] = 
+                        }
+                    }
                 }
             }
         }
