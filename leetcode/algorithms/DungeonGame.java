@@ -44,7 +44,7 @@ public class DungeonGame {
             dp[i][yLen - 1] = Math.max(dp[i + 1][yLen - 1], dp[i + 1][yLen - 1] - dungeon[i][j]);
         }
         for (int j = yLen - 2; j >= 0; --j) {
-            dp[xLen - 1][j] = Math.maxdp[xLen - 1][j + 1], dp[xLen - 1][j + 1] - dungeon[i][j]);
+            dp[xLen - 1][j] = Math.max(dp[xLen - 1][j + 1], dp[xLen - 1][j + 1] - dungeon[i][j]);
         }
         for (int i = xLen - 2; i >= 0; --i) {
             for (int j = yLen - 2; j >= 0; --j) {
