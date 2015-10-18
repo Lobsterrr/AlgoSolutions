@@ -11,6 +11,9 @@
  */
 public class FindTheDuplicateNumber {
 
+    //TODO
+    //The method below has modidied the array;
+
     // O(n) time, O(1) space
     public int findDuplicate(int[] nums) {
         for (int i = 0; i < nums.length; ++i) {
