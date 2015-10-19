@@ -40,7 +40,7 @@ class MediaFinder {
         if (list.size() % 2 == 1)
             return (double) list.get(mid);
         else
-            return ((double) (list.get(mid - 1) + list.get(mid)) / 2);
+            return (double) (list.get(mid - 1) + list.get(mid)) / 2;
     }
 
 }
