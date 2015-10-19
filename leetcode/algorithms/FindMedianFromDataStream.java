@@ -22,15 +22,24 @@
  * findMedian() -> 2
  */
 class MediaFinder {
+  
+    List<Integer> list = new ArrayList<Integer>();
 
     // Adds a number into the data structure.
     public void addNum(int num) {
-
+        int i = 0;
+        while (i < list.size() && list.get(i) < num) {
+            i++;
+        }
+        list.add(i, num);
     }
 
     // Returns the median of current data stream
     public double findMedia() {
-
+        Collections.sort(list);
+        int size = list.size();
+        if (size % 2 == 0)
+            return (double) list.get(
     }
 
 }
