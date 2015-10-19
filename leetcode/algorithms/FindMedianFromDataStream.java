@@ -36,10 +36,11 @@ class MediaFinder {
 
     // Returns the median of current data stream
     public double findMedia() {
-        Collections.sort(list);
         int size = list.size();
         if (size % 2 == 0)
-            return (double) list.get(
+            return (double) list.get(size / 2);
+        else 
+            return (double) (list.get(size / 2 - 1) + list.get(size / 2))
     }
 
 }
