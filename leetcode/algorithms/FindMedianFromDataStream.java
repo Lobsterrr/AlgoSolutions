@@ -38,7 +38,7 @@ class MediaFinder {
     public double findMedia() {
         int mid = list.size() / 2;
         if (list.size() % 2 == 1)
-            return (double) list.get(mid);
+            return list.get(mid);
         else
             return (double) (list.get(mid - 1) + list.get(mid)) / 2;
     }
