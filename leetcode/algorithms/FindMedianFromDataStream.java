@@ -51,5 +51,4 @@ class MediaFinder {
 
 public class FindMediaFromDataStream {
 
-
 }
