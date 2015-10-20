@@ -29,8 +29,8 @@
 // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 class PeekingIterator implements Iterator<Integer> {
 
-    private Queue<Integer> queue = new LinkedList<Integer>();
-    private Integer nextItem = null;
+    private Iterator<Integer> iterator;
+    private Integer nextItem;
 
     public PeekingIterator(Iterator<Integer> iterator) {
         // initialize any member here.
