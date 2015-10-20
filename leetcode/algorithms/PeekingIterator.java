@@ -35,7 +35,7 @@ class PeekingIterator implements Iterator<Integer> {
     public PeekingIterator(Iterator<Integer> iterator) {
         // initialize any member here.
         this.iterator = iterator;
-        peek = iterator.next();
+        this.peek = iterator.next();
     }
 
     // Returns the next element in the iteration without advancing the iterator.
