@@ -53,7 +53,7 @@ class PeekingIterator implements Iterator<Integer> {
         return tmp;
     }
 
-    @Overried
+    @Override
     public boolean hasNext() {
         return peek != null;
     }
