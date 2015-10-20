@@ -25,6 +25,32 @@
  * Follow up: How would you extend your design to be generic and work with all 
  * types, not just integer?
  */
+class PeekingIterator implements Iterator<Integer> {
+
+    private Queue<Integer> queue = new LinkedList<Integer>();
+    private Integer nextItem = null;
+
+    public PeekingIterator(Iterator<Integer> iterator) {
+
+    }
+
+    public Integer peek() {
+
+    }
+
+    @Override
+    public Integer next() {
+
+    }
+
+    @Overried
+    public boolean hasNext() {
+
+    }
+
+}
+
+
 public class PeekingIterator {
 
 }
