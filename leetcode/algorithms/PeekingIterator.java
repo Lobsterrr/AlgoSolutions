@@ -57,7 +57,6 @@ class PeekingIterator implements Iterator<Integer> {
 
 }
 
-
 public class PeekingIterator {
 
 }
