@@ -31,13 +31,11 @@ class PeekingIterator implements Iterator<Integer> {
 
     private Iterator<Integer> iterator;
     private Integer peek;
-    private Integer next;
 
     public PeekingIterator(Iterator<Integer> iterator) {
         // initialize any member here.
         this.iterator = iterator;
-        next = iterator.next();
-        peek = next;
+        peek = iterator.next();
     }
 
     // Returns the next element in the iteration without advancing the iterator.
@@ -47,10 +45,9 @@ class PeekingIterator implements Iterator<Integer> {
 
     @Override
     public Integer next() {
-        Integer tmp = peek;
-        if (iterator.hasNext())
-            peek = iterator.next();
-        return tmp;
+        Integer next = peek;
+        peek = iterator.hasNext() ? iterator.next() : null;
+        return next;
     }
 
     @Override
