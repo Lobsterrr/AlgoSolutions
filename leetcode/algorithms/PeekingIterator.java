@@ -25,15 +25,18 @@
  * Follow up: How would you extend your design to be generic and work with all 
  * types, not just integer?
  */
+// Java Iterator interface reference:
+// https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 class PeekingIterator implements Iterator<Integer> {
 
     private Queue<Integer> queue = new LinkedList<Integer>();
     private Integer nextItem = null;
 
     public PeekingIterator(Iterator<Integer> iterator) {
-
+        // initialize any member here.
     }
 
+    // Returns the next element in the iteration without advancing the iterator.
     public Integer peek() {
 
     }
