@@ -17,7 +17,7 @@ public class ShortestPalindrome {
         while (!isPalindrome(s.substring(0, i))) {
             i--;
         }
-        String addStr = new StringBuilder(s.substring(i)).reverse();
+        String addStr = new StringBuilder(s.substring(i)).reverse().toString();
         return addStr + s;
     }
 
