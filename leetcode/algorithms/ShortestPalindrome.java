@@ -13,6 +13,10 @@
 public class ShortestPalindrome {
 
     public String shortestPalindrome(String s) {
+        int i = s.length();
+        while (!isPalindrome(s.substring(0, i))) {
+            i--;
+        }
 
     }
 
