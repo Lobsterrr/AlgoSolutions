@@ -18,10 +18,10 @@ public class ShortestPalindrome {
         String result = null;
         for (int i = 0; i < s.length() / 2; ++i) {
             if (s.charAt(i) == s.charAt(i - 1)) {
-                if (result = check(s, i, i - 1) != null)
+                if ((result = check(s, i, i - 1)) != null)
                     return result;
             } else {
-                if (result = check(s, i, i) != null) 
+                if ((result = check(s, i, i)) != null) 
                     return result;
             }
         }
