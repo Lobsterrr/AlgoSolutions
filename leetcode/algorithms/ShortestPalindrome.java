@@ -12,6 +12,16 @@
  */
 public class ShortestPalindrome {
 
+    publci String shortestPalindrome(String s) {
+
+    }
+
+    public String check(String s, int left, int right) {
+        int i = left - 1;
+    }
+
+
+
     // TLE
     public String shortestPalindrome(String s) {
         int i = s.length();
