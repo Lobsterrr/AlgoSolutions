@@ -29,7 +29,7 @@ public class ShortestPalindrome {
     }
 
     public String check(String s, int left, int right) {
-        int i = 0;
+        int i = 1;
         for (; left - i >= 0 && right + i < s.length(); ++i) {
             if (s.charAt(left - i) != s.charAt(right + i)) {
                 break;
