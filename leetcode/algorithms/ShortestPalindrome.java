@@ -16,7 +16,7 @@ public class ShortestPalindrome {
         if (s.length() <= 1) 
             return s;
         String result = null;
-        for (int i = 1; i < s.length() / 2; ++i) {
+        for (int i = s.length() / 2; i >= 1; --i) {
             if (s.charAt(i) == s.charAt(i - 1)) {
                 if ((result = check(s, i, i - 1)) != null)
                     return result;
