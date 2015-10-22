@@ -20,10 +20,9 @@ public class ShortestPalindrome {
             if (s.charAt(i) == s.charAt(i + 1)) {
                 if ((result = check(s, i, i + 1)) != null)
                     return result;
-            } else {
-                if ((result = check(s, i, i)) != null) 
-                    return result;
-            }
+            } 
+            if ((result = check(s, i, i)) != null) 
+                return result;
         }
         return result;
     }
