@@ -21,7 +21,7 @@ public class ShortestPalindrome {
                 if ((result = check(s, i, i - 1)) != null)
                     return result;
             } else {
-                if ((result = check(s, i, i)) != null) 
+                if ((result = check(s, i - 1, i - 1)) != null) 
                     return result;
             }
         }
