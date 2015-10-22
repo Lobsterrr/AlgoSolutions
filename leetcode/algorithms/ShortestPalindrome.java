@@ -37,8 +37,7 @@ public class ShortestPalindrome {
         if (left - i >= 0)
             return null;
         StringBuffer sb = new StringBuffer(s.substring(right + i));
-        sb.reverse();
-        return sb.append(s).toString();
+        return sb.reverse().append(s).toString();
     }
 
 }
