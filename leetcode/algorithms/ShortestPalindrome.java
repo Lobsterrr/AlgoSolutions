@@ -18,7 +18,7 @@ public class ShortestPalindrome {
 
     public String check(String s, int left, int right) {
         int i = 0;
-        for (; left - i >= 0; ++i) {
+        for (; left - i >= 0 && right + i < s.length(); ++i) {
             if (s.charAt(left - i) != s.charAt(right + i)) {
                 break;
             }
