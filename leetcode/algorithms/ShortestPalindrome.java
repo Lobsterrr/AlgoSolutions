@@ -13,7 +13,19 @@
 public class ShortestPalindrome {
 
     publci String shortestPalindrome(String s) {
-
+        if (s.length() <= 1) 
+            return s;
+        String result = null;
+        for (int i = 0; i < s.length() / 2; ++i) {
+            if (s.charAt(i) == s.charAt(i - 1)) {
+                if (result = check(s, i, i - 1) != null)
+                    return result;
+            } else {
+                if (result = check(s, i, i) != null) 
+                    return result;
+            }
+        }
+        return result;
     }
 
     public String check(String s, int left, int right) {
@@ -27,8 +39,7 @@ public class ShortestPalindrome {
             return null;
         StringBuffer sb = new StringBuffer(s.substring(right + i));
         sb.reverse();
-        sb.append(s);
-        return sb.toString();
+        return sb.append(s).toString();
     }
 
 
