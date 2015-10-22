@@ -42,25 +42,4 @@ public class ShortestPalindrome {
         return sb.append(s).toString();
     }
 
-
-
-    // TLE
-    public String shortestPalindrome(String s) {
-        int i = s.length();
-        while (!isPalindrome(s.substring(0, i))) {
-            i--;
-        }
-        String addStr = new StringBuilder(s.substring(i)).reverse().toString();
-        return addStr + s;
-    }
-
-    public boolean isPalindrome(String s) {
-        for (int i = 0; i < s.length() / 2; ++i) {
-            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
 }
