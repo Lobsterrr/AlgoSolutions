@@ -16,12 +16,12 @@ public class ShortestPalindrome {
         if (s.length() <= 1) 
             return s;
         String result = null;
-        for (int i = s.length() / 2; i >= 1; --i) {
-            if (s.charAt(i) == s.charAt(i - 1)) {
-                if ((result = check(s, i, i - 1)) != null)
+        for (int i = (s.length() - 1) / 2; i >= 0; --i) {
+            if (s.charAt(i) == s.charAt(i + 1)) {
+                if ((result = check(s, i, i + 1)) != null)
                     return result;
             } else {
-                if ((result = check(s, i - 1, i - 1)) != null) 
+                if ((result = check(s, i, i)) != null) 
                     return result;
             }
         }
