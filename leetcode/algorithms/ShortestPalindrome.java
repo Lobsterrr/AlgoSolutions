@@ -12,6 +12,7 @@
  */
 public class ShortestPalindrome {
 
+    // TLE
     public String shortestPalindrome(String s) {
         int i = s.length();
         while (!isPalindrome(s.substring(0, i))) {
