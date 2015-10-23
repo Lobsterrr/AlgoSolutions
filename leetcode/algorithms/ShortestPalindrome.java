@@ -13,6 +13,12 @@
 public class ShortestPalindrome {
 
     public String shortestPalindrome(String s) {
+
+    }
+
+/*******************************************************************/
+
+    public String shortestPalindrome(String s) {
         if (s.length() <= 1) 
             return s;
         String result = null;
