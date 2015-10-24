@@ -13,7 +13,16 @@
 public class ShortestPalindrome {
 
     public String shortestPalindrome(String s) {
-
+        int len = s.length();
+        if (len <= 1) {
+            return s;
+        }
+        int i = len - 1;
+        for (; i >= 0; --i) {
+            if (isPalindrome(s, 0, i)) {
+                break;
+            }
+        }
     }
 
     public boolean isPalindrome(String s, int start, int end) {
@@ -24,6 +33,7 @@ public class ShortestPalindrome {
             start++;
             end--;
         }
+        return true;
     }
 
 /*******************************************************************/
