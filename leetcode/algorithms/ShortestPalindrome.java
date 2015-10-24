@@ -13,6 +13,7 @@
 public class ShortestPalindrome {
 
     public String shortestPalindrome(String s) {
+        StringBuilder sb = new StringBuilder(s) + "#" + s;
 
     }
 
