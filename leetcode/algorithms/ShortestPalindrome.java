@@ -13,8 +13,17 @@
 public class ShortestPalindrome {
 
     public String shortestPalindrome(String s) {
-        StringBuilder sb = new StringBuilder(s) + "#" + s;
 
+    }
+
+    public boolean isPalindrome(String s, int start, int end) {
+        while (start < end) {
+            if (s.charAt(start) != s.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
     }
 
 /*******************************************************************/
