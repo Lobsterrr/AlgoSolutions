@@ -23,6 +23,9 @@ public class ShortestPalindrome {
                 break;
             }
         }
+        StringBuilder sb = new StringBuilder(s.substring(i + 1));
+        sb.reverse().append(s);
+        return sb.toString();
     }
 
     public boolean isPalindrome(String s, int start, int end) {
