@@ -16,8 +16,8 @@ public class TheCoinChangeProblem {
         System.out.println(getWays(coins, N));
     }
 
-    public static int getWays(int[] coins, int N) {
-        int[] dp = new int[N + 1];
+    public static long getWays(int[] coins, int N) {
+        long[] dp = new long[N + 1];
         dp[0] = 1;
         for (int coin : coins) {
             for (int i = coin; i <= N; ++i) {
