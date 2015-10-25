@@ -1,6 +1,7 @@
 /*
  *
  */
+import java.util.Scanner;
 
 public class TheCoinChangeProblem {
 
@@ -17,6 +18,7 @@ public class TheCoinChangeProblem {
 
     public static int getWays(int[] coins, int N) {
         int[] dp = new int[N + 1];
+        dp[0] = 1;
         for (int coin : coins) {
             for (int i = coin; i <= N; ++i) {
                 dp[i] += dp[i - coin];
