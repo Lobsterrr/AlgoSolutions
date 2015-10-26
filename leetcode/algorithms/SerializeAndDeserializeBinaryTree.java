@@ -31,7 +31,6 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-
 class Codec {
 
     // Encodes a tree to a single string.
