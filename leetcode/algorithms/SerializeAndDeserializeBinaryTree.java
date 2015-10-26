@@ -61,6 +61,11 @@ class Codec {
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
+        if (data == null || data.length() == 0) {
+            return null;
+        }
+        String[] s = data.split(",");
+        TreeNode root = new TreeNode(Integer.parseInt(s[0]));
 
     }
 
