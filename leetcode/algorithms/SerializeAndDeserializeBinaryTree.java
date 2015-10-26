@@ -36,9 +36,22 @@ class Codec {
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
         String result = "";
-        List<TreeNode> curLevel = new ArrayList<TreeNode>();
-        List<TreeNode> nextLevel = new ArrayList<TreeNode>();
-
+        Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
+        Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
+        if (root == null) { 
+            return result;
+        }
+        curLevel.add(root);
+        while (!curLevel.isEmpty()) {
+            TreeNode node = curLevel.poll();
+            if (node != null) {
+                result += node.val;
+                nextLevel.offer(node.left);
+                nextLevel.offer(node.right);
+            } else {
+                result += "#,#";
+            }
+        }
     }
 
     // Decodes your encoded data to tree.
