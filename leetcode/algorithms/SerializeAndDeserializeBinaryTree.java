@@ -51,6 +51,10 @@ class Codec {
             } else {
                 result += "#,#";
             }
+            if (curLevel.isEmpty()) {
+                curLevel = nextLevel;
+                nextLevel = new LinkedList<TreeNode>();
+            }
         }
     }
 
