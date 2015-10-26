@@ -38,6 +38,7 @@ class Codec {
         String result = "";
         List<TreeNode> curLevel = new ArrayList<TreeNode>();
         List<TreeNode> nextLevel = new ArrayList<TreeNode>();
+
     }
 
     // Decodes your encoded data to tree.
