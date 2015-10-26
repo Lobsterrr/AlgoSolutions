@@ -45,11 +45,11 @@ class Codec {
         while (!curLevel.isEmpty()) {
             TreeNode node = curLevel.poll();
             if (node != null) {
-                result += node.val;
+                result += node.val + ",";
                 nextLevel.offer(node.left);
                 nextLevel.offer(node.right);
             } else {
-                result += "#,#";
+                result += "#,";
             }
             if (curLevel.isEmpty()) {
                 curLevel = nextLevel;
