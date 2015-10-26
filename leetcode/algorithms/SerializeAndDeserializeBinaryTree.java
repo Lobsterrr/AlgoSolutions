@@ -22,8 +22,33 @@
  * Note: Do not use class member/global/static variables to store states. Your 
  * serialize and deserialize algorithms should be stateless.
  */
-public class SerializeAndDeserializeBinaryTree {
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
 
-    
+class Codec {
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+
+    }
+
+// Your Codec object will be instantiated and called as such:
+// Codec codec = new Codec();
+// codec.deserialize(codec.serialize(root));
+}
+
+public class SerializeAndDeserializeBinaryTree {
 
 }
