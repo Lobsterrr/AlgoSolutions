@@ -56,6 +56,7 @@ class Codec {
                 nextLevel = new LinkedList<TreeNode>();
             }
         }
+        return result.substring(1);
     }
 
     // Decodes your encoded data to tree.
