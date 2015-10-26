@@ -66,7 +66,12 @@ class Codec {
         }
         String[] s = data.split(",");
         TreeNode root = new TreeNode(Integer.parseInt(s[0]));
-
+        TreeNode cur = root;
+        for (int i = 1; i < s.length(); ++i) {
+            if (s[i].equals("#")) {
+                cur.left
+            }
+        }
     }
 
 // Your Codec object will be instantiated and called as such:
