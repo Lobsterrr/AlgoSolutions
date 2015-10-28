@@ -70,7 +70,7 @@ class Codec {
         TreeNode root = new TreeNode(Integer.parseInt(s[0]));
         curLevel.offer(root);
         int i = 1;
-        while (!curLevel.isEmpty() && i < s.length()) {
+        while (!curLevel.isEmpty() && i < s.length) {
             TreeNode cur = curLevel.poll();
             if (!s[i].equals("#")) {
                 cur.left = new TreeNode(Integer.parseInt(s[i]));
