@@ -64,6 +64,11 @@ class Codec {
         if (data == null || data.length() == 0) {
             return null;
         }
+
+        Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
+        Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
+
+        
         String[] s = data.split(",");
         TreeNode root = new TreeNode(Integer.parseInt(s[0]));
         TreeNode cur = root;
