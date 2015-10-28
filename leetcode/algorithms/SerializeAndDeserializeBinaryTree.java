@@ -64,19 +64,32 @@ class Codec {
         if (data == null || data.length() == 0) {
             return null;
         }
-
         Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
         Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
-
-        
         String[] s = data.split(",");
         TreeNode root = new TreeNode(Integer.parseInt(s[0]));
-        TreeNode cur = root;
-        for (int i = 1; i < s.length(); ++i) {
-            if (s[i].equals("#")) {
-                cur.left
+        curLevel.offer(root);
+        int i = 1;
+        while (!curLevel.isEmpty() && i < s.length()) {
+            TreeNode cur = curLevel.poll();
+            if (!s[i].equals("#")) {
+                cur.left = new TreeNode(Integer.parseInt(s[i]));
+                nextLevel.offer(cur.left);
+            } else {
+                cur.left = null;
+            }
+            if (!s[i + 1].equals("#")) {
+                cur.right = new TreeNode(Integer.parseInt(s[i]));
+                nextLevel.offer(cur.right);
+            } else {
+                cur.right = null;
+            }
+            if (curLevel.isEmpty()) {
+                curLevel = nextLevel;
+                nextLevel = new LinkedList<TreeNode>();
             }
         }
+        return root;
     }
 
 // Your Codec object will be instantiated and called as such:
