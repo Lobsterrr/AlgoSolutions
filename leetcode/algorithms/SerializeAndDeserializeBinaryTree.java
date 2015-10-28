@@ -41,7 +41,7 @@ class Codec {
         }
         Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
         Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
-        curLevel.add(root);
+        curLevel.offer(root);
         while (!curLevel.isEmpty()) {
             TreeNode node = curLevel.poll();
             if (node != null) {
