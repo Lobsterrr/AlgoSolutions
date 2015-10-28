@@ -79,7 +79,7 @@ class Codec {
                 cur.left = null;
             }
             if (!s[i + 1].equals("#")) {
-                cur.right = new TreeNode(Integer.parseInt(s[i]));
+                cur.right = new TreeNode(Integer.parseInt(s[i + 1]));
                 nextLevel.offer(cur.right);
             } else {
                 cur.right = null;
