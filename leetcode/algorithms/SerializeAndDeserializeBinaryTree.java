@@ -35,10 +35,10 @@ class Codec {
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-        StringBuilder sb = new StringBuilder();
         if (root == null) { 
             return null;
         }
+        StringBuilder sb = new StringBuilder();
         Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
         Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
         curLevel.offer(root);
@@ -75,15 +75,11 @@ class Codec {
             if (!s[i].equals("#")) {
                 cur.left = new TreeNode(Integer.parseInt(s[i]));
                 nextLevel.offer(cur.left);
-            } else {
-                cur.left = null;
-            }
+            } 
             if (!s[i + 1].equals("#")) {
                 cur.right = new TreeNode(Integer.parseInt(s[i + 1]));
                 nextLevel.offer(cur.right);
-            } else {
-                cur.right = null;
-            }
+            } 
             i += 2;
             if (curLevel.isEmpty()) {
                 curLevel = nextLevel;
