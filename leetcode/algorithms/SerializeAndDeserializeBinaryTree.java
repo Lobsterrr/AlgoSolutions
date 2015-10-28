@@ -84,6 +84,7 @@ class Codec {
             } else {
                 cur.right = null;
             }
+            i += 2;
             if (curLevel.isEmpty()) {
                 curLevel = nextLevel;
                 nextLevel = new LinkedList<TreeNode>();
