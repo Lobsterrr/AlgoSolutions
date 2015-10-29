@@ -1,11 +1,14 @@
 /*
  * Problem Statement
 
-There are N integers in an array A. All but one integer occur in pairs. Your task is to find the number that occurs only once.
+There are N integers in an array A. All but one integer occur in pairs. Your 
+task is to find the number that occurs only once.
 
 Input Format
 
-The first line of the input contains an integer N, indicating the number of integers. The next line contains N space-separated integers that form the array A.
+The first line of the input contains an integer N, indicating the number of 
+integers. The next line contains N space-separated integers that form the array 
+A.
 
 Constraints
 
@@ -40,8 +43,10 @@ Sample Output:3
 Explanation
 
 In the first input, we see only one element (1) and that element is the answer. 
-In the second input, we see three elements; 1 occurs at two places and 2 only once. Thus, the answer is 2. 
-In the third input, we see five elements. 1 and 0 occur twice. The element that occurs only once is 2.
+In the second input, we see three elements; 1 occurs at two places and 2 only 
+once. Thus, the answer is 2. 
+In the third input, we see five elements. 1 and 0 occur twice. The element that 
+occurs only once is 2.
  */
 
 import java.util.Scanner;
