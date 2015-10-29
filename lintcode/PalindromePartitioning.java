@@ -21,9 +21,11 @@ public class PalindromePartitioning {
      * @return: A list of lists of string
      */
     public List<List<String>> partition(String s) {
-        List<String> result = new ArrayList<String>();
+        List<List<String>> result = new List<ArrayList<String>>();
         if (isPalindrome(s)) {
-            result.add(s);
+            List<String> list = new ArrayList<String>();
+            list.add(s);
+            result.add(list);
         }
         for (int i = 1; i < s.length(); ++i) {
             if (isPalindrome(s.substring(0, i))) {
