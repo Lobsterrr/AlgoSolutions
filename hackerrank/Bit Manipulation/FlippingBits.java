@@ -12,8 +12,8 @@ lines, each line having an integer from the list.
 
 Constraints
 
-1¡ÜT¡Ü100 
-0¡Üinteger<232
+1 <= T <=100 
+0 < integer < 2^32
 Output Format
 
 Output one line per element from the list with the requested result.
