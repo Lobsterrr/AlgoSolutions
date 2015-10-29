@@ -21,7 +21,7 @@ public class PalindromePartitioning {
      * @return: A list of lists of string
      */
     public List<List<String>> partition(String s) {
-        List<List<String>> result = new List<ArrayList<String>>();
+        List<List<String>> result = new ArrayList<List<String>>();
         if (isPalindrome(s)) {
             List<String> list = new ArrayList<String>();
             list.add(s);
