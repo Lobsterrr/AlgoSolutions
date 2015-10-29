@@ -1,11 +1,14 @@
 /*
  * Problem Statement
 
-You will be given a list of 32 bits unsigned integers. You are required to output the list of the unsigned integers you get by flipping bits in its binary representation (i.e. unset bits must be set, and set bits must be unset).
+You will be given a list of 32 bits unsigned integers. You are required to 
+output the list of the unsigned integers you get by flipping bits in its binary 
+representation (i.e. unset bits must be set, and set bits must be unset).
 
 Input Format
 
-The first line of the input contains the list size T, which is followed by T lines, each line having an integer from the list.
+The first line of the input contains the list size T, which is followed by T 
+lines, each line having an integer from the list.
 
 Constraints
 
@@ -28,7 +31,9 @@ Sample Output
 4294967295
 Explanation
 
-Take 1 for example, as unsigned 32-bits is 00000000000000000000000000000001 and doing the flipping we get 11111111111111111111111111111110 which in turn is 4294967294.
+Take 1 for example, as unsigned 32-bits is 00000000000000000000000000000001 and 
+doing the flipping we get 11111111111111111111111111111110 which in turn is 
+4294967294.
  */
 public class FlippingBits {
 
