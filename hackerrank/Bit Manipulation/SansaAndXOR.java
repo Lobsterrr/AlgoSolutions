@@ -41,6 +41,8 @@ Test case #00:
 Test case #01: 
 4⊕5⊕7⊕5⊕(4⊕5)⊕(5⊕7)⊕(7⊕5)⊕(4⊕5⊕7)⊕(5⊕7⊕5)⊕(4⊕5⊕7⊕5)=0
  */
+import java.util.Scanner;
+
 public class SansaAndXOR {
 
     public static void main(String[] args) {
