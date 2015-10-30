@@ -53,8 +53,7 @@ public class SansaAndXOR {
             int xor = 0;
             for (int j = 0; j < N; ++j) {
                 int value = sc.nextInt();
-                int count = (j + 1) * (N - j);
-                if (count % 2 != 0) {
+                if ((j + 1) * (N - j) % 2 != 0) {
                     xor ^= value;
                 }
             }
