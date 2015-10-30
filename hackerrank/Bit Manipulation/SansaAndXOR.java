@@ -19,8 +19,8 @@ Print the answer corresponding to each test case in a separate line.
 
 Constraints 
 1≤T≤5 
-2≤N≤^105 
-1≤numbers in array≤^108
+2≤N10^5 
+1≤numbers in array10^8
 
 Sample Input
 
