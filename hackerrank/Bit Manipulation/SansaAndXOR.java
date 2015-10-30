@@ -50,8 +50,13 @@ public class SansaAndXOR {
             int N = sc.nextInt();
             int xor = 0;
             for (int j = 0; j < N; ++j) {
-                
+                int value = sc.nextInt();
+                int count = N + j * (N - 1 - j);
+                if (count % 2 == 1) {
+                    xor ^= value;
+                }
             }
+            System.out.println(xor);
         }
     }
 
