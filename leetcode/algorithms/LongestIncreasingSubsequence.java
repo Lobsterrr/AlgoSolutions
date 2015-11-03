@@ -20,6 +20,7 @@ public class LongestIncreasingSubsequence {
         }
         int[] dp = new int[nums.length];
         for (int i = 1; i < nums.length; ++i) {
+            dp[i] = 1;
             for (int j = 0; j < i; ++j) {
                 if (nums[i] > nums[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
@@ -28,7 +29,7 @@ public class LongestIncreasingSubsequence {
         }
         int result = 0;
         for (int value : dp) {
-            result = Math.max(result, 1 + value);
+            result = Math.max(result, value);
         }
         return result;
     }
