@@ -10,7 +10,7 @@ public class LongestIncreasingSubsequence {
         for (int i = 0; i < N; ++i) {
             nums[i] = sc.nextInt();
         }
-        Systme.out.println(lengthOfLIS(nums));
+        System.out.println(lengthOfLIS(nums));
     }
 
     public static int lengthOfLIS(int[] nums) {
