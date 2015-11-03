@@ -8,7 +8,7 @@
  * the length is 4. Note that there may be more than one LIS 
  * combination, it is only necessary for you to return the length.
 
- * Your algorithm should run in O(n2) complexity.
+ * Your algorithm should run in O(n^2) complexity.
 
  * Follow up: Could you improve it to O(n log n) time complexity?
  */
