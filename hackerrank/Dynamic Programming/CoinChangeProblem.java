@@ -81,7 +81,7 @@ the "Sample Problem Statement" section.
  */
 import java.util.Scanner;
 
-public class TheCoinChangeProblem {
+public class CoinChangeProblem {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
