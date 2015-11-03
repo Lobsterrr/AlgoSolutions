@@ -29,7 +29,7 @@ public class LongestIncreasingSubsequence {
         }
         int result = 0;
         for (int value : dp) {
-            result = Math.max(result, value);
+            result = Math.max(result, 1 + value);
         }
         return result;
     }
