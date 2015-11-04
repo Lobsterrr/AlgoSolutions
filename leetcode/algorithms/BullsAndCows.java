@@ -35,15 +35,11 @@ public class BullsAndCows {
         }
         int bullsCount = 0;
         int cowsCount = 0;
-        Set<Character> gBulls = new HashSet<Character>();
         Set<Character> gCows = new HashSet<Character>();
         for (int i = 0; i < guess.length(); ++i) {
             if (sSet.contains(guess.charAt(i))) {
                 if (guess.charAt(i) == secret.charAt(i)) {
-                    if (!gBulls.contains(guess.charAt(i))) {
-                        bullsCount++;
-                        gBulls.add(guess.charAt(i));
-                    }
+                    bullsCount++;
                 } else {
                     if (!gCows.contains(guess.charAt(i))) {
                         cowsCount++;
