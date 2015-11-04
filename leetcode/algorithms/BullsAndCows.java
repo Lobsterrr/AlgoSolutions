@@ -52,37 +52,4 @@ public class BullsAndCows {
         return bullsCount + "A" + cowsCount + "B";
     }
 
-    public String getHint(String secret, String guess) {
-        int bullsCount = 0;
-        for (int i = 0; i < guess.length(); ++i) {
-            if (secret.charAt(i) == guess.charAt(i)) {
-                bullsCount++;
-            }
-        }
-        Map<Character, Integer> sMap = new HashMap<Character, Integer>();
-        for (int i = 0; i < secret.length(); ++i) {
-            if (sMap.containsKey(secret.charAt(i))) {
-                sMap.put(secret.charAt(i), sMap.get(secret.charAt(i)) + 1);
-            } else {
-                sMap.put(secret.charAt(i), 1);
-            }
-        }
-        Map<Character, Integer> gMap = new HashMap<Character, Integer>();
-        for (int i = 0; i < guess.length(); ++i) {
-            if (gMap.containsKey(guess.charAt(i))) {
-                gMap.put(guess.charAt(i), gMap.get(guess.charAt(i)) + 1);
-            } else {
-                gMap.put(guess.charAt(i), 1);
-            }
-        }
-        int cowsCount = 0;
-        for (char key : gMap.keySet()) {
-            if (sMap.containsKey(key)) {
-                cowsCount += Math.min(sMap.get(key), gMap.get(key));
-            }
-        }
-        cowsCount -= bullsCount;
-        return bullsCount + "A" + cowsCount + "B";
-    }
-
 }
