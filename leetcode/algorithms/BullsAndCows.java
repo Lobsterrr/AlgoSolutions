@@ -32,10 +32,8 @@ public class BullsAndCows {
         int[] g = new int[128];
         int bullsCount = 0;
         int cowsCount = 0;
-        for (int i = 0; i <secret.length(); ++i) {
-            s[secret.charAt(i)]++;
-        }
         for (int i = 0; i <guess.length(); ++i) {
+            s[secret.charAt(i)]++;
             g[guess.charAt(i)]++;
             if (secret.charAt(i) == guess.charAt(i)) {
                 bullsCount++;
