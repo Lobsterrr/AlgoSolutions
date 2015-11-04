@@ -55,18 +55,34 @@ public class BullsAndCows {
 
     public String getHint(String secret, String guess) {
         String result = "";
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        Map<Character, Integer> sMap = new HashMap<Character, Integer>();
         for (int i = 0; i < secret.length(); ++i) {
-            if (map.containsKey(s.charAt(i)) {
-                map.put(s.charAt(i), map.get(s.charAt(i)) + 1);
+            if (sMap.containsKey(secret.charAt(i))) {
+                sMap.put(secret.charAt(i), sMap.get(secret.charAt(i)) + 1);
             } else {
-                map.put(s.charAt(i), 1);
+                sMap.put(secret.charAt(i), 1);
             }
         }
+        Map<Character, Integer> gMap = new HashMap<Character, Integer>();
+        for (int i = 0; i < guess.length(); ++i) {
+            if (gMap.containsKey(guess.charAt(i))) {
+                gMap.put(guess.charAt(i), gMap.get(guess.charAt(i)) + 1);
+            } else {
+                gMap.put(guess.charAt(i), 1);
+            }
+        }
+
+
         int bullsCount = 0;
         int cowsCount = 0;
         for (int i = 0; i < guess.length(); ++i) {
-            
+            if (map.containsKey(guess.charAt(i))) {
+                if (guess.charAt(i) == secret.charAt(i)) {
+                       
+                }
+
+                map.put(guess.charAt(i), map.get(guess.charAt(i)) - 1);
+            }
         }
     }
 
