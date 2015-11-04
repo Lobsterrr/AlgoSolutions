@@ -54,11 +54,10 @@ public class BullsAndCows {
 
 
     public String getHint(String secret, String guess) {
-        String result = "";
         int bullsCount = 0;
         for (int i = 0; i < guess.length(); ++i) {
             if (secret.charAt(i) == guess.charAt(i)) {
-                bullCount++;
+                bullsCount++;
             }
         }
         Map<Character, Integer> sMap = new HashMap<Character, Integer>();
@@ -77,12 +76,14 @@ public class BullsAndCows {
                 gMap.put(guess.charAt(i), 1);
             }
         }
-
-
         int cowsCount = 0;
-        for (int i = 0; i < guess.length(); ++i) {
-            
+        for (char key : gMap.keySet()) {
+            if (sMap.containsKey(key)) {
+                cowsCount += Math.min(sMap.get(key), gMap.get(key));
+            }
         }
+        cowsCount -= bullsCount;
+        return bullsCount + "A" + cowsCount + "B";
     }
 
 }
