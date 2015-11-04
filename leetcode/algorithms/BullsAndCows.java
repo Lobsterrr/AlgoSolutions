@@ -30,25 +30,27 @@ public class BullsAndCows {
     public String getHint(String secret, String guess) {
         String result = "";
         Set<Character> sSet = new HashSet<Character>();
-        Set<Character> gSet = new HashSet<Character>();
         for (int i = 0; i < secret.length(); ++i) {
             sSet.add(secret.charAt(i));
         }
         int bullsCount = 0;
         int cowsCount = 0;
+        Set<Character> gBulls = new HashSet<Character>();
+        Set<Character> gCows = new HashSet<Character>();
         for (int i = 0; i < guess.length(); ++i) {
             if (sSet.contains(guess.charAt(i))) {
                 if (guess.charAt(i) == secret.charAt(i)) {
-                    if (!gSet.contains(guess.charAt(i))) {
+                    if (!gBull.contains(guess.charAt(i))) {
                         bullsCount++;
+                        gBull.add(guess.charAt(i));
                     }
                 } else {
                     if (!gSet.contains(guess.charAt(i))) {
                         cowsCount++;
+                        gCows.add(guess.charAt(i));
                     }
                 }
             }
-            gSet.add(guess.charAt(i));
         }
         result = bullsCount + "A" + cowsCount + "B";
         return result;
