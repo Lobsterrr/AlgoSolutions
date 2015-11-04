@@ -81,13 +81,7 @@ public class BullsAndCows {
 
         int cowsCount = 0;
         for (int i = 0; i < guess.length(); ++i) {
-            if (map.containsKey(guess.charAt(i))) {
-                if (guess.charAt(i) == secret.charAt(i)) {
-                       
-                }
-
-                map.put(guess.charAt(i), map.get(guess.charAt(i)) - 1);
-            }
+            
         }
     }
 
