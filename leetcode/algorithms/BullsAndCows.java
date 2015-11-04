@@ -45,7 +45,7 @@ public class BullsAndCows {
                         gBull.add(guess.charAt(i));
                     }
                 } else {
-                    if (!gSet.contains(guess.charAt(i))) {
+                    if (!gCows.contains(guess.charAt(i))) {
                         cowsCount++;
                         gCows.add(guess.charAt(i));
                     }
