@@ -40,9 +40,9 @@ public class BullsAndCows {
         for (int i = 0; i < guess.length(); ++i) {
             if (sSet.contains(guess.charAt(i))) {
                 if (guess.charAt(i) == secret.charAt(i)) {
-                    if (!gBull.contains(guess.charAt(i))) {
+                    if (!gBulls.contains(guess.charAt(i))) {
                         bullsCount++;
-                        gBull.add(guess.charAt(i));
+                        gBulls.add(guess.charAt(i));
                     }
                 } else {
                     if (!gCows.contains(guess.charAt(i))) {
