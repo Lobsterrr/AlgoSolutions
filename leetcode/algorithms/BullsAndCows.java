@@ -42,9 +42,7 @@ public class BullsAndCows {
             }
         }
         for (int i = 0; i < g.length; ++i) {
-            if (s[i] != 0 && g[i] != 0) {
-                cowsCount += Math.min(s[i], g[i]);
-            }
+            cowsCount += Math.min(s[i], g[i]);
         }
         cowsCount -= bullsCount;
         return bullsCount + "A" + cowsCount + "B";
