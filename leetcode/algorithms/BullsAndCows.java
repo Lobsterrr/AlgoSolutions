@@ -35,9 +35,7 @@ public class BullsAndCows {
         for (int i = 0; i <guess.length(); ++i) {
             s[secret.charAt(i)]++;
             g[guess.charAt(i)]++;
-            if (secret.charAt(i) == guess.charAt(i)) {
-                bullsCount++;
-            }
+            bullsCount += secret.charAt(i) == guess.charAt(i) ? 1 : 0;
         }
         for (int i = 0; i < g.length; ++i) {
             cowsCount += Math.min(s[i], g[i]);
