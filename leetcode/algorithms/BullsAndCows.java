@@ -28,6 +28,12 @@
 public class BullsAndCows {
 
     public String getHint(String secret, String guess) {
+        int[] s = new int[128];
+        int[] g = new int[128];
+        for (int i = 
+    }
+
+    public String getHint(String secret, String guess) {
         int bullsCount = 0;
         for (int i = 0; i < guess.length(); ++i) {
             if (secret.charAt(i) == guess.charAt(i)) {
