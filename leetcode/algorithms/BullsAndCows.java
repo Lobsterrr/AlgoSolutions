@@ -30,7 +30,26 @@ public class BullsAndCows {
     public String getHint(String secret, String guess) {
         int[] s = new int[128];
         int[] g = new int[128];
-        for (int i = 
+        for (int i = 0; i <secret.length(); ++i) {
+            s[secret.charAt(i)]++;
+        }
+        for (int i = 0; i <guess.length(); ++i) {
+            g[guess.charAt(i)]++;
+        }
+        int bullsCount = 0;
+        int cowsCount = 0;
+        for (int i = 0; i < guess.length(); ++i) {
+            if (secret.charAt(i) == guess.charAt(i)) {
+                bullsCount++;
+            }
+        }
+        for (int i = 0; i < g.length; ++i) {
+            if (s[i] != 0 && g[i] != 0) {
+                cowsCount += Math.min(s[i], g[i]);
+            }
+        }
+        cowsCount -= bullsCount;
+        return bullsCount + "A" + cowsCount + "B";
     }
 
     public String getHint(String secret, String guess) {
