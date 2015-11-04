@@ -52,4 +52,9 @@ public class BullsAndCows {
         return result;
     }
 
+
+    public String getHint(String secret, String guess) {
+        String result = "";
+    }
+
 }
