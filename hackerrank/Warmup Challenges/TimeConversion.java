@@ -32,8 +32,10 @@ public class TimeConversion {
                 start = "00";
             }
         }
-        String time = start + input.substring(2, input.length() - 2);
-        System.out.println(time);
+        if (end.equals("AM") && start.equals("12")) {
+            start = Integer.parseInt(start) - 12 + "";
+        }
+        System.out.println(start + input.substring(2, input.length() - 2));
     }
 
 }
