@@ -16,14 +16,9 @@ public class PlusMinus {
                 b++;
             }
         }
-        System.out.println(processDouble((double) a / n, 3));
-        System.out.println(processDouble((double) b / n, 3));
-        System.out.println(processDouble((double) (n - a - b) / n, 3));
-    }
-
-    public static double processDouble(double num, int bits) {
-        BigDecimal bd = new BigDecimal(num);
-        return bd.setScale(bits, RoundingMode.HALF.UP).doubleValue();
+        System.out.printf("%.3f\n", (double) a / n);
+        System.out.printf("%.3f\n", (double) b / n);
+        System.out.printf("%.3f", (double) (n - a - b) / n);
     }
 
 }
