@@ -24,9 +24,14 @@ public class TimeConversion {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String input = in.next();
+        String time = "";
         String start = input.substring(0, 2);
         String end = input.substring(input.length() - 2);
-
+        if (end.equals("PM")) {
+            start += 12;
+        }
+        time = start + input.substring(2, input.length() - 2);
+        System.out.println(time);
     }
 
 }
