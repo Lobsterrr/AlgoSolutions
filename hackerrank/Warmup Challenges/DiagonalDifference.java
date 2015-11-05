@@ -43,7 +43,9 @@ Difference: |4 - 19| = 15
 public class DiagonalDifference {
 
     public static void main(String[] args) {
-        
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+
     }
 
 }
