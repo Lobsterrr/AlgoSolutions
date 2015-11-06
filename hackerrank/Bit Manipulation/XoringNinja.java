@@ -49,5 +49,35 @@ So sum of all such XORs is 12.
  */
 public class XoringNinja {
 
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        long sum = 0;
+        for (int i = 0; i < t; ++i) {
+            int n = in.nextInt();
+            int[] a = new int[n];
+            for (int j = 0; j < n; ++j) {
+                a[j] = in.nextInt();
+            }
+            for (int j = 0; j < 1 << n; ++j) {
+                int xor = 0;
+                for 
+            }
+        }
+    }
+
+    public static long xoringNinja(int[] a) {
+        long sum = 0;
+        for (int i = 0; i < 1 << a.length; ++i) {
+            int xor = 0;
+            for (int j = 0; j < n; ++j) {
+                if ((i & 1 << j) != 0) {
+                    xor ^= a[j];
+                }
+            }
+            sum += xor;
+        }
+        return sum;
+    }
 
 }
