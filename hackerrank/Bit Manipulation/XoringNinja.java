@@ -61,7 +61,7 @@ public class XoringNinja {
             }
             sum += xoringNinja(a);
         }
-        System.out.println(sum % (10000000007));
+        System.out.println(sum % (1000000007));
     }
 
     public static long xoringNinja(int[] a) {
