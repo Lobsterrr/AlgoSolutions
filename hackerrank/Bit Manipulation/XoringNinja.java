@@ -59,11 +59,9 @@ public class XoringNinja {
             for (int j = 0; j < n; ++j) {
                 a[j] = in.nextInt();
             }
-            for (int j = 0; j < 1 << n; ++j) {
-                int xor = 0;
-                for 
-            }
+            sum += xoringNinja(a);
         }
+        System.out.println(sum % (10000000007));
     }
 
     public static long xoringNinja(int[] a) {
