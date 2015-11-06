@@ -52,16 +52,15 @@ public class XoringNinja {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
-        long sum = 0;
         for (int i = 0; i < t; ++i) {
             int n = in.nextInt();
             int[] a = new int[n];
             for (int j = 0; j < n; ++j) {
                 a[j] = in.nextInt();
             }
-            sum += xoringNinja(a);
+            long sum = xoringNinja(a);
+            System.out.println(sum % (1000000007));
         }
-        System.out.println(sum % (1000000007));
     }
 
     public static long xoringNinja(int[] a) {
