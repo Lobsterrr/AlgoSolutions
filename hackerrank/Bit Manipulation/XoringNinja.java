@@ -82,7 +82,7 @@ public class XoringNinja {
         for (int i = 0; i < a.length; ++i) {
             sum |= a[i];
         }
-        return sum * (1 << n - 1);
+        return sum * (1 << a.length - 1);
     }
 
 }
