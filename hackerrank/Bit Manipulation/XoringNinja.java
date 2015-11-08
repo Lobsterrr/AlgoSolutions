@@ -64,8 +64,14 @@ public class XoringNinja {
     }
     
     public static BigInteger xoringNinja(int[] a) {
-
+        BigInteger sum = BigInteger.valueOf(0);
     }
+
+
+
+
+
+
 
     public static long xoringNinja(int[] a) {
         long sum = 0;
