@@ -58,16 +58,17 @@ public class XoringNinja {
             for (int j = 0; j < n; ++j) {
                 a[j] = in.nextInt();
             }
-            long sum = xoringNinja(a);
-            System.out.println(sum % (1000000007));
+            System.out.println(xoringNinja(a));
         }
     }
-    
+
     public static BigInteger xoringNinja(int[] a) {
-        BigInteger sum = BigInteger.valueOf(0);
+        BigInteger sum = BigInteger.ONE.ZERO;
         for (int v : a) {
-            
+            sum = sum.or(BigInteger.valueOf(v));
         }
+        sum = sum.multiply(BigInteger.valueOf(1 << a.length - 1)).mod(BigInteger.valueOf(1000000007));
+        return sum;
     }
 
     public static long xoringNinja(int[] a) {
