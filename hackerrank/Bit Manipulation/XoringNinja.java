@@ -74,41 +74,4 @@ public class XoringNinja {
         return sum;
     }
 
-    public static BigInteger xoringNinja(int[] a) {
-        BigInteger sum = BigInteger.ZERO;
-        for (int i = 0; i < 1 << a.length; ++i) {
-            int xor = 0;
-            for (int j = 0; j < a.length; ++j) {
-                if ((i & (1 << j)) != 0) {
-                    xor ^= a[j];
-                }
-            }
-            sum = sum.add(BigInteger.valueOf(xor));
-        }
-        sum = sum.mod(BigInteger.valueOf(1000000007));
-        return sum;
-    }
-
-    public static long xoringNinja(int[] a) {
-        long sum = 0;
-        for (int i = 0; i < 1 << a.length; ++i) {
-            int xor = 0;
-            for (int j = 0; j < a.length; ++j) {
-                if ((i & 1 << j) != 0) {
-                    xor ^= a[j];
-                }
-            }
-            sum += xor;
-        }
-        return sum;
-    }
-
-    public static long xoringNinja(int[] a) {
-        long sum = 0;
-        for (int i = 0; i < a.length; ++i) {
-            sum |= a[i];
-        }
-        return sum * (1 << a.length - 1);
-    }
-
 }
