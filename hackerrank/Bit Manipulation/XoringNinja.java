@@ -47,6 +47,9 @@ The given case will have 7 non-empty subsets whose XOR is given below
 1¨’2¨’3=0
 So sum of all such XORs is 12.
  */
+import java.math.BigInteger;
+import java.util.Scanner;
+
 public class XoringNinja {
 
     public static void main(String[] args) {
