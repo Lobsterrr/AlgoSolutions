@@ -79,7 +79,7 @@ public class XoringNinja {
         for (int i = 0; i < 1 << a.length; ++i) {
             int xor = 0;
             for (int j = 0; j < a.length; ++j) {
-                if ((i & 1 << j) != 0) {
+                if ((i & (1 << j)) != 0) {
                     xor ^= a[j];
                 }
             }
