@@ -58,14 +58,11 @@ public class XoringNinja {
         for (int i = 0; i < t; ++i) {
             int n = in.nextInt();
             BigInteger sum = BigInteger.ZERO;
-
-
-
-            int[] a = new int[n];
             for (int j = 0; j < n; ++j) {
-                a[j] = in.nextInt();
+                sum = sum.or(BigInteger.valueOf(in.nextInt()));
             }
-            System.out.println(xoringNinja(a));
+            sum = sum.multiply(BigInteger.valueOf(2).pow(n - 1)).mod(BigInteger.valueOf(1000000007));
+            System.out.println(sum);
         }
     }
 
