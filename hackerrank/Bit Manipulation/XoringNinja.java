@@ -61,7 +61,8 @@ public class XoringNinja {
             for (int j = 0; j < n; ++j) {
                 sum = sum.or(BigInteger.valueOf(in.nextInt()));
             }
-            sum = sum.multiply(BigInteger.valueOf(2).pow(n - 1)).mod(BigInteger.valueOf(1000000007));
+            sum = sum.multiply(BigInteger.valueOf(2).pow(n - 1)).
+                mod(BigInteger.valueOf(1000000007));
             System.out.println(sum);
         }
     }
