@@ -67,14 +67,4 @@ public class XoringNinja {
         }
     }
 
-    public static BigInteger xoringNinja(int[] a) {
-        BigInteger sum = BigInteger.ZERO;
-        for (int v : a) {
-            sum = sum.or(BigInteger.valueOf(v));
-        }
-        sum = sum.multiply(BigInteger.valueOf(2).pow(a.length - 1)).
-            mod(BigInteger.valueOf(1000000007));
-        return sum;
-    }
-
 }
