@@ -43,7 +43,7 @@ public class TwosComplement {
             int count = 0;
             for (int j = A; j <= B; ++j) {
                 for (int k = 0; k < 32; ++k) {
-                    if ((A & 1 << k) != 0) {
+                    if ((j & 1 << k) != 0) {
                         count++;
                     }
                 }
