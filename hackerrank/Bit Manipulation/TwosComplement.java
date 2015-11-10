@@ -1,10 +1,14 @@
 /*
  * Problem Statement
 
-One of the basics of Computer Science is knowing how numbers are represented in 2's complement. Imagine that you write down all numbers between A and B inclusive in 2's complement representation using 32 bits. How many 1's will you write down in all ?
+One of the basics of Computer Science is knowing how numbers are represented 
+in 2's complement. Imagine that you write down all numbers between A and B 
+inclusive in 2's complement representation using 32 bits. How many 1's will 
+you write down in all ?
 
 Input: 
-The first line contains the number of test cases T (<=1000). Each of the next T lines contains two integers A and B.
+The first line contains the number of test cases T (<=1000). Each of the next 
+T lines contains two integers A and B.
 
 Output: 
 Output T lines, one corresponding to each test case.
@@ -24,7 +28,8 @@ Sample Output:
 37
 
 Explanation: 
-For the first case, -2 contains 31 1's followed by a 0, -1 contains 32 1's and 0 contains 0 1's. Thus the total is 63. 
+For the first case, -2 contains 31 1's followed by a 0, -1 contains 32 1's and
+0 contains 0 1's. Thus the total is 63. 
 For the second case, the answer is 31 + 31 + 32 + 0 + 1 + 1 + 2 + 1 = 99
  */
 public class TwosComplement {
