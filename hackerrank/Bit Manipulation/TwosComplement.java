@@ -36,7 +36,20 @@ public class TwosComplement {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        
+        int T = in.nextInt();
+        for (int i = 0; i < T; ++i) {
+            int A = in.nextInt();
+            int B = in.nextInt();
+            int count = 0;
+            for (int j = A; j <= B; ++j) {
+                for (int k = 0; k < 32; ++k) {
+                    if (A & (1 << k) != 0) {
+                        count++;
+                    }
+                }
+            }
+            System.out.println(count);
+        }
     }
 
 }
