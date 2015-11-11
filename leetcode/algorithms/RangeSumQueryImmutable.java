@@ -18,8 +18,10 @@ public class RangeSumQueryImmutable {
 
 class NumArray {
 
-    public NumArray(int[] nums) {
+    int[] nums;
 
+    public NumArray(int[] nums) {
+        this.nums = nums;
     }
 
     public int sumRange(int i, int j) {
