@@ -32,6 +32,51 @@ class NumMatrix {
             return;
         int xLen = matrix.length;
         int yLen = matrix[0].length;
+        sum = new int[xLen + 1][yLen + 1];
+        for (int i = 0; i < xLen; ++i) {
+            for (int j = 0; j < yLen; ++j) {
+                sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + matrix[i][j];
+            }
+        }
+    }
+
+    public int sumRegion(int row1, int col1, int row2, int col2) {
+        int result = sum[row2][col2];
+        if (row1 > 0) {
+            result -= sum[row1 - 1][col2];
+        }
+        if (col1 > 0) {
+            result -= sum[row2][col1 - 1];
+        }
+        if (row1 > 0 && col1 > 0) {
+            result += sum[row1 - 1][col1 - 1];
+        }
+
+        result = sum[row2 + 1][col2 + 1] - sum[row1][col2 + 1] - sum[row2 + 1][col1] + sum[row1][col1];
+        return result;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+class NumMatrix {
+
+    int[][] sum;
+
+    public NumMatrix(int[][] matrix) {
+        if (matrix == null || matrix.length == 0)
+            return;
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
         sum = new int[xLen][yLen];
         for (int i = 0; i < xLen; ++i) {
             for (int j = 0; j < yLen; ++j) {
