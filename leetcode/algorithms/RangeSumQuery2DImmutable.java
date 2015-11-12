@@ -25,13 +25,11 @@ public class RangeSumQuery2DImmutable {
 
 class NumMatrix {
 
-    int[][] matrix;
     int[][] sum;
 
     public NumMatrix(int[][] matrix) {
         if (matrix == null || matrix.length == 0)
             return;
-        this.matrix = matrix;
         int xLen = matrix.length;
         int yLen = matrix[0].length;
         sum = new int[xLen][yLen];
