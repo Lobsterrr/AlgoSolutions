@@ -43,7 +43,8 @@ class NumMatrix {
                     } else if (i > 0 && j == 0) {
                         sum[i][j] = sum[i - 1][j] + matrix[i][j];
                     } else {
-                        sum[i][j] = sum[i][j - 1] + sum[i - 1][j] - sum[i - 1][j - 1] + matrix[i][j];
+                        sum[i][j] = sum[i][j - 1] + sum[i - 1][j] 
+                            - sum[i - 1][j - 1] + matrix[i][j];
                     }
                 }
             }
