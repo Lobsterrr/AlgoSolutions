@@ -18,14 +18,19 @@ public class RangeSumQueryImmutable {
 
 class NumArray {
 
-    int[] nums;
+    int[] dp;
 
     public NumArray(int[] nums) {
-        this.nums = nums;
+        if (nums == null || nums.length == 0)
+            return;
+        dp = new int[nums.length + 1];
+        for (int i = 0; i < nums.length; ++i) {
+            dp[i + 1] = dp[i] + nums[i];
+        }
     }
 
     public int sumRange(int i, int j) {
-
+        return dp[i + 1] - dp[j];
     }
 
 }
