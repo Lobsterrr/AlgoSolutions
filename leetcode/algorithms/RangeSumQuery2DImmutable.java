@@ -40,8 +40,8 @@ class NumMatrix {
     }
 
     public int sumRegion(int row1, int col1, int row2, int col2) {
-        return sum[row2 + 1][col2 + 1] - sum[row1][col2 + 1] 
-            - sum[row2 + 1][col1] + sum[row1][col1];
+        return dp[row2 + 1][col2 + 1] - dp[row1][col2 + 1] 
+            - dp[row2 + 1][col1] + dp[row1][col1];
     }
 
 }
