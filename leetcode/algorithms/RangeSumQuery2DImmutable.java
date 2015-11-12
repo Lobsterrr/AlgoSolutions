@@ -29,23 +29,23 @@ class NumMatrix {
     int[][] sum;
 
     public NumMatrix(int[][] matrix) {
+        if (matrix == null || matrix.length == 0)
+            return;
         this.matrix = matrix;
-        if (matrix != null && matrix.length > 0) {
-            int xLen = matrix.length;
-            int yLen = matrix[0].length;
-            sum = new int[xLen][yLen];
-            for (int i = 0; i < xLen; ++i) {
-                for (int j = 0; j < yLen; ++j) {
-                    if (i == 0 && j == 0) {
-                        sum[i][j] = matrix[i][j];
-                    } else if (i == 0 && j > 0) {
-                        sum[i][j] = sum[i][j - 1] + matrix[i][j];
-                    } else if (i > 0 && j == 0) {
-                        sum[i][j] = sum[i - 1][j] + matrix[i][j];
-                    } else {
-                        sum[i][j] = sum[i][j - 1] + sum[i - 1][j] 
-                            - sum[i - 1][j - 1] + matrix[i][j];
-                    }
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+        sum = new int[xLen][yLen];
+        for (int i = 0; i < xLen; ++i) {
+            for (int j = 0; j < yLen; ++j) {
+                if (i == 0 && j == 0) {
+                    sum[i][j] = matrix[i][j];
+                } else if (i == 0 && j > 0) {
+                    sum[i][j] = sum[i][j - 1] + matrix[i][j];
+                } else if (i > 0 && j == 0) {
+                    sum[i][j] = sum[i - 1][j] + matrix[i][j];
+                } else {
+                    sum[i][j] = sum[i][j - 1] + sum[i - 1][j] 
+                        - sum[i - 1][j - 1] + matrix[i][j];
                 }
             }
         }
