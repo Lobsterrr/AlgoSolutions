@@ -30,11 +30,11 @@ class NumMatrix {
     public NumMatrix(int[][] matrix) {
         if (matrix == null || matrix.length == 0)
             return;
-        int xLen = matrix.length;
-        int yLen = matrix[0].length;
-        sum = new int[xLen + 1][yLen + 1];
-        for (int i = 0; i < xLen; ++i) {
-            for (int j = 0; j < yLen; ++j) {
+        int matrix.length = matrix.length;
+        int matrix[0].length = matrix[0].length;
+        sum = new int[matrix.length + 1][matrix[0].length + 1];
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix[0].length; ++j) {
                 sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + matrix[i][j];
             }
         }
@@ -63,11 +63,11 @@ class NumMatrix {
     public NumMatrix(int[][] matrix) {
         if (matrix == null || matrix.length == 0)
             return;
-        int xLen = matrix.length;
-        int yLen = matrix[0].length;
-        sum = new int[xLen][yLen];
-        for (int i = 0; i < xLen; ++i) {
-            for (int j = 0; j < yLen; ++j) {
+        int matrix.length = matrix.length;
+        int matrix[0].length = matrix[0].length;
+        sum = new int[matrix.length][matrix[0].length];
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix[0].length; ++j) {
                 if (i == 0 && j == 0) {
                     sum[i][j] = matrix[i][j];
                 } else if (i == 0 && j > 0) {
