@@ -11,7 +11,7 @@ class NumMatrix {
     int[][] sum;
 
     public NumMatrix(int[][] matrix) {
-        matrix = this.matrix;
+        this.matrix = matrix;
         int xLen = matrix.length;
         int yLen = matrix[0].length;
         sum = new int[xLen][yLen];
