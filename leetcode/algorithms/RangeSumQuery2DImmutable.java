@@ -31,7 +31,19 @@ class NumMatrix {
     }
 
     public int sumRegion(int row1, int col1, int row2, int col2) {
-        return sum[row2][col2] - sum[row2][col1] - sum[row1][col2] + sum[row1][col1];
+        int result = sum[row2][col2];
+        if (row1 > 0) {
+            result -= sum[row1 - 1][col2];
+        }
+        if (col1 > 0) {
+            result -= sum[row2][col1 - 1];
+        }
+        if (row1 > 0 && col1 > 0) {
+            result += sum[row1 - 1][col1 - 1];
+        }
+        return result;
+
+        return sum[row2][col2] - sum[row2][col1 - 1] - sum[row1 - 1][col2] + sum[row1 - 1][col1 - 1];
     }
 
 }
