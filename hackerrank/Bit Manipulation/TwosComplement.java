@@ -57,6 +57,8 @@ public class TwosComplement {
         while ((1 << i) < n) {
             i++;
         }
+        if ((1 << i) == n)
+            return 
     }
 
 }
