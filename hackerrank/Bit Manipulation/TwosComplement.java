@@ -53,7 +53,10 @@ public class TwosComplement {
     }
 
     public static int twosComplement(int n) {
-
+        int i = 0;
+        while ((1 << i) < n) {
+            i++;
+        }
     }
 
 }
