@@ -52,4 +52,8 @@ public class TwosComplement {
         }
     }
 
+    public static int twosComplement(int a, int b) {
+
+    }
+
 }
