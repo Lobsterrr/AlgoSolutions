@@ -58,4 +58,14 @@ public class TwosComplement {
         return k * (1 << k - 1) + twosComplement(n - (1 << k) + 1) + n - (1 << k) + 1;
     }
 
+    public static int onesCount(int[] n) {
+        int count = 0;
+        for (int i = 0; i < 32; ++i) {
+            if ((1 << i) & n) != 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
 }
