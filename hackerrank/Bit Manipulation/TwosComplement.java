@@ -41,14 +41,7 @@ public class TwosComplement {
             int A = in.nextInt();
             int B = in.nextInt();
             int count = 0;
-            for (int j = A; j <= B; ++j) {
-                for (int k = 0; k < 32; ++k) {
-                    if ((j & 1 << k) != 0) {
-                        count++;
-                    }
-                }
-            }
-            System.out.println(count);
+            System.out.println(twosComplement(B) - twosComplement(A - 1));
         }
     }
 
