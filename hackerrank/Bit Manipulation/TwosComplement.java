@@ -41,11 +41,14 @@ public class TwosComplement {
             int A = in.nextInt();
             int B = in.nextInt();
             int count = 0;
-            System.out.println(twosComplement(B) - twosComplement(A - 1));
+            for (int i = A; i <= B; ++i) {
+                count += hammingWeight(i);
+            }
+            System.out.println(count);
         }
     }
 
-    public int hammingWeight(int n) {
+    public static int hammingWeight(int n) {
         n = n - ((n >>> 1) & 0x55555555);
         n = (n & 0x33333333) + ((n >>> 2) & 0x33333333);
         return (((n + (n >>> 4)) & 0x0f0f0f0f) * 0x01010101) >>> 24;
