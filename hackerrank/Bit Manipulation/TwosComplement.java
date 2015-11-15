@@ -42,8 +42,6 @@ public class TwosComplement {
             int B = in.nextInt();
             System.out.println(solve(A, B));
         }
-
-        System.out.println(twosComplement(Integer.MAX_VALUE - 1));
     }
 
     public static long solve(int a, int b) {
