@@ -9,6 +9,7 @@
  */
 public class NumberOfOneBits {
 
+    http://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetParallel
     public int hammingWeight(int n) {
         n = n - ((n >>> 1) & 0x55555555);
         n = (n & 0x33333333) + ((n >>> 2) & 0x33333333);
