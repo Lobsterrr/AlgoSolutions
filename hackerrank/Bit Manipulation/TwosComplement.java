@@ -54,6 +54,27 @@ public class TwosComplement {
         return (((n + (n >>> 4)) & 0x0f0f0f0f) * 0x01010101) >>> 24;
     }
 
+    
+
+    public static long twosComplement(int n) {
+        if (n == 0)
+            return 0;
+        else if (n > 0) {
+            if (n % 2 == 0)
+                return twosComplement(n - 1) + hammingWeight(n);
+            return ((long) n + 1) / 2 + 2 * twosComplement(n / 2);
+        } else {
+            n++;
+            return (-(long) n + 1) * 32 - twosComplement(-n);
+        }
+    }   
+
+
+
+
+
+
+
     public static int twosComplement(int n) {
         if (n == 0 || n == 1) 
             return n;
@@ -66,18 +87,5 @@ public class TwosComplement {
         }
         return k * (1 << k - 1) + twosComplement(n - (1 << k) + 1) + n - (1 << k) + 1;
     }
-
-    public static int twosComplement(int n) {
-        if (n == 0)
-            return 0;
-        else if (n > 0) {
-            if (n % 2 == 0)
-                return twosComplement(n - 1) + hammingWeight(n);
-            return (n + 1) / 2 + 2 * twosComplement(n / 2);
-        } else {
-            n++;
-            return (-n + 1) * 32 - twosComplement(-n);
-        }
-    }   
 
 }
