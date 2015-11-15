@@ -41,8 +41,8 @@ public class TwosComplement {
             int A = in.nextInt();
             int B = in.nextInt();
             int count = 0;
-            for (int i = A; i <= B; ++i) {
-                count += hammingWeight(i);
+            for (int j = A; j <= B; ++j) {
+                count += hammingWeight(j);
             }
             System.out.println(count);
         }
