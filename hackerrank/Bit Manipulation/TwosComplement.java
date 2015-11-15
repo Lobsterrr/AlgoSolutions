@@ -76,22 +76,4 @@ public class TwosComplement {
         }
     }
 
-
-
-
-
-
-    public static int twosComplement(int n) {
-        if (n == 0 || n == 1) 
-            return n;
-        int k = 0;
-        while ((1 << k) < n) {
-            k++;
-        }
-        if ((1 << k) == n) {
-            return k * (1 << (k - 1)) + 1;
-        }
-        return k * (1 << k - 1) + twosComplement(n - (1 << k) + 1) + n - (1 << k) + 1;
-    }
-
 }
