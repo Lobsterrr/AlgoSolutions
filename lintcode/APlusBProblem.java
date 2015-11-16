@@ -33,4 +33,16 @@ public class APlusBProblem {
         return a + b;
     }
 
+    public int aplusb(int a, int b) {
+        int sum = a ^ b;
+        int carrier = a & b;
+        while (carrier != 0) {
+            a = sum;
+            b = carrier << 1;
+            sum = a ^ b;
+            carrier = a & b;
+        }
+        return sum;
+    }
+
 }
