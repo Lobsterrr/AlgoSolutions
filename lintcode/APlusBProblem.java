@@ -29,8 +29,6 @@ public class APlusBProblem {
      * return: The sum of a and b
      */
     public int aplusb(int a, int b) {
-        // write your code here, try to do 
-        // it without arithmetic operators.
         return a + b;
     }
 
