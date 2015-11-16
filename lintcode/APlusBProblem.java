@@ -45,4 +45,12 @@ public class APlusBProblem {
         return sum;
     }
 
+    public int aplusb(int a, int b) {
+        while ((a & b) != 0) {
+            a = a ^ b;
+            b = ((a ^ b) & b) << 1;
+        }
+        return a ^ b;
+    }
+
 }
