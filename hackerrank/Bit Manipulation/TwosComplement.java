@@ -71,8 +71,7 @@ public class TwosComplement {
                 return twosComplement(n - 1) + hammingWeight(n);
             return ((long) n + 1) / 2 + 2 * twosComplement(n / 2);
         } else {
-            n++;
-            return (-(long) n + 1) * 32 - twosComplement(-n);
+            return (-(long) n) * 32 - twosComplement(-n - 1);
         }
     }
 
