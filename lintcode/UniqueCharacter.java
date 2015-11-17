@@ -14,12 +14,13 @@ public class UniqueCharacter {
     public boolean isUnique(String str) {
         if (str.length() <= 1)
             return true;
-        boolean[] isUnique = new boolean[str.length()];
+        boolean[] isUnique = new boolean[128];
         for (int i = 0; i < str.length(); ++i) {
-            if (isUnique[str.charAt(i)]) {
-
-            }
+            if (isUnique[str.charAt(i)]) 
+                return false;
+            isUnique[str.charAt(i)] = true;
         }
+        return true;
     }
 
 }
