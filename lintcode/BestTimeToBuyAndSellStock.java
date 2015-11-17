@@ -3,6 +3,10 @@
  */
 public class BestTimeToBuyAndSellStock {
 
+    /**
+     * @param prices: Given an integer array
+     * @return: Maximum profit
+     */
     public int maxProfit(int[] prices) {
         if (prices.length == 0 || prices.length == 1)
             return 0;
