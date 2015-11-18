@@ -13,10 +13,21 @@ Given binary search tree as follow, after Insert node 6, the tree should be:
 Challenge
 Can you do it without recursion?
  */
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
 public class InsertNodeInABinarySearchTree {
 
     public TreeNode insertNode(TreeNode root, TreeNode node) {
-
+        if (
     }
 
 }
