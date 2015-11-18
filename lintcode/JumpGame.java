@@ -31,6 +31,14 @@ public class JumpGame {
             }
         }
         return true;
+
+
+        int end = 0;
+        for (int i = 0; end >= i && i < A.length; ++i) {
+            end = Math.max(end, i + A[i]);
+            if (end >= A.length - 1)
+                return true;
+        }
     }
 
 }
