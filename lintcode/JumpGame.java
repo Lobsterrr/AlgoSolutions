@@ -23,7 +23,15 @@ We manually set the small data set to allow you pass the test in both ways. This
 public class JumpGame {
 
     pubilc boolean canJump(int[] A) {
-        
+        int maxDistance = 0;
+        for (int i = 0; i < A.length; ++i) {
+            if (maxDistance < i) {
+                return false;
+            } else {
+                maxDistance = Math.max(maxDistance, i + A[i]);
+            }
+        }
+        return true;
     }
 
 }
