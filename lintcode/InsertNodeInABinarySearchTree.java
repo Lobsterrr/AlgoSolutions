@@ -27,6 +27,7 @@ Can you do it without recursion?
  */
 public class InsertNodeInABinarySearchTree {
 
+    // iteration
     public TreeNode insertNode(TreeNode root, TreeNode node) {
         if (root == null)
             return node;
@@ -53,6 +54,7 @@ public class InsertNodeInABinarySearchTree {
 
 /*******************************************************************/
 
+    // recursion
     public TreeNode insertNode(TreeNode root, TreeNode node) {
         if (root == null)
             return node;
