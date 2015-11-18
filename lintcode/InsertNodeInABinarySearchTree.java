@@ -51,4 +51,17 @@ public class InsertNodeInABinarySearchTree {
         return root;
     }
 
+/*******************************************************************/
+
+    public TreeNode insertNode(TreeNode root, TreeNode node) {
+        if (root == null)
+            return node;
+        if (root.val < node.val) {
+            root.right = insertNode(root.right, node);
+        } else {
+            root.left = insertNode(root.left, node);
+        }
+        return root;
+    }
+
 }
