@@ -23,7 +23,7 @@ public class BalancedBinaryTree {
      */
 
     public boolean isBalanced(TreeNode root) {
-
+        return checkDepth(root);
     }
 
     public int checkDepth(TreeNode root) {
