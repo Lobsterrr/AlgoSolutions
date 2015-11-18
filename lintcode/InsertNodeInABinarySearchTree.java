@@ -27,7 +27,17 @@ Can you do it without recursion?
 public class InsertNodeInABinarySearchTree {
 
     public TreeNode insertNode(TreeNode root, TreeNode node) {
-        if (
+        if (root == null)
+            return node;
+        TreeNode cur = root;
+        while (cur.left != null || cur.right != null) {
+            if (cur.val < node.val) {
+                
+            } else {
+
+            }
+        }
+
     }
 
 }
