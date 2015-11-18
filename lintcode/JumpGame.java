@@ -5,7 +5,6 @@ Each element in the array represents your maximum jump length at that position.
 
 Determine if you are able to reach the last index.
 
-Have you met this question in a real interview? Yes
 Example
 A = [2,3,1,1,4], return true.
 
