@@ -32,12 +32,27 @@ public class InsertNodeInABinarySearchTree {
         TreeNode cur = root;
         while (cur.left != null || cur.right != null) {
             if (cur.val < node.val) {
-                
+                if (cur.right != null) {
+                    cur = cur.right;
+                } else {
+                    cur.right = node;
+                    break;
+                }
             } else {
-
+                if (cur.left != null) {
+                    cur = cur.left;
+                } else {
+                    cur.left = node;
+                    break;
+                }
             }
         }
-
+        if (cur.val < node.val) {
+            cur.right = node;
+        } else {
+            cur.left = node;
+        }
+        return root;
     }
 
 }
