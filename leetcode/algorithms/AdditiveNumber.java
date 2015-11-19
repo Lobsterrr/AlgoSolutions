@@ -44,7 +44,7 @@ public class AdditiveNumber {
     }
 
     public boolean checkInt(String s) {
-
+        return Long.parseLong(s) <= Integer.MAX_VALUE;
     }
 
 }
