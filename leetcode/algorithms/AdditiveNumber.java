@@ -35,6 +35,10 @@ public class AdditiveNumber {
     public boolean dfs(int sum, String num) {
         if (num.length() <= 10 && Long.parseLong(num) == (long) sum)
             return true;
+        for (int i = 1; i <= 10 && i <= num.length(); ++i) {
+            sum += Integer.parseInt(num.substring(0, i));
+            dfs(sum, num.substring(i));
+        }
     }
 
 }
