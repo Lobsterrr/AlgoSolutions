@@ -29,7 +29,7 @@
 public class AdditiveNumber {
 
     public boolean isAdditiveNumber(String num) {
-
+        return dfs(0, num);
     }
 
     public boolean dfs(int sum, String num) {
