@@ -32,4 +32,8 @@ public class AdditiveNumber {
 
     }
 
+    public boolean dfs(int sum, String num) {
+        if 
+    }
+
 }
