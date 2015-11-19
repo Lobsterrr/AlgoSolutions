@@ -30,6 +30,7 @@ public class BinaryTreePreorderTraversal {
             } else {
                 TreeNode node = stack.pop();
                 cur = node;
+                cur = stack.pop();
             }
         }
     }
