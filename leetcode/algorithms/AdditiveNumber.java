@@ -33,7 +33,8 @@ public class AdditiveNumber {
     }
 
     public boolean dfs(int sum, String num) {
-        if 
+        if (num.length() <= 10 && Long.parseLong(num) == (long) sum)
+            return true;
     }
 
 }
