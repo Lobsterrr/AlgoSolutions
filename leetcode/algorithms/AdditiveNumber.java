@@ -38,6 +38,7 @@ public class AdditiveNumber {
         for (int i = 1; i <= 10 && i <= num.length(); ++i) {
             sum += Integer.parseInt(num.substring(0, i));
             dfs(sum, num.substring(i));
+            // sum -= Integer.pareseInt(num.substring(0, i));
         }
     }
 
