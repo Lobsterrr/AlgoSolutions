@@ -28,7 +28,8 @@ public class BinaryTreePreorderTraversal {
                 stack.push(cur.left);
                 result.add(cur.left.val);
             } else {
-                
+                TreeNode node = stack.pop();
+                cur = node;
             }
         }
     }
