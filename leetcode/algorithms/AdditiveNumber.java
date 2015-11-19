@@ -40,6 +40,7 @@ public class AdditiveNumber {
             dfs(sum, num.substring(i));
             // sum -= Integer.pareseInt(num.substring(0, i));
         }
+        return false;
     }
 
 }
