@@ -43,4 +43,8 @@ public class AdditiveNumber {
         return false;
     }
 
+    public boolean checkInt(String s) {
+
+    }
+
 }
