@@ -29,6 +29,7 @@ public class BinaryTreePreorderTraversal {
                 result.add(cur.left.val);
             } else {
                 cur = stack.pop();
+                cur = cur.right;
             }
         }
     }
