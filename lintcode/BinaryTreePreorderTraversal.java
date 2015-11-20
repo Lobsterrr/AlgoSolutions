@@ -23,15 +23,18 @@ public class BinaryTreePreorderTraversal {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
         result.add(cur.val);
-        while (cur != null || !stack.isEmpty()) {
-            if (cur.left != null) {
-                stack.push(cur.left);
-                result.add(cur.left.val);
+        while () {
+            if (cur != null) {
+                stack.push(cur);
+                result.add(cur);
+                cur = cur.left;
             } else {
                 cur = stack.pop();
                 cur = cur.right;
             }
         }
+
+        return result;
     }
 
 }
