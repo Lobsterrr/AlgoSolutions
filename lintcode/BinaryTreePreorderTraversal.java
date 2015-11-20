@@ -30,7 +30,6 @@ public class BinaryTreePreorderTraversal {
                 cur = cur.right;
             }
         }
-
         return result;
     }
 
