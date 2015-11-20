@@ -37,11 +37,11 @@ public class BinaryTreePreorderTraversal {
 
     public ArrayList<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-        if (root == null)
-            return result;
-        result.add(root.val);
-        result.addAll(preorderTraversal(root.left));
-        result.addAll(preorderTraversal(root.right));
+        if (root != null) {
+            result.add(root.val);
+            result.addAll(preorderTraversal(root.left));
+            result.addAll(preorderTraversal(root.right));
+        }
         return result;
     }
 
