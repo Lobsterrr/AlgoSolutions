@@ -16,6 +16,7 @@ Can you do it without recursion?
  */
 public class BinaryTreePreorderTraversal {
 
+    // iteration
     public ArrayList<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -35,6 +36,7 @@ public class BinaryTreePreorderTraversal {
 
 /*******************************************************************/
 
+    // recursion
     public ArrayList<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         if (root != null) {
