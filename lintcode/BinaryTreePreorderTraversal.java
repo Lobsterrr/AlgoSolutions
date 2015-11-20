@@ -18,8 +18,6 @@ public class BinaryTreePreorderTraversal {
 
     public ArrayList<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-        if (root == null)
-            return result;
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
         while (cur != null || !stack.isEmpty()) {
