@@ -19,6 +19,7 @@ Can you do it without recursion?
  */
 public class BinaryTreeInorderTraversal {
 
+    // iteration
     public ArrayList<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -35,6 +36,9 @@ public class BinaryTreeInorderTraversal {
         return result;
     }
 
+/*******************************************************************/
+
+    // recursion
     public ArrayList<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         if (root != null) {
