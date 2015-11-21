@@ -17,6 +17,17 @@ return [1,3,2].
 Challenge
 Can you do it without recursion?
  */
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
 public class BinaryTreeInorderTraversal {
 
     // iteration
