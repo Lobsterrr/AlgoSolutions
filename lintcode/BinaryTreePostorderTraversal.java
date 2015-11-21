@@ -31,6 +31,7 @@ Can you do it without recursion?
 public class BinaryTreePostorderTraversal {
 
     public ArrayList<Integer> postorderTraversal(TreeNode root) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
 
     }
 
