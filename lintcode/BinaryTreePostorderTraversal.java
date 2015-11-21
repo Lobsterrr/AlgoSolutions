@@ -1,5 +1,6 @@
 /*
- * Given a binary tree, return the postorder traversal of its nodes' values.
+ * Given a binary tree, return the postorder traversal of its nodes' 
+ * values.
 
 Example
 Given binary tree {1,#,2,3},
