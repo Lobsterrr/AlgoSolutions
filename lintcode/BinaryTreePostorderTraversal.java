@@ -35,8 +35,12 @@ public class BinaryTreePostorderTraversal {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         while (root != null || queue.size() > 0) {
             if (root.left != null) {
-                queue.offer(
+                queue.offer(root.left);
             }
+            if (root.right != null) {
+                queue.offer(root.right);
+            }   
+            queue.offer(root);
         }
 
         return result;
