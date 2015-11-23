@@ -34,16 +34,18 @@ public class BinaryTreePostorderTraversal {
         ArrayList<Integer> result = new ArrayList<Integer>();
         if (root == null)
             return result;
-        while () {
-            if (root.right != null) {
-                stack.push(root.right);
+        while (root != null) {
+            if (root != null) {
+                if (root.right != null) {
+                    stack.push(root.right);
+                }
             }
             stack.push(root);
             root = root.left;
 
             root = stack.pop();
             if (root.right != null && root.right == stack.peek()) {
-
+                
             }
         }
 
