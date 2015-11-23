@@ -7,6 +7,8 @@ Given 1->2->3->4, and node 3. return 1->2->4
  */
 public class DeleteNodeInTheMiddleOfSinglyLinkedList {
 
+    public void deleteNode(ListNode node) {
 
+    }
 
 }
