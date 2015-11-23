@@ -45,7 +45,7 @@ public class BinaryTreePostorderTraversal {
             } else {
                 root = stack.pop();
                 if (root.right != null && root.right == stack.peek()) {
-                                
+                                        
                 }
             }
         }
