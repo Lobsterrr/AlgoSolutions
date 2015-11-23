@@ -32,7 +32,10 @@ public class BinaryTreePostorderTraversal {
 
     public ArrayList<Integer> postorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-        
+        if (root == null)
+            return result;
+
+
         return result;
     }
 
