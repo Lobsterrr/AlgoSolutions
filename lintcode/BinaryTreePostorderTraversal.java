@@ -39,6 +39,7 @@ public class BinaryTreePostorderTraversal {
                 stack.push(root.right);
             }
             stack.push(root);
+            root = root.left;
         }
 
         return result;
