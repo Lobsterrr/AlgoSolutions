@@ -61,6 +61,8 @@ public class BinaryTreePostorderTraversal {
                 stack.push(root.right);
             }
         }
+        Collections.reverse(result);
+        return result;
     }
 
 /*******************************************************************/
