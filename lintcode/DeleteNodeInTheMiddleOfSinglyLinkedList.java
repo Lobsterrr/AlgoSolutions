@@ -5,10 +5,21 @@ Have you met this question in a real interview? Yes
 Example
 Given 1->2->3->4, and node 3. return 1->2->4
  */
+/**
+ * Definition for ListNode.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int val) {
+ *         this.val = val;
+ *         this.next = null;
+ *     }
+ * }
+ */ 
 public class DeleteNodeInTheMiddleOfSinglyLinkedList {
 
     public void deleteNode(ListNode node) {
-
+        ListNode 
     }
 
 }
