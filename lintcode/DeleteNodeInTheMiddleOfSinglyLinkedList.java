@@ -19,7 +19,13 @@ Given 1->2->3->4, and node 3. return 1->2->4
 public class DeleteNodeInTheMiddleOfSinglyLinkedList {
 
     public void deleteNode(ListNode node) {
-        ListNode 
+        ListNode cur1 = node;
+        ListNode cur2 = node;
+        while (cur2 != null && cur2.next != null) {
+            cur1 = cur1.next;
+            cur2 = cur2.next.next;
+        }
+
     }
 
 }
