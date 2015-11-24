@@ -22,8 +22,17 @@ Time complexity O(logN)
 public class FindPeakElement {
 
     public int findPeak(int[] A) {
+        int low 0;
+        int high = A.length - 1;
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (0 < mid && mid < A.length - 1 && A[mid - 1] < A[mid] && A[mid] > A
+        }
+    }
+
+    public int findPeak(int[] A) {
         for (int i = 1; i < A.length - 1; ++i) {
-            if (A[i - 1] < A[i] && A[i] < A[i + 1]) {
+            if (A[i - 1] < A[i] && A[i] > A[i + 1]) {
                 return i;
             }
         }
