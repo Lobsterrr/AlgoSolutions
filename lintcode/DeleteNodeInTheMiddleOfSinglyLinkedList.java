@@ -26,7 +26,9 @@ public class DeleteNodeInTheMiddleOfSinglyLinkedList {
             cur1 = cur1.next;
             cur2 = cur2.next.next;
         }
-
+        if (cur1.next != null) {
+            cur1.next = cur1.next.next;
+        }
     }
 
     public void deleteNode(ListNode node) {
@@ -38,6 +40,8 @@ public class DeleteNodeInTheMiddleOfSinglyLinkedList {
             cur1 = cur1.next;
             cur2 = cur2.next.next;
         }
+        ListNode tmp = cur1.next.next;
+        cur1.next = tmp;
     }
 
 }
