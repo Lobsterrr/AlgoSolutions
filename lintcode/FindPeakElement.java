@@ -26,8 +26,13 @@ public class FindPeakElement {
         int high = A.length - 1;
         while (low < high) {
             int mid = low + (high - low) / 2;
-            if (0 < mid && mid < A.length - 1 && A[mid - 1] < A[mid] && A[mid] > A
+            if (A[mid] < A[mid + 1]) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
         }
+        return low;
     }
 
     public int findPeak(int[] A) {
