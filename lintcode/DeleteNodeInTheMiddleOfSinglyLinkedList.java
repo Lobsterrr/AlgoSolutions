@@ -39,7 +39,8 @@ public class DeleteNodeInTheMiddleOfSinglyLinkedList {
             cur1 = cur1.next;
             cur2 = cur2.next.next;
         }
-        
+        dummy.next = null;
+        cur1.next = cur1.next.next;
     }
 
 }
