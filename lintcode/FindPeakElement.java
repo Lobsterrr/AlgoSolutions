@@ -8,7 +8,6 @@ We define a position P is a peek if:
 A[P] > A[P-1] && A[P] > A[P+1]
 Find a peak element in this array. Return the index of the peak.
 
-Have you met this question in a real interview? Yes
 Example
 Given [1, 2, 1, 3, 4, 5, 7, 6]
 
