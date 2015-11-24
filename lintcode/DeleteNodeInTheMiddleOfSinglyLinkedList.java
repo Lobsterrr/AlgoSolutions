@@ -1,5 +1,6 @@
 /*
- * Implement an algorithm to delete a node in the middle of a singly linked list, given only access to that node.
+ * Implement an algorithm to delete a node in the middle of 
+ * a singly linked list, given only access to that node.
 
 Have you met this question in a real interview? Yes
 Example
