@@ -35,7 +35,8 @@ public class DeleteNodeInTheMiddleOfSinglyLinkedList {
         ListNode cur1 = dummy;
         ListNode cur2 = dummy;
         while (cur2 != null && cur2.next != null) {
-            
+            cur1 = cur1.next;
+            cur2 = cur2.next.next;
         }
     }
 
