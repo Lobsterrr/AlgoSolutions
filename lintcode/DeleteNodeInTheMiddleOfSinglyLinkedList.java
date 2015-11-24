@@ -19,28 +19,8 @@ Given 1->2->3->4, and node 3. return 1->2->4
 public class DeleteNodeInTheMiddleOfSinglyLinkedList {
 
     public void deleteNode(ListNode node) {
-        ListNode cur1 = node;
-        ListNode cur2 = node;
-        while (cur2 != null && cur2.next != null) {
-            cur1 = cur1.next;
-            cur2 = cur2.next.next;
-        }
-        if (cur1.next != null) {
-            cur1.next = cur1.next.next;
-        }
-    }
-
-    public void deleteNode(ListNode node) {
-        ListNode dummy = new ListNode(0);
-        dummy.next = node;
-        ListNode cur1 = dummy;
-        ListNode cur2 = dummy;
-        while (cur2 != null && cur2.next != null) {
-            cur1 = cur1.next;
-            cur2 = cur2.next.next;
-        }
-        dummy.next = null;
-        cur1.next = cur1.next.next;
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 
 }
