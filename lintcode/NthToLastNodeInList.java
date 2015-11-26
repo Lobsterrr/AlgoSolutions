@@ -26,13 +26,12 @@ public class NthToLastNodeInList {
         ListNode second = dummy;
         while (first != null) {
             first = first.next;
-            if (n > 0) {
-                n--;
-            }
-            if (n <= 0) {
+            n--;
+            if (n < 0) {
                 second = second.next;
             }
         }
+        return second;
     }
 
 }
