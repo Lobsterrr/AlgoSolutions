@@ -36,18 +36,4 @@ public class NthToLastNodeInList {
         return second;
     }
 
-    ListNode nthToLast(ListNode head, int n) {
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode first = dummy;
-        ListNode second = dummy;
-        while (first != null) {
-            first = first.next;
-            if (--n < 0) {
-                second = second.next;
-            }
-        }
-        return second;
-    }
-
 }
