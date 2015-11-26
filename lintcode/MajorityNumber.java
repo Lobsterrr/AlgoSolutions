@@ -15,7 +15,7 @@ public class MajorityNumber {
         int vote = 0;
         int result = 0;
         for (int num : nums) {
-            if (num = result) {
+            if (num == result) {
                 vote++;
             } else {
                 vote--;
