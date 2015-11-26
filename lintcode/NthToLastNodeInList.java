@@ -26,8 +26,7 @@ public class NthToLastNodeInList {
         ListNode second = dummy;
         while (first != null) {
             first = first.next;
-            n--;
-            if (n < 0) {
+            if (--n < 0) {
                 second = second.next;
             }
         }
