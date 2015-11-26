@@ -22,4 +22,10 @@ public class RemoveNthNodeFromEndOfList {
         cur1.next = cur1.next.next;
         return dummy.next;
     }
+
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+
+    }
+
 }
