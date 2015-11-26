@@ -20,7 +20,19 @@ Given a List  3->2->1->5->null and n = 2, return node  whose value is 1.
 public class NthToLastNodeInList {
 
     ListNode nthToLast(ListNode head, int n) {
-
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode first = dummy;
+        ListNode second = dummy;
+        while (first != null) {
+            first = first.next;
+            if (n > 0) {
+                n--;
+            }
+            if (n <= 0) {
+                second = second.next;
+            }
+        }
     }
 
 }
