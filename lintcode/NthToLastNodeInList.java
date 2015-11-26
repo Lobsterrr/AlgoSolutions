@@ -19,6 +19,11 @@ Given a List  3->2->1->5->null and n = 2, return node  whose value is 1.
  */ 
 public class NthToLastNodeInList {
 
+    /**
+     * @param head: The first node of linked list.
+     * @param n: An integer.
+     * @return: Nth to last node of a singly linked list. 
+     */
     ListNode nthToLast(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
