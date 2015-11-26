@@ -19,7 +19,7 @@ public class MajorityNumber {
                 vote++;
             } else {
                 vote--;
-                if (vote == 0) {
+                if (vote <= 0) {
                     result = num;
                     vote = 1;
                 }
