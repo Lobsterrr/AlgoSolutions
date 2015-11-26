@@ -31,23 +31,6 @@ public class RemoveNthNodeFromEndOfList {
         return dummy.next;
     }
 
-
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode first = dummy;
-        ListNode second = dummy;
-        while (first.next != null) {
-            first = first.next;
-            n--;
-            if (n < 0) {
-                second = second.next;
-            }
-        }
-        second.next = second.next.next;
-        return dummy.next;
-    }
-
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
