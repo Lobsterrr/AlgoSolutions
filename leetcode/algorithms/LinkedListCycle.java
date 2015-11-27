@@ -29,4 +29,15 @@ public class LinkedListCycle {
         return false;
     }
 
+    public boolean hasCycle(ListNode head) {
+        for (ListNode cur = head; cur != null && cur.next != null; ) {
+            cur = cur.next.next;
+            head = head.next;
+            if (cur == head) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
