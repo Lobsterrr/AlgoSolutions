@@ -29,10 +29,12 @@ public class LinkedListCycle {
      */
     public boolean hasCycle(ListNode head) {  
         // write your code here
-        ListNode cur = head;
-        while (cur != null) {
-            cur = cur.next;
-            if (cur == head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
                 return true;
             }
         }
