@@ -3,7 +3,6 @@
 
 
 
-Have you met this question in a real interview? Yes
 Example
 Given -21->10->4->5, tail connects to node index 1, return true
 
