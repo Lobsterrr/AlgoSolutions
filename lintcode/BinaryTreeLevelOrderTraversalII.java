@@ -1,7 +1,6 @@
 /*
  * Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
 
-Have you met this question in a real interview? Yes
 Example
 Given binary tree {3,9,20,#,#,15,7},
 
