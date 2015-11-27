@@ -53,7 +53,7 @@ public class BinaryTreeLevelOrderTraversalII {
             if (node.right != null) {
                 nextLevel.offer(node.right);
             }
-            if (curLevel.poll() == null) {
+            if (curLevel.peek() == null) {
                 curLevel = nextLevel;
                 nextLevel = new LinkedList<TreeNode>();
                 result.add(0, list);
