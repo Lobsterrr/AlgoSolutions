@@ -28,11 +28,6 @@ public class IntersectionOfTwoLinkedLists {
             fast = fast.next;
         }
 
-        ListNode cur = headA;
-        while (cur.next != null) {
-            cur = cur.next;
-        }
-        cur.next = headB;
         
     }
 
