@@ -1,7 +1,6 @@
 /*
  * Write a program to find the node at which the intersection of two singly linked lists begins.
 
-Have you met this question in a real interview? Yes
 Example
 The following two linked lists:
 
