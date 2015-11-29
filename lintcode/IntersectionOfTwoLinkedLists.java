@@ -24,7 +24,9 @@ public class IntersectionOfTwoLinkedLists {
         if (headA == null || headB == null) 
             return null;
         ListNode fast = headA;
-
+        while (fast.next != null) {
+            fast = fast.next;
+        }
 
         ListNode cur = headA;
         while (cur.next != null) {
