@@ -28,6 +28,7 @@ public class IntersectionOfTwoLinkedLists {
             fast = fast.next;
         }
         
+
     }
 
 }
