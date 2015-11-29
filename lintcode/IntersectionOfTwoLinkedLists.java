@@ -27,7 +27,6 @@ public class IntersectionOfTwoLinkedLists {
         while (fast.next != null) {
             fast = fast.next;
         }
-
         
     }
 
