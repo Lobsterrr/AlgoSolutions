@@ -5,12 +5,26 @@ Example
 For "abAcD", a reasonable answer is "acbAD"
 
 Note
-It's not necessary to keep the original order of lower-case letters and upper case letters.
+It's not necessary to keep the original order 
+of lower-case letters and upper case letters.
 
 Challenge
 Do it in one-pass and in-place.
  */
 public class SortLettersByCase {
+
+    public void sortLetters(char[] chars) {
+        for (int i = 0, j = 0; i < chars.length; ++i) {
+            if ('a' <= chars[i] && chars[i] <= 'z') {
+                char tmp = chars[i];
+                chars[i] = chars[j];
+                chars[j] = tmp;
+                j++;
+            }
+        }
+    }
+
+/*********************************************************/
 
     public void sortLetters(char[] chars) {
         int i = 0; 
@@ -21,9 +35,9 @@ public class SortLettersByCase {
             } else if (isUpperCase(chars[j])) {
                 j--;
             } else {
-                chars[i] ^= chars[j];
-                chars[j] ^= chars[i];
-                chars[i] ^= chars[j];
+                char tmp = chars[i];
+                chars[i] = chars[j];
+                chars[j] = tmp;
                 i++;
                 j--;
             }
