@@ -1,5 +1,6 @@
 /*
- * Given a string which contains only letters. Sort it by lower case first and upper case second.
+ * Given a string which contains only letters. Sort 
+ * it by lower case first and upper case second.
 
 Example
 For "abAcD", a reasonable answer is "acbAD"
