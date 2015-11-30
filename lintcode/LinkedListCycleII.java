@@ -30,7 +30,21 @@ public class LinkedListCycleII {
      *           if there is no cycle, return null
      */
     public ListNode detectCycle(ListNode head) {
-
+        if (head == null) {
+            return head;
+        }
+        ListNode fast = head.next.next;
+        ListNode slow = head.next;
+        while (fast != slow) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        slow = head;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return fast;
     }
 
 }
