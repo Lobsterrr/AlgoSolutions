@@ -50,4 +50,29 @@ public class LinkedListCycleII {
         return fast;
     }
 
+
+/*********************************************************/
+
+    public ListNode detectCycle(ListNode head) {
+        ListNode cur = hasCycle(head);
+        while (cur != null && cur != head) {
+            cur = cur.next;
+            head = head.next;
+        }
+        return cur;
+    }
+
+    public ListNode hasCycle(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                return fast;
+            }
+        }
+        return null;
+    }
+
 }
