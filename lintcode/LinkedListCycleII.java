@@ -39,8 +39,8 @@ public class LinkedListCycleII {
                 break;
             }
         }
-        if (fast == null) {
-            return fast;
+        if ( fast != slow) {
+            return null;
         }
         fast = head;
         while (fast != slow) {
