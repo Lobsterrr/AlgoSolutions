@@ -18,8 +18,7 @@ public class SortLettersByCase {
             if ('a' <= chars[i] && chars[i] <= 'z') {
                 char tmp = chars[i];
                 chars[i] = chars[j];
-                chars[j] = tmp;
-                j++;
+                chars[j++] = tmp;
             }
         }
     }
