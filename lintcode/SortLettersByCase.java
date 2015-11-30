@@ -21,9 +21,9 @@ public class SortLettersByCase {
             } else if (isUpperCase(chars[j])) {
                 j--;
             } else {
-                char tmp = chars[i];
-                chars[i] = chars[j];
-                chars[j] = tmp;
+                chars[i] ^= chars[j];
+                chars[j] ^= chars[i];
+                chars[i] ^= chars[j];
                 i++;
                 j--;
             }
