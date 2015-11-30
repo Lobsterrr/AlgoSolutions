@@ -34,7 +34,7 @@ public class IntersectionOfTwoLinkedLists {
             fast = fast.next.next;
             slow = slow.next;
         }
-        slow = head;
+        slow = headA;
         while (fast != slow) {
             fast = fast.next;
             slow = slow.next;
