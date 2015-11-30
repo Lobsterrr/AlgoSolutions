@@ -27,7 +27,14 @@ public class IntersectionOfTwoLinkedLists {
         while (fast.next != null) {
             fast = fast.next;
         }
-        
+        fast.next = headB;
+        fast = headA.next;
+        ListNode slow = headA.next.next;
+        while (fast != slow) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
     }
 
 }
