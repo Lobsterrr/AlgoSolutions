@@ -38,13 +38,12 @@ public class BinaryTreeLevelOrderTraversal {
 
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-        if (root == null) {
-            return result;
-        }
         Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
         Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
-        curLevel.offer(root);
         ArrayList<Integer> list = new ArrayList<Integer>();
+        if (root != null) {
+            curLevel.offer(root);
+        }
         while (curLevel.peek() != null) {
             TreeNode node = curLevel.poll();
             list.add(node.val);
