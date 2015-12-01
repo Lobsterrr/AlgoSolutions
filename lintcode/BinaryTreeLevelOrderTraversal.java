@@ -37,7 +37,31 @@ Challenge 2: Use DFS algorithm to do it.
 public class BinaryTreeLevelOrderTraversal {
 
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if (root == null) {
+            return result;
+        }
+        Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
+        Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
+        curLevel.offer(root);
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        while (curLevel.peek() != null) {
+            TreeNode node = curLevel.poll();
+            list.add(node.val);
+            if (node.left != null) {
+                nextLevel.offer(node.left);
+            } 
+            if (node.right != null) {
+                nextLevel.offer(node.right);
+            }
+            if (curLevel.peek() == null) {
+                curLevel = nextLevel;
+                nextLevel = new LinkedList<TreeNode>();
+                result.add(list);
+                list = new ArrayList<Integer>();
+            }
+        }
+        return result;
     }
 
 }
