@@ -1,5 +1,6 @@
 /*
- * Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+ * Given a binary tree, return the level order traversal of 
+ * its nodes' values. (ie, from left to right, level by level).
 
 Example
 Given binary tree {3,9,20,#,#,15,7},
@@ -37,12 +38,12 @@ Challenge 2: Use DFS algorithm to do it.
 public class BinaryTreeLevelOrderTraversal {
 
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-        if (root == null) {
-            return result;
-        }
+        ArrayList<ArrayList<Integer>> result = 
+            new ArrayList<ArrayList<Integer>>();
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        queue.offer(root);
+        if (root != null) {
+            queue.offer(root);
+        }
         ArrayList<Integer> list = new ArrayList<Integer>();
         int curLevel = 1;
         int nextLevel = 0;
@@ -67,6 +68,8 @@ public class BinaryTreeLevelOrderTraversal {
         }
         return result;
     }
+
+/*******************************************************************/
 
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = 
