@@ -43,17 +43,12 @@ public class BinaryTreePath {
         if (root == null) {
             return;
         }
-        path += (path.length() == 0 ? "" : "->") + root.val;
+        path += "->" + root.val;
         if (root.left == null && root.right == null) {
-            result.add(path);
-            return;
+            result.add(path.substring(2));
         } 
-        if (root.left != null) {
-            dfs(result, root.left, path);
-        }
-        if (root.right != null) {
-            dfs(result, root.right, path);
-        }
+        dfs(result, root.left, path);
+        dfs(result, root.right, path);
     }
 
 }
