@@ -34,7 +34,26 @@ public class BinaryTreePath {
      * @return all root-to-leaf paths
      */
     public List<String> binaryTreePath(TreeNode root) {
+        List<String> result = new ArrayList<String>();
 
+    }
+
+    public void dfs(List<String> result, TreeNode root, String path) {
+        if (root == null) {
+            return;
+        }
+        path += (path.length() == 0 ? "" : "->") + root.val;
+        if (root.left == null && root.right == null) {
+            result.add(path);
+            return;
+        } else if (root.left != null && root.right == null) {
+            dfs(result, root.left, path);
+        } else if (roo.left == null && root.right != null) {
+            dfs(result, root.right, path);
+        } else {
+            dfs(result, root.left, path);
+            dfs(result, root.right, path);
+        }
     }
 
 }
