@@ -46,12 +46,11 @@ public class BinaryTreePath {
         if (root.left == null && root.right == null) {
             result.add(path);
             return;
-        } else if (root.left != null && root.right == null) {
+        } 
+        if (root.left != null) {
             dfs(result, root.left, path);
-        } else if (roo.left == null && root.right != null) {
-            dfs(result, root.right, path);
-        } else {
-            dfs(result, root.left, path);
+        }
+        if (root.right != null) {
             dfs(result, root.right, path);
         }
     }
