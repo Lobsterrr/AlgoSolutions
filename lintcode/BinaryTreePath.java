@@ -33,7 +33,7 @@ public class BinaryTreePath {
      * @param root the root of the binary tree
      * @return all root-to-leaf paths
      */
-    public List<String> binaryTreePath(TreeNode root) {
+    public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<String>();
         dfs(result, root, "");
         return result;
