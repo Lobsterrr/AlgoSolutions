@@ -61,6 +61,8 @@ public class BinaryTreeLevelOrderTraversal {
             if (curLevel == 0) {
                 result.add(list);
                 list = new ArrayList<Integer>();
+                curLevel = nextLevel;
+                nextLevel = 0;
             }
         }
         return result;
