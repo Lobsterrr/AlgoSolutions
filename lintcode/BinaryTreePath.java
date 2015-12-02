@@ -35,7 +35,8 @@ public class BinaryTreePath {
      */
     public List<String> binaryTreePath(TreeNode root) {
         List<String> result = new ArrayList<String>();
-
+        dfs(result, root, "");
+        return result;
     }
 
     public void dfs(List<String> result, TreeNode root, String path) {
