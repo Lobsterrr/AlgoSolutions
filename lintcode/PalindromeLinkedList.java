@@ -16,14 +16,17 @@ public class PalindromeLinkedList {
      * @return a boolean
      */
     public boolean isPalindrome(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
         int len = 0;
         for (ListNode cur = head; cur != null; cur = cur.next, len++);
         
         ListNode cur = head;
         for (int i = 0; i < (len - 1) / 2; ++i, cur = cur.next);
         ListNode second = cur.next;
-        
-
+        cur.next = null;
+        cur = second.next;
     }
 
 }
