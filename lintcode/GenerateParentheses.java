@@ -34,8 +34,8 @@ public class GenerateParentheses {
         if (left == 0 && right == 0) {
             result.add(s);
         }
-        dfs(result, s + ")", left, right - 1);
         dfs(result, s + "(", left - 1, right);
+        dfs(result, s + ")", left, right - 1);
     }
 
 }
