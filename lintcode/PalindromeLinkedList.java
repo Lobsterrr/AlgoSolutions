@@ -27,12 +27,10 @@ public class PalindromeLinkedList {
         }
         int len = 0;
         for (ListNode cur = head; cur != null; cur = cur.next, len++);
-        
         ListNode cur = head;
         for (int i = 0; i < (len - 1) / 2; ++i, cur = cur.next);
         ListNode second = cur.next;
         cur.next = null;
-
         ListNode prev = second;
         cur = second.next;
         while (cur != null) {
@@ -41,7 +39,6 @@ public class PalindromeLinkedList {
             second = cur;
             cur = prev.next;
         }
-
         cur = head;
         while (second != null) {
             if (second.val != cur.val) {
