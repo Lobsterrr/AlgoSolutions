@@ -28,7 +28,7 @@ public class GenerateParentheses {
     }
 
     public void dfs(ArrayList<String> result, String s, int left, int right) {
-        if (left < 0 || right < 0) {
+        if (left < 0 || left > right) {
             return;
         }
         if (left == 0 && right == 0) {
