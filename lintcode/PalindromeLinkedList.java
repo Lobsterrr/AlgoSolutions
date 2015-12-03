@@ -39,13 +39,12 @@ public class PalindromeLinkedList {
             second = cur;
             cur = prev.next;
         }
-        cur = head;
         while (second != null) {
-            if (second.val != cur.val) {
+            if (second.val != head.val) {
                 return false;
             }
             second = second.next;
-            cur = cur.next;
+            head = head.next;
         }
         return true;
     }
