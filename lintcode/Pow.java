@@ -3,6 +3,11 @@
  */
 public class Pow {
 
+    /**
+     * @param x the base number
+     * @param n the power number
+     * @return the result
+     */
     public double myPow(double x, int n) {
         if (n == 0) {
             return 1;
