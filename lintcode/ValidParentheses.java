@@ -11,7 +11,18 @@ public class ValidParentheses {
      * @return whether the string is a valid parentheses
      */
     public boolean isValidParentheses(String s) {
-
+        Stack<Character> stack = new Stack<Character>();
+        for (int i = 0; i < s.length(); ++i) {
+            char c = s.charAt(i);
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
+            } else if (c == ')' || c == ']' || c == '}') {
+                if (c - stack.pop() > 2) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }
