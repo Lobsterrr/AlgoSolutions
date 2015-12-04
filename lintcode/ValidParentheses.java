@@ -16,11 +16,9 @@ public class ValidParentheses {
             char c = s.charAt(i);
             if (c == '(' || c == '[' || c == '{') {
                 stack.push(c);
-            } else if (c == ')' || c == ']' || c == '}') {
-                if (stack.isEmpty() || c - stack.pop() > 2) {
-                    return false;
-                }
-            }
+            } else if (stack.isEmpty() || c - stack.pop() > 2) {
+                return false;
+            } 
         }
         return stack.isEmpty();
     }
