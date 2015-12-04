@@ -47,7 +47,7 @@ public class Pow {
             } else {
                 base /= x;
             }
-            if (((1 << i) & (-n)) != 0) {
+            if (((1 << i) & (n > 0 ? n : -n)) != 0) {
                 result *= base;
             }
         }
