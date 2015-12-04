@@ -1,7 +1,6 @@
 /*
  * Implement pow(x, n).
 
-Have you met this question in a real interview? Yes
 Example
 Pow(2.1, 3) = 9.261
 Pow(0, 1) = 0
