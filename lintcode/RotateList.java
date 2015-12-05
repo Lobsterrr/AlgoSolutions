@@ -30,8 +30,7 @@ public class RotateList {
         ListNode second = head;
         while (first.next != null) {
             first = first.next;
-            k--;
-            if (k < 0) {
+            if (--k < 0) {
                 second = second.next;
             }
         }
