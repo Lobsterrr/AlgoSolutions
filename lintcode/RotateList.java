@@ -26,16 +26,19 @@ public class RotateList {
         if (head == null) {
             return head;
         }
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode cur = dummy;
-        while (head.next != null) {
-            head = head.next;
+        ListNode first = head;
+        ListNode second = head;
+        while (first.next != null) {
+            first = first.next;
             k--;
             if (k < 0) {
-                cur = cur.next;
+                second = second.next;
             }
         }
+        first.next = head;
+        head = second.next;
+        second.next = null;
+        return head;
     }
 
 }
