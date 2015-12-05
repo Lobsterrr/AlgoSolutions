@@ -23,7 +23,19 @@ public class RotateList {
      * @return: the list after rotation
      */
     public ListNode rotateRight(ListNode head, int k) {
-
+        if (head == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode cur = dummy;
+        while (head.next != null) {
+            head = head.next;
+            k--;
+            if (k < 0) {
+                cur = cur.next;
+            }
+        }
     }
 
 }
