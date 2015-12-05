@@ -22,12 +22,11 @@ public class RemoveLinkedListElements {
 	public ListNode removeElements(ListNode head, int val) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode cur = dummy;
-        while (cur.next != null) {
-            if (cur.next.val == val) {
-                cur.next = cur.next.next;
+        while (head.next != null) {
+            if (head.next.val == val) {
+                head.next = head.next.next;
             } else {
-                cur = cur.next;
+                head = head.next;
             }
         }
         return dummy.next;
