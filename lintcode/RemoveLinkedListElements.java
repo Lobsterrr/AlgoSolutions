@@ -33,5 +33,4 @@ public class RemoveLinkedListElements {
         return dummy.next;
     }
 		
-
 }
