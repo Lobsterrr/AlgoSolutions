@@ -3,8 +3,12 @@
  */
 public class MergeTwoSortedLists {
 
+    /**
+     * @param ListNode l1 is the head of the linked list
+     * @param ListNode l2 is the head of the linked list
+     * @return: ListNode head of linked list
+     */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-
         if (l1 == null || l2 == null) {
             return l2 == null ? l1 : l2;
         }
