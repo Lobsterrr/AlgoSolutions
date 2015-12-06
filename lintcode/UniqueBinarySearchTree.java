@@ -13,6 +13,7 @@ Given n = 3, there are a total of 5 unique BST's.
  */
 public class UniqueBinarySearchTree {
 
+    // https://en.wikipedia.org/wiki/Catalan_number
     public int numTrees(int n) {
         long result = 1;
         for (int i = 0; i < n; ++i) {
