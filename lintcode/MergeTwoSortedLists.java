@@ -49,6 +49,7 @@ public class MergeTwoSortedLists {
                     cur.next = l2;
                     l2 = l2.next;
                 }
+                cur = cur.next;
             } else {
                 cur.next = l1 == null ? l2 : l1;
                 break;
