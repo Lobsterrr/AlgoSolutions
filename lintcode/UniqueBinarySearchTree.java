@@ -29,12 +29,12 @@ public class UniqueBinarySearchTree {
     }
 
     public int numTrees(int n) {
-        int result = 1;
+        long result = 1;
         for (int i = 0; i < n; ++i) {
             result = result * (n + 1 + i) / (i + 1);
         }
         result /= n + 1;
-        return result;
+        return (ing) result;
     }
 
 /*********************************************************/
