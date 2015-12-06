@@ -34,7 +34,7 @@ public class UniqueBinarySearchTree {
             result = result * (n + 1 + i) / (i + 1);
         }
         result /= n + 1;
-        return (ing) result;
+        return (int) result;
     }
 
 /*********************************************************/
