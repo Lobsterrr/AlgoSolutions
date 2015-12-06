@@ -13,6 +13,14 @@ Given n = 3, there are a total of 5 unique BST's.
  */
 public class UniqueBinarySearchTree {
 
+    public int numTrees(int n) {
+        long result = 1;
+        for (int i = 0; i < n; ++i) {
+            result = result * 2 * (2 * i + 1) / (i + 2);
+        }
+        return (int) result;
+    }
+
     /**
      * @paramn n: An integer
      * @return: An integer
@@ -26,14 +34,6 @@ public class UniqueBinarySearchTree {
             }
         }
         return dp[n];
-    }
-
-    public int numTrees(int n) {
-        long result = 1;
-        for (int i = 0; i < n; ++i) {
-            result = result * 2 * (2 * i + 1) / (i + 2);
-        }
-        return (int) result;
     }
 
 /*********************************************************/
