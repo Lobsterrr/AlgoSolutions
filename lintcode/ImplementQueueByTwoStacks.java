@@ -25,7 +25,6 @@ public class ImplementQueueByTwoStacks {
 
 }
 
-
 class Queue {
     
     private Stack<Integer> stack1;
@@ -59,8 +58,6 @@ class Queue {
     }
 
 }
-
-
 
 class Queue {
     
