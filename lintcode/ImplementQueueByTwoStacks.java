@@ -46,11 +46,11 @@ class Queue {
                 stack2.push(stack1.pop());
             }
         }
-        stack2.pop();
+        return stack2.pop();
     }
 
     public int top() {
-        stack2.peek();
+        return stack2.peek();
     }
 
 }
