@@ -29,4 +29,20 @@ public class Combinations {
         return result;
     }
 
+    
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (k == 0) {
+            result.add(new ArrayList<Integer>());
+            return result;
+        }
+        for (int i = k; i <= n; ++i) {
+            for (List<Integer> list : combine(i - 1, k - 1)) {
+                list.add(i);
+                result.add(list);
+            }
+        }
+        return result;
+    }
+
 }
