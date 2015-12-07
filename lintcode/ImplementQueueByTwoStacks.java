@@ -41,6 +41,37 @@ class Queue {
     }
 
     public int pop() {
+        if (stack2.isEmpty()) {
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
+            }
+        }
+        stack2.pop();
+    }
+
+    public int top() {
+        stack2.peek();
+    }
+
+}
+
+
+
+class Queue {
+    
+    private Stack<Integer> stack1;
+    private Stack<Integer> stack2;
+
+    public Queue() {
+        stack1 = new Stack<Integer>();
+        stack2 = new Stack<Integer>();
+    }
+
+    public void push(int element) {
+        stack1.push(element);
+    }
+
+    public int pop() {
         while (!stack1.isEmpty()) {
             stack2.push(stack1.pop());
         }
