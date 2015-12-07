@@ -44,7 +44,7 @@ public class Combinations {
         }
         for (int i = position; i <= n - k + 1; ++i) {
             list.add(i);
-            dfs(result, list, position + 1, n, k - 1);
+            dfs(result, list, i + 1, n, k - 1);
             list.remove(list.size() - 1);
         }
     }
