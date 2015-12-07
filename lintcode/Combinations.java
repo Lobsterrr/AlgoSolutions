@@ -39,13 +39,13 @@ public class Combinations {
 
     public void dfs(List<List<Integer>> result, List<Integer> list, int position, int n, int k) {
         if (k == 0) { 
-            result.add(list);
+            result.add(new ArrayList<Integer>(list));
             return;
         }
         for (int i = position; i <= n - k + 1; ++i) {
             list.add(i);
             dfs(result, list, position + 1, n, k - 1);
-            list.remove(i);
+            list.remove(list.size() - 1);
         }
     }
 
