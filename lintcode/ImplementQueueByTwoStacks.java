@@ -24,11 +24,14 @@ class Queue {
     }
 
     public int pop() {
-        while (!stack.isEmpty()) {
+        while (!stack1.isEmpty()) {
             stack2.push(stack1.pop());
         }
         int popValue = stack2.pop();
         topValue = stack2.peek();
+        while (!stack2.isEmpty()) {
+            stack1.push(stack2.pop());
+        }
         return popValue;
     }
 
