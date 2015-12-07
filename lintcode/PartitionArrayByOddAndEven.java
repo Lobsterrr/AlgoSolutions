@@ -18,7 +18,7 @@ public class PartitionArrayByOddAndEven {
             if (nums[i] % 2 == 1) {
                 int tmp = nums[i];
                 nums[i] = nums[j];
-                nums[j] = tmp;
+                nums[j++] = tmp;
             }
         }
     }
