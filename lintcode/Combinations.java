@@ -33,7 +33,20 @@ public class Combinations {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         List<Integer> list = new ArrayList<Integer>();
+        dfs(result, list, 1, n, k);
+        return result;
+    }
 
+    public void dfs(List<List<Integer>> result, List<Integer> list, int position, int n, int k) {
+        if (k == 0) { 
+            result.add(list);
+            return;
+        }
+        for (int i = position; i <= n - k + 1; ++i) {
+            list.add(i);
+            dfs(result, list, position + 1, n, k - 1);
+            list.remove(i);
+        }
     }
 
 }
