@@ -46,16 +46,15 @@ class Queue {
                 stack2.push(stack1.pop());
             }
         }
-        int popValue = stack2.pop();
+        return stack2.pop();
+    }
+
+    public int top() {
         if (stack2.isEmpty()) {
             while (!stack1.isEmpty()) {
                 stack2.push(stack1.pop());
             }
         }
-        return popValue;
-    }
-
-    public int top() {
         return stack2.peek();
     }
 
