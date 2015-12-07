@@ -14,12 +14,11 @@ public class PartitionArrayByOddAndEven {
      * @return: nothing
      */
     public void partitionArray(int[] nums) {
-        int index = 0;
-        for (int i = 0; i < nums.length; ++i) {
+        for (int i = 0, j = 0; i < nums.length; ++i) {
             if (nums[i] % 2 == 1) {
                 int tmp = nums[i];
-                nums[i] = nums[index];
-                nums[index++] = tmp;
+                nums[i] = nums[j];
+                nums[j] = tmp;
             }
         }
     }
