@@ -23,7 +23,7 @@ public class LengthOfLastWord {
                 return i - j;
             }
         }
-        return -1;
+        return 0;
     }
 
 }
