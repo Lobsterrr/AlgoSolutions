@@ -34,7 +34,10 @@ public class RomanToInteger {
         map.put('C', 100);
         map.put('D', 500);
         map.put('M', 1000);
+        int result = 0;
+        for (int i = 0; i < s.length(); ++i) {
 
+        }
     }
 
 }
