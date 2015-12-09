@@ -16,7 +16,14 @@ public class LengthOfLastWord {
      * @return the length of last word
      */
     public int lengthOfLastWord(String s) {
-
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) != ' ') {
+                int j = i;
+                for (; j >= 0 && s.charAt(j) != ' '; --j);
+                return i - j;
+            }
+        }
+        return -1;
     }
 
 }
