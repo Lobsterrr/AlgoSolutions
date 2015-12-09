@@ -36,7 +36,9 @@ public class RomanToInteger {
         map.put('M', 1000);
         int result = 0;
         for (int i = 0; i < s.length(); ++i) {
-
+            if (i < s.length() - 1 && map.get(s.charAt(i) < s.charAt(i + 1)) {
+    
+            }
         }
     }
 
