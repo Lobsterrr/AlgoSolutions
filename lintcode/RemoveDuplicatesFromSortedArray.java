@@ -18,20 +18,6 @@ public class RemoveDuplicatesFromSortedArray {
      * @return : return an integer
      */
     public int removeDuplicates(int[] nums) {
-        int index = nums.length == 0 ? 0 : 1;
-        for (int i = 1; i < nums.length; ++i) {
-            while (i < nums.length && nums[i] == nums[index - 1]) {
-                i++;
-            }
-            if (i < nums.length) {
-                nums[index++] = nums[i];
-            }
-        }
-        return index;
-    }
-
-
-    public int removeDuplicates(int[] nums) {
         int index = 0;
         for (int i = 0; i < nums.length; ++i) {
             if (index == 0 || nums[index - 1] != nums[i]) {
