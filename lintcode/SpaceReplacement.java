@@ -36,11 +36,11 @@ public class SpaceReplacement {
         int index = length + 2 * blankCount - 1;
         for (int i = lengtht - 1; i >= 0; i--) {
             if (string[i] == ' ') {
-                string[j--] = '0';
-                string[j--] = '2';
-                string[j--] = '%';
+                string[index--] = '0';
+                string[index--] = '2';
+                string[index--] = '%';
             } else {
-                string[j--] = string[i];
+                string[index--] = string[i];
             }
         }
         return length + 2 * blankCount;
