@@ -34,7 +34,7 @@ public class SpaceReplacement {
             }
         }
         int index = length + 2 * blankCount - 1;
-        for (int i = lengtht - 1; i >= 0; i--) {
+        for (int i = length - 1; i >= 0; i--) {
             if (string[i] == ' ') {
                 string[index--] = '0';
                 string[index--] = '2';
@@ -42,25 +42,6 @@ public class SpaceReplacement {
             } else {
                 string[index--] = string[i];
             }
-        }
-        return length + 2 * blankCount;
-
-
-
-        int i = length - 1;
-        int j = length + 2 * blankCount - 1;
-
-
-
-        while (i >= 0) {
-            if (string[i] == ' ') {
-                string[j--] = '0';
-                string[j--] = '2';
-                string[j--] = '%';
-            } else {
-                string[j--] = string[i];
-            }
-            i--;
         }
         return length + 2 * blankCount;
     }
