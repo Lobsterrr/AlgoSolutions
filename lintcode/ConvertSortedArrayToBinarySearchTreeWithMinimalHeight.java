@@ -33,7 +33,7 @@ public class ConvertSortedArrayToBinarySearchTreeWithMinimalHeight {
         return helper(A, 0, A.length - 1);
     }
 
-    public TreeNode helper(in[] A, int low, int high) {
+    public TreeNode helper(int[] A, int low, int high) {
         if (low > high) {
             return null;
         } else if (low == high) {
