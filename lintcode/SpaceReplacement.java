@@ -33,7 +33,19 @@ public class SpaceReplacement {
                 blankCount++;
             }
         }
-        
+        int i = length - 1;
+        int j = length + 2 * blankCount - 1;
+        while (i >= 0) {
+            if (string[i] == ' ') {
+                string[j--] = '0';
+                string[j--] = '2';
+                string[j--] = '%';
+            } else {
+                string[j--] = string[i];
+            }
+            i--;
+        }
+        return length + 2 * blankCount;
     }
 
 }
