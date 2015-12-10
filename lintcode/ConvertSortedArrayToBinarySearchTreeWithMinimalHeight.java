@@ -34,16 +34,15 @@ public class ConvertSortedArrayToBinarySearchTreeWithMinimalHeight {
     }
 
     public TreeNode helper(int[] A, int low, int high) {
-        if (low > high) {
-            return null;
-        } else if (low == high) {
-            return new TreeNode(A[low]);
-        } else {
-            TreeNode root = new TreeNode(A[(low + high) / 2]);
+        TreeNode root = null;
+        if (low == high) {
+            root = new TreeNode(A[low]);
+        } else if (0 <= low && low < high) {
+            root = new TreeNode(A[(low + high) / 2]);
             root.left = helper(A, low, (low + high) / 2 - 1);
             root.right = helper(A, (low + high) / 2 + 1, high);
-            return root;
         }
+        return root;
     }
 
 }
