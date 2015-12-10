@@ -42,17 +42,6 @@ public class ConvertSortedArrayToBinarySearchTreeWithMinimalHeight {
         root.left = helper(A, low, (low + high) / 2 - 1);
         root.right = helper(A, (low + high) / 2 + 1, high);
         return root;
-
-
-        if (low < 0 || low > high) {
-            return null;
-        }
-        TreeNode root = new TreeNode(A[(low + high) / 2]);
-        if (low < high) {
-            root.left = helper(A, low, (low + high) / 2 - 1);
-            root.right = helper(A, (low + high) / 2 + 1, high);
-        }
-        return root;
     }
 
 }
