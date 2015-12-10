@@ -30,6 +30,13 @@ public class ConvertSortedArrayToBinarySearchTreeWithMinimalHeight {
      * @return: a tree node
      */
     public TreeNode sortedArrayToBST(int[] A) {
+        if (A == null || A.length == 0) {
+            return null;
+        }
+        if (A.length == 1) {
+            TreeNode root = new TreeNode(A[0]);
+            return root;
+        }
 
     }
 
