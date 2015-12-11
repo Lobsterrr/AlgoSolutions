@@ -26,7 +26,7 @@ public class CountAndSay {
      */
     public String countAndSay(int n) {
         String result = "1";
-        for (int i = 1; i <= n; ++i) {
+        for (int i = 1; i < n; ++i) {
             String next = "";
             int j = 0;
             int k = 1;
@@ -39,6 +39,7 @@ public class CountAndSay {
             next += "" + (k - j) + result.charAt(k - 1);
             result = next;
         }
+        return result;
     }
 
 }
