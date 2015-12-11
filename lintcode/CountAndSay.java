@@ -35,7 +35,8 @@ public class CountAndSay {
                     j = k;
                 }
             }
-            sb.append(result.length() - j).append(result.charAt(result.length() - 1));
+            sb.append(result.length() - j).
+                append(result.charAt(result.length() - 1));
             result = sb.toString();
         }
         return result;
