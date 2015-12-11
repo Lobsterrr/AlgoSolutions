@@ -27,24 +27,6 @@ public class CountAndSay {
     public String countAndSay(int n) {
         String result = "1";
         for (int i = 1; i < n; ++i) {
-            String next = "";
-            int j = 0;
-            int k = 1;
-            for (; k < result.length(); ++k) {
-                if (result.charAt(k - 1) != result.charAt(k)) {
-                    next += "" + (k - j) + result.charAt(k - 1);
-                    j = k;
-                }
-            }
-            next += "" + (k - j) + result.charAt(k - 1);
-            result = next;
-        }
-        return result;
-    }
-
-    public String countAndSay(int n) {
-        String result = "1";
-        for (int i = 1; i < n; ++i) {
             StringBuilder sb = new StringBuilder();
             int j = 0;
             for (int k = 1; k < result.length(); ++k) {
