@@ -25,9 +25,19 @@ public class CountAndSay {
      * @return the nth sequence
      */
     public String countAndSay(int n) {
-        String result = "";
+        String result = "1";
         for (int i = 1; i <= n; ++i) {
-            
+            String next = "";
+            int j = 0;
+            int k = 1;
+            for (; k < result.length(); ++k) {
+                if (result.charAt(k - 1) != result.charAt(k)) {
+                    next += "" + (k - j) + result.charAt(k - 1);
+                    j = k;
+                }
+            }
+            next += "" + (k - j) + result.charAt(k - 1);
+            result = next;
         }
     }
 
