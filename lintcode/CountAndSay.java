@@ -42,4 +42,21 @@ public class CountAndSay {
         return result;
     }
 
+    public String countAndSay(int n) {
+        String result = "1";
+        for (int i = 1; i < n; ++i) {
+            StringBuilder sb = new StringBuilder();
+            int j = 0;
+            for (int k = 1; k < result.length(); ++k) {
+                if (result.charAt(k - 1) != result.charAt(k)) {
+                    sb.append(k - j).append(result.charAt(k - 1));
+                    j = k;
+                }
+            }
+            sb.append(result.length() - j).append(result.charAt(result.length() - 1));
+            result = sb.toString();
+        }
+        return result;
+    }
+
 }
