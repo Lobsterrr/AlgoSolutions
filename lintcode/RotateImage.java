@@ -21,6 +21,9 @@ Do it in-place.
 public class RotateImage {
 
     public void rotate(int[][] matrix) {
+        if (matrix.length == 0) {
+            return;
+        }
         int xLen = matrix.length;
         int yLen = matrix[0].length;
         for (int i = 0; i < (xLen + 1) / 2; ++i) {
