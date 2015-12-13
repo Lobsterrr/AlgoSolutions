@@ -20,7 +20,7 @@ public class Candy {
         }
         for (int i = candy.length - 1; i >= 1; --i) {
             if (ratings[i] < ratings[i - 1]) {
-                candy[i - 1] = candy[i] + 1;
+                candy[i - 1] = Math.max(candy[i - 1], candy[i] + 1);
             }
         }
         int result = 0;
