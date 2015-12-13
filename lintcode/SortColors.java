@@ -26,7 +26,9 @@ public class SortColors {
         int j = nums.length - 1;
         for (int k = 0; k < nums.length; ++k) {
             if (nums[k] == 0) {
-
+                swap(nums, k, i++);
+            } else if (nums[k] == 2) {
+                swap(nums, k, j--);
             }
         }
     }
