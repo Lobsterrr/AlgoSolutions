@@ -16,8 +16,8 @@ public class RemoveDuplicatesFromSortedArrayII {
     public int removeDuplicates(int[] nums) {
         int index = 0;
         for (int i = 0; i < nums.length; ++i) {
-            if (index == 0 || A[index - 1] != A[i] || i > 1 && A[index - 2] != A[index - 1]) {
-                A[index++] = A[i];
+            if (index == 0 || nums[index - 1] != nums[i] || i > 1 && nums[index - 2] != nums[index - 1]) {
+                nums[index++] = nums[i];
             }
         }
         return index;
