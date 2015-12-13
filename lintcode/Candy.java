@@ -3,6 +3,10 @@
  */
 public class Candy {
 
+    /**
+     * @param ratings Children's ratings
+     * @return the minimum candies you must give
+     */
     public int candy(int[] ratings) {
         if (ratings.length == 0 || ratings.length == 1) {
             return ratings.length;
