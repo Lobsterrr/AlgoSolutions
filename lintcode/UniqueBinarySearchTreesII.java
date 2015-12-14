@@ -35,7 +35,7 @@ public class UniqueBinarySearchTreesII {
 
     public List<TreeNode> generate(int low, int high) {
         List<TreeNode> result = new ArrayList<TreeNode>();
-        if (low > hight) {
+        if (low > high) {
             return result;
         }
         if (low == high) {
