@@ -46,9 +46,9 @@ public class UniqueBinarySearchTreesII {
             return result;
         }
         for (int i = low; i <= high; ++i) {
-            root = new TreeNode(i);
             for (TreeNode left : generate(low, i - 1)) {
                 for (TreeNode right : generate(i + 1, high)) {
+                    root = new TreeNode(i);
                     root.left = left;
                     root.right = right;
                     result.add(root);
