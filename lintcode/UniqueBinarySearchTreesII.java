@@ -35,20 +35,13 @@ public class UniqueBinarySearchTreesII {
 
     public List<TreeNode> generate(int low, int high) {
         List<TreeNode> result = new ArrayList<TreeNode>();
-        TreeNode root = null;
         if (low > high) {
-            result.add(root);
-            return result;
-        }
-        if (low == high) {
-            root = new TreeNode(low);
-            result.add(root);
-            return result;
+            result.add(null);
         }
         for (int i = low; i <= high; ++i) {
             for (TreeNode left : generate(low, i - 1)) {
                 for (TreeNode right : generate(i + 1, high)) {
-                    root = new TreeNode(i);
+                    TreeNode root = new TreeNode(i);
                     root.left = left;
                     root.right = right;
                     result.add(root);
