@@ -4,6 +4,13 @@
 public class BestTimeToBuyAndSellStockIV {
 
     public int maxProfit(int k, int[] prices) {
+        if (k >= prices.length / 2) {
+            int result = 0;
+            for (int i = 1; i < prices.length; ++i) {
+                result += Math.max(0, prices[i] - prices[i - 1]);
+            }
+            return result;
+        }
         int[] buy = new int[k];
         int[] sell = new int[k];
         Arrays.fill(buy, Integer.MIN_VALUE);
