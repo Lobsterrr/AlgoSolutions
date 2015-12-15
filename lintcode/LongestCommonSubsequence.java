@@ -4,8 +4,8 @@
 public class LongestCommonSubsequence {
 
     /**
-     * @param num: a rotated sorted array
-     * @return: the minimum number in the array
+     * @param A, B: Two strings.
+     * @return: The length of longest common subsequence of A and B.
      */
     public int longestCommonSubsequence(String A, String B) {
         int result = 0;
