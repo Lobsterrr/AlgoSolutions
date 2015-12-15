@@ -1,5 +1,7 @@
 /*
- * Check if two binary trees are identical. Identical means the two binary trees have the same structure and every identical position has the same value.
+ * Check if two binary trees are identical. Identical 
+ * means the two binary trees have the same structure 
+ * and every identical position has the same value.
 
 Example
     1             1
@@ -40,7 +42,8 @@ public class IdenticalBinaryTree {
         if (a == null && b != null || a != null && b == null) {
             return false;
         }
-        return a.val == b.val && isIdentical(a.left, b.left) && isIdentical(a.right, b.right);
+        return a.val == b.val && isIdentical(a.left, b.left) 
+            && isIdentical(a.right, b.right);
     }
 
 }
