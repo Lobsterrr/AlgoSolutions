@@ -18,7 +18,24 @@ public class FindMinimumInRotatedSortedArray {
      * @return: the minimum number in the array
      */
     public int findMin(int[] num) {
+        int low = 0;
+        in high = num.length - 1;
+        while (low < high) {
+            int mid = (low + high) / 2;
+            if (mid == num.length - 1) {
+                if (num[mid] < num[mid - 1]) {
+                    return num[mid];
+                }
+            } else if (mid == 0) {
 
+            } else {
+                if (num[mid] < num[mid - 1] && num[mid] < num[mid + 1]) {
+                    return num[mid];
+                } else if (num[mid] > num[mid - 1] && num[mid] < num[mid + 1]) {
+                    low = mid + 1;
+                } else if (num[mid] 
+            }
+        }
     }
 
 }
