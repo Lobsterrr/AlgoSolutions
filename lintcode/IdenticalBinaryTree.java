@@ -36,13 +36,9 @@ public class IdenticalBinaryTree {
      * @return true if they are identical, or false.
      */
     public boolean isIdentical(TreeNode a, TreeNode b) {
-        if (a == null && b == null) {
-            return true;
-        }
-        if (a == null && b != null || a != null && b == null) {
-            return false;
-        }
-        return a.val == b.val && isIdentical(a.left, b.left) 
+        return a == null && b == null 
+            || a != null && b != null && a.val == b.val 
+            && isIdentical(a.left, b.left) 
             && isIdentical(a.right, b.right);
     }
 
