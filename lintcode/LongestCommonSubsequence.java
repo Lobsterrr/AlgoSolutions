@@ -21,9 +21,6 @@ public class LongestCommonSubsequence {
      * @return: The length of longest common subsequence of A and B.
      */
     public int longestCommonSubsequence(String A, String B) {
-        if (A.length() == 0 || B.length() == 0) {
-            return 0;
-        }
         int[][] dp = new int[A.length() + 1][B.length() + 1];
         for (int i = 0; i < A.length(); ++i) {
             for (int j = 0; j < B.length(); ++j) {
