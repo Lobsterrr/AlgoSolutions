@@ -34,7 +34,7 @@ public class LongestCommonSubsequence {
                 }
             }
         }
-        return dp[A.length() - 1][B.length() - 1];
+        return dp[A.length()][B.length()];
     }
 
 }
