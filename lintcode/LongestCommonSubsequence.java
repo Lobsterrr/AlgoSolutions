@@ -31,6 +31,9 @@ public class LongestCommonSubsequence {
         return dp[A.length()][B.length()];
     }
 
+/*****************************************************************************/
+
+    // TLE
     public int longestCommonSubsequence(String A, String B) {
         if (A.length() == 0 || B.length() == 0) {
             return 0;
@@ -38,7 +41,8 @@ public class LongestCommonSubsequence {
         if (A.charAt(0) == B.charAt(0)) {
             return 1 + longestCommonSubsequence(A.substring(1), B.substring(1));
         } else {
-            return Math.max(longestCommonSubsequence(A, B.substring(1)), longestCommonSubsequence(A.substring(1), B));
+            return Math.max(longestCommonSubsequence(A, B.substring(1)), 
+                    longestCommonSubsequence(A.substring(1), B));
         }
     }
 
