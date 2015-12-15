@@ -37,7 +37,8 @@ public class IdenticalBinaryTree {
      */
     public boolean isIdentical(TreeNode a, TreeNode b) {
         return a == null && b == null 
-            || a != null && b != null && a.val == b.val 
+            || a != null && b != null 
+            && a.val == b.val 
             && isIdentical(a.left, b.left) 
             && isIdentical(a.right, b.right);
     }
