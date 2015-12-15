@@ -21,15 +21,24 @@ public class LongestCommonSubsequence {
      * @return: The length of longest common subsequence of A and B.
      */
     public int longestCommonSubsequence(String A, String B) {
-        int result = 0;
-        for (int i = 0; i < A.length(); i++) {
-            int j = 0;
-            while (j < B.length() && A.charAt(i + j) == B.charAt(j)) {
-                j++;
-            }
-            result = Math.max(result, j - i);
+        if (A.length() == 0 || B.length() == 0) {
+            return 0;
         }
-        return result;
+        int[][] dp = new int[A.length()][B.length()];
+        for (int i = 0; i < A.length(); ++i) {
+            for (int j = 0; j < B.length(); ++j) {
+                if (i == 0 || j == 0) {
+                    dp[i][j] = 0;
+                } else {
+                    if (A.charAt(i) == B.charAt(j)) {
+                        dp[i][j] = dp[i - 1][j - 1] + 1;
+                    } else {
+                        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                    }
+                }
+            }
+        }
+        return dp[A.length() - 1][B.length() - 1];
     }
 
 }
