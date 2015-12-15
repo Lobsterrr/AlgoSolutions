@@ -18,6 +18,14 @@ public class FindMinimumInRotatedSortedArray {
      * @return: the minimum number in the array
      */
     public int findMin(int[] num) {
+        int result = Integer.MAX_VALUE;
+        for (int n : num) {
+            result = Math.min(result, n);
+        }
+        return result;
+    }
+
+    public int findMin(int[] num) {
         int low = 0;
         in high = num.length - 1;
         while (low < high) {
