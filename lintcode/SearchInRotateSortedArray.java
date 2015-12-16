@@ -14,7 +14,7 @@ public class SearchInRotateSortedArray {
                 low = mid + 1;
             }
         }
-        return A[low];
+        return low;
     }
 
 }
