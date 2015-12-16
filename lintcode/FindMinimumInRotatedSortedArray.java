@@ -31,14 +31,11 @@ public class FindMinimumInRotatedSortedArray {
         int high = num.length - 1;
         while (low < high) {
             int mid = (low + high) / 2;
-            if (num[mid] > num[low]) {
-                if (num[mid] < num[high]) {
-                    high = mid;
-                } else {
-                    high = mid + 1;
-                }
-            } else  {
+            if (num[mid] < num[low] || 
+                    num[low] <= num[mid] && num[mid] < num[high]) {
                 high = mid;
+            } else {
+                low = mid + 1;
             }
         }
         return num[low];
