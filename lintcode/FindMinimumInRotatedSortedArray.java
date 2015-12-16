@@ -37,11 +37,11 @@ public class FindMinimumInRotatedSortedArray {
                 } else {
                     high = mid + 1;
                 }
-            } else if (num[mid] < num[low]) {
+            } else  {
                 high = mid;
             }
         }
-        return low;
+        return low + 1;
     }
 
 }
