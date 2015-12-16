@@ -17,28 +17,30 @@ public class FindMinimumInRotatedSortedArray {
      * @param num: a rotated sorted array
      * @return: the minimum number in the array
      */
-    public int findMin(int[] num) {
-        int result = Integer.MAX_VALUE;
-        for (int n : num) {
-            result = Math.min(result, n);
-        }
-        return result;
-    }
 
-    //TODO
+
     public int findMin(int[] num) {
         int low = 0;
         int high = num.length - 1;
         while (low < high) {
             int mid = (low + high) / 2;
-            if (num[mid] < num[low] || 
-                    num[low] <= num[mid] && num[mid] < num[high]) {
+            if (num[mid] < num[high]) {
                 high = mid;
             } else {
                 low = mid + 1;
             }
         }
         return num[low];
+    }
+
+/*******************************************************************/
+
+    public int findMin(int[] num) {
+        int result = Integer.MAX_VALUE;
+        for (int n : num) {
+            result = Math.min(result, n);
+        }
+        return result;
     }
 
 }
