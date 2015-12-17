@@ -25,7 +25,7 @@ public class PlusOne {
         if (isAllNine) {
             digits = new int[digits.length + 1];
             digits[0] = 1;
-            return digists;
+            return digits;
         }
         int i = 0;
         for (int j = digits.length - 1; j >= 0; j--) {
