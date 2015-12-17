@@ -32,6 +32,7 @@ public class IntegerToRoman {
         String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
         String[] thousands = {"", "M", "MM", "MMM", "", "", "", "", "", ""};
+
         String result = thousands[n / 1000 % 10];
         result += hundreds[n / 100 % 10];
         result += tens[n / 10 % 10];
