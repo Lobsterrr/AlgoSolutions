@@ -32,7 +32,6 @@ public class IntegerToRoman {
         String[] tens = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String[] hundreds = {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
         String[] thousands = {"M", "MM", "MMM"};
-
         String result = "";
         Map<Integer, String> map = new HashMap<Integer, String>();
         map.put(1, "I");
@@ -53,27 +52,14 @@ public class IntegerToRoman {
             if (5 <= number && number <= 8) {
                 result = map.get(5 * base) + result;
             }
-            if (number == 4 || number == 9) {
-                result = map.get(base) + (number == 4 ? map.get(5 * base) : map.get(10 * base)) + result;
-            }
-
-
-
-            if (remainder == 0) {
-                result = (number == 5 ? map.get(5 * base) : "") + result;
-            } else if (0 < remainder && remainder <= 3) {
-                for (int i = 0; i < remainder; ++i) {
-                    result = map.get(base) + result;
-                }
-                if (number > 5) {
-                    result = map.get(5 * base) + result;
-                }
-            } else if (remainder == 4) {
-                result = map.get(base) + (number == 4 ? map.get(5 * base) : map.get(10 * base)) + result;
+            if (number % 5 == 4) {
+                result = map.get(base) + map.get((number + 1) * base) + result;
             }
             base *= 10;
         }
         return result;
     }
+
+    
 
 }
