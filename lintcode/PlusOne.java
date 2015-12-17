@@ -17,35 +17,6 @@ public class PlusOne {
      * @return the result
      */
     public int[] plusOne(int[] digits) {
-        boolean isAllNine = true;
-        for (int i = 0; i < digits.length; ++i) {
-            if (digits[i] != 9) {
-                isAllNine = false;
-                break;
-            }
-        }
-        if (isAllNine) {
-            digits = new int[digits.length + 1];
-            digits[0] = 1;
-            return digits;
-        }
-        int i = 0;
-        for (int j = digits.length - 1; j >= 0; j--) {
-            if (digits[j] != 9) {
-                i = j;
-                break;
-            }
-        }
-        digits[i] += 1;
-        for (int j = i + 1; j < digits.length; ++j) {
-            digits[j] = 0;
-        }
-        return digits;
-    }
-
-
-
-    public int[] plusOne(int[] digits) {
         int i = digits.length - 1;
         for (; i >= 0; --i) {
             if (digits[i] != 9) {
