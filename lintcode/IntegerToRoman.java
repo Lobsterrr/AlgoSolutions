@@ -47,7 +47,7 @@ public class IntegerToRoman {
             int number = n / base % 10;
             int remainder = number % 5;
             if (remainder == 0) {
-                result = map.get(5 * base) + result;
+                result = (number == 5 ? map.get(5 * base) : "") + result;
             } else if (0 < remainder && remainder <= 3) {
                 for (int i = 0; i < remainder; ++i) {
                     result = map.get(base) + result;
