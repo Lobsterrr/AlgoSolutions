@@ -45,7 +45,20 @@ public class IntegerToRoman {
         int base = 1;
         while (n >= base) {
             int number = n / base % 10;
-            int remainder = number % 5;
+            if (0 < number && number <= 3 || 6 <= number && number <= 8) {
+                for (int i = 0; i < number % 5; ++i) {
+                    result = map.get(base) + result;
+                }
+            }
+            if (5 <= number && number <= 8) {
+                result = map.get(5 * base) + result;
+            }
+            if (number == 4 || number == 9) {
+                result = map.get(base) + (number == 4 ? map.get(5 * base) : map.get(10 * base)) + result;
+            }
+
+
+
             if (remainder == 0) {
                 result = (number == 5 ? map.get(5 * base) : "") + result;
             } else if (0 < remainder && remainder <= 3) {
