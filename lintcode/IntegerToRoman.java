@@ -28,10 +28,14 @@ public class IntegerToRoman {
      * @return Roman representation
      */
     public String intToRoman(int n) {
-        String[] ones = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-        String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-        String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-        String[] thousands = {"", "M", "MM", "MMM", "", "", "", "", "", ""};
+        String[] ones = {"", "I", "II", "III", 
+            "IV", "V", "VI", "VII", "VIII", "IX"};
+        String[] tens = {"", "X", "XX", "XXX", 
+            "XL", "L", "LX", "LXX", "LXXX", "XC"};
+        String[] hundreds = {"", "C", "CC", "CCC", 
+            "CD", "D", "DC", "DCC", "DCCC", "CM"};
+        String[] thousands = {"", "M", "MM", "MMM",
+            "", "", "", "", "", ""};
 
         String result = thousands[n / 1000 % 10];
         result += hundreds[n / 100 % 10];
@@ -40,11 +44,9 @@ public class IntegerToRoman {
         return result;
     }
 
+/*****************************************************************************/
+
     public String intToRoman(int n) {
-        String[] ones = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-        String[] tens = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-        String[] hundreds = {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-        String[] thousands = {"M", "MM", "MMM"};
         String result = "";
         Map<Integer, String> map = new HashMap<Integer, String>();
         map.put(1, "I");
