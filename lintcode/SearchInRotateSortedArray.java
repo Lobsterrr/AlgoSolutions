@@ -28,10 +28,27 @@ public class SearchInRotateSortedArray {
             int mid = (low + high) / 2;
             if (A[mid] == target) {
                 return mid;
-            } else if (A[mid] > target) {
-                high = mid - 1;
+            }
+            if (A[mid] < A[high]) {
+                if (A[mid] > target) {
+                    high = mid - 1;
+                } else {
+                    if (A[high] < target) {
+                        high = mid - 1;
+                    } else {
+                        low = mid + 1;
+                    }
+                }
             } else {
-                low = mid;
+                if (A[mid] < target) {
+                    low = mid + 1;
+                } else {
+                    if (A[low] > target) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
             }
         }
         return A[low] == target ? low : -1;
