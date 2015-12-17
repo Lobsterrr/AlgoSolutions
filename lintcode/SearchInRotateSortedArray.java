@@ -32,7 +32,7 @@ public class SearchInRotateSortedArray {
                 low = mid + 1;
             }
         }
-        return low;
+        return A[low] == target ? low : -1;
     }
 
 }
