@@ -30,24 +30,16 @@ public class SearchInRotateSortedArray {
                 return mid;
             }
             if (A[mid] < A[high]) {
-                if (A[mid] > target) {
-                    high = mid - 1;
-                } else {
-                    if (A[high] < target) {
-                        high = mid - 1;
-                    } else {
-                        low = mid + 1;
-                    }
-                }
-            } else {
-                if (A[mid] < target) {
+                if (A[mid] < target && A[high] >= target) {
                     low = mid + 1;
                 } else {
-                    if (A[low] > target) {
-                        low = mid + 1;
-                    } else {
-                        high = mid - 1;
-                    }
+                    high = mid - 1;
+                }
+            } else {
+                if (A[mid] > target && A[low] <= target) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
                 }
             }
         }
