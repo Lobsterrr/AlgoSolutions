@@ -18,18 +18,15 @@ public class PlusOne {
      */
     public int[] plusOne(int[] digits) {
         int i = digits.length - 1;
-        for (; i >= 0; --i) {
-            if (digits[i] != 9) {
-                digits[i] += 1;
-                break;
-            } else {
-                digits[i] = 0;
-            }
+        for (; i >= 0 && digits[i] == 9; i--) {
+            digits[i] = 0;
         }
         if (i < 0) {
             digits = new int[digits.length + 1];
-            digits[0] = 1;
+            i = 0;
         }
+        digits[i] += 1;
         return digits;
     }
+
 }
