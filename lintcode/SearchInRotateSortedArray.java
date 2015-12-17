@@ -22,6 +22,9 @@ public class SearchInRotateSortedArray {
      *return : an integer
      */
     public int search(int[] A, int target) {
+        if (A.length == 0) {
+            return -1;
+        }
         int low = 0;
         int high = A.length - 1;
         while (low < high) {
