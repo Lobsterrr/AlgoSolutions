@@ -26,10 +26,12 @@ public class SearchInRotateSortedArray {
         int high = A.length - 1;
         while (low < high) {
             int mid = (low + high) / 2;
-            if (A[mid] < A[low]) {
-                high = mid;
-            } else if (A[mid] > A[low]) {
-                low = mid + 1;
+            if (A[mid] == target) {
+                return mid;
+            } else if (A[mid] > target) {
+                high = mid - 1;
+            } else {
+                low = mid;
             }
         }
         return A[low] == target ? low : -1;
