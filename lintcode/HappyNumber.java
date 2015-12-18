@@ -25,7 +25,22 @@ public class HappyNumber {
      * @return true if this is a happy number or false
      */
     public boolean isHappy(int n) {
+        Set<Integer> set = new HashSet<Integer>();
+        while (n != 1) {
+            if (set.contains(n)) {
+                return false;
+            }
+            set.add(n);
+        }
+    }
 
+    public int digitSquareSum(int n) {
+        int sum = 0;
+        while (n != 0) {
+            sum += (n % 10) * (n % 10);
+            n /= 10;
+        }
+        return sum;
     }
 
 }
