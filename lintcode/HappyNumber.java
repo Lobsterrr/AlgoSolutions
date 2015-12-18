@@ -26,14 +26,11 @@ public class HappyNumber {
      */
     public boolean isHappy(int n) {
         Set<Integer> set = new HashSet<Integer>();
-        while (n != 1) {
-            if (set.contains(n)) {
-                return false;
-            }
+        while (!set.contains(n)) {
             set.add(n);
             n = digitSquareSum(n);
         }
-        return true;
+        return set.contains(1);
     }
 
     public int digitSquareSum(int n) {
