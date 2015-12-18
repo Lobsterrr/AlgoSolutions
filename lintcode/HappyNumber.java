@@ -25,6 +25,12 @@ public class HappyNumber {
      * @return true if this is a happy number or false
      */
     public boolean isHappy(int n) {
+        return n == 1 || n != 4 && isHappy(digitSquareSum(n));
+    }
+
+/*******************************************************************/
+
+    public boolean isHappy(int n) {
         Set<Integer> set = new HashSet<Integer>();
         while (!set.contains(n)) {
             set.add(n);
