@@ -31,7 +31,9 @@ public class HappyNumber {
                 return false;
             }
             set.add(n);
+            n = digitSquareSum(n);
         }
+        return true;
     }
 
     public int digitSquareSum(int n) {
