@@ -23,13 +23,13 @@ public class SortColorsII {
         for (int i = 0; i < colors.length; ++i) {
             if (colors[i] > 0) {
                 int position = colors[i] - 1;
-                if (colors[position] > 0) {
+                if (colors[position] <= 0) {
+                    colors[position]--;
+                    colors[i] = 0;
+                } else {
                     colors[i] = colors[position];
                     colors[position] = -1;
                     i--;
-                } else {
-                    colors[position]--;
-                    colors[i] = 0;
                 }
             }
         }
