@@ -19,26 +19,36 @@ without using extra memory?
 public class SortColorsII {
 
     // O(n)
+    /* 
+     * [3, 2, 2, 1, 4] for exmaple;
+     *
+     *  3,  2,  2,  1,  4;
+     *  2,  2, -1,  1,  4;
+     *  2, -1, -1,  1,  4;
+     * -1, -1, -1,  2,  4;
+     * -1, -2, -1,  0,  4;
+     * -1, -2, -1, -1,  0;
+     */
     public void sortColors2(int[] colors, int k) {
         for (int i = 0; i < colors.length; ++i) {
             if (colors[i] <= 0) {
                 continue;
             }
-            int position = colors[i] - 1;
-            if (colors[position] <= 0) {
-                colors[position]--;
+            int bucketIndex = colors[i] - 1;
+            if (colors[bucketIndex] <= 0) {
+                colors[bucketIndex]--;
                 colors[i] = 0;
             } else {
-                colors[i] = colors[position];
-                colors[position] = -1;
+                colors[i] = colors[bucketIndex];
+                colors[bucketIndex] = -1;
                 i--;
             }
         }
-        for (int i = colors.length - 1, position = k - 1; 
-                position >= 0; --position) {
-            while (colors[position] < 0) {
-                colors[position]++;
-                colors[i--] = position + 1;
+        for (int i = colors.length - 1, bucketIndex = k - 1; 
+                bucketIndex >= 0; --bucketIndex) {
+            while (colors[bucketIndex] < 0) {
+                colors[bucketIndex]++;
+                colors[i--] = bucketIndex + 1;
             }
         }
     }
