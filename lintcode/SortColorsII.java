@@ -21,7 +21,7 @@ public class SortColorsII {
     public void sortColors2(int[] colors, int k) {
         for (int i = 0; i < colors.length; ++i) {
             if (colors[i] > 0) {
-                int position = colors[i];
+                int position = colors[i] - 1;
                 if (colors[position] > 0) {
                     colors[position] = -1;
                     colors[i] = colors[position];
