@@ -1,5 +1,20 @@
 /*
- *
+ * Given an array of n objects with k different colors (numbered 
+ * from 1 to k), sort them so that objects of the same color are 
+ * adjacent, with the colors in the order 1, 2, ... k.
+
+Example
+Given colors=[3, 2, 2, 1, 4], k=4, your code should sort colors 
+in-place to [1, 2, 2, 3, 4].
+
+Note
+You are not suppose to use the library's sort function for this 
+problem.
+
+Challenge
+A rather straight forward solution is a two-pass algorithm using 
+counting sort. That will cost O(k) extra memory. Can you do it 
+without using extra memory?
  */
 public class SortColorsII {
 
@@ -7,12 +22,10 @@ public class SortColorsII {
         int low = 0;
         int high = colors.length - 1;
         for (int i = 1; i <= k / 2; ++i) {
-            int leftColor = i;
-            int rightColor = k - i + 1;
             for (int j = low; j <= high; ++j) {
-                if (colors[j] == leftColor) {
+                if (colors[j] == i) {
                     swap(colors, j, low++);
-                } else if (colors[j] == rightColor) {
+                } else if (colors[j] == k - i + 1) {
                     swap(colors, j--, high--);
                 }
             }
