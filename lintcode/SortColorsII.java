@@ -21,16 +21,17 @@ public class SortColorsII {
     // O(n)
     public void sortColors2(int[] colors, int k) {
         for (int i = 0; i < colors.length; ++i) {
-            if (colors[i] > 0) {
-                int position = colors[i] - 1;
-                if (colors[position] <= 0) {
-                    colors[position]--;
-                    colors[i] = 0;
-                } else {
-                    colors[i] = colors[position];
-                    colors[position] = -1;
-                    i--;
-                }
+            if (colors[i] <= 0) {
+                continue;
+            }
+            int position = colors[i] - 1;
+            if (colors[position] <= 0) {
+                colors[position]--;
+                colors[i] = 0;
+            } else {
+                colors[i] = colors[position];
+                colors[position] = -1;
+                i--;
             }
         }
         for (int i = colors.length - 1, position = k - 1; 
