@@ -19,6 +19,22 @@ without using extra memory?
 public class SortColorsII {
 
     public void sortColors2(int[] colors, int k) {
+        for (int i = 0; i < colors.length; ++i) {
+            int position = colors[i];
+            if (colors[position] > 0) {
+                colors[position] = -1;
+                colors[i] = colors[position];
+                i--;
+            } else {
+                colors[position]--;
+                colors[i] = 0;
+            }
+        }
+    }
+
+/*******************************************************************/
+
+    public void sortColors2(int[] colors, int k) {
         int low = 0;
         int high = colors.length - 1;
         for (int i = 1; i <= k / 2; ++i) {
