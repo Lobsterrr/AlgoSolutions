@@ -41,6 +41,8 @@ public class MinimumDepthOfBinaryTree {
         return 1 + Math.min(minDepth(root.left), minDepth(root.right));
     }
 
+/*****************************************************************************/
+
     public int minDepth(TreeNode root) {
         Queue<TreeNode> curLayer = new LinkedList<TreeNode>();
         Queue<TreeNode> nextLayer = new LinkedList<TreeNode>();
