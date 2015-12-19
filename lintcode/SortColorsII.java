@@ -30,6 +30,12 @@ public class SortColorsII {
                 colors[i] = 0;
             }
         }
+        for (int i = colors.length - 1, position = k - 1; position >= 0; --position) {
+            while (colors[position] < 0) {
+                colors[position]++;
+                colors[i--] = position + 1;
+            }
+        }
     }
 
 /*******************************************************************/
