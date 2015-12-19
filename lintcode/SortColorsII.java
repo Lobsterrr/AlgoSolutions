@@ -18,6 +18,7 @@ without using extra memory?
  */
 public class SortColorsII {
 
+    // O(n)
     public void sortColors2(int[] colors, int k) {
         for (int i = 0; i < colors.length; ++i) {
             if (colors[i] > 0) {
@@ -43,6 +44,7 @@ public class SortColorsII {
 
 /*******************************************************************/
 
+    // O(k * n)
     public void sortColors2(int[] colors, int k) {
         int low = 0;
         int high = colors.length - 1;
@@ -59,6 +61,7 @@ public class SortColorsII {
 
 /*******************************************************************/
 
+    // O(n * lg(n))
     public void sortColors2(int[] colors, int k) {
         quicksort(colors, 0, colors.length - 1);    
     }
@@ -86,6 +89,7 @@ public class SortColorsII {
 
 /*******************************************************************/
 
+    // O(n) time, O(k) space
     public void sortColors2(int[] colors, int k) {
         int[] count = new int[k];
         for (int color : colors) {
