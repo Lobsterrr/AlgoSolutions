@@ -10,7 +10,7 @@ public class SortColorsII {
 /*******************************************************************/
 
     public void sortColors2(int[] colors, int k) {
-        quicksort(colors);    
+        quicksort(colors, 0, colors.length - 1);    
     }
 
     public void quicksort(int[] A, int low, int high) {
