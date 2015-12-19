@@ -29,6 +29,11 @@ public class SortColorsII {
      * -1, -2, -1,  0,  4;
      * -1, -2, -1, -1,  0;
      */
+    /**
+     * @param colors: A list of integer
+     * @param k: An integer
+     * @return: nothing
+     */
     public void sortColors2(int[] colors, int k) {
         for (int i = 0; i < colors.length; ++i) {
             if (colors[i] <= 0) {
