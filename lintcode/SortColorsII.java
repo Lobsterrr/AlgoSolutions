@@ -12,7 +12,7 @@ public class SortColorsII {
         for (int i = 0; i < colors.length; ++i) {
             colors[i] = color;
             count[color - 1]--;
-            while (count[color - 1] == 0) {
+            while (color <= k && count[color - 1] == 0) {
                 color++;
             }
         }
