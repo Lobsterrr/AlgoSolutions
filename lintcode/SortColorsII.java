@@ -4,7 +4,19 @@
 public class SortColorsII {
 
     public void sortColors2(int[] colors, int k) {
-        
+        int low = 0;
+        int high = colors.length - 1;
+        for (int i = 1; i <= k / 2; ++i) {
+            int leftColor = i;
+            int rightColor = k - i + 1;
+            for (int j = low; j <= high; ++j) {
+                if (colors[j] == leftColor) {
+                    swap(colors, j, low++);
+                } else if (colors[j] == rightColor) {
+                    swap(colors, j--, high--);
+                }
+            }
+        }
     }
 
 /*******************************************************************/
