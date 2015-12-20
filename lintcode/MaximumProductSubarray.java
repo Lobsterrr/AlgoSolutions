@@ -27,4 +27,17 @@ public class MaximumProductSubarray {
         return result;
     }
  
+    public tin maxProduct(int[] nums) {
+        int globalMax = Integer.MIN_VALUE;
+        int localMax = 1;
+        int localMin = 1;
+        for (int num : nums) {
+            int tmp = localMax; 
+            localMax = Math.max(num, Math.max(localMax * num, localMin * num));
+            localMin = Math.min(num, Math.min(tmp * num, localMin * num));
+            globalMax = Math.max(globalMax, localMax);
+        }
+        return result;
+    }
+
 }
