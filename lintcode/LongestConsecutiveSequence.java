@@ -24,7 +24,7 @@ public class LongestConsecutiveSequence {
         int result = 0;
         for (int i = 0; i < nums.length; ++i) {
             int low = nums[i];
-            int high = nums[i];
+            int high = nums[i] + 1;
             while (set.contains(low)) {
                 set.remove(low);
                 low--;
@@ -33,7 +33,7 @@ public class LongestConsecutiveSequence {
                 set.remove(high);
                 high++;
             }
-            result = Math.max(result, high - low);
+            result = Math.max(result, high - low - 1);
         }
         return result;
     }
