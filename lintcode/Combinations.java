@@ -16,8 +16,7 @@ public class Combinations {
      */
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        List<Integer> list = new ArrayList<Integer>();
-        dfs(result, list, 1, n, k);
+        dfs(result, new ArrayList<Integer>(), 1, n, k);
         return result;
     }
 
