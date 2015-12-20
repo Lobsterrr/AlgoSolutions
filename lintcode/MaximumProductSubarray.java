@@ -32,9 +32,10 @@ public class MaximumProductSubarray {
         int localMax = 1;
         int localMin = 1;
         for (int num : nums) {
-            int tmp = localMax; 
-            localMax = Math.max(num, Math.max(localMax * num, localMin * num));
-            localMin = Math.min(num, Math.min(tmp * num, localMin * num));
+            int curMax = localMax * num;
+            int curMin = localMin * num;
+            localMax = Math.max(num, Math.max(curMax, curMin));
+            localMin = Math.min(num, Math.min(curMax, curMin));
             globalMax = Math.max(globalMax, localMax);
         }
         return globalMax;
