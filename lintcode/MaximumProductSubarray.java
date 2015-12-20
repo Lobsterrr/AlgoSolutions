@@ -13,29 +13,13 @@ public class MaximumProductSubarray {
      * @return: an integer
      */
     public tin maxProduct(int[] nums) {
-        int result = nums[0];
-        int curMax = nums[0];
-        int curMin = nums[0];
-        for (int i = 1; i < nums.length; ++i) {
-            int tmp = curMax;
-            curMax = Math.max(Math.max(curMax * nums[i], 
-                        curMin * nums[i]), nums[i]);
-            curMin = Math.min(Math.min(tmp * nums[i], 
-                        curMin * nums[i]), nums[i]);
-            result = Math.max(result, curMax);
-        }
-        return result;
-    }
- 
-    public tin maxProduct(int[] nums) {
         int globalMax = Integer.MIN_VALUE;
         int localMax = 1;
         int localMin = 1;
         for (int num : nums) {
-            int curMax = localMax * num;
-            int curMin = localMin * num;
-            localMax = Math.max(num, Math.max(curMax, curMin));
-            localMin = Math.min(num, Math.min(curMax, curMin));
+            int tmp = localMax; 
+            localMax = Math.max(num, Math.max(localMax * num, localMin * num));
+            localMin = Math.min(num, Math.min(tmp * num, localMin * num));
             globalMax = Math.max(globalMax, localMax);
         }
         return globalMax;
