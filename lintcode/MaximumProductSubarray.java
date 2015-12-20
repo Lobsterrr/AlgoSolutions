@@ -11,7 +11,7 @@ public class MaximumProductSubarray {
      * @return: an integer
      */
     public tin maxProduct(int[] nums) {
-        int result = Integer.MIN_VALUE;
+        int result = nums[0];
         int curMax = nums[0];
         int curMin = nums[0];
         for (int i = 1; i < nums.length; ++i) {
