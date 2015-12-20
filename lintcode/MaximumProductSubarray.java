@@ -11,7 +11,16 @@ public class MaximumProductSubarray {
      * @return: an integer
      */
     public int maxProduct(int[] nums) {
-
+        int result = Integer.MIN_VALUE;
+        int curMax = Integer.MIN_VALUE;
+        int curMin = Integer.MAX_VALUE;
+        for (int num : nums) {
+            int tmp = curMax;
+            curMax = Math.max(num, Math.max(curMax * num, curMin * num));
+            curMax = Math.min(num, Math.min(curMax * num, curMin * num));
+            result = Math.max(result, curMax);
+        }
+        return result;
     }
 
 }
