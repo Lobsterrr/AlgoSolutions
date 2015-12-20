@@ -22,9 +22,9 @@ public class LongestConsecutiveSequence {
             set.add(num);
         }
         int result = 0;
-        for (int i = 0; i < nums.length; ++i) {
-            int low = nums[i];
-            int high = nums[i] + 1;
+        for (int num : nums) {
+            int low = num;
+            int high = num + 1;
             while (set.contains(low)) {
                 set.remove(low);
                 low--;
