@@ -37,7 +37,7 @@ public class MaximumProductSubarray {
             localMin = Math.min(num, Math.min(tmp * num, localMin * num));
             globalMax = Math.max(globalMax, localMax);
         }
-        return result;
+        return globalMax;
     }
 
 }
