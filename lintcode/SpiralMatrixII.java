@@ -20,7 +20,11 @@ public class SpiralMatrixII {
      * @return a square matrix
      */
     public int[][] generateMatrix(int n) {
+        int[][] matrix = new int[n][n];
+        int value = 0;
+        for (int i = 0; i < n / 2; ++i) {
 
+        }
     }
 
 }
