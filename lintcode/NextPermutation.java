@@ -15,11 +15,12 @@ public class NextPermutation {
 
     /**
      * @param nums: an array of integers
-     * @return: return nothing (void), do not return anything, modify nums in-place instead
+     * @return: return nothing (void), do not return 
+     * anything, modify nums in-place instead
      */
     public int[] nextPermutation(int[] nums) {
         if (nums.length == 0 || nums.length == 1) {
-            return nums;
+            return;
         }
         int i = nums.length - 1;
         if (nums[i - 1] < nums[i]) {
@@ -44,7 +45,6 @@ public class NextPermutation {
                 }
             }
         }
-        return nums;
     }
 
     public void swap(int[] nums, int i, int j) {
