@@ -7,7 +7,7 @@ public class HouseRobber {
         long prev = 0;
         long cur = 0;
         for (int a : A) {
-            int tmp = cur;
+            long tmp = cur;
             cur = Math.max(prev + a, cur);
             prev = tmp;
         }
