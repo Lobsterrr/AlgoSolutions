@@ -24,10 +24,6 @@ public class FindMinimumInRotatedSortedArrayII {
             while (high > 0 && num[low] == num[high]) {
                 high--;
             }
-            int mid = (low + high) / 2;
-            if (low == mid) {
-                return Math.min(num[low], num[high]);
-            }
             if (num[mid] > num[high]) {
                 low = mid;
             } else {
