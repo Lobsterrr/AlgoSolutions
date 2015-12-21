@@ -23,11 +23,12 @@ public class FindMinimumInRotatedSortedArrayII {
         while (low <= high) {
             int mid = (low + high) / 2;
             if (num[mid] > num[high]) {
-                low = mid + 1;
+                low = mid;
             } else {
                 high = mid - 1;
             }
         }
+        return low;
     }
 
 }
