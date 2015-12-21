@@ -31,7 +31,7 @@ public class FindMinimumInRotatedSortedArrayII {
                 high = mid;
             }
         }
-        return low;
+        return num[low];
     }
 
 }
