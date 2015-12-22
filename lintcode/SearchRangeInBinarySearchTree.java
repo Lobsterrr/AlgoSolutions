@@ -15,6 +15,8 @@ public class SearchRangeInBinarySearchTree {
                 if (k1 <= cur.val && cur.val <= k2) {
                     stack.push(cur);
                     cur = cur.left;
+                } else {
+                    cur = null;
                 }
             } else {
                 cur = stack.pop();
