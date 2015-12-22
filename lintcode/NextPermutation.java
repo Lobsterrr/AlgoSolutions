@@ -19,6 +19,10 @@ public class NextPermutation {
      * anything, modify nums in-place instead
      */
     public int[] nextPermutation(int[] nums) {
+
+    }
+
+    public int[] nextPermutation(int[] nums) {
         if (nums.length == 0 || nums.length == 1) {
             return;
         }
