@@ -9,15 +9,20 @@ public class SearchRangeInBinarySearchTree {
             return result;
         }
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        
-
-        if (root != null && k1 <= root.val && root.val <= k2) {
-            stack.push(root);
+        TreeNode cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                if (k1 <= cur.val && cur.val <= k2) {
+                    stack.push(cur);
+                    cur = cur.left;
+                }
+            } else {
+                cur = stack.pop();
+                result.add(cur.val);
+                cur = cur.right;
+            }
         }
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            result.
-        }
+        return result;
     }
 
 }
