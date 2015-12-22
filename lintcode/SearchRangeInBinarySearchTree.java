@@ -41,21 +41,13 @@ public class SearchRangeInBinarySearchTree {
         while (cur != null || !stack.isEmpty()) {
             if (cur != null) {
                 stack.push(cur);
-                if (cur.val < k1) {
-                    cur = null;
-                } else {
-                    cur = cur.left;
-                }
+                cur = cur.val < k1 ? null : cur.left;
             } else {
                 cur = stack.pop();
                 if (k1 <= cur.val && cur.val <= k2) {
                     result.add(cur.val);
                 }
-                if (cur.val > k2) {
-                    cur = null;
-                } else {
-                    cur = cur.right;
-                }
+                cur = cur.val > k2 ? null : cur.right;
             }
         }
         return result;
