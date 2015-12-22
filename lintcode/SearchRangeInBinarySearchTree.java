@@ -49,4 +49,23 @@ public class SearchRangeInBinarySearchTree {
         return result;
     }
 
+/*****************************************************************************/
+
+    public ArrayList<Integer> searchRange(TreeNode root, int k1, int k2) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        dfs(result, root, k1, k2);
+        return result;
+    }
+
+    public void dfs(ArrayList<Integer> result, TreeNode root, int k1, int k2) {
+        if (root == null) {
+            return;
+        }
+        dfs(result, root.left, k1, k2);
+        if (root != null && k1 <= root.val && root.val <= k2) {
+            result.add(root.val);
+        }
+        dfs(result, root.right, k1, k2);
+    }
+    
 }
