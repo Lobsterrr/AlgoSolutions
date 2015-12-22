@@ -33,7 +33,7 @@ public class SpiralMatrixII {
                 matrix[n - 1 - i][j] = ++value;
             }
             for (int j = n - 2 - i; j >= i + 1; --j) {
-                matrix[j][i];
+                matrix[j][i] = ++value;
             }
         }
         return matrix;
