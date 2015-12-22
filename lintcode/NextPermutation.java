@@ -19,35 +19,18 @@ public class NextPermutation {
      * anything, modify nums in-place instead
      */
     public int[] nextPermutation(int[] nums) {
-        
-    }
-
-    public int[] nextPermutation(int[] nums) {
-        if (nums.length == 0 || nums.length == 1) {
-            return;
-        }
         int i = nums.length - 1;
-        if (nums[i - 1] < nums[i]) {
-            swap(nums, i - 1, i);
-        } else {
-            while (i > 0 && nums[i - 1] >= nums[i]) {
-                i--;
+        while (i > 0 && nums[i - 1] >= nums[i]) {
+            i--;
+        }
+        for (int j = nums.length - 1; i >= 1 && j >= 0; --j) {
+            if (nums[j] > nums[i - 1]) {
+                swap(nums, i - 1, j);
+                break;
             }
-            if (i == 0) {
-                for (int j = 0; j < (nums.length - i) / 2; ++j) {
-                    swap(nums, i + j, nums.length - 1 - j);
-                }
-            } else {
-                for (int j = nums.length - 1; j >= 0; --j) {
-                    if (nums[j] > nums[i - 1]) {
-                        swap(nums, i - 1, j);
-                        break;
-                    }
-                }
-                for (int j = 0; j < (nums.length - i) / 2; ++j) {
-                    swap(nums, i + j, nums.length - 1 - j);
-                }
-            }
+        }
+        for (int j = 0; j < (nums.length - i) / 2; ++j) {
+            swap(nums, i + j, nums.length - 1 - j);
         }
     }
 
