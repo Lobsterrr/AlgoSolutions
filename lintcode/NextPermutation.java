@@ -34,8 +34,8 @@ public class NextPermutation {
                 i--;
             }
             if (i == 0) {
-                for (; i < nums.length / 2; ++i) {
-                    swap(nums, i, nums.length - 1 - i);
+                for (int j = 0; j < (nums.length - i) / 2; ++j) {
+                    swap(nums, i + j, nums.length - 1 - j);
                 }
             } else {
                 for (int j = nums.length - 1; j >= 0; --j) {
