@@ -34,17 +34,16 @@ public class SearchRangeInBinarySearchTree {
     public ArrayList<Integer> searchRange(TreeNode root, int k1, int k2) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode cur = root;
-        while (cur != null || !stack.isEmpty()) {
-            if (cur != null) {
-                stack.push(cur);
-                cur = cur.val < k1 ? null : cur.left;
+        while (root != null || !stack.isEmpty()) {
+            if (root != null) {
+                stack.push(root);
+                root = root.val < k1 ? null : root.left;
             } else {
-                cur = stack.pop();
-                if (k1 <= cur.val && cur.val <= k2) {
-                    result.add(cur.val);
+                root = stack.pop();
+                if (k1 <= root.val && root.val <= k2) {
+                    result.add(root.val);
                 }
-                cur = cur.val > k2 ? null : cur.right;
+                root = root.val > k2 ? null : root.right;
             }
         }
         return result;
