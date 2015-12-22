@@ -19,7 +19,7 @@ public class NextPermutation {
      * anything, modify nums in-place instead
      */
     public int[] nextPermutation(int[] nums) {
-
+        
     }
 
     public int[] nextPermutation(int[] nums) {
