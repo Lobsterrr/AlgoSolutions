@@ -12,16 +12,20 @@ public class SearchRangeInBinarySearchTree {
         TreeNode cur = root;
         while (cur != null || !stack.isEmpty()) {
             if (cur != null) {
-                if (k1 <= cur.val && cur.val <= k2) {
-                    stack.push(cur);
-                    cur = cur.left;
-                } else {
+                stack.push(cur);
+                if (cur.val < k1) {
                     cur = null;
+                } else {
+                    cur = cur.left;
                 }
             } else {
                 cur = stack.pop();
                 result.add(cur.val);
-                cur = cur.right;
+                if (cur.val > k2) {
+                    cur = null;
+                } else {
+                    cur = cur.right;
+                }
             }
         }
         return result;
