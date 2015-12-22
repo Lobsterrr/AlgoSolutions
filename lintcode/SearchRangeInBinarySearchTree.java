@@ -64,7 +64,7 @@ public class SearchRangeInBinarySearchTree {
         if (root.val >= k1) {
             dfs(result, root.left, k1, k2);
         }
-        if (root != null && k1 <= root.val && root.val <= k2) {
+        if (k1 <= root.val && root.val <= k2) {
             result.add(root.val);
         }
         if (root.val <= k2) {
