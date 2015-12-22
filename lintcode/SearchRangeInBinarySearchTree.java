@@ -33,9 +33,6 @@ public class SearchRangeInBinarySearchTree {
      */
     public ArrayList<Integer> searchRange(TreeNode root, int k1, int k2) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-        if (root == null) {
-            return result;
-        }
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
         while (cur != null || !stack.isEmpty()) {
