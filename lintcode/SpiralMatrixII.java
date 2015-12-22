@@ -23,8 +23,20 @@ public class SpiralMatrixII {
         int[][] matrix = new int[n][n];
         int value = 0;
         for (int i = 0; i < n / 2; ++i) {
-            for (int 
+            for (int j = i; j < n - i; ++j) {
+                matrix[i][j] = ++value;
+            }
+            for (int j = i + 1; j < n - i; ++j) {
+                matrix[n - 1 - i][j] = ++value;
+            }
+            for (int j = n - 2 - i; j >= i; --j) {
+                matrix[n - 1 - i][j] = ++value;
+            }
+            for (int j = n - 2 - i; j >= i + 1; --j) {
+                matrix[j][i];
+            }
         }
+        return matrix;
     }
 
 }
