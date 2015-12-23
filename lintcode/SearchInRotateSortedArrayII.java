@@ -25,6 +25,9 @@ public class SearchInRotatedSortedArrayII {
             } else {
                 if (A[mid] > A[high] && (target > A[mid] || target < A[mid] && target < A[low]) || A[mid] < target && target < A[high]) {
                     low = mid + 1;
+                }
+                if (A[high] < A[mid] && A[mid] < target || target < A[mid] && A[high] < A[mid] || A[mid] < target && target < A[high]) {
+                    low = mid + 1;
                 } else {
                     high = mid - 1;
                 }
