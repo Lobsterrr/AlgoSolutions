@@ -19,11 +19,11 @@ public class LongestIncreasingContinuousSubsequence {
      */
     public int longestIncreasingContinuousSubsequence(int[] A) {
         int result = 0;
-        for (int i = 1, count = 1; i < A.length; ++i) {
+        for (int i = 1, count = 0; i < A.length; ++i) {
             count = 1 + (A[i] > A[i - 1] ? count : 1);
             result =  Math.max(result, count);
         }
-        for (int i = A.length - 1, count = 1; i >= 1; --i) {
+        for (int i = A.length - 1, count = 0; i >= 1; --i) {
             count = 1 + (A[i] < A[i - 1] ? count : 1);
             result =  Math.max(result, count);
         }
