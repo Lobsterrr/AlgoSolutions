@@ -41,6 +41,11 @@ public class SegmentTreeQuery {
      *@return: The maximum number in the interval [start, end]
      */
     public int query(SegmentTreeNode root, int start, int end) {
+        if (start <= root.start&& end >= root.right) {
+            return root.max;
+        } else if (start <= root.left && end <= root.right) {
+
+        } else if (start >= 
 
     }
 
