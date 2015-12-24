@@ -51,7 +51,8 @@ public class SegmentTreeQuery {
         if (start > mid) {
             return query(root.right, start, end);
         }
-        return Math.max(query(root.left, start, mid), query(root.right, mid + 1, end));
+        return Math.max(query(root.left, start, mid), 
+                query(root.right, mid + 1, end));
     }
 
 }
