@@ -44,6 +44,18 @@ public class SegmentTreeQuery {
         if (start <= root.start && root.end <= end) {
             return root.max;
         }
+        int mid = (root.start + root.end) / 2;
+        if (end <= mid) {
+            return query(root.left, start, end);
+        } 
+        if (start > mid) {
+            return query(root.right, start, end);
+        }
+        if (end > mid) {
+            // start <= mid;
+            return Math.max(query(root.left, start, mid), query(root.right, mid + 1, end));
+        }
+        return Integer.MIN_VALUE;
     }
 
 }
