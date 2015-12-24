@@ -61,6 +61,8 @@ public class SegmentTreeQuery {
                 query(root.right, mid + 1, end));
     }
 
+/*******************************************************************/
+
     public int query(SegmentTreeNode root, int start, int end) {
         if (root == null || root.start > end || root.end < start) {
             return 0;
