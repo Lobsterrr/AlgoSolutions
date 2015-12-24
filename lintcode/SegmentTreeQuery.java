@@ -61,4 +61,15 @@ public class SegmentTreeQuery {
                 query(root.right, mid + 1, end));
     }
 
+    public int query(SegmentTreeNode root, int start, int end) {
+        if (root == null || root.start > end || root.end < start) {
+            return 0;
+        }
+        if (root.start == root.end) {
+            return root.max;
+        }
+        return Math.max(query(root.left, start, end), 
+                query(root.right, start, end));
+    }
+
 }
