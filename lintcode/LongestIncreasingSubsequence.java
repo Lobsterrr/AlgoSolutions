@@ -31,6 +31,9 @@ public class LongestIncreasingSubsequence {
      * @return: The length of LIS (longest increasing subsequence)
      */
     public int longestIncreasingSubsequence(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
         int[] dp = new int[nums.length];
         Arrays.fill(dp, 1);
         for (int i = 1; i < nums.length; ++i) {
