@@ -31,7 +31,7 @@ public class LongestIncreasingSubsequence {
      * @return: The length of LIS (longest increasing subsequence)
      */
     public int longestIncreasingSubsequence(int[] nums) {
-
+        int[] dp = new int[nums.length];
     }
 
 }
