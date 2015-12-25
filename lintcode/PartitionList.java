@@ -31,17 +31,15 @@ public class PartitionList {
     public ListNode partition(ListNode head, int x) {
         List<Integer> small = new ArrayList<Integer>();
         List<Integer> large = new ArrayList<Integer>();
-        ListNode cur = head;
-        while (cur != null) {
+        for (ListNode cur = head; cur != null; cur = cur.next) {
             if (cur.val < x) {
                 small.add(cur.val);
             } else {
                 large.add(cur.val);
             }
-            cur = cur.next;
         }
         ListNode dummy = new ListNode(0);
-        cur = dummy;
+        ListNode cur = dummy;
         for (int i = 0; i < small.size() + large.size(); ++i) {
             if (i < small.size()) {
                 cur.next = new ListNode(small.get(i));
