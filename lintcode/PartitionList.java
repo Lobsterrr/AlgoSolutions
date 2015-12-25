@@ -42,12 +42,12 @@ public class PartitionList {
         }
         ListNode dummy = new ListNode(0);
         cur = dummy;
-        for (int val : small) {
-            cur.next = new ListNode(val);
-            cur = cur.next;
-        }
-        for (int val : large) {
-            cur.next = new ListNode(val);
+        for (int i = 0; i < small.size() + large.size(); ++i) {
+            if (i < small.size()) {
+                cur.next = new ListNode(small.get(i));
+            } else {
+                cur.next = new ListNode(large.get(i - small.size()));
+            }
             cur = cur.next;
         }
         return dummy.next;
