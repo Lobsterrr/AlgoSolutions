@@ -1,5 +1,7 @@
 /*
- * /**
+ * 
+ */
+/**
  * Definition for ListNode.
  * public class ListNode {
  *     int val;
@@ -10,7 +12,6 @@
  *     }
  * }
  */ 
- */
 public class PartitionList {
 
     /**
