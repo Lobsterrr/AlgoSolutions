@@ -48,27 +48,4 @@ public class PartitionList {
         return l1.next;
     }
 
-    public ListNode partition(ListNode head, int x) {
-        List<Integer> small = new ArrayList<Integer>();
-        List<Integer> large = new ArrayList<Integer>();
-        for (ListNode cur = head; cur != null; cur = cur.next) {
-            if (cur.val < x) {
-                small.add(cur.val);
-            } else {
-                large.add(cur.val);
-            }
-        }
-        ListNode dummy = new ListNode(0);
-        ListNode cur = dummy;
-        for (int i = 0; i < small.size() + large.size(); ++i) {
-            if (i < small.size()) {
-                cur.next = new ListNode(small.get(i));
-            } else {
-                cur.next = new ListNode(large.get(i - small.size()));
-            }
-            cur = cur.next;
-        }
-        return dummy.next;
-    }
-
 }
