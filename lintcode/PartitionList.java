@@ -44,6 +44,7 @@ public class PartitionList {
             head = head.next;
         }
         cur1.next = l2.next;
+        cur2.next = null;
         return l1.next;
     }
 
