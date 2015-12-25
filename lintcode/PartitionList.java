@@ -43,8 +43,8 @@ public class PartitionList {
             }
             head = head.next;
         }
-        cur1.next = l2;
-        return l1;
+        cur1.next = l2.next;
+        return l1.next;
     }
 
     public ListNode partition(ListNode head, int x) {
