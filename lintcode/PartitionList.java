@@ -33,7 +33,7 @@ public class PartitionList {
         List<Integer> large = new ArrayList<Integer>();
         ListNode cur = head;
         while (cur != null) {
-            if (cur.val <= x) {
+            if (cur.val < x) {
                 small.add(cur.val);
             } else {
                 large.add(cur.val);
