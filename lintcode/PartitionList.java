@@ -29,7 +29,28 @@ public class PartitionList {
      * @return: a ListNode 
      */
     public ListNode partition(ListNode head, int x) {
-
+        List<Integer> small = new ArrayList<Integer>();
+        List<Integer> large = new ArrayList<Integer>();
+        ListNode cur = head;
+        while (cur != null) {
+            if (cur.val <= x) {
+                small.add(cur.val);
+            } else {
+                large.add(cur.val);
+            }
+            cur = cur.next;
+        }
+        ListNode dummy = new ListNode(0);
+        cur = dummy;
+        for (int val : small) {
+            cur.next = new ListNode(val);
+            cur = cur.next;
+        }
+        for (int val : large) {
+            cur.next = new ListNode(val);
+            cur = cur.next;
+        }
+        return dummy.next;
     }
 
 }
