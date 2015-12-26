@@ -48,7 +48,17 @@ public class ScrambleString {
      * @return whether s2 is a scrambled string of s1
      */
     public boolean isScamble(String s1, String s2) {
-
+        if (s1.equals(s2)) {
+            return true;
+        }
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+        for (int i = 0; i < s1.length(); ++i) {
+            if (isScamble(s1.substring(0, i), s2.substring(0, i)) && isScamble(s1.substring(i), s2.substring(i))) {
+                return true;
+            }
+        }
     }
 
 }
