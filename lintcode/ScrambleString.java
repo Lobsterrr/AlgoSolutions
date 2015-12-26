@@ -54,7 +54,7 @@ public class ScrambleString {
         if (s1.length() != s2.length()) {
             return false;
         }
-        for (int i = 0; i < s1.length(); ++i) {
+        for (int i = 1; i < s1.length(); ++i) {
             if (isScamble(s1.substring(0, i), s2.substring(0, i)) && 
                     isScamble(s1.substring(i), s2.substring(i)) ||
                     isScamble(s1.substring(0, i), s2.substring(s2.length() - i)) &&
