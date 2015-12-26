@@ -36,7 +36,6 @@ We say that "rgtae" is a scrambled string of "great".
 
 Given two strings s1 and s2 of the same length, determine if s2 is a scrambled string of s1.
 
-Have you met this question in a real interview? Yes
 Example
 Challenge
 O(n3) time
