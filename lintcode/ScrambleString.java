@@ -43,7 +43,7 @@ scrambled string of s1.
 
 Example
 Challenge
-O(n3) time
+O(n ^ 3) time
  */
 public class ScrambleString {
 
