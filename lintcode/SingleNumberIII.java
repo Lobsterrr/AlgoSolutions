@@ -14,7 +14,11 @@ public class SingleNumberIII {
      * @return : Two integers
      */
     public List<Integer> singleNumberIII(int[] A) {
-
+        int xor = 0;
+        for (int a : A) {
+            xor ^= a;
+        }
+        int lowestBit = xor ^ (xor - 1);
     }
 
 }
