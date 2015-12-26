@@ -55,7 +55,10 @@ public class ScrambleString {
             return false;
         }
         for (int i = 0; i < s1.length(); ++i) {
-            if (isScamble(s1.substring(0, i), s2.substring(0, i)) && isScamble(s1.substring(i), s2.substring(i))) {
+            if (isScamble(s1.substring(0, i), s2.substring(0, i)) && 
+                    isScamble(s1.substring(i), s2.substring(i)) ||
+                    isScamble(s1.substring(0, i), s2.substring(s2.length() - i)) &&
+                    isScamble(s1.substring(i), s2.substring(0, s2.length() - i))) {
                 return true;
             }
         }
