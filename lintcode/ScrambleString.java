@@ -59,6 +59,7 @@ public class ScrambleString {
                 return true;
             }
         }
+        return false;
     }
 
 }
