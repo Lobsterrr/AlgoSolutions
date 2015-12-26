@@ -19,8 +19,8 @@ public class LongestIncreasingContinuousSubsequence {
      */
     public int longestIncreasingContinuousSubsequence(int[] A) {
         int result = 0;
-        for (int i = 1, count = 0; i < A.length; ++i) {
-            count = 1 + (A[i] > A[i - 1] ? count : 0);
+        for (int i = 0, count = 0; i < A.length; ++i) {
+            count = 1 + (i > 0 && A[i] > A[i - 1] ? count : 0);
             result =  Math.max(result, count);
         }
         for (int i = A.length - 1, count = 0; i >= 1; --i) {
