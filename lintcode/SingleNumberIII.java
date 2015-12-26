@@ -23,8 +23,8 @@ public class SingleNumberIII {
         int candidate0 = 0;
         int candidate1 = 0;
         for (int a : A) {
-            candidate0 ^= xor != 0 ? a : 0;
-            candidate1 ^= xor == 0 ? a : 0;
+            candidate0 ^= (a & xor) != 0 ? a : 0;
+            candidate1 ^= (a & xor) == 0 ? a : 0;
         }
         List<Integer> result = new ArrayList<Integer>();
         result.add(candidate0);
