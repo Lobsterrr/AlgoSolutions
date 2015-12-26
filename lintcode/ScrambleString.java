@@ -51,9 +51,6 @@ public class ScrambleString {
         if (s1.equals(s2)) {
             return true;
         }
-        if (s1.length() != s2.length()) {
-            return false;
-        }
         for (int i = 1; i < s1.length(); ++i) {
             if (isScramble(s1.substring(0, i), s2.substring(0, i)) && 
                     isScramble(s1.substring(i), s2.substring(i)) ||
