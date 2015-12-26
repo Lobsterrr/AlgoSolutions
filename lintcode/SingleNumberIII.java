@@ -18,7 +18,20 @@ public class SingleNumberIII {
         for (int a : A) {
             xor ^= a;
         }
-        int lowestBit = xor ^ (xor - 1);
+        int mask = xor & ~(xor - 1);
+        int candidate0 = 0;
+        int candidate1 = 0;
+        for (int a : A) {
+            if ((mask & a ) != 0) {
+                candidate0 ^= a;
+            } else {
+                candidate1 ^= a;
+            }
+        }
+        List<Integer> result = new ArrayList<Integer>();
+        result.add(candidate0);
+        result.add(candidate1);
+        return result;
     }
 
 }
