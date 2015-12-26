@@ -19,11 +19,11 @@ public class SingleNumberIII {
         for (int a : A) {
             xor ^= a;
         }
-        int mask = xor & ~(xor - 1);
+        xor &= ~(xor - 1);
         int candidate0 = 0;
         int candidate1 = 0;
         for (int a : A) {
-            if ((mask & a ) != 0) {
+            if ((xor & a ) != 0) {
                 candidate0 ^= a;
             } else {
                 candidate1 ^= a;
