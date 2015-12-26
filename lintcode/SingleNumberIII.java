@@ -26,10 +26,7 @@ public class SingleNumberIII {
             candidate0 ^= (a & xor) != 0 ? a : 0;
             candidate1 ^= (a & xor) == 0 ? a : 0;
         }
-        List<Integer> result = new ArrayList<Integer>();
-        result.add(candidate0);
-        result.add(candidate1);
-        return result;
+        return Arrays.asList(new Integer[]{candidate0, candidate1});
     }
 
 }
