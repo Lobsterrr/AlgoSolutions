@@ -57,7 +57,7 @@ public class SegmentTreeBuildII {
         if (start == end) {
             return new SegmentTreeNode(start, end, A[start]);
         }
-        SegmentTreeNode root = new SegmentTreeNode(start, end, Integer.MIN_VALUE);
+        SegmentTreeNode root = new SegmentTreeNode(start, end, 0);
         SegmentTreeNode left = build(A, start, (start + end) / 2);
         SegmentTreeNode right = build(A, (start + end) / 2 + 1, end);
         root.max = Math.max(left.max, right.max);
