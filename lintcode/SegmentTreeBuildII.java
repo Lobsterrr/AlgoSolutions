@@ -47,12 +47,21 @@ public class SegmentTreeBuildII {
      *@return: The root of Segment Tree
      */
     public SegmentTreeNode build(int[] A) {
-        int max = Integer.MIN_VALUE;
-        for (int a : A) {
-            max = Math.max(max, a);
-        }
-        SegmentTreeNode root = new SegmentTreeNode(A[0], A[A.length - 1], max);
+        return build(A, 0, A.length - 1);
+    }
 
+    public SegmentTreeNode build(int[] A, int low, int high) {
+        if (A.length == 0 || low > high) {
+            return null;
+        }
+        int max = Integer.MIN_VALUE;
+        for (int i = low; i <= high; ++i) {
+            max = Math.max(max, A[i]);
+        }
+        SegmentTreeNode root = new SegmentTreeNode(low, high, max);
+        root.left = build(A, low, (low + high) / 2);
+        root.right = build(A, (low + high) / 2 + 1, high);
+        return root;
     }
 
 }
