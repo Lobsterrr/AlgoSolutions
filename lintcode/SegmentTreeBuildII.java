@@ -50,19 +50,19 @@ public class SegmentTreeBuildII {
         return build(A, 0, A.length - 1);
     }
 
-    public SegmentTreeNode build(int[] A, int start, int high) {
-        if (A.length == 0 || start > high) {
+    public SegmentTreeNode build(int[] A, int start, int end) {
+        if (A.length == 0 || start > end) {
             return null;
         }
-        if (start == high) {
-            return new SegmentTreeNode(start, high, A[start]);
+        if (start == end) {
+            return new SegmentTreeNode(start, end, A[start]);
         }
         int max = Integer.MIN_VALUE;
-        for (int i = start; i <= high; ++i) {
+        for (int i = start; i <= end; ++i) {
             max = Math.max(max, A[i]);
         }
-        SegmentTreeNode root = new SegmentTreeNode(start, high, max);
-        root.left = build(A, start, (start + high) / 2);
+        SegmentTreeNode root = new SegmentTreeNode(start, end, max);
+        root.left = build(A, start, (start + end) / 2);
         root.right = build(A, (start + end) / 2 + 1, end);
         return root;
     }
