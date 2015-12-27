@@ -54,6 +54,9 @@ public class SegmentTreeBuildII {
         if (A.length == 0 || low > high) {
             return null;
         }
+        if (low == high) {
+            return new SegmentTreeNode(low, high, A[low]);
+        }
         int max = Integer.MIN_VALUE;
         for (int i = low; i <= high; ++i) {
             max = Math.max(max, A[i]);
