@@ -51,6 +51,18 @@ public class SegmentTreeBuildII {
     }
 
     public SegmentTreeNode build(int[] A, int start, int end) {
+        SegmentTreeNode root = start > end ? null : new SegmentTreeNode(start, end, A[start]);
+        if (start < end) {
+            SegmentTreeNode root = new SegmentTreeNode(start, end, 0);
+            SegmentTreeNode left = build(A, start, (start + end) / 2);
+            SegmentTreeNode right = build(A, (start + end) / 2 + 1, end);
+            root.max = Math.max(left.max, right.max);
+            root.left = left;
+            root.right = right;
+        }
+        return root;
+
+
         if (start > end) {
             return null;
         }
