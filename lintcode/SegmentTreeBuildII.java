@@ -47,7 +47,7 @@ public class SegmentTreeBuildII {
      *@return: The root of Segment Tree
      */
     public SegmentTreeNode build(int[] A) {
-
+        
     }
 
 }
