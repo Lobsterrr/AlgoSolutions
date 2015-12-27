@@ -64,17 +64,6 @@ public class SegmentTreeBuildII {
         root.left = left;
         root.right = right;
         return root;
-
-        int max = Integer.MIN_VALUE;
-        for (int i = start; i <= end; ++i) {
-            max = Math.max(max, A[i]);
-        }
-        SegmentTreeNode root = new SegmentTreeNode(start, end, max);
-        if (start < end) {
-            root.left = build(A, start, (start + end) / 2);
-            root.right = build(A, (start + end) / 2 + 1, end);
-        }
-        return root;
     }
 
 }
