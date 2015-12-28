@@ -7,6 +7,9 @@ public class FirstPositionOfTarget {
         int low = 0;
         int high = nums.length - 1;
         while (low <= high) {
+            if (nums[high] < target) {
+                return -1;
+            }
             int mid = (low + high) / 2;
             if (low == mid && nums[low] == target) {
                 break;
