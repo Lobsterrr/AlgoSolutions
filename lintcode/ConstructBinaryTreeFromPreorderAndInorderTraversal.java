@@ -33,7 +33,7 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
     }
 
     public TreeNode buildTree(int[] preorder, int pLow, int pHigh, int[] inorder, int iLow, int iHigh) {
-
+        if () 
     }
 
 }
