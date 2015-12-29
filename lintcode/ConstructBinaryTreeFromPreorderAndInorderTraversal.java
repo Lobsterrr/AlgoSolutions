@@ -29,7 +29,7 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
      *@return : Root of a tree
      */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-
+        return buildTree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
     }
 
     public TreeNode buildTree(int[] preorder, int pLow, int pHigh, 
