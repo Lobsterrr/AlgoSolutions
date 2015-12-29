@@ -1,7 +1,6 @@
 /*
  * Given inorder and postorder traversal of a tree, construct the binary tree.
 
-Have you met this question in a real interview? Yes
 Example
 Given inorder [1,2,3] and postorder [1,3,2], return a tree:
 
