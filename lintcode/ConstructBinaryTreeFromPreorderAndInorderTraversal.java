@@ -34,10 +34,14 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
 
     public TreeNode buildTree(int[] preorder, int pLow, int pHigh, 
             int[] inorder, int iLow, int iHigh) {
-        if () {
-
+        if (pLow > pHigh || iLow > iHigh || pHigh - pLow != iHigh - iLow) {
+            return null;
         }
-        TreeNode root = 
+        TreeNode root = new TreeNode(preorder[pLow]);
+        int i = iLow;
+        for (; i < iHigh && inorder[i] != preorder[pLow]; ++i);
+        root.left = buildTree(preorder, pLow + 1, i - iLow + pLow, inorder, iLow, i - 1);
+        root.right = buildTree(preorder, i - Low + 1 + pLow, pHigh, inorder, i + 1, iHigh);
     }
 
 }
