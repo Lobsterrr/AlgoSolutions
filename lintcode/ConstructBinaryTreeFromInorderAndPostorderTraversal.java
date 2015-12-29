@@ -33,7 +33,12 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
     }
 
     public TreeNode buildTree(int[] inorder, iLow, iHigh, int[] postorder, int pLow, int pHigh) {
-        
+        TreeNode root = new TreeNode(postorder[pHigh]);
+        int i = inorder;
+        for (; inorder[i] != postorder[pHigh]; ++i);
+        root.left = buildTree(inorder, iLow, i - 1, postorder, pLow, i - 1);
+        root.right = buildTree(inorder, i + 1, iHigh, postorder, i, pHigh - 1);
+        return root;
     }
 
 }
