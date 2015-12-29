@@ -32,7 +32,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
         return buildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
     }
 
-    public TreeNode buildTree(int[] inorder, iLow, iHigh, int[] postorder, int pLow, int pHigh) {
+    public TreeNode buildTree(int[] inorder, int iLow, int iHigh, int[] postorder, int pLow, int pHigh) {
         if (iLow > iHigh || pLow > pHigh) {
             return null;
         }
