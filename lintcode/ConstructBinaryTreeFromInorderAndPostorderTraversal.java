@@ -29,10 +29,13 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
      *@return : Root of a tree
      */
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-
+        return buildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
     }
 
     public TreeNode buildTree(int[] inorder, iLow, iHigh, int[] postorder, int pLow, int pHigh) {
+        if (iLow > iHigh || pLow > pHigh) {
+            return null;
+        }
         TreeNode root = new TreeNode(postorder[pHigh]);
         int i = inorder;
         for (; inorder[i] != postorder[pHigh]; ++i);
