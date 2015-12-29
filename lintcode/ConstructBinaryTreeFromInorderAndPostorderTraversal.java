@@ -29,18 +29,22 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
      *@return : Root of a tree
      */
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        return buildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
+        return buildTree(inorder, 0, inorder.length - 1, 
+                postorder, 0, postorder.length - 1);
     }
 
-    public TreeNode buildTree(int[] inorder, int iLow, int iHigh, int[] postorder, int pLow, int pHigh) {
+    public TreeNode buildTree(int[] inorder, int iLow, int iHigh, 
+            int[] postorder, int pLow, int pHigh) {
         if (iLow > iHigh || pLow > pHigh || iHigh - iLow != pHigh - pLow) {
             return null;
         }
         TreeNode root = new TreeNode(postorder[pHigh]);
         int i = iLow;
         for (; inorder[i] != postorder[pHigh]; ++i);
-        root.left = buildTree(inorder, iLow, i - 1, postorder, pLow, i - iLow + pLow - 1);
-        root.right = buildTree(inorder, i + 1, iHigh, postorder, i - iLow + pLow, pHigh - 1);
+        root.left = buildTree(inorder, iLow, i - 1, 
+                postorder, pLow, i - iLow + pLow - 1);
+        root.right = buildTree(inorder, i + 1, iHigh, 
+                postorder, i - iLow + pLow, pHigh - 1);
         return root;
     }
 
