@@ -32,4 +32,8 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
     }
 
+    public TreeNode buildTree(int[] inorder, iLow, iHigh, int[] postorder, int pLow, int pHigh) {
+        
+    }
+
 }
