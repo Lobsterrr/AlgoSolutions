@@ -40,7 +40,7 @@ public class Fibonacci {
     public int fibonacci(int n) {
         // write your code here
         int result = 0;
-        for (int i = 1; next = 1; i < n; ++i) {
+        for (int i = 1, next = 1; i < n; ++i) {
             next += result;
             result = next - result;
         }
