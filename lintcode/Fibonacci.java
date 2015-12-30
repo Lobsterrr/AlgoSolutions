@@ -31,9 +31,8 @@ public class Fibonacci {
         int a = 0;
         int b = 1;
         for (int i = 1; i < n; ++i) {
-            int tmp = b;
             b += a;
-            a = tmp;
+            a = b - a;
         }
         return a;
     }
