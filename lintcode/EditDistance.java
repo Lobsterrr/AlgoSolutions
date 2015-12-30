@@ -39,7 +39,7 @@ public class EditDistance {
             for (int j = 0; j <= word2.length(); ++j) {
                 if (i == 0 || j == 0) {
                     dp[i][j] = j == 0 ? i : j;
-                } else if (word1.charAt(i) == word2.charAt(j)) {
+                } else if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1];
                 } else {
                     dp[i][j] = Math.min(dp[i - 1][j - 1], Math.min(dp[i][j - 1], dp[i - 1][j])) + 1;
