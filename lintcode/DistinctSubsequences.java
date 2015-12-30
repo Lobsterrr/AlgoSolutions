@@ -7,7 +7,7 @@ Example
 Given S = "rabbbit", T = "rabbit", return 3.
 
 Challenge
-Do it in O(n2) time and O(n) memory.
+Do it in O(n^2) time and O(n) memory.
 
 O(n2) memory is also acceptable if you do not know how to optimize memory.
  */
