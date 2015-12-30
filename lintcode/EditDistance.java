@@ -18,22 +18,6 @@ public class EditDistance {
      * @return: The minimum number of steps.
      */
     public int minDistance(String word1, String word2) {
-        int[] dp = new int[word2.length() + 1];
-        dp[0] = 1;
-        for (int i = 0; i < word2.length(); ++i) {
-            for (int j = 0; j < word1.length(); ++j) {
-                if (word1.charAt(j) == word2.charAt(i)) {
-                    dp[i + 1] = Math.min(dp[i + 1], dp[i]);
-                } else {
-                    dp[i + 1] = Math.min(dp[i + 1], dp[i]);
-                }
-            }
-        }
-        return dp[word2.length()];
-    }
-
-
-    public int minDistance(String word1, String word2) {
         int[][] dp = new int[word1.length() + 1][word2.length() + 1];
         for (int i = 0; i <= word1.length(); ++i) {
             for (int j = 0; j <= word2.length(); ++j) {
