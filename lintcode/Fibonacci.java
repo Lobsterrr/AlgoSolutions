@@ -27,18 +27,6 @@ public class Fibonacci {
      * @return an integer f(n)
      */
     public int fibonacci(int n) {
-        // write your code here
-        int a = 0;
-        int b = 1;
-        for (int i = 1; i < n; ++i) {
-            b += a;
-            a = b - a;
-        }
-        return a;
-    }
-
-    public int fibonacci(int n) {
-        // write your code here
         int result = 0;
         for (int i = 1, next = 1; i < n; ++i) {
             next += result;
