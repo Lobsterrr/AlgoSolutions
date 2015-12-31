@@ -24,24 +24,24 @@ public class DistinctSubsequences {
      * @return: Count the number of distinct subsequences
      */
     public int numDistinct(String S, String T) {
-        int[][] dp = new int[S.length() + 1][T.length() + 1];
-        for (int i = 0; i <= S.length(); ++i) {
+        int[][] dp = new int[S.length()][T.length()];
+        for (int i = 0; i < S.length(); ++i) {
             dp[i][0] = 1;
         }
-        for (int j = 0; j < T.length(); ++j) {
-            for (int i = 0; i < S.length(); ++i) {
+        for (int j = 1; j <= T.length(); ++j) {
+            for (int i = 1; i <= S.length(); ++i) {
                 if (i < j) {
-                    dp[i + 1][j + 1] = 0;
+                    dp[i][j] = 0;
                 } else {
                     if (S.charAt(i) == T.charAt(j)) {
-                        dp[i + 1][j + 1] = dp[i][j + 1] + dp[i][j];
+                        dp[i][j] = dp[i - 1][j] + dp[i - 1][j - 1];
                     } else {
-                        dp[i + 1][j + 1] = dp[i][j + 1];
+                        dp[i][j] = dp[i - 1][j];
                     }
                 }
             }
         }
-        return dp[S.length()][T.length()];
+        return dp[S.length() - 1][T.length() - 1];
     }
 
 }
