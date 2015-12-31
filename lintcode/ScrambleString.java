@@ -53,7 +53,7 @@ public class ScrambleString {
      * @return whether s2 is a scrambled string of s1
      */
     public boolean isScramble(String s1, String s2) {
-
+        int[][] dp = new int[s1.length()][s2.length()];
     }
 
 /*******************************************************************/
