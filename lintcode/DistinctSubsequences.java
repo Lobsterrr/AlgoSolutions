@@ -27,6 +27,20 @@ public class DistinctSubsequences {
         int[][] dp = new int[S.length() + 1][T.length() + 1];
         for (int i = 0; i <= S.length(); ++i) {
             dp[i][0] = 1;
+            for (int j = 0; j <= T.length(); ++j) {
+                dp[i + 1][j + 1] = dp[i][j + 1];
+                if (S.charAt(i) == T.charAt(j)) {
+                    dp[i + 1][j + 1] += dp[i][j];
+                }
+            }
+        }
+        return dp[S.length()][T.length()];
+    }
+
+    public int numDistinct(String S, String T) {
+        int[][] dp = new int[S.length() + 1][T.length() + 1];
+        for (int i = 0; i <= S.length(); ++i) {
+            dp[i][0] = 1;
         }
         for (int j = 0; j < T.length(); ++j) {
             for (int i = 0; i < S.length(); ++i) {
