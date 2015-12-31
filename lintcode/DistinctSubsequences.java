@@ -31,7 +31,7 @@ public class DistinctSubsequences {
         for (int j = 1; j <= T.length(); ++j) {
             for (int i = 1; i <= S.length(); ++i) {
                 if (i < j) {
-                    dp[i][j] = 0;
+                    dp[i - 1][j - 1] = 0;
                 } else {
                     if (S.charAt(i) == T.charAt(j)) {
                         dp[i][j] = dp[i - 1][j] + dp[i - 1][j - 1];
