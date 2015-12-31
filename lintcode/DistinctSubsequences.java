@@ -36,6 +36,8 @@ public class DistinctSubsequences {
         return dp[T.length()];
     }
 
+/*******************************************************************/
+
     public int numDistinct(String S, String T) {
         int[][] dp = new int[S.length() + 1][T.length() + 1];
         for (int i = 0; i <= S.length(); ++i) {
