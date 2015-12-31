@@ -32,6 +32,9 @@ public class DistinctSubsequences {
                 } else {
                     dp[i + 1][j + 1] = dp[i][j + 1];
                 }
+                if (i < j) {
+                    dp[i + 1][j + 1] = 0;
+                }
             }
         }
         return dp[S.length()][T.length()];
