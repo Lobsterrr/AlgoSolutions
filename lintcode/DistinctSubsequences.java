@@ -24,7 +24,7 @@ public class DistinctSubsequences {
      * @return: Count the number of distinct subsequences
      */
     public int numDistinct(String S, String T) {
-
+        int[][] dp = new int[S.length() + 1][T.length() + 1];
     }
 
 }
