@@ -30,14 +30,9 @@ public class DistinctSubsequences {
         }
         for (int j = 0; j < T.length(); ++j) {
             for (int i = 0; i < S.length(); ++i) {
-                if (i < j) {
-                    dp[i + 1][j + 1] = 0;
-                } else {
-                    if (S.charAt(i) == T.charAt(j)) {
-                        dp[i + 1][j + 1] = dp[i][j + 1] + dp[i][j];
-                    } else {
-                        dp[i + 1][j + 1] = dp[i][j + 1];
-                    }
+                dp[i + 1][j + 1] = dp[i][j + 1];
+                if (S.charAt(i) == T.charAt(j)) {
+                    dp[i + 1][j + 1] += dp[i][j];
                 }
             }
         }
