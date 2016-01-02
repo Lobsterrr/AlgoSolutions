@@ -17,6 +17,12 @@ public class NQueensII {
 
     }
 
-    public void dfs(int 
+    public void dfs(int row) {
+
+    }
+    
+    pubilc boolean canPlace(int x, int y) {
+
+    } 
 
 }
