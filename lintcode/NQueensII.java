@@ -17,10 +17,12 @@ public class NQueensII {
     int result = 0;
 
     public int totalNQueens(int n) {
-
+        int[] rows = new int[n];
+        dfs(rows, 0);
+        return result;
     }
 
-    public void dfs(int row) {
+    public void dfs(int[] rows, int row) {
         if (row == n) {
             result++;
             return;
