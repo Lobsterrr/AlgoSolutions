@@ -21,8 +21,15 @@ public class NQueensII {
 
     public void dfs(int row) {
         if (row == n) {
-            
+            result++;
+            return;
         }
+        for (int i = 0; i < n; ++i) {
+            if (canPlace(row, i)) {
+                
+            }
+        }
+
     }
     
     pubilc boolean canPlace(int x, int y) {
