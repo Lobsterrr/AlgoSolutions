@@ -13,12 +13,16 @@ public class NQueensII {
      * @param n: The number of queens.
      * @return: The total number of distinct solutions.
      */
+    int result = 0;
+
     public int totalNQueens(int n) {
 
     }
 
     public void dfs(int row) {
-
+        if (row == n) {
+            
+        }
     }
     
     pubilc boolean canPlace(int x, int y) {
