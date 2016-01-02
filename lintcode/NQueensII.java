@@ -1,5 +1,11 @@
 /*
- *
+ * Follow up for N-Queens problem.
+
+Now, instead outputting board configurations, return the total number of distinct solutions.
+
+Have you met this question in a real interview? Yes
+Example
+For n=4, there are 2 distinct solutions.
  */
 public class NQueensII {
 
