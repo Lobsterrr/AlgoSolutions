@@ -22,17 +22,18 @@ public class NQueensII {
         return result;
     }
 
-    public void dfs(int[] rows, int row) {
+    public void dfs(int[][] board, int[] rows, int row) {
         if (row == n) {
             result++;
             return;
         }
         for (int i = 0; i < n; ++i) {
             if (canPlace(row, i)) {
-                
+                board[row][i] = 1;
+                dfs(board, rows, row + 1);
+                board[row][i] = 0;
             }
         }
-
     }
     
     pubilc boolean canPlace(int x, int y) {
