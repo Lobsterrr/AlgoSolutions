@@ -36,8 +36,8 @@ public class NQueensII {
         }
     }
     
-    pubilc boolean canPlace(int x, int y) {
-
+    pubilc boolean canPlace(int[][] board, int x, int y) {
+        
     } 
 
 }
