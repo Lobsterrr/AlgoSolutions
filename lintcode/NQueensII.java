@@ -28,7 +28,7 @@ public class NQueensII {
             return;
         }
         for (int i = 0; i < n; ++i) {
-            if (canPlace(board, row, i)) {
+            if (canPlace(board, rows, i)) {
                 board[row][i] = 1;
                 dfs(board, rows, row + 1);
                 board[row][i] = 0;
