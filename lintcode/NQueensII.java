@@ -36,7 +36,7 @@ public class NQueensII {
         }
     }
     
-    pubilc boolean canPlace(int[][] board, int[] rows, int x, int y) {
+    public boolean canPlace(int[][] board, int[] rows, int x, int y) {
         for (int i = 0; i < rows.length; ++i) {
             if (board[i][y] == 1 || board[x][i] == 1 || board[i][i - x + y] == 1 || board[i][x + y - i] == 1) {
                 return false;
