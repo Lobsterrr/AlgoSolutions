@@ -27,11 +27,11 @@ public class NQueensII {
             result++;
             return;
         }
-        for (int i = 0; i < board.length; ++i) {
-            if (canPlace(board, row, i)) {
-                board[row][i] = 1;
+        for (int col = 0; col < board.length; ++col) {
+            if (canPlace(board, row, col)) {
+                board[row][col] = 1;
                 dfs(board, row + 1);
-                board[row][i] = 0;
+                board[row][col] = 0;
             }
         }
     }
