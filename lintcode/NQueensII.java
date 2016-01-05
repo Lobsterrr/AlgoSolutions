@@ -18,7 +18,7 @@ public class NQueensII {
 
     public int totalNQueens(int n) {
         int[][] board = new int[n][n];
-
+        dfs(board, 0);
         return result;
     }
 
@@ -38,7 +38,9 @@ public class NQueensII {
     
     public boolean canPlace(int[][] board, int row, int col) {
         for (int i = 0; i < board.length; ++i) {
-            if (board[row][i] == 1 || board[i][col] == 1 || board[i][Math.abs(i - row + col) % 4] == 1 || board[i][Math.abs(row + col - i) % 4] == 1) {
+            if (board[row][i] == 1 || board[i][col] == 1 || 
+                    board[i][Math.abs(i - row + col) % 4] == 1 || 
+                    board[i][Math.abs(row + col - i) % 4] == 1) {
                 return false;
             }
         }
