@@ -23,7 +23,7 @@ public class NQueensII {
         return result;
     }
 
-    public void dfs(int[][] board, int[] rows, int row) {
+    public void dfs(int[][] board, int[] rows, int row, int n) {
         if (row == n) {
             result++;
             return;
