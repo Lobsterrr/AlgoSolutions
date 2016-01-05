@@ -31,7 +31,7 @@ public class NQueensII {
             if (canPlace(board, row, col)) {
                 board[row] = col;
                 dfs(board, row + 1);
-                board[row];
+                board[row] = 0;
             }
         }
     }
