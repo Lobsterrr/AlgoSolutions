@@ -18,32 +18,31 @@ public class NQueensII {
 
     public int totalNQueens(int n) {
         int[][] board = new int[n][n];
-        int[] rows = new int[n];
-        dfs(board, rows, 0, n);
+
         return result;
     }
 
-    public void dfs(int[][] board, int[] rows, int row, int n) {
-        if (row == n) {
+    public void dfs(int[][] board, int row) {
+        if (row == board.length) {
             result++;
             return;
         }
-        for (int i = 0; i < n; ++i) {
-            if (canPlace(board, rows, row, i)) {
+        for (int i = 0; i < board.length; ++i) {
+            if (canPlace(board, row, i)) {
                 board[row][i] = 1;
-                dfs(board, rows, row + 1, n);
+                dfs(board, row + 1);
                 board[row][i] = 0;
             }
         }
     }
     
-    public boolean canPlace(int[][] board, int[] rows, int x, int y) {
-        for (int i = 0; i < rows.length; ++i) {
-            if (board[i][y] == 1 || board[x][i] == 1 || board[i][i - x + y] == 1 || board[i][x + y - i] == 1) {
+    public boolean canPlace(int[][] board, int row, int col) {
+        for (int i = 0; i < board.length; ++i) {
+            if (board[row][i] == 1 || board[i][col] == 1 || board[i][Math.abs(i - row + col) % 4] == 1 || board[i][Math.abs(row + col - i) % 4] == 1) {
                 return false;
             }
         }
         return true;
-    } 
+    }
 
 }
