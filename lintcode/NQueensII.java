@@ -39,8 +39,8 @@ public class NQueensII {
     public boolean canPlace(int[][] board, int row, int col) {
         for (int i = 0; i < board.length; ++i) {
             if (board[row][i] == 1 || board[i][col] == 1 || 
-                    board[i][Math.abs(i - row + col) % 4] == 1 || 
-                    board[i][Math.abs(row + col - i) % 4] == 1) {
+                    board[i][Math.abs(i - row + col) % board.length] == 1 || 
+                    board[i][Math.abs(row + col - i) % board.length] == 1) {
                 return false;
             }
         }
