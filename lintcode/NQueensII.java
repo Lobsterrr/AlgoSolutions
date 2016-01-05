@@ -17,8 +17,9 @@ public class NQueensII {
     int result = 0;
 
     public int totalNQueens(int n) {
+        int[][] board = new int[n][n];
         int[] rows = new int[n];
-        dfs(new int[n][n]; rows, 0);
+        dfs(board, rows, 0);
         return result;
     }
 
@@ -28,7 +29,7 @@ public class NQueensII {
             return;
         }
         for (int i = 0; i < n; ++i) {
-            if (canPlace(board, rows, i)) {
+            if (canPlace(board, rows, row, i)) {
                 board[row][i] = 1;
                 dfs(board, rows, row + 1);
                 board[row][i] = 0;
