@@ -18,7 +18,7 @@ public class NQueensII {
 
     public int totalNQueens(int n) {
         int[] rows = new int[n];
-        dfs(rows, 0);
+        dfs(new int[n][n]; rows, 0);
         return result;
     }
 
