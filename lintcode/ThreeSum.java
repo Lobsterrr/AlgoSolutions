@@ -4,7 +4,8 @@
 public class ThreeSum {
 
     public ArrayList<ArrayList<Integer>> threeSum(int[] numbers) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = 
+            new ArrayList<ArrayList<Integer>>();
         Arrays.sort(numbers);
         for (int i = 0; i < numbers.length - 2; ++i) {
             if (i > 0 && numbers[i] == numbers[i - 1]) {
