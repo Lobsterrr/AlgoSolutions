@@ -28,7 +28,7 @@ public class ThreeSum {
             } else if (sum < 0) {
                 low++;
             } else {
-                high++;
+                high--;
             }
         }
         return result;
