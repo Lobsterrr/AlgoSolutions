@@ -12,23 +12,25 @@ public class ThreeSum {
             }
             int low = i + 1;
             int high = numbers.length - 1;
-            int sum = numbers[i] + numbers[low] + numbers[high];
-            if (sum == 0) {
-                ArrayList<Integer> list = new ArrayList<Integer>();
-                list.add(numbers[i]);
-                list.add(numbers[low]);
-                list.add(numbers[high]);
-                result.add(list);
-                do {
+            while (low < high) {
+                int sum = numbers[i] + numbers[low] + numbers[high];
+                if (sum == 0) {
+                    ArrayList<Integer> list = new ArrayList<Integer>();
+                    list.add(numbers[i]);
+                    list.add(numbers[low]);
+                    list.add(numbers[high]);
+                    result.add(list);
+                    do {
+                        low++;
+                    } while (low < numbers.length && numbers[low] == numbers[low - 1]);
+                    do {
+                        high--;
+                    } while (high < numbers.length - 1 && numbers[high] == numbers[high + 1]);
+                } else if (sum < 0) {
                     low++;
-                } while (low > i && low < numbers.length && numbers[low] == numbers[low - 1]);
-                do {
+                } else {
                     high--;
-                } while (high >= 0 && high < numbers.length - 1 && numbers[high] == numbers[high + 1]);
-            } else if (sum < 0) {
-                low++;
-            } else {
-                high--;
+                }
             }
         }
         return result;
