@@ -22,10 +22,10 @@ public class ThreeSum {
                     result.add(list);
                     do {
                         low++;
-                    } while (low < numbers.length && numbers[low] == numbers[low - 1]);
+                    } while (low < high && numbers[low] == numbers[low - 1]);
                     do {
                         high--;
-                    } while (high < numbers.length - 1 && numbers[high] == numbers[high + 1]);
+                    } while (low < high && numbers[high] == numbers[high + 1]);
                 } else if (sum < 0) {
                     low++;
                 } else {
