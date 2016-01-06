@@ -14,8 +14,7 @@ public class ThreeSum {
             int low = i + 1;
             int high = numbers.length - 1;
             while (low < high) {
-                int sum = numbers[i] + numbers[low] + numbers[high];
-                if (sum == 0) {
+                if (numbers[i] + numbers[low] + numbers[high] == 0) {
                     ArrayList<Integer> list = new ArrayList<Integer>();
                     list.add(numbers[i]);
                     list.add(numbers[low]);
@@ -27,7 +26,7 @@ public class ThreeSum {
                     do {
                         high--;
                     } while (low < high && numbers[high] == numbers[high + 1]);
-                } else if (sum < 0) {
+                } else if (numbers[i] + numbers[low] + numbers[high] < 0) {
                     low++;
                 } else {
                     high--;
