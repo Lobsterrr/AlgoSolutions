@@ -14,7 +14,9 @@ public class ThreeSum {
                     list.add(numbers[i]);
                     list.add(numbers[j]);
                     list.add(-numbers[i] - numbers[j]);
-                    result.add(list);
+                    if (!result.contains(list)) {
+                        result.add(list);
+                    }
                 }
                 set.add(numbers[j]);
             }
