@@ -36,9 +36,12 @@ public class RotateString {
 /*********************************************************/
 
     public void rotateString(char[] str, int offset) {
+        if (str.length == 0) {
+            return;
+        }
         reverse(str, 0, str.length - 1);
-        reverse(str, 0, offset - 1);
-        reverse(str, offset, str.length - 1);
+        reverse(str, 0, offset % str.length - 1);
+        reverse(str, offset % str.length, str.length - 1);
     }
 
     public void reverse(char[] array, int low, int high) {
