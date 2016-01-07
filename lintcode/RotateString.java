@@ -41,7 +41,7 @@ public class RotateString {
         reverse(str, offset, str.length - 1);
     }
 
-    public void reverse(int[] array, int low, int high) {
+    public void reverse(char[] array, int low, int high) {
         while (low < high) {
             swap(array, low++, high--);
         }
