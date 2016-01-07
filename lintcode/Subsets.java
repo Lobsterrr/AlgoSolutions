@@ -23,7 +23,7 @@ Can you do it in both recursively and iteratively?
 public class Subsets {
 
     /**
-     * @param S: A set of numbers.
+     * @param nums: A set of numbers.
      * @return: A list of lists. All valid subsets.
      */
     public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
