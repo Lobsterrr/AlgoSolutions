@@ -20,7 +20,10 @@ public class RotateString {
      * @return: nothing
      */
     public void rotateString(char[] str, int offset) {
-        for (int i = 0; i < offset; ++i) {
+        if (str.length == 0) {
+            return;
+        }
+        for (int i = 0; i < offset % str.length; ++i) {
             char tmp = str[str.length - 1];
             for (int j = str.length - 1; j > 0; --j) {
                 str[j] = str[j - 1];
