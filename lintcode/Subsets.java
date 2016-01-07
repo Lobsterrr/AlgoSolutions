@@ -28,14 +28,15 @@ public class Subsets {
      */
     public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
         Arrays.sort(nums);
-        ArrayList<ArrayList<Integer>> result = 
-            new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result =
+                new ArrayList<ArrayList<Integer>>();
         result.add(new ArrayList<Integer>());
         for (int num : nums) {
-            for (int i = 0; i < result.size(); ++i) {
-                ArrayList<Integer> newList = new ArrayList<Integer>(result.get(i));
-                newList.add(num);
-                result.add(newList);
+            int k = result.size();
+            for (int i = 0; i < k; ++i) {
+                ArrayList<Integer> list = new ArrayList<Integer>(result.get(i));
+                list.add(num);
+                result.add(list);
             }
         }
         return result;
