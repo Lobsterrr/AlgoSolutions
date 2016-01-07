@@ -19,6 +19,7 @@ public class RotateString {
      * @param offset: an integer
      * @return: nothing
      */
+    // O(offset * n) time, O(1) space
     public void rotateString(char[] str, int offset) {
         if (str.length == 0) {
             return;
