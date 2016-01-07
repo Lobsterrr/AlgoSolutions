@@ -53,7 +53,8 @@ public class Subsets {
         return dfs(result, nums, 0);
     }
 
-    public ArrayList<ArrayList<Integer>> dfs(ArrayList<ArrayList<Integer>> result, int[] nums, int position) {
+    public ArrayList<ArrayList<Integer>> dfs(ArrayList<ArrayList<Integer>> 
+            result, int[] nums, int position) {
         if (position == nums.length) {
             return result;
         }
@@ -66,13 +67,17 @@ public class Subsets {
         return dfs(result, nums, position + 1);
     }
 
+/*******************************************************************/
+
     public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = 
+            new ArrayList<ArrayList<Integer>>();
         dfs(result, new ArrayList<Integer>(), nums, 0);
         return result;
     }
 
-    public void dfs(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list, int[] nums, int position) {
+    public void dfs(ArrayList<ArrayList<Integer>> result, 
+            ArrayList<Integer> list, int[] nums, int position) {
         result.add(new ArrayList<Integer>(list));
         for (int i = position; i < nums.length; ++i) {
             list.add(nums[i]);
