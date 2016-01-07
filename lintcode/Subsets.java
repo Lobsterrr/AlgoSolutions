@@ -46,7 +46,22 @@ public class Subsets {
 /*******************************************************************/
 
     public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
-        
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        result.add(new ArrayList<Integer>());
+        return dfs(result, nums, 0);
+    }
+
+    pubilc ArrayList<ArrayList<Integer>> dfs(ArrayList<ArrayList<Integer>> result, int[] nums, int position) {
+        if (position == nums.length) {
+            return result;
+        }
+        int k = result.size();
+        for (int i = 0; i < k; ++i) {
+            ArrayList<Integer> list = new ArrayList<Integer>(result.get(i));
+            list.add(nums[position]);
+            result.add(list);
+        }
+        return dfs(result, nums, position + 1);
     }
 
 }
