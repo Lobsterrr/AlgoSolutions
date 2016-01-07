@@ -47,7 +47,8 @@ public class Subsets {
 
     public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
         Arrays.sort(nums);
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = 
+            new ArrayList<ArrayList<Integer>>();
         result.add(new ArrayList<Integer>());
         return dfs(result, nums, 0);
     }
