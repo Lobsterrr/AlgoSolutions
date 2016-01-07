@@ -34,12 +34,19 @@ public class Subsets {
         for (int num : nums) {
             int k = result.size();
             for (int i = 0; i < k; ++i) {
-                ArrayList<Integer> list = new ArrayList<Integer>(result.get(i));
+                ArrayList<Integer> list = 
+                    new ArrayList<Integer>(result.get(i));
                 list.add(num);
                 result.add(list);
             }
         }
         return result;
+    }
+
+/*******************************************************************/
+
+    public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
+        
     }
 
 }
