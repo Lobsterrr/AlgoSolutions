@@ -32,14 +32,11 @@ public class Subsets {
             new ArrayList<ArrayList<Integer>>();
         result.add(new ArrayList<Integer>());
         for (int num : nums) {
-            ArrayList<ArrayList<Integer>> newResult = 
-                new ArrayList<ArrayList<Integer>>();
-            for (ArrayList<Integer> list : result) {
-                ArrayList<Integer> newList = new ArrayList<Integer>(list);
+            for (int i = 0; i < result.size(); ++i) {
+                ArrayList<Integer> newList = new ArrayList<Integer>(result.get(i));
                 newList.add(num);
-                newResult.add(newList);
+                result.add(newList);
             }
-            result.addAll(newResult);
         }
         return result;
     }
