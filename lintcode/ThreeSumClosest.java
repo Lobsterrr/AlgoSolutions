@@ -31,7 +31,7 @@ public class ThreeSumClosest {
             while (low < high) {
                 int sum = numbers[i] + numbers[low] + numbers[high];
                 if (sum == target) {
-                    return sum;
+                    return target;
                 } else if (sum < target) {
                     low++;
                 } else if (sum > target) {
