@@ -3,6 +3,11 @@
  */
 public class RotateString {
 
+    /**
+     * @param str: an array of char
+     * @param offset: an integer
+     * @return: nothing
+     */
     public void rotateString(char[] str, int offset) {
         for (int i = 0; i < offset; ++i) {
             char tmp = str[str.length - 1];
