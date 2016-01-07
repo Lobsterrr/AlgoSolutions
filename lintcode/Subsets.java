@@ -3,7 +3,9 @@
  */
 public class Subsets {
 
-    ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
+        Arrays.sort(nums);
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         result.add(new ArrayList<Integer>());
         for (int num : nums) {
             ArrayList<ArrayList<Integer>> newResult = new ArrayList<ArrayList<Integer>>();
@@ -15,5 +17,6 @@ public class Subsets {
             result.addAll(newResult);
         }
         return result;
+    }
 
 }
