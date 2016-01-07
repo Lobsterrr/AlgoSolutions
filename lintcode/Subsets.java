@@ -46,12 +46,13 @@ public class Subsets {
 /*******************************************************************/
 
     public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
+        Arrays.sort(nums);
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         result.add(new ArrayList<Integer>());
         return dfs(result, nums, 0);
     }
 
-    pubilc ArrayList<ArrayList<Integer>> dfs(ArrayList<ArrayList<Integer>> result, int[] nums, int position) {
+    public ArrayList<ArrayList<Integer>> dfs(ArrayList<ArrayList<Integer>> result, int[] nums, int position) {
         if (position == nums.length) {
             return result;
         }
