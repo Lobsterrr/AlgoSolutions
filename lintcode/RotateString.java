@@ -33,4 +33,24 @@ public class RotateString {
         }
     }
 
+/*********************************************************/
+
+    public void rotateString(char[] str, int offset) {
+        reverse(str, 0, str.length - 1);
+        reverse(str, 0, offset - 1);
+        reverse(str, offset, str.length - 1);
+    }
+
+    public void reverse(int[] array, int low, int high) {
+        while (low < high) {
+            swap(array, low++, high--);
+        }
+    }
+
+    public void swap(char[] array, int i, int j) {
+        char tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+
 }
