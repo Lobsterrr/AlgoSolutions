@@ -56,10 +56,13 @@ public class UniquePathsII {
                 if (obstacles[i][j] == 1) {
                     dp[j] = 0;
                 } else {
-
+                    if (j > 0) {
+                        dp[j] += dp[j - 1];
+                    }
                 }
             }
         }
+        return dp[obstacles.length - 1];
     }
 
 }
