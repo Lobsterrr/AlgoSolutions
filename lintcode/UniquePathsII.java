@@ -47,4 +47,19 @@ public class UniquePathsII {
         return dp[obstacleGrid.length - 1][obstacleGrid[0].length - 1];
     }
 
+
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        int[] dp = new int[obstacles.length];
+        dp[0] = 1;
+        for (int i = 0; i < obstacles.length; ++i) {
+            for (int j = 0; j < obstacles[0].length; ++j) {
+                if (obstacles[i][j] == 1) {
+                    dp[j] = 0;
+                } else {
+
+                }
+            }
+        }
+    }
+
 }
