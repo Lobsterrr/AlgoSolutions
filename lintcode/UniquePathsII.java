@@ -3,6 +3,10 @@
  */
 public class UniquePathsII {
 
+    /**
+     * @param obstacleGrid: A list of lists of integers
+     * @return: An integer
+     */
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int[][] dp = new int[obstacleGrid.length][obstacleGrid[0].length];
         for (int i = 0; i < obstacleGrid.length; ++i) {
