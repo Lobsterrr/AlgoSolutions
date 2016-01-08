@@ -26,7 +26,6 @@ public class UniquePathsII {
      * @param obstacleGrid: A list of lists of integers
      * @return: An integer
      */
-
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int[] dp = new int[obstacleGrid.length];
         dp[0] = 1;
