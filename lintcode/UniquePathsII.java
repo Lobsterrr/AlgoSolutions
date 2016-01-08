@@ -49,11 +49,11 @@ public class UniquePathsII {
 
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        int[] dp = new int[obstacles.length];
+        int[] dp = new int[obstacleGrid.length];
         dp[0] = 1;
-        for (int i = 0; i < obstacles.length; ++i) {
-            for (int j = 0; j < obstacles[0].length; ++j) {
-                if (obstacles[i][j] == 1) {
+        for (int i = 0; i < obstacleGrid.length; ++i) {
+            for (int j = 0; j < obstacleGrid[0].length; ++j) {
+                if (obstacleGrid[i][j] == 1) {
                     dp[j] = 0;
                 } else {
                     if (j > 0) {
@@ -62,7 +62,7 @@ public class UniquePathsII {
                 }
             }
         }
-        return dp[obstacles.length - 1];
+        return dp[obstacleGrid.length - 1];
     }
 
 }
