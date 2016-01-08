@@ -36,7 +36,7 @@ public class TwoSum {
             }
             map.put(target - numbers[i], i + 1);
         }
-        return new int[2];
+        return null;
     }
 
 }
