@@ -29,7 +29,10 @@ public class ReverseLinkedListII {
      * @return: The head of the reversed ListNode
      */
     public ListNode reverseBetween(ListNode head, int m, int n) {
-
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+        ListNode cur = prev.next;
     }
 
 }
