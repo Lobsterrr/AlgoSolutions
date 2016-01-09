@@ -34,7 +34,7 @@ public class ReverseLinkedListII {
         ListNode prev = dummy;
         ListNode cur = prev.next;
         int k = 1;
-        ListNode head2;
+        ListNode head2 = null;
         while (cur != null && k <= n) {
             if (k == m - 1) {
                 head2 = cur;
