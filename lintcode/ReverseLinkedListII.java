@@ -33,6 +33,17 @@ public class ReverseLinkedListII {
         dummy.next = head;
         ListNode prev = dummy;
         ListNode cur = prev.next;
+        int k = 1;
+        while (cur != null) {
+            if (k < m) {
+
+            } else if (m <= k && k < n) {
+
+            } else {
+
+            }
+            k++;
+        }
     }
 
 }
