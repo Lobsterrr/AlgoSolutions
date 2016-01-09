@@ -44,6 +44,7 @@ public class ReverseLinkedListII {
             }
             k++;
         }
+        return dummy.next;
     }
 
 }
