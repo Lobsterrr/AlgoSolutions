@@ -34,14 +34,18 @@ public class ReverseLinkedListII {
         ListNode prev = dummy;
         ListNode cur = prev.next;
         int k = 1;
+        ListNode head2;
         while (cur != null && k <= n) {
-            if (k < m) {
+            if (k == m - 1) {
+                head2 = cur;
+            }
+            if (k <= m) {
                 prev = prev.next;
                 cur = prev.next;
             } else {
                 prev.next = cur.next;
-                cur.next = head.next;
-                head.next = cur;
+                cur.next = head2.next;
+                head2.next = cur;
                 cur = prev.next;
             }
             k++;
