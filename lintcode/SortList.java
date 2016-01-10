@@ -34,10 +34,10 @@ public class SortList {
         }
         ListNode head2 = cur1.next;
         cur1.next = null;
-        return mergeList(sortList(head), sortList(head2));
+        return mergeTwoList(sortList(head), sortList(head2));
     }
 
-    public ListNode mergeList(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoList(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
         while (l1 != null && l2 != null) {
