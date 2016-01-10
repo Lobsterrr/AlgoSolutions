@@ -33,7 +33,7 @@ public class SortList {
         dummy.next = head;
         ListNode prev = dummy;
         ListNode cur = dummy.next;
-        for (; cur != null && cur.val <= node.val; cur = cur.next, prev = prev.next;);
+        for (; cur != null && cur.val <= node.val; cur = cur.next, prev = prev.next);
         prev.next = node;
         if (cur != null) {
             node.next = cur;
