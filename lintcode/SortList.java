@@ -54,25 +54,4 @@ public class SortList {
         return dummy.next;
     }
 
-/*****************************************************************************/
-
-    public ListNode sortList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode node = head;
-        head = sortList(head.next);
-        node.next = null;
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode prev = dummy;
-        ListNode cur = dummy.next;
-        for (; cur != null && cur.val <= node.val; cur = cur.next, prev = prev.next);
-        prev.next = node;
-        if (cur != null) {
-            node.next = cur;
-        }
-        return dummy.next;
-    }
-
 }
