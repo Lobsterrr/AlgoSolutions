@@ -22,6 +22,7 @@ public class SortList {
      * @return: You should return the head of the sorted linked list,
                     using constant space complexity.
      */
+    // O(nlgn) time, O(lgn) space
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
