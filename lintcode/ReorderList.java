@@ -28,7 +28,28 @@ public class ReorderList {
      * @return: void
      */
     public void reorderList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode cur1 = head;
+        ListNode cur2 = head.next;
+        while (cur2 != null && cur2.next != null) {
 
+        }
+    }
+
+    public void reverse(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode prev = head;
+        ListNode cur = head.next;
+        while (cur != null) {
+            prev.next = cur.next;
+            cur.next = head;
+            head = cur;
+            cur = prev.next;
+        }
     }
 
 }
