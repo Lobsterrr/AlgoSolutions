@@ -32,6 +32,9 @@ public class SortList {
             cur2 = cur2.next.next;
             cur1 = cur1.next;
         }
+        ListNode head2 = cur1.next;
+        cur1.next = null;
+        return mergeList(head, head2);
     }
 
     public ListNode mergeList(ListNode l1, ListNode l2) {
