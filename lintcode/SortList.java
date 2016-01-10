@@ -23,7 +23,9 @@ public class SortList {
                     using constant space complexity.
      */
     public ListNode sortList(ListNode head) {
-
+        if (head == null || head.next == null) {
+            return head;
+        }
     }
 
 }
