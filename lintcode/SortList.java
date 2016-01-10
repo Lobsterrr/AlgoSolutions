@@ -26,6 +26,21 @@ public class SortList {
         if (head == null || head.next == null) {
             return head;
         }
+        ListNode node = head;
+        head = sortList(head.next);
+        node.next = null;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+        ListNode cur = dummy.next;
+        for (; cur != null && cur.val <= node.val; cur = cur.next, prev = prev.next;);
+        if (cur == null) {
+            prev.next = node;
+        } else {
+            prev.next = node;
+            node.next = cur;
+        }
+        return dummy.next;
     }
 
 }
