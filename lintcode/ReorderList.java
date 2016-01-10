@@ -34,11 +34,15 @@ public class ReorderList {
         ListNode cur1 = head;
         ListNode cur2 = head.next;
         while (cur2 != null && cur2.next != null) {
-
+            cur1 = cur1.next;
+            cur2 = cur2.next.next;
         }
+        ListNode head2 = reverse(cur1.next);
+        cur1.next = null;
+        
     }
 
-    public void reverse(ListNode head) {
+    public ListNode reverse(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -50,6 +54,7 @@ public class ReorderList {
             head = cur;
             cur = prev.next;
         }
+        return head;
     }
 
 }
