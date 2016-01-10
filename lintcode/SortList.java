@@ -40,7 +40,7 @@ public class SortList {
     public ListNode mergeTwoList(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
-        for (; l1 = null && l2 != null; cur = cur.next) {
+        for (; l1 != null && l2 != null; cur = cur.next) {
             if (l1.val < l2.val) {
                 cur.next = l1;
                 l1 = l1.next;
