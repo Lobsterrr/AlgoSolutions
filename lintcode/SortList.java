@@ -34,7 +34,7 @@ public class SortList {
         }
         ListNode head2 = cur1.next;
         cur1.next = null;
-        return mergeList(head, head2);
+        return mergeList(sortList(head), sortList(head2));
     }
 
     public ListNode mergeList(ListNode l1, ListNode l2) {
