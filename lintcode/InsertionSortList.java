@@ -25,7 +25,7 @@ public class InsertionSortList {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode toInsert = head;
-        while (cur != null && cur != toInsert) {
+        while (toInsert != null) {
             ListNode prev = dummy;
             ListNode cur = prev.next;
             while (cur != null && cur.val <= toInsert.val) {
