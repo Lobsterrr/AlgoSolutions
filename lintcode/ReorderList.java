@@ -29,7 +29,7 @@ public class ReorderList {
      */
     public void reorderList(ListNode head) {
         if (head == null || head.next == null) {
-            return head;
+            return;
         }
         ListNode cur1 = head;
         ListNode cur2 = head.next;
