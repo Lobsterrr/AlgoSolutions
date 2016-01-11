@@ -37,7 +37,7 @@ public class ReorderList {
             cur1 = cur1.next;
             cur2 = cur2.next.next;
         }
-        ListNode cur2 = reverse(cur1.next);
+        cur2 = reverse(cur1.next);
         cur1.next = null;
         cur1 = head;
         while (cur2 != null) {
