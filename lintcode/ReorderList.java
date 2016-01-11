@@ -51,7 +51,7 @@ public class ReorderList {
     }
 
     public ListNode reverse(ListNode head) {
-        if (head == null || head.next == null) {
+        if (head == null) {
             return head;
         }
         ListNode prev = head;
