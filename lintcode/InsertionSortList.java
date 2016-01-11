@@ -30,8 +30,6 @@ public class InsertionSortList {
         ListNode toInsert = head.next;
         head.next = null;
         while (toInsert != null) {
-            ListNode tmp = toInsert.next;
-            toInsert.next = null;
             ListNode prev = dummy;
             ListNode cur = prev.next;
             while (cur != null && cur.val <= toInsert.val) {
@@ -39,6 +37,7 @@ public class InsertionSortList {
                 prev = prev.next;
             }
             prev.next = toInsert;
+            ListNode tmp = toInsert.next;
             toInsert.next = cur;
             toInsert = tmp;
         }
