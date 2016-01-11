@@ -29,11 +29,11 @@ public class InsertionSortList {
         ListNode toInsert = head;
         ListNode cur = dummy;
         while (toInsert != null) {
-            ListNode tmp = toInsert.next;
             cur = dummy;
             while (cur.next != null && cur.next.val <= toInsert.val) {
                 cur = cur.next;
             }
+            ListNode tmp = toInsert.next;
             toInsert.next = cur.next;
             cur.next = toInsert;
             toInsert = tmp;
