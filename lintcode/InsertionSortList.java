@@ -44,27 +44,4 @@ public class InsertionSortList {
         return dummy.next;
     }
 
-    public ListNode insertionSortList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode toInsertPrev = head;
-        ListNode toInsert = head.next;
-        while (toInsert != null) {
-            ListNode prev = dummy;
-            ListNode cur = prev.next;
-            while (cur != null && cur.val <= toInsert.val) {
-                cur = cur.next;
-                prev = prev.next;
-            }
-            prev.next = toInsert;
-            toInsertPrev.next = toInsert.next;
-            toInsert.next = cur;
-            toInsert = toInsertPrev.next;
-        }
-        return dummy.next;
-    }
-
 }
