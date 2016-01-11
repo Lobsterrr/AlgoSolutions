@@ -59,9 +59,8 @@ public class InsertionSortList {
             while (cur.next != null && cur.next.val <= toInsert.val) {
                 cur = cur.next;
             }
-            ListNode next = cur.next;
+            toInsert.next = cur.next;
             cur.next = toInsert;
-            toInsert.next = next;
             toInsert = tmp;
         }
         return dummy.next;
