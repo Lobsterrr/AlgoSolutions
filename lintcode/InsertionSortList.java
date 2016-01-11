@@ -24,19 +24,19 @@ public class InsertionSortList {
     public ListNode insertionSortList(ListNode head) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode cur = head;
-        while (cur != null) {
-            ListNode tmp = cur.next;
+        ListNode toInsert = head;
+        while (cur != null && cur != toInsert) {
             ListNode prev = dummy;
-            ListNode curr = prev.next;
-            while (curr != null && curr.val <= cur.val) {
-                curr = curr.next;
+            ListNode cur = prev.next;
+            while (cur != null && cur.val <= toInsert.val) {
+                cur = cur.next;
                 prev = prev.next;
             }
-            prev.next = cur;
-            cur.next = curr;
-
-            cur = cur.next;
+            ListNode tmp = toInsert.next;
+            toInsert.next = null;
+            prev.next = toInsert;
+            toInsert.next = cur;
+            toInsert = tmp;
         }
         return dummy.next;
     }
