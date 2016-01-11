@@ -22,31 +22,6 @@ public class InsertionSortList {
      * @return: The head of linked list.
      */
     public ListNode insertionSortList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode toInsert = head.next;
-        head.next = null;
-        while (toInsert != null) {
-            ListNode prev = dummy;
-            ListNode cur = prev.next;
-            while (cur != null && cur.val <= toInsert.val) {
-                cur = cur.next;
-                prev = prev.next;
-            }
-            prev.next = toInsert;
-            ListNode tmp = toInsert.next;
-            toInsert.next = cur;
-            toInsert = tmp;
-        }
-        return dummy.next;
-    }
-
-
-
-    public ListNode insertionSortList(ListNode head) {
         if (head == null) {
             return head;
         }
