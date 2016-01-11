@@ -22,7 +22,21 @@ public class InsertionSortList {
      * @return: The head of linked list.
      */
     public ListNode insertionSortList(ListNode head) {
-
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode tmp = cur.next;
+            ListNode prev = dummy;
+            ListNode curr = prev.next;
+            while (curr != null && curr.val <= cur.val) {
+                curr = curr.next;
+                prev = prev.next;
+            }
+            prev.next = cur;
+            cur.next = curr;
+        }
+        return dummy.next;
     }
 
 }
