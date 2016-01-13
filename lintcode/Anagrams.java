@@ -13,7 +13,7 @@ public class Anagrams {
             if (!map.containsKey(s)) {
                 map.put(s, str);
             } else {
-                if (!result.containsKey(map.get(s))) {
+                if (!result.contains(map.get(s))) {
                     result.add(map.get(s));
                 }
                 result.add(str);
