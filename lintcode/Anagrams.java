@@ -1,8 +1,12 @@
 /*
- *
+ * 
  */
 public class Anagrams {
 
+    /**
+     * @param strs: A list of strings
+     * @return: A list of strings
+     */
     public List<String> anagrams(String[] strs) {
         List<String> result = new ArrayList<String>();
         Map<String, String> map = new HashMap<String, String>();
