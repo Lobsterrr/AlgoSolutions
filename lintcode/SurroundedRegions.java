@@ -84,7 +84,7 @@ public class SurroundedRegions {
         }
     }
 
-    public vodi bfs(char[][] board, int i, int j) {
+    public void bfs(char[][] board, int i, int j) {
         while (!queue.isEmpty()) {
             int index = queue.poll();
             int x = index / board.length;
