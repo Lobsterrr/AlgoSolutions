@@ -3,6 +3,10 @@
  */
 public class SurroundedRegions {
 
+    /**
+     * @param board a 2D board containing 'X' and 'O'
+     * @return void
+     */
     public void surroundedRegions(char[][] board) {
         for (int i = 0; i < board.length; ++i) {
             dfs(board, i, 0);
