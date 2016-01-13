@@ -23,6 +23,7 @@ public class SurroundedRegions {
      * @param board a 2D board containing 'X' and 'O'
      * @return void
      */
+    // DFS
     public void surroundedRegions(char[][] board) {
         if (board.length == 0) {
             return;
@@ -56,6 +57,50 @@ public class SurroundedRegions {
         dfs(board, i + 1, j);
         dfs(board, i, j - 1);
         dfs(board, i, j + 1);
+    }
+
+/*******************************************************************/
+    // BFS
+    public void surroundedRegions(char[][] board) {
+        if (board.length == 0) {
+            return;
+        }
+        for (int i = 0; i < board.length; ++i) {
+            bfs(board, i, 0);
+            bfs(board, i, board[0].length - 1);
+        }
+        for (int j = 0; j < board[0].length; ++j) {
+            bfs(board, 0, j);
+            bfs(board, board.length - 1, j);
+        }
+        for (int i = 0; i < board.length; ++i) {
+            for (int j = 0; j < board[0].length; ++j) {
+                if (board[i][j] == 'O') {
+                    board[i][j] = 'X';
+                } else if (board[i][j] == 'S') {
+                    board[i][j] = 'O';
+                }
+            }
+        }
+    }
+
+    public vodi bfs(char[][] board, int i, int j) {
+        while (!queue.isEmpty()) {
+            int index = queue.poll();
+            int x = index / board.length;
+            int y = index % board[0].length;
+            fill(board, x, y);
+        }
+    }
+
+    Queue<Integer> queue = new LinkedList<Integer>();
+
+    public void fill(char[][] board, int i, int j) {
+        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] != 'O') {
+            return;
+        }    
+        queue.offer(i * board.length + j);
+        board[i][j] = 'S';
     }
 
 }
