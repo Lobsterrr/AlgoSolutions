@@ -24,7 +24,7 @@ public class SurroundedRegions {
      * @return void
      */
     public void surroundedRegions(char[][] board) {
-        if (board == null || board.length == 0) {
+        if (board.length == 0) {
             return;
         }
         for (int i = 0; i < board.length; ++i) {
