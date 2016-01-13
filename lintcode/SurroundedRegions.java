@@ -39,7 +39,7 @@ public class SurroundedRegions {
             for (int j = 0; j < board[0].length; ++j) {
                 if (board[i][j] == 'O') {
                     board[i][j] = 'X';
-                } else if (board[i][j] == '#') {
+                } else if (board[i][j] == 'S') {
                     board[i][j] = 'O';
                 }
             }
@@ -51,7 +51,7 @@ public class SurroundedRegions {
                 j >= board[i].length || board[i][j] != 'O') {
             return;
         }
-        board[i][j] = '#';
+        board[i][j] = 'S';
         dfs(board, i - 1, j);
         dfs(board, i + 1, j);
         dfs(board, i, j - 1);
