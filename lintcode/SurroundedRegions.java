@@ -85,11 +85,15 @@ public class SurroundedRegions {
     }
 
     public void bfs(char[][] board, int i, int j) {
+        fill(board, i, j);
         while (!queue.isEmpty()) {
             int index = queue.poll();
             int x = index / board.length;
             int y = index % board[0].length;
-            fill(board, x, y);
+            fill(board, x - 1, y);
+            fill(board, x + 1, y);
+            fill(board, x, y - 1);
+            fill(board, x, y + 1);
         }
     }
 
