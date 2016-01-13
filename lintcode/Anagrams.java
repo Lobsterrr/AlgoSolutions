@@ -13,8 +13,9 @@ public class Anagrams {
             if (!map.containsKey(s)) {
                 map.put(s, str);
             } else {
-                if (!result.contains(map.get(s))) {
+                if (!map.get(s).equals("")) {
                     result.add(map.get(s));
+                    map.put(s, "");
                 }
                 result.add(str);
             }
