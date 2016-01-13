@@ -22,6 +22,9 @@ public class SurroundedRegions {
      * @return void
      */
     public void surroundedRegions(char[][] board) {
+        if (board == null || board.length == 0) {
+            return;
+        }
         for (int i = 0; i < board.length; ++i) {
             dfs(board, i, 0);
             dfs(board, i, board[0].length - 1);
