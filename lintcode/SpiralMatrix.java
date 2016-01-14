@@ -32,7 +32,7 @@ public class SpiralMatrix {
             for (int j = i + 1; j < xLen - i; ++j) {
                 result.add(matrix[j][yLen - 1 - i]);
             }
-            for (int j = yLen - 2 - i; j >= i; --j) {
+            for (int j = yLen - 2 - i; i != xLen - 1 - i && j >= i; --j) {
                 result.add(matrix[xLen - 1 - i][j]);
             }
             for (int j = xLen - 2 - i; i != yLen - 1 - i && j >= i + 1; --j) {
