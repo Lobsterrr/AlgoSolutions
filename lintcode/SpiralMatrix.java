@@ -19,7 +19,12 @@ public class SpiralMatrix {
      * @return an integer list
      */
     public List<Integer> spiralOrder(int[][] matrix) {
-
+        List<Integer> result = new ArrayList<Integer>();
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+        for (int i = 0; i < (Math.min(xLen, yLen) + 1) / 2; ++i) {
+            
+        }
     }
 
 }
