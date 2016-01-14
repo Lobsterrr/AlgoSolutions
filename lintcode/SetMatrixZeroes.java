@@ -30,6 +30,26 @@ public class SetMatrixZeroes {
      * @return: Void
      */
     public void setZeroes(int[][] matrix) {
+        Queue<Integer> queue = new LinkedList<Integer>();
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix[0].length; ++j) {
+                queue.offer(i * matrix.length + j);
+            }
+        }
+        while (!queue.isEmpty()) {
+            int index = queue.poll();
+            int x = index / matrix.length;
+            int y = index % matrix[0].length;
+            for (int i = 0; i < matrix.length; ++i) {
+                matrix[i][y] = 0;
+            }
+            for (int j = 0; j < matrix[0].length; ++j) {
+                matrix[x][j] = 0;
+            }
+        }
+
+
+
         if (matrix.length == 0) {
             return;
         }
