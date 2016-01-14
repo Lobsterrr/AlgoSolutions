@@ -3,6 +3,11 @@
  */
 public class GasStation {
 
+    /**
+     * @param gas: an array of integers
+     * @param cost: an array of integers
+     * @return: an integer
+     */
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int gasSum = 0;
         int costSum = 0;
