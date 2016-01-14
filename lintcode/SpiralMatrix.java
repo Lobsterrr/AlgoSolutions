@@ -23,8 +23,20 @@ public class SpiralMatrix {
         int xLen = matrix.length;
         int yLen = matrix[0].length;
         for (int i = 0; i < (Math.min(xLen, yLen) + 1) / 2; ++i) {
-            
+            for (int j = i; j < yLen - i; ++j) {
+                result.add(matrix[i][j]);
+            }
+            for (int j = i + 1; j < xLen - i; ++j) {
+                result.add(matrix[j][yLen - 1 - i]);
+            }
+            for (int j = yLen - 2 - i; j >= i; --j) {
+                result.add(matrix[xLen - 1 - i][j]);
+            }
+            for (int j = xLen - 2 - i; j >= i + 1; --j) {
+                result.add(matrix[j][i]);
+            }
         }
+        return result;
     }
 
 }
