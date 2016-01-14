@@ -34,13 +34,13 @@ public class SetMatrixZeroes {
         for (int i = 0; i < matrix.length; ++i) {
             for (int j = 0; j < matrix[0].length; ++j) {
                 if (matrix[i][j] == 0) {
-                    queue.offer(i * matrix.length + j);
+                    queue.offer(i * matrix[0].length + j);
                 }
             }
         }
         while (!queue.isEmpty()) {
             int index = queue.poll();
-            int x = index / matrix.length;
+            int x = index / matrix[0].length;
             int y = index % matrix[0].length;
             for (int i = 0; i < matrix.length; ++i) {
                 matrix[i][y] = 0;
