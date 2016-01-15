@@ -30,6 +30,11 @@ public class SetMatrixZeroes {
      * @return: Void
      */
     public void setZeroes(int[][] matrix) {
+        // 测试中文
+    }
+
+
+    public void setZeroes(int[][] matrix) {
         Queue<Integer> queue = new LinkedList<Integer>();
         for (int i = 0; i < matrix.length; ++i) {
             for (int j = 0; j < matrix[0].length; ++j) {
