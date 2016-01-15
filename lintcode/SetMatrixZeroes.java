@@ -30,6 +30,9 @@ public class SetMatrixZeroes {
      * @return: Void
      */
     public void setZeroes(int[][] matrix) {
+        if (matrix.length == 0) {
+            return;
+        }
         boolean isRowZeros = false;
         boolean isColZeros = false;
         for (int i = 0; i < matrix.length; ++i) {
