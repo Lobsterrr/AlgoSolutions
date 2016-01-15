@@ -66,15 +66,11 @@ public class SetMatrixZeroes {
                 }
             }
         }
-        if (isRowZeros) {
-            for (int j = 0; j < matrix[0].length; ++j) {
-                matrix[0][j] = 0;
-            }
+        for (int j = 0; isRowZeros && j < matrix[0].length; ++j) {
+            matrix[0][j] = 0;
         }
-        if (isColZeros) {
-            for (int i = 0; i < matrix.length; ++i) {
-                matrix[i][0] = 0;
-            }
+        for (int i = 0; isColZeros && i < matrix.length; ++i) {
+            matrix[i][0] = 0;
         }
     }
 
