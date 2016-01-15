@@ -30,7 +30,25 @@ public class SetMatrixZeroes {
      * @return: Void
      */
     public void setZeroes(int[][] matrix) {
-        // 测试中文
+        boolean isRowZeros = false;
+        boolean isColZeros = false;
+        for (int i = 0; i < matrix.length; ++i) {
+            if (matrix[i][0] == 0) {
+                isColZeros = true;
+                break;
+            }
+        }
+        for (int j = 0; j < matrix[0].length; ++j) {
+            if (matrix[0][j] == 0) {
+                isRowZeros = true;
+                break;
+            }
+        }
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix[0].length; ++j) {
+                
+            }
+        }
     }
 
 
