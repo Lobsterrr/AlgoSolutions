@@ -3,7 +3,6 @@
 
 Here we use the right pointer in TreeNode as the next pointer in ListNode.
 
-Have you met this question in a real interview? Yes
 Example
               1
                \
