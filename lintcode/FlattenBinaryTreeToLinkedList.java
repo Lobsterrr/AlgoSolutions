@@ -39,6 +39,12 @@ public class FlattenBinaryTreeToLinkedList {
      * @return: nothing
      */
     public void flatten(TreeNode root) {
+
+    }
+
+/*******************************************************************/
+
+    public void flatten(TreeNode root) {
         if (root == null) {
             return;
         }
