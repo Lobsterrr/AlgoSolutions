@@ -39,6 +39,22 @@ public class FlattenBinaryTreeToLinkedList {
      * @return: nothing
      */
     public void flatten(TreeNode root) {
+        while (root != null) {
+            if (root.left == null) {
+                root = root.right;
+            } else {
+                TreeNode prev = root.left;
+                while (prev.right != null) {
+                    prev = prev.right;
+                }
+                prev.right = root.right;
+                root.right = root.left;
+                root.left = null;
+            }
+        }
+    }
+
+    public void flatten(TreeNode root) {
         TreeNode cur = root;
         while (cur != null) {
             if (cur.left == null) {
