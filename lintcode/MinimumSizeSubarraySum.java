@@ -32,21 +32,4 @@ public class MinimumSizeSubarraySum {
         return result == Integer.MAX_VALUE ? -1 : result;
     }
 
-    public int minimumSize(int[] nums, int s) {
-        int result = Integer.MAX_VALUE;
-        int sum = 0;
-        int i = 0;
-        int j = 0;
-        while (j < nums.length) {
-            sum += nums[j++];
-            if (sum >= s) {
-                while (sum >= s) {
-                    sum -= nums[i++];
-                }
-                result = Math.min(result, j - i + 1);
-            }
-        }
-        return result == Integer.MAX_VALUE ? -1 : result;
-    }
-
 }
