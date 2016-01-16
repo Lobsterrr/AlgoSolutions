@@ -19,16 +19,9 @@ public class MinimumSizeSubarraySum {
      * @return: an integer representing the minimum size of subarray
      */
     public int minimumSize(int[] nums, int s) {
-        int sum = 0;
-        for (int i = 0; i < nums.length; ++i) {
-            sum += nums[i];
-        }
-        if (sum < s) {
-            return -1;
-        }
         int result = Integer.MAX_VALUE;
         for (int i = 0; i < nums.length; ++i) {
-            sum = 0;
+            int sum = 0;
             for (int j = i; sum < s && j < nums.length; ++j) {
                 sum += nums[j];
                 if (sum >= s) {
@@ -36,7 +29,7 @@ public class MinimumSizeSubarraySum {
                 }
             }
         }
-        return result;
+        return result == Integer.MAX_VALUE ? -1 : result;
     }
 
 }
