@@ -22,10 +22,8 @@ public class MinimumSizeSubarraySum {
         int result = Integer.MAX_VALUE;
         for (int i = 0, j = 0, sum = 0; i < nums.length; ++i) {
             sum += nums[i];
-            if (sum >= s) {
-                while (sum >= s) {
-                    sum -= nums[j++];
-                }
+            while (sum >= s) {
+                sum -= nums[j++];
                 result = Math.min(result, i - j + 2);
             }
         }
