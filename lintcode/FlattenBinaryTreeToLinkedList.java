@@ -45,11 +45,11 @@ public class FlattenBinaryTreeToLinkedList {
     public void flatten(TreeNode root) {
         while (root != null) {
             if (root.left != null) {
-                TreeNode prev = root.left;
-                while (prev.right != null) {
-                    prev = prev.right;
+                TreeNode cur = root.left;
+                while (cur.right != null) {
+                    cur = cur.right;
                 }
-                prev.right = root.right;
+                cur.right = root.right;
                 root.right = root.left;
                 root.left = null;
             }
