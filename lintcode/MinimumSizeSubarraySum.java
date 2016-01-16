@@ -20,6 +20,19 @@ public class MinimumSizeSubarraySum {
      */
     public int minimumSize(int[] nums, int s) {
         int result = Integer.MAX_VALUE;
+        for (int i = 0, j = 0, sum = 0; i < nums.length; ++i) {
+            sum += nums[i];
+            if (sum >= s) {
+                while (sum >= s) {
+                    sum -= nums[j++];
+                }
+                result = Math.min(result, i - j + 1);
+            }
+        }
+    }
+
+    public int minimumSize(int[] nums, int s) {
+        int result = Integer.MAX_VALUE;
         int sum = 0;
         int i = 0;
         int j = 0;
