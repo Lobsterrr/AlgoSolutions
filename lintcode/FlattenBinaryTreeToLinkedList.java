@@ -1,7 +1,9 @@
 /*
- * Flatten a binary tree to a fake "linked list" in pre-order traversal.
+ * Flatten a binary tree to a fake "linked list" 
+ * in pre-order traversal.
 
-Here we use the right pointer in TreeNode as the next pointer in ListNode.
+Here we use the right pointer in TreeNode as the 
+next pointer in ListNode.
 
 Example
               1
@@ -16,7 +18,9 @@ Example
                        \
                         6
 Note
-Don't forget to mark the left child of each node to null. Or you will get Time Limit Exceeded or Memory Limit Exceeded.
+Don't forget to mark the left child of each node 
+to null. Or you will get Time Limit Exceeded or 
+Memory Limit Exceeded.
 
 Challenge
 Do it in-place without any extra memory.
