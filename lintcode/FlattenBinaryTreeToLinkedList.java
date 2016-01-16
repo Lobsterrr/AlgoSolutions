@@ -79,14 +79,14 @@ public class FlattenBinaryTreeToLinkedList {
 /*******************************************************************/
 
     public void flatten(TreeNode root) {
-        return flatten(root, null);
+        flatten(root, null);
     }
 
     public TreeNode flatten(TreeNode root, TreeNode result) {
         if (root == null) {
             return result;
         }
-        TreeNode result = flatten(root.right, result);
+        result = flatten(root.right, result);
         root.right = flatten(root.left, result);
         root.left = null;
         return root;
