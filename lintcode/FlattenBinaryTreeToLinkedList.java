@@ -43,12 +43,11 @@ public class FlattenBinaryTreeToLinkedList {
             return;
         }
         TreeNode cur = root;
-        TreeNode prev;
         while (cur != null) {
             if (cur.left == null) {
                 cur = cur.right;
             } else {
-                prev = cur.left;
+                TreeNode prev = cur.left;
                 while (prev.right != null) {
                     prev = prev.right;
                 }
