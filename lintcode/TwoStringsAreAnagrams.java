@@ -19,6 +19,23 @@ public class TwoStringsAreAnagrams {
         if (s.length() != t.length()) {
             return false;
         }
+        int[] count = new int[s.length()];
+        for (int i = 0; i < s.length(); ++i) {
+            count[s.charAt(i)]++;
+            count[t.charAt(i)]--;
+        }
+        for (c : count) {
+            if (c != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean anagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
         char[] array1 = s.toCharArray();
         char[] array2 = t.toCharArray();
         Arrays.sort(array1);
