@@ -16,9 +16,6 @@ public class TwoStringsAreAnagrams {
      * @return true or false
      */
     public boolean anagram(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
-        }
         int[] count = new int[256];
         for (int i = 0; i < s.length(); ++i) {
             count[s.charAt(i)]++;
