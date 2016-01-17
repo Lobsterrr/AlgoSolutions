@@ -41,7 +41,8 @@ public class NumberOfIslands {
     }
 
     public void dfs(boolean[][] grid, int x, int y) {
-        if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length || !grid[x][y]) {
+        if (x < 0 || x >= grid.length || y < 0 || 
+                y >= grid[0].length || !grid[x][y]) {
             return;
         }
         grid[x][y] = false;
