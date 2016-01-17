@@ -24,7 +24,7 @@ public class TwoStringsAreAnagrams {
             count[s.charAt(i)]++;
             count[t.charAt(i)]--;
         }
-        for (c : count) {
+        for (int c : count) {
             if (c != 0) {
                 return false;
             }
