@@ -19,7 +19,7 @@ public class TwoStringsAreAnagrams {
         if (s.length() != t.length()) {
             return false;
         }
-        int[] count = new int[s.length()];
+        int[] count = new int[256];
         for (int i = 0; i < s.length(); ++i) {
             count[s.charAt(i)]++;
             count[t.charAt(i)]--;
