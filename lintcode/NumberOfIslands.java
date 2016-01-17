@@ -51,7 +51,8 @@ public class NumberOfIslands {
     }
 
     public void dfs(int[][] matrix, int x, int y) {
-        if (x < 0 || x >= matrix.length || y < 0 || y >= matrix[0].length || matrix[x][y] != 1) {
+        if (x < 0 || x >= matrix.length || y < 0 || 
+                y >= matrix[0].length || matrix[x][y] != 1) {
             return;
         }
         matrix[x][y] = 2;
