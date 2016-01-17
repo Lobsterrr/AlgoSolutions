@@ -16,13 +16,13 @@ public class TwoStringsAreAnagrams {
      * @return true or false
      */
     public boolean anagram(String s, String t) {
-        int[] count = new int[256];
+        int[] letters = new int[256];
         for (int i = 0; i < s.length(); ++i) {
-            count[s.charAt(i)]++;
-            count[t.charAt(i)]--;
+            letters[s.charAt(i)]++;
+            letters[t.charAt(i)]--;
         }
-        for (int c : count) {
-            if (c != 0) {
+        for (int letter : letters) {
+            if (letter != 0) {
                 return false;
             }
         }
