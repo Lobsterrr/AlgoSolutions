@@ -14,8 +14,16 @@ public class NumberOfIslands {
                 }
             }
         }
-
-
+        int result = 0;
+        for (int i = 0; i < xLen; ++i) {
+            for (int j = 0; j < yLen; ++j) {
+                if (matrix[i][j] == 1) {
+                    result++;
+                    dfs(matrix, i, j);
+                }
+            }
+        }
+        return result;
     }
 
     public void dfs(int[][] matrix, int x, int y) {
