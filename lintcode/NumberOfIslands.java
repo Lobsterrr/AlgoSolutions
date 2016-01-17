@@ -3,6 +3,10 @@
  */
 public class NumberOfIslands {
 
+    /**
+     * @param grid a boolean 2D matrix
+     * @return an integer
+     */
     public int numIslands(boolean[][] grid) {
         if (grid.length == 0) {
             return 0;
