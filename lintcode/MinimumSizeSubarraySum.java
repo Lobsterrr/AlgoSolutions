@@ -31,33 +31,4 @@ public class MinimumSizeSubarraySum {
         return result == Integer.MAX_VALUE ? -1 : result;
     }
 
-    // O(nlgn) time, O(n) space.
-    public int minimumSize(int[] nums, int s) {
-        int[] sums = new int[nums.length + 1];
-        for (int i = 1; i <= nums.length; ++i) {
-            sums[i] = sums[i - 1] + nums[i - 1];
-        }
-        int result = nums.length + 1;
-        for (int i = 0; i <= nums.length; ++i) {
-            int high = findRight(sums, i + 1, nums.length, s);
-            if (high == nums.length + 1) {
-                break;
-            }
-            result = Math.min(result, high - i);
-        }
-        return result == nums.length + 1 ? -1 : result;
-    }
-
-    public int findRight(int[] sums, int low, int high, int s) {
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (sums[mid] >= s) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
-            }
-        }
-        return low; 
-    }
-
 }
