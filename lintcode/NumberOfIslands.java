@@ -52,42 +52,4 @@ public class NumberOfIslands {
         dfs(grid, x, y + 1);
     }
 
-    public int numIslands(boolean[][] grid) {
-        if (grid.length == 0) {
-            return 0;
-        }
-        int xLen = grid.length;
-        int yLen = grid[0].length;
-        int[][] matrix = new int[xLen][yLen];
-        for (int i = 0; i < xLen; ++i) {
-            for (int j = 0; j < yLen; ++j) {
-                if (grid[i][j]) {
-                    matrix[i][j] = 1;
-                }
-            }
-        }
-        int result = 0;
-        for (int i = 0; i < xLen; ++i) {
-            for (int j = 0; j < yLen; ++j) {
-                if (matrix[i][j] == 1) {
-                    result++;
-                    dfs(matrix, i, j);
-                }
-            }
-        }
-        return result;
-    }
-
-    public void dfs(int[][] matrix, int x, int y) {
-        if (x < 0 || x >= matrix.length || y < 0 || 
-                y >= matrix[0].length || matrix[x][y] != 1) {
-            return;
-        }
-        matrix[x][y] = 2;
-        dfs(matrix, x - 1, y);
-        dfs(matrix, x + 1, y);
-        dfs(matrix, x, y - 1);
-        dfs(matrix, x, y + 1);
-    }
-
 }
