@@ -25,6 +25,21 @@ public class NumberOfIslands {
      * @return an integer
      */
     public int numIslands(boolean[][] grid) {
+        
+    }
+
+    public void dfs(boolean[][] grid, int x, int y) {
+        if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length || !grid[x][y]) {
+            return;
+        }
+        grid[x][y] = false;
+        dfs(grid, x - 1, y);
+        dfs(grid, x + 1, y);
+        dfs(grid, x, y - 1);
+        dfs(grid, x, y + 1);
+    }
+
+    public int numIslands(boolean[][] grid) {
         if (grid.length == 0) {
             return 0;
         }
