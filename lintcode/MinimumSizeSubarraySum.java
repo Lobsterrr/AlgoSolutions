@@ -18,6 +18,7 @@ public class MinimumSizeSubarraySum {
      * @param s: an integer
      * @return: an integer representing the minimum size of subarray
      */
+    // O(n) time, O(1) space.
     public int minimumSize(int[] nums, int s) {
         int result = Integer.MAX_VALUE;
         for (int i = 0, j = 0, sum = 0; i < nums.length; ++i) {
