@@ -40,7 +40,7 @@ public class MinimumSizeSubarraySum {
         int result = Integer.MAX_VALUE;
         for (int i = 0; i <= nums.length; ++i) {
             int high = findRight(sums, i + 1, nums.length, s);
-            result = Math.min(result, high - i + 1);
+            result = Math.min(result, high - i);
         }
         return result == Integer.MAX_VALUE ? -1 : result;
     }
