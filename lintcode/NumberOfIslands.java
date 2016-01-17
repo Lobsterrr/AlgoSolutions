@@ -4,6 +4,9 @@
 public class NumberOfIslands {
 
     public int numIslands(boolean[][] grid) {
+        if (grid.length == 0) {
+            return 0;
+        }
         int xLen = grid.length;
         int yLen = grid[0].length;
         int[][] matrix = new int[xLen][yLen];
