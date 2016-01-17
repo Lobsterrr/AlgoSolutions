@@ -39,13 +39,13 @@ public class MinimumSizeSubarraySum {
         }
         int result = Integer.MAX_VALUE;
         for (int i = 0; i <= nums.length; ++i) {
-            int high = findRight(i, nums.length, sums, s);
+            int high = findRight(sums, i + 1, nums.length, s);
             result = Math.min(result, high - i + 1);
         }
         return result == Integer.MAX_VALUE ? -1 : result;
     }
 
-    public int findRight(int low, int high, int[] sums, int s) {
+    public int findRight(int[] sums, int low, int high, int s) {
         while (low <= high) {
             int mid = low + (high - low) / 2;
             if (sums[mid] >= s) {
