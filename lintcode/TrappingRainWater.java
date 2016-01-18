@@ -21,7 +21,18 @@ public class TrappingRainWater {
      * @return: a integer
      */
     public int trapRainWater(int[] heights) {
-
+        if (heights.length == 0) {
+            return 0;
+        }
+        Stack<Integer> stack = new Stack<Integer>();
+        int result = 0;
+        for (int i = 1; i < heights.length; ++i) {
+            if (heights[i] > heights[i - 1]) {
+                stack.push(heights[i]);
+            } else if (heights[i] < heights[i - 1]) {
+                
+            }
+        }
     }
 
 }
