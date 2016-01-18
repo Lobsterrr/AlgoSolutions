@@ -3,7 +3,6 @@
 
 Trapping Rain Water
 
-Have you met this question in a real interview? Yes
 Example
 Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
 
