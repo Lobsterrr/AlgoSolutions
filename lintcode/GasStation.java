@@ -29,8 +29,7 @@ public class GasStation {
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int result = 0;
         int margin = 0;
-        int remainder = 0;
-        for (int i = 0; i < gas.length; ++i) {
+        for (int i = 0, remainder = 0; i < gas.length; ++i) {
             margin += gas[i] - cost[i];
             remainder += gas[i] - cost[i];
             if (remainder < 0) {
