@@ -21,6 +21,11 @@ public class TrappingRainWater {
      * @return: a integer
      */
     public int trapRainWater(int[] heights) {
+
+    }
+
+
+    public int trapRainWater(int[] heights) {
         int[] leftMax = new int[heights.length];
         int[] rightMax = new int[heights.length];
         for (int i = 0; i < heights.length; ++i) {
