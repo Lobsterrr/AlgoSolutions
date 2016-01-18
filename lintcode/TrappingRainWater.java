@@ -25,12 +25,16 @@ public class TrappingRainWater {
             return 0;
         }
         Stack<Integer> stack = new Stack<Integer>();
+        stack.push(heights[0]);
+        int lastMaxHeightIndex = 0;
         int result = 0;
         for (int i = 1; i < heights.length; ++i) {
-            if (heights[i] > heights[i - 1]) {
+            if (heights[i] >= stack.peek()) {
+                for (int j = lastMaxHeightIndex; j < i; ++j) {
+                    result += Math.max(0, heights[lastMaxHeightIndex] - heights[j]);
+                }
                 stack.push(heights[i]);
-            } else if (heights[i] < heights[i - 1]) {
-                
+                lastMaxHeightIndex = i;
             }
         }
     }
