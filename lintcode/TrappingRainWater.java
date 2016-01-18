@@ -23,7 +23,7 @@ public class TrappingRainWater {
     public int trapRainWater(int[] heights) {
         int[] leftMax = new int[heights.length];
         int[] rightMax = new int[heights.length];
-        for (int i = 1; i < heights.length; ++i) {
+        for (int i = 0; i < heights.length; ++i) {
             leftMax[i] = Math.max(leftMax[i - (i == 0 ? 0 : 1)], heights[i]);
             rightMax[heights.length - 1 - i] = Math.max(rightMax[heights.length - (i == 0 ? 1 : 0) - i], heights[heights.length - 1 - i]);
         }
