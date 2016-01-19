@@ -14,9 +14,9 @@ public class ConvertExpressionToReversePolishNotation {
         String[] exps = expression.split(" ");
         Queue<String> nums = new LinkedList<String>();
         Queue<String> opts = new LinkedList<String>();
-        for (int i = 0; i < exps.length(); ++i) {
+        for (int i = 0; i < exps.length; ++i) {
             if (Character.isDigit(exps[i].charAt(0))) {
-                nums.offer(Integer.parseInt(exps[i]));
+                nums.offer(exps[i]);
             } else {
                 opts.offer(exps[i]);
             }
