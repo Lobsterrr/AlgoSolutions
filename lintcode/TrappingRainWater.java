@@ -32,7 +32,7 @@ public class TrappingRainWater {
                 leftMax = Math.max(leftMax, heights[low++]);
             } else {
                 result += Math.max(0, rightMax - heights[high]);
-                rightMax = Math.max(0, heights[high--]);
+                rightMax = Math.max(0, rightMax - heights[high--]);
             }
         }
         return result;
