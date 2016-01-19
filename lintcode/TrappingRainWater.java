@@ -21,6 +21,9 @@ public class TrappingRainWater {
      * @return: a integer
      */
     public int trapRainWater(int[] heights) {
+        if (heights.length == 0) {
+            return 0;
+        }
         int result = 0;
         int leftMax = heights[0];
         int rightMax = heights[heights.length - 1];
@@ -32,7 +35,7 @@ public class TrappingRainWater {
                 leftMax = Math.max(leftMax, heights[low++]);
             } else {
                 result += Math.max(0, rightMax - heights[high]);
-                rightMax = Math.max(0, rightMax - heights[high--]);
+                rightMax = Math.max(0, heights[high--]);
             }
         }
         return result;
