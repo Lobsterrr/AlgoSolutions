@@ -11,6 +11,7 @@ public class ConvertExpressionToReversePolishNotation {
      * @return: The Reverse Polish notation of this expression
      */
     public ArrayList<String> convertToRPN(String[] expression) {
+        String[] exps = expression.split(" ");
 
     }
 
