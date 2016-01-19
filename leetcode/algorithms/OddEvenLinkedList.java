@@ -38,6 +38,7 @@ public class OddEvenLinkedList {
             }
             head = head.next;
         }
+        evenCur.next = null;
         oddCur.next = even.next;
         return odd.next;
     }
