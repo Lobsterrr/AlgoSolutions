@@ -57,10 +57,10 @@ public class TrappingRainWater {
         int rightMax = 0;
         while (start < end) {
             if (leftMax < rightMax) {
-                result += Math.max(Math.min(leftMax, rightMax) - A[start], 0);
+                result += Math.max(leftMax - A[start], 0);
                 leftMax = Math.max(leftMax, A[start++]);
             } else {
-                result += Math.max(Math.min(leftMax, rightMax) - A[--end], 0);
+                result += Math.max(rightMax - A[--end], 0);
                 rightMax = Math.max(rightMax, A[end]);
             }
         }
