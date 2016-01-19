@@ -38,6 +38,8 @@ public class TrappingRainWater {
         return result;
     }
 
+/*****************************************************************************/
+
     public int trapRainWater(int[] heights) {
         int[] leftMax = new int[heights.length];
         int[] rightMax = new int[heights.length];
@@ -53,6 +55,8 @@ public class TrappingRainWater {
         }
         return result;
     }
+
+/*****************************************************************************/
 
     public int trapRainWater(int[] heights) {
         int result = 0;
