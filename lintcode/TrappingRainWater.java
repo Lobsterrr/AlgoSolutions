@@ -22,8 +22,8 @@ public class TrappingRainWater {
      */
     public int trapRainWater(int[] heights) {
         int result = 0;
-        int leftMax = 0;
-        int rightMax = 0;
+        int leftMax = heights[0];
+        int rightMax = heights[heights.length - 1];
         int low = 0;
         int high = heights.length - 1;
         while (low < high) {
