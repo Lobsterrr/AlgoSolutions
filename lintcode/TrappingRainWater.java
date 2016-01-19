@@ -54,4 +54,26 @@ public class TrappingRainWater {
         return result;
     }
 
+    public int trapRainWater(int[] heights) {
+        int result = 0;
+        int low = 0;
+        int high = heights.length - 1;
+        while (low < high) {
+            if (heights[low] < heights[high]) {
+                int i = low + 1;
+                while (heights[i] < heights[low]) {
+                    result += heights[low] - heights[i];
+                }
+                low = i++;
+            } else {
+                int i = high - 1;
+                while (heights[i] < heights[high]) {
+                    result += heights[high] - heights[i];
+                }
+                high = i--;
+            }
+        }
+        return result;
+    }
+
 }
