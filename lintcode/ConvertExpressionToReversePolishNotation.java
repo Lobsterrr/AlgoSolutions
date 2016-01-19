@@ -11,14 +11,13 @@ public class ConvertExpressionToReversePolishNotation {
      * @return: The Reverse Polish notation of this expression
      */
     public ArrayList<String> convertToRPN(String[] expression) {
-        String[] exps = expression.split(" ");
         Queue<String> nums = new LinkedList<String>();
         Queue<String> opts = new LinkedList<String>();
-        for (int i = 0; i < exps.length; ++i) {
-            if (Character.isDigit(exps[i].charAt(0))) {
-                nums.offer(exps[i]);
+        for (int i = 0; i < expression.length; ++i) {
+            if (Character.isDigit(expression[i].charAt(0))) {
+                nums.offer(expression[i]);
             } else {
-                opts.offer(exps[i]);
+                opts.offer(expression[i]);
             }
         }
         ArrayList<String> result = new ArrayList<String>();
