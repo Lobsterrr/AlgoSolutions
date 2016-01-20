@@ -28,7 +28,7 @@
 public class OddEvenLinkedList {
 
     public ListNode oddEvenList(ListNode head) {
-        if (head == null || head.next == null) {
+        if (head == null) {
             return head;
         }
         ListNode oddEnd = head;
