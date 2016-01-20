@@ -33,7 +33,9 @@ public class SearchA2DMatrixII {
         }
         int yLen = matrix[0].length;
         int result = 0;
-        for (int i = 0;
+        for (int i = 0; i < xLen; ++i) {
+
+        }
     }
 
 }
