@@ -28,6 +28,9 @@ public class SearchA2DMatrixII {
      */
     public int searchMatrix(int[][] matrix, int target) {
         int xLen = matrix.length;
+        if (xLen == 0) {
+            return -1;
+        }
     }
 
 }
