@@ -41,7 +41,9 @@ public class OddEvenLinkedList {
             oddEnd.next = cur;
             oddEnd = oddEnd.next;
             prev = prev.next;
-            cur = prev.next;
+            if (prev != null) {
+                cur = prev.next;
+            }
         }
         return head;
     }
