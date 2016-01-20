@@ -27,7 +27,7 @@ public class SearchA2DMatrixII {
      * @return: An integer indicate the occurrence of target in the given matrix
      */
     public int searchMatrix(int[][] matrix, int target) {
-
+        int xLen = matrix.length;
     }
 
 }
