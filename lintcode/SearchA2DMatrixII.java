@@ -6,7 +6,6 @@ This matrix has the following properties:
 Integers in each row are sorted from left to right.
 Integers in each column are sorted from up to bottom.
 No duplicate integers in each row or column.
-Have you met this question in a real interview? Yes
 Example
 Consider the following matrix:
 
