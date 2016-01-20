@@ -31,6 +31,7 @@ public class SearchA2DMatrixII {
         if (xLen == 0) {
             return -1;
         }
+        int yLen = matrix[0].length;
     }
 
 }
