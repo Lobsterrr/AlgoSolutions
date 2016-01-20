@@ -28,6 +28,24 @@
 public class OddEvenLinkedList {
 
     public ListNode oddEvenList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode prev = head;
+        ListNode cur = head.next;
+        while (cur != null && cur.next != null) {
+            ListNode tmp1 = prev.next;
+            ListNode tmp2 = cur.next;
+            prev.next = cur;
+            cur.next = tmp1;
+            tmp1.next = tmp2;
+            prev = cur;
+            cur = tmp2.next;
+        }
+        return head;
+    }
+
+    public ListNode oddEvenList(ListNode head) {
         ListNode odd = new ListNode(0);
         ListNode even = new ListNode(0);
         ListNode oddCur = odd;
