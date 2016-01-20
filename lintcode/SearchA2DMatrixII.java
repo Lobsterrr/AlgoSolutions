@@ -27,15 +27,18 @@ public class SearchA2DMatrixII {
      * @return: An integer indicate the occurrence of target in the given matrix
      */
     public int searchMatrix(int[][] matrix, int target) {
-        int xLen = matrix.length;
-        if (xLen == 0) {
-            return -1;
+        int i = 0;
+        int j = matrix[0].length - 1;
+        while (0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length) {
+            if (matrix[i][j] == target) {
+                break;
+            } else if (matrix[i][j] < target) {
+                i++;
+            } else if (matrix[i][j] > target) {
+                j--;
+            }
         }
-        int yLen = matrix[0].length;
-        int result = 0;
-        for (int i = 0; i < xLen; ++i) {
-
-        }
+        return i + j + 1;
     }
 
 }
