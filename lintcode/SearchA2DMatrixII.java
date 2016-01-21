@@ -48,28 +48,4 @@ public class SearchA2DMatrixII {
         return count;
     }
 
-    public int searchMatrix(int[][] matrix, int target) {
-        if (matrix.length == 0) {
-            return 0;
-        }
-        int count = 0;
-        int high = matrix[0].length - 1;
-        for (int i = 0; i < matrix.length; ++i) {
-            if (matrix[i][0] > target) {
-                break;
-            }
-            boolean flag = true;
-            for (int j = 0; j <= high && flag; ++j) {
-                if (matrix[i][j] == target) {
-                    count++;
-                }
-                if (matrix[i][j] >= target) {
-                    flag = false;
-                    high = j;
-                }
-            }
-        }
-        return count;
-    }
-
 }
