@@ -17,7 +17,7 @@ public class WordBreak {
         for (int i = 0; i < s.length(); ++i) {
             if (i == 0 || dp[i]) {
                 for (int j = i + 1; j < s.length(); ++j) {
-                    dp[j] = dp[j] || set.contains(s.substring(i, j));
+                    dp[j] = dp[j] || dict.contains(s.substring(i, j));
                 }
             }
         }
