@@ -48,4 +48,14 @@ public class SearchA2DMatrixII {
         return count;
     }
 
+/*****************************************************************************/
+
+    pubilc int searchMatrix(int[][] matrix, int target) {
+
+    }
+
+    public int binarySearch(int[] matrix, int row1, int row2, int col1, int col2) {
+        
+    }
+
 }
