@@ -28,6 +28,9 @@ public class SearchA2DMatrixII {
      * @return: An integer indicate the occurrence of target in the given matrix
      */
     public int searchMatrix(int[][] matrix, int target) {
+        if (matrix.length == 0) {
+            return 0;
+        }
         int count = 0;
         int high = matrix[0].length - 1;
         for (int i = 0; i < matrix.length; ++i) {
