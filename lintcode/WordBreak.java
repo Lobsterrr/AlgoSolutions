@@ -17,20 +17,6 @@ public class WordBreak {
     public boolean wordBreak(String s, Set<String> dict) {
         boolean[] dp = new boolean[s.length() + 1];
         dp[0] = true;
-        for (int i = 1; i <= s.length(); ++i) {
-            for (int j = i - 1; j >= 0; --j) {
-                if (dp[j] && dict.contains(s.substring(j, i))) {
-                    dp[i] = true;
-                    break;
-                }
-            }
-        }
-        return dp[s.length()];
-    }
-
-    public boolean wordBreak(String s, Set<String> dict) {
-        boolean[] dp = new boolean[s.length() + 1];
-        dp[0] = true;
         int maxLen = getMaxLength(dict);
         for (int i = 0; i < s.length(); ++i) {
             if (i == 0 || dp[i]) {
