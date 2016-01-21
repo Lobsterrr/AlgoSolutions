@@ -25,4 +25,27 @@ public class WordBreak {
         return dp[s.length()];
     }
 
+
+    public boolean wordBreak(String s, Set<String> dict) {
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
+        int maxLength = getMaxLength(dict);
+        for (int i = 0; i < s.length(); ++i) {
+            if (i == 0 || dp[i]) {
+                for (int j + 1; j <= s.length() && j <= i + maxLength; ++j) {
+                    dp[j] = dp[j] || dict.contains(s.substring(i, j));
+                }
+            }
+        }
+        return dp[s.length()];
+    }
+
+    public int getMaxLength(Set<String> dict) {
+        int result = 0;
+        for (String s : dict) {
+            result = Math.max(result, s.length());
+        }
+        return result;
+    }
+
 }
