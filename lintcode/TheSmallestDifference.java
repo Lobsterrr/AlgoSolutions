@@ -3,6 +3,10 @@
  */
 public class TheSmallestDifference {
 
+    /**
+     * @param A, B: Two integer arrays.
+     * @return: Their smallest difference.
+     */
     public int smallestDifference(int[] A, int[] B) {
         Arrays.sort(A);
         Arrays.sort(B);
