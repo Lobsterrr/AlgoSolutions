@@ -29,17 +29,19 @@ public class SearchA2DMatrixII {
      */
     public int searchMatrix(int[][] matrix, int target) {
         int count = 0;
+        int high = matrix[0].length - 1;
         for (int i = 0; i < matrix.length; ++i) {
             if (matrix[i][0] > target) {
                 break;
             }
             boolean flag = true;
-            for (int j = 0; j < matrix[0].length && flag; ++j) {
+            for (int j = 0; j <= high && flag; ++j) {
                 if (matrix[i][j] == target) {
                     count++;
                 }
-                if (matrix[i][j] > target) {
+                if (matrix[i][j] >= target) {
                     flag = false;
+                    high = j;
                 }
             }
         }
