@@ -37,7 +37,7 @@ public class SearchA2DMatrixII {
         while (i < matrix.length && j >= 0) {
             if (matrix[i][j] == target) {
                 count++;
-                i--;
+                i++;
                 j--;
             } else if (matrix[i][j] < target) {
                 i++;
