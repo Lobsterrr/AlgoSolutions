@@ -11,7 +11,11 @@ public class TheSmallestDifference {
         int j = 0;
         while (i < A.length && j < B.length) {
             result = Math.min(result, Math.abs(A[i] - B[j]));
-            (A[i] < B[j]) ? ++i : ++j;
+            if (A[i] < B[j]) {
+                i++;
+            } else {
+                j++;
+            }
         }
         return result;
     }
