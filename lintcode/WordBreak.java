@@ -32,7 +32,7 @@ public class WordBreak {
         int maxLength = getMaxLength(dict);
         for (int i = 0; i < s.length(); ++i) {
             if (i == 0 || dp[i]) {
-                for (int j + 1; j <= s.length() && j <= i + maxLength; ++j) {
+                for (int j = i + 1; j <= s.length() && j <= i + maxLength; ++j) {
                     dp[j] = dp[j] || dict.contains(s.substring(i, j));
                 }
             }
