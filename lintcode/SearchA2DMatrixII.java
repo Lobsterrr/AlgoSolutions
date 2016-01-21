@@ -32,6 +32,27 @@ public class SearchA2DMatrixII {
             return 0;
         }
         int count = 0;
+        int i = 0;
+        int j = matrix[0].length;
+        while (i < matrix.length && j >= 0) {
+            if (matrix[i][j] == target) {
+                count++;
+                i--;
+                j--;
+            } else if (matrix[i][j] < target) {
+                j--;
+            } else {
+                i++;
+            }
+        }
+        return count;
+    }
+
+    public int searchMatrix(int[][] matrix, int target) {
+        if (matrix.length == 0) {
+            return 0;
+        }
+        int count = 0;
         int high = matrix[0].length - 1;
         for (int i = 0; i < matrix.length; ++i) {
             if (matrix[i][0] > target) {
