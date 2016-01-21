@@ -33,7 +33,7 @@ public class SearchA2DMatrixII {
             if (matrix[i][0] > target) {
                 break;
             }
-            int flag = true;
+            boolean flag = true;
             for (int j = 0; j < matrix[0].length && flag; ++j) {
                 if (matrix[i][j] == target) {
                     count++;
