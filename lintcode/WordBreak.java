@@ -16,7 +16,7 @@ public class WordBreak {
         boolean[] dp = new boolean[s.length() + 1];
         for (int i = 0; i < s.length(); ++i) {
             if (i == 0 || dp[i]) {
-                for (int j = i + 1; j < s.length(); ++j) {
+                for (int j = i + 1; j <= s.length(); ++j) {
                     dp[j] = dp[j] || dict.contains(s.substring(i, j));
                 }
             }
