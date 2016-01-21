@@ -25,6 +25,7 @@ public class WordBreak {
         return dp[s.length()];
     }
 
+/*****************************************************************************/
 
     public boolean wordBreak(String s, Set<String> dict) {
         boolean[] dp = new boolean[s.length() + 1];
