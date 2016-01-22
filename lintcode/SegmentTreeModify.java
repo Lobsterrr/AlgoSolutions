@@ -58,7 +58,20 @@ public class SegmentTreeModify {
     public void modify(SegmentTreeNode root, int index, int value) {
         Stack<SegmentTreeNode> stack = new Stack<SegmentTreeNode>();
         while (root != null && root.start <= index && index <= root.end) {
-            
+            stack.push(root);
+            if (root.left != null && root.left.start <= index && index <= root.left.end) {
+                root = root.left;
+            } else {
+                root = root.right;
+            }
+        }
+        while (!stack.isEmpty()) {
+            SegmentTreeNode node = stack.pop();
+            if (node.start == index && index == node.end) {
+                node.max = value;
+            } else {
+                node.max = Math.max(node.left.max, node.right.max);
+            }
         }
     }
 
