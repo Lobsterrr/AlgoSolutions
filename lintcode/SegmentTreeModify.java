@@ -76,7 +76,7 @@ public class SegmentTreeModify {
     }
 
     public void modify(SegmentTreeNode root, int index, int value) {
-        if (index < root.start || index > root.end) {
+        if (root == null || root.start > index || root.end < index) {
             return;
         }
         if (root.start == root.end && root.end == index) {
