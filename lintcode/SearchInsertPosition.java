@@ -3,7 +3,6 @@
 
 You may assume NO duplicates in the array.
 
-Have you met this question in a real interview? Yes
 Example
 [1,3,5,6], 5 ¡ú 2
 
