@@ -37,8 +37,7 @@ public class SearchA2DMatrix {
             int y = mid % matrix[0].length;
             if (matrix[x][y] == target) {
                 return true;
-            }
-            if (matrix[x][y] < target) {
+            } else if (matrix[x][y] < target) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
