@@ -29,14 +29,12 @@ public class SearchA2DMatrix {
         if (matrix.length == 0) {
             return false;
         }
-        int xLen = matrix.length;
-        int yLen = matrix[0].length;
         int low = 0;
-        int high = xLen * yLen - 1;
+        int high = matrix.length * matrix[0].length - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            int x = mid / yLen;
-            int y = mid % yLen;
+            int x = mid / matrix[0].length;
+            int y = mid % matrix[0].length;
             if (matrix[x][y] == target) {
                 return true;
             }
