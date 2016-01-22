@@ -56,10 +56,10 @@ public class SegmentTreeModify {
      *@return: void
      */
     public void modify(SegmentTreeNode root, int index, int value) {
-        if (index < root.left || index > root.right) {
+        if (index < root.start || index > root.end) {
             return;
         }
-        if (root.left == root.right && root.right == index) {
+        if (root.start == root.end && root.end == index) {
             root.max = value;
             return;
         }
