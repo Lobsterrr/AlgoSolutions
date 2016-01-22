@@ -29,10 +29,7 @@ public class SearchInsertPosition {
         int high = A.length - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            if (A[mid] == target) {
-                return mid;
-            }
-            if (A[mid] < target) {
+            if (A[mid] <= target) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
