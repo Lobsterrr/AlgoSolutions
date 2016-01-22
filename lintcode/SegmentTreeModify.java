@@ -3,7 +3,6 @@
 
 Implement a modify function with three parameter root, index and value to change the node's value with [start, end] = [index, index] to the new given value. Make sure after this change, every node in segment tree still has the max attribute with the correct value.
 
-Have you met this question in a real interview? Yes
 Example
 For segment tree:
 
