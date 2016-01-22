@@ -64,11 +64,8 @@ public class SegmentTreeModify {
         }
         while (!stack.isEmpty()) {
             SegmentTreeNode node = stack.pop();
-            if (node.start == index && index == node.end) {
-                node.max = value;
-            } else {
-                node.max = Math.max(node.left.max, node.right.max);
-            }
+            node.max = node.start == index && index == node.end ? value : 
+                Math.max(node.left.max, node.right.max);
         }
     }
 
