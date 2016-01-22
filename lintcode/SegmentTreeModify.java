@@ -56,6 +56,13 @@ public class SegmentTreeModify {
      *@return: void
      */
     public void modify(SegmentTreeNode root, int index, int value) {
+        Stack<SegmentTreeNode> stack = new Stack<SegmentTreeNode>();
+        while (root != null && root.start <= index && index <= root.end) {
+            
+        }
+    }
+
+    public void modify(SegmentTreeNode root, int index, int value) {
         if (index < root.start || index > root.end) {
             return;
         }
