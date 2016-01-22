@@ -59,12 +59,7 @@ public class SegmentTreeModify {
         Stack<SegmentTreeNode> stack = new Stack<SegmentTreeNode>();
         while (root != null && root.start <= index && index <= root.end) {
             stack.push(root);
-            if (root.left != null && root.left.start <= index 
-                    && index <= root.left.end) {
-                root = root.left;
-            } else {
-                root = root.right;
-            }
+            root = root.left != null && root.left.start <= index && index <= root.left.end ? root.left : root.right;
         }
         while (!stack.isEmpty()) {
             SegmentTreeNode node = stack.pop();
