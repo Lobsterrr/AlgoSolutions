@@ -27,7 +27,7 @@ public class ProductOfArrayExcludeItself {
             if (i < A.size() - 1) {
                 product *= A.get(i + 1);
             }
-            result.add(i, result.get(i) * product);
+            result.set(i, result.get(i) * product);
         }
         return result;
     }
