@@ -16,7 +16,7 @@ public class ProductOfArrayExcludeItself {
     public ArrayList<Long> productExcludeItself(ArrayList<Integer> A) {
         ArrayList<Long> result = new ArrayList<Long>(A.size());
         for (int i = 0; i < A.size(); ++i) {
-            result.add(i, i == 0 ? 1L : result.get(i - 1) * A.get(i - 1));
+            result.add(i == 0 ? 1L : result.get(i - 1) * A.get(i - 1));
         }
         long product = 1L;
         for (int i = A.size() - 1; i >= 0; --i) {
