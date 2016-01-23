@@ -4,16 +4,11 @@
 public class Sqrt {
 
     public int sqrt(int x) {
-        int i = 1;
-        while (i != 0) {
-            int next = (i + x / i) / 2;
-            if (next <= i) {
-                return i;
-            } else {
-                i = next;
-            }
+        double i = 1.0;
+        while ((int) i != (int) (x / i)) {
+            i = (i + x / i) / 2;
         }
-        return i;
+        return (int) i;
     }
 
 }
