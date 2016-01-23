@@ -18,6 +18,8 @@ public class Sqrt {
             int mid = low + (high - low) / 2;
             if (mid < x / mid) {
                 low = mid + 1;
+            } else if(mid == x / mid) {
+                return mid;
             } else {
                 high = mid - 1;
             }
