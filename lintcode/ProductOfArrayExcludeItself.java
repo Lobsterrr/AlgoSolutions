@@ -26,19 +26,4 @@ public class ProductOfArrayExcludeItself {
         return result;
     }
 
-    public ArrayList<Long> productExcludeItself(ArrayList<Integer> A) {
-        ArrayList<Long> result = new ArrayList<Long>();
-        long product = 1L;
-        for (int i = 0; i < A.size(); ++i) {
-            product *= i == 0 ? 1 : A.get(i - 1);
-            result.add(product);
-        }
-        product = 1L;
-        for (int i = A.size() - 1; i >= 0; --i) {
-            product *= i == A.size() - 1 ? 1 : A.get(i + 1);
-            result.set(i, result.get(i) * product);
-        }
-        return result;
-    }
-
 }
