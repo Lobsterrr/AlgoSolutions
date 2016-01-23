@@ -24,7 +24,7 @@ public class Sqrt {
                 high = mid - 1;
             }
         }
-        return low + (high - low) / 2;
+        return (low + high) / 2;
     }
 
 }
