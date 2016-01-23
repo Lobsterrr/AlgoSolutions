@@ -15,6 +15,22 @@ public class ProductOfArrayExcludeItself {
      */
     public ArrayList<Long> productExcludeItself(ArrayList<Integer> A) {
         ArrayList<Long> result = new ArrayList<Long>();
+        for (int i = 0; i < A.size(); ++i) {
+            result.add(1);
+        }
+        for (int i = 0; i < A.size(); ++i) {
+            for (int j = 0; j < A.size(); ++j) {
+                if (i == j) {
+                    continue;
+                }
+                result.set(j, A.get(i) * result.get(j));
+            }
+        }
+        return result;
+    }
+
+    public ArrayList<Long> productExcludeItself(ArrayList<Integer> A) {
+        ArrayList<Long> result = new ArrayList<Long>();
         long[] products = new long[A.size()];
         Arrays.fill(products, 1);
         for (int i = 0; i < products.length; ++i) {
