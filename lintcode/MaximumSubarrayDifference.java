@@ -31,65 +31,26 @@ public class MaximumSubarrayDifference {
 
         for (int i = 0, localMax = 0, localMin = 0; i < nums.length; ++i) {
             localMax += nums[i];
-            leftMax[i] = Math.max(i == 0 ? Integer.MIN_VALUE : leftMax[i - 1], localMax);
+            leftMax[i] = Math.max(i == 0 ? 
+                    Integer.MIN_VALUE : leftMax[i - 1], localMax);
             localMax = Math.max(localMax, 0);
 
             localMin += nums[i];
-            leftMin[i] = Math.min(i == 0 ? Integer.MAX_VALUE : leftMin[i - 1], localMin);
+            leftMin[i] = Math.min(i == 0 ? 
+                    Integer.MAX_VALUE : leftMin[i - 1], localMin);
             localMin = Math.min(localMin, 0);
         }
 
         for (int i = nums.length - 1, localMax = 0, localMin = 0; i >= 0; --i) {
             localMax += nums[i];
-            rightMax[i] = Math.max(i == nums.length - 1 ? Integer.MIN_VALUE : rightMax[i + 1], localMax);
+            rightMax[i] = Math.max(i == nums.length - 1 ? 
+                    Integer.MIN_VALUE : rightMax[i + 1], localMax);
             localMax = Math.max(localMax, 0);
 
             localMin += nums[i];
-            rightMin[i] = Math.min(i == nums.length - 1 ? Integer.MAX_VALUE : rightMin[i + 1], localMin);
+            rightMin[i] = Math.min(i == nums.length - 1 ? 
+                    Integer.MAX_VALUE : rightMin[i + 1], localMin);
             localMin = Math.min(localMin, 0);
-        }
-
-        int result = Integer.MIN_VALUE;
-        for (int i = 0; i < nums.length - 1; ++i) {
-            result = Math.max(result, Math.abs(leftMax[i] - rightMin[i + 1]));
-            result = Math.max(result, Math.abs(leftMin[i] - rightMax[i + 1]));
-        }
-        return result;
-    }
-
-
-    public int maxDiffSubArrays(int[] nums) {
-        int[] leftMax = new int[nums.length];
-        int[] leftMin = new int[nums.length];
-        int[] rightMax = new int[nums.length];
-        int[] rightMin = new int[nums.length];
-
-        int globalMax = Integer.MIN_VALUE;
-        int globalMin = Integer.MAX_VALUE;
-        for (int i = 0, localMax = 0, localMin = 0; i < nums.length; ++i) {
-            localMax += nums[i];
-            globalMax = Math.max(globalMax, localMax);
-            localMax = Math.max(localMax, 0);
-            leftMax[i] = globalMax;
-
-            localMin += nums[i];
-            globalMin = Math.min(globalMin, localMin);
-            localMin = Math.min(localMin, 0);
-            leftMin[i] = globalMin;
-        }
-
-        globalMax = Integer.MIN_VALUE;
-        globalMin = Integer.MAX_VALUE;
-        for (int i = nums.length - 1, localMax = 0, localMin = 0; i >= 0; --i) {
-            localMax += nums[i];
-            globalMax = Math.max(globalMax, localMax);
-            localMax = Math.max(localMax, 0);
-            rightMax[i] = globalMax;
-
-            localMin += nums[i];
-            globalMin = Math.min(globalMin, localMin);
-            localMin = Math.min(localMin, 0);
-            rightMin[i] = globalMin;
         }
 
         int result = Integer.MIN_VALUE;
