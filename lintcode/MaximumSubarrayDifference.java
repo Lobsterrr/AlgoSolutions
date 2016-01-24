@@ -37,7 +37,7 @@ public class MaximumSubarrayDifference {
             localMin += nums[i];
             globalMin = Math.min(globalMin, localMin);
             localMin = Math.min(localMin, 0);
-            leftMin[i] = globalMin;
+            rightMin[i] = globalMin;
         }
         
         int result = 0;
