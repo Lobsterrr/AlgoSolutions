@@ -40,8 +40,8 @@ public class MaximumSubarrayDifference {
             rightMin[i] = globalMin;
         }
         
-        int result = 0;
-        for (int i = 1; i < nums.length - 1; ++i) {
+        int result = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length - 1; ++i) {
             result = Math.max(result, Math.abs(leftMax[i] - rightMin[i + 1]));
             result = Math.max(result, Math.abs(leftMin[i] - rightMax[i + 1]));
         }
