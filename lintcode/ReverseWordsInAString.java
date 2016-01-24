@@ -36,20 +36,4 @@ public class ReverseWordsInAString {
         return result.trim();
     }
 
-    public String reverseWords(String s) {
-        String result = "";
-        for (int i = 0, j = 0; i < s.length(); i = j) {
-            while (i < s.length() && s.charAt(i) == ' ') {
-                i++;
-            }
-            j = i;
-            while (j < s.length() && s.charAt(j) != ' ') {
-                j++;
-            }
-            result = s.substring(i, j) + " " + result;
-        }
-        result = result.trim();
-        return result;
-    }
-
 }
