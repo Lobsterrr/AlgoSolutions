@@ -20,6 +20,11 @@ public class MaximumSubarrayII {
      */
     public int maxTwoSubArrays(ArrayList<Integer> nums) {
         int[] leftMax = new int[nums.size()];
+        
+    }
+
+    public int maxTwoSubArrays(ArrayList<Integer> nums) {
+        int[] leftMax = new int[nums.size()];
         int[] rightMax = new int[nums.size()];
         for (int i = 0, leftLocalMax = 0, rightLocalMax = 0; i < nums.size(); 
                 ++i) {
