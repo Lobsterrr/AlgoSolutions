@@ -70,8 +70,10 @@ public class MaximumSubarrayDifference {
     public int maxDiffSubArrays(int[] nums) {
         int result = Integer.MIN_VALUE;
         for (int i = 0; i < nums.length - 1; ++i) {
-            int tmpMaxDiff = Math.max(Math.abs(maxSubArray(nums, 0, i) - minSubArray(nums, i + 1, nums.length - 1)), 
-                    Math.abs(minSubArray(nums, 0, i) - maxSubArray(nums, i + 1, nums.length - 1)));
+            int tmpMaxDiff = Math.max(Math.abs(maxSubArray(nums, 0, i) - 
+                        minSubArray(nums, i + 1, nums.length - 1)), 
+                    Math.abs(minSubArray(nums, 0, i) - 
+                        maxSubArray(nums, i + 1, nums.length - 1)));
             result = Math.max(result, tmpMaxDiff);
         }
         return result;
