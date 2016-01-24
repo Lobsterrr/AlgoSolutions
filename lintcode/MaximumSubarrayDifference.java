@@ -22,7 +22,6 @@ public class MaximumSubarrayDifference {
      * @return: An integer indicate the value of maximum difference between two
      *          Subarrays
      */
-    // O(n) time, O(n) space.
     public int maxDiffSubArrays(int[] nums) {
         int[] leftMax = new int[nums.length];
         int[] leftMin = new int[nums.length];
