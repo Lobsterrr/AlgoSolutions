@@ -9,10 +9,8 @@ public class MaximumSubarrayDifference {
         int[] rightMax = new int[nums.length];
         int[] rightMin = new int[nums.length];
         int globalMax = Integer.MIN_VALUE;
-        int localMax = 0;
         int globalMin = Integer.MAX_VALUE;
-        int localMin = 0;
-        for (int i = 0; i < nums.length; ++i) {
+        for (int i = 0, localMax = 0, localMin = 0; i < nums.length; ++i) {
             localMax += nums[i];
             globalMax = Math.max(globalMax, localMax);
             localMax = Math.max(localMax, 0);
@@ -25,10 +23,8 @@ public class MaximumSubarrayDifference {
         }
 
         globalMax = Integer.MIN_VALUE;
-        localMax = 0;
         globalMin = Integer.MAX_VALUE;
-        localMin = 0;
-        for (int i = nums.length - 1; i >= 0; --i) {
+        for (int i = nums.length - 1, localMax = 0, localMin = 0; i >= 0; --i) {
             localMax += nums[i];
             globalMax = Math.max(globalMax, localMax);
             localMax = Math.max(localMax, 0);
