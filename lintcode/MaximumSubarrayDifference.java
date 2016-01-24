@@ -3,6 +3,13 @@
  */
 public class MaximumSubarrayDifference {
 
+    public int maxDiffSubArrays(int[] nums) {
+        int[] leftMax = new int[nums.length];
+        int[] leftMin = new int[nums.length];
+        int[] rightMax = new int[nums.length];
+        int[] rightMin = new int[nums.length];
+    }
+
 /*****************************************************************************/
 
     // O(n^2) time, O(1) space.
