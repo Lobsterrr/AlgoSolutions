@@ -22,6 +22,25 @@ public class ReverseWordsInAString {
      * @return : A string
      */
     public String reverseWords(String s) {
+        String result = "";
+        int i = s.length() - 1;
+        int j = s.length() - 1;
+        while (i >= 0 && j >= 0) {
+            while (j >= 0 && s.charAt(j) == ' ') {
+                j--;
+            }
+            i = j;
+            while (i >= 0 && s.charAt(i) != ' ') {
+                i--;
+            }
+            result += " " + s.substring(i + 1, j + 1);
+            j = i;
+        }
+        result.trim();
+        return result;
+    }
+
+    public String reverseWords(String s) {
         s = s.trim();
         String result = "";
         int i = s.length() - 1;
