@@ -31,7 +31,7 @@ public class ReverseWordsInAString {
             while (j < s.length() && s.charAt(j) != ' ') {
                 j++;
             }
-            result = s.substring(i, j) + result;
+            result = s.substring(i, j) + " " + result;
         }
         result = result.trim();
         return result;
