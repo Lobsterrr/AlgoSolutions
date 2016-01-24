@@ -5,7 +5,7 @@ public class MaximumSubarrayDifference {
 
     public int maxDiffSubArrays(int[] nums) {
         int result = Integer.MIN_VALUE;
-        for (int i = 0; i < nums.length; ++i) {
+        for (int i = 0; i < nums.length - 1; ++i) {
             result = Math.max(result, Math.abs(maxSubArray(nums, 0, i) - minSubArray(nums, i + 1, nums.length - 1)));
         }
         return result;
