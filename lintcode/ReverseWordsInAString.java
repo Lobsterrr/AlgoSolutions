@@ -23,7 +23,7 @@ public class ReverseWordsInAString {
      */
     public String reverseWords(String s) {
         String result = "";
-        for (int i = 0; j = 0; i < s.length() && j < s.length(); i = j) {
+        for (int i = 0, j = 0; i < s.length() && j < s.length(); i = j) {
             while (i < s.length() && s.charAt(i) == ' ') {
                 i++;
             }
