@@ -41,7 +41,7 @@ public class MaximumSubarrayDifference {
         }
         
         int result = 0;
-        for (int i = 1; i < nums.length; ++i) {
+        for (int i = 1; i < nums.length - 1; ++i) {
             result = Math.max(result, Math.abs(leftMax[i] - rightMin[i + 1]));
             result = Math.max(result, Math.abs(leftMin[i] - rightMax[i + 1]));
         }
