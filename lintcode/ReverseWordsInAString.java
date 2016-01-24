@@ -22,7 +22,7 @@ public class ReverseWordsInAString {
      * @return : A string
      */
     public String reverseWords(String s) {
-        String result = "";
+        StringBuilder sb = new StringBuilder();
         for (int i = s.length() - 1, j; i >= 0; i = j) {
             while (i >= 0 && s.charAt(i) == ' ') {
                 i--;
@@ -31,9 +31,9 @@ public class ReverseWordsInAString {
             while (j >= 0 && s.charAt(j) != ' ') {
                 j--;
             }
-            result += s.substring(j + 1, i + 1) + " ";
+            sb.append(s.substring(j + 1, i + 1) + " ");
         }
-        return result.trim();
+        return sb.toString().trim();
     }
 
 }
