@@ -19,13 +19,15 @@ public class MaximumSubarrayII {
      * @return: An integer denotes the sum of max two non-overlapping subarrays
      */
     public int maxTwoSubArrays(ArrayList<Integer> nums) {
-        int[] leftMax = int[nums.size()];
-        int[] rightMax = int[nums.size()];
+        int[] leftMax = new int[nums.size()];
+        int[] rightMax = new int[nums.size()];
         for (int i = 0, leftLocalMax = 0, rightLocalMax = 0; i < nums.size(); ++i) {
             leftLocalMax += nums.get(i);
             rightLocalMax += nums.get(nums.size() - 1 - i);
             leftMax[i] = Math.max(i == 0 ? Integer.MIN_VALUE : leftMax[i - 1], leftLocalMax);
-            rightMax[nums.size() - 1 - i] = Math.max(i == 0 ? Integer.MIN_VALUE : rightMax[i + 1], rightLocalMax);
+            rightMax[nums.size() - 1 - i] = Math.max(i == 0 ? Integer.MIN_VALUE : rightMax[nums.size() - i], rightLocalMax);
+            leftLocalMax = Math.max(leftLocalMax, 0);
+            rightLocalMax = Math.max(rightLocalMax, 0);
         }
         int result = Integer.MIN_VALUE;
         for (int i = 0; i < nums.size() - 1; ++i) {
