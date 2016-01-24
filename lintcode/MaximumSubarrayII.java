@@ -25,8 +25,8 @@ public class MaximumSubarrayII {
                 ++i) {
             leftLocalMax += nums.get(i);
             rightLocalMax += nums.get(nums.size() - 1 - i);
-            leftMax[i] = Math.max(i == 0 ? Integer.MIN_VALUE : 
-                    leftMax[i - 1], leftLocalMax);
+            leftMax[i] = Math.max(i == 0 ? Integer.MIN_VALUE : leftMax[i - 1], 
+                    leftLocalMax);
             rightMax[nums.size() - 1 - i] = Math.max(i == 0 ? 
                     Integer.MIN_VALUE : rightMax[nums.size() - i], 
                     rightLocalMax);
