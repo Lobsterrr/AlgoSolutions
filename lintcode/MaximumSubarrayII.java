@@ -21,7 +21,7 @@ public class MaximumSubarrayII {
     public int maxTwoSubArrays(ArrayList<Integer> nums) {
         int[] leftMax = int[nums.size()];
         int[] rightMax = int[nums.size()];
-        for (int i = 0, leftLocalMax = 0, rightLocalMax = 0, i < nums.size(); ++i) {
+        for (int i = 0, leftLocalMax = 0, rightLocalMax = 0; i < nums.size(); ++i) {
             leftLocalMax += nums.get(i);
             rightLocalMax += nums.get(nums.size() - 1 - i);
             leftMax[i] = Math.max(i == 0 ? Integer.MIN_VALUE : leftMax[i - 1], leftLocalMax);
