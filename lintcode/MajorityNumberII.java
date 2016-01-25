@@ -45,7 +45,8 @@ public class MajorityNumberII {
         for (int num : nums) {
             if (num == candidate1) {
                 count1++;
-            } else {
+            } 
+            if (num == candidate2) {
                 count2++;
             }
         }
