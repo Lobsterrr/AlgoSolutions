@@ -20,6 +20,12 @@ public class MajorityNumberII {
      * @return: The majority number that occurs more than 1/3
      */
     public int majorityNumber(ArrayList<Integer> nums) {
+        
+    }
+
+/*****************************************************************************/
+
+    public int majorityNumber(ArrayList<Integer> nums) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
             map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
