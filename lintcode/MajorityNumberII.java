@@ -19,6 +19,7 @@ public class MajorityNumberII {
      * @param nums: A list of integers
      * @return: The majority number that occurs more than 1/3
      */
+    // O(n) time, O(1) space.
     public int majorityNumber(ArrayList<Integer> nums) {
         int candidate1 = 0;
         int candidate2 = 0;
