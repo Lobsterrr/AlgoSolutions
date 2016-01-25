@@ -26,7 +26,7 @@ public class MaximumSubarrayII {
             leftLocalMax = Math.max(leftLocalMax, 0);
         }
         int maxSum = Integer.MIN_VALUE;
-        for (int i = nums.length() - 1, localRightMax = 0, globalRightMax = Integer.MIN_VALUE; i >= 1; --i) {
+        for (int i = nums.size() - 1, localRightMax = 0, globalRightMax = Integer.MIN_VALUE; i >= 1; --i) {
             localRightMax += nums.get(i);
             globalRightMax = Math.max(globalRightMax, localRightMax);
             localRightMax = Math.max(localRightMax, 0);
