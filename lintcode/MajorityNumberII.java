@@ -25,6 +25,7 @@ public class MajorityNumberII {
 
 /*****************************************************************************/
 
+    // O(n) time, O(n) space.
     public int majorityNumber(ArrayList<Integer> nums) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
