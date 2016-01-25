@@ -20,7 +20,34 @@ public class MajorityNumberII {
      * @return: The majority number that occurs more than 1/3
      */
     public int majorityNumber(ArrayList<Integer> nums) {
-        
+        int candidate1 = 0;
+        int candidate2 = 0;
+        int count1 = 0;
+        int count2 = 0;
+        for (int num : nums) {
+            if (num == candidate1) {
+                count1++;
+            } else if (num == candidate2) {
+                count2++;
+            } else if (count1 == 0) {
+                candidate1 = num;
+            } else if (count2 == 0) {
+                candidate2 = num;
+            } else {
+                count1--;
+                count2--;
+            }
+        }
+        count1 = 0;
+        count2 = 0;
+        for (int num : nums) {
+            if (num == candidate1) {
+                count1++;
+            } else {
+                count2++;
+            }
+        }
+        return count1 > count2 ? candidate1 : candidate2;
     }
 
 /*****************************************************************************/
