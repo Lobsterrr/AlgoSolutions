@@ -20,6 +20,16 @@ public class RecoverRotatedSortedArray {
      * @return: void
      */
     public void recoverRotatedSortedArray(ArrayList<Integer> nums) {
+        
+    }
+
+    public void reverse(ArrayList<Integer> nums, int low, int high) {
+        for (int i = low; i < low + (high - low) / 2; ++i) {
+
+        }
+    }
+
+    public void recoverRotatedSortedArray(ArrayList<Integer> nums) {
         int index = 1;
         for (; index < nums.size() && nums.get(index - 1) <= nums.get(index); ++index);
         if (index == nums.size()) {
