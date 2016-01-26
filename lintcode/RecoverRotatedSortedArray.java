@@ -25,6 +25,10 @@ public class RecoverRotatedSortedArray {
         if (i == nums.size()) {
             return;
         }
+        for (int i = index; i < nums.size(); ++i) {
+            int toInsert = nums.remove(nums.size() - 1);
+            nums.add(0, toInsert);
+        }
     }
 
 }
