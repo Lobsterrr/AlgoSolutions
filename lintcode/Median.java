@@ -27,6 +27,12 @@ public class Median {
         int i = low;
     }
 
+    public void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+
     public int median(int[] nums) {
         Arrays.sort(nums);
         return nums[(nums.length - 1) / 2];
