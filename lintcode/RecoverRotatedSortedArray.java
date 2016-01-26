@@ -21,8 +21,8 @@ public class RecoverRotatedSortedArray {
      */
     public void recoverRotatedSortedArray(ArrayList<Integer> nums) {
         int index = 1;
-        for (; index < nums.size() && nums.get(i - 1) <= nums.get(i); ++i);
-        if (i == nums.size()) {
+        for (; index < nums.size() && nums.get(index - 1) <= nums.get(index); ++index);
+        if (index == nums.size()) {
             return;
         }
         for (int i = index; i < nums.size(); ++i) {
