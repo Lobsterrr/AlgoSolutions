@@ -20,7 +20,7 @@ public class Median {
      * @return: An integer denotes the middle number of the array.
      */
     public int median(int[] nums) {
-    
+        return quickSort(nums, 0, nums.length - 1, (nums.length - 1) / 2); 
     }
 
     public int quickSort(int[] nums, int low, int high, int k) {
