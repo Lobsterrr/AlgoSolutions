@@ -30,7 +30,10 @@ public class Median {
                 swap(nums, i++, j);
             }
         }
-        swap(nums, 
+        swap(nums, j, high);
+        if (k == j) {
+
+        }
     }
 
     public void swap(int[] nums, int i, int j) {
