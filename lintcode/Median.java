@@ -20,13 +20,7 @@ public class Median {
      * @return: An integer denotes the middle number of the array.
      */
     public int median(int[] nums) {
-        int i = 1;
-        for (; i < nums.length && nums[i - 1] <= nums[i]; ++i);
-        if (i == nums.length) {
-            return nums[(nums.length - 1) / 2];
-        }
-        int mIndex = ((nums.length - 1) / 2 + i) % nums.length;
-        return nums[mIndex];
+    
     }
 
     public int median(int[] nums) {
