@@ -25,7 +25,7 @@ public class Median {
         if (i == nums.length) {
             return nums[(nums.length - 1) / 2];
         }
-              
+        return nums[(nums.length - 1) / 2 - nums.length + i];
     }
 
     public int median(int[] nums) {
