@@ -20,7 +20,8 @@ public class Median {
      * @return: An integer denotes the middle number of the array.
      */
     public int median(int[] nums) {
-
+        Arrays.sort(nums);
+        return nums[(nums.length - 1) / 2];
     }
 
 }
