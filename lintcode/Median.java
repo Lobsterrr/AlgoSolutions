@@ -23,6 +23,10 @@ public class Median {
     
     }
 
+    public int quickSort(int[] nums, int low, int high, int k) {
+        int i = low;
+    }
+
     public int median(int[] nums) {
         Arrays.sort(nums);
         return nums[(nums.length - 1) / 2];
