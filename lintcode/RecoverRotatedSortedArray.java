@@ -35,16 +35,4 @@ public class RecoverRotatedSortedArray {
         }
     }
 
-    public void recoverRotatedSortedArray(ArrayList<Integer> nums) {
-        int index = 1;
-        for (; index < nums.size() && nums.get(index - 1) <= nums.get(index); ++index);
-        if (index == nums.size()) {
-            return;
-        }
-        for (int i = index; i < nums.size(); ++i) {
-            int toInsert = nums.remove(nums.size() - 1);
-            nums.add(0, toInsert);
-        }
-    }
-
 }
