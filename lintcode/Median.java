@@ -25,6 +25,12 @@ public class Median {
 
     public int quickSort(int[] nums, int low, int high, int k) {
         int i = low;
+        for (int j = low; j <= high; ++j) {
+            if (nums[j] < nums[high]) {
+                swap(nums, i++, j);
+            }
+        }
+        swap(nums, 
     }
 
     public void swap(int[] nums, int i, int j) {
