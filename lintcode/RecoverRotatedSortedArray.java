@@ -30,7 +30,7 @@ public class RecoverRotatedSortedArray {
     public void reverse(ArrayList<Integer> nums, int low, int high) {
         for (int i = 0; i <= (high - low) / 2; ++i) {
             int tmp = nums.get(low + i);
-            nums.set(i, nums.get(high - i));
+            nums.set(low + i, nums.get(high - i));
             nums.set(high - i, tmp);
         }
     }
