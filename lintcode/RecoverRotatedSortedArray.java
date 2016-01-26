@@ -20,12 +20,18 @@ public class RecoverRotatedSortedArray {
      * @return: void
      */
     public void recoverRotatedSortedArray(ArrayList<Integer> nums) {
-        
+        int i = 1;
+        for (; i < nums.size() && nums.get(i - 1) <= nums.get(i); ++i);
+        reverse(nums, 0, i - 1);
+        reverse(nums, i, nums.size() - 1);
+        reverse(nums, 0, nums.size() - 1);
     }
 
     public void reverse(ArrayList<Integer> nums, int low, int high) {
-        for (int i = low; i < low + (high - low) / 2; ++i) {
-
+        for (int i = 0; i <= (high - low) / 2; ++i) {
+            int tmp = nums.get(i);
+            nums.set(i, nums.get(high - i));
+            nums.set(high - i, tmp);
         }
     }
 
