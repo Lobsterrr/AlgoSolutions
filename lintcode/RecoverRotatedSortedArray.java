@@ -20,7 +20,11 @@ public class RecoverRotatedSortedArray {
      * @return: void
      */
     public void recoverRotatedSortedArray(ArrayList<Integer> nums) {
-
+        int index = 1;
+        for (; index < nums.size() && nums.get(i - 1) <= nums.get(i); ++i);
+        if (i == nums.size()) {
+            return;
+        }
     }
 
 }
