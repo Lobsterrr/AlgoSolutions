@@ -42,7 +42,7 @@ public class InsertInterval {
             intervals.remove(interval);
         }
         intervals.add(newInterval);
-        return result;
+        return intervals;
     }
 
     public boolean isOverlap(Interval a, Interval b) {
