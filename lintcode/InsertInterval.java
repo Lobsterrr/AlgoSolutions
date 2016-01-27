@@ -31,7 +31,8 @@ public class InsertInterval {
             Interval newInterval) {
         ArrayList<Interval> result = new ArrayList<Interval>();
         for (Interval interval : intervals) {
-            if (!isOverlap(newInterval, interval)) {
+            if (interval.start < newInterval.end || 
+                    interval.end > newInterval.start) {
                 result.add(interval);
             } else {
                 newInterval = new Interval(Math.min(interval.start, 
