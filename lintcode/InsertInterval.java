@@ -41,6 +41,8 @@ public class InsertInterval {
                 newInterval = new Interval(Math.min(iStart, nStart), Math.max(iEnd, nEnd));
             }
         }
+        int i = 0; 
+        for (; i < result.size() && result.get(i).start < newInterval.start; ++i);
         result.add(newInterval);
         return result;
     }
