@@ -33,12 +33,19 @@ public class InsertInterval {
         int nStart = newInterval.start;
         int nEnd = newInterval.end;
         for (Interval interval : intervals) {
+            if (!isOverlap(newInterval, interval)) {
+                continue;
+            }
             int iStart = interval.start;
             int iEnd = interval.end;
             
         }
         return result;
 
+    }
+
+    public boolean isOverlap(Interval a, Interval b) {
+        return !(a.start > b.end || a.end < b.start);
     }
 
 }
