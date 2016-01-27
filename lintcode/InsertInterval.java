@@ -32,18 +32,17 @@ public class InsertInterval {
         ArrayList<Interval> result = new ArrayList<Interval>();
         int nStart = newInterval.start;
         int nEnd = newInterval.end;
-        for (int i = 0; i < intervals.size(); ++i) {
-            Interval interval = intervals.get(i);
+        for (Interval interval : intervals) {
             if (!isOverlap(newInterval, interval)) {
                 continue;
             }
             int iStart = interval.start;
             int iEnd = interval.end;
             newInterval = new Interval(Math.min(iStart, nStart), Math.max(iEnd, nEnd));
-            intervals.set(i, newInterval);
+            intervals.remove(interval);
         }
+        interval.add(newInterval);
         return result;
-
     }
 
     public boolean isOverlap(Interval a, Interval b) {
