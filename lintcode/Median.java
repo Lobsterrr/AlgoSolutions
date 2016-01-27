@@ -30,13 +30,13 @@ public class Median {
                 swap(nums, i++, j);
             }
         }
-        swap(nums, j, high);
-        if (k == j) {
+        swap(nums, i, high);
+        if (k == i) {
             return nums[k];
-        } else if (k < j) {
+        } else if (k < i) {
             return quickSort(nums, low + 1, k, k);
         } else {
-            return quickSort(nums, j + 1, k, k); 
+            return quickSort(nums, i + 1, k, k); 
         }
     }
 
