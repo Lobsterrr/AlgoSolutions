@@ -43,7 +43,7 @@ public class InsertInterval {
         }
         int i = 0; 
         for (; i < result.size() && result.get(i).start < newInterval.start; ++i);
-        result.add(newInterval);
+        result.add(i, newInterval);
         return result;
     }
 
