@@ -30,12 +30,12 @@ public class InsertInterval {
     public ArrayList<Interval> insert(ArrayList<Interval> intervals, 
             Interval newInterval) {
         ArrayList<Interval> result = new ArrayList<Interval>();
-        int nStart = newInterval.start;
-        int nEnd = newInterval.end;
         for (Interval interval : intervals) {
             if (!isOverlap(newInterval, interval)) {
                 result.add(interval);
             } else {
+                int nStart = newInterval.start;
+                int nEnd = newInterval.end;
                 int iStart = interval.start;
                 int iEnd = interval.end;
                 newInterval = new Interval(Math.min(iStart, nStart), Math.max(iEnd, nEnd));
