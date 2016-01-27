@@ -34,11 +34,7 @@ public class InsertInterval {
             if (!isOverlap(newInterval, interval)) {
                 result.add(interval);
             } else {
-                int nStart = newInterval.start;
-                int nEnd = newInterval.end;
-                int iStart = interval.start;
-                int iEnd = interval.end;
-                newInterval = new Interval(Math.min(iStart, nStart), Math.max(iEnd, nEnd));
+                newInterval = new Interval(Math.min(interval.start, newInterval.start), Math.max(interval.end, newInterval.end));
             }
         }
         int i = 0; 
@@ -46,7 +42,6 @@ public class InsertInterval {
         result.add(i, newInterval);
         return result;
     }
-
 
     public boolean isOverlap(Interval a, Interval b) {
         return !(a.start > b.end || a.end < b.start);
