@@ -37,9 +37,9 @@ public class InsertInterval {
                 result.add(newInterval);
                 newInterval = interval;
             } else {
-                newInterval = new Interval(Math.min(interval.start, 
-                            newInterval.start), 
-                        Math.max(interval.end, newInterval.end));
+                int newStart = Math.min(interval.start, newInterval.start);
+                int newEnd = Math.max(interval.end, newInterval.end);
+                newInterval = new Interval(newStart, newEnd);
             }
         }
         result.add(newInterval);
