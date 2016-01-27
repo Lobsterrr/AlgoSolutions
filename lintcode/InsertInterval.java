@@ -40,9 +40,8 @@ public class InsertInterval {
             int iStart = interval.start;
             int iEnd = interval.end;
             newInterval = new Interval(Math.min(iStart, nStart), Math.max(iEnd, nEnd));
-            intervals.remove(interval);
+            intervals.set(i, newInterval);
         }
-        interval.add(
         return result;
 
     }
