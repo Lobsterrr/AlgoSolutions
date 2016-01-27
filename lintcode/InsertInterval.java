@@ -34,7 +34,7 @@ public class InsertInterval {
             if (interval.end < newInterval.start) {
                 result.add(interval);
             } else if (interval.start > newInterval.end) {
-                result.add(interval);
+                result.add(newInterval);
                 newInterval = interval;
             } else {
                 newInterval = new Interval(Math.min(interval.start, 
