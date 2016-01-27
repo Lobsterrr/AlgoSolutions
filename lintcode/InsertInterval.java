@@ -30,7 +30,11 @@ public class InsertInterval {
     public ArrayList<Interval> insert(ArrayList<Interval> intervals, 
             Interval newInterval) {
         ArrayList<Interval> result = new ArrayList<Interval>();
+        int nStart = newInterval.start;
+        int nEnd = newInterval.end;
         for (Interval interval : intervals) {
+            int iStart = interval.start;
+            int iEnd = interval.end;
             
         }
         return result;
