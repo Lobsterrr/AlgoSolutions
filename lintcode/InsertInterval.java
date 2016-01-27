@@ -31,8 +31,8 @@ public class InsertInterval {
             Interval newInterval) {
         ArrayList<Interval> result = new ArrayList<Interval>();
         for (Interval interval : intervals) {
-            if (interval.start < newInterval.end || 
-                    interval.end > newInterval.start) {
+            if (interval.start > newInterval.end || 
+                    interval.end < newInterval.start) {
                 result.add(interval);
             } else {
                 newInterval = new Interval(Math.min(interval.start, 
@@ -46,9 +46,5 @@ public class InsertInterval {
         result.add(i, newInterval);
         return result;
     }
-
-    public boolean isOverlap(Interval a, Interval b) {
-        return !(a.start > b.end || a.end < b.start);
-    }
-
+ 
 }
