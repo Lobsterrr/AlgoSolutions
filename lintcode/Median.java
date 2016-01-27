@@ -32,7 +32,11 @@ public class Median {
         }
         swap(nums, j, high);
         if (k == j) {
-
+            return nums[k];
+        } else if (k < j) {
+            return quickSort(nums, low + 1, k);
+        } else {
+            return quickSort(nums, j + 1, k); 
         }
     }
 
