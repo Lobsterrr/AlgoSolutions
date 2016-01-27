@@ -34,11 +34,14 @@ public class InsertInterval {
             if (!isOverlap(newInterval, interval)) {
                 result.add(interval);
             } else {
-                newInterval = new Interval(Math.min(interval.start, newInterval.start), Math.max(interval.end, newInterval.end));
+                newInterval = new Interval(Math.min(interval.start, 
+                            newInterval.start), 
+                        Math.max(interval.end, newInterval.end));
             }
         }
         int i = 0; 
-        for (; i < result.size() && result.get(i).start < newInterval.start; ++i);
+        for (; i < result.size() && result.get(i).start < 
+                newInterval.start; ++i);
         result.add(i, newInterval);
         return result;
     }
