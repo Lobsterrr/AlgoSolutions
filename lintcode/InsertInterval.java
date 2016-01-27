@@ -25,7 +25,8 @@ public class InsertInterval {
      * @param newInterval: A new interval.
      * @return: A new sorted interval list.
      */
-    public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
+    public ArrayList<Interval> insert(ArrayList<Interval> intervals, 
+            Interval newInterval) {
 
     }
 
