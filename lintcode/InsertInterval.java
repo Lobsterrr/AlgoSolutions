@@ -31,19 +31,18 @@ public class InsertInterval {
             Interval newInterval) {
         ArrayList<Interval> result = new ArrayList<Interval>();
         for (Interval interval : intervals) {
-            if (interval.start > newInterval.end || 
-                    interval.end < newInterval.start) {
+            if (interval.end < newInterval.start) {
                 result.add(interval);
+            } else if (interval.start > newInterval.end) {
+                result.add(interval);
+                newInterval = interval;
             } else {
                 newInterval = new Interval(Math.min(interval.start, 
                             newInterval.start), 
                         Math.max(interval.end, newInterval.end));
             }
         }
-        int i = 0; 
-        for (; i < result.size() && result.get(i).start < 
-                newInterval.start; ++i);
-        result.add(i, newInterval);
+        result.add(newInterval);
         return result;
     }
  
