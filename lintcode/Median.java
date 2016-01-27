@@ -46,9 +46,4 @@ public class Median {
         nums[j] = tmp;
     }
 
-    public int median(int[] nums) {
-        Arrays.sort(nums);
-        return nums[(nums.length - 1) / 2];
-    }
-
 }
