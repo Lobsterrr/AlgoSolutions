@@ -42,7 +42,7 @@ public class InsertInterval {
                 intervals.remove(interval);
             }
         }
-        intervals.add(newInterval);
+        result.add(newInterval);
         return result;
     }
 
