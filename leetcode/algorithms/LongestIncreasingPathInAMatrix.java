@@ -37,7 +37,7 @@ public class LongestIncreasingPathInAMatrix {
     }
 
     public void dfs(int[][] matrix, int i, int j, int currentLength) {
-        if (!canGoOn(matrix, i, i)) {
+        if (!canGoOn(matrix, i, j)) {
             maxLen = Math.max(maxLen, currentLength);
             return;
         }
