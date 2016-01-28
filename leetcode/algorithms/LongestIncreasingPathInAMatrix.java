@@ -32,7 +32,15 @@ public class LongestIncreasingPathInAMatrix {
     }
 
     public void dfs(int[][] matrix, int i, int j, int currentLength) {
-        
+        if (isInMatrix(matrix, i, j) {
+            int tmp = matrix[i][j];
+            matrix[i][j] = Integer.MIN_VALUE;
+            
+        }
+    }
+
+    public boolean isInMatrix(int[][] matrix, int i, int j) {
+        return 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length;
     }
 
 }
