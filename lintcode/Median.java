@@ -23,7 +23,7 @@ public class Median {
         return quickSort(nums, 0, nums.length - 1, (nums.length - 1) / 2); 
     }
 
-    public int quickSort(int[] nums, int low, int high, int k) {
+    public int quickSort(int[] nums, int low, int high, int midIndex) {
         int i = low;
         for (int j = low; j < high; ++j) {
             if (nums[j] <= nums[high]) {
@@ -31,12 +31,12 @@ public class Median {
             }
         }
         swap(nums, i, high);
-        if (k == i) {
-            return nums[k];
-        } else if (k < i) {
-            return quickSort(nums, low, i - 1, k);
+        if (midIndex == i) {
+            return nums[midIndex];
+        } else if (midIndex < i) {
+            return quickSort(nums, low, i - 1, midIndex);
         }
-        return quickSort(nums, i + 1, high, k); 
+        return quickSort(nums, i + 1, high, midIndex); 
     }
 
     public void swap(int[] nums, int i, int j) {
