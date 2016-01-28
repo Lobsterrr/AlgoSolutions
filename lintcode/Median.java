@@ -31,12 +31,12 @@ public class Median {
             }
         }
         swap(nums, i, high);
-        if (midIndex == i) {
+        if (i == midIndex) {
             return nums[midIndex];
-        } else if (midIndex < i) {
-            return quickSort(nums, low, i - 1, midIndex);
-        }
-        return quickSort(nums, i + 1, high, midIndex); 
+        } else if (i < midIndex) {
+            return quickSort(nums, i + 1, high, midIndex); 
+        } 
+        return quickSort(nums, low, i - 1, midIndex);
     }
 
     public void swap(int[] nums, int i, int j) {
