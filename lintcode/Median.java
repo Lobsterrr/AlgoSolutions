@@ -25,8 +25,8 @@ public class Median {
 
     public int quickSort(int[] nums, int low, int high, int k) {
         int i = low;
-        for (int j = low; j <= high; ++j) {
-            if (nums[j] < nums[high]) {
+        for (int j = low; j < high; ++j) {
+            if (nums[j] <= nums[high]) {
                 swap(nums, i++, j);
             }
         }
@@ -34,7 +34,7 @@ public class Median {
         if (k == i) {
             return nums[k];
         } else if (k < i) {
-            return quickSort(nums, low + 1, k, k);
+            return quickSort(nums, low, k, k);
         } else {
             return quickSort(nums, i + 1, k, k); 
         }
