@@ -36,7 +36,7 @@ public class Median {
         } else if (k < i) {
             return quickSort(nums, low, i - 1, k);
         } else {
-            return quickSort(nums, i + 1, k, k); 
+            return quickSort(nums, i + 1, high, k); 
         }
     }
 
