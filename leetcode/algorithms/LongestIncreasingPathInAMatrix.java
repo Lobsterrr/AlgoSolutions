@@ -25,8 +25,14 @@
  */
 public class LongestIncreasingPathInAMatrix {
 
-    public int longestIncreasingPath(int[] matrix) {
+    int maxLen = Integer.MIN_VALUE;
 
+    public int longestIncreasingPath(int[][] matrix) {
+        
+    }
+
+    public void dfs(int[][] matrix, int i, int j, int currentLength) {
+        
     }
 
 }
