@@ -25,10 +25,6 @@
  */
 public class LongestIncreasingPathInAMatrix {
 
-    int maxLen = Integer.MIN_VALUE;
-
-    boolean[][] isVisited = new boolean[matrix.length][matrix[0].length];
-
     public int longestIncreasingPath(int[][] matrix) {
         for (int i = 0; i < matrix.length; ++i) {
             for (int j = 0; j < matrix[0].length; ++j) {
@@ -36,38 +32,6 @@ public class LongestIncreasingPathInAMatrix {
             }
         }
         return maxLen;
-    }
-
-    public void dfs(int[][] matrix, int i, int j, int currentLength) {
-        isVisited[i][j] = true;
-        if (!canGoOn(matrix, i, j)) {
-            maxLen = Math.max(maxLen, currentLength);
-            return;
-        }
-        if (isInMatrix(matrix, i - 1, j) && tmp < matrix[i - 1][j]) {
-            dfs(matrix, i - 1, j, currentLength + 1);
-        }
-        if (isInMatrix(matrix, i + 1, j) && tmp < matrix[i + 1][j]) {
-            dfs(matrix, i + 1, j, currentLength + 1);
-        }
-        if (isInMatrix(matrix, i, j - 1) && tmp < matrix[i][j - 1]) {
-            dfs(matrix, i, j - 1, currentLength + 1);
-        }
-        if (isInMatrix(matrix, i, j + 1) && tmp < matrix[i][j + 1]) {
-            dfs(matrix, i, j + 1, currentLength + 1);
-        }
-    }
-
-    public boolean isInMatrix(int[][] matrix, int i, int j) {
-        return 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length;
-    }
-
-    public boolean canGoOn(int[][] matrix, int i, int j) {
-        return isInMatrix(matrix, i, j) && 
-            (isInMatrix(matrix, i - 1, j) && matrix[i][j] < matrix[i - 1][j] || 
-             isInMatrix(matrix, i + 1, j) && matrix[i][j] < matrix[i + 1][j] ||
-             isInMatrix(matrix, i, j - 1) && matrix[i][j] < matrix[i][j - 1] ||
-             isInMatrix(matrix, i, j + 1) && matrix[i][j] < matrix[i][j + 1]);
     }
 
 }
