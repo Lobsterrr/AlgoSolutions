@@ -20,19 +20,20 @@ public class SearchForARange {
      */
     public int[] searchRange(int[] A, int target) {
         int[] result = new int[2];
+        result[0] = findFirstTarget(A, target);
+
+    }
+
+    public int findFirstTarget(int[] A, int target) {
         int low = 0;
         int high = A.length - 1;
         while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (A[mid] == target) {
-                break;
-            }
+
         }
     }
 
-    public int findFirstTarget(int[] A, target) {
-        int low = 0;
-        int high = A.length - 1;
+    public int findLastTarget(int[] A, int target) {
+
     }
 
 }
