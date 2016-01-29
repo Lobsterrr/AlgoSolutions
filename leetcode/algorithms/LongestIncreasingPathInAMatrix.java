@@ -57,7 +57,7 @@ public class LongestIncreasingPathInAMatrix {
             int y = j + v2[k];
             if (0 <= x && x < row && 0 <= y && y < col 
                     && matrix[i][j] < matrix[x][y] 
-                    && path[i][j] > path[x][y]) {
+                    && path[i][j] >= path[x][y]) {
                 path[x][y] = path[i][j] + 1;
                 dfs(matrix, x, y);
             }
