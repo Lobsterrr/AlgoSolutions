@@ -23,6 +23,8 @@ public class SearchForARange {
             findLastTarget(A, target)};
     }
 
+/*******************************************************************/
+
     public int findFirstTarget(int[] A, int target) {
         int low = 0;
         int high = A.length - 1;
