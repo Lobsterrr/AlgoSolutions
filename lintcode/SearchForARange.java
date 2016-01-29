@@ -19,9 +19,7 @@ public class SearchForARange {
      *return : a list of length 2, [index1, index2]
      */
     public int[] searchRange(int[] A, int target) {
-        int[] result = new int[2];
-        result[0] = findFirstTarget(A, target);
-
+        return {findFirstTarget(A, target), findLastTarget(A, target)};
     }
 
     public int findFirstTarget(int[] A, int target) {
