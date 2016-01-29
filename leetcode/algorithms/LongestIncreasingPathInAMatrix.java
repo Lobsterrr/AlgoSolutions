@@ -35,6 +35,7 @@ public class LongestIncreasingPathInAMatrix {
             return 0;
         }
         col = matrix[0].length;
+        path = new int[row][col];
         for (int i = 0; i < row; ++i) {
             for (int j = 0; j < col; ++j) {
                 dfs(matrix, i, j);
