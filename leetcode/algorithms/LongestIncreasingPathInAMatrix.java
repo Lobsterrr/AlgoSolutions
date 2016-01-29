@@ -52,9 +52,9 @@ public class LongestIncreasingPathInAMatrix {
     public void dfs(int[][] matrix, int i, int j) {
         int[] v1 = {0, 0, -1, 1};
         int[] v2 = {-1, 1, 0, 0};
-        for (int i = 0; i < 4; ++i) {
-            int x = i + v1[i];
-            int y = j + v2[i];
+        for (int k = 0; k < 4; ++k) {
+            int x = i + v1[k];
+            int y = j + v2[k];
             if (0 <= x && x < row && 0 <= y && y < col 
                     && matrix[i][j] < matrix[x][y] 
                     && path[i][j] > path[x][y]) {
