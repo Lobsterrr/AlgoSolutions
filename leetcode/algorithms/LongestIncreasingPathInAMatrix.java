@@ -30,6 +30,16 @@
  */
 public class LongestIncreasingPathInAMatrix {
 
+    public int longestIncreasingPath(int[][] matrix) {
+
+    }
+    
+    public int dfs(int[][] matrix, int i, int j, int[][] path) {
+
+    }
+
+/*********************************************************/
+
     public int[][] path;
 
     public int longestIncreasingPath(int[][] matrix) {
