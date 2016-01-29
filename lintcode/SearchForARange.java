@@ -24,8 +24,15 @@ public class SearchForARange {
         int high = A.length - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
-
+            if (A[mid] == target) {
+                break;
+            }
         }
+    }
+
+    public int findFirstTarget(int[] A, target) {
+        int low = 0;
+        int high = A.length - 1;
     }
 
 }
