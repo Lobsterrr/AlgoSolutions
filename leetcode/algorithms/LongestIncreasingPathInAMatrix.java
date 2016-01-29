@@ -35,12 +35,14 @@ public class LongestIncreasingPathInAMatrix {
     }
     
     public int dfs(int[][] matrix, int i, int j, int[][] path) {
-
+        
     }
 
 /*********************************************************/
 
     public int[][] path;
+    int[] v1 = {0, 0, -1, 1};
+    int[] v2 = {-1, 1, 0, 0};
 
     public int longestIncreasingPath(int[][] matrix) {
         if (matrix.length == 0) {
@@ -62,8 +64,6 @@ public class LongestIncreasingPathInAMatrix {
     }
 
     public void dfs(int[][] matrix, int i, int j) {
-        int[] v1 = {0, 0, -1, 1};
-        int[] v2 = {-1, 1, 0, 0};
         for (int k = 0; k < 4; ++k) {
             int x = i + v1[k];
             int y = j + v2[k];
