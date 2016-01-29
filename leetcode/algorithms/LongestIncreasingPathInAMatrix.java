@@ -1,9 +1,11 @@
 /*
- * Given an integer matrix, find the length of the longest increasing path.
+ * Given an integer matrix, find the length of the longest 
+ * increasing path.
  * 
- * From each cell, you can either move to four directions: left, right, up or 
- * down. You may NOT move diagonally or move outside of the boundary (i.e. 
- * wrap-around is not allowed).
+ * From each cell, you can either move to four directions: 
+ * left, right, up or down. You may NOT move diagonally or 
+ * move outside of the boundary (i.e. wrap-around is not 
+ * allowed).
  * 
  * Example 1:
  * 
@@ -23,7 +25,8 @@
  *   [2,2,1]
  * ]
  * Return 4
- * The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.
+ * The longest increasing path is [3, 4, 5, 6]. Moving 
+ * diagonally is not allowed.
  */
 public class LongestIncreasingPathInAMatrix {
 
@@ -54,8 +57,10 @@ public class LongestIncreasingPathInAMatrix {
         for (int k = 0; k < 4; ++k) {
             int x = i + v1[k];
             int y = j + v2[k];
-            if (0 <= x && x < matrix.length && 0 <= y && y < matrix[0].length 
-                    && matrix[i][j] < matrix[x][y] && path[i][j] >= path[x][y]) {
+            if (0 <= x && x < matrix.length && 0 <= y && 
+                    y < matrix[0].length && 
+                    matrix[i][j] < matrix[x][y] 
+                    && path[i][j] >= path[x][y]) {
                 path[x][y] = path[i][j] + 1;
                 dfs(matrix, x, y);
             }
