@@ -20,7 +20,11 @@ public class MaximumSubarrayIII {
      * @return: An integer denote the sum of max k non-overlapping subarrays
      */
     public int maxSubArray(int[] nums, int k) {
-
+        int len = nums.length;
+        if (len < k) {
+            return 0;
+        }
+        int[][] dp = new int[len + 1][k + 1];
     }
 
 }
