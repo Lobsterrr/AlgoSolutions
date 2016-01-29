@@ -49,6 +49,8 @@ public class LongestIncreasingPathInAMatrix {
         return result;
     }
 
-
+    public void dfs(int[][] matrix, int i, int j) {
+        
+    }
 
 }
