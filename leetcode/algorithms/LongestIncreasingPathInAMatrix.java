@@ -31,15 +31,15 @@ public class LongestIncreasingPathInAMatrix {
         if (matrix.length == 0) {
             return 0;
         }
-        path = new int[matrix.length][col];
+        path = new int[matrix.length][matrix[0].length];
         for (int i = 0; i < matrix.length; ++i) {
-            for (int j = 0; j < col; ++j) {
+            for (int j = 0; j < matrix[0].length; ++j) {
                 dfs(matrix, i, j);
             }
         }
         int result = Integer.MIN_VALUE;
         for (int i = 0; i < matrix.length; ++i) {
-            for (int j = 0; j < col; ++j) {
+            for (int j = 0; j < matrix[0].length; ++j) {
                 result = Math.max(result, path[i][j]);
             }
         }
@@ -52,7 +52,7 @@ public class LongestIncreasingPathInAMatrix {
         for (int k = 0; k < 4; ++k) {
             int x = i + v1[k];
             int y = j + v2[k];
-            if (0 <= x && x < matrix.length && 0 <= y && y < col 
+            if (0 <= x && x < matrix.length && 0 <= y && y < matrix[0].length 
                     && matrix[i][j] < matrix[x][y] 
                     && path[i][j] >= path[x][y]) {
                 path[x][y] = path[i][j] + 1;
