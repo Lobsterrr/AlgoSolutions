@@ -25,13 +25,30 @@
  */
 public class LongestIncreasingPathInAMatrix {
 
-    public int longestIncreasingPath(int[][] matrix) {
-        for (int i = 0; i < matrix.length; ++i) {
-            for (int j = 0; j < matrix[0].length; ++j) {
+    public int[][] path;
+    int row;
+    int col;
 
+    public int longestIncreasingPath(int[][] matrix) {
+        row = matrix.length;
+        if (row == 0) {
+            return 0;
+        }
+        col = matrix[0].length;
+        for (int i = 0; i < row; ++i) {
+            for (int j = 0; j < col; ++j) {
+                dfs(matrix, i, j);
             }
         }
-        return maxLen;
+        int result = Integer.MIN_VALUE;
+        for (int i = 0; i < row; ++i) {
+            for (int j = 0; j < col; ++j) {
+                result = Math.max(result, path[i][j]);
+            }
+        }
+        return result;
     }
+
+
 
 }
