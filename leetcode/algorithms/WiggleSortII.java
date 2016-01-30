@@ -44,6 +44,12 @@ public class WiggleSortII {
     }
 
 /*********************************************************/
+    
+    public void wiggleSort(int[] nums) {
+        int[] tmp = Arrays.copyOf(nums, nums.length);
+        Arrays.sort(tmp);
+        for (int i = nums.length - 1, j = 0, k = i / 2 + 1; 
+    }
 
     public void wiggleSort(int[] nums) {
         Arrays.sort(nums);
