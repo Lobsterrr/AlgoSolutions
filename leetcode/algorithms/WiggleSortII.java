@@ -18,7 +18,8 @@
 public class WiggleSortII {
 
     public void wiggleSort(int[] nums) {
-
+        int mid = findMedian(nums);
+        for 
     }
 
     public int findMedian(int[] nums) {
