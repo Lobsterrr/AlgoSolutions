@@ -21,15 +21,9 @@ public class WiggleSortII {
         for (int k = 0; k < nums.length; ++k) {
             tmp[k] = k % 2 == 0 ? nums[i--] : nums[j--];
         }
-        for (int i = 0; i < nums.length; ++i) {
-            nums[i] = tmp[i];
+        for (int k = 0; k < nums.length; ++k) {
+            nums[k] = tmp[k];
         }
-    }
-
-    public void swap(int[] nums, int i, int j) {
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
     }
 
 }
