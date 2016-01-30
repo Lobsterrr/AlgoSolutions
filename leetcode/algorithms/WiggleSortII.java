@@ -19,7 +19,18 @@ public class WiggleSortII {
 
     public void wiggleSort(int[] nums) {
         int mid = findMedian(nums);
-        for 
+        int i = 0;
+        int j = 0;
+        int k = nums.length - 1;
+        while (j <= k) {
+            if (nums[j] > mid) {
+                swap(nums, i++, j++);
+            } else if (nums[j] < mid) {
+                swap(nums, j, k--);
+            } else {
+                j++;
+            }
+        }
     }
 
     public int findMedian(int[] nums) {
