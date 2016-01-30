@@ -47,18 +47,20 @@ public class LongestIncreasingPathInAMatrix {
     }
     
     public int dfs(int[][] matrix, int i, int j, int[][] path) {
-        int maxLen = path[i][j];
+        if (path[i][j] > 0) {
+            return path[i][j];
+        }
         int[] v1 = {0, 0, -1, 1};
         int[] v2 = {-1, 1, 0, 0};
         for (int k = 0; k <= 3; ++k) {
             int x = i + v1[k];
             int y = j + v2[k];
             if (0 <= x && x < matrix.length && 0 <= y && y < matrix[0].length && matrix[i][j] < matrix[x][y] && path[i][j] >= path[x][y]) {
-                path[x][y] = path[i][j] + 1;
-                maxLen = Math.max(maxLen, path[x][y]);
+                path[i][j] = Math.max(path[i][j], dfs(matrix, x, y, path));
             }
         }
-        return maxLen;
+        path[i][j]++;
+        return path[i][j];
     }
 
 /*********************************************************/
