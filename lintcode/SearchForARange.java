@@ -32,8 +32,8 @@ public class SearchForARange {
             }
         }
         start = low < A.length && A[low] == target ? low : -1;
-        int low = 0;
-        int high = A.length - 1;
+        low = 0;
+        high = A.length - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
             if (A[mid] > target) {
