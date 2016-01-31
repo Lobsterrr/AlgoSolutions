@@ -29,7 +29,9 @@ public class CombinationSum {
      * @return: A list of lists of integers
      */
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Arrays.sort(candidates);
+
     }
 
 }
