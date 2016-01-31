@@ -31,17 +31,18 @@ public class CombinationSum {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(candidates);
-        for (int i = 0; i < candidates.length; ++i) {
-            List<Integer> list = new ArrayList<Integer>();
-            int sum = 0;
-            while (sum < target) {
-                list.add(candidates[i]);
-                sum += candidates[i];
-            }
-            if (sum == target) {
-                result.add(new ArrayList<Integer>(list));
-            }
-            sum -= candidates[i];
+        dfs(result, new ArrayList<Integer>(), candidates, 0, target);
+        return result;
+    }
+
+    public void dfs(List<List<Integer>> result, List<Integer> list; int[] candidates, int position, int target) {
+        if (target == 0) {
+            result.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for (int i = position; i < candidates.length && target > 0; ++i) {
+            list.add(candidates[i]);
+            dfs(result, list, candidates, i, target - candidates[i]);
             list.remove(list.size() - 1);
         }
     }
