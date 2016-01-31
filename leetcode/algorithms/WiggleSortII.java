@@ -25,12 +25,4 @@ public class WiggleSortII {
         } 
     }
 
-    public void wiggleSort(int[] nums) {
-        int[] tmp = Arrays.copyOf(nums, nums.length);
-        Arrays.sort(tmp);
-        for (int i = 0, j = (nums.length - 1) / 2, k = nums.length - 1; i < nums.length; ++i) {
-            nums[i] = tmp[i % 2 == 0 ? j-- : k--];
-        }
-    }
-
 }
