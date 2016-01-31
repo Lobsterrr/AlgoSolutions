@@ -18,7 +18,7 @@ public class SearchForARange {
      *@param target :  an integer to be inserted
      *return : a list of length 2, [index1, index2]
      */
-    public int[] searchRange(int[] A, int targe) {
+    public int[] searchRange(int[] A, int target) {
         int start = -1;
         int end = -1;
         int low = 0;
