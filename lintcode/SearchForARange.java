@@ -19,36 +19,6 @@ public class SearchForARange {
      *return : a list of length 2, [index1, index2]
      */
     public int[] searchRange(int[] A, int target) {
-        int start = -1;
-        int end = -1;
-        int low = 0;
-        int high = A.length - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (A[mid] < target) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
-        }
-        start = low < A.length && A[low] == target ? low : -1;
-        low = 0;
-        high = A.length - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (A[mid] > target) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
-            }
-        }
-        end = high >= 0 && A[high] == target ? high : -1;
-        return new int[]{start, end};
-    }
-
-
-
-    public int[] searchRange(int[] A, int target) {
         return new int[]{findFirstTarget(A, target), 
             findLastTarget(A, target)};
     }
