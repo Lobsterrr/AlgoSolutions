@@ -42,7 +42,7 @@ public class SearchForARange {
                 low = mid + 1;
             }
         }
-        end = high >= 0 ? A[high] == target ? high : -1;
+        end = high >= 0 && A[high] == target ? high : -1;
         return new int[]{start, end};
     }
 
