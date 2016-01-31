@@ -54,6 +54,12 @@ public class WiggleSortII {
     }
 
     public void wiggleSort(int[] nums) {
+        int[] tmp = Arrays.sort(nums, nums.length);
+        Arrays.sort(tmp);
+
+    }
+
+    public void wiggleSort(int[] nums) {
         Arrays.sort(nums);
         int[] tmp = new int[nums.length];
         int i = (nums.length - 1) / 2;
