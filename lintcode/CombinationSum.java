@@ -20,7 +20,7 @@ A solution set is:
 Note
 All numbers (including target) will be positive integers.
 Elements in a combination (a1, a2, бн , ak) must be in non-descending order. 
-(ie, a1 <= a2 <= бн <= ak).
+(ie, a1 <= a2 <= ... <= ak).
 The solution set must not contain duplicate combinations.
  */
 public class CombinationSum {
