@@ -19,7 +19,20 @@ public class SearchForARange {
      *return : a list of length 2, [index1, index2]
      */
     public int[] searchRange(int[] A, int targe) {
-
+        int start = -1;
+        int end = -1;
+        int low = 0;
+        int high = A.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (A[mid] < target) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        start = low < A.length && A[low] == target ? low : -1;
+        
     }
 
 
