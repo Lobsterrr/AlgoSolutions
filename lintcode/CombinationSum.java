@@ -35,7 +35,7 @@ public class CombinationSum {
         return result;
     }
 
-    public void dfs(List<List<Integer>> result, List<Integer> list; int[] candidates, int position, int target) {
+    public void dfs(List<List<Integer>> result, List<Integer> list, int[] candidates, int position, int target) {
         if (target == 0) {
             result.add(new ArrayList<Integer>(list));
             return;
