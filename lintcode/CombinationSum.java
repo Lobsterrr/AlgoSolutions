@@ -31,7 +31,19 @@ public class CombinationSum {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(candidates);
-
+        for (int i = 0; i < candidates.length; ++i) {
+            List<Integer> list = new ArrayList<Integer>();
+            int sum = 0;
+            while (sum < target) {
+                list.add(candidates[i]);
+                sum += candidates[i];
+            }
+            if (sum == target) {
+                result.add(new ArrayList<Integer>(list));
+            }
+            sum -= candidates[i];
+            list.remove(list.size() - 1);
+        }
     }
 
 }
