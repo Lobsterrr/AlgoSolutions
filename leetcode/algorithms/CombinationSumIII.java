@@ -29,7 +29,8 @@ public class CombinationSumIII {
         return result;
     }
 
-    public void dfs(List<List<Integer>> result, List<Integer> list, int position, int k, int n) {
+    public void dfs(List<List<Integer>> result, List<Integer> list, 
+            int position, int k, int n) {
         if (k == 0 && n == 0) {
             result.add(new ArrayList<Integer>(list));
             return;
