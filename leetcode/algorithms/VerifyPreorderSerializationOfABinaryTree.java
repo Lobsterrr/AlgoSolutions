@@ -61,7 +61,7 @@ public class VerifyPreorderSerializationOfABinaryTree {
                 continue;
             }
         }
-        return preorder.charAt(preorder.length()) == '#' && sharpCount == numCount + 1;
+        return preorder.charAt(preorder.length() - 1) == '#' && sharpCount == numCount + 1;
     }
 
     public boolean isValidSerialization(String preorder) {
