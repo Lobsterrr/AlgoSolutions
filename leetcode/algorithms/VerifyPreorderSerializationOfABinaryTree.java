@@ -47,7 +47,8 @@ public class VerifyPreorderSerializationOfABinaryTree {
         int tmpNumCount = 0;
         for (int i = 0; i < preorder.length() - 1; ++i) {
             if (Character.isDigit(preorder.charAt(i))) {
-                while (i + 1 < preorder.length() && Character.isDigit(preorder.charAt(i + 1))) {
+                while (i + 1 < preorder.length() && 
+                        Character.isDigit(preorder.charAt(i + 1))) {
                     i++;
                 }
                 numCount++;
@@ -61,7 +62,8 @@ public class VerifyPreorderSerializationOfABinaryTree {
                 continue;
             }
         }
-        return preorder.charAt(preorder.length() - 1) == '#' && sharpCount == numCount;
+        return preorder.charAt(preorder.length() - 1) == '#' && 
+            sharpCount == numCount;
     }
 
     public boolean isValidSerialization(String preorder) {
