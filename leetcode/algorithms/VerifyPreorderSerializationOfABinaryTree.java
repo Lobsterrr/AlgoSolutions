@@ -51,10 +51,8 @@ public class VerifyPreorderSerializationOfABinaryTree {
                 i--;
                 numCount++;
             } else if (preorder.charAt(i) == '#') {
-                if (numCount == 0) {
+                if (--numCount < 0) {
                     return false;
-                } else {
-                    numCount--;
                 }
             }
         }
