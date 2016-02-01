@@ -45,7 +45,8 @@ public class VerifyPreorderSerializationOfABinaryTree {
         int numCount = 0;
         for (int i = 0; i < preorder.length() - 2; ++i) {
             if (Character.isDigit(preorder.charAt(i))) {
-                while (i < preorder.length() - 2 && Character.isDigit(preorder.charAt(i))) {
+                while (i < preorder.length() - 2 && 
+                        Character.isDigit(preorder.charAt(i))) {
                     i++;
                 }
                 i--;
