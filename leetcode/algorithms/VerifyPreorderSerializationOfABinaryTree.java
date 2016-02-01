@@ -59,7 +59,7 @@ public class VerifyPreorderSerializationOfABinaryTree {
                 sharpCount++;
                 tmpNumCount--;
                 continueSharpCount++;
-                if (tmpNumCount < 0 || continueSharpCount > 2) {
+                if (tmpNumCount < 0) {
                     return false;
                 }
             } else {
