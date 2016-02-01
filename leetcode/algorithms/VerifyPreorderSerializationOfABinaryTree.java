@@ -48,6 +48,10 @@ public class VerifyPreorderSerializationOfABinaryTree {
         int continueSharpCount = 0;
         for (int i = 0; i < preorder.length() - 1; ++i) {
             if (Character.isDigit(preorder.charAt(i))) {
+                while (i < preorder.length() && Character.isDigit(preorder.charAt(i))) {
+                    i++;
+                }
+                i--;
                 numCount++;
                 tmpNumCount++;
                 continueSharpCount = 0;
