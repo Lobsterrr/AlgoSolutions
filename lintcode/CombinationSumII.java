@@ -43,7 +43,7 @@ public class CombinationSumII {
                 continue;
             }
             list.add(num[i]);
-            dfs(result, list, num, i + 1, target);
+            dfs(result, list, num, i + 1, target - num[i]);
             list.remove(list.size() - 1);
         }
     }
