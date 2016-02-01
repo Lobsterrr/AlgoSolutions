@@ -61,4 +61,8 @@ public class VerifyPreorderSerializationOfABinaryTree {
         return sharpCount == numCount + 1;
     }
 
+    public boolean isValidSerialization(String preorder) {
+
+    }
+
 }
