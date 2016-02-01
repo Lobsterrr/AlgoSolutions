@@ -53,6 +53,7 @@ public class VerifyPreorderSerializationOfABinaryTree {
                 continueSharpCount = 0;
             } else if (preorder.charAt(i) == '#') {
                 sharpCount++;
+                tmpNumCount--;
                 continueSharpCount++;
                 if (tmpNumCount < 0 || continueSharpCount > 2) {
                     return false;
