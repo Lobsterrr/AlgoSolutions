@@ -34,7 +34,7 @@ public class CombinationSumIII {
             result.add(new ArrayList<Integer>(list));
             return;
         }
-        for (int i = position; i <= 9 && n - i > 0; ++i) {
+        for (int i = position; i <= 9 && n > 0; ++i) {
             list.add(i);
             dfs(result, list, i + 1, k - 1, n - i);
             list.remove(list.size() - 1);
