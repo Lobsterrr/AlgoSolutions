@@ -52,7 +52,7 @@ public class VerifyPreorderSerializationOfABinaryTree {
             } else if (preorder.charAt(i) == '#') {
                 numCount--;
                 sharpCount++;
-                if (i < preorder.length() - 1 && numCount < 0 || sharpCount > 2) {
+                if (numCount < 0 || sharpCount > 2) {
                     return false;
                 }
             } else {
