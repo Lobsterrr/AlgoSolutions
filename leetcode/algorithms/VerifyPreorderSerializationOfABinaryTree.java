@@ -44,6 +44,7 @@ public class VerifyPreorderSerializationOfABinaryTree {
     public boolean isValidSerialization(String preorder) {
         int numCount = 0;
         int sharpCount = 0;
+        int continueSharpCount = 0;
         for (int i = 0; i < preorder.length(); ++i) {
             if (Character.isDigit(preorder.charAt(i))) {
                 numCount++;
