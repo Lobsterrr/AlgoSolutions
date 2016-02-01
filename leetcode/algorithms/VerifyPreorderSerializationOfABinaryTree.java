@@ -42,7 +42,6 @@
 public class VerifyPreorderSerializationOfABinaryTree {
 
     public boolean isValidSerialization(String preorder) {
-        preorder = preorder.substring(0, preorder.length() - 2);
         int numCount = 0;
         int sharpCount = 0;
         for (int i = 0; i < preorder.length(); ++i) {
@@ -59,7 +58,7 @@ public class VerifyPreorderSerializationOfABinaryTree {
                 continue;
             }
         }
-        return true;
+        return sharpCount == numCount + 1;
     }
 
 }
