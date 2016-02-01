@@ -44,15 +44,17 @@ public class VerifyPreorderSerializationOfABinaryTree {
     public boolean isValidSerialization(String preorder) {
         int numCount = 0;
         int sharpCount = 0;
+        int tmpNumCount = 0;
         int continueSharpCount = 0;
         for (int i = 0; i < preorder.length(); ++i) {
             if (Character.isDigit(preorder.charAt(i))) {
                 numCount++;
-                sharpCount = 0;
+                tmpNumCount++;
+                continueSharpCount = 0;
             } else if (preorder.charAt(i) == '#') {
-                numCount--;
                 sharpCount++;
-                if (numCount < 0 || sharpCount > 2) {
+                continueSharpCount++;
+                if (tmpNumCount < 0 || continueSharpCount > 2) {
                     return false;
                 }
             } else {
