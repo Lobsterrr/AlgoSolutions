@@ -52,10 +52,11 @@ public class VerifyPreorderSerializationOfABinaryTree {
                 while (Character.isDigit(preorder.charAt(i))) {
                     i++;
                 }
-                i += 2;
+                i--;
+                diff += 2;
             }
         }
-        return i == 0;
+        return diff == 0;
     }
 
     public boolean isValidSerialization(String preorder) {
