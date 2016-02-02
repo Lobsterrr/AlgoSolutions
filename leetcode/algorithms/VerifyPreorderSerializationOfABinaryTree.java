@@ -42,7 +42,7 @@
 public class VerifyPreorderSerializationOfABinaryTree {
 
     public boolean isValidSerialization(String preorder) {
-
+        int diff = 0;
     }
 
     public boolean isValidSerialization(String preorder) {
