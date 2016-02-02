@@ -42,22 +42,6 @@
 public class VerifyPreorderSerializationOfABinaryTree {
 
     public boolean isValidSerialization(String preorder) {
-        int diff = 0;
-        for (int i = 0; i < preorder.length(); ++i) {
-            if (preorder.charAt(i) == ',') {
-                continue;
-            }
-            if (Character.isDigit(preorder.charAt(i))) {
-                for (; i < preorder.length() && 
-                        Character.isDigit(preorder.charAt(i)); ++i);
-                i--;
-                diff += 2;
-            }
-            if (--diff < 0) {
-                return false;
-            }
-        }
-        return diff == 0;
     }
 
     public boolean isValidSerialization(String preorder) {
