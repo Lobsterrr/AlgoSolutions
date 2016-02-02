@@ -42,6 +42,20 @@
 public class VerifyPreorderSerializationOfABinaryTree {
 
     public boolean isValidSerialization(String preorder) {
+        String[] nodes = preorder.split(",");
+        int diff = 1;
+        for (String node : nodes) {
+            if (--diff < 0) {
+                return false;
+            }
+            if (!node.equals("#")) {
+                diff += 2;
+            }
+        }
+        return diff == 0;
+    }
+
+    public boolean isValidSerialization(String preorder) {
         int diff = 1;
         for (int i = 0; i < preorder.length(); ++i) {
             if (--diff < 0) {
