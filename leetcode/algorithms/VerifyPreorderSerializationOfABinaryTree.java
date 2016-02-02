@@ -51,7 +51,8 @@ public class VerifyPreorderSerializationOfABinaryTree {
                 return false;
             }
             if (Character.isDigit(preorder.charAt(i))) {
-                for (; i < preorder.length() && Character.isDigit(preorder.charAt(i)); ++i);
+                for (; i < preorder.length() && 
+                        Character.isDigit(preorder.charAt(i)); ++i);
                 i--;
                 diff += 2;
             }
