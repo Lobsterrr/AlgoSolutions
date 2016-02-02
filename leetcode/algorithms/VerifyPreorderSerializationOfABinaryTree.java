@@ -58,6 +58,9 @@ public class VerifyPreorderSerializationOfABinaryTree {
     public boolean isValidSerialization(String preorder) {
         int diff = 1;
         for (int i = 0; i < preorder.length(); ++i) {
+            if (preorder.charAt(i) == ',') {
+                continue;
+            }
             if (--diff < 0) {
                 return false;
             }
