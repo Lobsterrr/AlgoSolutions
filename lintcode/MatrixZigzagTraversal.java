@@ -22,7 +22,12 @@ public class MatrixZigzagTraversal {
             return 0;
         }
         int[] result = new int[matrix.length * matrix[0].length];
-
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < result.length) {
+            
+        }
     }
 
 }
