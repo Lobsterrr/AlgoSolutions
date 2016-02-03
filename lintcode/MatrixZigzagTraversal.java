@@ -28,9 +28,9 @@ public class MatrixZigzagTraversal {
         int j = 0;
         int k = 0;
         int count = 0;
-        while (count < xLen + yLen - 1) {
+        while (k < xLen * yLen) {
             if (count % 2 == 0) {
-                while (i >= 0 && j < yLen) {
+                while (k < xLen * yLen && i >= 0 && j < yLen) {
                     result[k++] = matrix[i--][j++];
                 }
                 if (i < 0) {
@@ -40,7 +40,7 @@ public class MatrixZigzagTraversal {
                     j--;
                 }
             } else {
-                while (i < xLen && j >= 0) {
+                while (k < xLen * yLen && i < xLen && j >= 0) {
                     result[k++] = matrix[i++][j--];
                 }
                 if (i >= xLen) {
