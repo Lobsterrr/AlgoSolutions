@@ -64,6 +64,8 @@ public class VerifyPreorderSerializationOfABinaryTree {
         return diff == 0;
     }
 
+/*******************************************************************/
+
     public boolean isValidSerialization(String preorder) {
         int numCount = 0;
         for (int i = 0; i < preorder.length() - 2; ++i) {
