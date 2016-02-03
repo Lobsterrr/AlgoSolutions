@@ -33,23 +33,24 @@ public class MatrixZigzagTraversal {
                 while (i >= 0 && j < yLen) {
                     result[k++] = matrix[i--][j++];
                 }
-                if (j < yLen - 1) {
-                    j++;
-                } else {
+                if (i < 0) {
                     i++;
                 }
-                count++;
+                if (j >= yLen) {
+                    j--;
+                }
             } else {
                 while (i < xLen && j >= 0) {
                     result[k++] = matrix[i++][j--];
                 }
-                if (i < xLen - 1) {
-                    i++;
-                } else {
+                if (i >= xLen) {
+                    i--;
+                }
+                if (j < 0) {
                     j++;
                 }
-                count++;
             }
+            count++;
         }
         return result;
     }
