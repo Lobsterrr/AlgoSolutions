@@ -41,6 +41,10 @@
  */
 public class VerifyPreorderSerializationOfABinaryTree {
 
+    /*
+     * If the node has an in-degree, minus 1, 
+     * and if it has an out-degree, plus 1.
+     */
     public boolean isValidSerialization(String preorder) {
         int diff = 0;
         for (int i = 0; i < preorder.length(); ++i) {
