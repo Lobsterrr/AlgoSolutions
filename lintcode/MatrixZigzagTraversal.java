@@ -18,16 +18,40 @@ public class MatrixZigzagTraversal {
      * @return: an array of integers
      */ 
     public int[] printZMatrix(int[][] matrix) {
-        if (matrix.length == 0) {
-            return 0;
+        int xLen = matrix.length;
+        if (xLen == 0) {
+            return null;
         }
-        int[] result = new int[matrix.length * matrix[0].length];
+        int yLen = matrix[0].length;
+        int[] result = new int[xLen * yLen];
         int i = 0;
         int j = 0;
         int k = 0;
-        while (i < result.length) {
-            
+        int count = 0;
+        while (count < xLen + yLen - 1) {
+            if (count % 2 == 0) {
+                while (i >= 0 && j < yLen) {
+                    result[k++] = matrix[i--][j++];
+                }
+                if (j < yLen - 1) {
+                    j++;
+                } else {
+                    i++;
+                }
+                count++;
+            } else {
+                while (i < xLen && j >= 0) {
+                    result[k++] = matrix[i++][j--];
+                }
+                if (i < xLen - 1) {
+                    i++;
+                } else {
+                    j++;
+                }
+                count++;
+            }
         }
+        return result;
     }
 
 }
