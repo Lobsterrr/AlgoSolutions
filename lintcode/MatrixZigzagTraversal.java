@@ -33,26 +33,26 @@ public class MatrixZigzagTraversal {
                 while (k < xLen * yLen && i >= 0 && j < yLen) {
                     result[k++] = matrix[i--][j++];
                 }
-                if (i < 0) {
-                    i++;
-                }
-                if (j >= yLen) {
-                    j--;
-                }
+                i++;
+                j--;
                 if (i == 0 && j == yLen - 1) {
                     i++;
+                } else if (i < xLen) {
+                    i++;
+                } else {
+                    j++;
                 }
             } else {
                 while (k < xLen * yLen && i < xLen && j >= 0) {
                     result[k++] = matrix[i++][j--];
                 }
-                if (i >= xLen) {
-                    i--;
-                }
-                if (j < 0) {
-                    j++;
-                }
+                i--;
+                j++;
                 if (i == xLen - 1 && j == 0) {
+                    j++;
+                } else if (i < xLen) {
+                    i++;
+                } else {
                     j++;
                 }
             }
