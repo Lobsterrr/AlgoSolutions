@@ -35,9 +35,7 @@ public class MatrixZigzagTraversal {
                 }
                 i++;
                 j--;
-                if (i == 0 && j == yLen - 1) {
-                    i++;
-                } else if (i < xLen) {
+                if (j == yLen - 1) {
                     i++;
                 } else {
                     j++;
@@ -48,9 +46,7 @@ public class MatrixZigzagTraversal {
                 }
                 i--;
                 j++;
-                if (i == xLen - 1 && j == 0) {
-                    j++;
-                } else if (i < xLen) {
+                if (i < xLen) {
                     i++;
                 } else {
                     j++;
