@@ -32,6 +32,7 @@ public class MatrixZigzagTraversal {
         while (k < xLen * yLen) {
             if (count % 2 == 0) {
                 while (k < xLen * yLen && i >= 0 && j < yLen) {
+
                     result[k++] = matrix[i--][j++];
                 }
                 i++;
