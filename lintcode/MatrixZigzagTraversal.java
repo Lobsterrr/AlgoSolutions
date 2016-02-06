@@ -19,10 +19,10 @@ public class MatrixZigzagTraversal {
      * @return: an array of integers
      */ 
     public int[] printZMatrix(int[][] matrix) {
-        int xLen = matrix.length;
-        if (xLen == 0) {
+        if (matrix.length == 0) {
             return null;
         }
+        int xLen = matrix.length;
         int yLen = matrix[0].length;
         int[] result = new int[xLen * yLen];
         int i = 0;
