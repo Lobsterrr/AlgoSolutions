@@ -15,5 +15,15 @@ def largest_prime_factor(n):
             i += 1
     return n
 
+def largest_prime_factor_1(n):
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            n //= i
+        else:
+            i += 1
+    return n
+
 if __name__ == '__main__':
-    print(largest_prime_factor(600851475143))
+    print(largest_prime_factor(600851475143)
+    print(largest_prime_factor_1(600851475143)
