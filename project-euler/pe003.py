@@ -26,3 +26,4 @@ def largest_prime_factor_1(n):
 
 if __name__ == '__main__':
     print(largest_prime_factor(600851475143))
+    print(largest_prime_factor_1(600851475143))
