@@ -14,7 +14,7 @@ def largest_product_palindrome(start, end):
     for i in range(end, start - 1, -1):
         for j in range(end, i - 1, -1):
             product = i * j
-            if product > result and str(product) == str(product)[::-1]:
+            if str(product) == str(product)[::-1] and product > result:
                 result = product
     return result
 
