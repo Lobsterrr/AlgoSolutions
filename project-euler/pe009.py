@@ -17,7 +17,7 @@ if __name__ == '__main__':
         for b in range(a + 1, 500):
             c = 1000 - a - b
             if a ** 2 + b ** 2 == c ** 2:
-                print("a =", a, ", b =", b, ", c =", c, ", a * b * c = ", a * b
+                print("a =", a, ", b =", b, ", c =", c, ', a * b * c = ', a * b
                         * c)
                 print(a * b * c)
                 exit()
