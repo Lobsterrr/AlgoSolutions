@@ -9,7 +9,7 @@ __author__ = 'SUN'
 if __name__ == '__main__':
     num = 2 ** 1000
     result = 0
-    while num > 0:
+    while num != 0:
         result += num % 10
         num //= 10
     print(result)
