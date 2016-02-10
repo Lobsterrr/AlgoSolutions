@@ -16,7 +16,7 @@ if __name__ == '__main__':
     for i in range(1, 101):
         factorial *= i
     res = 0
-    while factorial > 0:
+    while factorial != 0:
         res += factorial % 10
         factorial //= 10
     print(res)
