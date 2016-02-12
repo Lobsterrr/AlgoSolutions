@@ -25,6 +25,9 @@ public class MaximumSubarrayIII {
         }
         int len = nums.length;
         int[][] dp = new int[len + 1][k + 1];
+        for (int i = 1; i <= k; ++i) {
+
+        }
     }
 
 }
