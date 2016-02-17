@@ -37,6 +37,7 @@ public class MatrixZigzagTraversal {
                 }
             }
         }
+        return result;
     }
 
     public int[] printZMatrix(int[][] matrix) {
