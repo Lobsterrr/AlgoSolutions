@@ -21,7 +21,7 @@ public class BackpackII {
         int[][] dp = new int[A.length + 1][m + 1];
         for (int i = 1; i <= A.length; ++i) {
             for (int j = 0; j <= m; ++j) {
-                if (j < A[i]) {
+                if (j < A[i - 1]) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
                     dp[i][j] = Math.max(dp[i- 1][j], dp[i - 1][j - A[i - 1]] + V[i - 1]);
