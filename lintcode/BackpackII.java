@@ -18,7 +18,13 @@ public class BackpackII {
      * @return: The maximum value
      */
     public int backPackII(int m, int[] A, int V[]) {
+        int[][] dp = new int[m + 1][m + 1];
+        for (int i = 1; i <= m; ++i) {
+            for (int j = 1; j <= m; ++j) {
 
+            }
+        }
+        return dp[m][m];
     }
 
 }
