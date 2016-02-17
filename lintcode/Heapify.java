@@ -22,7 +22,7 @@ Return any of them.
 public class Heapify {
 
     public void heapify(int[] A) {
-        Arrays.sort(A);
+
     }
 
 }
