@@ -24,7 +24,7 @@ public class BackpackII {
                 if (
             }
         }
-        return dp[m][m];
+        return dp[A.length][m];
     }
 
 }
