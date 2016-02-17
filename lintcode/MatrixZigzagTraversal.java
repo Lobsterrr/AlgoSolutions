@@ -25,9 +25,10 @@ public class MatrixZigzagTraversal {
         int xLen = matrix.length;
         int yLen = matrix[0].length;
         int[] result = new int[xLen * yLen];
+        int index = 0;
         for (int i = 0; i < xLen + yLen - 1; ++i) {
             if (i % 2 == 0) {
-
+                for (int j = 
             } else {
 
             }
