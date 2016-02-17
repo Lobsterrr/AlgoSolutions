@@ -42,44 +42,4 @@ public class MatrixZigzagTraversal {
         return result;
     }
 
-    public int[] printZMatrix(int[][] matrix) {
-        if (matrix.length == 0) {
-            return null;
-        }
-        int xLen = matrix.length;
-        int yLen = matrix[0].length;
-        int[] result = new int[xLen * yLen];
-        int i = 0;
-        int j = 0;
-        int k = 0;
-        int count = 0;
-        while (k < xLen * yLen) {
-            if (count % 2 == 0) {
-                while (k < xLen * yLen && i >= 0 && j < yLen) {
-                    result[k++] = matrix[i--][j++];
-                }
-                i++;
-                j--;
-                if (j == yLen - 1) {
-                    i++;
-                } else {
-                    j++;
-                }
-            } else {
-                while (k < xLen * yLen && i < xLen && j >= 0) {
-                    result[k++] = matrix[i++][j--];
-                }
-                i--;
-                j++;
-                if (i < xLen - 1) {
-                    i++;
-                } else {
-                    j++;
-                }
-            }
-            count++;
-        }
-        return result;
-    }
-
 }
