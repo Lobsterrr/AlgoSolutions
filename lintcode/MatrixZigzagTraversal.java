@@ -32,7 +32,9 @@ public class MatrixZigzagTraversal {
                     result[index++] = matrix[row][i - row];
                 }
             } else {
-                for (int col = 
+                for (int col = Math.min(i, yLen - 1); col >= Math.max(0, i - xLen + 1); --col) {
+                    result[index++] = matrix[i - col][col];
+                }
             }
         }
     }
