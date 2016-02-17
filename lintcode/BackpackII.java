@@ -37,6 +37,8 @@ public class BackpackII {
         return dp[A.length][m];
     }
 
+/*******************************************************************/
+
     public int backPackII(int m, int[] A, int V[]) {
         int[] dp = new int[m + 1];
         for (int i = 1; i <= A.length; ++i) {
