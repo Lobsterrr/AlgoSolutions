@@ -24,7 +24,7 @@ public class BackpackII {
                 if (j < A[i]) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
-                    dp[i][j] = Math.max(dp[i- 1][j], dp[i - 1][j - A[i]] + V[i]);
+                    dp[i][j] = Math.max(dp[i- 1][j], dp[i - 1][j - A[i - 1]] + V[i - 1]);
                 }
             }
         }
