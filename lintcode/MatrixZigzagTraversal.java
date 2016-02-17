@@ -22,7 +22,8 @@ public class MatrixZigzagTraversal {
         if (matrix.length == 0) {
             return null;
         }
-
+        int count = maxtrix.length * matrix[0].length;
+        int[] result = new int[count];
     }
 
     public int[] printZMatrix(int[][] matrix) {
