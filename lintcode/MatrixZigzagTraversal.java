@@ -28,11 +28,13 @@ public class MatrixZigzagTraversal {
         int index = 0;
         for (int i = 0; i < xLen + yLen - 1; ++i) {
             if (i % 2 == 0) {
-                for (int row = Math.min(i, xLen - 1); row >= Math.max(0, i - yLen + 1); --row) {
+                for (int row = Math.min(i, xLen - 1); 
+                        row >= Math.max(0, i - yLen + 1); --row) {
                     result[index++] = matrix[row][i - row];
                 }
             } else {
-                for (int col = Math.min(i, yLen - 1); col >= Math.max(0, i - xLen + 1); --col) {
+                for (int col = Math.min(i, yLen - 1); 
+                        col >= Math.max(0, i - xLen + 1); --col) {
                     result[index++] = matrix[i - col][col];
                 }
             }
