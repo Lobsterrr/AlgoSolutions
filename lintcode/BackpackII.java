@@ -25,7 +25,7 @@ public class BackpackII {
     public int backPackII(int m, int[] A, int V[]) {
         int[][] dp = new int[A.length + 1][m + 1];
         for (int i = 1; i <= A.length; ++i) {
-            for (int j = 0; j <= m; ++j) {
+            for (int j = 1; j <= m; ++j) {
                 if (j < A[i - 1]) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
