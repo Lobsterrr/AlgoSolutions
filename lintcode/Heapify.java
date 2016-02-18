@@ -25,4 +25,8 @@ public class Heapify {
 
     }
 
+    public void minHeapify(int[] A, int i) {
+
+    }
+
 }
