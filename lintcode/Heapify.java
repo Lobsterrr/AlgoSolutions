@@ -42,6 +42,7 @@ public class Heapify {
             int tmp = A[k];
             A[k] = A[minIndex];
             A[minIndex] = tmp;
+            k = minIndex;
         }
     }
 
