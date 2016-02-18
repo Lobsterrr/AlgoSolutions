@@ -22,11 +22,27 @@ Return any of them.
 public class Heapify {
 
     public void heapify(int[] A) {
-
+        for (int i = A.length / 2; i >= 0; --i) {
+            minHeapify(A, i);
+        }
     }
 
-    public void minHeapify(int[] A, int i) {
-
+    public void minHeapify(int[] A, in k) {
+        int minIndex = k;
+        while (minIndex < A.length) {
+            if (minIndex < A.length && 2 * k + 1 < A.length && A[2 * k + 1] < A[minIndex]) {
+                minIndex = 2 * k + 1;
+            }
+            if (minIndex < A.length && 2 * k + 2 < A.length && A[2 * k + 2] < A[minIndex]) {
+                minIndex = 2 * k + 2;
+            }
+            if (minIndex == k) {
+                break;
+            }
+            int tmp = A[k];
+            A[k] = A[minIndex];
+            A[minIndex] = tmp;
+        }
     }
 
 }
