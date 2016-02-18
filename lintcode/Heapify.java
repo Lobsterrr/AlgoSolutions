@@ -27,22 +27,22 @@ public class Heapify {
         }
     }
 
-    public void minHeapify(int[] A, int k) {
-        int minIndex = k;
+    public void minHeapify(int[] A, int i) {
+        int minIndex = i;
         while (minIndex < A.length) {
-            if (2 * k + 1 < A.length && A[2 * k + 1] < A[minIndex]) {
-                minIndex = 2 * k + 1;
+            if (2 * i + 1 < A.length && A[2 * i + 1] < A[minIndex]) {
+                minIndex = 2 * i + 1;
             }
-            if (2 * k + 2 < A.length && A[2 * k + 2] < A[minIndex]) {
-                minIndex = 2 * k + 2;
+            if (2 * i + 2 < A.length && A[2 * i + 2] < A[minIndex]) {
+                minIndex = 2 * i + 2;
             }
-            if (minIndex == k) {
+            if (minIndex == i) {
                 break;
             }
-            int tmp = A[k];
-            A[k] = A[minIndex];
+            int tmp = A[i];
+            A[i] = A[minIndex];
             A[minIndex] = tmp;
-            k = minIndex;
+            i = minIndex;
         }
     }
 
