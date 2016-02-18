@@ -24,15 +24,14 @@ public class BackpackII {
                 if (j < A[i - 1]) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
-                    dp[i][j] = Math.max(dp[i- 1][j], 
-                            dp[i - 1][j - A[i - 1]] + V[i - 1]);
+                    dp[i][j] = Math.max(dp[i- 1][j], dp[i - 1][j - A[i - 1]] + V[i - 1]);
                 }
             }
         }
         return dp[A.length][m];
     }
 
-/*******************************************************************/
+/*****************************************************************************/
 
     public int backPackII(int m, int[] A, int V[]) {
         int[] dp = new int[m + 1];
