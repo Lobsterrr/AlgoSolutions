@@ -19,9 +19,18 @@ public class IncreasingTripletSubsequence {
         if (nums.length < 2) {
             return false;
         }
-        int i = 0;
-        int j = i + 1;
-        int k = j + 1;
+        int min = Integer.MAX_VALUE;
+        int secondMin = Integer.MAX_VALUE;
+        for (int num : nums) {
+            if (num <= min) {
+                min = num;
+            } else if (num <= secondMin) {
+                secondMin = num;
+            } else {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
