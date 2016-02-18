@@ -16,9 +16,6 @@
 public class IncreasingTripletSubsequence {
 
     public boolean increasingTriplet(int[] nums) {
-        if (nums.length < 2) {
-            return false;
-        }
         int min = Integer.MAX_VALUE;
         int secondMin = Integer.MAX_VALUE;
         for (int num : nums) {
