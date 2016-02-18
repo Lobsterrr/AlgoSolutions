@@ -25,7 +25,11 @@ public class StrStr {
      * @param target string containing the sequence of characters to match.
      */
     public int strStr(String source, String target) {
-
+        for (int i = 0; i <= source.length() - target.length(); ++i) {
+            for (int j = 0; j < target.length(); ++j) {
+                if (
+            }
+        }
     }
 
 }
