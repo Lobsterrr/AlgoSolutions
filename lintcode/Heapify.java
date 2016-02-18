@@ -30,10 +30,10 @@ public class Heapify {
     public void minHeapify(int[] A, int k) {
         int minIndex = k;
         while (minIndex < A.length) {
-            if (minIndex < A.length && 2 * k + 1 < A.length && A[2 * k + 1] < A[minIndex]) {
+            if (2 * k + 1 < A.length && A[2 * k + 1] < A[minIndex]) {
                 minIndex = 2 * k + 1;
             }
-            if (minIndex < A.length && 2 * k + 2 < A.length && A[2 * k + 2] < A[minIndex]) {
+            if (2 * k + 2 < A.length && A[2 * k + 2] < A[minIndex]) {
                 minIndex = 2 * k + 2;
             }
             if (minIndex == k) {
