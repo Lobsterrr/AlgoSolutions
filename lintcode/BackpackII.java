@@ -40,7 +40,7 @@ public class BackpackII {
     public int backPackII(int m, int[] A, int V[]) {
         int[] dp = new int[m + 1];
         for (int i = 1; i <= A.length; ++i) {
-            for (int j = m; j >= 0; --j) {
+            for (int j = m; j >= 1; --j) {
                 if (j >= A[i - 1]) {
                     dp[j] = Math.max(dp[j], dp[j - A[i - 1]] + V[i - 1]);
                 }
