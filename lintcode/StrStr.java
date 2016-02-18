@@ -28,6 +28,9 @@ public class StrStr {
      * @param target string containing the sequence of characters to match.
      */
     public int strStr(String source, String target) {
+        if (source == null || target == null) {
+            return -1;
+        }
         for (int i = 0; i <= source.length() - target.length(); ++i) {
             int j = 0;
             for (; i + j < source.length() && j < target.length(); ++j) {
