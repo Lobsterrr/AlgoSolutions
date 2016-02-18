@@ -19,6 +19,9 @@ public class IncreasingTripletSubsequence {
         if (nums.length < 2) {
             return false;
         }
+        int i = 0;
+        int j = i + 1;
+        int k = j + 1;
     }
 
 }
