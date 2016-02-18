@@ -21,6 +21,8 @@ Return any of them.
  */
 public class Heapify {
 
+    // reference https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/DemoHeapify.pdf
+
     public void heapify(int[] A) {
         for (int i = A.length / 2; i >= 0; --i) {
             minHeapify(A, i);
