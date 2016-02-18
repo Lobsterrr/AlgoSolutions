@@ -29,12 +29,17 @@ public class StrStr {
      */
     public int strStr(String source, String target) {
         for (int i = 0; i <= source.length() - target.length(); ++i) {
-            for (int j = 0; j < target.length(); ++j) {
+            int j = 0;
+            for (; i + j < source.length() && j < target.length(); ++j) {
                 if (source.charAt(i + j) != target.charAt(j)) {
                     break;
                 }
             }
+            if (j == target.length()) {
+                return i;
+            }
         }
+        return -1;
     }
 
 }
