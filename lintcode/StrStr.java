@@ -3,7 +3,6 @@
 
 If target does not exist in source, just return -1.
 
-Have you met this question in a real interview? Yes
 Example
 If source = "source" and target = "target", return -1.
 
