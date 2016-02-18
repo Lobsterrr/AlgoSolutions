@@ -27,7 +27,7 @@ public class Heapify {
         }
     }
 
-    public void minHeapify(int[] A, in k) {
+    public void minHeapify(int[] A, int k) {
         int minIndex = k;
         while (minIndex < A.length) {
             if (minIndex < A.length && 2 * k + 1 < A.length && A[2 * k + 1] < A[minIndex]) {
