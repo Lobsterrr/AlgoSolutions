@@ -3,7 +3,6 @@
 
 The lowest common ancestor is the node with largest depth which is the ancestor of both nodes.
 
-Have you met this question in a real interview? Yes
 Example
 For the following binary tree:
 
