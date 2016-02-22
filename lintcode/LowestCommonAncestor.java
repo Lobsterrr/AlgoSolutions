@@ -39,4 +39,14 @@ public class LowestCommonAncestor {
 
     }
 
+    public boolean find(TreeNode root, TreeNode node) {
+        if (root == null) {
+            return false;
+        }
+        if (root == node) {
+            return true;
+        }
+        return find(root.left, node) || find(root.right, node);
+    }
+
 }
