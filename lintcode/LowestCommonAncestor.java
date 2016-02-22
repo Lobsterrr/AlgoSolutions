@@ -36,7 +36,20 @@ public class LowestCommonAncestor {
      * @return: Return the least common ancestor(LCA) of the two nodes.
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
-
+        if (root == null) {
+            return null;
+        }
+        if (root == A || root == B) {
+            return root;
+        }
+        boolean isAllInLeftSide = find(root.left, A) && find(root.left, B);
+        boolean isAllInRightSide = find(root.right, A) && find(root.right, B);
+        if (isAllInLeftSide) {
+            return lowestCommonAncestor(root.left, A, B);
+        } else if (isAllInRightSide) {
+            return lowestCommonAncestor(root.right, A, B);
+        }
+        return root;
     }
 
     public boolean find(TreeNode root, TreeNode node) {
