@@ -41,11 +41,9 @@ public class LowestCommonAncestor {
         if (root == null || root == A || root == B) {
             return root;
         }
-        boolean isAllInLeftSide = find(root.left, A) && find(root.left, B);
-        boolean isAllInRightSide = find(root.right, A) && find(root.right, B);
-        if (isAllInLeftSide) {
+        if (find(root.left, A) && find(root.left, B)) {
             return lowestCommonAncestor(root.left, A, B);
-        } else if (isAllInRightSide) {
+        } else if (find(root.right, A) && find(root.right, B)) {
             return lowestCommonAncestor(root.right, A, B);
         }
         return root;
