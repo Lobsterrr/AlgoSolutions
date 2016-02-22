@@ -56,7 +56,14 @@ public class LowestCommonAncestor {
     }
 
     public int countMatchesAB(TreeNode root, TreeNode A, TreeNode B) {
-
+        if (root == null) {
+            return 0;
+        }
+        int matches = countMatchesAB(root.left, A, B) + countMatchesAB(root.right, A, B);
+        if (root == A || root B) {
+            matches += 1;
+        }
+        return matches;
     }
 
 /*****************************************************************************/
