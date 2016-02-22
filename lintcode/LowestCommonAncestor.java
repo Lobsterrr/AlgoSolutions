@@ -41,10 +41,12 @@ public class LowestCommonAncestor {
         if (root == null || root == A || root == B) {
             return root;
         }
-        if (lowestCommonAncestor(root.left, A, B) != null) {
-            return lowestCommonAncestor(root.left, A, B);
-        } else if (lowestCommonAncestor(root.right, A, B) != null) {
-            return lowestCommonAncestor(root.right, A, B);
+        TreeNode findInLeft = lowestCommonAncestor(root.left, A, B);
+        TreeNode findInRight = lowestCommonAncestor(root.right, A, B);
+        if (findInLeft == null) {
+            return findInRight;
+        } else if (findInRight == null) {
+            return findInLeft;
         }
         return root;
     }
