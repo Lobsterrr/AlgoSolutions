@@ -55,6 +55,8 @@ public class LowestCommonAncestor {
 
     }
 
+    public int countMatchesAB(TreeNode root
+
 /*****************************************************************************/
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
