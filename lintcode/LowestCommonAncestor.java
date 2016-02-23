@@ -51,6 +51,8 @@ public class LowestCommonAncestor {
         return root;
     }
 
+/*****************************************************************************/
+
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
         if (root == null || root == A || root == B) {
             return root;
