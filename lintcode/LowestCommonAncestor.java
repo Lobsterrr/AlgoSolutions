@@ -95,10 +95,7 @@ public class LowestCommonAncestor {
         if (root == null) {
             return false;
         }
-        if (root == node) {
-            return true;
-        }
-        return find(root.left, node) || find(root.right, node);
+        return root == node || find(root.left, node) || find(root.right, node);
     }
 
 }
