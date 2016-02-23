@@ -36,8 +36,17 @@ public class RemoveNthNodeFromEndOfList {
             len++;
             cur = cur.next;
         }
-
-        
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode cur1 = dummy;
+        ListNode cur2 = dummy;
+        while (cur1.next != null) {
+            n--;
+            cur1 = cur1.next;
+            if (n <= 0) {
+                cur2 = cur2.next;
+            }
+        }
     }
 
 }
