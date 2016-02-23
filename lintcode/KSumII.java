@@ -10,13 +10,16 @@ public class KSumII {
      * @return a list of lists of integer 
      */ 
     public ArrayList<ArrayList<Integer>> kSumII(int[] A, int k, int target) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = 
+            new ArrayList<ArrayList<Integer>>();
         Arrays.sort(A);
         dfs(result, new ArrayList<Integer>(), A, 0, k, target);
         return result;
     }
     
-    public void dfs(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list, int[] A, int position, int k, int target) {
+    public void dfs(ArrayList<ArrayList<Integer>> result, 
+            ArrayList<Integer> list, int[] A, int position, int k,
+            int target) {
         if (list.size() == k) {
             if (target == 0) {
                 result.add(new ArrayList<Integer>(list));
