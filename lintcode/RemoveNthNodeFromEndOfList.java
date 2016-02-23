@@ -1,7 +1,6 @@
 /*
  * Given a linked list, remove the nth node from the end of list and return its head.
 
-Have you met this question in a real interview? Yes
 Example
 Given linked list: 1->2->3->4->5->null, and n = 2.
 
