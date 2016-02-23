@@ -12,11 +12,11 @@ public class KSumII {
     public ArrayList<ArrayList<Integer>> kSumII(int[] A, int k, int target) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         Arrays.sort(A);
-        dfs(result, new ArrayList<Integer>(), A, 0, target);
+        dfs(result, new ArrayList<Integer>(), A, 0, k, target);
         return result;
     }
     
-    public void dfs(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list, int[] A, int position, int target) {
+    public void dfs(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list, int[] A, int position, int k, int target) {
         if (list.size() == k) {
             if (target == 0) {
                 result.add(new ArrayList<Integer>(list));
@@ -25,7 +25,7 @@ public class KSumII {
         }
         for (int i = position; i <= A.length - k; ++i) {
             list.add(A[i]);
-            dfs(result, list, A, i + 1, target - A[i]);
+            dfs(result, list, A, i + 1, k, target - A[i]);
             list.remove(list.size() - 1);
         }
     }
