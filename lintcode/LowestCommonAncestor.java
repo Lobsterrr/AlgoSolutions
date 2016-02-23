@@ -71,7 +71,7 @@ public class LowestCommonAncestor {
             return 0;
         }
         int matches = countMatches(root.left, A, B) + countMatches(root.right, A, B);
-        if (root == A || root B) {
+        if (root == A || root == B) {
             matches += 1;
         }
         return matches;
