@@ -41,7 +41,7 @@ public class RemoveNthNodeFromEndOfList {
             }
             n--;
         }
-        cur2.next = cur1.next;
+        cur2.next = cur1;
         return dummy.next;
     }
 
