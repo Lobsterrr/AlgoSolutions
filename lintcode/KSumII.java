@@ -23,7 +23,7 @@ public class KSumII {
             }
             return;
         }
-        for (int i = position; i <= A.length - k; ++i) {
+        for (int i = position; i < A.length; ++i) {
             list.add(A[i]);
             dfs(result, list, A, i + 1, k, target - A[i]);
             list.remove(list.size() - 1);
