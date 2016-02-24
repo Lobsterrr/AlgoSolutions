@@ -25,15 +25,21 @@ public class MinStack {
     }
 
     public void push(int number) {
-
+        stack.push(number);
+        if (number < minStack.peek()) {
+            minStack.push(number);
+        }
     }
 
     public int pop() {
-
+        if (stack.peek() == minStack.peek()) {
+            minStack.pop();
+        }
+        return stack.pop();
     }
     
     public int min() {
-
+        return minStack.peek();
     }
 
 }
