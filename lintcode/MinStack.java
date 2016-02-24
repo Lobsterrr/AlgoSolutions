@@ -16,8 +16,12 @@ min operation will never be called if there is no number in the stack.
  */
 public class MinStack {
 
-    public MinStack() {
+    Stack<Integer> stack;
+    Stack<Integer> minStack;
 
+    public MinStack() {
+        stack = new Stack<Integer>();
+        minStack = new Stack<Integer>();
     }
 
     public void push(int number) {
