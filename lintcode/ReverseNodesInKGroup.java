@@ -36,7 +36,23 @@ public class ReverseNodesInKGroup {
         dummy.next = head;
         ListNode prev = dummy;
         ListNode cur = dummy;
-        
+        while (cur != null) {
+            int i = 0;
+            for (; i < k && cur != null; ++i) {
+                cur = cur.next;
+            }
+            if (i < k) {
+                break;
+            }
+            ListNode last = cur.next;
+            cur.next = null;
+            ListNode middle = reverse(prev.next);
+            cur = prev.next;
+            prev.next = middle;
+            prev = cur;
+            prev.next = last;
+        }
+        return dummy.next;
     }
 
     public ListNode reverse(ListNode head) {
