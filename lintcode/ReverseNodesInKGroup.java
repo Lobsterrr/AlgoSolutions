@@ -46,7 +46,9 @@ public class ReverseNodesInKGroup {
                 break;
             }
             cur = prev.next;
-            
+            for (int i = 0; i < k; ++i) {
+                
+            }
         }
     }
 
