@@ -29,7 +29,13 @@ public class ReverseNodesInKGroup {
      * @return a ListNode
      */
     public ListNode reverseKGroup(ListNode head, int k) {
-
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+        ListNode cur = dummy.next;
     }
 
 }
