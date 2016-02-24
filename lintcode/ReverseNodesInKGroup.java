@@ -41,7 +41,7 @@ public class ReverseNodesInKGroup {
             for (; i < k && cur != null; ++i) {
                 cur = cur.next;
             }
-            if (i < k) {
+            if (i < k || cur == null) {
                 break;
             }
             ListNode last = cur.next;
