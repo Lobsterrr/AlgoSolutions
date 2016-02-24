@@ -26,7 +26,7 @@ public class MinStack {
 
     public void push(int number) {
         stack.push(number);
-        if (number < minStack.peek()) {
+        if (minStack.isEmpty() || number < minStack.peek()) {
             minStack.push(number);
         }
     }
