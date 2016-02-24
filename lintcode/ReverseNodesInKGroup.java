@@ -52,4 +52,15 @@ public class ReverseNodesInKGroup {
         }
     }
 
+    public ListNode reverse(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode prev = head;
+        ListNode cur = prev.next;
+        while (cur != null) {
+
+        }
+    }
+
 }
