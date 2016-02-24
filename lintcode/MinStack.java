@@ -32,7 +32,7 @@ public class MinStack {
     }
 
     public int pop() {
-        if (stack.peek() == minStack.peek()) {
+        if (stack.peek().equals(minStack.peek())) {
             minStack.pop();
         }
         return stack.pop();
