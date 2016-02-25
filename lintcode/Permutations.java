@@ -28,7 +28,7 @@ public class Permutations {
             ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
             for (ArrayList<Integer> list : result) {
                 for (int j = 0; j <= list.size(); ++j) {
-                    list.add(j, nums[i]);
+                    list.add(j, nums.get(i));
                     if (!tmp.contains(list)) {
                         tmp.add(list);
                     }
