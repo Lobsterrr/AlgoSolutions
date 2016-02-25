@@ -23,6 +23,9 @@ public class Permutations {
      */
     public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if (nums == null) {
+            return result;
+        }
         result.add(new ArrayList<Integer>());
         for (int i = 0; i < nums.size(); ++i) {
             ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
