@@ -26,7 +26,12 @@ public class Permutations {
         Arrays.sort(nums);
         result.add(new ArrayList<Integer>());
         for (int i = 0; i < nums.length; ++i) {
-
+            ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
+            for (ArrayList<Integer> list : result) {
+                for (int j = 0; j <= list.size(); ++j) {
+                    
+                }
+            }
         }
     }
 
