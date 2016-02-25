@@ -36,9 +36,7 @@ public class Permutations {
                     ArrayList<Integer> list = 
                         new ArrayList<Integer>(result.get(j));
                     list.add(k, nums.get(i));
-                    if (!tmp.contains(list)) {
-                        tmp.add(list);
-                    }
+                    tmp.add(list);
                 }
             }
             result = tmp;
