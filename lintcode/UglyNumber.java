@@ -16,10 +16,13 @@ public class UglyNumber {
      * @return: The kth prime number as description.
      */
     public long kthPrimeNumber(int k) {
-        int a1 = 3;
-        int a2 = 5;
-        int a3 = 7;
+        int[] ugly = new int[k + 1];
+        ugly[0] = 1;
+        int i3 = 0;
+        int i5 = 0;
+        int i7 = 0;
         for (int i = 1; i <= k; ++i) {
+            int next = Math.min(ugly[i3] * 3, Math.min(ugly[i5] * 5, ugly[i7] * 7));
             
         }
     }
