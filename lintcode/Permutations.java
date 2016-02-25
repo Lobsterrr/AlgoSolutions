@@ -22,8 +22,8 @@ public class Permutations {
      * @return: A list of permutations.
      */
     public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
-        Arrays.sort(nums);
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        Arrays.sort(nums);
     }
 
 }
