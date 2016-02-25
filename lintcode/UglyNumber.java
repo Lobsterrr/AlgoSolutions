@@ -1,7 +1,8 @@
 /*
  * Ugly number is a number that only have factors 3, 5 and 7.
 
-Design an algorithm to find the Kth ugly number. The first 5 ugly numbers are 3, 5, 7, 9, 15 ...
+Design an algorithm to find the Kth ugly number. The first 5 
+ugly numbers are 3, 5, 7, 9, 15 ...
 
 Example
 If K=4, return 9.
@@ -22,7 +23,8 @@ public class UglyNumber {
         int i5 = 0;
         int i7 = 0;
         for (int i = 1; i <= k; ++i) {
-            ugly[i] = Math.min(ugly[i3] * 3, Math.min(ugly[i5] * 5, ugly[i7] * 7));
+            ugly[i] = Math.min(ugly[i3] * 3, 
+                    Math.min(ugly[i5] * 5, ugly[i7] * 7));
             if (ugly[i] == ugly[i3] * 3) {
                 i3++;
             }
