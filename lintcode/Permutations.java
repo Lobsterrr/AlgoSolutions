@@ -23,7 +23,6 @@ public class Permutations {
      */
     public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-        Arrays.sort(nums);
         result.add(new ArrayList<Integer>());
         for (int i = 0; i < nums.length; ++i) {
             ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
