@@ -79,10 +79,8 @@ public class ReverseNodesInKGroup {
         ListNode cur = prev.next.next;
         while (cur != null) {
             ListNode tmp = prev.next;
-            prev.next.next = cur.next;
-            cur.next = prev.next;
-            prev.next = cur;
-            cur = tmp;
+            tmp.next = cur.next;
+
         }
     }
 
