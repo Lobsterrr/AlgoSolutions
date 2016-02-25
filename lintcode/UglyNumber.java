@@ -16,7 +16,12 @@ public class UglyNumber {
      * @return: The kth prime number as description.
      */
     public long kthPrimeNumber(int k) {
-
+        int a1 = 3;
+        int a2 = 5;
+        int a3 = 7;
+        for (int i = 1; i <= k; ++i) {
+            
+        }
     }
 
 }
