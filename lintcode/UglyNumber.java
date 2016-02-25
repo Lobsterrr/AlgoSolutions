@@ -23,8 +23,17 @@ public class UglyNumber {
         int i7 = 0;
         for (int i = 1; i <= k; ++i) {
             ugly[i] = Math.min(ugly[i3] * 3, Math.min(ugly[i5] * 5, ugly[i7] * 7));
-
+            if (ugly[i] == ugly[i3] * 3) {
+                i3++;
+            }
+            if (ugly[i] == ugly[i5] * 5) {
+                i5++;
+            }
+            if (ugly[i] == ugly[i7] * 7) {
+                i7++;
+            }
         }
+        return ugly[k];
     }
 
 }
