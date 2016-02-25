@@ -43,4 +43,26 @@ public class Permutations {
         return result;
     }
 
+    public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if (nums == null) {
+            return result;
+        }
+        result.add(new ArrayList<Integer>());
+        for (int i = 0; i < nums.size(); ++i) {
+            ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
+            for (int j = 0; j < result.size(); ++j) {
+                for (int k = 0; k <= result.get(j).size(); ++k) {
+                    ArrayList<Integer> list = new ArrayList<Integer>(result.get(j));
+                    list.add(k, nums.get(i));
+                    if (!tmp.contains(list)) {
+                        tmp.add(list);
+                    }
+                }
+            }
+            result = tmp;
+        }
+        return result;
+    }
+
 }
