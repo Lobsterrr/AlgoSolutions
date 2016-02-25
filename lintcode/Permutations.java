@@ -1,7 +1,6 @@
 /*
  * Given a list of numbers, return all possible permutations.
 
-Have you met this question in a real interview? Yes
 Example
 For nums = [1,2,3], the permutations are:
 
