@@ -54,9 +54,12 @@ public class Permutations {
             for (int j = 0; j < size; ++j) {
                 for (int k = 0; k <= result.get(j).size(); ++k) {
                     ArrayList<Integer> list = new ArrayList<Integer>(result.get(j));
+                    if (!result.contains(list)) {
+                        result.add(list);
+                    }
                 }
-                
             }
+            result.remove(0, size);
         }
         return result;
     }
