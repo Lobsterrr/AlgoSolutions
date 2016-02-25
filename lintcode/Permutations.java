@@ -22,7 +22,7 @@ public class Permutations {
      * @return: A list of permutations.
      */
     public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
-
+        Arrays.sort(nums);
     }
 
 }
