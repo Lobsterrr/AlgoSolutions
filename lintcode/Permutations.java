@@ -59,7 +59,7 @@ public class Permutations {
                     }
                 }
             }
-            result.remove(0, size);
+            result.removeRange(0, size);
         }
         return result;
     }
