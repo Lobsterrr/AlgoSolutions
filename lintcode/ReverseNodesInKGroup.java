@@ -72,6 +72,10 @@ public class ReverseNodesInKGroup {
 
 /*********************************************************/
 
+    public ListNode reverseKGroup(ListNode head, int k) {
+
+    }
+
     public ListNode reverse(ListNode prev, ListNode next) {
         if (prev == null || prev.next == null || prev.next == next) {
             return prev;
