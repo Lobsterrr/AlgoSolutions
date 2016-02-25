@@ -16,7 +16,7 @@ public class UglyNumber {
      * @return: The kth prime number as description.
      */
     public long kthPrimeNumber(int k) {
-        int[] ugly = new int[k + 1];
+        long[] ugly = new long[k + 1];
         ugly[0] = 1;
         int i3 = 0;
         int i5 = 0;
