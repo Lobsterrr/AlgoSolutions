@@ -22,8 +22,8 @@ public class UglyNumber {
         int i5 = 0;
         int i7 = 0;
         for (int i = 1; i <= k; ++i) {
-            int next = Math.min(ugly[i3] * 3, Math.min(ugly[i5] * 5, ugly[i7] * 7));
-            
+            ugly[i] = Math.min(ugly[i3] * 3, Math.min(ugly[i5] * 5, ugly[i7] * 7));
+
         }
     }
 
