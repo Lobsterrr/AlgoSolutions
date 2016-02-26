@@ -43,7 +43,12 @@ public class SegmentTreeQueryII {
      *@return: The count number in the interval [start, end]
      */
     public int query(SegmentTreeNode root, int start, int end) {
-
+        if (end < root.start || start > root.end) {
+            return 0;
+        }
+        if (start <= root.start && end >= root.end) {
+            return root.count;
+        }
     }
 
 }
