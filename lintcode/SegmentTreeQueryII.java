@@ -55,7 +55,9 @@ public class SegmentTreeQueryII {
         if (start <= root.start && end >= root.end) {
             return root.count;
         }
-
+        if (start < root.start || ) {
+            return query(root, root.start, end
+        }
     }
 
 }
