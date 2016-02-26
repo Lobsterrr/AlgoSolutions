@@ -8,9 +8,6 @@ Notice
 It is much easier to understand this problem if you finished Segment Tree Buildand Segment Tree Query first.
 
 Example
-Tags
-Related Problems
- Notes
 For array [0, 2, 3], the corresponding value Segment Tree is:
 
                      [0, 3, count=3]
