@@ -59,7 +59,6 @@ public class SegmentTreeQueryII {
             return query(root, Math.max(start, root.start), Math.min(end, root.end));
         }
 
-
     }
 
 }
