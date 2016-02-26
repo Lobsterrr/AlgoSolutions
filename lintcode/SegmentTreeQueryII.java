@@ -58,10 +58,10 @@ public class SegmentTreeQueryII {
         start = Math.max(start, root.start);
         end = Math.min(end, root.end);
         if (root.left.start <= start && start <= root.left.end && root.lefft.start <= end && end <= root.left.end) {
-            result += query(root.left, start, end);
+            return query(root.left, start, end);
         }
-        if (root.right.start <= end && end <= root.right.end) {
-            result += query(root.right, root.right.start, end);
+        if (root.right.start <= start && start <= root.right.end && root.right.start <= end && end <= root.right.end) {
+            return query(root.right, start, end);
         }
 
         int result = 0;
