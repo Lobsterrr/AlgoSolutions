@@ -46,9 +46,15 @@ public class ConvertSortedListToBalancedBST {
             cur = cur.next;
         }
         cur = head;
-        for (int i = 0; i < len / 2; ++i) {
+        for (int i = 0; i < len / 2 - 1; ++i) {
             cur = cur.next;
         }
+        TreeNode root = new TreeNode(cur.next.val);
+        root.right = sortedListToBST(cur.next.next);
+        cur.next.next = null;
+        cur.next = null;
+        root.left = head;
+        return root;
     }
 
 }
