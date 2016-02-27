@@ -70,7 +70,7 @@ public class ConvertSortedListToBalancedBST {
             cur1 = cur1.next;
             cur2 = cur2.next.next;
         }
-        TreeNode root = new TreeNode(cur1.val);
+        TreeNode root = new TreeNode(cur1.next.val);
         root.right = sortedListToBST(cur1.next.next);
         cur1.next.next = null;
         cur1.next = null;
