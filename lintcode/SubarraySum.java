@@ -16,7 +16,12 @@ public class SubarraySum {
      *          and the index of the last number
      */
     public ArrayList<Integer> subarraySum(int[] nums) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+            for (int j = i; j < nums.length; ++j) {
 
+            }
+        }
     }
 
 }
