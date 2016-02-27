@@ -53,7 +53,7 @@ public class ConvertSortedListToBalancedBST {
         root.right = sortedListToBST(cur.next.next);
         cur.next.next = null;
         cur.next = null;
-        root.left = head;
+        root.left = sortedListToBST(head);
         return root;
     }
 
