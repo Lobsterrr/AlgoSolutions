@@ -6,9 +6,6 @@
 There is at least one subarray that it's sum equals to zero.
 
 Example
-Tags
-Related Problems
- Notes
 Given [-3, 1, 2, -3, 4], return [0, 2] or [1, 3].
  */
 public class SubarraySum {
