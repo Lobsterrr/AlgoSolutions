@@ -33,7 +33,12 @@ public class ConvertSortedListToBalancedBST {
      * @return: a tree node
      */
     public TreeNode sortedListToBST(ListNode head) {
-
+        if (head == null) {
+            return head;
+        }
+        if (head.next == null) {
+            return new TreeNode(head.val);
+        }
     }
 
 }
