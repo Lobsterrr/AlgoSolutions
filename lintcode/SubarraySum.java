@@ -22,7 +22,7 @@ public class SubarraySum {
             for (int j = i; j < nums.length; ++j) {
                 sum += nums[j];
                 if (sum == 0) {
-                    result.add(i, nums[j]);
+                    result.add(i, j);
                     return result;
                 }
             }
