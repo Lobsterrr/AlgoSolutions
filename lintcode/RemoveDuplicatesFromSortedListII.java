@@ -23,7 +23,13 @@ public class RemoveDuplicatesFromSortedListII {
      * @return: ListNode head of the linked list
      */
     public static ListNode deleteDuplicates(ListNode head) {
-
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+        ListNode cur = dummy.next;
+        while (cur != null) {
+            
+        }
     }
 
 }
