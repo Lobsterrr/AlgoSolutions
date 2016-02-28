@@ -19,6 +19,23 @@ public class SubarraySum {
      */
     public ArrayList<Integer> subarraySum(int[] nums) {
         ArrayList<Integer> result = new ArrayList<Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        map.put(0, -1);
+        int sum = 0;
+        for (int i = 0; i < nums.length; ++i) {
+            sum += nums[i];
+            if (map.containsKey(sum)) {
+                result.add(map.get(sum) + 1);
+                result.add(i);
+                break;
+            }
+            map.put(sum, i);
+        }
+        return result;
+    }
+
+    public ArrayList<Integer> subarraySum(int[] nums) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; ++i) {
             for (int j = i, sum = 0; j < nums.length; ++j) {
                 sum += nums[j];
