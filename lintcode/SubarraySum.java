@@ -33,19 +33,4 @@ public class SubarraySum {
         return result;
     }
 
-    public ArrayList<Integer> subarraySum(int[] nums) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        for (int i = 0; i < nums.length; ++i) {
-            for (int j = i, sum = 0; j < nums.length; ++j) {
-                sum += nums[j];
-                if (sum == 0) {
-                    result.add(i);
-                    result.add(j);
-                    return result;
-                }
-            }
-        }
-        return result;
-    }
-
 }
