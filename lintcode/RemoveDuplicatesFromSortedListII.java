@@ -30,27 +30,7 @@ public class RemoveDuplicatesFromSortedListII {
         while (prev.next != null) {
             if (cur != null && prev.next.val == cur.val) {
                 cur = cur.next;
-            } else {
-                if (prev.next.next == cur) {
-                    prev = prev.next;
-                } else {
-                    prev.next = cur;
-                }
-            }
-        }
-        return dummy.next;
-    }
-
-    public static ListNode deleteDuplicates(ListNode head) {
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode prev = dummy;
-        ListNode cur = prev.next;
-        while (cur != null) {
-            while (cur != null && prev.next.val == cur.val) {
-                cur = cur.next;
-            }
-            if (prev.next.next == cur) {
+            } else if (prev.next.next == cur) {
                 prev = prev.next;
             } else {
                 prev.next = cur;
