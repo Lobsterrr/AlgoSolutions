@@ -32,7 +32,7 @@ public class RemoveDuplicatesFromSortedListII {
                 cur = cur.next;
             }
             if (prev.next.next == cur) {
-                prev = prev.next
+                prev = prev.next;
             } else {
                 prev.next = cur;
             }
