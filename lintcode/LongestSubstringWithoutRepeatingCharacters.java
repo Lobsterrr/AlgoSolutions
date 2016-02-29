@@ -25,4 +25,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
         return result;
     }
 
+    public int lengthOfLongestSubstring(String s) {
+        
+    }
+
 }
