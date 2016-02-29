@@ -13,7 +13,15 @@ public class LongestSubstringWithoutRepeatingCharacters {
      * @return: an integer 
      */
     public int lengthOfLongestSubstring(String s) {
-
+        boolean[] occur = new boolean[127];
+        int result = 0;
+        for (int i = 0, j = 0; i < s.length(); ++i) {
+            for (; j < s.length() && !occur[s.charAt(j)]; ++j) {
+                occur[s.charAt(j)] = true;
+            }
+            result = Math.max(result, j - 1);
+        }
+        return result;
     }
 
 }
