@@ -19,7 +19,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
             for (; j < s.length() && !occur[s.charAt(j)]; ++j) {
                 occur[s.charAt(j)] = true;
             }
-            result = Math.max(result, j - 1);
+            result = Math.max(result, j - i);
+            occur[s.charAt(i)] = false;
         }
         return result;
     }
