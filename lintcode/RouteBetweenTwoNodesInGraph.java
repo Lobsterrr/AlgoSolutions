@@ -41,8 +41,19 @@ public class RouteBetweenTwoNodesInGraph {
         Stack<DirectedGraphNode> stack = new Stack<DirectedGraphNode>();
         stack.push(s);
         while (!stack.isEmpty()) {
-            
+            DirectedGraphNode node = stack.pop();
+            if (set.contains(node)) {
+                continue;
+            }
+            if (node == t) {
+                return true;
+            }
+            set.add(node);
+            for (DirectedGraphNode neighbor : node.neighbors) {
+                stack.push(neighbor);
+            }
         }
+        return false;
     }
 
 /*****************************************************************************/
