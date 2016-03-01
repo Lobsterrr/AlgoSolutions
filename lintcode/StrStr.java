@@ -53,7 +53,24 @@ public class StrStr {
     }
 
     public int[] getNext(String p) {
-        
+        int[] next = new int[p.length()];
+        next[0] = -1;
+        int k = -1;
+        int i = 0;
+        while (i < p.length() - 1) {
+            if (k == -1 || p.charAt(i) == p.charAt(k)) {
+                ++i;
+                ++k;
+                if (p.charAt(i) != p.charAt(k)) {
+                    next[i] = k;
+                } else {
+                    next[i] = next[k];
+                }
+            } else {
+                k = next[k];
+            }
+        }
+        return next;
     }
 
 }
