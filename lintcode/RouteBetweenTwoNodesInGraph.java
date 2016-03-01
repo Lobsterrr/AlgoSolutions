@@ -35,19 +35,22 @@ public class RouteBetweenTwoNodesInGraph {
      */
     public boolean hasRoute(ArrayList<DirectedGraphNode> graph, DirectedGraphNode s, DirectedGraphNode t) {
         Set<DirectedGraphNode> set = new HashSet<DirectedGraphNode>();
-        return dfs(graph, s, t, set);
+        return dfs(s, t, set);
     }
 
-    public boolean dfs(ArrayList<DirectedGraphNode> graph, DirectedGraphNode s, DirectedGraphNode t, Set<DirectedGraphNode> set) {
+    public boolean dfs(DirectedGraphNode s, DirectedGraphNode t, Set<DirectedGraphNode> set) {
+        if (s == null) {
+            return false;
+        }
+        if (s == t) {
+            return true;
+        }
+        set.add(s);
         for (DirectedGraphNode neighbor : s.neighbors) {
             if (set.contains(neighbor)) {
                 continue;
             }
-            if (neighbor == t) {
-                return true;
-            }
-            set.add(neighbor);
-            if (dfs(graph, neighbor, t, set)) {
+            if (dfs(neighbor, t, set)) {
                 return true;   
             }
         }
