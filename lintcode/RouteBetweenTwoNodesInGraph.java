@@ -36,7 +36,6 @@ public class RouteBetweenTwoNodesInGraph {
      */
     public boolean hasRoute(ArrayList<DirectedGraphNode> graph, 
             DirectedGraphNode s, DirectedGraphNode t) {
-
         Set<DirectedGraphNode> set = new HashSet<DirectedGraphNode>();
         Stack<DirectedGraphNode> stack = new Stack<DirectedGraphNode>();
         stack.push(s);
