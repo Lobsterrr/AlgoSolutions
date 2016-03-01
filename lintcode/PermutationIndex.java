@@ -3,8 +3,6 @@
 
 Have you met this question in a real interview? Yes
 Example
-Related Problems
- Notes
 Given [1,2,4], return 1.
  */
 public class PermutationIndex {
