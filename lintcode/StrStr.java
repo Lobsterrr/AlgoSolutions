@@ -49,7 +49,7 @@ public class StrStr {
 
     public int strStr(String source, String target) {
         int[] next = getNext(target);
-
+        
     }
 
     public int[] getNext(String p) {
