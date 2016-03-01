@@ -50,7 +50,6 @@ public class RouteBetweenTwoNodesInGraph {
             if (dfs(graph, neighbor, t, set)) {
                 return true;   
             }
-            set.remove(neighbor);
         }
         return false;
     }
