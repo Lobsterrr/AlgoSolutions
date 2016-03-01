@@ -34,7 +34,20 @@ public class RouteBetweenTwoNodesInGraph {
      * @return: a boolean value
      */
     public boolean hasRoute(ArrayList<DirectedGraphNode> graph, DirectedGraphNode s, DirectedGraphNode t) {
+        Set<DirectedGraphNode> set = new HashSet<DirectedGraphNode>();
 
+    }
+
+    public boolean bfs() {
+        for (DirectedGraphNode neighbor : s.neighbors) {
+            if (set.contains(neighbor)) {
+                continue;
+            }
+            set.add(neighbor);
+            if (neighbor == t) {
+                return true;
+            }
+        }
     }
 
 }
