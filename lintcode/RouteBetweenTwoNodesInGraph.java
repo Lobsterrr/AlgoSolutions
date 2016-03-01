@@ -1,5 +1,6 @@
 /*
- * Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
+ * Given a directed graph, design an algorithm to find out 
+ * whether there is a route between two nodes.
 
 Example
 Given graph:
@@ -33,12 +34,14 @@ public class RouteBetweenTwoNodesInGraph {
      * @param t: the terminal Directed graph node
      * @return: a boolean value
      */
-    public boolean hasRoute(ArrayList<DirectedGraphNode> graph, DirectedGraphNode s, DirectedGraphNode t) {
+    public boolean hasRoute(ArrayList<DirectedGraphNode> graph, 
+            DirectedGraphNode s, DirectedGraphNode t) {
         Set<DirectedGraphNode> set = new HashSet<DirectedGraphNode>();
         return dfs(s, t, set);
     }
 
-    public boolean dfs(DirectedGraphNode s, DirectedGraphNode t, Set<DirectedGraphNode> set) {
+    public boolean dfs(DirectedGraphNode s, DirectedGraphNode t, 
+            Set<DirectedGraphNode> set) {
         if (s == null) {
             return false;
         }
