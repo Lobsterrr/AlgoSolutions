@@ -13,8 +13,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
      * @return: an integer 
      */
     public int lengthOfLongestSubstring(String s) {
-        boolean[] occur = new boolean[127];
         int result = 0;
+        boolean[] occur = new boolean[127];
         for (int i = 0, j = 0; i < s.length(); ++i) {
             for (; j < s.length() && !occur[s.charAt(j)]; ++j) {
                 occur[s.charAt(j)] = true;
@@ -27,15 +27,13 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     public int lengthOfLongestSubstring(String s) {
         int result = 0;
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
-        int start = 0;
-        for (int i = 0; i < s.length(); ++i) {
-            if (map.containsKey(s.charAt(i))) {
-                result = Math.max(result, i - map.get(s.charAt(i)));
-            }
-            map.put(s.charAt(i), i);
+        int[] occur = new int[127];
+        Arrays.fill(occur, -1);
+        for (int i = 0, max = -1; i < s.length(); ++i) {
+            max = Math.max(max, occur[s.charAt(i)]);
+            result = Math.max(result, i - max);
+            occur[s.charAt(i)] = i;
         }
-
         return result;
     }
 
