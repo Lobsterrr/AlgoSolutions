@@ -38,7 +38,7 @@ public class RouteBetweenTwoNodesInGraph {
 
     }
 
-    public boolean bfs() {
+    public boolean bfs(ArrayList<DirectedGraphNode> graph, DirectedGraphNode s, DirectedGraphNode t) {
         for (DirectedGraphNode neighbor : s.neighbors) {
             if (set.contains(neighbor)) {
                 continue;
@@ -47,6 +47,7 @@ public class RouteBetweenTwoNodesInGraph {
             if (neighbor == t) {
                 return true;
             }
+            dfs(graph, neighbor, t);
         }
     }
 
