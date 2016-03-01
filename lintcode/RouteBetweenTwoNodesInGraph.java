@@ -33,15 +33,12 @@ public class RouteBetweenTwoNodesInGraph {
      * @param t: the terminal Directed graph node
      * @return: a boolean value
      */
-    boolean result = false;
-
     public boolean hasRoute(ArrayList<DirectedGraphNode> graph, DirectedGraphNode s, DirectedGraphNode t) {
         Set<DirectedGraphNode> set = new HashSet<DirectedGraphNode>();
-        dfs(graph, s, t, set);
-        return result;
+        return dfs(graph, s, t, set);
     }
 
-    public void dfs(ArrayList<DirectedGraphNode> graph, DirectedGraphNode s, DirectedGraphNode t, Set<DirectedGraphNode> set) {
+    public boolean dfs(ArrayList<DirectedGraphNode> graph, DirectedGraphNode s, DirectedGraphNode t, Set<DirectedGraphNode> set) {
         for (DirectedGraphNode neighbor : s.neighbors) {
             if (set.contains(neighbor)) {
                 continue;
@@ -50,9 +47,12 @@ public class RouteBetweenTwoNodesInGraph {
                 result = true;
             }
             set.add(neighbor);
-            dfs(graph, neighbor, t, set);
+            if (dfs(graph, neighbor, t, set)) {
+                return true;   
+            }
             set.remove(neighbor);
         }
+        return false;
     }
 
 }
