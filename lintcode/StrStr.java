@@ -48,7 +48,7 @@ public class StrStr {
 /*****************************************************************************/
 
     public int strStr(String source, String target) {
-        int[] next = new int[target.length()];
+        int[] next = getNext(target);
 
     }
 
