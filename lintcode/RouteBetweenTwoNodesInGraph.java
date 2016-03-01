@@ -36,6 +36,19 @@ public class RouteBetweenTwoNodesInGraph {
      */
     public boolean hasRoute(ArrayList<DirectedGraphNode> graph, 
             DirectedGraphNode s, DirectedGraphNode t) {
+
+        Set<DirectedGraphNode> set = new HashSet<DirectedGraphNode>();
+        Stack<DirectedGraphNode> stack = new Stack<DirectedGraphNode>();
+        stack.push(s);
+        while (!stack.isEmpty()) {
+            
+        }
+    }
+
+/*****************************************************************************/
+
+    public boolean hasRoute(ArrayList<DirectedGraphNode> graph, 
+            DirectedGraphNode s, DirectedGraphNode t) {
         Set<DirectedGraphNode> set = new HashSet<DirectedGraphNode>();
         return dfs(s, t, set);
     }
