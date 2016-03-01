@@ -52,4 +52,8 @@ public class StrStr {
 
     }
 
+    public int[] getNext(String p) {
+        
+    }
+
 }
