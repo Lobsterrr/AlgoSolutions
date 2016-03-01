@@ -1,6 +1,17 @@
 /*
  *
  */
+/**
+ * Definition for Directed graph.
+ * class DirectedGraphNode {
+ *     int label;
+ *     ArrayList<DirectedGraphNode> neighbors;
+ *     DirectedGraphNode(int x) {
+ *         label = x;
+ *         neighbors = new ArrayList<DirectedGraphNode>();
+ *     }
+ * };
+ */
 public class RouteBetweenTwoNodesInGraph {
 
     /**
