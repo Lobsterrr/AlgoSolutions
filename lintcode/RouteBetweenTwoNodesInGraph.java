@@ -44,7 +44,7 @@ public class RouteBetweenTwoNodesInGraph {
                 continue;
             }
             if (neighbor == t) {
-                result = true;
+                return true;
             }
             set.add(neighbor);
             if (dfs(graph, neighbor, t, set)) {
