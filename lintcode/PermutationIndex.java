@@ -14,7 +14,7 @@ public class PermutationIndex {
      * @return a long integer
      */
     public long permutationIndex(int[] A) {
-
+        
     }
 
 }
