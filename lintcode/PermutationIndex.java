@@ -14,7 +14,16 @@ public class PermutationIndex {
      * @return a long integer
      */
     public long permutationIndex(int[] A) {
-        
+        if (A.length == 0) {
+            return 0;
+        }
+        if (A.length == 1) {
+            return 1;
+        }
+        List<Integer> list = new ArrayList<Integer>();
+        for (int a : A) {
+            list.add(a);
+        }
     }
 
 }
