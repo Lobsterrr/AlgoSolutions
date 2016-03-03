@@ -14,11 +14,8 @@ public class PermutationIndex {
      * @return a long integer
      */
     public long permutationIndex(int[] A) {
-        if (A.length == 0) {
-            return 0;
-        }
-        if (A.length == 1) {
-            return 1;
+        if (A.length == 0 || A.length == 1) {
+            return A.length;
         }
         int[] subA = Arrays.copyOfRange(A, 1, A.length);
         int firstItem = A[0];
