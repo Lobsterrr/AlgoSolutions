@@ -21,11 +21,20 @@ public class PermutationIndex {
             return 1;
         }
         int[] subA = Arrays.copyOfRange(A, 1, A.length);
+        int firstItem = A[0];
         Arrays.sort(A);
-        int factorial = 1;
+        long factorial = 1;
         for (int i = 0; i < suA.length; ++i) {
             factorial *= i + 1;
         }
+        int index = -1;
+        while (A[index] != firstItem) {
+            index++;
+        }
+        long result = 0;
+        result += index * factorial;
+        result += permutationIndex(subA);
+        return result;
     }
 
 }
