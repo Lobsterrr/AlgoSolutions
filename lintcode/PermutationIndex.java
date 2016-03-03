@@ -27,7 +27,7 @@ public class PermutationIndex {
         for (int i = 0; i < subA.length; ++i) {
             factorial *= i + 1;
         }
-        int index = -1;
+        int index = 0;
         while (A[index] != firstItem) {
             index++;
         }
