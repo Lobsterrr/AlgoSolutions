@@ -17,7 +17,9 @@ public class WiggleSort {
      */
     public void wiggleSort(int[] nums) {
         for (int i = 0; i < nums.length; ++i) {
+            if () {
 
+            }
         }
     }
 
