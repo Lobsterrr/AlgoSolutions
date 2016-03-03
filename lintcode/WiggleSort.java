@@ -8,9 +8,6 @@ Have you met this question in a real interview? Yes
 Please complete the problem in-place.
 
 Example
-Tags
-Related Problems
- Notes
 Given nums = [3, 5, 2, 1, 6, 4], one possible answer is [1, 6, 2, 5, 3, 4].
  */
 public class WiggleSort {
