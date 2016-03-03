@@ -16,7 +16,7 @@ public class PermutationIndex {
 
     public long permutationIndex(int[] A) {
         long result = 1;
-
+        
     }
 
     public long permutationIndex(int[] A) {
