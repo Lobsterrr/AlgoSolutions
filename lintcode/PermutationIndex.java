@@ -20,11 +20,14 @@ public class PermutationIndex {
         if (A.length == 1) {
             return 1;
         }
+        int[] subA = Arrays.copyOfRange(A, 1, A.length);
         int factorial = 1;
         List<Integer> list = new ArrayList<Integer>();
         for (int i = 0; i < A.length; ++i) {
-            
+            factorial *= i + 1;
+            list.add(A[i]);
         }
+
     }
 
 }
