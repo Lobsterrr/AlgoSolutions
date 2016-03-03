@@ -28,10 +28,7 @@ public class PermutationIndex {
         while (A[index] != firstItem) {
             index++;
         }
-        long result = 0;
-        result += index * factorial;
-        result += permutationIndex(subA);
-        return result;
+        return index * factorial + permutationIndex(subA);
     }
 
 }
