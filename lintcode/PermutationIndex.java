@@ -23,7 +23,9 @@ public class PermutationIndex {
         int[] subA = Arrays.copyOfRange(A, 1, A.length);
         Arrays.sort(A);
         int factorial = 1;
-
+        for (int i = 0; i < suA.length; ++i) {
+            factorial *= i + 1;
+        }
     }
 
 }
