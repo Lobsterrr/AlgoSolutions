@@ -16,7 +16,7 @@ public class WiggleSort {
      * @return void
      */
     public void wiggleSort(int[] nums) {
-        
+        int[] tmp = Arrays.copyOf(nums, nums.length);
     }
 
 }
