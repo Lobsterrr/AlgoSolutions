@@ -18,7 +18,9 @@ public class WiggleSort {
     public void wiggleSort(int[] nums) {
         Arrays.sort(nums);
         for (int i = 2; i < nums.length; i += 2) {
-            
+            int tmp = nums[i];
+            nums[i] = nums[i - 1];
+            nums[i - 1] = tmp;
         }
     }
 
