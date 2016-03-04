@@ -10,6 +10,10 @@ Given nums = [1, 3, 2, 2, 3, 1], one possible answer is [2, 3, 1, 3, 1, 2].
  */
 public class WiggleSortII {
 
+    /**
+     * @param nums a list of integer
+     * @return void
+     */
     public void wiggleSort(int[] nums) {
 
     }
