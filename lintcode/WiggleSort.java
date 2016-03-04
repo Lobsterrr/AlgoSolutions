@@ -16,15 +16,6 @@ public class WiggleSort {
      * @return void
      */
     public void wiggleSort(int[] nums) {
-        Arrays.sort(nums);
-        for (int i = 2; i < nums.length; i += 2) {
-            int tmp = nums[i];
-            nums[i] = nums[i - 1];
-            nums[i - 1] = tmp;
-        }
-    }
-
-    public void wiggleSort(int[] nums) {
         for (int i = 1; i < nums.length; ++i) {
             if (i % 2 == 0 && nums[i] > nums[i - 1] 
                     || i % 2 == 1 && nums[i] < nums[i - 1]) {
@@ -32,6 +23,15 @@ public class WiggleSort {
                 nums[i] = nums[i - 1];
                 nums[i - 1] = tmp;
             }
+        }
+    }
+
+    public void wiggleSort(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 2; i < nums.length; i += 2) {
+            int tmp = nums[i];
+            nums[i] = nums[i - 1];
+            nums[i - 1] = tmp;
         }
     }
 
