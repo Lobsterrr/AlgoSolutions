@@ -8,9 +8,6 @@ Have you met this question in a real interview? Yes
 You may assume all input has valid answer.
 
 Example
-Challenge
-Related Problems
- Notes
 Given nums = [1, 5, 1, 1, 6, 4], one possible answer is [1, 4, 1, 5, 1, 6].
 
 Given nums = [1, 3, 2, 2, 3, 1], one possible answer is [2, 3, 1, 3, 1, 2].
