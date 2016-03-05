@@ -1,6 +1,15 @@
 /*
  *
  */
+/**
+ * Definition of Interval:
+ * public classs Interval {
+ *     int start, end;
+ *     Interval(int start, int end) {
+ *         this.start = start;
+ *         this.end = end;
+ *     }
+ */
 public class IntervalSum {
 
     /**
