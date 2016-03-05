@@ -45,6 +45,9 @@ public class PermutationsII {
             dfs(result, list, nums, isVisited);
             list.remove(list.size() - 1);
             isVisited[i] = false;
+            while (i + 1 < nums.size() && nums[i] == nums[i + 1]) {
+                i++;
+            }
         }
     }
 
