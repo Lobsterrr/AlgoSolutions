@@ -1,5 +1,6 @@
 /*
- * Given a list of numbers with duplicate number in it. Find all unique permutations.
+ * Given a list of numbers with duplicate number in it. Find all unique 
+ * permutations.
 
 Example
 For numbers [1,2,2] the unique permutations are:
@@ -11,7 +12,8 @@ For numbers [1,2,2] the unique permutations are:
 ]
 
 Challenge
-Using recursion to do it is acceptable. If you can do it without recursion, that would be great!
+Using recursion to do it is acceptable. If you can do it without recursion, 
+that would be great!
  */
 public class PermutationsII {
 
@@ -20,7 +22,8 @@ public class PermutationsII {
      * @return: A list of unique permutations.
      */
     public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = 
+            new ArrayList<ArrayList<Integer>>();
 
         return result;
     }
