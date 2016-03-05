@@ -29,7 +29,7 @@ public class PermutationsII {
         for (int i = 0; i < nums.length; ++i) {
             ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>(result);
             for (int i = 0; i < tmp.size(); ++i) {
-                for (int k = 0; k < tmp.get(i).size(); ++k) {
+                for (int k = 0; k <= tmp.get(i).size(); ++k) {
                     ArrayList<Integer> list = new ArrayList<Integer>(tmp.get(i));
                     list.add(k, nums[i]);
                     if (
