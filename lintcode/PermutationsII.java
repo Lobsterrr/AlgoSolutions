@@ -28,6 +28,16 @@ public class PermutationsII {
         return result;
     }
 
+    public void dfs(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list, ArrayList<Integer> nums, int[] isVisited) {
+        if (list.size() == nums.size()) {
+            result.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for (int i = 0; i < nums.size(); ++i) {
+            
+        }
+    }
+
 /*****************************************************************************/
 
     public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
