@@ -24,7 +24,7 @@ public class PermutationsII {
         if (nums == null) {
             return result;
         }
-        Arrays.sort(nums);
+        result.add(new ArrayList<Integer>());
         for (int i = 
     }
 
