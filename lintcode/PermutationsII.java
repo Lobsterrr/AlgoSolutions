@@ -20,7 +20,8 @@ public class PermutationsII {
      * @return: A list of unique permutations.
      */
     public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
-
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        Arrays.sort(nums);
     }
 
 }
