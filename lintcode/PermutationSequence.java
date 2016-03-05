@@ -15,6 +15,9 @@ For n = 3, all permutations are listed as follows:
 "312"
 "321"
 If k = 4, the fourth permutation is "231"
+
+Challenge
+O(n*k) in time complexity is easy, can you do it in O(n^2) or less?
  */
 public class PermutationSequence {
 
