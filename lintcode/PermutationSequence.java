@@ -1,16 +1,11 @@
 /*
  * Given n and k, return the k-th permutation sequence.
 
-Have you met this question in a real interview? Yes
  Notice
 
 n will be between 1 and 9 inclusive.
 
 Example
-Challenge
-Tags
-Related Problems
- Notes
 For n = 3, all permutations are listed as follows:
 
 "123"
