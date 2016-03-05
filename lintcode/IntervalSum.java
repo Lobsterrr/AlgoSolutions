@@ -20,7 +20,10 @@ public class IntervalSum {
      *@return: The result list
      */
     public ArrayList<Long> intervalSum(int[] A, ArrayList<Interval> queries) {
+        ArrayList<Long> result = new ArrayList<Long>();
+        for (Interval i : queries) {
 
+        }
     }
 
 }
