@@ -25,7 +25,7 @@ public class PermutationsII {
             return result;
         }
         result.add(new ArrayList<Integer>());
-        for (int i = 0; i < nums.length; ++i) {
+        for (int i = 0; i < nums.size(); ++i) {
             ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
             for (int i = 0; i < result.size(); ++i) {
                 for (int k = 0; k <= result.get(i).size(); ++k) {
