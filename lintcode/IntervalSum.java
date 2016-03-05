@@ -23,7 +23,7 @@ public class IntervalSum {
         ArrayList<Long> result = new ArrayList<Long>();
         for (Interval interval : queries) {
             long sum = 0;
-            for (int i = interval.start; i < interval.end; ++i) {
+            for (int i = interval.start; i <= interval.end; ++i) {
                 sum += A[i];
             }
             result.add(sum);
