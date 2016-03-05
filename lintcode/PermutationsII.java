@@ -36,7 +36,11 @@ public class PermutationsII {
         }
         for (int i = 0; i < nums.size(); ++i) {
             isVisited[i] = true;
-            list.add(
+            list.add(nums.get(i));
+            if (!isVisited[i])
+            dfs(result, list, nums, isVisited);
+            list.remove(list.size() - 1);
+            isVisited[i] = false;
         }
     }
 
