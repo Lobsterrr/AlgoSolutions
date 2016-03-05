@@ -22,8 +22,7 @@ public class PermutationsII {
      * @return: A list of unique permutations.
      */
     public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
-        ArrayList<ArrayList<Integer>> result = 
-            new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         Collections.sort(nums);
         boolean[] isVisited = new boolean[nums.size()];
         dfs(result, new ArrayList<Integer>(), nums, isVisited);
