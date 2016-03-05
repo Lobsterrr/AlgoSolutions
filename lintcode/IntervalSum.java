@@ -7,10 +7,6 @@ Have you met this question in a real interview? Yes
 We suggest you finish problem Segment Tree Build, Segment Tree Query and Segment Tree Modify first.
 
 Example
-Challenge
-Tags
-Related Problems
- Notes
 For array [1,2,7,8,5], and queries [(0,4),(1,2),(2,4)], return [23,9,20]
  */
 /**
