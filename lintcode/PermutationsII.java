@@ -24,6 +24,7 @@ public class PermutationsII {
     public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
         ArrayList<ArrayList<Integer>> result = 
             new ArrayList<ArrayList<Integer>>();
+        Collections.sort(nums);
 
         return result;
     }
@@ -34,7 +35,8 @@ public class PermutationsII {
             return;
         }
         for (int i = 0; i < nums.size(); ++i) {
-            
+            isVisited[i] = true;
+            list.add(
         }
     }
 
