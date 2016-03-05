@@ -9,6 +9,9 @@ For numbers [1,2,2] the unique permutations are:
   [2,1,2],
   [2,2,1]
 ]
+
+Challenge
+Using recursion to do it is acceptable. If you can do it without recursion, that would be great!
  */
 public class PermutationsII {
 
