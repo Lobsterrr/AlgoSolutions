@@ -22,6 +22,27 @@ public class PermutationsII {
     public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         result.add(new ArrayList<Integer>());
+        Collections.sort(nums);
+        for (int i = 0; i < nums.size(); ++i) {
+            ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
+            for (int j = 0; j < result.size(); ++j) {
+                for (int k = 0; k <= result.get(j).size(); ++k) {
+                    ArrayList<Integer> list = new ArrayList<Integer>(result.get(j));
+                    if (i > 0 && nums.get(i) == nums.get(i - 1)) {
+                        continue;
+                    }
+                    list.add(k, nums.get(i));
+                    tmp.add(list);
+                }
+            }
+            result = tmp;
+        }
+        return result;
+    }
+
+    public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        result.add(new ArrayList<Integer>());
         for (int i = 0; i < nums.size(); ++i) {
             ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
             for (int j = 0; j < result.size(); ++j) {
