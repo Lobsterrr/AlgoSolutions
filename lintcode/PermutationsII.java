@@ -27,12 +27,14 @@ public class PermutationsII {
             ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
             for (int j = 0; j < result.size(); ++j) {
                 for (int k = 0; k <= result.get(j).size(); ++k) {
-                    ArrayList<Integer> list = new ArrayList<Integer>(result.get(j));
-                    if (i > 0 && nums.get(i) == nums.get(i - 1)) {
+                    if (i > 0 || nums.get(i) == nums.get(i - 1)) {
                         continue;
                     }
+                    ArrayList<Integer> list = new ArrayList<Integer>(result.get(j));
                     list.add(k, nums.get(i));
-                    tmp.add(list);
+                    if (!tmp.contains(list)) {
+                        tmp.add(list);
+                    }
                 }
             }
             result = tmp;
