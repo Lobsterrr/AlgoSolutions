@@ -25,7 +25,8 @@ public class PermutationsII {
         ArrayList<ArrayList<Integer>> result = 
             new ArrayList<ArrayList<Integer>>();
         Collections.sort(nums);
-
+        boolean[] isVisited = new boolean[nums.size()];
+        dfs(result, new ArrayList<Integer>(), nums, isVisited);
         return result;
     }
 
@@ -35,9 +36,11 @@ public class PermutationsII {
             return;
         }
         for (int i = 0; i < nums.size(); ++i) {
+            if (isVisited[i]) {
+                continue;
+            }
             isVisited[i] = true;
             list.add(nums.get(i));
-            if (!isVisited[i])
             dfs(result, list, nums, isVisited);
             list.remove(list.size() - 1);
             isVisited[i] = false;
