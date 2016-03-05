@@ -51,7 +51,7 @@ public class PermutationsII {
         }
     }
 
-/*****************************************************************************/
+/***************************************************************************************/
 
     public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
