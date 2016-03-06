@@ -37,6 +37,23 @@ public class PermutationSequence {
             k %= factorial;
             factorial /= n - i;
         } 
+        return result;
+
+
+        List<Integer> list = new ArrayList<Integer>();
+        long factorial = 1;
+        for (int i = 1; i <= n; ++i) {
+            list.add(i);
+            factorial *= i;
+        }
+        factorial /= n;
+        String result = "";
+        for (int i = 1; i <= n; ++i) {
+            result += list.get(i);
+            k %= factorial;
+            factorial /= n - i;
+        }
+        return result;
     }
 
 }
