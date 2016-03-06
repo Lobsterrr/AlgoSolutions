@@ -16,7 +16,18 @@ public class PermutationIndex {
 
     public long permutationIndex(int[] A) {
         long result = 1;
-        
+        long factorial = 1;
+        for (int i = A.length - 2; i >= 0; --i) {
+            factorial *= A.length - 1 - i;
+            int count = 0;
+            for (int j = i + 1; j < A.length; ++j) {
+                if (A[i] > A[j]) {
+                    count++;
+                }
+            }
+            result += count * factorial;
+        }
+        return result;
     }
 
     public long permutationIndex(int[] A) {
