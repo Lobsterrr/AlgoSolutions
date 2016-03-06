@@ -27,7 +27,11 @@ public class PermutationSequence {
       * @return: return the k-th permutation
       */
     public String getPermutation(int n, int k) {
-
+        long factorial = 1;
+        for (int i = 1; i < n; ++i) {
+            factorial *= i;
+        }
+        for (int 
     }
 
 }
