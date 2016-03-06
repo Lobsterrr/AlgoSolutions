@@ -27,19 +27,6 @@ public class PermutationSequence {
       * @return: return the k-th permutation
       */
     public String getPermutation(int n, int k) {
-        String result = "";
-        long factorial = 1;
-        for (int i = 1; i < n; ++i) {
-            factorial *= i;
-        }
-        for (int i = 1; i <= n; ++i) {
-            result += k / factorial + 1;
-            k %= factorial;
-            factorial /= n - i;
-        } 
-        return result;
-
-
         List<Integer> list = new ArrayList<Integer>();
         long factorial = 1;
         for (int i = 1; i <= n; ++i) {
@@ -50,6 +37,7 @@ public class PermutationSequence {
         String result = "";
         for (int i = 1; i <= n; ++i) {
             result += list.get(i);
+            list.remove(Integer.valueOf(i));
             k %= factorial;
             factorial /= n - i;
         }
