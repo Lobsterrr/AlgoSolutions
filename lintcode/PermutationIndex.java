@@ -18,13 +18,13 @@ public class PermutationIndex {
         long factorial = 1;
         for (int i = A.length - 2; i >= 0; --i) {
             factorial *= A.length - 1 - i;
-            int count = 0;
+            int reversedOrderCount = 0;
             for (int j = i + 1; j < A.length; ++j) {
                 if (A[i] > A[j]) {
-                    count++;
+                    reversedOrderCount++;
                 }
             }
-            result += count * factorial;
+            result += reversedOrderCount * factorial;
         }
         return result;
     }
