@@ -33,7 +33,9 @@ public class PermutationSequence {
             factorial *= i;
         }
         for (int i = 1; i <= n; ++i) {
-            
+            result += k / factorial + 1;
+            k %= factorial;
+            factorial /= n - i;
         } 
     }
 
