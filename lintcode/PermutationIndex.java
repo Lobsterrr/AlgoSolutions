@@ -13,7 +13,6 @@ public class PermutationIndex {
      * @param A an integer array
      * @return a long integer
      */
-
     public long permutationIndex(int[] A) {
         long result = 1;
         long factorial = 1;
