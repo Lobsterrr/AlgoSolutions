@@ -29,22 +29,4 @@ public class PermutationIndex {
         return result;
     }
 
-    public long permutationIndex(int[] A) {
-        if (A.length == 0 || A.length == 1) {
-            return A.length;
-        }
-        int[] subA = Arrays.copyOfRange(A, 1, A.length);
-        int firstItem = A[0];
-        Arrays.sort(A);
-        long factorial = 1;
-        for (int i = 0; i < subA.length; ++i) {
-            factorial *= i + 1;
-        }
-        int index = 0;
-        while (A[index] != firstItem) {
-            index++;
-        }
-        return index * factorial + permutationIndex(subA);
-    }
-
 }
