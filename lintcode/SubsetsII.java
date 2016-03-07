@@ -33,7 +33,8 @@ public class SubsetsII {
         Collections.sort(S);
     } 
 
-    public void dfs(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list, int position, ArrayList<Integer> S) {
+    public void dfs(ArrayList<ArrayList<Integer>> result, 
+            ArrayList<Integer> list, int position, ArrayList<Integer> S) {
 
     }
 
