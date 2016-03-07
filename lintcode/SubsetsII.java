@@ -43,7 +43,7 @@ public class SubsetsII {
         }
         for (int i = position; i < S.size(); ++i) {
             list.add(S.get(i));
-            dfs(result, list, position + 1, S);
+            dfs(result, list, i + 1, S);
             list.remove(list.size() - 1);
         }
     }
