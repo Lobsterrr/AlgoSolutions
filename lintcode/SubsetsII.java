@@ -29,7 +29,8 @@ public class SubsetsII {
      * @return: A list of lists. All valid subsets.
      */
     public ArrayList<ArrayList<Integer>> subsetsWithDup(ArrayList<Integer> S) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = 
+            new ArrayList<ArrayList<Integer>>();
         Collections.sort(S);
         dfs(result, new ArrayList<Integer>(), 0, S);
         return result;
