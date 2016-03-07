@@ -1,5 +1,6 @@
 /*
- * Given a list of numbers that may has duplicate numbers, return all possible subsets
+ * Given a list of numbers that may has duplicate numbers, 
+ * return all possible subsets
 
  Notice
 
