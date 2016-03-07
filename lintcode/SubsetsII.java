@@ -31,6 +31,7 @@ public class SubsetsII {
     public ArrayList<ArrayList<Integer>> subsetsWithDup(ArrayList<Integer> S) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         Collections.sort(S);
+        dfs(result, new ArrayList<Integer>(), 0, S);
     } 
 
     public void dfs(ArrayList<ArrayList<Integer>> result, 
