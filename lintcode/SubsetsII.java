@@ -35,7 +35,9 @@ public class SubsetsII {
 
     public void dfs(ArrayList<ArrayList<Integer>> result, 
             ArrayList<Integer> list, int position, ArrayList<Integer> S) {
+        for (int i = position, i < S.size(); ++i) {
 
+        }
     }
 
 }
