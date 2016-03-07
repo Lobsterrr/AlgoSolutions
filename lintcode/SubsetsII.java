@@ -8,10 +8,6 @@ Each element in a subset must be in non-descending order.
 The ordering between two subsets is free.
 The solution set must not contain duplicate subsets.
 Example
-Challenge
-Tags
-Related Problems
- Notes
 If S = [1,2,2], a solution is:
 
 [
