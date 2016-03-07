@@ -41,7 +41,7 @@ public class SubsetsII {
         if (!result.contains(list)) {
             result.add(new ArrayList<Integer>(list));
         }
-        for (int i = position, i < S.size(); ++i) {
+        for (int i = position; i < S.size(); ++i) {
             list.add(S.get(i));
             dfs(result, list, position + 1, S);
             list.remove(list.size() - 1);
