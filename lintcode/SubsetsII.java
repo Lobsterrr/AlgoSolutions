@@ -17,6 +17,12 @@ If S = [1,2,2], a solution is:
   [1,2],
   []
 ]
+
+Challenge
+Tags
+Related Problems
+ Notes
+Can you do it in both recursively and iteratively?
  */
 public class SubsetsII {
 
