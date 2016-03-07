@@ -3,6 +3,8 @@
  */
 public class SubsetsII {
 
-    public 
+    public ArrayList<ArrayList<Integer>> subsetsWithDup(ArrayList<Integer> S) {
+
+    } 
 
 }
