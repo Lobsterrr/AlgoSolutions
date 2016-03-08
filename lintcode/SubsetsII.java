@@ -38,13 +38,14 @@ public class SubsetsII {
 
     public void dfs(ArrayList<ArrayList<Integer>> result, 
             ArrayList<Integer> list, int position, ArrayList<Integer> S) {
-        if (!result.contains(list)) {
-            result.add(new ArrayList<Integer>(list));
-        }
+        result.add(new ArrayList<Integer>(list));
         for (int i = position; i < S.size(); ++i) {
             list.add(S.get(i));
             dfs(result, list, i + 1, S);
             list.remove(list.size() - 1);
+            while (i + 1 < S.size() && S.get(i) == S.get(i + 1)) {
+                ++i;
+            }
         }
     }
 
