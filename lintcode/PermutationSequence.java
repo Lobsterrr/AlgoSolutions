@@ -28,7 +28,7 @@ public class PermutationSequence {
       */
     public String getPermutation(int n, int k) {
         List<Integer> list = new ArrayList<Integer>();
-        long factorial = 1;
+        int factorial = 1;
         for (int i = 1; i <= n; ++i) {
             list.add(i);
             factorial *= i;
@@ -36,10 +36,10 @@ public class PermutationSequence {
         factorial /= n;
         String result = "";
         for (int i = 1; i <= n - 1; ++i) {
-            int index = (int) ((k - 1) / factorial);
+            int index = (k - 1) / factorial;
             result += list.get(index);
             list.remove(Integer.valueOf(list.get(index)));
-            k = (int) ((k - 1) % factorial) + 1;
+            k = (k - 1) % factorial + 1;
             factorial /= n - i;
         }
         result += list.get(0);
