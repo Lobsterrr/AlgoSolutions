@@ -35,13 +35,14 @@ public class PermutationSequence {
         }
         factorial /= n;
         String result = "";
-        for (int i = 1; i <= n; ++i) {
-            int index = (k - 1) / factorial;
+        for (int i = 1; i <= n - 1; ++i) {
+            int index = (int) ((k - 1) / factorial);
             result += list.get(index);
-            list.remove(Integer.valueOf(i));
-            k = (k - 1) % factorial + 1;
+            list.remove(Integer.valueOf(list.get(index)));
+            k = (int) ((k - 1) % factorial) + 1;
             factorial /= n - i;
         }
+        result += list.get(0);
         return result;
     }
 
