@@ -36,7 +36,8 @@ public class PermutationSequence {
         factorial /= n;
         String result = "";
         for (int i = 1; i <= n; ++i) {
-            result += list.get(i);
+            int index = k / factorial;
+            result += list.get(index);
             list.remove(Integer.valueOf(i));
             k %= factorial;
             factorial /= n - i;
