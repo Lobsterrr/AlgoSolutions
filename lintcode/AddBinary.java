@@ -1,7 +1,6 @@
 /*
  * Given two binary strings, return their sum (also a binary string).
 
-Have you met this question in a real interview? Yes
 Example
 a = 11
 
