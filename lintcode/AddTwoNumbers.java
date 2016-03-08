@@ -27,9 +27,9 @@ public class AddTwoNumbers {
      * @return: the sum list of l1 and l2 
      */
     public ListNode addList(ListNode l1, ListNode l2) {
-        int carrier = 0;
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
+        int carrier = 0;
         while (l1 != null || l2 != null) {
             int v1 = l1 != null ? l1.val : 0;
             int v2 = l2 != null ? l2.val : 0;
