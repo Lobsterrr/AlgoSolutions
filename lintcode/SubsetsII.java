@@ -53,9 +53,8 @@ public class SubsetsII {
     public ArrayList<ArrayList<Integer>> subsetsWithDup(ArrayList<Integer> S) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         result.add(new ArrayList<Integer>());
-        int oldSize = 0;
         for (int i = 0; i < S.size(); ++i) {
-            int newSize = (i > 0 && S.get(i) != S.get(i - 1)) ? 0 : oldSize;
+            int start = (i > 0 && S.get(i) != S.get(i - 1)) ? 0 : oldSize;
             for (int j = newSize; j < result.size(); ++j) {
                 ArrayList<Integer> list = new ArrayList<Integer>(result.get(i));
                 list.add(S.get(i));
