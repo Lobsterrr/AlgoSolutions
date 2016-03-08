@@ -36,10 +36,10 @@ public class PermutationSequence {
         factorial /= n;
         String result = "";
         for (int i = 1; i <= n; ++i) {
-            int index = k / factorial;
+            int index = (k - 1) / factorial;
             result += list.get(index);
             list.remove(Integer.valueOf(i));
-            k %= factorial;
+            k = (k - 1) % factorial;
             factorial /= n - i;
         }
         return result;
