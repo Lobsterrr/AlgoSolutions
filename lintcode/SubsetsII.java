@@ -52,7 +52,8 @@ public class SubsetsII {
 /*****************************************************************************/
 
     public ArrayList<ArrayList<Integer>> subsetsWithDup(ArrayList<Integer> S) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = 
+            new ArrayList<ArrayList<Integer>>();
         Collections.sort(S);
         result.add(new ArrayList<Integer>());
         int oldSize = 0;
