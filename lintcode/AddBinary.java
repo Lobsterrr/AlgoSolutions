@@ -16,10 +16,15 @@ public class AddBinary {
      * @return the result
      */
     public String addBinary(String a, String b) {
+        String result = "";
         int carrier = 0;
         int len = Math.max(a.length(), b.length());
-        for (int i = 0; i < max; ++i) {
-            
+        for (int i = 0; i < len; ++i) {
+            int va = 0;
+            int vb = 0;
+            if (i < a.length()) {
+                
+            }
         }
     }
 
