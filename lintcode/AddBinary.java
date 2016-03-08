@@ -3,9 +3,6 @@
 
 Have you met this question in a real interview? Yes
 Example
-Tags
-Related Problems
- Notes
 a = 11
 
 b = 1
