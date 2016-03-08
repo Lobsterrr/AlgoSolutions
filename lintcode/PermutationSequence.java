@@ -39,7 +39,7 @@ public class PermutationSequence {
             int index = (k - 1) / factorial;
             result += list.get(index);
             list.remove(Integer.valueOf(i));
-            k = (k - 1) % factorial;
+            k = (k - 1) % factorial + 1;
             factorial /= n - i;
         }
         return result;
