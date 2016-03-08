@@ -16,7 +16,11 @@ public class AddBinary {
      * @return the result
      */
     public String addBinary(String a, String b) {
-
+        int carrier = 0;
+        int len = Math.max(a.length(), b.length());
+        for (int i = 0; i < max; ++i) {
+            
+        }
     }
 
 }
