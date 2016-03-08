@@ -23,9 +23,18 @@ public class AddBinary {
             int va = 0;
             int vb = 0;
             if (i < a.length()) {
-                
+                va = a.charAt(a.length() - 1 - i) - '0'; 
             }
+            if (i < b.length()) {
+                vb = b.charAt(b.length() - 1 - i) - '0';
+            }
+            result = ((va + vb + carrier) % 2) + result;
+            carrier = (va + vb + carrier) / 2;
         }
+        if (carrier > 0) {
+            result = carrier + result;
+        }
+        return result;
     }
 
 }
