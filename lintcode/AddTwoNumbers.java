@@ -3,9 +3,6 @@
 
 Have you met this question in a real interview? Yes
 Example
-Tags
-Related Problems
- Notes
 Given 7->1->6 + 5->9->2. That is, 617 + 295.
 
 Return 2->1->9. That is 912.
