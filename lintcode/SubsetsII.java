@@ -55,7 +55,8 @@ public class SubsetsII {
         result.add(new ArrayList<Integer>());
         for (int i = 0; i < S.size(); ++i) {
             int start = (i > 0 && S.get(i) != S.get(i - 1)) ? 0 : oldSize;
-            for (int j = newSize; j < result.size(); ++j) {
+            int newSize = result.size();
+            for (int j = start; j < result.size(); ++j) {
                 ArrayList<Integer> list = new ArrayList<Integer>(result.get(i));
                 list.add(S.get(i));
                 result.add(list);
