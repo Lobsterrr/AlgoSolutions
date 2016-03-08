@@ -64,6 +64,7 @@ public class SubsetsII {
             }
             oldSize = newSize;
         }
+        return result;
     }
 
 }
