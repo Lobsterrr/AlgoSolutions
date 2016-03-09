@@ -36,9 +36,13 @@ public class MergeIntervals {
         }
         result.add(intervals.get(0));
         for (int i = 1; i < intervals.size(); ++i) {
-            
+            int last
         }
         return result;
+    }
+
+    public boolean isOverlap(Interval a, Interval b) {
+        return a.start <= b.end && a.end >= b.start;
     }
 
 }
