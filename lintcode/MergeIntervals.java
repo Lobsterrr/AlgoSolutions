@@ -33,7 +33,11 @@ public class MergeIntervals {
         List<Interval> result = new ArrayList<Interval>();
         Collections.sort(intervals, new IntervalComparator());
         for (int i = 0; i < intervals.size(); ++i) {
-            if (i > 0 && result.get(result.size() - 1).start <= 
+            if (i > 0 && result.get(result.size() - 1).start <= intervals.get(i).end && result.get(result.size() - 1).end >= intervals.get(i).start) {
+
+            } else {
+                result.add(inte
+            }
         }
         
         return result;
