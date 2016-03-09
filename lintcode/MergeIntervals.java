@@ -34,23 +34,23 @@ public class MergeIntervals {
         Collections.sort(intervals, new IntervalComparator());
         for (int i = 0; i < intervals.size(); ++i) {
             if (i > 0 && result.get(result.size() - 1).start <= intervals.get(i).end && result.get(result.size() - 1).end >= intervals.get(i).start) {
-
+                result.get(result.size() - 1).start = Math.min(result.get(result.size() - 1).start, intervals.get(i).start);
+                result.get(result.size() - 1).end = Math.max(result.get(result.size() - 1).end, intervals.get(i).end);
             } else {
-                result.add(inte
+                result.add(intervals.get(i));
             }
         }
-        
         return result;
-    }
-
-    public boolean isOverlap(Interval a, Interval b) {
-        return a.start <= b.end && a.end >= b.start;
     }
 
     class IntervalComparator implements Comparator<Interval> {
         public int compare(Interval i1, Interval i2) {
             return i1.start - i2.start;
         }
+    }
+
+    public boolean isOverlap(Interval a, Interval b) {
+        return a.start <= b.end && a.end >= b.start;
     }
 
 }
