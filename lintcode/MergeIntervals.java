@@ -1,7 +1,6 @@
 /*
  * Given a collection of intervals, merge all overlapping intervals.
 
-Have you met this question in a real interview? Yes
 Example
 Challenge
 Tags
