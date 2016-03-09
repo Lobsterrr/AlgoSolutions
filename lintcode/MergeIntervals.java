@@ -31,8 +31,12 @@ public class MergeIntervals {
      */
     public List<Interval> merge(List<Interval> intervals) {
         List<Interval> result = new ArrayList<Interval>();
-        for (int i = 0; i < intervals.size(); ++i) {
-
+        if (intervals.size() == 0) {
+            return result;
+        }
+        result.add(intervals.get(0));
+        for (int i = 1; i < intervals.size(); ++i) {
+            
         }
         return result;
     }
