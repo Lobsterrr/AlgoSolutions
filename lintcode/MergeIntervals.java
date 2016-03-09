@@ -34,6 +34,7 @@ public class MergeIntervals {
         for (int i = 0; i < intervals.size(); ++i) {
 
         }
+        return result;
     }
 
 }
