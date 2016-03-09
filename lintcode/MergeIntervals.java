@@ -30,7 +30,10 @@ public class MergeIntervals {
      * @return: A new sorted interval list.
      */
     public List<Interval> merge(List<Interval> intervals) {
+        List<Interval> result = new ArrayList<Interval>();
+        for (int i = 0; i < intervals.size(); ++i) {
 
+        }
     }
 
 }
