@@ -53,4 +53,10 @@ public class MergeIntervals {
         return a.start <= b.end && a.end >= b.start;
     }
 
+    class IntervalComparator implements Comparator<Interval> {
+        public int compare(Interval i1, Interval i2) {
+            return i1.start - i2.start;
+        }
+    }
+
 }
