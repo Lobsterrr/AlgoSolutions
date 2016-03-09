@@ -51,8 +51,4 @@ public class MergeIntervals {
         }
     }
 
-    public boolean isOverlap(Interval a, Interval b) {
-        return a.start <= b.end && a.end >= b.start;
-    }
-
 }
