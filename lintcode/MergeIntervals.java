@@ -10,6 +10,9 @@ Given intervals => merged intervals:
   [8, 10],              [15, 18]
   [15, 18]            ]
 ]
+
+Challenge
+O(n log n) time and O(1) extra space.
  */
 /**
  * Definition of Interval:
