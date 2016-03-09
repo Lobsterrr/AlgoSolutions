@@ -31,21 +31,11 @@ public class MergeIntervals {
      */
     public List<Interval> merge(List<Interval> intervals) {
         List<Interval> result = new ArrayList<Interval>();
-        if (intervals.size() == 0) {
-            return result;
+        Collections.sort(intervals, new IntervalComparator());
+        for (int i = 0; i < intervals.size(); ++i) {
+            if (i > 0 && result.get(result.size() - 1).start <= 
         }
-        result.add(intervals.get(0));
-        for (int i = 1; i < intervals.size(); ++i) {
-            if (!isOverlap(result.get(result.size() - 1), intervals.get(i))) {
-                result.add(intervals.get(i));
-            } else {
-                Interval a = result.get(result.size() - 1);
-                Interval b = intervals.get(i);
-                Interval c = new Interval(Math.min(a.start, b.start), Math.max(a.end, b.end));
-                result.remove(result.size() - 1);
-                result.add(c);
-            }
-        }
+        
         return result;
     }
 
