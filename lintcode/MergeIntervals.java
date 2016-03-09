@@ -2,10 +2,6 @@
  * Given a collection of intervals, merge all overlapping intervals.
 
 Example
-Challenge
-Tags
-Related Problems
- Notes
 Given intervals => merged intervals:
 
 [                     [
