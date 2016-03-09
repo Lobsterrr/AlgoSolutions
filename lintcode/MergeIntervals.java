@@ -34,7 +34,6 @@ public class MergeIntervals {
         Collections.sort(intervals, new IntervalComparator());
         for (int i = 0; i < intervals.size(); ++i) {
             if (i > 0 && result.get(result.size() - 1).start <= intervals.get(i).end && result.get(result.size() - 1).end >= intervals.get(i).start) {
-                result.get(result.size() - 1).start = Math.min(result.get(result.size() - 1).start, intervals.get(i).start);
                 result.get(result.size() - 1).end = Math.max(result.get(result.size() - 1).end, intervals.get(i).end);
             } else {
                 result.add(intervals.get(i));
