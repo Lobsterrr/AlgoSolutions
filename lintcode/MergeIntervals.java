@@ -36,7 +36,15 @@ public class MergeIntervals {
         }
         result.add(intervals.get(0));
         for (int i = 1; i < intervals.size(); ++i) {
-            int last
+            if (!isOverlap(result.get(result.size() - 1), intervals.get(i))) {
+                result.add(intervals.get(i));
+            } else {
+                Interval a = result.get(result.size() - 1);
+                Interval b = intervals.get(i);
+                Interval c = new Interval(Math.min(a.start, b.start), Math.max(a.end, b.end));
+                result.remove(result.size() - 1);
+                result.add(c);
+            }
         }
         return result;
     }
