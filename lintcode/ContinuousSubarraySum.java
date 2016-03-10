@@ -23,6 +23,7 @@ public class ContinuousSubarraySum {
         int endIndex = 0;
         for (int i = 0, thisSum = 0; i < A.length; ++i) {
             thisSum += A[i];
+            endIndex = i;
             if (maxSum < thisSum) {
                 maxSum = thisSum;
                 result.set(0, startIndex);
@@ -30,6 +31,7 @@ public class ContinuousSubarraySum {
             }
             if (thisSum < 0) {
                 thisSum = 0;
+                startIndex = i;
             }
         }
     }
