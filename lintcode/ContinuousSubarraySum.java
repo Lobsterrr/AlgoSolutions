@@ -34,6 +34,7 @@ public class ContinuousSubarraySum {
                 startIndex = i;
             }
         }
+        return result;
     }
 
 }
