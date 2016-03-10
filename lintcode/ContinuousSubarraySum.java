@@ -3,9 +3,6 @@
 
 Have you met this question in a real interview? Yes
 Example
-Tags
-Related Problems
- Notes
 Give [-3, 1, 3, -3, 4], return [1,4].
  */
 public class ContinuousSubarraySum {
