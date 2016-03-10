@@ -25,7 +25,8 @@ public class ContinuousSubarraySum {
             thisSum += A[i];
             if (maxSum < thisSum) {
                 maxSum = thisSum;
-                result.add
+                result.set(0, startIndex);
+                result.set(1, endIndex);
             }
             if (thisSum < 0) {
                 thisSum = 0;
