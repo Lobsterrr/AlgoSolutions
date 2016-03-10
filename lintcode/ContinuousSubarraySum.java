@@ -31,7 +31,7 @@ public class ContinuousSubarraySum {
             }
             if (thisSum < 0) {
                 thisSum = 0;
-                startIndex = i;
+                startIndex = i + 1;
             }
         }
         return result;
