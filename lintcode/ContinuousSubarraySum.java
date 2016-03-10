@@ -19,19 +19,17 @@ public class ContinuousSubarraySum {
         result.add(-1);
         result.add(-1);
         int maxSum = Integer.MIN_VALUE;
-        int startIndex = 0;
-        int endIndex = 0;
-        for (int i = 0, thisSum = 0; i < A.length; ++i) {
+        for (int i = 0, thisSum = 0, start = 0, end = 0; i < A.length; ++i) {
             thisSum += A[i];
-            endIndex = i;
+            end = i;
             if (maxSum < thisSum) {
                 maxSum = thisSum;
-                result.set(0, startIndex);
-                result.set(1, endIndex);
+                result.set(0, start);
+                result.set(1, end);
             }
             if (thisSum < 0) {
                 thisSum = 0;
-                startIndex = i + 1;
+                start= i + 1;
             }
         }
         return result;
