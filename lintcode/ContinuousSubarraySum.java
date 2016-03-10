@@ -16,8 +16,8 @@ public class ContinuousSubarraySum {
      */
     public ArrayList<Integer> continuousSubarraySum(int[] A) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-        result.add(-1);
-        result.add(-1);
+        result.add(0);
+        result.add(0);
         int maxSum = Integer.MIN_VALUE;
         for (int i = 0, start = 0, curSum = 0; i < A.length; ++i) {
             curSum += A[i];
