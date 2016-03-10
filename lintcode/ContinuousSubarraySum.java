@@ -15,7 +15,7 @@ public class ContinuousSubarraySum {
      * first number and the index of the last number
      */
     public ArrayList<Integer> continuousSubarraySum(int[] A) {
-
+        ArrayList<Integer> result = new ArrayList<Integer>();
     }
 
 }
