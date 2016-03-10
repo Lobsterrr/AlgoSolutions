@@ -21,11 +21,10 @@ public class ContinuousSubarraySum {
         int maxSum = Integer.MIN_VALUE;
         for (int i = 0, thisSum = 0, start = 0, end = 0; i < A.length; ++i) {
             thisSum += A[i];
-            end = i;
             if (maxSum < thisSum) {
                 maxSum = thisSum;
                 result.set(0, start);
-                result.set(1, end);
+                result.set(1, i);
             }
             if (thisSum < 0) {
                 thisSum = 0;
