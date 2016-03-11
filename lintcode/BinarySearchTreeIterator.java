@@ -12,9 +12,6 @@ For the following binary search tree, in-order traversal by using iterator is [1
  \       \
   6       12
 Challenge
-Tags
-Related Problems
- Notes
 Extra memory usage O(h), h is the height of the tree.
 
 Super Star: Extra memory usage O(1)
