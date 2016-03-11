@@ -11,4 +11,8 @@ class BSTIterator {
 
     }
 
+    public boolean hasNext() {
+
+    }
+
 }
