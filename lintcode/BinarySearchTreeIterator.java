@@ -7,6 +7,7 @@ public class BinarySearchTreeIterator {
 
 class BSTIterator {
 
+    //@param root: The root of binary tree.
     public class BSTIterator(TreeNode root) {
 
     }
