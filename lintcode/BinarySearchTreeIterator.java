@@ -11,6 +11,7 @@ class BSTIterator {
 
     }
 
+    //@return: True if there has next node, or false
     public boolean hasNext() {
 
     }
