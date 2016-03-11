@@ -3,7 +3,6 @@
 
 Elements are visited in ascending order (i.e. an in-order traversal)
 next() and hasNext() queries run in O(1) time in average.
-Have you met this question in a real interview? Yes
 Example
 Challenge
 Tags
