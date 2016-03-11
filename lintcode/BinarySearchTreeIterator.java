@@ -56,7 +56,7 @@ class BSTIterator {
     //@return: return next node
     public TreeNode next() {
         if (cur == null && stack.isEmpty()) {
-
+            return null;
         }
     }
 
