@@ -41,6 +41,7 @@ public class BinarySearchTreeIterator {
 class BSTIterator {
 
     Stack<TreeNode> stack;
+    TreeNode cur = root;
 
     //@param root: The root of binary tree.
     public class BSTIterator(TreeNode root) {
@@ -54,7 +55,9 @@ class BSTIterator {
 
     //@return: return next node
     public TreeNode next() {
+        if (cur == null && stack.isEmpty()) {
 
+        }
     }
 
 }
