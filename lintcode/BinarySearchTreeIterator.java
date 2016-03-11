@@ -15,4 +15,8 @@ class BSTIterator {
 
     }
 
+    public TreeNode next() {
+
+    }
+
 }
