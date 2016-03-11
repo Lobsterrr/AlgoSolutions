@@ -11,6 +11,7 @@ For the following binary search tree, in-order traversal by using iterator is [1
 1      11
  \       \
   6       12
+
 Challenge
 Extra memory usage O(h), h is the height of the tree.
 
@@ -39,9 +40,11 @@ public class BinarySearchTreeIterator {
 
 class BSTIterator {
 
+    Stack<TreeNode> stack;
+
     //@param root: The root of binary tree.
     public class BSTIterator(TreeNode root) {
-
+        stack = new Stack<TreeNode>();
     }
 
     //@return: True if there has next node, or false
