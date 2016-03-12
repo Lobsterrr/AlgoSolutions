@@ -69,7 +69,7 @@ class BSTIterator {
         } else {
             cur = stack.pop();
             if (cur.right != null) {
-                stack.push(result.right);
+                stack.push(cur.right);
             }
             TreeNode result = cur;
             cur = cur.left;
