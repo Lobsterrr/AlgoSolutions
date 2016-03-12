@@ -62,22 +62,12 @@ class BSTIterator {
         if (cur == null) {
             cur = stack.pop();
         }
-        if (cur != null) {
-            if (cur.right != null) {
-                stack.push(cur.right);
-            }
-            TreeNode result = cur;
-            cur = cur.left;
-            return result;
-        } else {
-            cur = stack.pop();
-            if (cur.right != null) {
-                stack.push(cur.right);
-            }
-            TreeNode result = cur;
-            cur = cur.left;
-            return result;
+        if (cur.right != null) {
+            stack.push(cur.right);
         }
+        TreeNode result = cur;
+        cur = cur.left;
+        return result;
     }
 
 }
