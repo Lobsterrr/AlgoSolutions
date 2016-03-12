@@ -50,7 +50,7 @@ class BSTIterator {
 
     //@return: True if there has next node, or false
     public boolean hasNext() {
-
+        cur != null || !stack.isEmpty();
     }
 
     //@return: return next node
