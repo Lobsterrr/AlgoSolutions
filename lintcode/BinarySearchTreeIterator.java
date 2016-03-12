@@ -41,11 +41,12 @@ public class BinarySearchTreeIterator {
 class BSTIterator {
 
     Stack<TreeNode> stack;
-    TreeNode cur = root;
+    TreeNode cur;
 
     //@param root: The root of binary tree.
     public BSTIterator(TreeNode root) {
         stack = new Stack<TreeNode>();
+        cur = root;
     }
 
     //@return: True if there has next node, or false
