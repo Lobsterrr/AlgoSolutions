@@ -70,6 +70,8 @@ class BSTIterator {
             if (result.right != null) {
                 stack.push(result.right);
             }
+            cur = result.left;
+            return result;
         }
     }
 
