@@ -59,6 +59,9 @@ class BSTIterator {
         if (cur == null && stack.isEmpty()) {
             return null;
         }
+        if (cur == null) {
+            cur = stack.pop();
+        }
         if (cur != null) {
             if (cur.right != null) {
                 stack.push(cur.right);
