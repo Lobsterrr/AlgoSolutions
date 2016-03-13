@@ -43,6 +43,7 @@ class BSTIterator {
 
     List<TreeNode> curLevel;
     ListNode<TreeNode> nextLevel;
+    TreeNode cur = root;
 
     //@param root: The root of binary tree.
     public BSTIterator(TreeNode root) {
