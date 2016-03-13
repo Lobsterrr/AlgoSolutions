@@ -21,10 +21,11 @@
 public class BinarySearchTreeIterator {
 
     private TreeNode cur;
-    private Stack<TreeNode> stack = new Stack<TreeNode>();
+    private Stack<TreeNode>;
     
     public BinarySearchTreeIterator(TreeNode root) {
         cur = root;
+        stack = new Stack<TreeNode>();
     }
 
     /** @return whether we have a next smallest number */
