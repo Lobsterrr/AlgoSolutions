@@ -42,7 +42,7 @@ public class BinarySearchTreeIterator {
 class BSTIterator {
 
     List<TreeNode> curLevel;
-    ListNode<TreeNode> nextLevel;
+    List<TreeNode> nextLevel;
 
     //@param root: The root of binary tree.
     public BSTIterator(TreeNode root) {
