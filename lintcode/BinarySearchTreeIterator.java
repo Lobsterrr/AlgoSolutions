@@ -44,17 +44,26 @@ class BSTIterator {
     Stack<TreeNode> stack;
     TreeNode cur;
     List<TreeNode> list;
+    int index;
 
     //@param root: The root of binary tree.
     public BSTIterator(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
         cur = root;
-        list = new ArrayList<TreeNode>();
+        index = 0;
+        list = new LinkedList<TreeNode>();
         iterator(root, list);
     }
 
     public void iterator(TreeNode root, List<TreeNode> list) {
         while (cur != null || !stack.isEmpty()) {
-
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            TreeNode node = stack.pop();
+            cur = node.right;
+            list.add(node);
         }
     }
 
@@ -64,7 +73,7 @@ class BSTIterator {
 
     //@return: return next node
     public TreeNode next() {
-
+        list.
     }
 
 }
