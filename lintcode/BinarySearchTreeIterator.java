@@ -47,8 +47,8 @@ class BSTIterator {
 
     //@param root: The root of binary tree.
     public BSTIterator(TreeNode root) {
-        curLevel = new ArrayList<TreeNode>();
-        nextLevel = new ArrayList<TreeNode>();
+        curLevel = new LinkedList<TreeNode>();
+        nextLevel = new LinkedList<TreeNode>();
     }
 
     //@return: True if there has next node, or false
@@ -63,7 +63,7 @@ class BSTIterator {
         } 
         if (curLevel.size() == 0) {
             curLevel = nextLevel;
-            nextLevel = new ArrayList<TreeNode>();
+            nextLevel = new LinkedList<TreeNode>();
         }
         TreeNode result = curLevel.
     }
