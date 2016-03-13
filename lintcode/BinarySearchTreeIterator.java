@@ -77,7 +77,7 @@ class BSTIterator {
         if (list.size() == 0) {
             return null;
         }
-        return list.get(index++).val;
+        return list.get(index++);
     }
 
 }
