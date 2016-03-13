@@ -48,6 +48,9 @@ class BSTIterator {
     public BSTIterator(TreeNode root) {
         curLevel = new LinkedList<TreeNode>();
         nextLevel = new LinkedList<TreeNode>();
+        if (root != null) {
+            curLevel.add(root);
+        }
     }
 
     //@return: True if there has next node, or false
