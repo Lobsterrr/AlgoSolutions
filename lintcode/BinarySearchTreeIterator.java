@@ -43,8 +43,7 @@ class BSTIterator {
 
     //@param root: The root of binary tree.
     public BSTIterator(TreeNode root) {
-        stack = new Stack<TreeNode>();
-        cur = root;
+
     }
 
     //@return: True if there has next node, or false
@@ -54,27 +53,7 @@ class BSTIterator {
 
     //@return: return next node
     public TreeNode next() {
-        if (cur == null && stack.isEmpty()) {
-            return null;
-        }
-        if (cur == null) {
-            cur = stack.pop();
-        }
-        if (cur.right != null) {
-            stack.push(cur.right);
-        }
-        TreeNode result = cur;
-        cur = cur.left;
-        return result;
-
-
-        if (cur == null && stack.isEmpty()) {
-            return null;
-        }
-        if (cur == null) {
-            cur = stack.pop();
-        }
-        if (cur
+  
     }
 
 }
