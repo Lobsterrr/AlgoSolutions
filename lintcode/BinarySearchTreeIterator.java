@@ -49,6 +49,7 @@ class BSTIterator {
     //@param root: The root of binary tree.
     public BSTIterator(TreeNode root) {
         cur = root;
+        iterator(cur, list);
     }
 
     public void iterator(TreeNode root, List<TreeNode> list) {
