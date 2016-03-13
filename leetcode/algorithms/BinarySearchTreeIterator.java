@@ -22,15 +22,21 @@ public class BinarySearchTreeIterator {
 
     private Stack<TreeNode> stack = new Stack<TreeNode>();
     private List<TreeNode> list = new ArrayList<TreeNode>();
-    TreeNode cur;
-    int index;
+    private TreeNode cur;
+    private int index;
 
     public BinarySearchTreeIterator(TreeNode root) {
         cur = root;
         index = 0;
     }
 
+    public boolean hasNext() {
+        return index < list.size();
+    }
 
+    public next() {
+        return hasNext() ? list.get(index++) : null;
+    }
 
     private TreeNode cur;
     private Stack<TreeNode>;
