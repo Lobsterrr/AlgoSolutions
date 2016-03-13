@@ -51,6 +51,7 @@ class BSTIterator {
         stack = new Stack<TreeNode>();
         cur = root;
         list = new LinkedList<TreeNode>();
+        index = 0;
         iterator(cur, list);
     }
 
