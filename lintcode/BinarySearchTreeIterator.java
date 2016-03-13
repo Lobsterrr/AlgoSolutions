@@ -41,14 +41,18 @@ public class BinarySearchTreeIterator {
 
 class BSTIterator {
 
+    List<TreeNode> curLevel;
+    ListNode<TreeNode> nextLevel;
+
     //@param root: The root of binary tree.
     public BSTIterator(TreeNode root) {
-
+        curLevel = new ArrayList<TreeNode>();
+        nextLevel = new ArrayList<TreeNode>();
     }
 
     //@return: True if there has next node, or false
     public boolean hasNext() {
-        return cur != null || !stack.isEmpty();
+
     }
 
     //@return: return next node
