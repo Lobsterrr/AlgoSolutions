@@ -74,7 +74,7 @@ class BSTIterator {
 
     //@return: return next node
     public TreeNode next() {
-        return hasNext() && list.get(index++);
+        return hasNext() ? list.get(index++) : null;
     }
 
 }
