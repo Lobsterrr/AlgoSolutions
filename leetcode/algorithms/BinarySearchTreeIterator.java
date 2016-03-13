@@ -53,26 +53,4 @@ public class BinarySearchTreeIterator {
         return hasNext() ? list.get(index++) : null;
     }
 
-    private TreeNode cur;
-    private Stack<TreeNode>;
-    
-    public BinarySearchTreeIterator(TreeNode root) {
-        cur = root;
-        stack = new Stack<TreeNode>();
-    }
-
-    public boolean hasNext() {
-        return cur != null || !stack.isEmpty();
-    }
-
-    public int next() {
-        while (cur != null) {
-            stack.push(cur);
-            cur = cur.left;
-        }
-        TreeNode node = stack.pop();
-        cur = node.right;
-        return node.val;
-    }
-    
 }
