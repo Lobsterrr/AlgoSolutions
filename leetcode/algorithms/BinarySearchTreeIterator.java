@@ -43,10 +43,12 @@ public class BinarySearchTreeIterator {
         }
     }
 
+    /** @return whether we have a next smallest number */
     public boolean hasNext() {
         return index < list.size();
     }
 
+    /** @return the next smallest number */
     public next() {
         return hasNext() ? list.get(index++) : null;
     }
@@ -59,12 +61,10 @@ public class BinarySearchTreeIterator {
         stack = new Stack<TreeNode>();
     }
 
-    /** @return whether we have a next smallest number */
     public boolean hasNext() {
         return cur != null || !stack.isEmpty();
     }
 
-    /** @return the next smallest number */
     public int next() {
         while (cur != null) {
             stack.push(cur);
