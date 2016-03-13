@@ -58,7 +58,14 @@ class BSTIterator {
 
     //@return: return next node
     public TreeNode next() {
-  
+        if (curLevel.size() == 0 || nextLevel.size() == 0) {
+            return null;
+        } 
+        if (curLevel.size() == 0) {
+            curLevel = nextLevel;
+            nextLevel = new ArrayList<TreeNode>();
+        }
+        TreeNode result = curLevel.
     }
 
 }
