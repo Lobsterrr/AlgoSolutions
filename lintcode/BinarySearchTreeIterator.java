@@ -55,7 +55,7 @@ class BSTIterator {
 
     //@return: True if there has next node, or false
     public boolean hasNext() {
-        return curLevel.size() != 0 && nextLevel.size() != 0;
+        return curLevel.size() != 0 || nextLevel.size() != 0;
     }
 
     //@return: return next node
