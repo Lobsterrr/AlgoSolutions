@@ -28,6 +28,19 @@ public class BinarySearchTreeIterator {
     public BinarySearchTreeIterator(TreeNode root) {
         cur = root;
         index = 0;
+        iterator(cur, list);
+    }
+
+    public void iterator(TreeNode root, List<TreeNode> list) {
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            TreeNode node = stack.pop();
+            list.add(node);
+            cur = node.right;
+        }
     }
 
     public boolean hasNext() {
