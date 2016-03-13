@@ -57,27 +57,11 @@ class BSTIterator {
 
     //@return: return next node
     public TreeNode next() {
-        if (cur == null && stack.isEmpty()) {
-            return null;
+        while (cur != null) {
+            stack.push(cur);
+            cur = cur.left;
         }
-        if (cur == null) {
-            cur = stack.pop();
-        }
-        if (cur.right != null) {
-            stack.push(cur.right);
-        }
-        TreeNode result = cur;
-        cur = cur.left;
-        return result;
-
-
-        if (cur == null && stack.isEmpty()) {
-            return null;
-        }
-        if (cur == null) {
-            cur = stack.pop();
-        }
-        if (cur
+        
     }
 
 }
