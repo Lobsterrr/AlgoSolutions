@@ -69,11 +69,15 @@ class BSTIterator {
 
     //@return: True if there has next node, or false
     public boolean hasNext() {
+        return index < list.size();
     }
 
     //@return: return next node
     public TreeNode next() {
-        list.
+        if (list.size() == 0) {
+            return null;
+        }
+        return list.get(index++).val;
     }
 
 }
