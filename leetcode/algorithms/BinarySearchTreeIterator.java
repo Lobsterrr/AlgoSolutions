@@ -49,7 +49,7 @@ public class BinarySearchTreeIterator {
     }
 
     /** @return the next smallest number */
-    public next() {
+    public int next() {
         return list.get(index++).val;
     }
 
