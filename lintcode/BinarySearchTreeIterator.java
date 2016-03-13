@@ -41,14 +41,14 @@ public class BinarySearchTreeIterator {
 
 class BSTIterator {
 
-    Stack<TreeNode> stack;
+    Stack<TreeNode> stack = new Stack<TreeNode>();
     TreeNode cur;
-    List<TreeNode> list;
-    int index;
+    List<TreeNode> list = new LinkedList<TreeNode>();
+    int index = 0;
 
     //@param root: The root of binary tree.
     public BSTIterator(TreeNode root) {
-
+        cur = root;
     }
 
     public void iterator(TreeNode root, List<TreeNode> list) {
