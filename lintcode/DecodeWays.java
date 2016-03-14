@@ -27,7 +27,8 @@ public class DecodeWays {
             if (s.charAt(i) != '0') {
                 next += cur;
             }
-            if (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2' && s.charAt(i) <= '6') {
+            if (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2' && 
+                    s.charAt(i) <= '6') {
                 next += prev;
             }
             prev = cur;
