@@ -18,6 +18,11 @@ public class DecodeWays {
      * @return an integer, the number of ways decoding
      */
     public int numDecodings(String s) {
+
+    }
+
+
+    public int numDecodings(String s) {
         if (s.length() == 0) {
             return 0;
         }
