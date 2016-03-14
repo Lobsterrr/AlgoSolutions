@@ -18,15 +18,15 @@ public class DecodeWays {
      * @return an integer, the number of ways decoding
      */
     public int numDecodings(String s) {
-        int[] dp = new int[s.length()];
-        dp[0] = 1;
+        int[] dp = new int[s.length() + 1];
+        dp[0] = dp[1] = 1;
         for (int i = 1; i < s.length(); ++i) {
-            dp[i] += dp[i - 1];
+            dp[i + 1] += dp[i];
             if (i > 1 && '0' <= s.charAt(i) && s.charAt(i) <= '6' && (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2')) {
-                dp[i] += dp[i - 2];
+                dp[i + 1] += dp[i - 1];
             }
         }
-        return dp[s.length() - 1];
+        return dp[s.length()];
     }
 
 }
