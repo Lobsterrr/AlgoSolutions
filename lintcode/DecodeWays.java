@@ -18,6 +18,9 @@ public class DecodeWays {
      * @return an integer, the number of ways decoding
      */
     public int numDecodings(String s) {
+        if (s.length() == 0) {
+            return 0;
+        }
         int[] dp = new int[s.length() + 1];
         dp[0] = dp[1] = 1;
         for (int i = 1; i < s.length(); ++i) {
