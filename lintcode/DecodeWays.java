@@ -26,7 +26,6 @@ public class DecodeWays {
                 dp[i + 1] += dp[i - 1];
             }
         }
-
         return dp[s.length()];
     }
 
