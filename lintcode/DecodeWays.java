@@ -7,7 +7,6 @@
 'Z' -> 26
 Given an encoded message containing digits, determine the total number of ways to decode it.
 
-Have you met this question in a real interview? Yes
 Example
 Tags
  Notes
