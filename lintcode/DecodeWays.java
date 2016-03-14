@@ -19,6 +19,10 @@ public class DecodeWays {
      */
     public int numDecodings(String s) {
         int[] dp = new int[s.length() + 1];
+        dp[0] = 1;
+        for (int i = 0; i < s.length(); ++i) {
+            
+        }
     }
 
 }
