@@ -20,10 +20,10 @@ public class DecodeWays {
     public int numDecodings(String s) {
         int[] dp = new int[s.length() + 1];
         dp[0] = dp[1] = 1;
-        for (int i = 2; i <= s.length(); ++i) {
-            dp[i] += dp[i - 1];
+        for (int i = 1; i < s.length(); ++i) {
+            dp[i + 1] += dp[i];
             if (i > 1 && (s.charAt(i - 2) == '1' || s.charAt(i - 2) == '2') && 10 <= Integer.parseInt(s.substring(i - 2, i)) && Integer.parseInt(s.substring(i - 2, i)) <= 26) {
-                dp[i] += dp[i - 2];
+                dp[i + 1] += dp[i - 1];
             }
         }
         return dp[s.length()];
