@@ -22,7 +22,7 @@ public class DecodeWays {
         dp[0] = dp[1] = 1;
         for (int i = 1; i < s.length(); ++i) {
             dp[i + 1] += dp[i];
-            if (i > 1 && (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2') && 10 <= Integer.parseInt(s.substring(i - 1, i + 1)) && Integer.parseInt(s.substring(i - 1, i + 1)) <= 26) {
+            if ((s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2') && 10 <= Integer.parseInt(s.substring(i - 1, i + 1)) && Integer.parseInt(s.substring(i - 1, i + 1)) <= 26) {
                 dp[i + 1] += dp[i - 1];
             }
         }
