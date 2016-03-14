@@ -22,12 +22,12 @@ public class DecodeWays {
             return 0;
         }
         int cur = 1;
-        for (int i = 2, prev = 1; i < s.length(); ++i) {
+        for (int i = 1, prev = 1; i < s.length(); ++i) {
             int next = 0;
-            if (s.charAt(i - 1) != '0') {
+            if (s.charAt(i) != '0') {
                 next += cur;
             }
-            if (s.charAt(i - 2) == '1' || s.charAt(i - 2) == '2' && s.charAt(i - 1) <= '6') {
+            if (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2' && s.charAt(i) <= '6') {
                 next += prev;
             }
             prev = cur;
