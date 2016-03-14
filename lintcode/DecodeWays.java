@@ -20,7 +20,7 @@ public class DecodeWays {
     public int numDecodings(String s) {
         int[] dp = new int[s.length() + 1];
         dp[0] = dp[1] = 1;
-        for (int i = 2; i < s.length(); ++i) {
+        for (int i = 2; i <= s.length(); ++i) {
             dp[i] += dp[i - 1];
             if (i > 1 && '0' <= s.charAt(i - 1) && s.charAt(i - 1) <= '6' && (s.charAt(i - 2) == '1' || s.charAt(i - 2) == '2')) {
                 dp[i] += dp[i - 2];
