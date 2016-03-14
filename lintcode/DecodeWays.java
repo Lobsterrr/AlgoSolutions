@@ -18,7 +18,21 @@ public class DecodeWays {
      * @return an integer, the number of ways decoding
      */
     public int numDecodings(String s) {
-
+        int prev = 1;
+        int cur = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            int tmp = cur;
+            if (s.charAt(i) > '0') {
+                cur += prev;
+            }
+            if (i > 0 && (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2') && 
+                    10 <= Integer.parseInt(s.substring(i - 1, i + 1)) && 
+                    Integer.parseInt(s.substring(i - 1, i + 1)) <= 26) {
+                cur += prev;
+            }
+            prev = cur;
+        }
+        return cur;
     }
 
 
