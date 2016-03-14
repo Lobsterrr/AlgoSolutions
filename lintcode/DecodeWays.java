@@ -18,7 +18,7 @@ public class DecodeWays {
      * @return an integer, the number of ways decoding
      */
     public int numDecodings(String s) {
-
+        int[] dp = new int[s.length() + 1];
     }
 
 }
