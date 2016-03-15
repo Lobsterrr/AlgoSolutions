@@ -31,6 +31,7 @@ public class BurstBalloons {
      */
     public int maxCoins(int[] nums) {
         int[] dp = new int[nums.length];
+        return dp[dp.length - 1];
     }
 
 }
