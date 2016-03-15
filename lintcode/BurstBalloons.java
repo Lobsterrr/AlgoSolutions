@@ -7,9 +7,6 @@ Find the maximum coins you can collect by bursting the balloons wisely.
 
 Have you met this question in a real interview? Yes
 Example
-Tags
-Related Problems
- Notes
 Given [4, 1, 5, 10]
 Return 270
 
