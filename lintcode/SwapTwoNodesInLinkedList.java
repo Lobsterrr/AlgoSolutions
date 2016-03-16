@@ -43,7 +43,7 @@ public class SwapTwoNodesInLinkedList {
                 cur1.next.next = cur.next;
                 cur.next = tmp;
                 cur2.next = cur1.next;
-
+                cur1.next = cur;
             }
             cur = cur.next;
         }
