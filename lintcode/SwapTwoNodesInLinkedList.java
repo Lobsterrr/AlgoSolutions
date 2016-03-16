@@ -48,7 +48,7 @@ public class SwapTwoNodesInLinkedList {
                 break;
             }
         }
-        return head;
+        return dummy.next;
     }
 
 }
