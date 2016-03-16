@@ -30,6 +30,8 @@ public class SwapTwoNodesInLinkedList {
         ListNode cur = head;
         ListNode cur1 = head;
         ListNode cur2 = head;
+        boolean isV1Exist = false;
+        boolean isV2Exist = false;
     }
 
 }
