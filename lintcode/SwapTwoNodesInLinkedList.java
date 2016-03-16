@@ -6,7 +6,8 @@
 
  Notice
 
-You should swap the two nodes with values v1 and v2. Do not directly swap the values of the two nodes.
+You should swap the two nodes with values v1 and v2. Do not directly 
+swap the values of the two nodes.
 
 Example
 Given 1->2->3->4->null and v1 = 2, v2 = 4.
