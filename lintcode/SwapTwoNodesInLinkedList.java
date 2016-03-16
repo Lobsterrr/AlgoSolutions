@@ -23,7 +23,6 @@ Return 1->4->3->2->null.
  * }
  */
 public class SwapTwoNodesInLinkedList {
-
     /**
      * @param head a ListNode
      * @oaram v1 an integer
