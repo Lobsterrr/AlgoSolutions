@@ -38,6 +38,7 @@ public class SwapTwoNodesInLinkedList {
             if (cur.val == v2) {
                 cur2 = cur;
             }
+            cur = cur.next;
             if (cur1 != null && cur2 != null) {
                 ListNode tmp = cur1.next.next;
                 cur1.next.next = cur.next;
@@ -45,7 +46,6 @@ public class SwapTwoNodesInLinkedList {
                 cur2.next = cur1.next;
                 cur1.next = cur;
             }
-            cur = cur.next;
         }
         return head;
     }
