@@ -45,11 +45,11 @@ public class SwapTwoNodesInLinkedList {
             }
             cur = cur.next;
             if (cur1 != null && cur2 != null) {
-                if (cur1.next = cur2) {
+                if (cur1.next == cur2) {
                     cur2.next = cur.next;
                     cur.next = cur2;
                     cur1.next = cur;
-                } else if (cur1.next.next = cur2) {
+                } else if (cur1.next.next == cur2) {
                     cur2.next = cur1.next;
                     cur1.next.next = cur.next;
                     cur.next = cur2;
