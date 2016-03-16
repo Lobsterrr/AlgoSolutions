@@ -39,7 +39,7 @@ public class SwapTwoNodesInLinkedList {
                 cur2 = cur;
             }
             if (cur1 != null && cur2 != null) {
-
+                ListNode tmp = cur1.next.next;
             }
             cur = cur.next;
         }
