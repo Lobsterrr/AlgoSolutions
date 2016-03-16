@@ -28,21 +28,18 @@ public class SwapTwoNodesInLinkedList {
      */
     public ListNode swapNodes(ListNode head, int v1, int v2) {
         ListNode dummy = new ListNode(0);
-        ListNode cur = head;
+        ListNode cur = dummy;
         ListNode cur1 = null;
         ListNode cur2 = null;
-        while (cur != null) {
-            if (cur.val == v1) {
+        while (cur.next != null) {
+            if (cur.next.val == v1) {
                 cur1 = cur;
             }
             if (cur.val == v2) {
                 cur2 = cur;
             }
             if (cur1 != null && cur2 != null) {
-                int tmp = cur1.val;
-                cur1.val = cur2.val;
-                cur2.val = tmp;
-                break;
+
             }
             cur = cur.next;
         }
