@@ -28,6 +28,7 @@ public class SwapTwoNodesInLinkedList {
      */
     public ListNode swapNodes(ListNode head, int v1, int v2) {
         ListNode dummy = new ListNode(0);
+        dummy.next = head;
         ListNode cur = dummy;
         ListNode cur1 = null;
         ListNode cur2 = null;
