@@ -27,11 +27,10 @@ public class SwapTwoNodesInLinkedList {
      * @return a new head of singly-linked list
      */
     public ListNode swapNodes(ListNode head, int v1, int v2) {
+        ListNode dummy = new ListNode(0);
         ListNode cur = head;
         ListNode cur1 = null;
         ListNode cur2 = null;
-        boolean isV1Exist = false;
-        boolean isV2Exist = false;
         while (cur != null) {
             if (cur.val == v1) {
                 cur1 = cur;
