@@ -7,9 +7,6 @@ Have you met this question in a real interview? Yes
 You should swap the two nodes with values v1 and v2. Do not directly swap the values of the two nodes.
 
 Example
-Tags
-Related Problems
- Notes
 Given 1->2->3->4->null and v1 = 2, v2 = 4.
 
 Return 1->4->3->2->null.
