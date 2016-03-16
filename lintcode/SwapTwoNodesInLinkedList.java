@@ -48,15 +48,17 @@ public class SwapTwoNodesInLinkedList {
                 if (cur1.next = cur2) {
 
                 } else if (cur1.next.next = cur2) {
-
+                    cur2.next = cur1.next;
+                    cur1.next.next = cur.next;
+                    cur.next = cur2;
+                    cur1.next = cur;
                 } else {
-
+                    ListNode tmp = cur1.next.next;
+                    cur1.next.next = cur.next;
+                    cur.next = tmp;
+                    cur2.next = cur1.next;
+                    cur1.next = cur;
                 }
-                ListNode tmp = cur1.next.next;
-                cur1.next.next = cur.next;
-                cur.next = tmp;
-                cur2.next = cur1.next;
-                cur1.next = cur;
                 break;
             }
         }
