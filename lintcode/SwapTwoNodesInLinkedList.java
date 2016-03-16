@@ -27,7 +27,9 @@ public class SwapTwoNodesInLinkedList {
      * @return a new head of singly-linked list
      */
     public ListNode swapNodes(ListNode head, int v1, int v2) {
-
+        ListNode cur = head;
+        ListNode cur1 = head;
+        ListNode cur2 = head;
     }
 
 }
