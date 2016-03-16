@@ -33,7 +33,13 @@ public class SwapTwoNodesInLinkedList {
         boolean isV1Exist = false;
         boolean isV2Exist = false;
         while (cur != null) {
-            if (cur2
+            if (cur.val == v1) {
+                cur1 = cur;
+            }
+            if (cur.val == v2) {
+                cur2 = cur;
+            }
+            cur = cur.next;
         }
     }
 
