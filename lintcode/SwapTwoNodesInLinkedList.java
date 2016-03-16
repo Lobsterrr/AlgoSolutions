@@ -50,7 +50,7 @@ public class SwapTwoNodesInLinkedList {
                 cur.next = tmp;
                 cur2.next = cur1.next;
                 cur1.next = cur;
-                return dummy.next;
+                break;
             }
         }
         return dummy.next;
