@@ -9,6 +9,7 @@ In Java:
 A a = A.getInstance();
 A b = A.getInstance();
 a should equal to b.
+
  */
 public class Singleton {
     
