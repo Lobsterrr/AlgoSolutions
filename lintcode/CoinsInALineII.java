@@ -19,6 +19,9 @@ public class CoinsInALineII {
         dp[values.length] = 0;
         dp[values.length - 1] = values[values.length - 1];
         dp[values.length - 2] = values[values.length - 1] + values[values.length - 2];
+        for (int i = values.length - 3; i >= 0; --i) {
+
+        }
     }
 
 }
