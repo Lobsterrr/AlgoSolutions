@@ -3,7 +3,6 @@
 
 You job is to implement a getInstance method for given class, return the same instance of this class every time you call this method.
 
-Have you met this question in a real interview? Yes
 Example
 In Java:
 
