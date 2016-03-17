@@ -5,9 +5,6 @@ Could you please decide the first player will win or lose?
 
 Have you met this question in a real interview? Yes
 Example
-Tags
-Related Problems
- Notes
 Given values array A = [1,2,2], return true.
 
 Given A = [1,2,4], return false.
