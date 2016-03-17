@@ -10,6 +10,11 @@ A a = A.getInstance();
 A b = A.getInstance();
 a should equal to b.
 
+Challenge
+Tags
+Related Problems
+ Notes
+If we call getInstance concurrently, can you make sure your code could run correctly?
  */
 public class Singleton {
     
