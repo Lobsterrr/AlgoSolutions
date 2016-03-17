@@ -27,7 +27,7 @@ public class Singleton {
         return singleton;
     }
 
-/*******************************************************************/
+/*********************************************************/
 
     public static Singleton singleton = new Singleton();
 
@@ -35,7 +35,7 @@ public class Singleton {
         return singleton;
     }
 
-/*******************************************************************/
+/*********************************************************/
 
     public static class loadHolder {
         static Singleton singleton = new Singleton();
