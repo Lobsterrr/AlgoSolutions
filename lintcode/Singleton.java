@@ -37,4 +37,12 @@ public class Singleton {
 
 /*******************************************************************/
 
+    public static class loadHolder {
+        static Singleton singleton = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return loadHolder.singleton;
+    }
+
 }
