@@ -3,7 +3,6 @@
 
 Could you please decide the first player will win or lose?
 
-Have you met this question in a real interview? Yes
 Example
 Given values array A = [1,2,2], return true.
 
