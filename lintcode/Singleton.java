@@ -5,7 +5,9 @@
  * Mouse (not a animal mouse), we should design it in 
  * singleton.
 
-You job is to implement a getInstance method for given class, return the same instance of this class every time you call this method.
+You job is to implement a getInstance method for given 
+class, return the same instance of this class every time 
+you call this method.
 
 Example
 In Java:
