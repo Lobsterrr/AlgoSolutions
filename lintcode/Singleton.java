@@ -5,10 +5,6 @@ You job is to implement a getInstance method for given class, return the same in
 
 Have you met this question in a real interview? Yes
 Example
-Challenge
-Tags
-Related Problems
- Notes
 In Java:
 
 A a = A.getInstance();
