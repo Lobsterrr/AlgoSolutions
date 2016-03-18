@@ -30,6 +30,8 @@ public class CoinsInALineII {
         return dp[0] > sum - dp[0];
     }
 
+/*****************************************************************************/
+
     public boolean firstWillWin(int[] values) {
         int[] dp = new int[values.length];
         int sum = 0;
