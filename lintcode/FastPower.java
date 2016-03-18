@@ -1,7 +1,6 @@
 /*
  * Calculate the an % b where a, b and n are all 32bit integers.
 
-Have you met this question in a real interview? Yes
 Example
 For 2 ^ 31 % 3 = 2
 
