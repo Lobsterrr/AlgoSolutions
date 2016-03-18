@@ -22,7 +22,9 @@ public class CoinsInALineII {
         for (int i = values.length - 3; i >= 0; --i) {
             int value1 = values[i] + Math.min(dp[i + 2], dp[i + 3]);
             int value2 = values[i] + values[i + 1] + Math.min(dp[i + 3], dp[i + 4]);
+            dp[i] = Math.max(value1, value2);
         }
+        return dp[0];
     }
 
 }
