@@ -16,7 +16,10 @@ public class FastPower {
      * @return: An integer
      */
     public int fastPower(int a, int b, int n) {
-
+        if (n == 0 || n == 1) {
+            return Math.pow(a, n) % b;
+        }
+        int result = fast
     }
 
 }
