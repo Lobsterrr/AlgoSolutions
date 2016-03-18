@@ -25,7 +25,11 @@ public class CoinsInALineII {
             int value2 = values[i] + values[i + 1] + Math.min(dp[i + 3], dp[i + 4]);
             dp[i] = Math.max(value1, value2);
         }
-        return dp[0];
+        int sum = 0;
+        for (int value : values) {
+            sum += value;
+        }
+        return dp[0] > sum - dp[0];
     }
 
 }
