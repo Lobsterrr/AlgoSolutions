@@ -18,8 +18,8 @@ public class CoinsInALineII {
         if (values.length <= 2) {
             return true;
         }
-        int[] dp = new int[values.length + 1];
-
+        int[] dp = new int[values.length];
+        for (int i = values.length - 1; i
     }
 
     public boolean firstWillWin(int[] values) {
