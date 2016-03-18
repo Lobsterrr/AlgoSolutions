@@ -5,6 +5,9 @@ Example
 For 2 ^ 31 % 3 = 2
 
 For 100 ^ 1000 % 1000 = 0
+
+Challenge
+O(logn)
  */
 public class FastPower {
 
