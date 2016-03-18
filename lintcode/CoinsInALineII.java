@@ -38,7 +38,7 @@ public class CoinsInALineII {
             int b = i + 2 < values.length ? dp[(i + 2) % 5] : 0;
             int c = i + 3 < values.length ? dp[(i + 3) % 5] : 0;
             int d = i + 4 < values.length ? dp[(i + 4) % 5] : 0;
-            dp[i] = values[i] + Math.max(Math.min(b, c), a + Math.min(c, d));
+            dp[i % 5] = values[i] + Math.max(Math.min(b, c), a + Math.min(c, d));
             sum += values[i];
         }
         return dp[0] > sum - dp[0];
