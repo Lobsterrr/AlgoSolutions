@@ -15,9 +15,6 @@ public class CoinsInALineII {
      * @return: a boolean which equals to true if the first player will win
      */
     public boolean firstWillWin(int[] values) {
-        if (values.length <= 2) {
-            return true;
-        }
         int[] dp = new int[values.length];
         int sum = 0;
         for (int i = values.length - 1; i >= 0; --i) {
@@ -28,6 +25,7 @@ public class CoinsInALineII {
             dp[i] = values[i] + Math.max(Math.min(b, c), a + Math.min(c, d));
             sum += values[i];
         }
+        return dp[0] > sum - dp[0];
     }
 
     public boolean firstWillWin(int[] values) {
