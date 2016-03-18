@@ -19,7 +19,12 @@ public class FastPower {
         if (n == 0 || n == 1) {
             return Math.pow(a, n) % b;
         }
-        int result = fast
+        int half = fastPower(a, b, n / 2);
+        int result = half * half % b;
+        if (n % 2 == 1) {
+            result = result * a % b;
+        }
+        return result;
     }
 
 }
