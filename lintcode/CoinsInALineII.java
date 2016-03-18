@@ -15,7 +15,6 @@ public class CoinsInALineII {
      * @return: a boolean which equals to true if the first player will win
      */
     public boolean firstWillWin(int[] values) {
-
     }
 
     public boolean firstWillWin(int[] values) {
