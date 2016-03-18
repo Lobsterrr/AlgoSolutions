@@ -19,12 +19,14 @@ public class CoinsInALineII {
             return true;
         }
         int[] dp = new int[values.length];
+        int sum = 0;
         for (int i = values.length - 1; i >= 0; --i) {
             int a = i + 1 < values.length ? values[i + 1] : 0;
             int b = i + 2 < values.length ? dp[i + 2] : 0;
             int c = i + 3 < values.length ? dp[i + 3] : 0;
             int d = i + 4 < values.length ? dp[i + 4] : 0;
             dp[i] = values[i] + Math.max(Math.min(b, c), a + Math.min(c, d));
+            sum += values[i];
         }
     }
 
