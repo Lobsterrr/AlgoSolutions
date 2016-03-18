@@ -17,14 +17,14 @@ public class FastPower {
      */
     public int fastPower(int a, int b, int n) {
         if (n == 0 || n == 1) {
-            return Math.pow(a, n) % b;
+            return (int) Math.pow(a, n) % b;
         }
-        int half = fastPower(a, b, n / 2);
-        int result = half * half % b;
+        long half = fastPower(a, b, n / 2);
+        long result = half * half % b;
         if (n % 2 == 1) {
             result = result * a % b;
         }
-        return result;
+        return (int) result;
     }
 
 }
