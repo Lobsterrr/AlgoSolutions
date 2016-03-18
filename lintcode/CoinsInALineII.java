@@ -31,7 +31,7 @@ public class CoinsInALineII {
     }
 
     public boolean firstWillWin(int[] values) {
-        int[] dp = new int[values.length];
+        int[] dp = new int[5];
         int sum = 0;
         for (int i = values.length - 1; i >= 0; --i) {
             int a = i + 1 < values.length ? values[i + 1] : 0;
