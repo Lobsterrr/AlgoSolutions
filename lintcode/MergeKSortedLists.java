@@ -32,6 +32,9 @@ public class MergeKSortedLists {
      */
     public ListNode mergeKLists(List<ListNode> lists) {
         ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        ListNode pointer = null;
+        
     }
 
 }
