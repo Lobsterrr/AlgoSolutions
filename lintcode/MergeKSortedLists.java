@@ -3,7 +3,6 @@
 
 Analyze and describe its complexity.
 
-Have you met this question in a real interview? Yes
 Example
 Given lists:
 
