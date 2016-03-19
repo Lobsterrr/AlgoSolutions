@@ -27,16 +27,4 @@ public class FastPower {
         return (int) result;
     }
 
-    public int fastPower(int a, int b, int n) {
-        if (n == 0) {
-            return 1 % b;
-        }
-        int result = fastPower(a, b, n / 2);
-        result = (result % b) * (result % b) % b;
-        if (n % 2 == 1) {
-            result = result * a % b;
-        }
-        return result;
-    }
-
 }
