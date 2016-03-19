@@ -1,5 +1,21 @@
 /*
- *
+ * Merge k sorted linked lists and return it as one sorted list.
+
+Analyze and describe its complexity.
+
+Have you met this question in a real interview? Yes
+Example
+Tags
+Related Problems
+ Notes
+Given lists:
+
+[
+  2->4->null,
+  null,
+  -1->null
+],
+return -1->2->4->null.
  */
 /**
  * Definition for ListNode.
