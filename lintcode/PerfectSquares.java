@@ -20,8 +20,10 @@ public class PerfectSquares {
             dp[i * i] = 1;
         }
         for (int i = 1; i <= n; ++i) {
-            if (n / i * i != n) {
-                for (int j = 1; j <= i - 1; ++j) {
+            for (int j = 0; j <= i - 1; ++j) {
+                if (dp[i] == 0) {
+                    dp[i] = dp[j] + dp[i - j];
+                } else {
                     dp[i] = Math.min(dp[i], dp[j] + dp[i - j]);
                 }
             }
