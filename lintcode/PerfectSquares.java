@@ -15,8 +15,7 @@ public class PerfectSquares {
      */
     public int numSquares(int n) {
         int[] dp = new int[n + 1];
-        dp[0] = 1;
-        for (int i = 1; i * i <= n; ++i) {
+        for (int i = 0; i * i <= n; ++i) {
             dp[i * i] = 1;
         }
         for (int i = 1; i <= n; ++i) {
