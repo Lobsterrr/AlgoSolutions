@@ -21,7 +21,7 @@ public class PerfectSquares {
         }
         for (int i = 1; i <= n; ++i) {
             if (n / i * i != n) {
-
+                
             }
         }
     }
