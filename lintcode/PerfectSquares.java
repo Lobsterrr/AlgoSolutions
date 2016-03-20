@@ -22,10 +22,11 @@ public class PerfectSquares {
         for (int i = 1; i <= n; ++i) {
             if (n / i * i != n) {
                 for (int j = 1; j <= i - 1; ++j) {
-                    
+                    dp[i] = Math.min(dp[i], dp[j] + dp[i - j];
                 }
             }
         }
+        return dp[n];
     }
 
 }
