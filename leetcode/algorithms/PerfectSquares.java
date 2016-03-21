@@ -27,8 +27,9 @@ public class PerfectSquares {
     }
 
     public int numSquares(int n) {
-        if (Math.pow((int) Math.sqrt(n), 2) == n)
+        if (Math.pow((int) Math.sqrt(n), 2) == n) {
             return 1;
+        }
         while (n % 4 == 0) {
             n /= 4;
         }
