@@ -38,7 +38,7 @@ public class PerfectSquares {
             }
             dp[i] = minNum;
         }
-        
+        return dp[n];
     }
 
     public int numSquares(int n) {
