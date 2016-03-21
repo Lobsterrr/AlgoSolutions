@@ -29,6 +29,8 @@ public class PerfectSquares {
 
 /*******************************************************************/
 
+    public int numSquares
+
     public int numSquares(int n) {
         int[] dp = new int[n + 1];
         for (int i = 0; i <= n; ++i) {
