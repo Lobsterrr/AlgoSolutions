@@ -25,4 +25,8 @@ public class PerfectSquares {
         return dp[n];
     }
 
+    public int numSquares(int n) {
+        int[] dp = new int[n + 1];
+    }
+
 }
