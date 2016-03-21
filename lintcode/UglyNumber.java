@@ -9,9 +9,6 @@ Have you met this question in a real interview? Yes
 Note that 1 is typically treated as an ugly number.
 
 Example
-Tags
-Related Problems
- Notes
 Given num = 8 return true
 Given num = 14 return false
  */
