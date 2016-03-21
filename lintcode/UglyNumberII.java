@@ -10,7 +10,7 @@ If K=4, return 9.
 Challenge
 O(K log K) or O(K) time.
  */
-public class UglyNumber {
+public class UglyNumberII {
 
     /**
      * @param k: The number k.
