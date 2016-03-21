@@ -34,9 +34,11 @@ public class PerfectSquares {
         for (int i = 1; i <= n; ++i) {
             int minNum = Integer.MAX_VALUE;
             for (int j = 1; j * j <= i; ++j) {
-
+                minNum = Math.min(minNum, dp[i - j * j] + 1);
             }
+            dp[i] = minNum;
         }
+        
     }
 
     public int numSquares(int n) {
