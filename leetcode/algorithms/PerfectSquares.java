@@ -34,6 +34,7 @@ public class PerfectSquares {
         for (int i = 1; i <= n; ++i) {
             int minNum = Integer.MAX_VALUE;
             for (int j = 1; j * j <= i; ++j) {
+
             }
         }
     }
