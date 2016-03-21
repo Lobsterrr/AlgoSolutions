@@ -41,19 +41,4 @@ public class PerfectSquares {
         return dp[n];
     }
 
-    public int numSquares(int n) {
-        int[] dp = new int[n + 1];
-        for (int i = 0; i <= n; ++i) {
-            if (i * i <= n)
-                dp[i * i] = 1;
-            if (dp[i] == 0) {
-                dp[i] = Integer.MAX_VALUE;
-                for (int j = 1; j <= i / 2; ++j) {
-                    dp[i] = Math.min(dp[i], dp[j] + dp[i - j]);
-                }
-            }
-        }
-        return dp[n];
-    }
-
 }
