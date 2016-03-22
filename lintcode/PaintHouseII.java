@@ -28,9 +28,20 @@ public class PaintHouseII {
         for (int i = 1; i < costs.length; ++i) {
             for (int j = 0; j < costs[0].length; ++j) {
                 int min = Integer.MAX_VALUE;
-                for (int k = 
+                for (int k = 0; k < costs[0].length; ++k) {
+                    if (k == j) {
+                        continue;
+                    }
+                    min = Math.min(min, costs[i - 1][k]);
+                }
+                costs[i][j] = min;
             }
         }
+        int result = Integer.MAX_VALUE;
+        for (int i = 0; i < costs[0].length; ++i) {
+            result = Math.min(result, costs[costs.length - 1][i]);
+        }
+        return result;
     }
 
 }
