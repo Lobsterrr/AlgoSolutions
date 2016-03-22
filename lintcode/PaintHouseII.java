@@ -25,6 +25,9 @@ public class PaintHouseII {
         if (costs == null || costs.length == 0) {
             return 0;
         }
+        for (int i = 0; i < costs.length; ++i) {
+
+        }
     }
 
 }
