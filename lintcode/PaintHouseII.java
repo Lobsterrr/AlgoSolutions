@@ -25,8 +25,11 @@ public class PaintHouseII {
         if (costs == null || costs.length == 0) {
             return 0;
         }
-        for (int i = 0; i < costs.length; ++i) {
-
+        for (int i = 1; i < costs.length; ++i) {
+            for (int j = 0; j < costs[0].length; ++j) {
+                int min = Integer.MAX_VALUE;
+                for (int k = 
+            }
         }
     }
 
