@@ -11,6 +11,12 @@ Example
 Given n = 3, k = 3, costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
 
 house 0 is color 2, house 1 is color 3, house 2 is color 2, 2 + 5 + 3 = 10
+
+Challenge
+Tags
+Related Problems
+ Notes
+Could you solve it in O(nk)?
  */
 public class PaintHouseII {
 
