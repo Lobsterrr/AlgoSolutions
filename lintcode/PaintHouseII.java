@@ -34,7 +34,7 @@ public class PaintHouseII {
                     }
                     min = Math.min(min, costs[i - 1][k]);
                 }
-                costs[i][j] = min;
+                costs[i][j] += min;
             }
         }
         int result = Integer.MAX_VALUE;
