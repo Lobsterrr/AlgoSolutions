@@ -9,9 +9,6 @@ Have you met this question in a real interview? Yes
 All costs are positive integers.
 
 Example
-Tags
-Related Problems
- Notes
 Given costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
 
 house 0 is blue, house 1 is green, house 2 is blue, 2 + 5 + 3 = 10
