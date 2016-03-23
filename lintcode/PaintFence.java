@@ -32,7 +32,7 @@ public class PaintFence {
         if (n == 1) {
             return k;
         }
-        int[] dp = new int[n + 1];
+        int[] dp = new int[n];
         dp[0] = k;
         dp[1] = (k - 1) * dp[0] + k;
         for (int i = 2; i < n; ++i) {
