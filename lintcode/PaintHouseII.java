@@ -22,6 +22,10 @@ public class PaintHouseII {
      * @return an integer, the minimum cost to paint all houses
      */
     public int minCostII(int[][] costs) {
+
+    }
+
+    public int minCostII(int[][] costs) {
         if (costs == null || costs.length == 0) {
             return 0;
         }
