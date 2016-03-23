@@ -9,9 +9,6 @@ Have you met this question in a real interview? Yes
 n and k are non-negative integers.
 
 Example
-Tags
-Related Problems
- Notes
 Given n=3, k=2 return 6
 
       post 1,   post 2, post 3
