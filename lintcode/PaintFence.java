@@ -3,7 +3,6 @@
 You have to paint all the posts such that no more than two adjacent fence posts have the same color.
 Return the total number of ways you can paint the fence.
 
-Have you met this question in a real interview? Yes
  Notice
 
 n and k are non-negative integers.
