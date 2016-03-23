@@ -31,9 +31,7 @@ public class PaintFence {
         if (n <= 1) {
             return n * k;
         }
-        int[] dp = new int[3];
-        dp[0] = k;
-        dp[1] = k * k;
+        int[] dp = {k, k * k, 0};
         for (int i = 2; i < n; ++i) {
             dp[i % 3] = (k - 1) * (dp[(i - 1) % 3] + dp[(i - 2) % 3]);
         }
