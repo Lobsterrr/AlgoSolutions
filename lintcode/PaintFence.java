@@ -26,7 +26,9 @@ public class PaintFence {
      * @return an integer, the total number of ways
      */
     public int numWays(int n, int k) {
+        for (int i = 1; i < n; ++i) {
 
+        }
     }
 
 }
