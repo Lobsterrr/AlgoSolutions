@@ -26,11 +26,8 @@ public class PaintFence {
      * @return an integer, the total number of ways
      */
     public int numWays(int n, int k) {
-        if (n == 0) {
-            return 0;
-        }
-        if (n == 1) {
-            return k;
+        if (n <= 1) {
+            return n * k;
         }
         int[] dp = new int[n];
         dp[0] = k;
