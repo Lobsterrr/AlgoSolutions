@@ -34,9 +34,6 @@ public class MergeKSortedLists {
         if (lists.size() == 0) {
             return result;
         }
-        if (lists.size() == 1) {
-            return lists.get(0);
-        }
         ListNode result = lists.get(0);
         for (int i = 1; i < lists.size(); ++i) {
             result = mergeTwoLists(result, lists.get(i));
