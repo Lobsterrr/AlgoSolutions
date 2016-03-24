@@ -33,11 +33,7 @@ public class MergeKSortedLists {
     public ListNode mergeKLists(List<ListNode> lists) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
-        ListNode pointer = null;
-        boolean isAllNull = false;
-        while (!isAllNull) {
-            
-        }
+        
     }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
