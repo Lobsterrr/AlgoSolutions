@@ -36,11 +36,7 @@ public class MergeKSortedLists {
         ListNode pointer = null;
         boolean isAllNull = false;
         while (!isAllNull) {
-
-        }
-        for (ListNode list : lists) {
-            pointer = list;
-
+            
         }
     }
 
