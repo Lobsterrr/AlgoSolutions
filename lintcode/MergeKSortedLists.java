@@ -31,8 +31,10 @@ public class MergeKSortedLists {
      * @return: The head of one sorted list.
      */
     public ListNode mergeKLists(List<ListNode> lists) {
-        ListNode dummy = new ListNode(0);
-        ListNode cur = dummy;
+        ListNode result = null;
+        if (lists.size() == 0) {
+            
+        }
         
     }
 
