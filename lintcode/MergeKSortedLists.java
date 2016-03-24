@@ -32,7 +32,7 @@ public class MergeKSortedLists {
      */
     public ListNode mergeKLists(List<ListNode> lists) {
         if (lists.size() == 0) {
-            return result;
+            return null;
         }
         ListNode result = lists.get(0);
         for (int i = 1; i < lists.size(); ++i) {
