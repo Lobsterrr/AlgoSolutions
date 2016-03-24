@@ -33,7 +33,10 @@ public class MergeKSortedLists {
     public ListNode mergeKLists(List<ListNode> lists) {
         ListNode result = null;
         if (lists.size() == 0) {
-            
+            return result;
+        }
+        if (lists.size() == 1) {
+            return lists.get(0);
         }
         
     }
