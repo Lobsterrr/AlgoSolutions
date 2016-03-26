@@ -21,5 +21,8 @@ public class CountingBits {
 
     }
 
+    public int hammingWeight(int n) {
+
+    }
 
 }
