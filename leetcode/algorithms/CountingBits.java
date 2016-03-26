@@ -22,7 +22,7 @@ public class CountingBits {
     }
 
     public int countBit(int num) {
-
+        
     }
 
 }
