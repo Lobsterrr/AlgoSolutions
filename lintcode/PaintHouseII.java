@@ -29,9 +29,6 @@ public class PaintHouseII {
      */
     // O(nk);
     public int minCostII(int[][] costs) {
-        if (costs == null || costs.length == 0) {
-            return 0;
-        }
         int prevMin = 0;
         int prevSecMin = 0;
         int prevMinIndex = -1;
