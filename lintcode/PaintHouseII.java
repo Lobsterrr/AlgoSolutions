@@ -25,6 +25,8 @@ public class PaintHouseII {
         if (costs == null || costs.length == 0) {
             return 0;
         }
+        int prevMin = Integer.MAX_VALUE;
+        int prevSecMin = Integer.MAX_VALUE;
 
     }
 
