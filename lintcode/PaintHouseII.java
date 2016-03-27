@@ -27,6 +27,7 @@ public class PaintHouseII {
      * @param costs n x k cost matrix
      * @return an integer, the minimum cost to paint all houses
      */
+    // O(nk);
     public int minCostII(int[][] costs) {
         if (costs == null || costs.length == 0) {
             return 0;
@@ -57,6 +58,7 @@ public class PaintHouseII {
 
 /*****************************************************************************/
 
+    // O(n * k^2)
     public int minCostII(int[][] costs) {
         if (costs == null || costs.length == 0) {
             return 0;
