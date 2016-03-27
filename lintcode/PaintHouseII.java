@@ -27,7 +27,10 @@ public class PaintHouseII {
         }
         int prevMin = Integer.MAX_VALUE;
         int prevSecMin = Integer.MAX_VALUE;
-
+        int minIndex = 0;
+        for (int i = 1; i < costs.length; ++i) {
+        
+        }
     }
 
     public int minCostII(int[][] costs) {
