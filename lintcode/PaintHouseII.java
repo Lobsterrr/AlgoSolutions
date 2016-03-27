@@ -41,9 +41,16 @@ public class PaintHouseII {
                 } else if (costs[i][j] < curSecMin) {
                     curSecMin = costs[i][j];
                 }
-
             }
+            prevMin = curMin;
+            prevSecMin = curSecMin;
+            prevMinIndex = curMinIndex;
         }
+        int result = Integer.MAX_VALUE;
+        for (int i = 0; i < costs[0].length; ++i) {
+            result = Math.min(result, costs[costs.length - 1][i]);
+        }
+        return result;
     }
 
     public int minCostII(int[][] costs) {
