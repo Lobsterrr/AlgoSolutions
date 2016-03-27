@@ -31,8 +31,18 @@ public class PaintHouseII {
         for (int i = 1; i < costs.length; ++i) {
             int curMin = Integer.MAX_VALUE;
             int curSecMin = Integer.MAX_VALUE;
-            int curMinIndex = 0;
+            int curMinIndex = -1;
+            for (int j = 0; j < costs[0].length; ++j) {
+                costs[i][j] += j != prevMinIndex ? prevMin : prevSecMin;
+                if (costs[i][j] < curMin) {
+                    curSecMin = curMin;
+                    curMin = costs[i][j];
+                    curMinIndex = j;
+                } else if (costs[i][j] < curSecMin) {
+                    curSecMin = costs[i][j];
+                }
 
+            }
         }
     }
 
