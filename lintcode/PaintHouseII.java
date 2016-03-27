@@ -25,11 +25,14 @@ public class PaintHouseII {
         if (costs == null || costs.length == 0) {
             return 0;
         }
-        int prevMin = Integer.MAX_VALUE;
-        int prevSecMin = Integer.MAX_VALUE;
-        int minIndex = 0;
+        int prevMin = 0;
+        int prevSecMin = 0;
+        int prevMinIndex = -1;
         for (int i = 1; i < costs.length; ++i) {
-        
+            int curMin = Integer.MAX_VALUE;
+            int curSecMin = Integer.MAX_VALUE;
+            int curMinIndex = 0;
+
         }
     }
 
