@@ -19,7 +19,7 @@ public class SuperUglyNumber {
      * @return the nth super ugly number
      */
     public int nthSuperUglyNumber(int n, int[] primes) {
-
+        int[] result = new int[n + 1];
     }
 
 }
