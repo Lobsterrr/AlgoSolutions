@@ -21,27 +21,17 @@ public class SuperUglyNumber {
     public int nthSuperUglyNumber(int n, int[] primes) {
         int[] result = new int[n];
         result[0] = 1;
-        int next2 = 2;
-        int next7 = 7;
-        int next13 = 13;
-        int next19 = 19;
-        int i2 = 0;
-        int i7 = 0;
-        int i13 = 0;
-        int i19 = 0;
+        int[] next = Arrays.copyOf(primes, primes.length);
+        int[] index = new int[primes.length];
         for (int i = 1; i < n; ++i) {
-            result[i] = Math.min(Math.min(next2, next7), Math.min(next13, next19));
-            if (result[i] == next2) {
-                next2 = result[++i2] * 2;
+            result[i] = Integer.MAX_VALUE;
+            for (int j = 0; j < next.length; ++j) {
+                result[i] = Math.min(result[i], next[j]);
             }
-            if (result[i] == next7) {
-                next7 = result[++i7] * 7;
-            }
-            if (result[i] == next13) {
-                next13 = result[++i13] * 13;
-            }
-            if (result[i] == next19) {
-                next19 = result[++i19] * 19;
+            for (int j = 0; j < next.length; ++j) {
+                if (result[i] = next[j]) {
+                    next[j] = result[++index[j]] * primes[j];
+                }
             }
         }
         return result[n - 1];
