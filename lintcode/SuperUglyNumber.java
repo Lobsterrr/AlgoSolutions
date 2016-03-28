@@ -29,7 +29,7 @@ public class SuperUglyNumber {
                 result[i] = Math.min(result[i], next[j]);
             }
             for (int j = 0; j < next.length; ++j) {
-                if (result[i] = next[j]) {
+                if (result[i] == next[j]) {
                     next[j] = result[++index[j]] * primes[j];
                 }
             }
