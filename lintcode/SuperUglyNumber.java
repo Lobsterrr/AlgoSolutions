@@ -20,6 +20,14 @@ public class SuperUglyNumber {
      */
     public int nthSuperUglyNumber(int n, int[] primes) {
         int[] result = new int[n + 1];
+        int next2 = 2;
+        int next7 = 7;
+        int next13 = 13;
+        int next19 = 19;
+        int i2 = 0;
+        int i7 = 0;
+        int i13 = 0;
+        int i19 = 0;
     }
 
 }
