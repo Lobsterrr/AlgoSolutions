@@ -30,7 +30,7 @@ public class SuperUglyNumber {
         int i13 = 0;
         int i19 = 0;
         for (int i = 1; i < n; ++i) {
-            int result[i] = Math.min(Math.min(next2, next7), Math.min(next13, next19));
+            result[i] = Math.min(Math.min(next2, next7), Math.min(next13, next19));
             if (result[i] == next2) {
                 next2 = result[i2++] * 2;
             }
