@@ -32,16 +32,16 @@ public class SuperUglyNumber {
         for (int i = 1; i < n; ++i) {
             result[i] = Math.min(Math.min(next2, next7), Math.min(next13, next19));
             if (result[i] == next2) {
-                next2 = result[i2++] * 2;
+                next2 = result[++i2] * 2;
             }
             if (result[i] == next7) {
-                next7 = result[i7++] * 7;
+                next7 = result[++i7] * 7;
             }
             if (result[i] == next13) {
-                next13 = result[i13++] * 13;
+                next13 = result[++i13] * 13;
             }
             if (result[i] == next19) {
-                next19 = result[i19++] * 19;
+                next19 = result[++i19] * 19;
             }
         }
         return result[n - 1];
