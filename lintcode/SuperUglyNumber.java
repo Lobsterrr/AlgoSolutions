@@ -25,7 +25,7 @@ public class SuperUglyNumber {
         int[] result = new int[n];
         result[0] = 1;
         int[] index = new int[primes.length];
-        for (i = 1; i < n; ++i) {
+        for (int i = 1; i < n; ++i) {
             result[i] = Integer.MAX_VALUE;
             for (int j = 0; j < primes.length; ++j) {
                 result[i] = Math.min(result[i], result[index[j]] * primes[j]);
