@@ -39,23 +39,4 @@ public class SuperUglyNumber {
         return result[n - 1];
     }
 
-    public int nthSuperUglyNumber(int n, int[] primes) {
-        int[] result = new int[n];
-        result[0] = 1;
-        int[] next = Arrays.copyOf(primes, primes.length);
-        int[] index = new int[primes.length];
-        for (int i = 1; i < n; ++i) {
-            result[i] = Integer.MAX_VALUE;
-            for (int j = 0; j < next.length; ++j) {
-                result[i] = Math.min(result[i], next[j]);
-            }
-            for (int j = 0; j < next.length; ++j) {
-                if (result[i] == next[j]) {
-                    next[j] = result[++index[j]] * primes[j];
-                }
-            }
-        }
-        return result[n - 1];
-    }
-
 }
