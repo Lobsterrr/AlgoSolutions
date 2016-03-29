@@ -22,7 +22,21 @@ public class SuperUglyNumber {
      * @return the nth super ugly number
      */
     public int nthSuperUglyNumber(int n, int[] primes) {
-
+        int[] result = new int[n];
+        result[0] = 1;
+        int[] index = new int[primes.length];
+        for (i = 1; i < n; ++i) {
+            result[i] = Integer.MAX_VALUE;
+            for (int j = 0; j < primes.length; ++j) {
+                result[i] = Math.min(result[i], result[index[j]] * primes[j]);
+            }
+            for (int j = 0; j < primes.length; ++j) {
+                if (result[i] == result[index[j]] * primes[j]) {
+                    index[j]++;
+                }
+            }
+        }
+        return result[n - 1];
     }
 
     public int nthSuperUglyNumber(int n, int[] primes) {
