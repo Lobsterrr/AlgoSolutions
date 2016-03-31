@@ -29,11 +29,13 @@ public class ImplementTrie {
 
 class TrieNode {
 
-    int[] trie;
+    int[] children;
+    String item;
 
     // Initialize your data structure here.
     public TrieNode() {
         trie = new int[26];
+        item = "";
     }
 
 }
