@@ -29,6 +29,7 @@ public class ImplementTrie {
 
 class TrieNode {
 
+    // Initialize your data structure here.
     public TrieNode() {
 
     }
