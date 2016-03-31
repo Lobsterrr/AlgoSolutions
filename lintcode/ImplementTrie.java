@@ -50,7 +50,7 @@ public class ImplementTrie {
     // that starts with the given prefix.
     public boolean startsWith(String prefix) {
         TrieNode cur = root;
-        for (char c : word.toCharArray()) {
+        for (char c : prefix.toCharArray()) {
             if (cur.children[c - 'a'] == null) {
                 return false;
             }
