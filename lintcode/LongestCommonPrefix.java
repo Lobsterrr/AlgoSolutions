@@ -13,7 +13,15 @@ public class LongestCommonPrefix {
      * @return: The longest common prefix
      */
     public String longestCommonPrefix(String[] strs) {
+        int endIndex = 0;
+        for (int i = 1; i < strs.length; ++i) {
+            
 
+
+            if (endIndex == strs[i].length()) {
+                break;
+            }
+        }
     }
 
 }
