@@ -29,9 +29,11 @@ public class ImplementTrie {
 
 class TrieNode {
 
+    int[] trie;
+
     // Initialize your data structure here.
     public TrieNode() {
-
+        trie = new int[26];
     }
 
 }
