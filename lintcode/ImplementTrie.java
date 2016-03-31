@@ -68,7 +68,7 @@ class TrieNode {
 
     // Initialize your data structure here.
     public TrieNode() {
-        trie = new TrieNode[26];
+        children = new TrieNode[26];
         item = "";
     }
 
