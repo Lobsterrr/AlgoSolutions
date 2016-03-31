@@ -14,14 +14,17 @@ public class LongestCommonPrefix {
      */
     public String longestCommonPrefix(String[] strs) {
         int endIndex = 0;
-        for (int i = 1; i < strs.length; ++i) {
-            
+        for (; ; ++endIndex) {
+            for (int i = 1; i < strs.length; ++i) {
+                if (
 
 
-            if (endIndex == strs[i].length()) {
-                break;
+                if (endIndex == strs[i].length()) {
+                    break;
+                }
             }
         }
+
     }
 
 }
