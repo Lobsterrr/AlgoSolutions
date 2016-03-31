@@ -20,13 +20,14 @@ public class LongestCommonPrefix {
             return strs[0];
         }
         int endIndex = 0;
-        for (; ; ++endIndex) {
+        for (; endIndex < strs[0].length(); ++endIndex) {
             for (int i = 1; i < strs.length; ++i) {
                 if (endIndex >= strs[i].length() || strs[i].charAt(endIndex) != strs[0].charAt(endIndex)) {
                     return strs[0].substring(0, endIndex);
                 }
             }
         }
+        return strs[0].substring(0, endIndex);
     }
 
 }
