@@ -13,13 +13,24 @@ public class ImplementTrie {
     public void insert(String word) {
         TrieNode cur = root;
         for (char c : word.toCharArrray()) {
-
+            if (cur.children[c - 'a'] == null) {
+                cur.children[c - 'a'] = new TrieNode();
+            }
+            cur = cur.children[c - 'a'];
         }
+        cur.item = word;
     }
 
     // Returns if the word is in the trie.
     public boolean search(String word) {
-
+        TrieNode cur = root;
+        for (char c : word.toCharArrray()) {
+            if (cur.children[c - 'a'] == null) {
+                return false;
+            }
+            cur = cur.children[c - 'a'];
+        }
+        return cur.item.equals(word);
     }
 
     // Returns if there is any word in the trie 
