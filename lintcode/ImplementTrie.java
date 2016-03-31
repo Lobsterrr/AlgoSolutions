@@ -1,7 +1,6 @@
 /*
  * Implement a trie with insert, search, and startsWith methods.
 
-Have you met this question in a real interview? Yes
  Notice
 
 You may assume that all inputs are consist of lowercase letters a-z.
