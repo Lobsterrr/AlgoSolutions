@@ -16,13 +16,8 @@ public class LongestCommonPrefix {
         int endIndex = 0;
         for (; ; ++endIndex) {
             for (int i = 1; i < strs.length && endIndex < strs[i].length(); ++i) {
-                if (strs[endIndex].charAt(i) != strs[0].charAt(i)) {
-                    return
-                }
-
-
-                if (endIndex == strs[i].length()) {
-                    break;
+                if (strs[i].charAt(endIndex) != strs[0].charAt(endIndex)) {
+                    return strs[0].substring(0, endIndex);
                 }
             }
         }
