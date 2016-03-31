@@ -25,7 +25,7 @@ public class ImplementTrie {
     // Inserts a word into the trie.
     public void insert(String word) {
         TrieNode cur = root;
-        for (char c : word.toCharArrray()) {
+        for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] == null) {
                 cur.children[c - 'a'] = new TrieNode();
             }
@@ -37,7 +37,7 @@ public class ImplementTrie {
     // Returns if the word is in the trie.
     public boolean search(String word) {
         TrieNode cur = root;
-        for (char c : word.toCharArrray()) {
+        for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] == null) {
                 return false;
             }
@@ -50,7 +50,7 @@ public class ImplementTrie {
     // that starts with the given prefix.
     public boolean startsWith(String prefix) {
         TrieNode cur = root;
-        for (char c : word.toCharArrray()) {
+        for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] == null) {
                 return false;
             }
