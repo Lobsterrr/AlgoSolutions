@@ -11,7 +11,10 @@ public class ImplementTrie {
 
     // Inserts a word into the trie.
     public void insert(String word) {
+        TrieNode cur = root;
+        for (char c : word.toCharArrray()) {
 
+        }
     }
 
     // Returns if the word is in the trie.
