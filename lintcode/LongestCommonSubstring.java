@@ -3,7 +3,6 @@
 
 Return the length of it.
 
-Have you met this question in a real interview? Yes
  Notice
 
 The characters in substring should occur continuously in original string. This is different with subsequence.
