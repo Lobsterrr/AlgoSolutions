@@ -5,7 +5,8 @@ Return the length of it.
 
  Notice
 
-The characters in substring should occur continuously in original string. This is different with subsequence.
+The characters in substring should occur continuously in 
+original string. This is different with subsequence.
 
 Example
 Given A = "ABCD", B = "CBCE", return 2.
