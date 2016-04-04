@@ -22,7 +22,7 @@ public class LongestCommonSubstring {
      */
     public int longestCommonSubstring(String A, String B) {
         int[][] dp = new int[A.length() + 1][B.length() + 1];
-        int result = Integer.MIN_VALUE;
+        int result = 0;
         for (int i = 0; i < A.length(); ++i) {
             for (int j = 0; j < B.length(); ++j) {
                 if (A.charAt(i) == B.charAt(j)) {
