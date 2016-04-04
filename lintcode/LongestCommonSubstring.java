@@ -23,10 +23,13 @@ public class LongestCommonSubstring {
     public int longestCommonSubstring(String A, String B) {
         int result = 0;
         for (int i = 0; i < A.length(); ++i) {
+            int length = 0;
             for (int j = 0; j < B.length(); ++j) {
-
+                length = A.charAt(i) == B.charAt(j) ? length + 1 : 0;
             }
-        } 
+            result = Math.max(result, length);
+        }
+        return result;
     }
 
     public int longestCommonSubstring(String A, String B) {
