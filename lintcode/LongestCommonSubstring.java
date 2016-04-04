@@ -30,8 +30,10 @@ public class LongestCommonSubstring {
                 } else {
                     dp[i + 1][j + 1] = 0;
                 }
+                result = Math.max(result, dp[i + 1][j + 1]);
             }
         }
+        return result;
     }
 
     public int longestCommonSubstring(String A, String B) {
