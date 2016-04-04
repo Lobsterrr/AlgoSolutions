@@ -21,7 +21,8 @@ public class LongestCommonSubstring {
      * @return: the length of the longest common substring.
      */
     public int longestCommonSubstring(String A, String B) {
-
+        int lenA = A.length();
+        int lenB - B.length();
     }
 
     public int longestCommonSubstring(String A, String B) {
