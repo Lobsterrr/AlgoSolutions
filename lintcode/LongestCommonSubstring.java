@@ -27,8 +27,6 @@ public class LongestCommonSubstring {
             for (int j = 0; j < B.length(); ++j) {
                 if (A.charAt(i) == B.charAt(j)) {
                     dp[i + 1][j + 1] = dp[i][j] + 1;
-                } else {
-                    dp[i + 1][j + 1] = 0;
                 }
                 result = Math.max(result, dp[i + 1][j + 1]);
             }
