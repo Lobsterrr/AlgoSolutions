@@ -32,6 +32,8 @@ public class LongestCommonSubstring {
         return result;
     }
 
+/*****************************************************************************/
+
     public int longestCommonSubstring(String A, String B) {
         int[][] dp = new int[A.length() + 1][B.length() + 1];
         int result = 0;
