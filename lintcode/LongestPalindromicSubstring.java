@@ -14,7 +14,7 @@ public class LongestPalindromicSubstring {
      * @return the longest palindromic substring
      */
     public String longestPalindrome(String s) {
-
+        String result = "";
     }
 
 }
