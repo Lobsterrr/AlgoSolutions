@@ -21,13 +21,15 @@ public class LongestCommonSubstring {
      * @return: the length of the longest common substring.
      */
     public int longestCommonSubstring(String A, String B) {
+        int[] dp = new int[B.length()];
         int result = 0;
         for (int i = 0; i < A.length(); ++i) {
-            int length = 0;
             for (int j = 0; j < B.length(); ++j) {
-                length = A.charAt(i) == B.charAt(j) ? length + 1 : 0;
+                if (A.charAt(i) == B.charAt(j)) {
+                    dp[j + 1] = dp[j] + 1;
+                }
+                result = Math.max(result, dp[j + 1]);
             }
-            result = Math.max(result, length);
         }
         return result;
     }
