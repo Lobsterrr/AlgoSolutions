@@ -11,6 +11,7 @@ O(n2) time is acceptable. Can you do it in O(n) time.
  */
 public class LongestPalindromicSubstring {
 
+    // O(n^2) time;
     /**
      * @param s input string
      * @return the longest palindromic substring
