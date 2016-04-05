@@ -1,7 +1,6 @@
 /*
  * Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
 
-Have you met this question in a real interview? Yes
 Example
 Given the string = "abcdzdcab", return "cdzdc".
 
