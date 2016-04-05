@@ -48,6 +48,8 @@ public class LongestCommonSubstring {
         return result;
     }
 
+/*****************************************************************************/
+
     public int longestCommonSubstring(String A, String B) {
         int result = 0;
         for (int i = 0; i < A.length(); ++i) {
