@@ -21,10 +21,11 @@ public class LongestPalindromicSubstring {
             for (int j = ss.length() - 1; j >= 0; --j) {
                 dp[j + 1] = s.charAt(i) == ss.charAt(j) ? dp[j] + 1 : 0;
                 if (result.length() < dp[j + 1]) {
-                    result = s.substring(j - dp[j + 1], j + 1);
+                    result = s.substring(j + 1 - dp[j + 1], j + 1);
                 }
             }
         }
+        return result;
     }
 
 }
