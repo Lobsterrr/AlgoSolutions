@@ -23,7 +23,27 @@ public class CopyListWithRandomPointer {
      * @return: A new head of a deep copy of the list.
      */
     public RandomListNode copyRandomList(RandomListNode head) {
-
+        RandomListNode cur = head;
+        while (cur != null) {
+            RandomListNode next = cur.next;
+            cur.next = new RandomListNode(cur.label);
+            cur = next;
+        }
+        cur = head == null ? null : head.random;
+        while (cur != null) {
+            if (cur.random != null) {
+                cur.next.random = cur.random.next;
+            }
+            cur = cur.next.next;
+        }
+        RandomListNode copy = head == null ? null : head.next;
+        cur = head;
+        while (cur != null) {
+            RandomListNode next = cur.next;
+            cur.next = next.next;
+            cur = next;
+        }
+        return copy;
     }
 
 }
