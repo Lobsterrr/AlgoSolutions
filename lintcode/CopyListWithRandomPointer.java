@@ -51,7 +51,15 @@ public class CopyListWithRandomPointer {
 /*******************************************************************/
 
     public RandomListNode copyRandomList(RandomListNode head) {
-        RandomListNode cur = head;
+        if (head == null) {
+            return null;
+        }
+        RandomListNode copy = new RandomListNode(head.label);
+        RandomListNode cur1 = head;
+        RandomListNode cur2 = copy;
+        while (cur1 != null) {
+
+        }
     }
 
 }
