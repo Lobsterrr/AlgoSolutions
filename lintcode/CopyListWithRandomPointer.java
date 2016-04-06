@@ -51,7 +51,7 @@ public class CopyListWithRandomPointer {
 /*******************************************************************/
 
     public RandomListNode copyRandomList(RandomListNode head) {
-
+        RandomListNode cur = head;
     }
 
 }
