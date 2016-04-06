@@ -22,6 +22,7 @@ public class CopyListWithRandomPointer {
      * @param head: The head of linked list with a random pointer.
      * @return: A new head of a deep copy of the list.
      */
+    // O(n) time, O(1) space.
     public RandomListNode copyRandomList(RandomListNode head) {
         RandomListNode cur = head;
         while (cur != null) {
