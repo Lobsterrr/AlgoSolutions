@@ -61,6 +61,7 @@ public class CopyListWithRandomPointer {
         while (cur1 != null) {
             RandomListNode node = new RandomListNode(cur1.label);
             map.put(cur1, node);
+            cur2.next = node;
             cur1 = cur1.next;
             cur2 = cur2.next;
         }
