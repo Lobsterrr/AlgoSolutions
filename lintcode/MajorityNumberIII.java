@@ -23,7 +23,7 @@ public class MajorityNumberIII {
      * @return: The majority number
      */
     public int majorityNumber(ArrayList<Integer> nums, int k) {
-
+        Map<Ingteger, Integer> map = new HashMap<Integer, Integer>();
     }
 
 }
