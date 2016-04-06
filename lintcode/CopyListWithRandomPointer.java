@@ -67,8 +67,11 @@ public class CopyListWithRandomPointer {
         cur1 = head;
         cur2 = copy;
         while (cur1 != null) {
-            
+            cur2.random = map.get(cur1.random);
+            cur1 = cur1.next;
+            cur2 = cur2.next;
         }
+        return copy;
     }
 
 }
