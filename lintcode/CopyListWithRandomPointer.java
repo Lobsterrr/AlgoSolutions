@@ -30,7 +30,7 @@ public class CopyListWithRandomPointer {
             cur.next.next = next;
             cur = next;
         }
-        cur = head == null ? null : head.random;
+        cur = head;
         while (cur != null) {
             if (cur.random != null) {
                 cur.next.random = cur.random.next;
