@@ -24,7 +24,8 @@ public class FourSum {
      *           zero.
      */
     public ArrayList<ArrayList<Integer>> fourSum(int[] numbers, int target) {
-
+        Arrays.sort(numbers);
+        
     }
 
 }
