@@ -38,10 +38,27 @@ public class FourSum {
                 int end = numbers.length - 1;
                 while (start < end) {
                     int sum = numbers[i] + numbers[j] + numbers[start] + numbers[end];
-
+                    if (sum < target) {
+                        start++;
+                    } else if (sum > target) {
+                        end--;
+                    } else {
+                        ArrayList<Integer> list = new ArrayList<Integer>();
+                        list.add(numbers[i]);
+                        list.add(numbers[j]);
+                        list.add(numbers[start++]);
+                        list.add(numbers[end--]);
+                        while (start > j + 1 && start < end && numbers[start] == numbers[start - 1]) {
+                            start++;
+                        }
+                        while (end < numbers.length - 1 && end > start && numbers[end] == numbers[end + 1]) {
+                            end--;
+                        }
+                    }
                 }
             }
         }
+        return result;
     }
 
 }
