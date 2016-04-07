@@ -5,7 +5,6 @@ All elements < k are moved to the left
 All elements >= k are moved to the right
 Return the partitioning index, i.e the first index i nums[i] >= k.
 
-Have you met this question in a real interview? Yes
  Notice
 
 You should do really partition in array nums instead of just counting the numbers of integers smaller than k.
