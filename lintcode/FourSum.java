@@ -26,8 +26,22 @@ public class FourSum {
     public ArrayList<ArrayList<Integer>> fourSum(int[] numbers, int target) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         Arrays.sort(numbers);
-        int start = 0;
-        int end = numbers.length - 1;
+        for (int i = 0; i < numbers.length - 3; ++i) {
+            if (i > 0 && numbers[i] == numbers[i - 1]) {
+                continue;
+            }
+            for (int j = i + 1; j < numbers.length - 2; ++j) {
+                if (j > i + 1 && numbers[j] == numbers[j - 1]) {
+                    continue;
+                }
+                int start = j + 1;
+                int end = numbers.length - 1;
+                while (start < end) {
+                    int sum = numbers[i] + numbers[j] + numbers[start] + numbers[end];
+
+                }
+            }
+        }
     }
 
 }
