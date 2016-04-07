@@ -28,12 +28,16 @@ public class PartitionArray {
         int i = 0;
         for (int j = 0; j < nums.length; ++j) {
             if (nums[j] < k) {
-                int tmp = nums[j];
-                nums[j] = nums[i];
-                nums[i++] = tmp;
+                swap(nums, i++, j);
             }
         }
         return i;
+    }
+
+    public void swap(int[] nums, int i, int j) {
+        int tmp = nums[j];
+        nums[j] = nums[i];
+        nums[i++] = tmp;
     }
 
 }
