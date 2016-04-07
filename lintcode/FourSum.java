@@ -46,14 +46,14 @@ public class FourSum {
                         ArrayList<Integer> list = new ArrayList<Integer>();
                         list.add(numbers[i]);
                         list.add(numbers[j]);
-                        list.add(numbers[start++]);
-                        list.add(numbers[end--]);
-                        while (start < end && numbers[start] == numbers[start - 1]) {
+                        list.add(numbers[start]);
+                        list.add(numbers[end]);
+                        do {
                             start++;
-                        }
-                        while (end > start && numbers[end] == numbers[end + 1]) {
+                        } while (start < end && numbers[start] == numbers[start - 1]);
+                        do {
                             end--;
-                        }
+                        } while (end > start && numbers[end] == numbers[end + 1]);
                     }
                 }
             }
