@@ -25,10 +25,16 @@ public class PartitionArray {
      *return: The index after partition
      */
     public int partitionArray(int[] nums, int k) {
-        int i = -1;
+        int i = 0;
         for (int j = 0; j < nums.length; ++j) {
-
+            if (nums[j] < k) {
+                int tmp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = tmp;
+                i++;
+            }
         }
+        return i;
     }
 
 }
