@@ -23,13 +23,13 @@ public class MajorityNumberIII {
      * @return: The majority number
      */
     public int majorityNumber(ArrayList<Integer> nums, int k) {
-        Map<Ingteger, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
             map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
         }
         int result = 0;
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (entry.getValue() >= nums.size() / k) {
+            if (entry.getValue() > nums.size() / k) {
                 result = entry.getKey();
             }
         }
