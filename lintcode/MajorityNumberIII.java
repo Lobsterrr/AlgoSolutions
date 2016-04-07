@@ -24,6 +24,9 @@ public class MajorityNumberIII {
      */
     public int majorityNumber(ArrayList<Integer> nums, int k) {
         Map<Ingteger, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+            
+        }
     }
 
 }
