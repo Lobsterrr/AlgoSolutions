@@ -1,11 +1,13 @@
 /*
- * Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target?
+ * Given an array S of n integers, are there elements a, b, c, and d 
+ * in S such that a + b + c + d = target?
 
 Find all unique quadruplets in the array which gives the sum of target.
 
  Notice
 
-Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a <= b <= c <= d)
+Elements in a quadruplet (a,b,c,d) must be in non-descending order. 
+(ie, a <= b <= c <= d)
 The solution set must not contain duplicate quadruplets.
 
 Example
@@ -24,7 +26,8 @@ public class FourSum {
      *           zero.
      */
     public ArrayList<ArrayList<Integer>> fourSum(int[] numbers, int target) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = 
+            new ArrayList<ArrayList<Integer>>();
         Arrays.sort(numbers);
         for (int i = 0; i < numbers.length - 3; ++i) {
             if (i > 0 && numbers[i] == numbers[i - 1]) {
@@ -37,7 +40,8 @@ public class FourSum {
                 int start = j + 1;
                 int end = numbers.length - 1;
                 while (start < end) {
-                    int sum = numbers[i] + numbers[j] + numbers[start] + numbers[end];
+                    int sum = numbers[i] + numbers[j] + 
+                        numbers[start] + numbers[end];
                     if (sum < target) {
                         start++;
                     } else if (sum > target) {
@@ -49,10 +53,12 @@ public class FourSum {
                         list.add(numbers[start++]);
                         list.add(numbers[end--]);
                         result.add(list);
-                        while (start < end && numbers[start] == numbers[start - 1]) {
+                        while (start < end && 
+                                numbers[start] == numbers[start - 1]) {
                             start++;
                         }
-                        while (end > start && numbers[end] == numbers[end + 1]) {
+                        while (end > start && 
+                                numbers[end] == numbers[end + 1]) {
                             end--;
                         }
                     }
