@@ -48,12 +48,13 @@ public class FourSum {
                         list.add(numbers[j]);
                         list.add(numbers[start]);
                         list.add(numbers[end]);
-                        do {
+                        result.add(list);
+                        while (start < end && numbers[start] == numbers[start - 1]) {
                             start++;
-                        } while (start < end && numbers[start] == numbers[start - 1]);
-                        do {
+                        }
+                        while (end > start && numbers[end] == numbers[end + 1]) {
                             end--;
-                        } while (end > start && numbers[end] == numbers[end + 1]);
+                        }
                     }
                 }
             }
