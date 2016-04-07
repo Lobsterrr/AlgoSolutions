@@ -3,10 +3,9 @@
 
 Find all unique quadruplets in the array which gives the sum of target.
 
-Have you met this question in a real interview? Yes
  Notice
 
-Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ¡Ü b ¡Ü c ¡Ü d)
+Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a <= b ¡Ü c ¡Ü d)
 The solution set must not contain duplicate quadruplets.
 
 Example
