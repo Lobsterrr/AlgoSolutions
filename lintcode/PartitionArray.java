@@ -30,8 +30,7 @@ public class PartitionArray {
             if (nums[j] < k) {
                 int tmp = nums[j];
                 nums[j] = nums[i];
-                nums[i] = tmp;
-                i++;
+                nums[i++] = tmp;
             }
         }
         return i;
