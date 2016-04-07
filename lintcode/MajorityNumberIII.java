@@ -22,6 +22,7 @@ public class MajorityNumberIII {
      * @param k: As described
      * @return: The majority number
      */
+    // O(n) time, O(n) space.
     public int majorityNumber(ArrayList<Integer> nums, int k) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
