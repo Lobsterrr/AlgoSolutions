@@ -41,7 +41,7 @@ public class PartitionArray {
     public void swap(int[] nums, int i, int j) {
         int tmp = nums[j];
         nums[j] = nums[i];
-        nums[i++] = tmp;
+        nums[i] = tmp;
     }
 
 }
