@@ -25,8 +25,19 @@ public class MajorityNumberIII {
     public int majorityNumber(ArrayList<Integer> nums, int k) {
         Map<Ingteger, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; ++i) {
-            
+            if (map.containsKey(nums[i])) {
+                map.put(nums[i], map.get(nums[i]) + 1);
+            } else {
+                map.put(nums[i], 1);
+            }
         }
+        int result = 0;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() * k >= nums.length) {
+                result = entry.getKey();
+            }
+        }
+        return result;
     }
 
 }
