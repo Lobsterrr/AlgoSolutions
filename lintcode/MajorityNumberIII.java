@@ -29,7 +29,7 @@ public class MajorityNumberIII {
         }
         int result = 0;
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (entry.getValue() >= nums.length / k) {
+            if (entry.getValue() >= nums.size() / k) {
                 result = entry.getKey();
             }
         }
