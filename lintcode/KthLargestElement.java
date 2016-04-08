@@ -25,6 +25,9 @@ public class KthLargestElement {
 
     }
 
+/*********************************************************/
+
+    // O(nlg(n))
     public int kthLargestElement(int k, int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length - k];
