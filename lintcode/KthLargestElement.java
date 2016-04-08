@@ -22,7 +22,7 @@ public class KthLargestElement {
      */
     public int kthLargestElement(int k, int[] nums) {
         Arrays.sort(nums);
-        return nums[k - 1];
+        return nums[(k - 1) % nums.length];
     }
 
 }
