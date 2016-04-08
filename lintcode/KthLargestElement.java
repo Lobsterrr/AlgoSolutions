@@ -23,8 +23,15 @@ public class KthLargestElement {
      */
     public int kthLargestElement(int k, int[] nums) {
         for (int i = 0; i < k; ++i) {
-
+            for (int j = nums.length - 2; j >= i; --j) {
+                if (nums[j] < nums[j + 1]) {
+                    int tmp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = tmp;
+                }
+            }
         }
+        return nums[k - 1];
     }
 
 /*********************************************************/
