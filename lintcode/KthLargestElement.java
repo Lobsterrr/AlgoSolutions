@@ -22,6 +22,10 @@ public class KthLargestElement {
      * @return: description of return
      */
     public int kthLargestElement(int k, int[] nums) {
+
+    }
+
+    public int kthLargestElement(int k, int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length - k];
     }
