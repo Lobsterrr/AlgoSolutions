@@ -1,7 +1,6 @@
 /*
  * Find K-th largest element in an array.
 
-Have you met this question in a real interview? Yes
  Notice
 
 You can swap elements in the array
@@ -22,7 +21,8 @@ public class KthLargestElement {
      * @return: description of return
      */
     public int kthLargestElement(int k, int[] nums) {
-
+        Arrays.sort(nums);
+        return nums[k - 1];
     }
 
 }
