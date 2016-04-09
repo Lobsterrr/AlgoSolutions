@@ -45,12 +45,22 @@ public class BinaryTreeSerialization {
             return null;
         }
         StringBuilder sb = new StringBuilder();
-        TreeNode cur = root;
         List<TreeNode> curLevel = new LinkedList<TreeNode>();
         List<TreeNode> nextLevel = new LinkedList<TreeNode>();
         curLevel.add(root);
         while (!curLevel.isEmpty()) {
-            
+            TreeNode node = curLevel.poll();
+            sb.append(",").append(node.val);
+            if (node.left != null) {
+                nextLevel.add(node.left);
+            }
+            if (node.right != null) {
+                nextLevel.add(node.right);
+            }
+            if (curLevel.isEmpty()) {
+                curLevel = nextLevel;
+                nextLevel = new LinkedList<TreeNode>();
+            }
         }
         return result;
     }
