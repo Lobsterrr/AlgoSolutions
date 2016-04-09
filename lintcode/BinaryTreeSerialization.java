@@ -46,9 +46,11 @@ public class BinaryTreeSerialization {
         }
         StringBuilder sb = new StringBuilder();
         TreeNode cur = root;
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        while (cur != null) {
-
+        List<TreeNode> curLevel = new LinkedList<TreeNode>();
+        List<TreeNode> nextLevel = new LinkedList<TreeNode>();
+        curLevel.add(root);
+        while (!curLevel.isEmpty()) {
+            
         }
         return result;
     }
