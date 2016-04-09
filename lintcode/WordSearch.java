@@ -3,7 +3,6 @@
 
 The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
 
-Have you met this question in a real interview? Yes
 Example
 Given board =
 
