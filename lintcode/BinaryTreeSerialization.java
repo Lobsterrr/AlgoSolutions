@@ -82,12 +82,21 @@ public class BinaryTreeSerialization {
         TreeNode root = new TreeNode(Integer.parseInt(s[0]));
         int i = 1;
         while (!curLevel.isEmpty() && i < s.length) {
-            if (s[i] != "#") {
-
-            } else {
-
+            TreeNode node = curLevel.poll();
+            if (!s[i].equals("#")) {
+                node.left = new TreeNode(Integer.parseInt(s[i]));
+                nextLevel.add(node.left);
+            }
+            if (!s[i + 1].equals("#")) {
+                node.right = new TreeNode(Integer.parseInt(s[i + 1]));
+                nextLevel.add(node.right);
+            }
+            if (curLevel.isEmpty()) {
+                curLevel = nextLevel;
+                nextLevel = new LinkedList<TreeNode>();
             }
         }
+        return root;
     }
 
 }
