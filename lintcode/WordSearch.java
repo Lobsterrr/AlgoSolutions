@@ -23,7 +23,10 @@ public class WordSearch {
             return true;
         }
         board[i][j] = '#';
-        boolean result = dfs(board, word.substring(1), i - 1, j) || dfs(board, word.substring(1), i + 1, j) || dfs(board, word.substring(1), i, j - 1) || dfs(board, word.substring(1), i, j + 1);
+        boolean result = dfs(board, word.substring(1), i - 1, j) || 
+            dfs(board, word.substring(1), i + 1, j) || 
+            dfs(board, word.substring(1), i, j - 1) || 
+            dfs(board, word.substring(1), i, j + 1);
         board[i][j] = word.charAt(0);
         return result;
     }
