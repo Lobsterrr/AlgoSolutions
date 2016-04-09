@@ -12,6 +12,13 @@ public class BinaryTreeSerialization {
 
     }
 
+    /**
+     * This method will be invoked second, the argument data is what exactly
+     * you serialized at method "serialize", that means the data is not given by
+     * system, it's given by your own serialize method. So the format of data is
+     * designed by yourself, and deserialize it here as you serialize it in 
+     * "serialize" method.
+     */
     public TreeNode deserialize(String data) {
 
     }
