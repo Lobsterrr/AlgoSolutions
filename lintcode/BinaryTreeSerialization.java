@@ -54,6 +54,8 @@ public class BinaryTreeSerialization {
                 sb.append(",").append(node.val);
                 nextLevel.add(node.left);
                 nextLevel.add(node.right);
+            } else {
+                sb.append(",#");
             }
             if (curLevel.isEmpty()) {
                 curLevel = nextLevel;
