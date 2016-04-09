@@ -82,7 +82,9 @@ public class BinaryTreeSerialization {
         TreeNode root = new TreeNode(Integer.parseInt(s[0]));
         int i = 1;
         while (!curLevel.isEmpty() && i < s.length) {
-            
+            if (s[i] != "#") {
+
+            }
         }
     }
 
