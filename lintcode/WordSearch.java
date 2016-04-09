@@ -21,25 +21,12 @@ public class WordSearch {
         if (word.length() == 1) {
             return true;
         }
-        for (int x = -1; x <= 1; ++x) {
-            if (x == -1 || x == 1) {
-                char tmp = board[i][j];
-                board[i][j] = '#';
-                if (dfs(board, word.substring(1), i + x, j)) {
-                    return true;   
-                }
-                board[i][j] = tmp; 
-            } else if (x == 0) {
-                for (int y = -1; y <= 1; y += 2) {
-                    char tmp = board[i][j];
-                    board[i][j] = '#';
-                    if (dfs(board, word.substring(1), i, j + y)) {
-                        return true;
-                    }
-                    board[i][j] = tmp; 
-                }
-            }
+        char tmp = board[i][j];
+        board[i][j] = '#';
+        if (dfs(board, word.substring(1), i - 1, j) || dfs(board, word.substring(1), i + 1, j) || dfs(board, word.substring(1), i, j - 1) || dfs(board, word.substring(1), i, j + 1)) {
+            return true;
         }
+        board[i][j] = tmp;
         return false;
     }
 
