@@ -23,11 +23,9 @@ public class WordSearch {
         }
         char tmp = board[i][j];
         board[i][j] = '#';
-        if (dfs(board, word.substring(1), i - 1, j) || dfs(board, word.substring(1), i + 1, j) || dfs(board, word.substring(1), i, j - 1) || dfs(board, word.substring(1), i, j + 1)) {
-            return true;
-        }
+        boolean result = dfs(board, word.substring(1), i - 1, j) || dfs(board, word.substring(1), i + 1, j) || dfs(board, word.substring(1), i, j - 1) || dfs(board, word.substring(1), i, j + 1)
         board[i][j] = tmp;
-        return false;
+        return result;
     }
 
 }
