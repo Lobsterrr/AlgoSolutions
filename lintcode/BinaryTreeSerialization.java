@@ -45,8 +45,8 @@ public class BinaryTreeSerialization {
             return null;
         }
         StringBuilder sb = new StringBuilder();
-        List<TreeNode> curLevel = new LinkedList<TreeNode>();
-        List<TreeNode> nextLevel = new LinkedList<TreeNode>();
+        Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
+        Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
         curLevel.add(root);
         while (!curLevel.isEmpty()) {
             TreeNode node = curLevel.poll();
@@ -77,8 +77,8 @@ public class BinaryTreeSerialization {
             return null;
         }
         String[] s = data.split(",");
-        List<TreeNode> curLevel = new LinkedList<TreeNode>();
-        List<TreeNode> nextLevel = new LinkedList<TreeNode>();
+        Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
+        Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
         TreeNode root = new TreeNode(Integer.parseInt(s[0]));
         int i = 1;
         while (!curLevel.isEmpty() && i < s.length) {
