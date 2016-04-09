@@ -50,11 +50,9 @@ public class BinaryTreeSerialization {
         curLevel.add(root);
         while (!curLevel.isEmpty()) {
             TreeNode node = curLevel.poll();
-            sb.append(",").append(node.val);
-            if (node.left != null) {
+            if (node != null) {
+                sb.append(",").append(node.val);
                 nextLevel.add(node.left);
-            }
-            if (node.right != null) {
                 nextLevel.add(node.right);
             }
             if (curLevel.isEmpty()) {
