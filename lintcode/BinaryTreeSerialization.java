@@ -73,6 +73,9 @@ public class BinaryTreeSerialization {
      * "serialize" method.
      */
     public TreeNode deserialize(String data) {
+        if (data == null || data.length() == 0) {
+            return null;
+        }
 
     }
 
