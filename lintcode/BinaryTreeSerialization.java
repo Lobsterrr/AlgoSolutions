@@ -76,7 +76,14 @@ public class BinaryTreeSerialization {
         if (data == null || data.length() == 0) {
             return null;
         }
-
+        String[] s = data.split(",");
+        List<TreeNode> curLevel = new LinkedList<TreeNode>();
+        List<TreeNode> nextLevel = new LinkedList<TreeNode>();
+        TreeNode root = new TreeNode(Integer.parseInt(s[0]));
+        int i = 1;
+        while (!curLevel.isEmpty() && i < data.length()) {
+            
+        }
     }
 
 }
