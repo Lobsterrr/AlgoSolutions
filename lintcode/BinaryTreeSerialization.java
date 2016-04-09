@@ -91,6 +91,7 @@ public class BinaryTreeSerialization {
                 node.right = new TreeNode(Integer.parseInt(s[i + 1]));
                 nextLevel.add(node.right);
             }
+            i += 2;
             if (curLevel.isEmpty()) {
                 curLevel = nextLevel;
                 nextLevel = new LinkedList<TreeNode>();
