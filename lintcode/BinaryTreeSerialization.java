@@ -80,6 +80,7 @@ public class BinaryTreeSerialization {
         Queue<TreeNode> curLevel = new LinkedList<TreeNode>();
         Queue<TreeNode> nextLevel = new LinkedList<TreeNode>();
         TreeNode root = new TreeNode(Integer.parseInt(s[0]));
+        curLevel.add(root);
         int i = 1;
         while (!curLevel.isEmpty() && i < s.length) {
             TreeNode cur = curLevel.poll();
