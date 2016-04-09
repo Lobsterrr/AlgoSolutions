@@ -7,4 +7,8 @@ public class BinaryTreeSerialization {
 
     }
 
+    public TreeNode deserialize(String data) {
+
+    }
+
 }
