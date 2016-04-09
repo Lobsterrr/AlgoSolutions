@@ -62,7 +62,7 @@ public class BinaryTreeSerialization {
                 nextLevel = new LinkedList<TreeNode>();
             }
         }
-        return result;
+        return sb.substring(1).toString();
     }
 
     /**
