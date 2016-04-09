@@ -84,6 +84,8 @@ public class BinaryTreeSerialization {
         while (!curLevel.isEmpty() && i < s.length) {
             if (s[i] != "#") {
 
+            } else {
+
             }
         }
     }
