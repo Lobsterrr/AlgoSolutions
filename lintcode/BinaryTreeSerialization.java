@@ -41,7 +41,12 @@ public class BinaryTreeSerialization {
      * can be easily deserialized by your own "deserialize" method later.
      */
     public String serialize(TreeNode root) {
+        String result = "";
+        TreeNode cur = root;
+        while (cur != null) {
 
+        }
+        return result;
     }
 
     /**
