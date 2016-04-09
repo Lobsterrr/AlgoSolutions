@@ -3,7 +3,6 @@
 
 There is no limit of how you deserialize or serialize a binary tree, you only need to make sure you can serialize a binary tree to a string and deserialize this string to the original structure.
 
-Have you met this question in a real interview? Yes
 Example
 An example of testdata: Binary tree {3,9,20,#,#,15,7}, denote the following structure:
 
