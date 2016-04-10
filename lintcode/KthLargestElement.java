@@ -21,6 +21,10 @@ public class KthLargestElement {
      * @param nums : array of nums
      * @return: description of return
      */
+    public int kthLargestElement(int k, int[] nums) {
+
+    }
+
     // O(n * k)
     public int kthLargestElement(int k, int[] nums) {
         for (int i = 0; i < k; ++i) {
