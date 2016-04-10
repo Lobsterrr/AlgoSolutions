@@ -56,7 +56,7 @@ public class BinaryTreeSerialization {
         }
     }
 
-    public TreeNode designed(String data) {
+    public TreeNode deserialize(String data) {
         List<String> list = Arrays.asList(data.split(","));
         return getTree(list);
     }
