@@ -57,11 +57,12 @@ public class BinaryTreeSerialization {
     }
 
     public TreeNode deserialize(String data) {
-        List<String> list = Arrays.asList(data.split(","));
+        Queue<String> list = new LinkedList<String>();
+        list.addAll(Arrays.asList(data.split(",")));
         return getTree(list);
     }
 
-    public TreeNode getTree(List<String> list) {
+    public TreeNode getTree(Queue<String> list) {
         TreeNode root = null;
         String s = list.remove(0);
         if (!s.equals("#")) {
