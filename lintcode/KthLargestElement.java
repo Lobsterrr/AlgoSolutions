@@ -22,11 +22,23 @@ public class KthLargestElement {
      * @return: description of return
      */
     public int kthLargestElement(int k, int[] nums) {
-        
+        return quicksort(int k, nums, 0, nums.length - 1);
     }
 
     public int quicksort(int k, int[] nums, int low, int high) {
-        if 
+        int j = low;
+        for (int i = low; i <= high; ++i) {
+            if (nums[i] > nums[high]) {
+                swap(nums, high, j++);
+            }
+        }
+        swap(nums, low, j);
+        if (k - 1 == j) {
+            return nums[k - 1];
+        } else if (k - 1 < j) {
+            return quicksort(int k, nums, low, j - 1);
+        }
+        return quicksort(int k, nums, j + 1, high);
     }
     
     public void swap(int[] nums, int i, int j) {
