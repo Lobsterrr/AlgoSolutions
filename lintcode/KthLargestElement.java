@@ -50,6 +50,19 @@ public class KthLargestElement {
 
 /*******************************************************************/
 
+    public int kthLargestElement(int k, int nums) {
+        Queue<Integer> queue = new PriorityQueue<Integer>();
+        for (int num : nums) {
+            if (queue.size() < k) {
+                queue.offer(num);
+            } else {
+
+            }
+        }
+    }
+
+/*******************************************************************/
+
     // O(n * k)
     public int kthLargestElement(int k, int[] nums) {
         for (int i = 0; i < k; ++i) {
