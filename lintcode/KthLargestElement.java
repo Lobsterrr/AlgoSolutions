@@ -56,9 +56,13 @@ public class KthLargestElement {
             if (queue.size() < k) {
                 queue.offer(num);
             } else {
-
+                if (num > queue.peek()) {
+                    queue.poll();
+                    queue.offer(num);
+                }
             }
         }
+        return queue.peek();
     }
 
 /*******************************************************************/
