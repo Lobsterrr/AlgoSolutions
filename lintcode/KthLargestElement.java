@@ -26,7 +26,13 @@ public class KthLargestElement {
     }
 
     public int quicksort(int k, int[] nums, int low, int high) {
-
+        if 
+    }
+    
+    public void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
     }
 
 /*******************************************************************/
