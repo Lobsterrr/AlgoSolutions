@@ -21,6 +21,7 @@ public class KthLargestElement {
      * @param nums : array of nums
      * @return: description of return
      */
+    // O(n) time, O(1) space.
     public int kthLargestElement(int k, int[] nums) {
         return quicksort(k, nums, 0, nums.length - 1);
     }
