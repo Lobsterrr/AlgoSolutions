@@ -36,9 +36,9 @@ public class KthLargestElement {
         if (k - 1 == j) {
             return nums[k - 1];
         } else if (k - 1 < j) {
-            return quicksort(int k, nums, low, j - 1);
+            return quicksort(k, nums, low, j - 1);
         }
-        return quicksort(int k, nums, j + 1, high);
+        return quicksort(k, nums, j + 1, high);
     }
     
     public void swap(int[] nums, int i, int j) {
