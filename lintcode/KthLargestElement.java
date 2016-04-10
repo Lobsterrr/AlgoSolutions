@@ -22,7 +22,7 @@ public class KthLargestElement {
      * @return: description of return
      */
     public int kthLargestElement(int k, int[] nums) {
-        return quicksort(int k, nums, 0, nums.length - 1);
+        return quicksort(k, nums, 0, nums.length - 1);
     }
 
     public int quicksort(int k, int[] nums, int low, int high) {
