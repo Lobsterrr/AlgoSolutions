@@ -57,11 +57,19 @@ public class BinaryTreeSerialization {
     }
 
     public TreeNode designed(String data) {
-
+        Queue<String> list = Arrays.asList(data.split(","));
+        return getTree(list);
     }
 
-    public void getTreeNode(Queue<String> list) {
-        
+    public TreeNode getTree(Queue<String> list) {
+        TreeNode root = null;
+        String s = list.remove();
+        if (!s.equals("#")) {
+            root = new TreeNode(Integer.parseInt(s));
+            root.left = getTree(list);
+            root.right = getTree(list);
+        }
+        return root;
     }
 
 /*****************************************************************************/
