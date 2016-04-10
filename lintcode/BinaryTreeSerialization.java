@@ -41,11 +41,27 @@ public class BinaryTreeSerialization {
      * can be easily deserialized by your own "deserialize" method later.
      */
     public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        getString(root, sb);
+        return sb.toString();    
+    }
 
+    public void getString(TreeNode root, StringBuilder sb) {
+        if (root == null) {
+            sb.append("#,");
+        } else {
+            sb.append(root.val).append(",");
+            getString(root.left);
+            getString(root.right);
+        }
     }
 
     public TreeNode designed(String data) {
 
+    }
+
+    public void getTreeNode(Queue<String> list) {
+        
     }
 
 /*****************************************************************************/
