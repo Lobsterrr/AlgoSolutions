@@ -50,6 +50,7 @@ public class KthLargestElement {
 
 /*******************************************************************/
 
+    // O(n * lg(k)) time, O(k) space.
     public int kthLargestElement(int k, int nums) {
         Queue<Integer> queue = new PriorityQueue<Integer>();
         for (int num : nums) {
@@ -67,7 +68,7 @@ public class KthLargestElement {
 
 /*******************************************************************/
 
-    // O(n * k)
+    // O(n * k) time, O(1) space.
     public int kthLargestElement(int k, int[] nums) {
         for (int i = 0; i < k; ++i) {
             for (int j = nums.length - 2; j >= i; --j) {
@@ -83,7 +84,7 @@ public class KthLargestElement {
 
 /*******************************************************************/
 
-    // O(nlg(n))
+    // O(nlg(n)) time, O(1) space.
     public int kthLargestElement(int k, int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length - k];
