@@ -64,7 +64,7 @@ public class BinaryTreeSerialization {
 
     public TreeNode getTree(Queue<String> list) {
         TreeNode root = null;
-        String s = list.remove(0);
+        String s = list.remove();
         if (!s.equals("#")) {
             root = new TreeNode(Integer.parseInt(s));
             root.left = getTree(list);
