@@ -86,11 +86,11 @@ public class BinaryTreeSerialization {
         while (!curLevel.isEmpty()) {
             TreeNode node = curLevel.poll();
             if (node != null) {
-                sb.append(",").append(node.val);
+                sb.append(node.val).append(",");
                 nextLevel.add(node.left);
                 nextLevel.add(node.right);
             } else {
-                sb.append(",#");
+                sb.append("#,");
             }
             if (curLevel.isEmpty()) {
                 curLevel = nextLevel;
