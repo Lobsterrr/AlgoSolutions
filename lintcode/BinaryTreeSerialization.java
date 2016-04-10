@@ -51,8 +51,8 @@ public class BinaryTreeSerialization {
             sb.append("#,");
         } else {
             sb.append(root.val).append(",");
-            getString(root.left);
-            getString(root.right);
+            getString(root.left, sb);
+            getString(root.right, sb);
         }
     }
 
