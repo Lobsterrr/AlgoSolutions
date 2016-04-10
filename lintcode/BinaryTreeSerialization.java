@@ -40,6 +40,9 @@ public class BinaryTreeSerialization {
      * to serialize a binary tree which denote by a root node to a string which
      * can be easily deserialized by your own "deserialize" method later.
      */
+
+/*****************************************************************************/
+
     public String serialize(TreeNode root) {
         if (root == null) {
             return null;
