@@ -29,7 +29,7 @@ public class KthLargestElement {
         int j = low;
         for (int i = low; i <= high; ++i) {
             if (nums[i] > nums[high]) {
-                swap(nums, high, j++);
+                swap(nums, i, j++);
             }
         }
         swap(nums, high, j);
