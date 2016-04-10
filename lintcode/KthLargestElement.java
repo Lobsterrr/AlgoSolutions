@@ -32,7 +32,7 @@ public class KthLargestElement {
                 swap(nums, high, j++);
             }
         }
-        swap(nums, low, j);
+        swap(nums, high, j);
         if (k - 1 == j) {
             return nums[k - 1];
         } else if (k - 1 < j) {
