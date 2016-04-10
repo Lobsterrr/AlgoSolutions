@@ -26,19 +26,19 @@ public class KthLargestElement {
     }
 
     public int quicksort(int k, int[] nums, int low, int high) {
-        int i = low;
-        for (int j = low; j <= high; ++j) {
-            if (nums[j] > nums[high]) {
-                swap(nums, i++, j);
+        int index = low;
+        for (int i = low; i <= high; ++i) {
+            if (nums[i] > nums[high]) {
+                swap(nums, i, index++);
             }
         }
-        swap(nums, high, i);
-        if (k - 1 == i) {
+        swap(nums, high, index);
+        if (k - 1 == index) {
             return nums[k - 1];
-        } else if (k - 1 < i) {
-            return quicksort(k, nums, low, i - 1);
+        } else if (k - 1 < index) {
+            return quicksort(k, nums, low, index - 1);
         }
-        return quicksort(k, nums, i + 1, high);
+        return quicksort(k, nums, index + 1, high);
     }
     
     public void swap(int[] nums, int i, int j) {
