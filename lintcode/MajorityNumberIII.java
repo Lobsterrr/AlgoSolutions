@@ -23,7 +23,37 @@ public class MajorityNumberIII {
      * @return: The majority number
      */
     public int majorityNumber(ArrayList<Integer> nums, int k) {
-        
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int num : nums) {
+            if (map.containsKey(num)) {
+                map.put(num, map.get(num) + 1);
+            } else {
+                if (map.size() < k) {
+                    map.put(num, 1);
+                } else {
+                    for (Iterator iterator = map.entrySet().iterator(); iterator.hasNext();) {
+                        Map.Entry entry = (Map.Entry) iterator.next();
+                        int key = entry.getKey();
+                        int value = entry.getValue();
+                        value--;
+                        if (value > 0) {
+                            map.put(key, value);
+                        } else {
+                            iterator.remove();
+                        }
+                    }
+                }
+            }
+        }
+        int result = 0;
+        int count = 0;
+        for (int key : map.keySet()) {
+            if (count < map.get(key)) {
+                count = map.get(key);
+                result = key;
+            }
+        }
+        return result;
     }
 
 /*****************************************************************************/
