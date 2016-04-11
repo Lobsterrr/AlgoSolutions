@@ -33,9 +33,8 @@ public class MajorityNumberIII {
                 } else {
                     List<Integer> list = new ArrayList<Integer>(map.keySet());
                     for (int key : list) {
-                        if (map.get(key) > 1) {
-                            map.put(key, map.get(key) - 1);
-                        } else {
+                        map.put(key, map.get(key) - 1);
+                        if (map.get(key) == 0) {
                             map.remove(key);
                         }
                     }
