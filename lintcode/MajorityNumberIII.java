@@ -33,8 +33,8 @@ public class MajorityNumberIII {
                 } else {
                     for (Iterator iterator = map.entrySet().iterator(); iterator.hasNext();) {
                         Map.Entry entry = (Map.Entry) iterator.next();
-                        int key = entry.getKey();
-                        int value = entry.getValue();
+                        Integer key = (Integer) entry.getKey();
+                        Integer value = (Integer) entry.getValue();
                         value--;
                         if (value > 0) {
                             map.put(key, value);
