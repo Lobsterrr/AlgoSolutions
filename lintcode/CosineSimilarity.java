@@ -30,7 +30,25 @@ public class CosineSimilarity {
      * @return: Cosine similarity.
      */
     public double cosineSimilarity(int[] A, int[] B) {
-
+        if (A == null || A.length == 0 || B == null || B.length == 0 || A.length != B.length) {
+            return 2.0000;
+        }
+        int lenA = 0;
+        int lenB = 0;
+        int product = 0;
+        for (int i = 0; i < A.length; ++i) {
+            lenA += A[i] * A[i];
+            lenB += B[i] * B[i];
+            product += A[i] * B[i];
+        }
+        if (lenA + lenB == 0) {
+            return 2.0000;
+        }
+        if (lenA == 0 || lenB == 0) {
+            return 1.0000;
+        }
+        DecimalFormat df = new DecimalFormat("#.0000");
+        return df.format(product / Math.sqrt(lenA * lenB));
     }
 
 }
