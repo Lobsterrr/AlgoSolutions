@@ -23,11 +23,7 @@ public class MajorityNumberIII {
      * @return: The majority number
      */
     public int majorityNumber(ArrayList<Integer> nums, int k) {
-        int[] candidates = new int[k];
-        int[] count = new int[k];
-        for (int num : nums) {
-            
-        }
+        
     }
 
 /*****************************************************************************/
