@@ -30,12 +30,13 @@ public class CosineSimilarity {
      * @return: Cosine similarity.
      */
     public double cosineSimilarity(int[] A, int[] B) {
-        if (A == null || A.length == 0 || B == null || B.length == 0 || A.length != B.length) {
+        if (A == null || A.length == 0 || B == null || 
+                B.length == 0 || A.length != B.length) {
             return 2.0000;
         }
-        int lenA = 0;
-        int lenB = 0;
-        int product = 0;
+        double lenA = 0;
+        double lenB = 0;
+        double product = 0;
         for (int i = 0; i < A.length; ++i) {
             lenA += A[i] * A[i];
             lenB += B[i] * B[i];
@@ -47,7 +48,7 @@ public class CosineSimilarity {
         if (lenA == 0 || lenB == 0) {
             return 1.0000;
         }
-        double d = product / Math.sqrt((double) lenA * lenB);
+        double d = product / Math.sqrt(lenA * lenB);
         return (double) Math.round(d * 10000) / 10000;
     }
 
