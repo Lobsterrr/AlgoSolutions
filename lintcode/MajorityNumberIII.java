@@ -31,14 +31,12 @@ public class MajorityNumberIII {
                 if (map.size() < k) {
                     map.put(num, 1);
                 } else {
-                    for (Iterator iterator = map.entrySet().iterator(); iterator.hasNext();) {
-                        Map.Entry entry = (Map.Entry) iterator.next();
-                        Integer key = (Integer) entry.getKey();
-                        Integer value = (Integer) entry.getValue();
-
-                        map.put(key, value - 1);
-                        if (map.get(key) == 0) {
-                            map.remove(key);
+                    List<Integer> list = new ArrayList<Integer>(map.keySet());
+                    for (int key : list) {
+                        if (map.get(key) > 1) {
+                            map.put(key, map.get(key) - 1);
+                        } else {
+                            map.remove(key):
                         }
                     }
                 }
