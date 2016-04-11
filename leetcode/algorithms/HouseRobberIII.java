@@ -33,9 +33,6 @@ public class HouseRobberIII {
         if (root == null) {
             return 0;
         }
-        if (root.left == null && root.right == null) {
-            root.val;
-        }
         int sumWithoutRoot = rob(root.left) + rob(root.right);
         int sumWithRoot = root.val;
         if (root.left != null) {
