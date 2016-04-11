@@ -22,36 +22,6 @@ public class MajorityNumberIII {
      * @param k: As described
      * @return: The majority number
      */
-    public int majorityNumber(ArrayList<Integer> nums, int k) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int num : nums) {
-            if (map.containsKey(num)) {
-                map.put(num, map.get(num) + 1);
-            } else if (map.size() < k) {
-                map.put(num, 1);
-            } else {
-                List<Integer> list = new ArrayList<Integer>(map.keySet());
-                for (int key : list) {
-                    map.put(key, map.get(key) - 1);
-                    if (map.get(key) == 0) {
-                        map.remove(key);
-                    }
-                }
-            }
-        }
-        int result = 0;
-        int count = 0;
-        for (int key : map.keySet()) {
-            if (count < map.get(key)) {
-                count = map.get(key);
-                result = key;
-            }
-        }
-        return result;
-    }
-
-/*****************************************************************************/
-
     // O(n) time, O(n) space.
     public int majorityNumber(ArrayList<Integer> nums, int k) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
