@@ -35,11 +35,10 @@ public class MajorityNumberIII {
                         Map.Entry entry = (Map.Entry) iterator.next();
                         Integer key = (Integer) entry.getKey();
                         Integer value = (Integer) entry.getValue();
-                        value--;
-                        if (value > 0) {
-                            map.put(key, value);
-                        } else {
-                            iterator.remove();
+
+                        map.put(key, value - 1);
+                        if (map.get(key) == 0) {
+                            map.remove(key);
                         }
                     }
                 }
