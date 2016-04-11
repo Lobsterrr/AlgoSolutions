@@ -27,16 +27,14 @@ public class MajorityNumberIII {
         for (int num : nums) {
             if (map.containsKey(num)) {
                 map.put(num, map.get(num) + 1);
+            } else if (map.size() < k) {
+                map.put(num, 1);
             } else {
-                if (map.size() < k) {
-                    map.put(num, 1);
-                } else {
-                    List<Integer> list = new ArrayList<Integer>(map.keySet());
-                    for (int key : list) {
-                        map.put(key, map.get(key) - 1);
-                        if (map.get(key) == 0) {
-                            map.remove(key);
-                        }
+                List<Integer> list = new ArrayList<Integer>(map.keySet());
+                for (int key : list) {
+                    map.put(key, map.get(key) - 1);
+                    if (map.get(key) == 0) {
+                        map.remove(key);
                     }
                 }
             }
