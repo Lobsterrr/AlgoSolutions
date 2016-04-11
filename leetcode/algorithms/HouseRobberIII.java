@@ -36,6 +36,15 @@ public class HouseRobberIII {
         if (root.left == null && root.right == null) {
             root.val;
         }
+        int sumWithoutRoot = rob(root.left) + rob(root.right);
+        int sumWithRoot = root.val;
+        if (root.left != null) {
+            sumWithRoot += rob(root.left.left) + rob(root.left.right);
+        }
+        if (root.right != null) {
+            sumWithRoot += rob(root.right.left) + rob(roo.right.right);
+        }
+        return Math.max(sumWithoutRoot, sumWithRoot);
     }
 
 }
