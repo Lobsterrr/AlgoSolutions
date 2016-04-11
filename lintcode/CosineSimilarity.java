@@ -48,7 +48,7 @@ public class CosineSimilarity {
             return 1.0000;
         }
         double d = (double) product / Math.sqrt(lenA * lenB);
-        return Math.round(d * 10000) / 10000;
+        return (double) Math.round(d * 10000) / 10000;
     }
 
 }
