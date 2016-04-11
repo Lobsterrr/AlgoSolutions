@@ -36,7 +36,7 @@ public class MajorityNumberIII {
                         if (map.get(key) > 1) {
                             map.put(key, map.get(key) - 1);
                         } else {
-                            map.remove(key):
+                            map.remove(key);
                         }
                     }
                 }
