@@ -47,8 +47,8 @@ public class CosineSimilarity {
         if (lenA == 0 || lenB == 0) {
             return 1.0000;
         }
-        DecimalFormat df = new DecimalFormat("#.0000");
-        return df.format(product / Math.sqrt(lenA * lenB));
+        double d = (double) product / Math.sqrt(lenA * lenB);
+        return Math.round(d * 10000) / 10000;
     }
 
 }
