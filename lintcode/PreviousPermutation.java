@@ -27,6 +27,12 @@ public class PreviousPermutation {
             swap(nums, i, i + 1);
             i++;
         }
+        if (i < 0) {
+            for (int j = 0; j < nums.size() / 2; ++j) {
+                swap(nums, j, nums.size() - 1 - j);
+            }
+        }
+        return nums;
     }
     
     public void swap(ArrayList<Integer> nums, int i, int j) {
