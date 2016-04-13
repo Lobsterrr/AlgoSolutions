@@ -23,13 +23,18 @@ public class PreviousPermutation {
         while (i >= 0 && nums.get(i) <= nums.get(i + 1)) {
             i--;
         }
-        while (i >= 0 && i + 1 < nums.size() && nums.get(i) > nums.get(i + 1)) {
-            swap(nums, i, i + 1);
-            i++;
+        int j = i + 1;
+        for (int k = i + 2; k < nums.size(); ++k) {
+            if (nums.get(k) < nums.get(i) && nums.get(k) > nums.get(j)) {
+                j = k;
+            }
         }
-        if (i < 0) {
-            for (int j = 0; j < nums.size() / 2; ++j) {
-                swap(nums, j, nums.size() - 1 - j);
+        swap(nums, i, j);
+        for (int m = i + 1; m < nums.size(); ++m) {
+            for (int n = nums.size() - 2; n >= m; --n) {
+                if (nums.get(n) < nums.get(n + 1)) {
+                    swap(nums, n, n + 1);
+                }
             }
         }
         return nums;
