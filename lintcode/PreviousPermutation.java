@@ -19,13 +19,20 @@ public class PreviousPermutation {
      * @return: A list of integers that's previous permuation
      */
     public ArrayList<Integer> previousPermutation(ArrayList<Integer> nums) {
-            
+        int i = nums.size() - 2;
+        while (i >= 0 && nums.get(i) > nums.get(i + 1)) {
+            i--;
+        }
+        while (i >= 0 && i + 1 < nums.size() && nums.get(i) > nums.get(i + 1)) {
+            swap(nums, i, i + 1);
+            i++;
+        }
     }
     
-    public void swap(int[] nums, int i, int j) {
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
+    public void swap(ArrayList<Integer> nums, int i, int j) {
+        int tmp = nums.get(i);
+        nums.set(i, nums.get(i + 1));
+        nums.set(j, tmp);
     }
 
 }
