@@ -20,7 +20,7 @@ public class PreviousPermutation {
      */
     public ArrayList<Integer> previousPermutation(ArrayList<Integer> nums) {
         int i = nums.size() - 2;
-        while (i >= 0 && nums.get(i) > nums.get(i + 1)) {
+        while (i >= 0 && nums.get(i) <= nums.get(i + 1)) {
             i--;
         }
         while (i >= 0 && i + 1 < nums.size() && nums.get(i) > nums.get(i + 1)) {
