@@ -3,7 +3,6 @@
 
 Find the previous permutation in ascending order.
 
-Have you met this question in a real interview? Yes
  Notice
 
 The list may contains duplicate integers.
@@ -21,6 +20,12 @@ public class PreviousPermutation {
      */
     public ArrayList<Integer> previousPermutation(ArrayList<Integer> nums) {
             
+    }
+    
+    public void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
     }
 
 }
