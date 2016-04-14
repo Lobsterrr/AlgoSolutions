@@ -25,11 +25,10 @@ public class PreviousPermutation {
         }
         if (i >= 0) {
             int j = i + 1;
-            for (int k = i + 2; k < nums.size(); ++k) {
-                if (nums.get(k) < nums.get(i) && nums.get(k) > nums.get(j)) {
-                    j = k;
-                }
+            while (j < nums.size() && nums.get(j) < nums.get(i)) {
+                j++;
             }
+            j--;
             swap(nums, i, j);
         }
         for (int m = i + 1; m < nums.size(); ++m) {
@@ -41,6 +40,8 @@ public class PreviousPermutation {
         }
         return nums;
     }
+
+    public void List
 
 
     public ArrayList<Integer> previousPermutation(ArrayList<Integer> nums) {
