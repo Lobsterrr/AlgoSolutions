@@ -1,7 +1,6 @@
 /*
  * Given an unsorted integer array, find the first missing positive integer.
 
-Have you met this question in a real interview? Yes
 Example
 Given [1,2,0] return 3,
 and [3,4,-1,1] return 2.
