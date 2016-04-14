@@ -31,13 +31,7 @@ public class PreviousPermutation {
             j--;
             swap(nums, i, j);
         }
-        for (int m = i + 1; m < nums.size(); ++m) {
-            for (int n = nums.size() - 2; n >= m; --n) {
-                if (nums.get(n) < nums.get(n + 1)) {
-                    swap(nums, n, n + 1);
-                }
-            }
-        }
+        reverse(nums, i + 1, nums.size() - 1);
         return nums;
     }
 
