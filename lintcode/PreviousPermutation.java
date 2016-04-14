@@ -25,10 +25,9 @@ public class PreviousPermutation {
         }
         if (i >= 0) {
             int j = i + 1;
-            while (j < nums.size() && nums.get(j) < nums.get(i)) {
+            while (j + 1< nums.size() && nums.get(j + 1) < nums.get(i)) {
                 j++;
             }
-            j--;
             swap(nums, i, j);
         }
         reverse(nums, i + 1, nums.size() - 1);
