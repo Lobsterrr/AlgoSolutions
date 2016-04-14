@@ -42,7 +42,13 @@ public class PreviousPermutation {
     }
 
     public void reverse(List<Integer> list, int i, int j) {
-
+        while (i < j) {
+            int tmp = list.get(i);
+            list.set(i, list.get(j));
+            list.set(j, tmp);
+            i++;
+            j--;
+        }
     }
 
 
