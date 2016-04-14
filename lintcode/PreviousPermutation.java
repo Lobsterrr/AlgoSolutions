@@ -41,7 +41,9 @@ public class PreviousPermutation {
         return nums;
     }
 
-    public void List
+    public void reverse(List<Integer> list, int i, int j) {
+
+    }
 
 
     public ArrayList<Integer> previousPermutation(ArrayList<Integer> nums) {
