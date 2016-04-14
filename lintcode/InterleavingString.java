@@ -22,7 +22,6 @@ public class InterleavingString {
             return false;
         }
         boolean[][] dp = new boolean[s1.length() + 1][s2.length() + 1];
-        dp[0][0] = true;
         for (int i = 0; i <= s1.length(); ++i) {
             for (int j = 0; j <= s2.length(); ++j) {
                 if (i == 0 && j == 0) {
