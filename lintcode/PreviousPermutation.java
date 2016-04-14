@@ -41,7 +41,7 @@ public class PreviousPermutation {
         }
     }
     
-    public void swap(ArrayList<Integer> nums, int i, int j) {
+    public void swap(List<Integer> nums, int i, int j) {
         int tmp = nums.get(i);
         nums.set(i, nums.get(j));
         nums.set(j, tmp);
