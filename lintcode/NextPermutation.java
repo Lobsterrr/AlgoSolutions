@@ -32,6 +32,7 @@ public class NextPermutation {
         for (int j = 0; j < (nums.length - i) / 2; ++j) {
             swap(nums, i + j, nums.length - 1 - j);
         }
+        return nums;
     }
 
     public void swap(int[] nums, int i, int j) {
