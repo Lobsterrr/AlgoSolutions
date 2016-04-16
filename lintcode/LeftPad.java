@@ -20,7 +20,7 @@ leftpad("foobar", 6)
 leftpad("1", 2, "0")
 >> "01"
  */
-public class StringUtils {
+public class LeftPad {
 
     /**
      * @param originalStr the string we want to append to with spaces
