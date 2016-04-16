@@ -27,7 +27,7 @@ public class MaximumSubarrayIII {
         int[][] dp = new int[k + 1][len + 1];
         for (int i = 1; i <= k; ++i) {
             for (int j = i; j <= len; ++j) {
-                dp[i][j] = dp[i][j - 1];
+                dp[i][j] = Integer.MIN_VALUE;
                 dp[i][j] = Math.max(dp[i][j], dp[i - 1][j - 1] + maxSubArray(nums, j - 1, len - 1));
             }
         }
