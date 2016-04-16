@@ -24,16 +24,12 @@ public class IntervalSum {
      */
     public ArrayList<Long> intervalSum(int[] A, ArrayList<Interval> queries) {
         ArrayList<Long> result = new ArrayList<Long>();
-        long[] sum = new long[A.length];
+        long[] sum = new long[A.length + 1];
         for (int i = 0; i < A.length; ++i) {
-            if (i == 0) {
-                sum[i] = A[i];
-            } else {
-                sum[i] = A[i] + sum[i - 1];
-            }
+            sum[i + 1] = A[i] + sum[i];
         }
         for (Interval interval : queries) {
-            result.add(sum[queries.end] - sum[queries.start]);
+            result.add(sum[queries.end + 1] - sum[queries.start]);
         }
         return result;
     }
