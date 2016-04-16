@@ -37,7 +37,7 @@ public class MaximumSubarrayIII {
         for (int i = start, curSum = 0; i <= end; ++i) {
             curSum += nums[i];
             maxSum = Math.max(maxSum, curSum);
-            curSum = Math.max(curSum, 0);
+            curSum = Math.max(0, curSum);
         }
         return maxSum;
     }
