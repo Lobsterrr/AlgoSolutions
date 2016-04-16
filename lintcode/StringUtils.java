@@ -26,7 +26,11 @@ public class StringUtils {
      * @return a string
      */
     static public String leftPad(String originalStr, int size) {
-
+        String result = new String(originalStr);
+        for (int i = 0; i < size - originalStr.length(); ++i) {
+            result = " " + result;
+        }
+        return result;
     }
 
     /**
