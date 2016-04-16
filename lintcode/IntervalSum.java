@@ -24,6 +24,22 @@ public class IntervalSum {
      */
     public ArrayList<Long> intervalSum(int[] A, ArrayList<Interval> queries) {
         ArrayList<Long> result = new ArrayList<Long>();
+        long[] sum = new long[A.length];
+        for (int i = 0; i < A.length; ++i) {
+            if (i == 0) {
+                sum[i] = A[i];
+            } else {
+                sum[i] = A[i] + sum[i - 1];
+            }
+        }
+        for (Interval interval : queries) {
+            result.add(sum[queries.end] - sum[queries.start]);
+        }
+        return result;
+    }
+
+    public ArrayList<Long> intervalSum(int[] A, ArrayList<Interval> queries) {
+        ArrayList<Long> result = new ArrayList<Long>();
         for (Interval interval : queries) {
             long sum = 0;
             for (int i = interval.start; i <= interval.end; ++i) {
