@@ -23,7 +23,7 @@ public class FirstMissingPositive {
                 i++;
             }
         }
-        for (int i = 0; i < A.length; ++i) {
+        for (i = 0; i < A.length; ++i) {
             if (A[i] != i + 1) {
                 return i + 1;
             }
