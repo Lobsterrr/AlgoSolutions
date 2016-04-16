@@ -18,9 +18,17 @@ public class FirstMissingPositive {
         int i = 0;
         while (i < A.length) {
             if (A[i] != (i + 1) && 1 <= A[i] && A[i] <= A.length) {
-                
+                swap(A, i, A[i] - 1);
+            } else {
+                i++;
             }
         }
+        for (int i = 0; i < A.length; ++i) {
+            if (A[i] != i + 1) {
+                return i + 1;
+            }
+        }
+        return 1;
     }
 
     public void swap(int[] A, int i, int j) {
