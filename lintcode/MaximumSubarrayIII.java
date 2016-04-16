@@ -32,4 +32,14 @@ public class MaximumSubarrayIII {
         }
     }
 
+    public int maxSubArray(int nums, int start, int end) {
+        int maxSum = Integer.MIN_VALUE;
+        for (int i = start, curSum = 0; i <= end; ++i) {
+            curSum += nums[i];
+            maxSum = Math.max(maxSum, curSum);
+            curSum = Math.max(curSum, 0);
+        }
+        return maxSum;
+    }
+
 }
