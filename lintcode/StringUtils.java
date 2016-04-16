@@ -42,7 +42,7 @@ public class StringUtils {
     static public String leftPad(String originalStr, int size, char padChar) {
         String result = new String(originalStr);
         for (int i = 0; i < size - originalStr.length(); ++i) {
-            result = result + padChar;
+            result = padChar + result;
         }
         return result;
     }
