@@ -26,11 +26,11 @@ public class StringUtils {
      * @return a string
      */
     static public String leftPad(String originalStr, int size) {
-        String result = new String(originalStr);
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < size - originalStr.length(); ++i) {
-            result = " " + result;
+            sb.append(" ");
         }
-        return result;
+        return sb.toString() + originalStr;
     }
 
     /**
@@ -40,11 +40,11 @@ public class StringUtils {
      * @return a string
      */
     static public String leftPad(String originalStr, int size, char padChar) {
-        String result = new String(originalStr);
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < size - originalStr.length(); ++i) {
-            result = padChar + result;
+            sb.append(padChar);
         }
-        return result;
+        return sb.toString() + originalStr;
     }
 
 }
