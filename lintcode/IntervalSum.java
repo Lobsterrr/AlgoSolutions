@@ -29,7 +29,7 @@ public class IntervalSum {
             sum[i + 1] = A[i] + sum[i];
         }
         for (Interval interval : queries) {
-            result.add(sum[queries.end + 1] - sum[queries.start]);
+            result.add(sum[interval.end + 1] - sum[interval.start]);
         }
         return result;
     }
