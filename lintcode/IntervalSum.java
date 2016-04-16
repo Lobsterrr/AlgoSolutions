@@ -34,6 +34,8 @@ public class IntervalSum {
         return result;
     }
 
+/*****************************************************************************/
+
     public ArrayList<Long> intervalSum(int[] A, ArrayList<Interval> queries) {
         ArrayList<Long> result = new ArrayList<Long>();
         for (Interval interval : queries) {
