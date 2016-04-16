@@ -31,7 +31,7 @@ public class MaximumSubarrayIII {
                 dp[i][j] = Math.max(dp[i][j], dp[i - 1][j - 1] + maxSubArray(nums, j - 1, len - 1));
             }
         }
-        return dp[k][n];
+        return dp[k][len];
     }
 
     public int maxSubArray(int nums, int start, int end) {
