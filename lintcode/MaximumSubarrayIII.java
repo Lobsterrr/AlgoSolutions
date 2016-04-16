@@ -34,7 +34,7 @@ public class MaximumSubarrayIII {
         return dp[k][len];
     }
 
-    public int maxSubArray(int nums, int start, int end) {
+    public int maxSubArray(int[] nums, int start, int end) {
         int maxSum = Integer.MIN_VALUE;
         for (int i = start, curSum = 0; i <= end; ++i) {
             curSum += nums[i];
