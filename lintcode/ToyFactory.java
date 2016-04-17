@@ -24,12 +24,26 @@ interface Toy {
 
 class Dog implements Toy {
     // Write your code here
+    void talk() {
+        System.out.println("Wow");
+    }
 }
 
 class Cat implements Toy {
     // Write your code here
+    void talk() {
+        System.out.println("Meow");
+    }
 }
 public class ToyFactory {
 
+    /**
+     * @param type a string
+     * @return Get object of the type
+     */
+    public Toy getToy(String type) {
+        // Write your code here
+
+    }
 
 }
