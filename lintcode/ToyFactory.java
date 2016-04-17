@@ -24,14 +24,14 @@ interface Toy {
 
 class Dog implements Toy {
     // Write your code here
-    void talk() {
+    public void talk() {
         System.out.println("Wow");
     }
 }
 
 class Cat implements Toy {
     // Write your code here
-    void talk() {
+    public void talk() {
         System.out.println("Meow");
     }
 }
