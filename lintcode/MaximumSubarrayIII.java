@@ -30,9 +30,10 @@ public class MaximumSubarrayIII {
                 dp[i][j] = Integer.MIN_VALUE;
                 int maxSum = Integer.MIN_VALUE;
                 int curSum = 0;
-                for (int k = j - 1; k >= i; --k) {
-                    
-
+                for (int k = j; k >= i; --k) {
+                    curSum += nums[k - 1];
+                    maxSum = Math.max(maxSum, curSum);
+                    curSum = Math.max(0, curSum);
                    dp[i][j] = Math.max(dp[i][j], dp[i - 1][k - 1] + maxSum); 
                 }
             }
