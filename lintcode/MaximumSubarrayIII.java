@@ -19,6 +19,7 @@ public class MaximumSubarrayIII {
      * @param k: An integer denote to find k non-overlapping subarrays
      * @return: An integer denote the sum of max k non-overlapping subarrays
      */
+    // O(k * n ^ 2) time, O(k * n) space.
     public int maxSubArray(int[] nums, int k) {
         if (nums.length < k) {
             return 0;
