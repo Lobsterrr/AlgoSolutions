@@ -21,9 +21,6 @@ public class MaximumSubarrayIII {
      */
     // O(k * n ^ 2) time, O(k * n) space.
     public int maxSubArray(int[] nums, int k) {
-        if (nums.length < k) {
-            return 0;
-        }
         int len = nums.length;
         int[][] dp = new int[k + 1][len + 1];
         for (int i = 1; i <= k; ++i) {
