@@ -43,7 +43,13 @@ public class ToyFactory {
      */
     public Toy getToy(String type) {
         // Write your code here
-
+        if (type.equals("Dog")) {
+            return new Dog();
+        } else if (type.equals("Cat")) {
+            return new Cat();
+        } else {
+            return null;
+        }
     }
 
 }
