@@ -10,8 +10,7 @@
 public class PowerOfFour {
 
     public boolean isPowerOfFour(int num) {
-        int mask = 0x55555554;
-        return (num & mask) != 0 && num != 0 && (num & (num - 1)) == 0;
+        return (num & 0x55555555) != 0 && num != 0 && (num & (num - 1)) == 0;
     }
 
     public boolean isPowerOfFour(int num) {
