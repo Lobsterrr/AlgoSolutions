@@ -13,11 +13,4 @@ public class PowerOfFour {
         return (num & 0x55555555) != 0 && num != 0 && (num & (num - 1)) == 0;
     }
 
-    public boolean isPowerOfFour(int num) {
-        while (num >= 16 && num % 4 == 0) {
-            num /= 4;
-        }
-        return num == 1 || num == 4;
-    }
-
 }
