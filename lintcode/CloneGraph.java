@@ -43,6 +43,7 @@ public class CloneGraph {
      * @param node: A undirected graph node
      * @return: A undirected graph node
      */
+    // DFS
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         if (node == null) {
             return null;
@@ -60,6 +61,32 @@ public class CloneGraph {
                     stack.push(neighbor);
                     UndirectedGraphNode copyNode = 
                         new UndirectedGraphNode(neighbor.label);
+                    map.put(neighbor, copyNode);
+                }
+                map.get(cur).neighbors.add(map.get(neighbor));
+            }
+        }
+        return copy;
+    }
+
+/*****************************************************************************/
+
+    // BFS
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        if (node == null) {
+            return null;
+        }
+        UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
+        Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+        queue.offer(node);
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        map.put(node, copy);
+        while (queue.peek() != null) {
+            UndirectedGraphNode cur = queue.poll();
+            for (UndirectedGraphNode neighbor : cur.neighbors) {
+                if (!map.containsKey(neighbor)) {
+                    queue.offer(neighbor);
+                    UndirectedGraphNode copyNode = new UndirectedGraphNode(neighbor.label);
                     map.put(neighbor, copyNode);
                 }
                 map.get(cur).neighbors.add(map.get(neighbor));
