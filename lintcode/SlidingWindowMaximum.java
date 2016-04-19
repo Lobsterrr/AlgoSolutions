@@ -29,7 +29,15 @@ public class SlidingWindowMaximum {
      * @return: The maximum number inside the window at each moving.
      */
     public ArrayList<Integer> maxSlidingWindow(int[] nums, int k) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums, ++i) {
+            if (i < k) {
 
+            } else {
+
+            }
+        }
     }
 
 }
