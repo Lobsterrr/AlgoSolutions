@@ -50,6 +50,7 @@ public class CloneGraph {
         while (!stack.isEmpty()) {
             UndirectedGraphNode cur = stack.pop();
             for (UndirectedGraphNode neighbor : cur.neighbors) {
+                map.get(cur).neighbors.add(map.get(neighbor));
                 if (!map.containsKey(neighbor)) {
                     stack.push(neighbor);
                     UndirectedGraphNode copyNode = new UndirectedGraphNode(neighbor.label);
@@ -57,6 +58,7 @@ public class CloneGraph {
                 }
             }
         }
+        return copy;
     }
 
 }
