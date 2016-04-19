@@ -15,6 +15,7 @@
  */
 public class MinimumSizeSubarraySum {
 
+    // O(n) time.
     public int minSubArrayLen(int s, int[] nums) {
         int result = Integer.MAX_VALUE;
         int left = 0;
@@ -32,6 +33,7 @@ public class MinimumSizeSubarraySum {
 
 /*********************************************************/    
 
+    // O(n ^ 2) time.
     public int minSubArrayLen(int s, int[] nums) {
         int result = Integer.MAX_VALUE;
         for (int i = 0; i < nums.length; i++) {
