@@ -51,7 +51,9 @@ public class CloneGraph {
             UndirectedGraphNode cur = stack.pop();
             for (UndirectedGraphNode neighbor : cur.neighbors) {
                 if (!map.containsKey(neighbor)) {
-
+                    stack.push(neighbor);
+                    UndirectedGraphNode copyNode = new UndirectedGraphNode(neighbor.label);
+                    map.put(neighbor, copyNode);
                 }
             }
         }
