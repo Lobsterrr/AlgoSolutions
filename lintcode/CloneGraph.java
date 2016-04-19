@@ -39,7 +39,22 @@ public class CloneGraph {
      * @return: A undirected graph node
      */
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        if (node == null) {
+            return null;
+        }
+        UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
+        Stack<UndirectedGraphNode> stack = new Stack<UndirectedGraphNode>();
+        stack.push(node);
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        map.put(node, copy);
+        while (!stack.isEmpty()) {
+            UndirectedGraphNode cur = stack.pop();
+            for (UndirectedGraphNode neighbor : cur.neighbors) {
+                if (!map.containsKey(neighbor)) {
 
+                }
+            }
+        }
     }
 
 }
