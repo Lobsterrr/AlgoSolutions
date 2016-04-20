@@ -33,7 +33,7 @@ public class SlidingWindowMaximum {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums, ++i) {
             if (i < k) {
-
+                map.put(nums, 1 + map
             } else {
 
             }
