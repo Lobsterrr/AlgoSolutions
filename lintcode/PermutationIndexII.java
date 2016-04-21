@@ -11,7 +11,19 @@ public class PermutationIndexII {
      * @return a long integer
      */
     public long permutationIndexII(int[] A) {
-
+        long result = 1;
+        long factorial = 1;
+        for (int i = A.length - 2; i >= 0; i--) {
+            factorial *= A.length - 1 - i;
+            int reverseCount = 0;
+            for (int j = i + 1; j < A.length; ++j) {
+                if (A[j] > A[i]) {
+                    reverseCount++;
+                }
+            }
+            result += reverseCount * factorial;
+        }
+        return result;
     }
 
 }
