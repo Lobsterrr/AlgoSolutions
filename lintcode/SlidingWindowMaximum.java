@@ -37,7 +37,7 @@ public class SlidingWindowMaximum {
             if (i < k) {
                 map.put(nums[i], 1 + map.contains(nums[i]) ? map.get(nums[i]) : 0);
             } else {
-
+                
             }
         }
     }
