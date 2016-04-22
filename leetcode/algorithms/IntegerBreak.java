@@ -17,6 +17,12 @@ public class IntegerBreak {
             return n;
         }
         int result = 1;
+        while (n >= 5) {
+            result *= 3;
+            n -= 3;
+        }
+        result *= n;
+        return result;
     }
 
 }
