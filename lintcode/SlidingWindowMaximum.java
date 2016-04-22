@@ -30,6 +30,18 @@ public class SlidingWindowMaximum {
      */
     public ArrayList<Integer> maxSlidingWindow(int[] nums, int k) {
         ArrayList<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < nums.length - k; ++i) {
+            int max = Integer.MIN_VALUE;
+            for (int j = i; j < i + k; ++j) {
+                max = Math.max(max, nums[j]);
+            }
+            result.add(max);
+        }
+        return result;
+    }
+
+    public ArrayList<Integer> maxSlidingWindow(int[] nums, int k) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int max = Integer.MIN_VALUE;
         int secondMax = Integer.MIN_VALUE;
