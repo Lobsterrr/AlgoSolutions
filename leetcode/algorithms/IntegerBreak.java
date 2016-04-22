@@ -30,6 +30,8 @@ public class IntegerBreak {
         return result;
     }
 
+/***********************************************/
+
     public int integerBreak(int n) {
         if (n <= 3) {
             return n - 1;
