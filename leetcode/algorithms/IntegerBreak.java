@@ -13,7 +13,10 @@ You may check the breaking results of n ranging from 7 to 10 to discover the reg
 public class IntegerBreak {
 
     public int integerBreak(int n) {
-
+        if (n <= 3) {
+            return n;
+        }
+        int result = 1;
     }
 
 }
