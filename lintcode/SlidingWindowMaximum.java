@@ -30,7 +30,7 @@ public class SlidingWindowMaximum {
      */
     public ArrayList<Integer> maxSlidingWindow(int[] nums, int k) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-        for (int i = 0; i < nums.length - k + 1; ++i) {
+        for (int i = 0; k > 0 && i < nums.length - k + 1; ++i) {
             int max = Integer.MIN_VALUE;
             for (int j = i; j < i + k; ++j) {
                 max = Math.max(max, nums[j]);
