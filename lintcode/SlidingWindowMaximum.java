@@ -37,7 +37,7 @@ public class SlidingWindowMaximum {
                 deque.pollLast();
             }
             deque.offerLast(i);
-            while (deque.size() > 0 && nums[deque.peekFirst()] + k < i + 1) {
+            while (deque.size() > 0 && deque.peekFirst() + k < i + 1) {
                 deque.pollFirst();
             }
             if (i >= k - 1) {
