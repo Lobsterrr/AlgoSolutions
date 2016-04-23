@@ -29,27 +29,12 @@ public class SlidingWindowMaximum {
      * @return: The maximum number inside the window at each moving.
      */
     public ArrayList<Integer> maxSlidingWindow(int[] nums, int k) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        for (int i = 0; k > 0 && i < nums.length - k + 1; ++i) {
-            int max = Integer.MIN_VALUE;
-            for (int j = i; j < i + k; ++j) {
-                max = Math.max(max, nums[j]);
-            }
-            result.add(max);
-        }
-        return result;
-    }
-
-    public ArrayList<Integer> maxSlidingWindow(int[] nums, int k) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        int max = Integer.MIN_VALUE;
-        int secondMax = Integer.MIN_VALUE;
-        for (int i = 0; i < nums, ++i) {
-            if (i < k) {
-                map.put(nums[i], 1 + map.contains(nums[i]) ? map.get(nums[i]) : 0);
-            } else {
-                
+        int len = k == 0 ? 0 : nums.length - k + 1;
+        int[] result = new int[len];
+        Deque<Integer> deque = new LinkedList<Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+            while (i > 0 && nums[deque.peekLast()] < nums[i]) {
+                deque.offerLast(i);
             }
         }
     }
