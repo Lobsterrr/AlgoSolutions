@@ -41,10 +41,13 @@ public class PermutationIndexII {
                     reverseCount++;
                 }
             }
-            result += reverseCount * 
-            for (
-
+            long increment = reverseCount * factorial(A.length - 1 - i);
+            for (Entry<Integer, Integer> entry : map.entrySet()) {
+                increment /= factorial(entry.getValue());
+            }
+            result += increment;
         }
+        return result;
     }
 
     public long factorial(int n) {
