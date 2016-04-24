@@ -34,7 +34,7 @@ public class PermutationIndexII {
         long result = 1;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = A.length - 2; i >= 0; --i) {
-            map.put(A[i + 1], 1 + map.containsKey(A[i + 1]) ? map.get(A[i + 1]) : 0);
+            map.put(A[i + 1], 1 + (map.containsKey(A[i + 1]) ? map.get(A[i + 1]) : 0));
             int reverseCount = 0;
             for (int j = i + 1; j < A.length; ++j) {
                 if (A[i] > A[j]) {
@@ -42,8 +42,8 @@ public class PermutationIndexII {
                 }
             }
             long increment = reverseCount * factorial(A.length - 1 - i);
-            for (Entry<Integer, Integer> entry : map.entrySet()) {
-                increment /= factorial(entry.getValue());
+            for (int key : map.keySet()) {
+                increment /= factorial(map.get(key));
             }
             result += increment;
         }
