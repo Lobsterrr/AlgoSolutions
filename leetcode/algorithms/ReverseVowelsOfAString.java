@@ -1,5 +1,11 @@
 /*
- *
+ * Write a function that takes a string as input and reverse only the vowels of a string.
+
+ * Example 1:
+ * Given s = "hello", return "holle".
+
+ * Example 2:
+ * Given s = "leetcode", return "leotcede".
  */
 public class ReverseVowelsOfAString {
 
@@ -23,8 +29,8 @@ public class ReverseVowelsOfAString {
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 
-    public void swap(int[] array, int i, int j) {
-        int tmp = array[i];
+    public void swap(Object[] array, int i, int j) {
+        Object tmp = array[i];
         array[i] = array[j];
         array[j] = tmp;
     }
