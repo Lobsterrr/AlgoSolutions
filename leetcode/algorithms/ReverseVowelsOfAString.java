@@ -26,7 +26,8 @@ public class ReverseVowelsOfAString {
     }
 
     public boolean isVowelsChar(char c) {
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' 
+            || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
     }
 
     public void swap(char[] array, int i, int j) {
