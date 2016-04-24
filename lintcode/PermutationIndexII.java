@@ -13,19 +13,20 @@ public class PermutationIndexII {
     public long permutationIndexII(int[] A) {
         long result = 1;
         long factorial = 1;
+        long duplicate = 1;
         for (int i = A.length - 2; i >= 0; i--) {
             factorial *= A.length - 1 - i;
             int reverseCount = 0;
-            int dupilcate = 1;
+            int dupilcateCount = 1;
             for (int j = i + 1; j < A.length; ++j) {
-                if (A[i] > A[j]) {
+                if (A[i] >= A[j]) {
                     reverseCount++;
                 }
                 if (A[i] == A[j]) {
-                    dupilcate++;
+                    dupilcateCount++;
                 }
             }
-            result += reverseCount * factorial / dupilcate;
+            result += reverseCount * factorial / dupilcateCount;
         }
         return result;
     }
