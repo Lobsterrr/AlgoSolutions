@@ -19,7 +19,7 @@ public class ReverseVowelsOfAString {
             } else if (!isVowelsChar(array[j])) {
                 j--;
             } else {
-                swap(array, i, j);
+                swap(array, i++, j--);
             }
         }
         return new String(array);
