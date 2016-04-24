@@ -29,8 +29,8 @@ public class ReverseVowelsOfAString {
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 
-    public void swap(Object[] array, int i, int j) {
-        Object tmp = array[i];
+    public void swap(char[] array, int i, int j) {
+        char tmp = array[i];
         array[i] = array[j];
         array[j] = tmp;
     }
