@@ -30,4 +30,29 @@ public class PermutationIndexII {
         return result;
     }
 
+    public long permutationIndexII(int[] A) {
+        long result = 1;
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = A.length - 2; i >= 0; --i) {
+            map.put(A[i + 1], 1 + map.containsKey(A[i + 1]) ? map.get(A[i + 1]) : 0);
+            int reverseCount = 0;
+            for (int j = i + 1; j < A.length; ++j) {
+                if (A[i] > A[j]) {
+                    reverseCount++;
+                }
+            }
+            result += reverseCount * 
+            for (
+
+        }
+    }
+
+    public long factorial(int n) {
+        long result = 1;
+        for (int i = 2; i <= n; ++i) {
+            result *= i;
+        }
+        return result;
+    }
+
 }
