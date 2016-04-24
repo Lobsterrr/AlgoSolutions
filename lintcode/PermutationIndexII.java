@@ -21,7 +21,7 @@ public class PermutationIndexII {
                     reverseCount++;
                 }
             }
-            long increment = reverseCount * factorial(A.length - 1 - i);
+            // long increment = reverseCount * factorial(A.length - 1 - i);
             for (int key : map.keySet()) {
                 increment /= factorial(map.get(key));
             }
