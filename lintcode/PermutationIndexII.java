@@ -16,12 +16,16 @@ public class PermutationIndexII {
         for (int i = A.length - 2; i >= 0; i--) {
             factorial *= A.length - 1 - i;
             int reverseCount = 0;
+            int dupilcate = 1;
             for (int j = i + 1; j < A.length; ++j) {
-                if (A[j] > A[i]) {
+                if (A[i] > A[j]) {
                     reverseCount++;
                 }
+                if (A[i] == A[j]) {
+                    dupilcate++;
+                }
             }
-            result += reverseCount * factorial;
+            result += reverseCount * factorial / dupilcate;
         }
         return result;
     }
