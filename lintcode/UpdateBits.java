@@ -28,8 +28,8 @@ public class UpdateBits {
         char[] tmp = Integer.toBinaryString(n).toCharArray();
         char[] an = new char[32];
         int index = an.length - 1;
-        for (int i = tmp.length - 1; i >= 0; --i) {
-            an[index--] = tmp[i];
+        for (int k = tmp.length - 1; k >= 0; --k) {
+            an[index--] = tmp[k];
         }
         if (j - i - 1 > am.length) {
             return 0;
