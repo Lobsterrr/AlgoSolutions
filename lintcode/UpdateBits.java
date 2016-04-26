@@ -25,10 +25,11 @@ public class UpdateBits {
      */
     public int updateBits(int n, int m, int i, int j) {
         char[] am = Integer.toBinaryString(m).toCharArray();
+        char[] tmp = Integer.toBinaryString(n).toCharArray();
         char[] an = new char[32];
         int index = an.length - 1;
-        for (int i = Integer.toBinaryString(n).toCharArray() - 1; i >= 0; --i) {
-            
+        for (int i = tmp.length - 1; i >= 0; --i) {
+            an[index--] = tmp[i];
         }
         if (j - i - 1 > am.length) {
             return 0;
