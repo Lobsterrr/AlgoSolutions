@@ -25,7 +25,7 @@ public class UpdateBits {
      */
     public int updateBits(int n, int m, int i, int j) {
         int left = n & ((1 << i) - 1);
-        int right = n >> (j + 1) << (j + 1);
+        int right = j >= 31 ? 0 : (n >> (j + 1) << (j + 1));
         return left | (m << i) | right;
     }
     
