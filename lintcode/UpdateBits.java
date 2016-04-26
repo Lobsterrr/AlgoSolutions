@@ -25,7 +25,7 @@ public class UpdateBits {
      */
     public int updateBits(int n, int m, int i, int j) {
         char[] am = Integer.toBinaryString(m).toCharArray();
-        char[] an = Integer.toBinaryString(n).toCharArray();
+        char[] an = new char[32];
         if (j - i - 1 > am.length) {
             return 0;
         }
