@@ -27,6 +27,7 @@ public class UpdateBits {
         char[] am = Integer.toBinaryString(m).toCharArray();
         char[] tmp = Integer.toBinaryString(n).toCharArray();
         char[] an = new char[32];
+        Arrays.fill(an, '0');
         int index = an.length - 1;
         for (int k = tmp.length - 1; k >= 0; --k) {
             an[index--] = tmp[k];
