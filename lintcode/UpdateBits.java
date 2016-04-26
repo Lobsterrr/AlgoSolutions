@@ -24,25 +24,9 @@ public class UpdateBits {
      *return: An integer
      */
     public int updateBits(int n, int m, int i, int j) {
-        char[] am = Integer.toBinaryString(m).toCharArray();
-        char[] tmp = Integer.toBinaryString(n).toCharArray();
-        char[] an = new char[32];
-        Arrays.fill(an, '0');
-        int index = an.length - 1;
-        for (int k = tmp.length - 1; k >= 0; --k) {
-            an[index--] = tmp[k];
-        }
-        if (j - i - 1 > am.length) {
-            return 0;
-        }
-        for (int k = i; k <= j; ++k) {
-            if (k - i + 1 <= am.length) {
-                an[an.length - 1 - k] = am[am.length - 1 - k + i];
-            } else {
-                an[an.length - 1 - k] = '0';
-            }
-        }
-        return Integer.parseInt(new String(an), 2);
+        int left = n & ((1 << i) - 1);
+        int right = n >> (j + 1) << (j + 1);
+        return left | (m << i) | right;
     }
     
 }
