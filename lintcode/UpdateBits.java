@@ -33,7 +33,7 @@ public class UpdateBits {
                 an[an.length - 1 - k] = '0';
             }
         }
-        return Integer.parseInt(new String(an));
+        return Integer.parseInt(new String(an), 2);
     }
     
 }
