@@ -23,7 +23,7 @@ public class DigitCounts {
             int m = n / pow % 10;
             result += m * base;
             if (m == k) {
-                result += n % pow;
+                result += n % pow + 1;
             } else if (m > k) {
                 result += pow;
             }
