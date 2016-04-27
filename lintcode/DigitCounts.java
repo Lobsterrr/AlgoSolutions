@@ -14,7 +14,7 @@ public class DigitCounts {
      */
     public int digitCounts(int k, int n) {
         int result = 0;
-        int base = 1;
+        int base = 0;
         int pow = 1;
         while (n > 0) {
             int m = n / pow % 10;
