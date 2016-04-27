@@ -6,6 +6,11 @@ if n=12, k=1 in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], we have FIVE 1's (1,
  */
 public class DigitCounts {
 
+    /*
+     * param k : As description.
+     * param n : As description.
+     * return: An integer denote the count of digit k in 1..n
+     */
     public int digitCounts(int k, int n) {
 
     }
