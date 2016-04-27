@@ -16,7 +16,7 @@ public class DigitCounts {
         int result = 0;
         int base = 0;
         int pow = 1;
-        while (n > 0) {
+        while (n > pow) {
             int m = n / pow % 10;
             result += m * base;
             if (m == k) {
