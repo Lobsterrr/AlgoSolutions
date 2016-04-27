@@ -27,6 +27,7 @@ public class DigitCounts {
             base = 10 * base + pow;
             pow *= 10;
         }
+        return result;
     }
 
 }
