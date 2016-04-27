@@ -13,6 +13,9 @@ public class DigitCounts {
      * return: An integer denote the count of digit k in 1..n
      */
     public int digitCounts(int k, int n) {
+        if (n <= k) {
+            return n == k ? 1 : 0;
+        }
         int result = 0;
         int base = 0;
         int pow = 1;
@@ -20,7 +23,7 @@ public class DigitCounts {
             int m = n / pow % 10;
             result += m * base;
             if (m == k) {
-                result += n % (10 * pow);
+                result += n % pow;
             } else if (m > k) {
                 result += pow;
             }
