@@ -23,6 +23,12 @@ public class HouseRobberII {
     }
 
     public int rob(int[] nums, int start, int end) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        if (nums.length == 1) {
+            return nums[0];
+        }
         int[] dp = new int[nums.length + 1];
         if (start < nums.length) {
             dp[start + 1] = nums[start];
