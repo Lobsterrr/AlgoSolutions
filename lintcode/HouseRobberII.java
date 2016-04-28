@@ -26,11 +26,10 @@ public class HouseRobberII {
         if (nums.length == 1) {
             return nums[0];
         }
-        int prev = 0;
         int result = 0;
-        for (int i = start; i <= end; ++i) {
+        for (int i = start, prev = 0; i <= end; ++i) {
             int tmp = result;
-            result = Math.max(prev + nums[i], result);
+            result = Math.max(result, prev + nums[i]);
             prev = tmp;
         }
         return result;
