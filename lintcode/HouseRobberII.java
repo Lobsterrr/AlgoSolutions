@@ -23,20 +23,17 @@ public class HouseRobberII {
     }
 
     public int rob(int[] nums, int start, int end) {
-        if (nums.length == 0) {
-            return 0;
-        }
         if (nums.length == 1) {
             return nums[0];
         }
-        int[] dp = new int[nums.length + 1];
-        if (start < nums.length) {
-            dp[start + 1] = nums[start];
+        int prev = 0;
+        int result = 0;
+        for (int i = start; i <= end; ++i) {
+            int tmp = result;
+            result = Math.max(prev + nums[i], result);
+            prev = tmp;
         }
-        for (int i = start + 1; i <= end; ++i) {
-            dp[i + 1] = Math.max(dp[i], dp[i - 1] + nums[i]);
-        }
-        return dp[nums.length];
-    } 
+        return result;
+    }
 
 }
