@@ -24,7 +24,7 @@ public class HouseRobberII {
 
     public int rob(int[] nums, int start, int end) {
         int[] dp = new int[nums.length + 1];
-        if (nums.length > 0) {
+        if (start < nums.length) {
             dp[start + 1] = nums[start];
         }
         for (int i = start + 1; i <= end; ++i) {
