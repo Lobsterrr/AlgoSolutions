@@ -33,7 +33,20 @@ public class HouseRobberIII {
      * @return: The maximum amount of money you can rob tonight
      */
     public int houseRobber3(TreeNode root) {
-
+        if (root == null) {
+            return 0;
+        }
+        int sumWithRoot = root.val;
+        if (root.left != null) {
+            sumWithRoot += houseRobber3(root.left.left);
+            sumWithRoot += houseRobber3(root.left.right);
+        }
+        if (root.right != null) {
+            sumWithRoot += houseRobber3(root.right.left);
+            sumWithRoot += houseRobber3(root.right.right);
+        }
+        int sumWithoutRoot = houseRobber3(root.left) + houseRobber3(root.right);
+        return Math.max(sumWithRoot, sumWithoutRoot);
     }
 
 }
