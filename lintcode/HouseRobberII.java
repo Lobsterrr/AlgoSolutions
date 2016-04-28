@@ -17,9 +17,17 @@ public class HouseRobberII {
      * return: The maximum amount of money you can rob tonight
      */
     public int houseRobber2(int[] nums) {
-
+        int sum1 = rob(nums, 0, nums.length - 2);
+        int sum2 = rob(nums, 1, nums.length - 1);
     }
 
-    public int 
+    public int rob(int[] nums, int start, int end) {
+        int[] dp = new int[nums.length + 1];
+        dp[start + 1] = nums[start];
+        for (int i = start + 1; i <= end; ++i) {
+            dp[i + 1] = Math.max(dp[i], dp[i - 1] + nums[i]);
+        }
+        return dp[nums.length];
+    } 
 
 }
