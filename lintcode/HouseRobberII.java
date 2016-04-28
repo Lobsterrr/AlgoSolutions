@@ -7,7 +7,6 @@ Given a list of non-negative integers representing the amount of money of each h
 
 This is an extension of House Robber.
 
-Have you met this question in a real interview? Yes
 Example
 nums = [3,6,4], return 6
  */
@@ -20,5 +19,7 @@ public class HouseRobberII {
     public int houseRobber2(int[] nums) {
 
     }
+
+    public int 
 
 }
