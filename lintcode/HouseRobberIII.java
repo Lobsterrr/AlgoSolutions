@@ -38,12 +38,10 @@ public class HouseRobberIII {
         }
         int sumWithRoot = root.val;
         if (root.left != null) {
-            sumWithRoot += houseRobber3(root.left.left);
-            sumWithRoot += houseRobber3(root.left.right);
+            sumWithRoot += houseRobber3(root.left.left) + houseRobber3(root.left.right);
         }
         if (root.right != null) {
-            sumWithRoot += houseRobber3(root.right.left);
-            sumWithRoot += houseRobber3(root.right.right);
+            sumWithRoot += houseRobber3(root.right.left) + houseRobber3(root.right.right);
         }
         int sumWithoutRoot = houseRobber3(root.left) + houseRobber3(root.right);
         return Math.max(sumWithRoot, sumWithoutRoot);
