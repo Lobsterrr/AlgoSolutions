@@ -24,7 +24,9 @@ public class HouseRobberII {
 
     public int rob(int[] nums, int start, int end) {
         int[] dp = new int[nums.length + 1];
-        dp[start + 1] = nums[start];
+        if (nums.length > 0) {
+            dp[start + 1] = nums[start];
+        }
         for (int i = start + 1; i <= end; ++i) {
             dp[i + 1] = Math.max(dp[i], dp[i - 1] + nums[i]);
         }
