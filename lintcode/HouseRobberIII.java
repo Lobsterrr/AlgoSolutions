@@ -46,9 +46,9 @@ public class HouseRobberIII {
         if (root == null) {
             return new int[2];
         }
+        int[] result = new int[2];
         int[] left = rob(root.left);
         int[] right = rob(root.right);
-        int[] result = new int[2];
         result[0] = left[1] + right[1];
         result[1] = Math.max(root.val + left[0] + right[0], result[0]);
         return result;
