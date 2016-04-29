@@ -47,4 +47,21 @@ public class HouseRobberIII {
         return Math.max(sumWithRoot, sumWithoutRoot);
     }
 
+    public int houseRobber3(TreeNode root) {
+        int[] sum = helper(root);
+        return Math.max(sum[0], sum[1]);
+    }
+
+    public int[] helper(TreeNode root) {
+        int[] sum = new int[2];
+        if (root == null) {
+            return sum;
+        }
+        int[] left = helper(root.left);
+        int[] right = helper(root.right);
+        sum[0] = root.val + left[1] + right[1];
+        sum[1] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        return sum;
+    }
+
 }
