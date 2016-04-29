@@ -39,19 +39,18 @@ public class HouseRobberIII {
      * @return: The maximum amount of money you can rob tonight
      */
     public int houseRobber3(TreeNode root) {
-        int[] sum = helper(root);
-        return Math.max(sum[0], sum[1]);
+        return rob(root)[1];
     }
 
-    public int[] helper(TreeNode root) {
+    public int[] rob(TreeNode root) {
         if (root == null) {
             return new int[2];
         }
-        int[] left = helper(root.left);
-        int[] right = helper(root.right);
+        int[] left = rob(root.left);
+        int[] right = rob(root.right);
         int[] result = new int[2];
-        result[0] = root.val + left[1] + right[1];
-        result[1] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        result[0] = left[1] + right[1];
+        result[1] = Math.max(root.val + left[0] + right[0], result[0]);
         return result;
     }
 
