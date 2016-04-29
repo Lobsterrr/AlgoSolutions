@@ -58,7 +58,26 @@ public class HouseRobberIII {
 /*****************************************************************************/
 
     public int houseRobber3(TreeNode root) {
+        return rob(root, new HashMap<TreeNode, Integer>());
+    }
 
+    public int rob(TreeNode root, Map<TreeNode, Integer> map) {
+        if (root == null) {
+            return 0;
+        }
+        if (map.containsKey(root)) {
+            return map.get(root);
+        }
+        int result = root.val;
+        if (root.left != null) {
+            result += rob(root.left.left, map) + rob(root.left.right, map);
+        }
+        if (root.right != null) {
+            result += rob(root.right.left, map) + rob(root.right.right, map);
+        }
+        result = Math.max(result, rob(root.left, map) + rob(root.right, map));
+        map.put(root, result);
+        return result;
     }
 
 }
