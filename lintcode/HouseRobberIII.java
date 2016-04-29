@@ -55,4 +55,10 @@ public class HouseRobberIII {
         return result;
     }
 
+/*****************************************************************************/
+
+    public int houseRobber3(TreeNode root) {
+
+    }
+
 }
