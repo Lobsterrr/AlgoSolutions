@@ -53,15 +53,15 @@ public class HouseRobberIII {
     }
 
     public int[] helper(TreeNode root) {
-        int[] sum = new int[2];
         if (root == null) {
-            return sum;
+            return new int[2];
         }
         int[] left = helper(root.left);
         int[] right = helper(root.right);
-        sum[0] = root.val + left[1] + right[1];
-        sum[1] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
-        return sum;
+        int[] result = new int[2];
+        result[0] = root.val + left[1] + right[1];
+        result[1] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        return result;
     }
 
 }
