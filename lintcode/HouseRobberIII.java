@@ -36,6 +36,7 @@ public class HouseRobberIII {
         if (root == null) {
             return 0;
         }
+        int sumWithoutRoot = houseRobber3(root.left) + houseRobber3(root.right);
         int sumWithRoot = root.val;
         if (root.left != null) {
             sumWithRoot += houseRobber3(root.left.left) + houseRobber3(root.left.right);
@@ -43,7 +44,6 @@ public class HouseRobberIII {
         if (root.right != null) {
             sumWithRoot += houseRobber3(root.right.left) + houseRobber3(root.right.right);
         }
-        int sumWithoutRoot = houseRobber3(root.left) + houseRobber3(root.right);
         return Math.max(sumWithRoot, sumWithoutRoot);
     }
 
