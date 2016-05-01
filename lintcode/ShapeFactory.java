@@ -38,13 +38,25 @@ interface Shape {
 
 class Rectangle implements Shape {
 
+    void draw() {
+
+    }
+
 }
 
 class Square implements Shape {
 
+    void draw() {
+
+    }
+
 }
 
 class Triangle implements Shape {
+
+    void draw() {
+
+    }
 
 }
 
