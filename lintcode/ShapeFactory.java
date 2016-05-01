@@ -1,6 +1,12 @@
 /*
  *
  */
+/**
+ * Your object will be instantiated and called as such:
+ * ShapeFactory sf = new ShapeFactory();
+ * Shape shape = sf.getShape(shapeType);
+ * shape.draw();
+ */
 interface Shape {
 
     void draw();
