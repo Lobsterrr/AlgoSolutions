@@ -50,4 +50,20 @@ class Triangle implements Shape {
 
 public class ShapeFactory {
 
+    /**
+     * @param shapeType a string
+     * @return Get object of type Shape
+     */
+    public Shape getShape(String shape) {
+        if (shape.equals("Rectangle")) {
+            return new Rectangle();
+        } else if (shape.equals("Square")) {
+            return new Square();
+        } else if (shape.equals("Triangle")) {
+            return new Triangle();
+        } else {
+            return null;
+        }
+    }
+
 }
