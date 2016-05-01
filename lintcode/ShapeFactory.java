@@ -39,7 +39,24 @@ interface Shape {
 class Rectangle implements Shape {
 
     void draw() {
-
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 6; ++j) {
+                if (i == 0 || i == 2) {
+                    if (j == 0 || j == 5) {
+                        System.out.print(" ");
+                    } else {
+                        System.out.print("-");
+                    }
+                } else {
+                    if (j == 0 || j == 5) {
+                        System.out.print("|");
+                    } else {
+                        System.out.print(" ");
+                    }
+                }
+            }
+            System.out.println();
+        }
     }
 
 }
@@ -47,7 +64,24 @@ class Rectangle implements Shape {
 class Square implements Shape {
 
     void draw() {
-
+        for (int i = 0; i < 4; ++i) {
+            for (int j = 0; j < 6; ++j) {
+                if (i == 0 || i == 3) {
+                    if (j == 0 || j == 5) {
+                        System.out.print(" ");
+                    } else {
+                        System.out.print("-");
+                    }
+                } else {
+                    if (j == 0 || j == 5) {
+                        System.out.print("|");
+                    } else {
+                        System.out.print(" ");
+                    }
+                }
+            }
+            System.out.println();
+        }
     }
 
 }
