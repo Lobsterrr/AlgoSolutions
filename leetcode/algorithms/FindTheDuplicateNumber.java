@@ -13,7 +13,7 @@ public class FindTheDuplicateNumber {
 
     public int findDuplicate((int[] nums) {
         int fast = nums[nums[0]];
-        int slow = 0;
+        int slow = nums[0];
         while (fast != slow) {
             fast = nums[nums[fast]];
             slow = nums[slow];
