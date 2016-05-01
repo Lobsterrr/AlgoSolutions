@@ -18,6 +18,12 @@ public class FindTheDuplicateNumber {
             fast = nums[nums[fast]];
             slow = nums[slow];
         }
+        fast = 0;
+        while (fast != slow) {
+            fast = nums[fast];
+            slow = nums[slow];
+        }
+        return fast;
     }
 
     // O(n) time, O(1) space
