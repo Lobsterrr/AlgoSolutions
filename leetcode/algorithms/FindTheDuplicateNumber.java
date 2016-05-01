@@ -11,8 +11,14 @@
  */
 public class FindTheDuplicateNumber {
 
-    //TODO
-    //The method below has modidied the array;
+    public int findDuplicate((int[] nums) {
+        int fast = nums[nums[0]];
+        int slow = 0;
+        while (fast != slow) {
+            fast = nums[nums[fast]];
+            slow = nums[slow];
+        }
+    }
 
     // O(n) time, O(1) space
     public int findDuplicate(int[] nums) {
