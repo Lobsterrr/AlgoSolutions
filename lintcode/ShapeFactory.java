@@ -89,7 +89,14 @@ class Square implements Shape {
 class Triangle implements Shape {
 
     void draw() {
-
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 6; ++j) {
+                if (i + j == 2) {
+                    System.out.print("/");
+                }
+                if (i + 
+            }
+        }
     }
 
 }
