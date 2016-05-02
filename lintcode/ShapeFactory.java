@@ -94,7 +94,9 @@ class Triangle implements Shape {
                 if (i + j == 2) {
                     System.out.print("/");
                 }
-                if (i + 
+                if (j - i == 3) {
+                    System.out.print("\");
+                }
             }
         }
     }
