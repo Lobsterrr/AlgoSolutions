@@ -19,10 +19,10 @@ public class ValidNumber {
      * @return whether the string is a valid number
      */
     public boolean isNumber(String s) {
-        s = s.trim();
         if (s == null || s.length() == 0) {
             return false;
         }
+        s = s.trim();
         int dotCount = 0;
         int letterCount = 0;
         int eCount = 0;
