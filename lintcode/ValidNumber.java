@@ -36,6 +36,9 @@ public class ValidNumber {
                 if (eCount > 0 && digitCount == 0) {
                     return false;
                 }
+                if (eCount > 0 && posCount == 0) {
+                    return false;
+                }
             } else if (Character.isDigit(c)) {
                 digitCount++;
                 if (c > '0') {
