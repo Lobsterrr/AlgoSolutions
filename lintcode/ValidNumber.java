@@ -64,6 +64,9 @@ public class ValidNumber {
                 }
             } else if (c == '.') {
                 dotCount++;
+                if (eCount > 0) {
+                    return false;
+                }
             } else if (c == 'e' || c == 'E') {
                 eCount++;
                 if (eCount > 0 && digitCount == 0) {
