@@ -22,7 +22,12 @@ public class ValidNumber {
         if (s == null || s.length() == 0) {
             return false;
         }
-        
+        for (int i = 0; i < s.length(); ++i) {
+            char c = s.charAt(i);
+            if (Character.isLetter(c) && c != 'e' && c != 'E') {
+                return false;
+            }
+        }
     }
 
 }
