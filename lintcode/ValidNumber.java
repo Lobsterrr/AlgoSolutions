@@ -24,6 +24,7 @@ public class ValidNumber {
         int eCount = 0;
         int signCount = 0;
         int digitCount = 0;
+        int posCount = 0;
         for (int i = 0; i < s.length(); ++i) {
             char c = s.charAt(i);
             if (c == '+' || c == '-') {
@@ -37,6 +38,9 @@ public class ValidNumber {
                 }
             } else if (Character.isDigit(c)) {
                 digitCount++;
+                if (c > '0') {
+                    posCount++;
+                }
             } else {
                 return false;
             } 
