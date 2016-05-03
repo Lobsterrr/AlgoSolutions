@@ -81,7 +81,7 @@ class Triangle implements Shape {
                     System.out.print("/");
                 }
                 if (j - i == 3) {
-                    System.out.print("\");
+                    System.out.print("\\");
                 }
                 if (i == 2 && 1 <= j && j <= 5) {
                     System.out.print("_");
@@ -98,12 +98,12 @@ public class ShapeFactory {
      * @param shapeType a string
      * @return Get object of type Shape
      */
-    public Shape getShape(String shape) {
-        if (shape.equals("Rectangle")) {
+    public Shape getShape(String shapeType) {
+        if (shapeType.equals("Rectangle")) {
             return new Rectangle();
-        } else if (shape.equals("Square")) {
+        } else if (shapeType.equals("Square")) {
             return new Square();
-        } else if (shape.equals("Triangle")) {
+        } else if (shapeType.equals("Triangle")) {
             return new Triangle();
         } else {
             return null;
