@@ -19,7 +19,10 @@ public class ValidNumber {
      * @return whether the string is a valid number
      */
     public boolean isNumber(String s) {
-
+        if (s == null || s.length() == 0) {
+            return false;
+        }
+        
     }
 
 }
