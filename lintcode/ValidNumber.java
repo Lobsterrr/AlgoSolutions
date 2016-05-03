@@ -31,9 +31,6 @@ public class ValidNumber {
                 signCount++;
             } else if (c == '.') {
                 dotCount++;
-                if (dotCount > 0 && digitCount == 0) {
-                    return false;
-                }
             } else if (c == 'e' || c == 'E') {
                 eCount++;
                 if (eCount > 0 && digitCount == 0) {
