@@ -21,7 +21,6 @@ public class ValidNumber {
     public boolean isNumber(String s) {
         s = s.trim();
         int dotCount = 0;
-        int letterCount = 0;
         int eCount = 0;
         int signCount = 0;
         int digitCount = 0;
@@ -39,7 +38,6 @@ public class ValidNumber {
             } else if (Character.isDigit(c)) {
                 digitCount++;
             } else {
-                letterCount++;
                 return false;
             } 
             if (signCount > 1 || dotCount > 1 || eCount > 1) {
