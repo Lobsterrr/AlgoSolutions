@@ -19,6 +19,7 @@ public class ValidNumber {
      * @return whether the string is a valid number
      */
     public boolean isNumber(String s) {
+        s = s.trim();
         int dotCount = 0;
         int letterCount = 0;
         int eCount = 0;
@@ -42,11 +43,9 @@ public class ValidNumber {
                 digitCount++;
             } else {
                 letterCount++;
-            } 
-            if (signCount > 1 || dotCount > 1 || eCount > 1 || letterCount > 1) {
                 return false;
-            }
-            if (letterCount > 0) {
+            } 
+            if (signCount > 1 || dotCount > 1 || eCount > 1) {
                 return false;
             }
         }
