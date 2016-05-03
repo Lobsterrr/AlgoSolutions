@@ -23,24 +23,27 @@ public class ValidNumber {
         if (s == null || s.length() == 0) {
             return false;
         }
-        int nonDigitCount = 0;
+        int dotCount = 0;
+        int letterCount = 0;
+        int eCount = 0;
+        int signCount = 0;
         for (int i = 0; i < s.length(); ++i) {
             char c = s.charAt(i);
-            if (!Character.isDigit(c)) {
-                nonDigitCount++;
-                if (Character.isLetter(c)) {
-                    if (c != 'e' && c != 'E') {
-                        return false;
-                    } else {
-                        nonDigitCount--;
-                    }
-                }
+            if (c == '+' || c == '-') {
+                signCount++;
+            } else if (c == '.') {
+                dotCount++;
+            } else if (c == 'e' || c == 'E') {
+                eCount++;
+            } else if (!Character.isDigit(c)) {
+                letterCount++;
+            }
+            
+            if (signCount > 1 || dotCount > 1 || eCount > 1 || letterCount > 1) {
+                return false;
             }
         }
-        if (nonDigitCount > 1) {
-            return false;
-        }
-
+        return true;
     }
 
 }
