@@ -41,18 +41,12 @@ class Rectangle implements Shape {
     public void draw() {
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 6; ++j) {
-                if (i == 0 || i == 2) {
-                    if (1 <= j && j <= 4) {
-                        System.out.print("-");
-                    } else {
-                        System.out.print(" ");
-                    }
+                if ((i == 0 || i == 2) && 1 <= j && j <= 4) {
+                    System.out.print("-");
+                } else if (i == 1 && (j == 0 || j == 5)) {
+                    System.out.print("|");
                 } else {
-                    if (j == 0 || j == 5) {
-                        System.out.print("|");
-                    } else {
-                        System.out.print(" ");
-                    }
+                    System.out.print(" ");
                 }
             }
             System.out.println();
@@ -66,18 +60,12 @@ class Square implements Shape {
     public void draw() {
         for (int i = 0; i < 4; ++i) {
             for (int j = 0; j < 6; ++j) {
-                if (i == 0 || i == 3) {
-                    if (1 <= j && j <= 4) {
-                        System.out.print("-");
-                    } else {
-                        System.out.print(" ");
-                    }
+                if ((i == 0 || i == 3) && 1 <= j && j <= 4) {
+                    System.out.print("-");
+                } else if ((i == 1 || i == 2) && (j == 0 || j == 5)) {
+                    System.out.print("|");
                 } else {
-                    if (j == 0 || j == 5) {
-                        System.out.print("|");
-                    } else {
-                        System.out.print(" ");
-                    }
+                    System.out.print(" ");
                 }
             }
             System.out.println();
@@ -114,14 +102,15 @@ public class ShapeFactory {
      * @return Get object of type Shape
      */
     public Shape getShape(String shapeType) {
-        if (shapeType.equals("Rectangle")) {
-            return new Rectangle();
-        } else if (shapeType.equals("Square")) {
-            return new Square();
-        } else if (shapeType.equals("Triangle")) {
-            return new Triangle();
-        } else {
-            return null;
+        switch (shapeType) {
+            case "Rectangle":
+                return new Rectangle();
+            case "Square":
+                return new Square();
+            case "Triangle":
+                return new Triangle();
+            default:
+                return null;
         }
     }
 
