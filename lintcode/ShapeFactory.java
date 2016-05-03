@@ -1,7 +1,9 @@
 /*
- * Factory is a design pattern in common usage. Implement a ShapeFactory that can generate correct shape.
+ * Factory is a design pattern in common usage. Implement 
+ * a ShapeFactory that can generate correct shape.
 
-You can assume that we have only tree different shapes: Triangle, Square and Rectangle.
+You can assume that we have only tree different shapes: 
+Triangle, Square and Rectangle.
 
 Example
 ShapeFactory sf = new ShapeFactory();
