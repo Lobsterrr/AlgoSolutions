@@ -38,7 +38,7 @@ interface Shape {
 
 class Rectangle implements Shape {
 
-    void draw() {
+    public void draw() {
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 6; ++j) {
                 if (i == 0 || i == 2) {
@@ -63,7 +63,7 @@ class Rectangle implements Shape {
 
 class Square implements Shape {
 
-    void draw() {
+    public void draw() {
         for (int i = 0; i < 4; ++i) {
             for (int j = 0; j < 6; ++j) {
                 if (i == 0 || i == 3) {
@@ -88,7 +88,7 @@ class Square implements Shape {
 
 class Triangle implements Shape {
 
-    void draw() {
+    public void draw() {
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 6; ++j) {
                 if (i + j == 2) {
