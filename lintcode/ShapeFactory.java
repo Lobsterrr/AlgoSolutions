@@ -101,6 +101,7 @@ class Triangle implements Shape {
                     System.out.print("_");
                 }
             }
+            System.out.println();
         }
     }
 
