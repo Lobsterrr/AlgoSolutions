@@ -27,6 +27,7 @@ public class ValidNumber {
         int letterCount = 0;
         int eCount = 0;
         int signCount = 0;
+        int digitCount = 0;
         for (int i = 0; i < s.length(); ++i) {
             char c = s.charAt(i);
             if (c == '+' || c == '-') {
@@ -35,10 +36,14 @@ public class ValidNumber {
                 dotCount++;
             } else if (c == 'e' || c == 'E') {
                 eCount++;
-            } else if (!Character.isDigit(c)) {
+                if (eCount > 0 && digitCount == 0) {
+                    return false;
+                }
+            } else if (Character.isDigit(c)) {
+                digitCount++;
+            } else {
                 letterCount++;
-            }
-            
+            } 
             if (signCount > 1 || dotCount > 1 || eCount > 1 || letterCount > 1) {
                 return false;
             }
