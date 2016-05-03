@@ -37,7 +37,7 @@ public class ValidNumber {
                 }
             }
         }
-        if ( > 1) {
+        if (nonDigitCount > 1) {
             return false;
         }
 
