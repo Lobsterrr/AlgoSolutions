@@ -44,10 +44,7 @@ public class ValidNumber {
                 return false;
             }
         }
-        if (digitCount == 0) {
-            return false;
-        }
-        return true;
+        return digitCount > 0;
     }
 
 }
