@@ -58,15 +58,15 @@ public class ValidNumber {
                     return false;
                 }
             } else if (c == '.') {
+                if (dotCount > 0 || eCount > 0) {
+                    return false;
+                }
                 dotCount++;
-                if (eCount > 0) {
-                    return false;
-                }
             } else if (c == 'e' || c == 'E') {
-                eCount++;
-                if (digitCount == 0) {
+                if (eCount > 0 || digitCount == 0) {
                     return false;
                 }
+                eCount++;
             } else if (Character.isDigit(c)) {
                 digitCount++;
                 if (eCount > 0) {
@@ -75,9 +75,6 @@ public class ValidNumber {
             } else {
                 return false;
             } 
-            if (dotCount > 1 || eCount > 1) {
-                return false;
-            }
         }
         if (eCount > 0 && digitAfterE == 0) {
             return false;
