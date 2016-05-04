@@ -22,13 +22,10 @@ public class ValidNumber {
         s = s.trim();
         int dotCount = 0;
         int eCount = 0;
-        int signCount = 0;
         int digitCount = 0;
         for (int i = 0; i < s.length(); ++i) {
             char c = s.charAt(i);
-            if (c == '+' || c == '-') {
-                signCount++;
-            } else if (c == '.') {
+            if (c == '.') {
                 dotCount++;
             } else if (c == 'e' || c == 'E') {
                 eCount++;
@@ -37,10 +34,10 @@ public class ValidNumber {
                 }
             } else if (Character.isDigit(c)) {
                 digitCount++;
-            } else {
+            } else if (c != '+' && c != '-') {
                 return false;
             } 
-            if (signCount > 1 || dotCount > 1 || eCount > 1) {
+            if (dotCount > 1 || eCount > 1) {
                 return false;
             }
         }
@@ -83,7 +80,7 @@ public class ValidNumber {
             } else {
                 return false;
             } 
-            if (signCount > 2 || dotCount > 1 || eCount > 1) {
+            if (dotCount > 1 || eCount > 1) {
                 return false;
             }
         }
