@@ -17,7 +17,11 @@ public class LongestIncreasingSubsequence {
     public int lengthOfLIS(int[] nums) {
         List<Integer> list = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; ++i) {
+            if (i == 0 || nums[i] > list.get(list.size() - 1)) {
+                list.add(nums[i]);
+            } else {
 
+            }
         }
     }
 
