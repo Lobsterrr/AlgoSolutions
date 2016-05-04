@@ -75,7 +75,7 @@ public class ValidNumber {
                 }
             } else if (c == 'e' || c == 'E') {
                 eCount++;
-                if (eCount > 0 && digitCount == 0) {
+                if (digitCount == 0) {
                     return false;
                 }
             } else if (Character.isDigit(c)) {
