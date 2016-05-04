@@ -76,10 +76,7 @@ public class ValidNumber {
                 return false;
             } 
         }
-        if (eCount > 0 && digitAfterE == 0) {
-            return false;
-        }
-        return digitCount > 0;
+        return digitCount > 0 && (eCount == 0 || digitAfterE != 0);
     }
 
 }
