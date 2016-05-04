@@ -18,6 +18,7 @@ public class ValidNumber {
      * @param s the string that represents a number
      * @return whether the string is a valid number
      */
+    // just accepted by lintcode, not leetcode.
     public boolean isNumber(String s) {
         s = s.trim();
         int dotCount = 0;
@@ -44,7 +45,9 @@ public class ValidNumber {
         return digitCount > 0;
     }
 
+/*******************************************************************/
 
+    // accepted by lintcode and leetcode.
     public boolean isNumber(String s) {
         s = s.trim();
         int dotCount = 0;
