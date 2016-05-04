@@ -25,6 +25,16 @@ public class LongestIncreasingSubsequence {
         }
     }
 
+    public int findPosition(List<Integer> list, int value) {
+        int low = 0;
+        int high = list.size() - 1;
+        while (low < high) {
+            
+        }
+    }
+
+/*******************************************************************/
+
     public int lengthOfLIS(int[] nums) {
         if (nums.length == 0) {
             return 0;
