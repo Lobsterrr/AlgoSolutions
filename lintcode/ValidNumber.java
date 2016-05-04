@@ -62,9 +62,6 @@ public class ValidNumber {
                 if (i > 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E') {
                     return false;
                 }
-                if (dotCount > 0) {
-                    return false;
-                }
                 if (i != 0 && eCount == 0) {
                     return false;
                 }
@@ -86,7 +83,7 @@ public class ValidNumber {
             } else {
                 return false;
             } 
-            if (signCount > 1 || dotCount > 1 || eCount > 1) {
+            if (signCount > 2 || dotCount > 1 || eCount > 1) {
                 return false;
             }
         }
