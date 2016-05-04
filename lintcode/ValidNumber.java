@@ -59,7 +59,7 @@ public class ValidNumber {
             char c = s.charAt(i);
             if (c == '+' || c == '-') {
                 signCount++;
-                if (i > 0 && (s.charAt(i - 1) != 'e' || s.charAt(i - 1) != 'E')) {
+                if (i > 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E') {
                     return false;
                 }
                 if (dotCount > 0) {
