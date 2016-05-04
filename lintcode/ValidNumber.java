@@ -65,6 +65,9 @@ public class ValidNumber {
                 if (dotCount > 0) {
                     return false;
                 }
+                if (i != 0 && eCount == 0) {
+                    return false;
+                }
             } else if (c == '.') {
                 dotCount++;
                 if (eCount > 0) {
