@@ -54,7 +54,7 @@ public class ValidNumber {
         for (int i = 0; i < s.length(); ++i) {
             char c = s.charAt(i);
             if (c == '+' || c == '-') {
-                if (i > 0 && s.charAt(i - 1) != 'e' && s.charAt(i - 1) != 'E') {
+                if (i > 0 && s.charAt(i - 1) != 'e') {
                     return false;
                 }
             } else if (c == '.') {
@@ -62,7 +62,7 @@ public class ValidNumber {
                     return false;
                 }
                 dotCount++;
-            } else if (c == 'e' || c == 'E') {
+            } else if (c == 'e') {
                 if (eCount > 0 || digitCount == 0) {
                     return false;
                 }
