@@ -17,12 +17,12 @@ public class LongestIncreasingSubsequence {
     // O(n * lg(n)) time, O(n) space.
     public int lengthOfLIS(int[] nums) {
         List<Integer> list = new ArrayList<Integer>();
-        for (int i = 0; i < nums.length; ++i) {
-            if (i == 0 || nums[i] > list.get(list.size() - 1)) {
-                list.add(nums[i]);
+        for (int num : nums) {
+            if (list.size() == 0 || list.get(list.size() - 1) < num) {
+                list.add(num);
             } else {
-                int index = findPosition(list, nums[i]);
-                list.set(index, nums[i]);
+                int index = findPosition(list, num);
+                list.set(index, num);
             }
         }
         return list.size();
