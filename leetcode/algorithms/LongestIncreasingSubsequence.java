@@ -50,6 +50,7 @@ public class LongestIncreasingSubsequence {
 
 /*******************************************************************/
 
+    // O(n ^ 2) time, O(n) space.
     public int lengthOfLIS(int[] nums) {
         if (nums.length == 0) {
             return 0;
