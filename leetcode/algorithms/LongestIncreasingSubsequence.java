@@ -20,9 +20,11 @@ public class LongestIncreasingSubsequence {
             if (i == 0 || nums[i] > list.get(list.size() - 1)) {
                 list.add(nums[i]);
             } else {
-    
+                int index = findPosition(list, nums[i]);
+                list.set(index, nums[i]);
             }
         }
+        return list.size();
     }
 
     public int findPosition(List<Integer> list, int value) {
