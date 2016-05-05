@@ -30,7 +30,9 @@ public class LongestIncreasingSubsequence {
         int high = list.size() - 1;
         while (low < high) {
             int mid = low + (high - low) / 2;
-            if (value < list.get(mid)) {
+            if (value == list.get(mid)) {
+                return mid;
+            } else if (value < list.get(mid)) {
                 high = mid - 1;
             } else {
                 low = mid;
