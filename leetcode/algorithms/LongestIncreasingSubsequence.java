@@ -28,14 +28,14 @@ public class LongestIncreasingSubsequence {
     public int findPosition(List<Integer> list, int value) {
         int low = 0;
         int high = list.size() - 1;
-        while (low < high) {
+        while (low <= high) {
             int mid = low + (high - low) / 2;
             if (value == list.get(mid)) {
                 return mid;
             } else if (value < list.get(mid)) {
                 high = mid - 1;
             } else {
-                low = mid;
+                low = mid + 1;
             }
         }
         return low;
