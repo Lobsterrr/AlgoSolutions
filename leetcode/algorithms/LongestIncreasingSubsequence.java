@@ -14,6 +14,7 @@
  */
 public class LongestIncreasingSubsequence {
 
+    // O(n * lg(n)) time, O(n) space.
     public int lengthOfLIS(int[] nums) {
         List<Integer> list = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; ++i) {
@@ -26,7 +27,11 @@ public class LongestIncreasingSubsequence {
         }
         return list.size();
     }
-
+    
+    /**
+     * find the minimum number's index which is larger or 
+     * equal to the given value
+     */
     public int findPosition(List<Integer> list, int value) {
         int low = 0;
         int high = list.size() - 1;
