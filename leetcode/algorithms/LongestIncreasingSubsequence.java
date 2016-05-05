@@ -20,7 +20,7 @@ public class LongestIncreasingSubsequence {
             if (i == 0 || nums[i] > list.get(list.size() - 1)) {
                 list.add(nums[i]);
             } else {
-
+    
             }
         }
     }
@@ -29,8 +29,14 @@ public class LongestIncreasingSubsequence {
         int low = 0;
         int high = list.size() - 1;
         while (low < high) {
-            
+            int mid = low + (high - low) / 2;
+            if (value < list.get(mid)) {
+                high = mid - 1;
+            } else {
+                low = mid;
+            }
         }
+        return low;
     }
 
 /*******************************************************************/
