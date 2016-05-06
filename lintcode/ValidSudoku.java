@@ -27,7 +27,7 @@ public class ValidSudoku {
         boolean[][] block = new boolean[9][9];
         for (int i = 0; i < 9; ++i) {
             for (int j = 0; j < 9; ++j) {
-                int c = board[i][j] = '1';
+                int c = board[i][j] - '1';
                 if (c < 0 || c > 8) {
                     continue;
                 }
