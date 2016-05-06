@@ -25,7 +25,25 @@ public class ValidSudoku {
         @return: wether the Sudoku is valid
       */
     public boolean isValidSudoku(char[][] board) {
-
+        int[] col = new int[9];
+        int[] block = new int[9];
+        for (int i = 0; i < 9; ++i) {
+            int row = 0;
+            for (int j = 0; j < 9; ++j) {
+                int c = board[i][j] - '1';
+                if (c < 0 || c > 8) {
+                    continue;
+                }
+                int mask = 1 << c;
+                if ((mask & row) != 0 || (mask & col[j]) != 0 || (mask & block[i / 3 * 3 + j / 3]) != 0) {
+                    return false;
+                }
+                row |= mask;
+                col[j] |= mask;
+                block[i / 3 * 3 + j / 3] |= mask;
+            }
+        }
+        return true;
     }
 
 /*****************************************************************************/
