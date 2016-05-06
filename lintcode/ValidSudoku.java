@@ -27,8 +27,8 @@ public class ValidSudoku {
         boolean[][] block = new boolean[9][9];
         for (int i = 0; i < 9; ++i) {
             for (int j = 0; j < 9; ++j) {
-                char c = board[i][j];
-                if (!Character.isDigit(c)) {
+                int c = board[i][j] = '1';
+                if (c < 0 || c > 8) {
                     continue;
                 }
                 if (row[i][c] || col[c][j] || block[i / 3 * 3 + j / 3][c]) {
