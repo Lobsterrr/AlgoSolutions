@@ -35,7 +35,8 @@ public class ValidSudoku {
                     continue;
                 }
                 int mask = 1 << c;
-                if ((mask & row) != 0 || (mask & col[j]) != 0 || (mask & block[i / 3 * 3 + j / 3]) != 0) {
+                if ((mask & row) != 0 || (mask & col[j]) != 0 || 
+                        (mask & block[i / 3 * 3 + j / 3]) != 0) {
                     return false;
                 }
                 row |= mask;
