@@ -25,6 +25,12 @@ public class ValidSudoku {
         @return: wether the Sudoku is valid
       */
     public boolean isValidSudoku(char[][] board) {
+
+    }
+
+/*****************************************************************************/
+
+    public boolean isValidSudoku(char[][] board) {
         boolean[][] row = new boolean[9][9];
         boolean[][] col = new boolean[9][9];
         boolean[][] block = new boolean[9][9];
