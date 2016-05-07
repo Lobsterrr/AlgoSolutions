@@ -11,7 +11,8 @@ recursion(i) {
     results.add(i)
     recursion(i + 1)
 }
-however this cost a lot of recursion memory as the recursion depth maybe very large. Can you do it in another way to recursive with at most N depth?
+however this cost a lot of recursion memory as the recursion depth maybe very 
+large. Can you do it in another way to recursive with at most N depth?
 
 Example
 Given N = 1, return [1,2,3,4,5,6,7,8,9].
@@ -28,7 +29,24 @@ public class PrintNumbersByRecursion {
      * return : An array storing 1 to the largest number with n digits.
      */
     public List<Integer> numbersByRecursion(int n) {
-
+        List<Integer> result = new ArrayList<Integer>();
+        if (n == 1) {
+            for (int i = 1; i <= 9; ++i) {
+                result.add(i);
+            }
+            return result;
+        }
+        List<Integer> prev = numbersByRecursion(n - 1);
+        result.addAll(prev);
+        prev.set(0, 0);
+        List<Integer> list = numbersByRecursion(1);
+        int base = Math.pow(10, n - 1);
+        for (int i : list) {
+            for (int p : prev) {
+                result.add(i * base + p);
+            }
+        }
+        return result;
     }
 
 }
