@@ -52,4 +52,22 @@ public class PrintNumbersByRecursion {
         return result;
     }
 
+    public List<Integer> numbersByRecursion(int n) {
+        List<Integer> result = new ArrayList<Integer>();
+        recursionHelper(0, n, result);
+        return result;
+    }
+
+    public void recursionHelper(int depth, int n, List<Integer> result) {
+        if (depth == n) {
+            return;
+        }
+        if (depth == 0) {
+            for (int i = 1; i <= 9; ++i) {
+                result.add(i);
+            }
+        }
+
+    }
+
 }
