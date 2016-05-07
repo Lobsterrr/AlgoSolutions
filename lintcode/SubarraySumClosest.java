@@ -31,8 +31,6 @@ public class SubarraySumClosest {
                 result[1] = Math.max(index[i - 1], index[i]);
             }
         }
-        swap(result, 0, result.length - 1);
-        result[0]++;
         return result;
     }
 
