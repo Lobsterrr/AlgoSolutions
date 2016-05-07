@@ -43,12 +43,12 @@ public class PrintNumbersByRecursion {
                 result.add(i);
             }
         } else {
-            int base = (int) Math.pow(10, depth);
             int size = result.size();
             for (int i = 1; i <= 9; ++i) {
-                result.add(i * base);
+                int base = i * (int) Math.pow(10, depth);
+                result.add(base);
                 for (int j = 0; j < size; ++j) {
-                    result.add(i * base + result.get(j));
+                    result.add(base + result.get(j));
                 }
             }
         }
