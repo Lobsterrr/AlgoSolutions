@@ -32,6 +32,7 @@ public class SubarraySumClosest {
             }
         }
         swap(result, 0, result.length - 1);
+        result[0]++;
         return result;
     }
 
