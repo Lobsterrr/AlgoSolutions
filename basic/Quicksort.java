@@ -2,7 +2,7 @@ public class QuickSort {
 
     public void quickSort(int[] array, int low, int high) {
         if (low >= high)
-            return ;
+            return;
         int i = low;
         for (int j = low; j < high; ++j) {
             if (array[j] <= array[high]) {
