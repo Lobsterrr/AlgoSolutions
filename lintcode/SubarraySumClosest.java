@@ -22,6 +22,17 @@ public class SubarraySumClosest {
             sum[i + 1] = sum[i] + nums[i];
             index[i + 1] = i;
         }
+        quicksort(sum, 0, sum.length - 1, index);
+        int closestSum = Integer.MAX_VALUE;
+        int[] result = new int[2];
+        for (int i = 1; i < sum.length; ++i) {
+            if (closestSum > sum[i] - sum[i - 1]) {
+                result[0] = index[i];
+                result[1] = index[i - 1];
+            }
+        }
+        swap(result, 0, result.length - 1);
+        return result;
     }
 
     public void quicksort(int[] a, int aLow, int aHigh, int[] b) {
@@ -32,8 +43,7 @@ public class SubarraySumClosest {
         for (int i = aLow; i < aHigh; ++i) {
             if (a[i] <= a[aHigh]) {
                 swap(a, index, i);
-                swap(b, index, i);
-                index++;
+                swap(b, index++, i);
             }
         }
         swap(a, index, aHigh);
