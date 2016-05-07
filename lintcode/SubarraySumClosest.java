@@ -15,7 +15,19 @@ public class SubarraySumClosest {
      *          and the index of the last number
      */
     public int[] subarraySumClosest(int[] nums) {
-
+        int start = 0;
+        int end = 0;
+        int curStart = 0;
+        int curEnd = 0;
+        int closestSum = Integer.MAX_VALUE;
+        for (int i = 0, curSum = 0; i < nums.length; ++i) {
+            curSum += nums[i];
+            if (Math.abs(curSum) < closestSum) {
+                closestSum = Math.abs(curSum);
+                start = curStart;
+                end = i;
+            }
+        }
     }
 
 }
