@@ -68,11 +68,11 @@ public class PrintNumbersByRecursion {
             }
         } else {
             int base = (int) Math.pow(10, depth);
-            List<Integer> list = new ArrayList<Integer>(result);
-            list.add(0, 0);
+            int size = result.size();
             for (int i = 1; i <= 9; ++i) {
-                for (int value : list) {
-                    result.add(i * base + value);
+                result.add(i * base);
+                for (int j = 0; j < size; ++j) {
+                    result.add(i * base + result.get(j));
                 }
             }
         }
