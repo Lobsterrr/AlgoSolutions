@@ -41,7 +41,7 @@ public class PrintNumbersByRecursion {
         }
         List<Integer> prev = numbersByRecursion(n - 1);
         result.addAll(prev);
-        prev.set(0, 0);
+        prev.add(0, 0);
         List<Integer> list = numbersByRecursion(1);
         int base = (int) Math.pow(10, n - 1);
         for (int i : list) {
