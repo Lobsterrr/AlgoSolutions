@@ -30,6 +30,9 @@ public class PrintNumbersByRecursion {
      */
     public List<Integer> numbersByRecursion(int n) {
         List<Integer> result = new ArrayList<Integer>();
+        if (n == 0) {
+            return result;
+        }
         if (n == 1) {
             for (int i = 1; i <= 9; ++i) {
                 result.add(i);
@@ -40,7 +43,7 @@ public class PrintNumbersByRecursion {
         result.addAll(prev);
         prev.set(0, 0);
         List<Integer> list = numbersByRecursion(1);
-        int base = Math.pow(10, n - 1);
+        int base = (int) Math.pow(10, n - 1);
         for (int i : list) {
             for (int p : prev) {
                 result.add(i * base + p);
