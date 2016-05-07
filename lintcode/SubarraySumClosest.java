@@ -27,6 +27,7 @@ public class SubarraySumClosest {
         int[] result = new int[2];
         for (int i = 1; i < sum.length; ++i) {
             if (closestSum > sum[i] - sum[i - 1]) {
+                closestSum = sum[i] - sum[i - 1];
                 result[0] = Math.min(index[i - 1], index[i]) + 1;
                 result[1] = Math.max(index[i - 1], index[i]);
             }
