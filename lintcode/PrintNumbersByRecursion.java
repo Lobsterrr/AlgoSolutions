@@ -66,8 +66,17 @@ public class PrintNumbersByRecursion {
             for (int i = 1; i <= 9; ++i) {
                 result.add(i);
             }
+        } else {
+            int base = (int) Math.pow(10, depth);
+            List<Integer> list = new ArrayList<Integer>(result);
+            list.add(0, 0);
+            for (int i = 1; i <= 9; ++i) {
+                for (int value : list) {
+                    result.add(i * base + value);
+                }
+            }
         }
-
+        recursionHelper(depth + 1, n, result);
     }
 
 }
