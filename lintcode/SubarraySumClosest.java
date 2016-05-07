@@ -25,7 +25,13 @@ public class SubarraySumClosest {
     }
 
     public void quicksort(int[] a, int aLow, int aHigh, int[] b, int bLow, int bHigh) {
+        
+    }
 
+    public void swap(int[] array, int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
     }
 
 }
