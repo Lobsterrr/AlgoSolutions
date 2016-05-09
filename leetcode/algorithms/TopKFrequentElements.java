@@ -12,7 +12,7 @@
 public class TopKFrequentElements {
 
     // O(n) time, O(n) space.
-    public List<Integer> topKfrequent(int[] nums, int k) {
+    public List<Integer> topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
             map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
@@ -35,7 +35,7 @@ public class TopKFrequentElements {
 
 /*****************************************************************************/
 
-    public List<Integer> topKfrequent(int[] nums, int k) {
+    public List<Integer> topKFrequent(int[] nums, int k) {
         PriorityQueue<Pair> pq = new PriorityQueue<Pair>(k, new Comparator<Pair>() {
             @Override
             public int compare(Pair p1, Pair p2) {
