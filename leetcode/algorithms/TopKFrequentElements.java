@@ -33,4 +33,15 @@ public class TopKFrequentElements {
         return result;
     }
 
+/*****************************************************************************/
+
+    public List<Integer> topKrequent(int[] nums, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer x, Integer y) {
+                return x.intValue() - y.intValue();
+            }
+        });
+    }
+
 }
