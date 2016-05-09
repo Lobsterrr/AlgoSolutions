@@ -58,7 +58,7 @@ public class TopKFrequentElements {
         }
         List<Integer> result = new ArrayList<Integer>();
         while (!pq.isEmpty()) {
-            result.add(pq.remove().getKey());
+            result.add(pq.poll().getKey());
         }
         return result;
     }
