@@ -17,6 +17,7 @@ public class TopKFrequentElements {
             map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
         }
         List<Integer> result = new ArrayList<Integer>();
+        return result;
     }
 
 }
