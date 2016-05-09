@@ -35,7 +35,7 @@ public class TopKFrequentElements {
 
 /*****************************************************************************/
 
-    // O(n * lg(n)) time, O(n) space.
+    // O(n + n * lg(k)) time, O(n) space.
     public List<Integer> topKFrequent(int[] nums, int k) {
         PriorityQueue<Map.Entry<Integer, Integer>> pq = 
             new PriorityQueue<Map.Entry<Integer, Integer>>(k, 
