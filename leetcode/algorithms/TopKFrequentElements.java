@@ -11,6 +11,7 @@
  */
 public class TopKFrequentElements {
 
+    // O(n) time, O(n) space.
     public List<Integer> topKrequent(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
