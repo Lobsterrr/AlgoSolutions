@@ -48,13 +48,18 @@ public class TopKFrequentElements {
         }
         for (int key : map.keySet()) {
             Pair p = new Pair(key, map.get(key));
-            if (pq.size() == 0) {
+            if (pq.size() == 0 || pq.peek().value < p.value) {
                 pq.offer(p);
             }
             if (pq.size() > k) {
                 pq.remove();
             }
         }
+        List<Integer> result = new ArrayList<Integer>();
+        while (!pq.isEmpty()) {
+            result.add(pq.remove().key);
+        }
+        return result;
     }
 
     class Pair {
