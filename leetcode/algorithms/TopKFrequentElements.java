@@ -38,7 +38,8 @@ public class TopKFrequentElements {
     // O(n * lg(n)) time, O(n) space.
     public List<Integer> topKFrequent(int[] nums, int k) {
     public List<Integer> topKFrequent(int[] nums, int k) {
-        PriorityQueue<Pair> pq = new PriorityQueue<Pair>(k, new Comparator<Pair>() {
+        PriorityQueue<Pair> pq = new PriorityQueue<Pair>(k, 
+                new Comparator<Pair>() {
             @Override
             public int compare(Pair p1, Pair p2) {
                 return p1.value - p2.value;
