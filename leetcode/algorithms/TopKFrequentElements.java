@@ -36,10 +36,10 @@ public class TopKFrequentElements {
 /*****************************************************************************/
 
     public List<Integer> topKrequent(int[] nums, int k) {
-        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(k, new Comparator<Pair>() {
+        PriorityQueue<Pair> pq = new PriorityQueue<Pair>(k, new Comparator<Pair>() {
             @Override
             public int compare(Pair p1, Pair p2) {
-                return p1.key - p2.key;
+                return p1.value - p2.value;
             }
         });
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
