@@ -37,38 +37,36 @@ public class TopKFrequentElements {
 
     // O(n * lg(n)) time, O(n) space.
     public List<Integer> topKFrequent(int[] nums, int k) {
-        PriorityQueue<Pair> pq = new PriorityQueue<Pair>(k, 
-                new Comparator<Pair>() {
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = 
+            new PriorityQueue<Map.Entry<Integer, Integer>>(2, 
+                    new Comparator<Map.Entry<Integer, Integer>>() {
             @Override
-            public int compare(Pair p1, Pair p2) {
-                return p1.value - p2.value;
+            public int compare(Map.Entry<Integer, Integer> entry1, 
+                Map.Entry<Integer, Integer> entry2) {
+                return entry1.getValue() - entry2.getValue();
             }
         });
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
             map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
         }
-        for (int key : map.keySet()) {
-            Pair p = new Pair(key, map.get(key));
-            pq.offer(p);
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            pq.offer(entry);
             if (pq.size() > k) {
-                pq.remove();
+                pq.poll();
             }
         }
         List<Integer> result = new ArrayList<Integer>();
         while (!pq.isEmpty()) {
-            result.add(pq.remove().key);
+            result.add(pq.remove().getKey());
         }
         return result;
     }
 
-    class Pair {
-        int key;
-        int value;
-        Pair(int key, int value) {
-            this.key = key;
-            this.value = value;
-        }
+/*****************************************************************************/
+
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        
     }
 
 }
