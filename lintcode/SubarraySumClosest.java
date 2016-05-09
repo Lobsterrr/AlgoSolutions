@@ -15,6 +15,12 @@ public class SubarraySumClosest {
      * @return: A list of integers includes the index of the first number 
      *          and the index of the last number
      */
+    public int[] subarraySumClosest(int[] nums) {
+
+    }
+
+/*****************************************************************************/
+
     // TODO StackOverflowError
     public int[] subarraySumClosest(int[] nums) {
         int[] sum = new int[nums.length + 1];
