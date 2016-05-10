@@ -16,7 +16,23 @@ public class SubarraySumClosest {
      *          and the index of the last number
      */
     public int[] subarraySumClosest(int[] nums) {
-
+        Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
+        int sum = 0;
+        map.put(sum, -1);
+        for (int i = 0; i < nums.length; ++i) {
+            sum += nums[i];
+            map.put(sum, i + 1);
+        }
+        int closestSum = Integer.MAX_VALUE;
+        int[] result = new int[2];
+        Map.Entry<Integer, Integer> prevEntry = null;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (prevEntry == null) {
+                prevEntry = entry;
+            } else {
+                
+            }
+        }
     }
 
     public <K,V extends Comparable<? super V>> SortedSet<Map.Entry<K,V>> entriesSortedByValues(Map<K,V> map) {
