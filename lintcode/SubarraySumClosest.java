@@ -30,9 +30,14 @@ public class SubarraySumClosest {
             if (prevEntry == null) {
                 prevEntry = entry;
             } else {
-                
+                if (entry.getKey() - prevEntry.getKey() < closestSum) {
+                    closestSum = entry.getKey() - prevEntry.getKey();
+                    result[0] = Math.min(entry.getValue(), prevEntry.getValue()) + 1;
+                    result[1] = Math.max(entry.getValue(), prevEntry.getValue());
+                }
             }
         }
+        return result;
     }
 
     public <K,V extends Comparable<? super V>> SortedSet<Map.Entry<K,V>> entriesSortedByValues(Map<K,V> map) {
