@@ -23,9 +23,7 @@ public class SubarraySumClosest {
             sum += nums[i];
             map.put(i, sum);
         }
-        System.out.println("map:" + map);
         SortedSet<Map.Entry<Integer, Integer>> sortedSet = entriesSortedByValues(map);
-        System.out.println("sortedSet:" + sortedSet);
         int closestSum = Integer.MAX_VALUE;
         int[] result = new int[2];
         Map.Entry<Integer, Integer> prevEntry = null;
