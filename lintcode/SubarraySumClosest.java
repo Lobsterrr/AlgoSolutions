@@ -27,15 +27,12 @@ public class SubarraySumClosest {
         int[] result = new int[2];
         Map.Entry<Integer, Integer> prevEntry = null;
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (prevEntry == null) {
-                prevEntry = entry;
-            } else {
-                if (entry.getKey() - prevEntry.getKey() < closestSum) {
-                    closestSum = entry.getKey() - prevEntry.getKey();
-                    result[0] = Math.min(entry.getValue(), prevEntry.getValue()) + 1;
-                    result[1] = Math.max(entry.getValue(), prevEntry.getValue());
-                }
+            if (prevEntry != null && (entry.getKey() - prevEntry.getKey() < closestSum)) {
+                closestSum = entry.getKey() - prevEntry.getKey();
+                result[0] = Math.min(entry.getValue(), prevEntry.getValue()) + 1;
+                result[1] = Math.max(entry.getValue(), prevEntry.getValue());
             }
+            prevEntry = entry;
         }
         return result;
     }
