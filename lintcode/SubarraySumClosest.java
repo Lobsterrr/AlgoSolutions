@@ -21,7 +21,7 @@ public class SubarraySumClosest {
         map.put(sum, -1);
         for (int i = 0; i < nums.length; ++i) {
             sum += nums[i];
-            map.put(sum, i + 1);
+            map.put(sum, i);
         }
         int closestSum = Integer.MAX_VALUE;
         int[] result = new int[2];
