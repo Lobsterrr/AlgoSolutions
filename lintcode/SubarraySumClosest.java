@@ -55,24 +55,7 @@ public class SubarraySumClosest {
 
     // TODO StackOverflowError
     public int[] subarraySumClosest(int[] nums) {
-        int[] sum = new int[nums.length + 1];
-        int[] index = new int[nums.length + 1];
-        index[0] = -1;
-        for (int i = 0; i < nums.length; ++i) {
-            sum[i + 1] = sum[i] + nums[i];
-            index[i + 1] = i;
-        }
-        quicksort(sum, 0, sum.length - 1, index);
-        int closestSum = Integer.MAX_VALUE;
-        int[] result = new int[2];
-        for (int i = 1; i < sum.length; ++i) {
-            if (closestSum > sum[i] - sum[i - 1]) {
-                closestSum = sum[i] - sum[i - 1];
-                result[0] = Math.min(index[i - 1], index[i]) + 1;
-                result[1] = Math.max(index[i - 1], index[i]);
-            }
-        }
-        return result;
+         
     }
 
 }
