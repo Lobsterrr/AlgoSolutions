@@ -16,21 +16,24 @@ public class SubarraySumClosest {
      *          and the index of the last number
      */
     public int[] subarraySumClosest(int[] nums) {
-        Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int sum = 0;
-        map.put(sum, -1);
+        map.put(-1, 0);
         for (int i = 0; i < nums.length; ++i) {
             sum += nums[i];
-            map.put(sum, i);
+            map.put(i, sum);
         }
+        System.out.println("map:" + map);
+        SortedSet<Map.Entry<Integer, Integer>> sortedSet = entriesSortedByValues(map);
+        System.out.println("sortedSet:" + sortedSet);
         int closestSum = Integer.MAX_VALUE;
         int[] result = new int[2];
         Map.Entry<Integer, Integer> prevEntry = null;
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (prevEntry != null && (entry.getKey() - prevEntry.getKey() < closestSum)) {
-                closestSum = entry.getKey() - prevEntry.getKey();
-                result[0] = Math.min(entry.getValue(), prevEntry.getValue()) + 1;
-                result[1] = Math.max(entry.getValue(), prevEntry.getValue());
+        for (Map.Entry<Integer, Integer> entry :sortedSet) {
+            if (prevEntry != null && (entry.getValue() - prevEntry.getValue() < closestSum)) {
+                closestSum = entry.getValue() - prevEntry.getValue();
+                result[0] = Math.min(entry.getKey(), prevEntry.getKey()) + 1;
+                result[1] = Math.max(entry.getKey(), prevEntry.getKey());
             }
             prevEntry = entry;
         }
