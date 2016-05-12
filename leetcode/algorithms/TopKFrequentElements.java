@@ -66,7 +66,22 @@ public class TopKFrequentElements {
 /*****************************************************************************/
 
     public List<Integer> topKFrequent(int[] nums, int k) {
-        
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int num : nums) {
+            map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
+        }
+        List<Map.Entry<Integer, Integer>> list = new LinkedList<Map.Entry<Integer, Integer>>(map.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Integer> e1, Map.Entry<Integer, Integer> e2) {
+                return e2.getValue() - e1.getValue();
+            }
+        });
+        List<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < list.size() && result.size() < k; ++i) {
+            result.add(list.get(i).getKey());
+        }
+        return result;
     }
 
 }
