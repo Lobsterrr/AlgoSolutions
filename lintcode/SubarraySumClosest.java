@@ -78,9 +78,9 @@ public class SubarraySumClosest {
         int closestSum = Integer.MAX_VALUE;
         while (pq.size() > 0) {
             if (prevEntry != null && pq.peek().getValue() - prevEntry.getValue() < closestSum) {
+                closestSum = pq.peek().getValue() - prevEntry.getValue();
                 result[0] = Math.min(pq.peek().getKey(), prevEntry.getKey()) + 1;
                 result[1] = Math.max(pq.peek().getKey(), prevEntry.getKey());
-                closestSum = pq.peek().getValue() - prevEntry.getValue();
             }
             prevEntry = pq.poll();
         }
