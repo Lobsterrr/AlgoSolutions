@@ -53,9 +53,38 @@ public class SubarraySumClosest {
 
 /*****************************************************************************/
 
-    // TODO StackOverflowError
     public int[] subarraySumClosest(int[] nums) {
-         PriorityQueue
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = 
+            new PriorityQueue<Map.Entry<Integer, Integer>>(1, 
+                    new Comparator<Map.Entry<Integer, Integer>>() {
+                            @Override
+                            public int compare(Map.Entry<Integer, Integer> entry1,
+                                               Map.Entry<Integer, Integer> entry2) {
+                                return entry1.getValue() - entry2.getValue();
+                            }
+                        });
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        map.put(-1, 0);
+        int sum = 0;
+        for (int i = 0; i < nums.length; ++i) {
+            sum += nums[i];
+            map.put(i, sum);
+        }
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            pq.offer(entry);
+        }
+        int[] result = new int[2];
+        Map.Entry<Integer, Integer> prevEntry = null;
+        int closestSum = Integer.MAX_VALUE;
+        while (pq.size() > 0) {
+            if (prevEntry != null && pq.peek().getValue() - prevEntry.getValue() < closestSum) {
+                result[0] = Math.min(pq.peek().getKey(), prevEntry.getKey()) + 1;
+                result[1] = Math.max(pq.peek().getKey(), prevEntry.getKey());
+                closestSum = pq.peek().getValue() - prevEntry.getValue();
+            }
+            prevEntry = pq.poll();
+        }
+        return result;
     }
 
 }
