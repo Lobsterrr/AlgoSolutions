@@ -27,6 +27,9 @@ public class FindTheDuplicateNumber {
         return fast;
     }
 
+/*******************************************************************/
+
+    // O(n) time, O(n) space.
     public int findDuplicate(int[] nums) {
         int[] count = new int[nums.length + 1];
         for (int num : nums) {
