@@ -21,7 +21,7 @@ public class WildcardMatching {
      * @param p: A string includes "?" and "*"
      * @return: A boolean
      */
-    public boolean isMatch(String, String p) {
+    public boolean isMatch(String s, String p) {
 
     }
 
