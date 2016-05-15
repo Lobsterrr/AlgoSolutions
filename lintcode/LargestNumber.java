@@ -21,7 +21,7 @@ public class LargestNumber {
         quicksort(num, 0, num.length - 1);
         String result = "";
         for (int i = num.length - 1; i >= 0; --i) {
-            result += nums[i];
+            result += num[i];
         }
         return result;
     }
