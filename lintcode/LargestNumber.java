@@ -18,7 +18,16 @@ public class LargestNumber {
      *@return: A string
      */
     public String largestNumber(int[] num) {
-
+        Arrays.sort(num, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer i1, Integer i2) {
+                return i1.intValue() - i2.intValue();
+            }
+        };
+        String result = "";
+        for (int n : num) {
+            
+        }
     }
 
 }
