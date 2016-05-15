@@ -28,6 +28,19 @@ public class LargestNumber {
         for (int i = 
     }
 
+    public void quicksort(int[] nums, int start, int end) {
+        int index = start;
+        for (int i = start; i <= end; ++i) {
+
+        }
+    }
+
+    public void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+
     public boolean compare(int x, int y) {
         return Long.parseLong("" + x + y) > Long.parseLong("" + y + x);
     }
