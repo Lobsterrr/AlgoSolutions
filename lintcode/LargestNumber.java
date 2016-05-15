@@ -23,6 +23,9 @@ public class LargestNumber {
         for (int i = num.length - 1; i >= 0; --i) {
             result += num[i];
         }
+        int i = 0;
+        for (; i < result.length() && result.charAt(i) == '0'; ++i);
+        result = result.substring(i);
         return result;
     }
 
