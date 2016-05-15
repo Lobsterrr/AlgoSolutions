@@ -18,7 +18,12 @@ public class LargestNumber {
      *@return: A string
      */
     public String largestNumber(int[] num) {
-
+        quicksort(num, 0, num.length - 1);
+        String result = "";
+        for (int i = num.length - 1; i >= 0; --i) {
+            result += nums[i];
+        }
+        return result;
     }
 
     public void quicksort(int[] nums, int start, int end) {
