@@ -25,7 +25,10 @@ public class LargestNumber {
         }
         int i = 0;
         for (; i < result.length() && result.charAt(i) == '0'; ++i);
-        result = i == result.length() ? "" : result.substring(i);
+        if (i == result.length()) {
+            i--;
+        }
+        result = result.substring(i);
         return result;
     }
 
