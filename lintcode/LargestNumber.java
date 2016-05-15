@@ -29,10 +29,18 @@ public class LargestNumber {
     }
 
     public void quicksort(int[] nums, int start, int end) {
+        if (start >= end) {
+            return;
+        }
         int index = start;
         for (int i = start; i <= end; ++i) {
-
+            if (compare(nums[i], nums[end])) {
+                swap(nums, index++, i);
+            }
         }
+        swap(nums, index, end);
+        quicksort(nums, start, index - 1);
+        quicksort(nums, index + 1, end);
     }
 
     public void swap(int[] nums, int i, int j) {
@@ -42,7 +50,7 @@ public class LargestNumber {
     }
 
     public boolean compare(int x, int y) {
-        return Long.parseLong("" + x + y) > Long.parseLong("" + y + x);
+        return Long.parseLong("" + x + y) < Long.parseLong("" + y + x);
     }
 
 }
