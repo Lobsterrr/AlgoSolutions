@@ -37,7 +37,7 @@ public class LargestNumber {
             return;
         }
         int index = start;
-        for (int i = start; i <= end; ++i) {
+        for (int i = start; i < end; ++i) {
             if (compare(nums[i], nums[end])) {
                 swap(nums, index++, i);
             }
