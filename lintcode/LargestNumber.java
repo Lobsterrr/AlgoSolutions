@@ -25,9 +25,11 @@ public class LargestNumber {
             }
         };
         String result = "";
-        for (int n : num) {
-            
-        }
+        for (int i = 
+    }
+
+    public boolean compare(int x, int y) {
+        return Long.parseLong("" + x + y) > Long.parseLong("" + y + x);
     }
 
 }
