@@ -63,20 +63,11 @@ public class LargestNumber {
             }
         }
         if (i < s1.length()) {
-            if (s1.charAt(i) > s1.charAt(0)) {
-                return false;
-            } else {
-                return true;
-            }
+            return s1.charAt(i) <= s1.charAt(0);
         }
         if (i < s2.length()) {
-            if (s2.charAt(i) > s2.charAt(0)) {
-                return true;
-            } else {
-                return false;
-            }
+            return s2.charAt(i) > s2.charAt(0);
         }
-        return true;
     }
 
 }
