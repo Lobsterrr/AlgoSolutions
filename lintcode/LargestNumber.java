@@ -58,7 +58,7 @@ public class LargestNumber {
         String s2 = "" + y;
         int i = 0;
         for (; i < Math.min(s1.length(), s2.length()); ++i) {
-            if (s1.charAt(i) > s2.charAt(k)) {
+            if (s1.charAt(i) > s2.charAt(i)) {
                 return false;
             }
         }
