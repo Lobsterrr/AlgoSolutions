@@ -54,16 +54,29 @@ public class LargestNumber {
     }
 
     public boolean compare(int x, int y) {
-        return Long.parseLong("" + x + y) < Long.parseLong("" + y + x);
-
         String s1 = "" + x;
         String s2 = "" + y;
-        for (int i = 0; i < Math.min(s1.length(), s2.length()); ++i) {
+        int i = 0;
+        for (; i < Math.min(s1.length(), s2.length()); ++i) {
             if (s1.charAt(i) > s2.charAt(k)) {
                 return false;
             }
         }
-
+        if (i < s1.length()) {
+            if (s1.charAt(i) > s1.charAt(0)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if (i < s2.length()) {
+            if (s2.charAt(i) > s2.charAt(0)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return true;
     }
 
 }
