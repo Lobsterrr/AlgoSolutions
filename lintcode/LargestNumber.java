@@ -18,6 +18,30 @@ public class LargestNumber {
      *@return: A string
      */
     public String largestNumber(int[] num) {
+        String[] str = new String[num.length];
+        for (int i = 0; i < num.length; ++i) {
+            str[i] = Integer.toString(num[i]);
+        }
+        Arrays.sort(str, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o2.compareTo(o1);
+            }
+        });
+        StringBuilder sb = new StringBuilder();
+        for (String s : str) {
+            sb.append(s);
+        }
+        int i = 0;
+        for (; i < sb.length() && sb.charAt(i) == '0'; ++i);
+        if (i == sb.length()) {
+            i--;
+        }
+        sb.delete(0, i);
+        return sb.toString();
+    }
+
+    public String largestNumber(int[] num) {
         quicksort(num, 0, num.length - 1);
         String result = "";
         for (int i = num.length - 1; i >= 0; --i) {
