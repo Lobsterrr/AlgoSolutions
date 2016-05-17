@@ -15,6 +15,7 @@ Example
 For source = "ADOBECODEBANC", target = "ABC", the minimum window is "BANC"
 
 Challenge 
+Can you do it in time complexity O(n) ?
  */
 public class MinimumWindowSubstring {
 
