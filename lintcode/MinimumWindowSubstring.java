@@ -1,11 +1,14 @@
 /*
- * Given a string source and a string target, find the minimum window in source which will contain all the characters in target.
+ * Given a string source and a string target, find the minimum window in source 
+ * which will contain all the characters in target.
 
  Notice
 
-If there is no such window in source that covers all characters in target, return the emtpy string "".
+If there is no such window in source that covers all characters in target, 
+return the emtpy string "".
 
-If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in source.
+If there are multiple such windows, you are guaranteed that there will always 
+be only one unique minimum window in source.
 
 Clarification
 Should the characters in minimum window has the same order in target?
@@ -43,8 +46,11 @@ public class MinimumWindowSubstring {
                 foundCount++;
             }
             if (foundCount == target.length()) {
-                while (needFound[source.charAt(startIndex)] == 0 || needFound[source.charAt(startIndex)] < hasFound[source.charAt(startIndex)]) {
-                    if (needFound[source.charAt(startIndex)] < hasFound[source.charAt(startIndex)]) {
+                while (needFound[source.charAt(startIndex)] == 0 || 
+                        needFound[source.charAt(startIndex)] < 
+                        hasFound[source.charAt(startIndex)]) {
+                    if (needFound[source.charAt(startIndex)] < 
+                            hasFound[source.charAt(startIndex)]) {
                         hasFound[source.charAt(startIndex)]--;
                     }
                     startIndex++;
