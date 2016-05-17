@@ -49,10 +49,7 @@ public class MinimumWindowSubstring {
                 while (needFound[source.charAt(startIndex)] == 0 || 
                         needFound[source.charAt(startIndex)] < 
                         hasFound[source.charAt(startIndex)]) {
-                    if (needFound[source.charAt(startIndex)] < 
-                            hasFound[source.charAt(startIndex)]) {
-                        hasFound[source.charAt(startIndex)]--;
-                    }
+                    hasFound[source.charAt(startIndex)]--;
                     startIndex++;
                 }
                 if (minLen > i - startIndex + 1) {
