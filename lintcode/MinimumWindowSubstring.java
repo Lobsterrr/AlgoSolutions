@@ -42,6 +42,15 @@ public class MinimumWindowSubstring {
             if (hasFound[source.charAt(i)] < needFound[source.charAt(i)]) {
                 foundCount++;
             }
+            if (foundCount == target.length()) {
+                while (needFound[source.charAt(startIndex)] == 0 || needFound[source.charAt(startIndex)] < hasFound[source.charAt(start)]) {
+                    startIndex++;
+                }
+                if (minLen > i - startIndex + 1) {
+                    minLen = i - startIndex + 1;
+                    result = source.substring(startIndex, i + 1);
+                }
+            }
         }
         return result;
     }
