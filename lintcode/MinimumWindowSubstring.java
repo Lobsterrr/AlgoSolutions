@@ -28,14 +28,18 @@ public class MinimumWindowSubstring {
     public String minWindow(String source, String target) {
         int[] toFind = new int[256];
         int[] hasFound = new int[256];
-        for (int i = 0; i < source.length(); ++i) {
-            hasFound[source.charAt(i)]++;
-        }
         for (int i = 0; i < target.length(); ++i) {
             toFind[target.charAt(i)]++;
         }
         String result = "";
         int minLen = Integer.MAX_VALUE;
+        for (int i = 0; i < source.length(); ++i) {
+            hasFound[source.charAt(i)]++;
+            toFind[source.charAt(i)] = toFind[source.charAt(i)] - 1;
+            if (toFind[source.charAt(i)] < 0) {
+                toFind[source.charAt(i)] = 0;
+            }
+        }
     }
 
 }
