@@ -35,7 +35,6 @@ public class MinimumWindowSubstring {
         int minLen = Integer.MAX_VALUE;
         int foundCount = 0;
         for (int startIndex = 0, i = 0; i < source.length(); ++i) {
-
         }
         return result;
     }
