@@ -33,18 +33,9 @@ public class MinimumWindowSubstring {
         }
         String result = "";
         int minLen = Integer.MAX_VALUE;
-        int toFindCount = target.length();
-        int startIndex = 0;
-        for (int i = 0; i < source.length(); ++i) {
-            hasFound[source.charAt(i)]++;
-            if (toFind[source.charAt(i)] > 0) {
-                toFindCount--;
-                toFind[source.charAt(i)]--;
-            }
-            if (toFindCount == 0) {
-                result = source.substring(startIndex, i + 1);
-                minLen = result.length();
-            }
+        int foundCount = 0;
+        for (int startIndex = 0, i = 0; i < source.length(); ++i) {
+
         }
         return result;
     }
