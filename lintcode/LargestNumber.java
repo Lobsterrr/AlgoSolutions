@@ -24,8 +24,8 @@ public class LargestNumber {
         }
         Arrays.sort(str, new Comparator<String>() {
             @Override
-            public int compare(String o1, String o2) {
-                return o2.compareTo(o1);
+            public int compare(String s1, String s2) {
+                return s2.compareTo(s1);
             }
         });
         StringBuilder sb = new StringBuilder();
