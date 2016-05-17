@@ -39,7 +39,7 @@ public class MinimumWindowSubstring {
                 continue;
             }
             hasFound[source.charAt(i)]++;
-            if (hasFound[source.charAt(i)] < needFound[source.charAt(i)]) {
+            if (hasFound[source.charAt(i)] <= needFound[source.charAt(i)]) {
                 foundCount++;
             }
             if (foundCount == target.length()) {
