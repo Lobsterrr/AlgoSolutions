@@ -17,35 +17,36 @@
  */
 public class MinimumWindowSubstring {
 
-    public String minWindow(String S, String T) {
-        String result = "";
-        int[] hasFound = new int[256];
+    public String minWindow(String s, String t) {
         int[] needFound = new int[256];
-        int count = 0;
-        int minLen = Integer.MAX_VALUE;
-        for (int i = 0; i < T.length(); i++) {
-            needFound[T.charAt(i)]++;
+        int[] hasFound = new int[256];
+        for (int i = 0; i < t.length(); ++i) {
+            needFound[t.charAt(i)]++;
         }
-        for (int start = 0, end = 0; end < S.length(); end++) {
-            if (needFound[S.charAt(end)] == 0)
+        String result = "";
+        int minLen = Integer.MAX_VALUE;
+        int foundCount = 0;
+        for (int startIndex = 0, i = 0; i < s.length(); ++i) {
+            if (needFound[s.charAt(i)] == 0) {
                 continue;
-            hasFound[S.charAt(end)]++;
-            if (hasFound[S.charAt(end)] <= needFound[S.charAt(end)])
-                count++;
-            if (count == T.length()) {
-                while (needFound[S.charAt(start)] == 0 || 
-                        needFound[S.charAt(start)] < hasFound[S.charAt(start)]) {
-                    if (needFound[S.charAt(start)] < hasFound[S.charAt(start)]) {
-                        hasFound[S.charAt(start)]--;
-                    }
-                    start++;
+            }
+            hasFound[s.charAt(i)]++;
+            if (hasFound[s.charAt(i)] <= needFound[s.charAt(i)]) {
+                foundCount++;
+            }
+            if (foundCount == t.length()) {
+                while (needFound[s.charAt(startIndex)] == 0 || 
+                        needFound[s.charAt(startIndex)] < 
+                        hasFound[s.charAt(startIndex)]) {
+                    hasFound[s.charAt(startIndex)]--;
+                    startIndex++;
                 }
-                if (minLen > end - start + 1) {
-                    minLen = end - start + 1;
-                    result = S.substring(start, end + 1);
+                if (minLen > i - startIndex + 1) {
+                    minLen = i - startIndex + 1;
+                    result = s.substring(startIndex, i + 1);
                 }
             }
-        } 
+        }
         return result;
     }
 
