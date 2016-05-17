@@ -26,15 +26,22 @@ public class MinimumWindowSubstring {
      *          Return "" if there is no such a string
      */
     public String minWindow(String source, String target) {
-        int[] toFind = new int[256];
+        int[] needFound = new int[256];
         int[] hasFound = new int[256];
         for (int i = 0; i < target.length(); ++i) {
-            toFind[target.charAt(i)]++;
+            needFound[target.charAt(i)]++;
         }
         String result = "";
         int minLen = Integer.MAX_VALUE;
         int foundCount = 0;
         for (int startIndex = 0, i = 0; i < source.length(); ++i) {
+            if (needFound[source.charAt(i)] == 0) {
+                continue;
+            }
+            hasFound[source.charAt(i)]++;
+            if (hasFound[source.charAt(i)] < needFound[source.charAt(i)]) {
+                foundCount++;
+            }
         }
         return result;
     }
