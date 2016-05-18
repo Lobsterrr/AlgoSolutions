@@ -35,7 +35,34 @@ public class ValidateBinarySearchTree {
      * @return: True if the binary tree is BST, or false
      */
     public boolean isValidBST(TreeNode root) {
-        
+        if (root == null || root.left == null && root.right == null) {
+            return true;
+        }
+        if (root.left != null) {
+            TreeNode cur = root.left;
+            if (cur.val > root.val) {
+                return false;
+            }
+            while (cur.right != null) {
+                cur = cur.right;
+            }
+            if (root.left.val > cur.val) {
+                return false;
+            }
+        }
+        if (root.right != null) {
+            TreeNode cur = root.right;
+            if (cur.val < root.val) {
+                return false;
+            }
+            while (cur.left != null) {
+                cur = cur.left;
+            }
+            if (root.right.val < cur.val) {
+                return false;
+            }
+        }
+        return isValidBST(root.left) && isValidBST(root.right);
     }
 
 }
