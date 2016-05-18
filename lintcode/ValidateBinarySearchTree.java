@@ -48,11 +48,11 @@ public class ValidateBinarySearchTree {
             cur = cur.right;
         }
         cur = root.right;
-        while (cur != null) {
-            if (cur.val <= root.val) {
-                return false;
-            }
+        while (cur != null && cur.val > root.val) {
             cur = cur.left;
+        }
+        if (cur != null) {
+            return false;
         }
         return isValidBST(root.left) && isValidBST(root.right);
     }
