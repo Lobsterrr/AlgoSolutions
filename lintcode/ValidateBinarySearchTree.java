@@ -37,17 +37,17 @@ public class ValidateBinarySearchTree {
      * @return: True if the binary tree is BST, or false
      */
     public boolean isValidBST(TreeNode root) {
-        return dfs(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return dfs(root, null, null);
     }
 
-    public boolean dfs(TreeNode root, int min, int max) {
+    public boolean dfs(TreeNode root, TreeNode low, TreeNode high) {
         if (root == null) {
             return true;
         }
-        if (root.val <= min || root.val >= max) {
+        if (low != null && root.val <= low.val || high != null && root.val >= high.val) {
             return false;
         }
-        return dfs(root.left, min, root.val) && dfs(root.right, root.val, max);
+        return dfs(root.left, low, root) && dfs(root.right, root, high);
     }
 
 
