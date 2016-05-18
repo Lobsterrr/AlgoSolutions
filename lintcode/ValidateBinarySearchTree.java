@@ -40,29 +40,19 @@ public class ValidateBinarySearchTree {
         if (root == null || root.left == null && root.right == null) {
             return true;
         }
-        if (root.left != null) {
-            TreeNode cur = root.left;
+        TreeNode cur = root.left;
+        while (cur != null) {
             if (cur.val >= root.val) {
                 return false;
             }
-            while (cur.right != null) {
-                cur = cur.right;
-            }
-            if (root.left.val > cur.val) {
-                return false;
-            }
+            cur = cur.right;
         }
-        if (root.right != null) {
-            TreeNode cur = root.right;
+        cur = root.right;
+        while (cur != null) {
             if (cur.val <= root.val) {
                 return false;
             }
-            while (cur.left != null) {
-                cur = cur.left;
-            }
-            if (root.right.val < cur.val) {
-                return false;
-            }
+            cur = cur.left;
         }
         return isValidBST(root.left) && isValidBST(root.right);
     }
