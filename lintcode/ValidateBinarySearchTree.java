@@ -57,7 +57,7 @@ public class ValidateBinarySearchTree {
         return isValidBST(root.left) && isValidBST(root.right);
     }
 
-/*******************************************************************/
+/*****************************************************************************/
 
     public TreeNode cur = null;
 
