@@ -37,6 +37,16 @@ public class ValidateBinarySearchTree {
      * @return: True if the binary tree is BST, or false
      */
     public boolean isValidBST(TreeNode root) {
+        return dfs(root, null, null);
+    }
+
+    public boolean dfs(TreeNode root, TreeNode low, TreeNode high) {
+        return root == null || (low == null || low.val < root.val) && dfs(root.left, low, root) && (high == null || high.val > root.val) && dfs(root.right, root, high);
+    }
+
+/*****************************************************************************/
+
+    public boolean isValidBST(TreeNode root) {
         if (root == null || root.left == null && root.right == null) {
             return true;
         }
