@@ -42,7 +42,7 @@ public class ValidateBinarySearchTree {
         }
         if (root.left != null) {
             TreeNode cur = root.left;
-            if (cur.val > root.val) {
+            if (cur.val >= root.val) {
                 return false;
             }
             while (cur.right != null) {
@@ -54,7 +54,7 @@ public class ValidateBinarySearchTree {
         }
         if (root.right != null) {
             TreeNode cur = root.right;
-            if (cur.val < root.val) {
+            if (cur.val <= root.val) {
                 return false;
             }
             while (cur.left != null) {
