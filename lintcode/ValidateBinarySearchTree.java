@@ -44,7 +44,8 @@ public class ValidateBinarySearchTree {
         if (root == null) {
             return true;
         }
-        if (low != null && root.val <= low.val || high != null && root.val >= high.val) {
+        if (low != null && root.val <= low.val || 
+                high != null && root.val >= high.val) {
             return false;
         }
         return dfs(root.left, low, root) && dfs(root.right, root, high);
