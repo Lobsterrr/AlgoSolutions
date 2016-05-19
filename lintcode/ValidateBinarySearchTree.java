@@ -54,6 +54,7 @@ public class ValidateBinarySearchTree {
             prev = root;
             root = root.right;
         }
+        return true;
     }
 
 /*****************************************************************************/
