@@ -19,7 +19,7 @@ public class KSum {
      * @return an integer
      */
     public int kSum(int A[], int k, int target) {
-
+        Arrays.sort(A);
     }
 
 }
