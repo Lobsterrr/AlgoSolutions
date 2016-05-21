@@ -25,7 +25,7 @@ public class KSum {
         return result.size();
     }
 
-    public void dfs(int[] A, int k, int target, List<List<Integer> result, List<Integer> list, position) {
+    public void dfs(int[] A, int k, int target, List<List<Integer>> result, List<Integer> list, int position) {
         if (target == 0 && list.size() == k) {
             result.add(new ArrayList<Integer>(list));
             return;
