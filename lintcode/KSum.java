@@ -32,7 +32,7 @@ public class KSum {
         }
         for (int i = position; i < A.length && list.size() < k; ++i) {
             list.add(A[position]);
-            dfs(A, k, target - A[position], result, list, i + 1);
+            dfs(A, k, target - A[i], result, list, i + 1);
             list.remove(list.size() - 1);
         }
     }
