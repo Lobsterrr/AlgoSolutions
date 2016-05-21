@@ -21,23 +21,20 @@ public class KSum {
     public int kSum(int A[], int k, int target) {
         Arrays.sort(A);
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        dfs(A, k, target, 0, new ArrayList<Integer>(), result, 0);
+        dfs(A, k, target, result, new ArrayList<Integer>(), 0);
         return result.size();
     }
 
-    public void dfs(int[] A, int k, int target, int sum, List<Integer> list, List<List<Integer>> result, int position) {
-        if (sum == target) {
+    public void dfs(int[] A, int k, int target, List<List<Integer> result, List<Integer> list, position) {
+        if (target == 0 && list.size() == k) {
             result.add(new ArrayList<Integer>(list));
             return;
         }
-        if (list.size() > k) {
-            return;
+        for (int i = position; i < A.length; ++i) {
+            list.add(A[position]);
+            dfs(A, k, target - A[position], result, list, i + 1);
+            list.remove(list.size() - 1);
         }
-        list.add(A[position]);
-        for (int i = position + 1; i < A.length; ++i) {
-            dfs(A, k, target, sum + A[position], list, result, position + 1);
-        }
-        list.remove(list.size() - 1);
     }
 
 }
