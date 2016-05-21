@@ -25,18 +25,31 @@ public class KSum {
                 for (int t = 0; t <= target; ++t) {
                     if (j == 0 && t == 0) {
                         dp[i][j][t] = 1;
-                    } else {
-                        if (i > 0 && j > 0 && t > 0) {
-                            dp[i][j][t] += dp[i - 1][j][t];
-                            if (t - A[i - 1] >= 0) {
-                                dp[i][j][t] += dp[i - 1][j - 1][t - A[i - 1]];
-                            }
-                        } 
+                    } else if (i > 0 && j > 0 && t >0) {
+                        dp[i][j][t] += dp[i - 1][j][t];
+                        if (t - A[i - 1] >= 0) {
+                            dp[i][j][t] += dp[i - 1][j - 1][t - A[i - 1]];
+                        }
                     }
                 }
             }
         }
         return dp[A.length][k][target];
+    }
+
+    public int kSum(int A[], int k, int target) {
+        int[][] dp = new int[k + 1][target + 1];
+        dp[0][0] = 1;
+        for (int i = 0; i <= A.length; ++i) {
+            for (int j = 0; j <= k; ++j) {
+                for (int t = target; t >= 0; --t) {
+                    if (t - A[i - 1] > 0) {
+                        dp[j][t] += dp[j - 1][t - A[i - 1]];
+                    }
+                }
+            }
+        }
+        return dp[k][target];
     }
 
 
