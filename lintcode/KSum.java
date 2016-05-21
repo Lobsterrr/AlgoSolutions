@@ -37,6 +37,8 @@ public class KSum {
         return dp[A.length][k][target];
     }
 
+/*****************************************************************************/
+
     public int kSum(int A[], int k, int target) {
         int[][] dp = new int[k + 1][target + 1];
         dp[0][0] = 1;
