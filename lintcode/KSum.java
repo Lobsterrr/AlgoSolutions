@@ -27,9 +27,9 @@ public class KSum {
                         dp[i][j][t] = 1;
                     } else {
                         if (i > 0 && j > 0 && t > 0) {
-                            dp[i + 1][j + 1][t + 1] += dp[i][j + 1][t];
-                            if (t - A[i] > 0) {
-                                dp[i + 1][j + 1][t + 1] += dp[i][j][t - A[i]];
+                            dp[i][j][t] += dp[i - 1][j][t];
+                            if (t - A[i] >= 0) {
+                                dp[i][j][t] += dp[i - 1][j - 1][t - A[i]];
                             }
                         } 
                     }
