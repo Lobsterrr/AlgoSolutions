@@ -43,7 +43,7 @@ public class KSum {
         for (int i = 1; i <= A.length; ++i) {
             for (int t = target; t > 0; --t) {
                 for (int j = 1; j <= k; ++j) {
-                    if (t - A[i - 1] > 0) {
+                    if (t - A[i - 1] >= 0) {
                         dp[j][t] += dp[j - 1][t - A[i - 1]];
                     }
                 }
