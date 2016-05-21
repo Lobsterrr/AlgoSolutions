@@ -19,7 +19,18 @@ public class KSum {
      * @return an integer
      */
     public int kSum(int A[], int k, int target) {
-
+        int[][][] dp = new int[A.length + 1][k + 1][target + 1];
+        for (int i = 0; i < A.length; ++i) {
+            for (int j = 0; j < k; ++j) {
+                for (int t = 0; t < target; ++t) {
+                    dp[i + 1][j + 1][t + 1] += dp[i][j + 1][t];
+                    if (t - A[i] > 0) {
+                        dp[i + 1][j + 1][t + 1] += dp[i][j][t - A[i]];
+                    }
+                }
+            }
+        }
+        return dp[A.length][k][target];
     }
 
 
