@@ -23,10 +23,15 @@ public class KSum {
         for (int i = 0; i <= A.length; ++i) {
             for (int j = 0; j <= k; ++j) {
                 for (int t = 0; t <= target; ++t) {
-
-                    dp[i + 1][j + 1][t + 1] += dp[i][j + 1][t];
-                    if (t - A[i] > 0) {
-                        dp[i + 1][j + 1][t + 1] += dp[i][j][t - A[i]];
+                    if (j == 0 && t == 0) {
+                        dp[i][j][t] = 1;
+                    } else {
+                        if (i > 0 && j > 0 && t > 0) {
+                            dp[i + 1][j + 1][t + 1] += dp[i][j + 1][t];
+                            if (t - A[i] > 0) {
+                                dp[i + 1][j + 1][t + 1] += dp[i][j][t - A[i]];
+                            }
+                        } 
                     }
                 }
             }
