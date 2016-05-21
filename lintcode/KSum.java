@@ -28,8 +28,8 @@ public class KSum {
                     } else {
                         if (i > 0 && j > 0 && t > 0) {
                             dp[i][j][t] += dp[i - 1][j][t];
-                            if (t - A[i] >= 0) {
-                                dp[i][j][t] += dp[i - 1][j - 1][t - A[i]];
+                            if (t - A[i - 1] >= 0) {
+                                dp[i][j][t] += dp[i - 1][j - 1][t - A[i - 1]];
                             }
                         } 
                     }
