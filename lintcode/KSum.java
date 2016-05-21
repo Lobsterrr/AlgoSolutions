@@ -40,9 +40,9 @@ public class KSum {
     public int kSum(int A[], int k, int target) {
         int[][] dp = new int[k + 1][target + 1];
         dp[0][0] = 1;
-        for (int i = 0; i <= A.length; ++i) {
-            for (int j = 0; j <= k; ++j) {
-                for (int t = target; t >= 0; --t) {
+        for (int i = 1; i <= A.length; ++i) {
+            for (int t = target; t > 0; --t) {
+                for (int j = 1; j <= k; ++j) {
                     if (t - A[i - 1] > 0) {
                         dp[j][t] += dp[j - 1][t - A[i - 1]];
                     }
