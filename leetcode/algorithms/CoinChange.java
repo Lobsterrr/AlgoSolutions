@@ -15,7 +15,14 @@
 public class CoinChange {
 
     public int coinChange(int[] coins, int amount) {
-
+        int[] dp = new int[amount + 1];
+        dp[0] = 1;
+        for (int i = 1; i <= amount; ++i) {
+            for (int j = 0; j < amount; ++j) {
+                dp[i] = Math.min(dp[i], dp[j] + dp[i - j]);
+            }
+        }
+        return dp[amount];
     }
 
 }
