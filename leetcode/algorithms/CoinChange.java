@@ -17,6 +17,17 @@ public class CoinChange {
     public int coinChange(int[] coins, int amount) {
         int[] dp = new int[amount + 1];
         for (int i = 1; i <= amount; ++i) {
+            for (int coin : coins) {
+                if (coin > i) {
+                    break;
+                }
+            }
+        }
+    }
+
+    public int coinChange(int[] coins, int amount) {
+        int[] dp = new int[amount + 1];
+        for (int i = 1; i <= amount; ++i) {
             dp[i] = Integer.MAX_VALUE;
             for (int j = 0; j < coins.length; ++j) {
                 if (coins[j] == i) {
@@ -27,7 +38,7 @@ public class CoinChange {
             if (dp[i] == 1) {
                 continue;
             }
-            for (int j = 1; j < i; ++j) {
+            for (int j = 1; j <= i / 2; ++j) {
                 if (dp[j] != Integer.MAX_VALUE && dp[i - j] != Integer.MAX_VALUE) {
                     dp[i] = Math.min(dp[i], dp[j] + dp[i - j]);
                 }
