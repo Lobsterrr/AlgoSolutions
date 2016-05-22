@@ -21,8 +21,10 @@ public class CoinChange {
                 if (coin > i) {
                     break;
                 }
+                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
             }
         }
+        return dp[amount];
     }
 
     public int coinChange(int[] coins, int amount) {
