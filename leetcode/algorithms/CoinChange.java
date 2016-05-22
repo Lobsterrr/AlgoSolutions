@@ -28,8 +28,10 @@ public class CoinChange {
             if (dp[i] == 1) {
                 continue;
             }
-            for (int j = 0; j < amount; ++j) {
-                dp[i] = Math.min(dp[i], dp[j] + dp[i - j]);
+            for (int j = 1; j < amount; ++j) {
+                if (dp[j] != Integer.MAX_VALUE && dp[i - j] != Integer.MAX_VALUE) {
+                    dp[i] = Math.min(dp[i], dp[j] + dp[i - 1]);
+                }
             }
         }
         return dp[amount];
