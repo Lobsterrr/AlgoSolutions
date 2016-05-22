@@ -20,7 +20,7 @@ public class CoinChange {
         for (int i = 1; i <= amount; ++i) {
             dp[i] = Integer.MAX_VALUE;
             for (int j = 0; j < coins.length; ++j) {
-                if (coins[j] == amount) {
+                if (coins[j] == i) {
                     dp[i] = 1;
                     break;
                 }
