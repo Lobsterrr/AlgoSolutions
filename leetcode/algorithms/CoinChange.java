@@ -30,7 +30,7 @@ public class CoinChange {
             }
             for (int j = 1; j < i; ++j) {
                 if (dp[j] != Integer.MAX_VALUE && dp[i - j] != Integer.MAX_VALUE) {
-                    dp[i] = Math.min(dp[i], dp[j] + dp[i - 1]);
+                    dp[i] = Math.min(dp[i], dp[j] + dp[i - j]);
                 }
             }
         }
