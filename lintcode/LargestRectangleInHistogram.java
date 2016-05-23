@@ -26,11 +26,11 @@ public class LargestRectangleInHistogram {
         Stack<Integer> stack = new Stack<Integer>();
         int result = Integer.MIN_VALUE;
         int i = 0;
-        while (i < height.length || !stack.isEmty()) {
+        while (i < height.length || !stack.isEmpty()) {
             if (i < height.length && (stack.isEmpty() || stack.peek() <= height[i])) {
                 stack.push(i++);
             } else {
-                result = Math.max(result, height[stack.isEmpty() ? 0 : (i - stack.pop())]);
+                result = Math.max(result, height[stack.peek()] * (i - (stack.isEmtpy() ? 0 : stack.pop() - 1)));
             }
         }
         return result;
