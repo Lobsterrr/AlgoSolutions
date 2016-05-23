@@ -20,7 +20,19 @@ public class LargestRectangleInHistogram {
      * @return: The area of largest rectangle in the histogram
      */
     public int largestRectangleArea(int[] height) {
-
+        if (height.length == 0) {
+            return 0;
+        }
+        Stack<Integer> stack = new Stack<Integer>();
+        int result = Integer.MIN_VALUE;
+        int i = 0;
+        while (i < height.length || !stack.isEmty()) {
+            if (i < height.length && (stack.isEmpty() || stack.peek() <= height[i])) {
+                stack.push(i++);
+            } else {
+                result = Math.max(result, 
+            }
+        }
     }
 
 }
