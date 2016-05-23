@@ -15,6 +15,10 @@ return 10.
  */
 public class LargestRectangleInHistogram {
 
+    /**
+     * @param height: A list of integer
+     * @return: The area of largest rectangle in the histogram
+     */
     public int largestRectangleArea(int[] height) {
 
     }
