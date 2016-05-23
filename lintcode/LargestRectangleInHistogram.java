@@ -15,6 +15,8 @@ return 10.
  */
 public class LargestRectangleInHistogram {
 
+    public int largestRectangleArea(int[] height) {
 
+    }
 
 }
