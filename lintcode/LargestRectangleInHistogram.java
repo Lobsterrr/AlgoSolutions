@@ -30,7 +30,7 @@ public class LargestRectangleInHistogram {
             if (i < height.length && (stack.isEmpty() || stack.peek() <= height[i])) {
                 stack.push(i++);
             } else {
-                result = Math.max(result, height[stack.peek()] * (i - (stack.isEmtpy() ? 0 : stack.pop() - 1)));
+                result = Math.max(result, height[stack.peek()] * (i - (stack.isEmpty() ? 0 : stack.pop() - 1)));
             }
         }
         return result;
