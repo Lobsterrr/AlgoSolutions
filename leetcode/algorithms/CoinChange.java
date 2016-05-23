@@ -22,13 +22,11 @@ public class CoinChange {
         for (int i = 1; i <= amount; ++i) {
             dp[i] = Integer.MAX_VALUE;
             for (int coin : coins) {
-                if (i >= coin && dp[i - coin] != Integer.MAX_VALUE) {
+                if (i >= coin && dp[i - coin] != -1) {
                     dp[i] = Math.min(dp[i], dp[i - coin] + 1);
                 }
             }
-        }
-        if (dp[amount] == Integer.MAX_VALUE) {
-            dp[amount] = -1;
+            dp[i] = (dp[i] == Integer.MAX_VALUE ? -1 : dp[i]);
         }
         return dp[amount];
     }
