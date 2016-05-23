@@ -22,7 +22,9 @@ public class CoinChange {
                 if (coin > i) {
                     break;
                 }
-                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+                if (dp[i - coin] != Integer.MAX_VALUE) {
+                    dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+                }
             }
         }
         if (dp[amount] == Integer.MAX_VALUE) {
