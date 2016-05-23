@@ -18,15 +18,11 @@
 public class CoinChange {
 
     public int coinChange(int[] coins, int amount) {
-        Arrays.sort(coins);
         int[] dp = new int[amount + 1];
         for (int i = 1; i <= amount; ++i) {
             dp[i] = Integer.MAX_VALUE;
             for (int coin : coins) {
-                if (coin > i) {
-                    break;
-                }
-                if (dp[i - coin] != Integer.MAX_VALUE) {
+                if (i >= coin && dp[i - coin] != Integer.MAX_VALUE) {
                     dp[i] = Math.min(dp[i], dp[i - coin] + 1);
                 }
             }
