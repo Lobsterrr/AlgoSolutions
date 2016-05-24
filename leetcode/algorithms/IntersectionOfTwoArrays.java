@@ -22,7 +22,10 @@ public class IntersectionOfTwoArrays {
                 map.put(num, map.get(num) - 1);
             }
         }
-        return list.toArray();
+        int[] result = new int[list.size()];
+        for (int i = 0; i < result.length; ++i) {
+            result[i] = list.get(i);
+        }
     }
 
 }
