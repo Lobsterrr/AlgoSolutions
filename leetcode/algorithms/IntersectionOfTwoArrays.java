@@ -22,7 +22,7 @@ public class IntersectionOfTwoArrays {
                 map.put(num, map.get(num) - 1);
             }
         }
-        return list.
+        return list.toArray();
     }
 
 }
