@@ -17,8 +17,12 @@ public class IntersectionOfTwoArrays {
             map.put(num, 1 + map.containsKey(num) ? map.get(num) : 0);
         }
         for (int num : nums2) {
-
+            if (map.cointainsKey(num) && map.get(num) > 0) {
+                list.add(num);
+                map.put(num, map.get(num) - 1);
+            }
         }
+        return list.
     }
 
 }
