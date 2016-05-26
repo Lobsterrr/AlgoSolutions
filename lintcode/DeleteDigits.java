@@ -31,6 +31,7 @@ public class DeleteDigits {
         }
         while (k > 0) {
             deque.pollLast();
+            k--;
         }
         String result = "";
         while (deque.peek() != null) {
