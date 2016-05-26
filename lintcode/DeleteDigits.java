@@ -21,13 +21,29 @@ public class DeleteDigits {
      *@return: A string
      */
     public String DeleteDigits(String A, int k) {
+        Deque<Character> deque = new LinkedList<Character>();
+        for (int i = 0; i < A.length && k > 0; ++i) {
+            if (i == 0 || deque.peek() != null || A.charAt(i) >= deque.peekLast()) {
+                deque.offerLast(A.charAt(i));
+            } else if (A.charAt(i) < deque.peekLast()) {
+                deque.pollLast();
+                k--;
+            }
+        }
         String result = "";
+        while (deque.peek() != null) {
+            result += deque.pollFirst();
+        }
+        return result;
+
+
         Stack<Integer> stack = new Stack<Integer>();
         for (int i = 0; i < A.length && k > 0; ++i) {
-            if (i == 0) {
+            if (i == 0 || stack.isEmpty() || A.charAt(i) - '0' >= stack.peek()) {
                 stack.push(A.charAt(i) - '0');
-            } else {
-                
+            } else if (A.charAt(i) - '0' < stack.peek()) {
+                k--;
+                stack.pop();
             }
         }
     }
