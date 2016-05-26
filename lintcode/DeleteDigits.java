@@ -22,10 +22,10 @@ public class DeleteDigits {
      */
     public String DeleteDigits(String A, int k) {
         Deque<Character> deque = new LinkedList<Character>();
-        for (int i = 0; i < A.length() && k > 0; ++i) {
+        for (int i = 0; i < A.length(); ++i) {
             if (i == 0 || deque.peek() == null || A.charAt(i) >= deque.peekLast()) {
                 deque.offerLast(A.charAt(i));
-            } else if (A.charAt(i) < deque.peekLast()) {
+            } else if (k > 0 && A.charAt(i) < deque.peekLast()) {
                 deque.pollLast();
                 k--;
             }
