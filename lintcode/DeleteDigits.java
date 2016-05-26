@@ -21,7 +21,10 @@ public class DeleteDigits {
      *@return: A string
      */
     public String DeleteDigits(String A, int k) {
-
+        String result = "";
+        for (int i = 0; i < A.length - 1 && k > 0; ++i) {
+            
+        }
     }
 
 }
