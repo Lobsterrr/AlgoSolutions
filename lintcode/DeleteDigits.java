@@ -27,9 +27,7 @@ public class DeleteDigits {
                 deque.pollLast();
                 k--;
             }
-            if (i == 0 || deque.peek() == null || A.charAt(i) >= deque.peekLast()) {
-                deque.offerLast(A.charAt(i));
-            } 
+            deque.offerLast(A.charAt(i));
         }
         String result = "";
         while (deque.peek() != null) {
