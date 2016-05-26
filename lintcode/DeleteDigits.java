@@ -23,7 +23,7 @@ public class DeleteDigits {
     public String DeleteDigits(String A, int k) {
         Deque<Character> deque = new LinkedList<Character>();
         for (int i = 0; i < A.length() && k > 0; ++i) {
-            if (i == 0 || deque.peek() != null || A.charAt(i) >= deque.peekLast()) {
+            if (i == 0 || deque.peek() == null || A.charAt(i) >= deque.peekLast()) {
                 deque.offerLast(A.charAt(i));
             } else if (A.charAt(i) < deque.peekLast()) {
                 deque.pollLast();
