@@ -22,8 +22,13 @@ public class DeleteDigits {
      */
     public String DeleteDigits(String A, int k) {
         String result = "";
-        for (int i = 0; i < A.length - 1 && k > 0; ++i) {
-            
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i < A.length && k > 0; ++i) {
+            if (i == 0) {
+                stack.push(A.charAt(i) - '0');
+            } else {
+                
+            }
         }
     }
 
