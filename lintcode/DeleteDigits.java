@@ -35,17 +35,6 @@ public class DeleteDigits {
             result += deque.pollFirst();
         }
         return result;
-
-
-        Stack<Integer> stack = new Stack<Integer>();
-        for (int i = 0; i < A.length && k > 0; ++i) {
-            if (i == 0 || stack.isEmpty() || A.charAt(i) - '0' >= stack.peek()) {
-                stack.push(A.charAt(i) - '0');
-            } else if (A.charAt(i) - '0' < stack.peek()) {
-                k--;
-                stack.pop();
-            }
-        }
     }
 
 }
