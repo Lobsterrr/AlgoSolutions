@@ -37,7 +37,7 @@ public class DeleteDigits {
         while (deque.peek() != null) {
             char c = deque.pollFirst();
             if (c != '0') {
-                result += deque.pollFirst();
+                result += c;
             }
         }
         return result;
