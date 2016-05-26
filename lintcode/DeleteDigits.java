@@ -23,15 +23,13 @@ public class DeleteDigits {
     public String DeleteDigits(String A, int k) {
         Deque<Character> deque = new LinkedList<Character>();
         for (int i = 0; i < A.length(); ++i) {
-            if (i == 0 || deque.peek() == null || A.charAt(i) >= deque.peekLast()) {
-                deque.offerLast(A.charAt(i));
-            } else if (k > 0 && A.charAt(i) < deque.peekLast()) {
+            if (k > 0 && deque.peek() != null && deque.peekLast() > A.charAt(i)) {
                 deque.pollLast();
                 k--;
-                if (deque.peek() == null) {
-                    deque.offerLast(A.charAt(i));
-                }
             }
+            if (i == 0 || deque.peek() == null || A.charAt(i) >= deque.peekLast()) {
+                deque.offerLast(A.charAt(i));
+            } 
         }
         String result = "";
         while (deque.peek() != null) {
