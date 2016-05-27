@@ -26,8 +26,11 @@ public class InterleavingPositiveAndNegativeNumbers {
         }
         // -1, -2, -3, 1, 2, 3, 4
         if (index < (A.length + 1) / 2) {
-            
+            for (int i = 0; i < A.length / 2; ++i) {
+                swap(A, i, A.length - 1 - i);
+            }
         }
+        for 
     }
 
     public void rerange(int[] A) {
