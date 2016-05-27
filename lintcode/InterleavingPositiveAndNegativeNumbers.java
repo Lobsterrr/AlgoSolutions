@@ -18,7 +18,11 @@ public class InterleavingPositiveAndNegativeNumbers {
      * @return: void
      */
     public void rerange(int[] A) {
-        boolean needPositive = true;
+        int positiveCount = 0;
+        for (int a : A) {
+            positiveCount += a > 0 ? 1 : 0;
+        }
+        boolean needPositive = 2 * positiveCount > A.length ? true : false;
         for (int i = 0; i < A.length; ++i) {
             if (needPositive && A[i] < 0) {
                 int j = i + 1;
