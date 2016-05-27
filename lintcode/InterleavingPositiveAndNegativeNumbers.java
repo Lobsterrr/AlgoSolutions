@@ -25,8 +25,8 @@ public class InterleavingPositiveAndNegativeNumbers {
             }
         }
         // -1, -2, -3, 1, 2, 3, 4
-        if (index > A.length / 2) {
-            swap(A, index, A.length - 1);
+        if (index < (A.length + 1) / 2) {
+            
         }
     }
 
