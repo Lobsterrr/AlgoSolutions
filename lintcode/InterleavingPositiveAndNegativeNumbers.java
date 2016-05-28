@@ -43,32 +43,6 @@ public class InterleavingPositiveAndNegativeNumbers {
         }
     }
 
-/*****************************************************************************/
-
-    public void rerange(int[] A) {
-        int positiveCount = 0;
-        for (int a : A) {
-            positiveCount += a > 0 ? 1 : 0;
-        }
-        boolean needPositive = 2 * positiveCount > A.length ? true : false;
-        for (int i = 0; i < A.length; ++i) {
-            if (needPositive && A[i] < 0) {
-                int j = i + 1;
-                for (; j < A.length && A[j] <= 0; ++j);
-                if (j < A.length) {
-                    swap(A, i, j);
-                }
-            } else if (!needPositive && A[i] > 0) {
-                int j = i + 1;
-                for (; j < A.length && A[j] >= 0; ++j);
-                if (j < A.length) {
-                    swap(A, i, j);
-                }
-            }
-            needPositive = !needPositive;
-        }
-    }
-
     public void swap(int[] array, int x, int y) {
         int tmp = array[x];
         array[x] = array[y];
