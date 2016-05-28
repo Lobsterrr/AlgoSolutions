@@ -38,10 +38,8 @@ public class InterleavingPositiveAndNegativeNumbers {
         // a a a b b b a            i < A.length / 2      i <= A.length / 2 - 1
         // a a a a b b b b          i <= A.length / 2     i <= A.length / 2 - 1
         // a a a a b b b b a        i <= A.length / 2     i <= A.length / 2 - 1
-        if (index % 2 == 0) {
-            index++;
-        }
-        for (int i = 1; i < (A.length / 2 % 2 == 0 ? A.length / 2 : A.length / 2 + 1); i += 2, index += 2) {
+        index += A.length / 2 % 2;
+        for (int i = 1; i <= A.length / 2 - 1; i += 2, index += 2) {
             swap(A, i, index);
         }
     }
