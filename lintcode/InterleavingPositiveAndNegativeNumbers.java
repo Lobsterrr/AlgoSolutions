@@ -24,12 +24,16 @@ public class InterleavingPositiveAndNegativeNumbers {
                 swap(A, index++, i);
             }
         }
-        // -1, -2, -3, 1, 2, 3, 4
-        if (index < (A.length + 1) / 2) {
+        if (index > (A.length + 1) / 2) {
+            swap(A, index - 1, A.length - 1);
+            index--;
+        } else if (index < (A.length + 1) / 2) {
             for (int i = 0; i < A.length / 2; ++i) {
                 swap(A, i, A.length - 1 - i);
             }
             index = A.length - index;
+            swap(A, index - 1, A.length - 1);
+            index--;
         }
         //                index
         // -1, -2, -3, -4,  1,  2,  3;
@@ -37,8 +41,13 @@ public class InterleavingPositiveAndNegativeNumbers {
         // -1, -2, -3,  3,  1,  2, -4;
         //
         // -1, -2, -3, -4,  1,  2,  3,  4,  5
-        for (int i = 1; i < A.length / 2; i += 2) {
-            swap(A, i, index++);
+        //
+        //                 index
+        // -1, -2, -3, -4,  1,  2,  3,  4;
+        //
+        // -1,  1, -3, -4, -2,  2,  3,  4;
+        for (int i = 1; i < A.length / 2; i += 2, index += 2) {
+            swap(A, i, index);
         }
 
     }
