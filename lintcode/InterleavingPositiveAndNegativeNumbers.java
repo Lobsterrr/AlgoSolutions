@@ -35,17 +35,6 @@ public class InterleavingPositiveAndNegativeNumbers {
             swap(A, index - 1, A.length - 1);
             index--;
         }
-        //                index
-        // -1, -2, -3, -4,  1,  2,  3;
-        //            index
-        // -1, -2, -3,  3,  1,  2, -4;
-        //
-        // -1, -2, -3, -4,  1,  2,  3,  4,  5
-        //
-        //                 index
-        // -1, -2, -3, -4,  1,  2,  3,  4;
-        //
-        // -1,  1, -3, -4, -2,  2,  3,  4;
         if (index % 2 == 1) {
             index++;
         }
