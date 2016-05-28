@@ -30,7 +30,16 @@ public class InterleavingPositiveAndNegativeNumbers {
                 swap(A, i, A.length - 1 - i);
             }
         }
-        for 
+        //                index
+        // -1, -2, -3, -4,  1,  2,  3;
+        //            index
+        // -1, -2, -3,  3,  1,  2, -4;
+        //
+        // -1, -2, -3, -4,  1,  2,  3,  4,  5
+        for (int i = 1; i < A.length / 2; i += 2) {
+            swap(A, i, index++);
+        }
+
     }
 
     public void rerange(int[] A) {
