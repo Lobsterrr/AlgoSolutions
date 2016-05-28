@@ -25,17 +25,11 @@ public class InterleavingPositiveAndNegativeNumbers {
             }
         }
         if (index != (A.length + 1) / 2) {
-            
-
-        }
-        if (index > (A.length + 1) / 2) {
-            swap(A, index - 1, A.length - 1);
-            index--;
-        } else if (index < (A.length + 1) / 2) {
-            for (int i = 0; i < A.length / 2; ++i) {
-                swap(A, i, A.length - 1 - i);
+            if (index < (A.length + 1) / 2) {
+                for (int i = 0; i < A.length / 2; ++i) {
+                    swap(A, i, A.length - 1 - i);
+                }
             }
-            index = A.length - index;
             swap(A, index - 1, A.length - 1);
             index--;
         }
