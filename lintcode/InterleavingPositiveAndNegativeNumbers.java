@@ -33,13 +33,13 @@ public class InterleavingPositiveAndNegativeNumbers {
             swap(A, index - 1, A.length - 1);
             index--;
         }
-        // a a a b b b;
+        // a a a b b b a;
         //
         // a a a a b b b b
         if (index % 2 == 1) {
             index++;
         }
-        for (int i = 1; i <= A.length / 2; i += 2, index += 2) {
+        for (int i = 1; i < A.length / 2; i += 2, index += 2) {
             swap(A, i, index);
         }
     }
