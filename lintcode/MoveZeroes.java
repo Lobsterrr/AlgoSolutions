@@ -15,7 +15,11 @@ public class MoveZeroes {
      * @return nothing, do this in-place
      */
     public void moveZeroes(int[] nums) {
-
+        for (int i = 0, index = 0; i < nums.length; ++i) {
+            if (nums[i] == 0) {
+                
+            }
+        }
     }
 
 }
