@@ -14,6 +14,15 @@ public class ReversePairs {
      */
     public long reversePairs(int[] A) {
         // Write your code here
+        long result = 0;
+        for (int i = 0; i < A.length; ++i) {
+            for (int j = i + 1; j < A.length; ++j) {
+                if (nums[j] > nums[i]) {
+                    result++;
+                }
+            }
+        }
+        return result;
     }
 
 }
