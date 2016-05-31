@@ -27,10 +27,9 @@ public class ReversePairs {
                     high = mid;
                 }
             }
-            list.add(low 
+            list.add(high, A[i]); 
             result += high;
         }
-
         return result;
     }
 
