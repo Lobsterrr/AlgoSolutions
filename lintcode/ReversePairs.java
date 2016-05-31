@@ -14,6 +14,7 @@ public class ReversePairs {
      * @param A an array
      * @return total of reverse pairs
      */
+    // O(nlg(n) time, O(n) space.
     public long reversePairs(int[] A) {
         long result = 0;
         List<Integer> list = new LinkedList<Integer>();
