@@ -15,7 +15,6 @@ public class ReversePairs {
      * @return total of reverse pairs
      */
     public long reversePairs(int[] A) {
-        // Write your code here
         long result = 0;
         List<Integer> list = new LinkedList<Integer>();
         for (int i = A.length - 1; i >= 0; --i) {
