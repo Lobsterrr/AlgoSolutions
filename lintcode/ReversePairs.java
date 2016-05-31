@@ -18,10 +18,10 @@ public class ReversePairs {
         List<Integer> list = new LinkedList<Integer>();
         for (int i = A.length - 1; i >= 0; --i) {
             int low = 0;
-            int high = list.size() - 1;
+            int high = list.size();
             while (low < high) {
                 int mid = low + (high - low) / 2;
-                if (A[i] > A[mid]) {
+                if (A[i] > list.get(mid)) {
                     low = mid + 1;
                 } else {
                     high = mid;
