@@ -15,6 +15,21 @@ public class ReversePairs {
     public long reversePairs(int[] A) {
         // Write your code here
         long result = 0;
+        List<Integer> list = new LinkedList<Integer>();
+        for (int i = A.length - 1; i >= 0; --i) {
+            int low = 0;
+            int high = list.size() - 1;
+            while (low < high) {
+                int mid = low + (high - low) / 2;
+                if (A[i] > A[mid]) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+            }
+            list.add(low 
+            result += high;
+        }
 
         return result;
     }
