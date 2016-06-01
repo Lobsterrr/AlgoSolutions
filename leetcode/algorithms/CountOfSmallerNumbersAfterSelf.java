@@ -17,7 +17,24 @@
 public class CountOfSmallerNumbersAfterSelf {
 
     public List<Integer> countSmaller(int[] nums) {
+        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<Integer>();
+        for (int i = nums.length - 1; i >= 0; --i) {
+            int low = 0;
+            int high = list.size();
+            while (low < high) {
+                int mid = low + (high - low) / 2;
+                if (nums[i] > list.get(mid)) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+            }
+            list.add(high, nums[i]);
+        }
 
+
+        return result;
     }
 
 }
