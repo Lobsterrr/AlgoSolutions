@@ -32,6 +32,11 @@ public class IntersectionOfTwoArraysII {
                 map.put(num, map.get(num) - 1);
             }
         }
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); ++i) {
+            result[i] = list.get(i);
+        }
+        return result;
     }
 
 }
