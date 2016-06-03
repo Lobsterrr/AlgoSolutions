@@ -21,6 +21,11 @@ public class IntersectionOfTwoArrays {
             }
         }
         int[] result = new int[set.size()];
+        int i = 0;
+        for (int s : set) {
+            result[i++] = s;
+        }
+        return result;
     }
 
 }
