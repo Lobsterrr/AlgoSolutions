@@ -10,7 +10,10 @@ public class IntersectionOfTwoArrays {
      */
     public int[] intersection(int[] nums1, int[] nums2) {
         List<Integer> list = new ArrayList<Integer>();
-        Set<Integer> set = new HashSet<Integer>(Arrays.asList(nums1));
+        Set<Integer> set = new HashSet<Integer>();
+        for (int num : nums1) {
+            set.add(num);
+        }
     }
 
 }
