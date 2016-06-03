@@ -14,6 +14,13 @@ public class IntersectionOfTwoArrays {
         for (int num : nums1) {
             set.add(num);
         }
+        for (int num : nums2) {
+            if (set.contains(num)) {
+                list.add(num);
+                set.remove(num);
+            }
+        }
+        return set.toArray(new int[set.size()])
     }
 
 }
