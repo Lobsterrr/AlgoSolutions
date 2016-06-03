@@ -31,6 +31,7 @@ public class CountOfSmallerNumbersAfterSelf {
                 }
             }
             list.add(high, nums[i]);
+            result.add(0, mid);
         }
         return result;
     }
