@@ -20,7 +20,7 @@ public class IntersectionOfTwoArrays {
                 set.remove(num);
             }
         }
-        return set.toArray(new int[set.size()])
+        int[] result = new int[set.size()];
     }
 
 }
