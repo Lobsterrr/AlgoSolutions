@@ -29,9 +29,9 @@ public class CountOfSmallerNumbersAfterSelf {
                 } else {
                     high = mid;
                 }
-                list.add(high, nums[i]);
-                result.add(0, mid);
             }
+            list.add(high, nums[i]);
+            result.add(0, high);
         }
         return result;
     }
