@@ -32,7 +32,9 @@ public class MaximalRectangle {
     }
 
     public int maxRectangleArea(int[] height) {
-        
+        Stack<Integer> stack = new Stack<Integer>();
+        int result = 0;
+
     }
 
 }
