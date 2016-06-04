@@ -1,5 +1,6 @@
 /*
- * Given a 2D boolean matrix filled with False and True, find the largest rectangle containing all True and return its area.
+ * Given a 2D boolean matrix filled with False and True, find the 
+ * largest rectangle containing all True and return its area.
 
 Example
 Given a matrix:
