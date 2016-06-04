@@ -27,7 +27,12 @@ public class MaximalRectangle {
             for (int j = 0; j < matrix[i].length; ++j) {
                 height[j] = matrix[i][j] ? (height[j] + 1) : 0;
             }
+            result = Math.max(result, 
         }
+    }
+
+    public int maxRectangleArea(int[] height) {
+        
     }
 
 }
