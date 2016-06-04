@@ -22,6 +22,10 @@ public class MaximalRectangle {
      */
     public int maximalRectangle(boolean[][] matrix) {
         int result = 0;
+        int[] height = new int[matrix[0].length];
+        for (int i = 0; i < matrix.length; ++i) {
+            
+        }
     }
 
 }
