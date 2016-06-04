@@ -20,7 +20,7 @@ public class MaximalRectangle {
      * @return an integer
      */
     public int maximalRectangle(boolean[][] matrix) {
-
+        int result = 0;
     }
 
 }
