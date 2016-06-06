@@ -30,12 +30,12 @@ public class MaximalRectangle {
             for (int j = 0; j < matrix[i].length; ++j) {
                 height[j] = matrix[i][j] ? (height[j] + 1) : 0;
             }
-            result = Math.max(result, maxRectangleArea(height));
+            result = Math.max(result, largestRectangleArea(height));
         }
         return result;
     }
 
-    public int maxRectangleArea(int[] height) {
+    public int largestRectangleArea(int[] height) {
         Stack<Integer> stack = new Stack<Integer>();
         int result = 0;
         int i = 0;
