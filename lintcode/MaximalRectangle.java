@@ -36,10 +36,12 @@ public class MaximalRectangle {
         int result = 0;
         int i = 0;
         while (i < height.length || !stack.isEmpty()) {
-            if (i < height.length && (stack.isEmpty() || height[i] >= height[stack.peek()])) {
+            if (i < height.length && (stack.isEmpty() || 
+                    height[i] >= height[stack.peek()])) {
                 stack.push(i++);
             } else {
-                result = Math.max(result, height[stack.pop()] * (stack.isEmpty() ? i : (i - stack.peek() - 1)));
+                result = Math.max(result, height[stack.pop()] * 
+                    (stack.isEmpty() ? i : (i - stack.peek() - 1)));
             }
         }
         return result;
