@@ -38,9 +38,11 @@ public class MaximalRectangle {
             if (stack.isEmpty() || height[i] >= stack.peek()) {
                 stack.push(i);
             } else {
-
+                int index = stack.pop();
+                result = Math.max(result, height[i] * (i - index));
             }
         }
+        return result;
     }
 
 }
