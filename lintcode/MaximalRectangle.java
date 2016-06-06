@@ -34,6 +34,15 @@ public class MaximalRectangle {
     public int maxRectangleArea(int[] height) {
         Stack<Integer> stack = new Stack<Integer>();
         int result = 0;
+        int i = 0;
+        while (i < height.length || !stack.isEmpty()) {
+            if (stack.isEmpty() || height[i] >= height[stack.peek()]) {
+                stack.push(i++);
+            } else {
+                result = Math.max(result, height[stack.pop()] * (stack.isEmpty() ? i : (i - stack.peek() - 1)));
+            }
+        }
+
         for (int i = 0; i < height.length; ++i) {
             if (stack.isEmpty() || height[i] >= stack.peek()) {
                 stack.push(i);
