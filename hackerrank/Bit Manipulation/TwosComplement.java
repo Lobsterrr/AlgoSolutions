@@ -45,15 +45,17 @@ public class TwosComplement {
     }
 
     public static long solve(int a, int b) {
-        if (a > b)
+        if (a > b) {
             throw new IllegalArgumentException();
+        }
         long count = 0;
-        if (a < 0 && b < 0)
+        if (a < 0 && b < 0) {
             count = twosComplement(a) - twosComplement(b + 1);
-        else if (a < 0 && b >= 0)
+        } else if (a < 0 && b >= 0) {
             count = twosComplement(a) + twosComplement(b);
-        else if (a >= 0 && b >= 0)
+        } else if (a >= 0 && b >= 0) {
             count = twosComplement(b) - twosComplement(Math.max(0, a - 1));
+        }
         return count;
     }
 
@@ -64,11 +66,12 @@ public class TwosComplement {
     }
 
     public static long twosComplement(int n) {
-        if (n == 0)
+        if (n == 0) {
             return 0;
-        else if (n > 0) {
-            if (n % 2 == 0)
+        } else if (n > 0) {
+            if (n % 2 == 0) {
                 return twosComplement(n - 1) + hammingWeight(n);
+            }
             return ((long) n + 1) / 2 + 2 * twosComplement(n / 2);
         } else {
             return (-(long) n) * 32 - twosComplement(-n - 1);
