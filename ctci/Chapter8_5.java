@@ -21,7 +21,7 @@ public class Chapter8_5 {
         if (left > 0) {
             dfs(s + "(", left - 1, right);
         }
-        if (left < right) {
+        if (0 <= left && left < right) {
             dfs(s + ")", left, right - 1);
         }
     }
