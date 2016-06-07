@@ -8,7 +8,10 @@
 public class Chapter8_5 {
 
     public void printParentheses(int n) {
-
+        if (n <= 0) {
+            return;
+        }
+        dfs("", n, n);
     }
 
     public void dfs(String s, int left, int right) {
