@@ -22,18 +22,5 @@ public class Chapter8_5 {
             dfs(s + ")", left, right - 1);
         }
     }
-
-
-    public void printParentheses(int n) {
-        helper("", n, n);
-    }
-
-    public void helper(String s, int left, int right) {
-        if(left == 0 && right == 0)
-            System.out.println(s);
-        if(left > 0)
-            helper(s + "(", left - 1, right);
-        if(left < right)
-            helper(s + ")", left, right - 1);
-    }
+ 
 }
