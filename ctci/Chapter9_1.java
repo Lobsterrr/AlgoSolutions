@@ -13,14 +13,4 @@ public class Chapter9_1 {
         return A;
     }
 
-    public int[] merge(int[] A, int[] B) {
-        int i = A.length - 1, j = B.length - 1;
-        while(j >= 0) {
-            if(i >= 0)
-                A[i + j + 1] = (A[i] > B[j]) ? A[i--] : B[j--];
-            else
-                A[j] = B[j--];
-        }
-        return A;
-    }
 }
