@@ -1,5 +1,6 @@
 /*
- * There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays.
+ * There are two sorted arrays A and B of size m and n 
+ * respectively. Find the median of the two sorted arrays.
 
 Example
 Given A=[1,2,3,4,5,6] and B=[2,3,4,5], the median is 3.5.
@@ -17,7 +18,7 @@ public class MedianOfTwoSortedArrays{
      * @return: a double whose format is *.5 or *.0
      */
     public double findMdediaSortedArrays(int[] A, int[] B) {
-
+        // TODO
     }
 
 }
