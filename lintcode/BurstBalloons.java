@@ -24,7 +24,10 @@ public class BurstBalloons {
      */
     public int maxCoins(int[] nums) {
         int result = 0;
-        for 
+        for (int i = 0; i < nums.length; ++i) {
+
+        }
+        return result;
     }
 
 }
