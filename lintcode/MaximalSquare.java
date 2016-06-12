@@ -92,8 +92,9 @@ public class MaximalSquare {
                 if (i == 0 || j == 0) {
                     dp[i % 2][j] = matrix[i][j];
                 } else {
-                    dp[i % 2][j] = matrix[i][j] == 0 ? 0 : Math.min(dp[(i - 1) % 2][j - 1], 
-                            Math.min(dp[i % 2][j - 1], dp[(i - 1) % 2][j])) + 1;
+                    dp[i % 2][j] = matrix[i][j] == 0 ? 0 : 
+                        Math.min(dp[(i - 1) % 2][j - 1], 
+                        Math.min(dp[i % 2][j - 1], dp[(i - 1) % 2][j])) + 1;
                 }
                 maxSize = Math.max(maxSize, dp[i % 2][j]);
             }
