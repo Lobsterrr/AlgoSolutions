@@ -24,7 +24,25 @@ public class MaximalSquare {
         int[] height = new int[matrix.length];
         for (int i = 0; i < matrix.length; ++i) {
             for (int j = 0; j < matrix[i].length; ++j) {
+                height[j] = matrix[i][j] == 0 ? 0 : height[i] + 1;
+            }
+            result = Math.max(result, maxSquareArea(height));
+        }
+        return result;
+    }
 
+    public int maxSquareArea(int[] height) {
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+        Stack<Integer> stack = new Stack<Integer>();
+        int result = 0;
+        int i = 0;
+        while (i < height.length || !stack.isEmpty()) {
+            if (i < height.length && (stack.isEmpty() || height[stack.peek()] <= height[i])) {
+                stack.push(i);
+            } else {
+                result = Math.max(result, Math.pow(Math.max(, ), 2));
             }
         }
     }
