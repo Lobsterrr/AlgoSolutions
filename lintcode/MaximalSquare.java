@@ -77,4 +77,29 @@ public class MaximalSquare {
         return maxSize * maxSize;
     }
 
+    
+/*****************************************************************************/
+
+    // O(n * m) time, O(m) space.
+    public int maxSquare(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) {
+            return 0;
+        }
+        int[][] dp = new int[2][matrix[0].length];
+        int maxSize = 0;
+        for (int i = 0; i < matrix.length; ++i) {
+            for (int j = 0; j < matrix[i].length; ++j) {
+                if (i == 0 || j == 0) {
+                    dp[i % 2][j] = matrix[i][j];
+                } else {
+                    dp[i % 2][j] = matrix[i][j] == 0 ? 0 : Math.min(dp[(i - 1) % 2][j - 1], 
+                            Math.min(dp[i % 2][j - 1], dp[(i - 1) % 2][j])) + 1;
+                }
+                maxSize = Math.max(maxSize, dp[i % 2][j]);
+            }
+        }
+        return maxSize * maxSize;
+    }
+
+
 }
