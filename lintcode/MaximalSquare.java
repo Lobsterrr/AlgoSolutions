@@ -21,7 +21,7 @@ public class MaximalSquare {
             return 0;
         }
         int result = 0;
-        int[] height = new int[matrix.length];
+        int[] height = new int[matrix[0].length];
         for (int i = 0; i < matrix.length; ++i) {
             for (int j = 0; j < matrix[i].length; ++j) {
                 height[j] = matrix[i][j] == 0 ? 0 : height[j] + 1;
@@ -44,7 +44,7 @@ public class MaximalSquare {
             } else {
                 int a = height[stack.pop()];
                 int b = i - (stack.isEmpty() ? 0 : stack.peek() + 1);
-                result = Math.max(result, Math.pow(Math.min(a, b), 2));
+                result = Math.max(result, (int) Math.pow(Math.min(a, b), 2));
             }
         }
         return result;
