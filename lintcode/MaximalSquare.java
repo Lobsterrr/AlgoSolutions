@@ -42,9 +42,12 @@ public class MaximalSquare {
             if (i < height.length && (stack.isEmpty() || height[stack.peek()] <= height[i])) {
                 stack.push(i);
             } else {
-                result = Math.max(result, Math.pow(Math.max(, ), 2));
+                int a = height[stack.pop()];
+                int b = i - (stack.isEmpty() ? 0 : stack.peek() + 1);
+                result = Math.max(result, Math.pow(Math.min(a, b), 2));
             }
         }
+        return result;
     }
 
 }
