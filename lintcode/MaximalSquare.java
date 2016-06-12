@@ -68,8 +68,8 @@ public class MaximalSquare {
                     dp[i][j] = matrix[i][j];
                 } else {
                     dp[i][j] = matrix[i][j] == 0 ? 0 : Math.min(dp[i - 1][j - 1], Math.min(dp[i][j - 1], dp[i - 1][j])) + 1;
-                    maxSize = Math.max(maxSize, dp[i][j]);
                 }
+                maxSize = Math.max(maxSize, dp[i][j]);
             }
         }
         return maxSize * maxSize;
