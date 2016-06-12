@@ -56,6 +56,7 @@ public class MaximalSquare {
 
 /*****************************************************************************/
 
+    // O(n * m) time, O(n * m) space.
     public int maxSquare(int[][] matrix) {
         if (matrix == null || matrix.length == 0) {
             return 0;
