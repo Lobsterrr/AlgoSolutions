@@ -24,7 +24,7 @@ public class MaximalSquare {
         int[] height = new int[matrix.length];
         for (int i = 0; i < matrix.length; ++i) {
             for (int j = 0; j < matrix[i].length; ++j) {
-                height[j] = matrix[i][j] == 0 ? 0 : height[i] + 1;
+                height[j] = matrix[i][j] == 0 ? 0 : height[j] + 1;
             }
             result = Math.max(result, maxSquareArea(height));
         }
