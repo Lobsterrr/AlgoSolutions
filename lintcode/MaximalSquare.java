@@ -18,6 +18,7 @@ public class MaximalSquare {
      * @param matrix: a matrix of 0 and 1
      * @return: an integer
      */
+    // O(n * m) time, O(m) space.
     public int maxSquare(int[][] matrix) {
         if (matrix == null || matrix.length == 0) {
             return 0;
