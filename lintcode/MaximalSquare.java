@@ -40,7 +40,7 @@ public class MaximalSquare {
         int i = 0;
         while (i < height.length || !stack.isEmpty()) {
             if (i < height.length && (stack.isEmpty() || height[stack.peek()] <= height[i])) {
-                stack.push(i);
+                stack.push(i++);
             } else {
                 int a = height[stack.pop()];
                 int b = i - (stack.isEmpty() ? 0 : stack.peek() + 1);
