@@ -17,8 +17,11 @@ public class MaximalSquare {
      * @return: an integer
      */
     public int maxSquare(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) {
+            return 0;
+        }
+        int result = 0;
         
-
     }
 
 }
