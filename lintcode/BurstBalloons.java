@@ -41,10 +41,12 @@ public class BurstBalloons {
         int[][] dp = new int[nums.length][nums.length];
         for (int i = 1; i < nums.length - 1; ++i) {
             for (int j = 0; j <= i; ++j) {
+                int tmp = Integer.MIN_VALUE;
                 for (int k = i; k > j; --k) {
-                    dp[i][j] = Math.max(dp[i][j], dp[i][k - 1] + dp[k + 1][j] + 
+                    tmp = Math.max(tmp, dp[i][k - 1] + dp[k + 1][j] + 
                             nums[i - 1] * nums[k] * nums[j + 1]);
                 }
+                dp[i][j] = tmp;
             }
         }
         return dp[0][nums.length - 1];
