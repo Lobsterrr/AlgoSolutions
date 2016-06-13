@@ -33,7 +33,6 @@ public class BurstBalloons {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int result = 0;
         int[] coin = new int[nums.length + 2];
         for (int i = 0; i < nums.length; ++i) {
             coin[i + 1] = nums[i];
