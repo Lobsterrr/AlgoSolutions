@@ -39,11 +39,6 @@ public class BurstBalloons {
         }
         coin[0] = coin[nums.length + 1] = 1;
         int[][] dp = new int[nums.length][nums.length];
-        for (int i = 0; i < dp.length; ++i) {
-            for (int j = 0; j < dp[0].length; ++j) {
-                dp[i][j] = 1;
-            }
-        }
         for (int i = 1; i < nums.length - 1; ++i) {
             for (int j = 0; j <= i; ++j) {
                 int tmp = Integer.MIN_VALUE;
