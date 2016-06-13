@@ -54,7 +54,7 @@ public class BurstBalloons {
                 dp[i][j] = tmp;
             }
         }
-        return dp[0][nums.length - 1];
+        return dp[1][nums.length];
     }
 
 }
