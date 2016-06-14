@@ -38,30 +38,6 @@ public class BurstBalloons {
             coins[i + 1] = nums[i];
         }
         coins[0] = coins[nums.length + 1] = 1;
-        int[][] dp = new int[nums.length][nums.length];
-        for (int k = 2; k < nums.length; ++k) {
-            for (int i = 0; i < nums.length - k; ++i) {
-                int j = i + k;
-                for (int x = i + 1; x < j; ++x) {
-                    dp[i][j] = Math.max(dp[i][j], dp[i][x] + dp[x][j] 
-                            + coins[i] * coins[x] * coins[j]);
-                }
-            }
-        }
-        return dp[0][nums.length - 1];
-    }
-
-
-
-    public int maxCoins(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-        int[] coins = new int[nums.length + 2];
-        for (int i = 0; i < nums.length; ++i) {
-            coins[i + 1] = nums[i];
-        }
-        coins[0] = coins[nums.length + 1] = 1;
         int[][] dp = new int[nums.length + 2][nums.length + 2];
         for (int k = 1; k <= nums.length; ++k) {
             for (int i = 1; i <= nums.length - k + 1; ++i) {
