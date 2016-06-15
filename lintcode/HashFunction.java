@@ -42,7 +42,7 @@ public class HashFunction {
             hash = hash * 33L % HASH_SIZE;
             hash = (hash + (long) c % HASH_SIZE) % HASH_SIZE;
         }
-        return (int) value;
+        return (int) hash;
     }
 
     public int powMod(int base, int exp, int mod) {
