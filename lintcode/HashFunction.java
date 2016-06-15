@@ -41,7 +41,7 @@ public class HashFunction {
         int n = key.length;
         for (int i = 0; i < n; ++i) {
             int pow = (int) Math.pow(33, n - i - 1);
-            hash += (int) key[i] * pow; 
+            hash += ((int) key[i]) * pow; 
         }
         return hash % HASH_SIZE;
     }
