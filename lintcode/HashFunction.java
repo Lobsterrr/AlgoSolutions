@@ -36,6 +36,18 @@ public class HashFunction {
      * @param HASH_SIZE: An integer
      * @return an integer
      */
+    public int hashCode(char[] key, int HASH_SIZE) {
+        long hash = 0L;
+        for (char c : key) {
+            hash = hash * 33L % HASH_SIZE;
+            hash = (hash + (long) c % HASH_SIZE) % HASH_SIZE;
+        }
+        return (int) value;
+    }
+
+    public int powMod(int base, int exp, int mod) {
+    
+    }
 
     // TLE
     public int hashCode(char[] key, int HASH_SIZE) {
@@ -47,16 +59,6 @@ public class HashFunction {
                     .multiply(pow)).mod(BigInteger.valueOf(HASH_SIZE));
         }
         return hash.intValue();
-    }
-
-    public int hashCode(char[] key, int HASH_SIZE) {
-        int hash = 0;
-        int n = key.length;
-        for (int i = 0; i < n; ++i) {
-            int pow = (int) Math.pow(33, n - i - 1);
-            hash += ((int) key[i]) * pow; 
-        }
-        return hash % HASH_SIZE;
     }
     
 }
