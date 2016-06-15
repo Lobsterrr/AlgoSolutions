@@ -28,9 +28,12 @@ public class HashFunction {
      */
     public int hashCode(char[] key, int HASH_SIZE) {
         int hash = 0;
-        for (int i = 0; i < key.length; ++i) {
-
+        int n = key.length;
+        for (int i = 0; i < n; ++i) {
+            int base = ((int) Math.pow(10, n - i) - 1) / 3;
+            hash += (int) key[i] * base; 
         }
+        return hash % HASH_SIZE;
     }
     
 }
