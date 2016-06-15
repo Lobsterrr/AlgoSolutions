@@ -37,6 +37,17 @@ public class HashFunction {
      * @return an integer
      */
     public int hashCode(char[] key, int HASH_SIZE) {
+        BigInteger hash = BigInteger.ZERO;
+        int n = key.length;
+        for (int i = 0; i < n; ++i) {
+            BigInteger pow = BigInteger.valueOf(33).pow(n - i - 1);
+            hash = hash.add(BigInteger.valueOf((int) key[i]).multiply(pow));
+        }
+        hash = hash.mod(BigInteger.valueOf(HASH_SIZE));
+        return hash.intValue();
+    }
+
+    public int hashCode(char[] key, int HASH_SIZE) {
         int hash = 0;
         int n = key.length;
         for (int i = 0; i < n; ++i) {
