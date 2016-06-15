@@ -31,9 +31,6 @@ public class HashFunction {
         for (int i = 0; i < key.length; ++i) {
 
         }
-        for (int i = 0; i < key.length; ++i) {
-        
-        }
     }
     
 }
