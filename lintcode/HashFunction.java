@@ -30,8 +30,8 @@ public class HashFunction {
         int hash = 0;
         int n = key.length;
         for (int i = 0; i < n; ++i) {
-            int base = ((int) Math.pow(10, n - i) - 1) / 3;
-            hash += (int) key[i] * base; 
+            int pow = (int) Math.pow(33, n - i - 1);
+            hash += (int) key[i] * pow; 
         }
         return hash % HASH_SIZE;
     }
