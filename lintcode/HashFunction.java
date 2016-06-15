@@ -41,9 +41,8 @@ public class HashFunction {
         int n = key.length;
         for (int i = 0; i < n; ++i) {
             BigInteger pow = BigInteger.valueOf(33).pow(n - i - 1);
-            hash = hash.add(BigInteger.valueOf((int) key[i]).multiply(pow));
+            hash = hash.add(BigInteger.valueOf((int) key[i]).multiply(pow)).mod(BigInteger.valueOf(HASH_SIZE));
         }
-        hash = hash.mod(BigInteger.valueOf(HASH_SIZE));
         return hash.intValue();
     }
 
