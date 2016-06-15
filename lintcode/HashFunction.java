@@ -27,7 +27,13 @@ public class HashFunction {
      * @return an integer
      */
     public int hashCode(char[] key, int HASH_SIZE) {
+        int hash = 0;
+        for (int i = 0; i < key.length; ++i) {
 
+        }
+        for (int i = 0; i < key.length; ++i) {
+        
+        }
     }
     
 }
