@@ -36,12 +36,15 @@ public class HashFunction {
      * @param HASH_SIZE: An integer
      * @return an integer
      */
+
+    // TLE
     public int hashCode(char[] key, int HASH_SIZE) {
         BigInteger hash = BigInteger.ZERO;
         int n = key.length;
         for (int i = 0; i < n; ++i) {
             BigInteger pow = BigInteger.valueOf(33).pow(n - i - 1);
-            hash = hash.add(BigInteger.valueOf((int) key[i]).multiply(pow)).mod(BigInteger.valueOf(HASH_SIZE));
+            hash = hash.add(BigInteger.valueOf((int) key[i])
+                    .multiply(pow)).mod(BigInteger.valueOf(HASH_SIZE));
         }
         return hash.intValue();
     }
