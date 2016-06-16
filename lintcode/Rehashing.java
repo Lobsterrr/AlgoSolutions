@@ -62,6 +62,9 @@ public class Rehashing {
             return null;
         }
         ListNode[] result = new ListNode[hashTable.length];
+        for (int i = 0; i < hashTable.length; ++i) {
+
+        }
     }
 
 }
