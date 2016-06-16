@@ -37,8 +37,8 @@ public class HashFunction {
      */
     public int hashCode(char[] key, int HASH_SIZE) {
         long hash = 0;
-        for (int c : key) {
-            hash = (33 * hash % HASH_SIZE + c % HASH_SIZE) % HASH_SIZE;
+        for (int ch : key) {
+            hash = (33 * hash % HASH_SIZE + ch % HASH_SIZE) % HASH_SIZE;
         }
         return (int) hash;
     }
