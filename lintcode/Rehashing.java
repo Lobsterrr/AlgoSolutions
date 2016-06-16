@@ -58,7 +58,9 @@ public class Rehashing {
      * @return: A list of The first node of linked list which have twice size
      */  
     public ListNode[] rehashing(ListNode[] hashTable) {
-
+        if (hashTable == null || hashTable.length == 0) {
+            return null;
+        }
     }
 
 }
