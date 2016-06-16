@@ -55,6 +55,8 @@ public class HashFunction {
     
     }
 
+/*****************************************************************************/
+
     // TLE
     public int hashCode(char[] key, int HASH_SIZE) {
         BigInteger hash = BigInteger.ZERO;
