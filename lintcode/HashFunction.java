@@ -61,7 +61,7 @@ public class HashFunction {
         }
         long half = powMod(base, exp / 2, mod);
         if (exp % 2 == 0) {
-            return (half % mod) * (half % mod) % mod;
+            return half * half % mod;
         } else {
             return (half * half % mod) * (base % mod) % mod;
         }
