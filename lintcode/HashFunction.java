@@ -20,8 +20,6 @@ hash table is like an array with index 0 ~ HASH_SIZE-1).
 Given a string as a key and the size of hash table, return the hash 
 value of this key.f
 
-
-
 Clarification
 For this problem, you are not necessary to design your own hash 
 algorithm or consider any collision issue, you just need to implement 
