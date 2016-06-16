@@ -47,16 +47,16 @@ public class HashFunction {
 /*****************************************************************************/
 
     public int hashCode(char[] key, int HASH_SIZE) {
-        int hash = 0;
+        long hash = 0;
         for (int i = 0; i < key.length; ++i) {
             hash = (hash + (int) key[i] * powMod(33, key.length - 1 - i,HASH_SIZE) % HASH_SIZE) % HASH_SIZE;
         }
-        return hash;
+        return (int) hash;
     }
 
     public int powMod(int base, int exp, int mod) {
         if (exp == 0) {
-            return base % mod;
+            return 1 % mod;
         }
         int half = powMod(base, exp / 2, mod);
         if (exp % 2 == 0) {
