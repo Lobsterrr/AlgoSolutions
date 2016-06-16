@@ -45,10 +45,22 @@ public class HashFunction {
         return (int) hash;
     }
 
+    public int hashCode(char[] key, int HASH_SIZE) {
+        long hash = 0;
+        for (int c : key) {
+            hash = (33 * hash % HASH_SIZE + (int) c % HASH_SIZE) % HASH_SIZE;
+        }
+        return (int) hash;
+    }
+
 /*****************************************************************************/
 
     public int hashCode(char[] key, int HASH_SIZE) {
-
+        int hash = 0;
+        for (int i = 0; i < key.length; ++i) {
+            hash = (hash + (int) key[i] * powMod(33, key.length - 1 - i,HASH_SIZE) % HASH_SIZE) % HASH_SIZE;
+        }
+        return hash;
     }
 
     public int powMod(int base, int exp, int mod) {
