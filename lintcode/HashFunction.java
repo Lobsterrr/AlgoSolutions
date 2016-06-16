@@ -62,7 +62,7 @@ public class HashFunction {
         if (exp % 2 == 0) {
             return half * half % mod;
         } else {
-            return half * half * (base % mod) % mod;
+            return (half * half % mod) * (base % mod) % mod;
         }
     }
 
