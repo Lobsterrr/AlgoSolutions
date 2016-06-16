@@ -52,7 +52,16 @@ public class HashFunction {
     }
 
     public int powMod(int base, int exp, int mod) {
-    
+        if (exp == 0) {
+            return 1;
+        } else if (exp == 1) {
+            return base % mod;
+        } else {
+            
+        }
+        if (exp % 2 == 1) {
+            return 
+        }
     }
 
 /*****************************************************************************/
