@@ -61,10 +61,9 @@ public class Rehashing {
         if (hashTable == null || hashTable.length == 0) {
             return null;
         }
-        ListNode[] result = new ListNode[hashTable.length];
-        for (int i = 0; i < hashTable.length; ++i) {
+        int capacity = hashTable.length;
+        ListNode[] result = new ListNode[capacity];
 
-        }
     }
 
 }
