@@ -45,6 +45,12 @@ public class HashFunction {
         return (int) hash;
     }
 
+/*******************************************************************/
+
+    public int hashCode(char[] key, int HASH_SIZE) {
+
+    }
+
     public int powMod(int base, int exp, int mod) {
     
     }
