@@ -49,7 +49,7 @@ public class HashFunction {
     public int hashCode(char[] key, int HASH_SIZE) {
         long hash = 0;
         for (int i = 0; i < key.length; ++i) {
-            hash = (hash + ((int) key[i] % HASH_SIZE) * powMod(33, key.length - 1 - i,HASH_SIZE) % HASH_SIZE) % HASH_SIZE;
+            hash = (hash + (long) ((int) key[i] % HASH_SIZE) * powMod(33, key.length - 1 - i,HASH_SIZE) % HASH_SIZE) % HASH_SIZE;
         }
         return (int) hash;
     }
