@@ -54,11 +54,11 @@ public class HashFunction {
         return (int) hash;
     }
 
-    public long powMod(int base, int exp, int mod) {
+    public int powMod(int base, int exp, int mod) {
         if (exp == 0) {
             return 1 % mod;
         }
-        long half = powMod(base, exp / 2, mod);
+        int half = powMod(base, exp / 2, mod);
         if (exp % 2 == 0) {
             return (half % mod) * (half % mod) % mod;
         } else {
