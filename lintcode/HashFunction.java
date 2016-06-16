@@ -52,15 +52,11 @@ public class HashFunction {
     }
 
     public int powMod(int base, int exp, int mod) {
-        if (exp == 0) {
-            return 1;
-        } else if (exp == 1) {
-            return base % mod;
+        int half = powMod(base, exp / 2, mod);
+        if (exp % 2 == 0) {
+            return half * half % mod;
         } else {
-            
-        }
-        if (exp % 2 == 1) {
-            return 
+            return half * half * (base % mod) % mod;
         }
     }
 
