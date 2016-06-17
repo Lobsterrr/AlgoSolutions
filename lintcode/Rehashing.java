@@ -61,7 +61,7 @@ public class Rehashing {
         if (hashTable == null || hashTable.length == 0) {
             return null;
         }
-        int capacity = hashTable.length;
+        int capacity = 2 * hashTable.length;
         ListNode[] result = new ListNode[capacity];
         for (ListNode head : hashTable) {
             while (head != null) {
