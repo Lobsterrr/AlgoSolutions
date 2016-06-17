@@ -76,9 +76,38 @@ public class Rehashing {
             }
         }
         for (int i = 0; i < result.length; ++i) {
-            result[i] = reverse(result[i]);
+            reverse(result[i]);
         }
         return result;
+    }
+
+    public void reverse(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode prev = head;
+        ListNode cur = prev.next;
+        while (cur != null) {
+            prev.next = cur.next;
+            cur.next = head;
+            head = cur;
+            cur = prev.next;
+        }
+        return head;
+    }
+
+    public void reverse(ListNode head) {
+        if (head == null || head.next == null) {
+            return;
+        }
+        ListNode prev = head;
+        ListNode cur = prev.next;
+        while (cur != null) {
+            prev.next = cur.next;
+            cur.next = head;
+            head = cur;
+            cur = prev.next;
+        }
     }
 
     public ListNode reverseList(ListNode head) {
