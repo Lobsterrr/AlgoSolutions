@@ -75,6 +75,9 @@ public class Rehashing {
                 result[index] = node;
             }
         }
+        for (ListNode head : result) {
+            reverse(head);
+        }
         return result;
     }
 
@@ -85,10 +88,9 @@ public class Rehashing {
         ListNode prev = head;
         ListNode cur = prev.next;
         while (cur != null) {
-            prev.next = cur;
+            prev.next = cur.next;
             cur.next = head;
             head = cur;
-            prev = prev.next;
             cur = prev.next;
         }
     }
