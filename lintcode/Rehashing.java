@@ -76,7 +76,7 @@ public class Rehashing {
             }
         }
         for (int i = 0; i < result.length; ++i) {
-            reverse(result[i]);
+            result[i] = reverse(result[i]);
         }
         return result;
     }
