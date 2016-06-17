@@ -75,7 +75,7 @@ public class Rehashing {
                 result[index] = node;
             }
         }
-        for (int i = 0; i < result[i].length; ++i) {
+        for (int i = 0; i < result.length; ++i) {
             reverse(result[i]);
         }
         return result;
