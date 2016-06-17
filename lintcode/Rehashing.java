@@ -75,8 +75,8 @@ public class Rehashing {
                 result[index] = node;
             }
         }
-        for (ListNode head : result) {
-            reverse(head);
+        for (int i = 0; i < result[i]; ++i) {
+            reverse(result[i]);
         }
         return result;
     }
