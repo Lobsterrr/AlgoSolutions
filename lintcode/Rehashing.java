@@ -7,9 +7,9 @@
 size=3, capacity=4
 
 [null, 21, 14, null]
-       ¡ý    ¡ý
+       |   |
        9   null
-       ¡ý
+       |
       null
 The hash function is:
 
@@ -81,7 +81,7 @@ public class Rehashing {
         return result;
     }
 
-    public void reverse(ListNode head) {
+    public ListNode reverse(ListNode head) {
         if (head == null) {
             return head;
         }
