@@ -82,6 +82,8 @@ public class Rehashing {
         if (head == null || head.next == null) {
             return;
         }
+        ListNode prev = head;
+        ListNode cur = prev.next;
         while (cur != null) {
             prev.next = cur;
             cur.next = head;
