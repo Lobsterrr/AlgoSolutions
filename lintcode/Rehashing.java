@@ -63,7 +63,9 @@ public class Rehashing {
         }
         int capacity = hashTable.length;
         ListNode[] result = new ListNode[capacity];
+        for (int i = 0; i < hashTable.length; ++i) {
 
+        }
     }
 
 }
