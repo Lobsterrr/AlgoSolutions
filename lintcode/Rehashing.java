@@ -76,23 +76,23 @@ public class Rehashing {
             }
         }
         for (int i = 0; i < result.length; ++i) {
-            reverse(result[i]);
+            result[i] = reverse(result[i]);
         }
         return result;
     }
 
-    public void reverse(ListNode head) {
-        if (head == null || head.next == null) {
-            return;
-        }
-        ListNode prev = head;
-        ListNode cur = prev.next;
+    public ListNode reverseList(ListNode head) {
+        if (head == null)
+            return head;
+        ListNode pre = head;
+        ListNode cur = head.next;
         while (cur != null) {
-            prev.next = cur.next;
+            pre.next = cur.next;
             cur.next = head;
             head = cur;
-            cur = prev.next;
+            cur = pre.next;
         }
+        return head;
     }
 
 }
