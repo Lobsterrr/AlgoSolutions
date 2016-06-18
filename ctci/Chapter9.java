@@ -1,5 +1,6 @@
 public class Chapter9 {
 
+    // 9.2
     public int countWays(int x, int y) {
         int[] dp = new int[y];
         for (int i = 0; i < x; ++i) {
