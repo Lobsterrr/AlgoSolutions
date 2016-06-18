@@ -96,18 +96,4 @@ public class Rehashing {
         return head;
     }
 
-    public void reverse(ListNode head) {
-        if (head == null || head.next == null) {
-            return;
-        }
-        ListNode prev = head;
-        ListNode cur = prev.next;
-        while (cur != null) {
-            prev.next = cur.next;
-            cur.next = head;
-            head = cur;
-            cur = prev.next;
-        }
-    }
-
 }
