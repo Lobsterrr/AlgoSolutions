@@ -16,6 +16,10 @@ public class Chapter17 {
     }
 
     public int getMax(int a, int b) {
+        return (a + b + Math.abs(a - b)) / 2;
+    }
+
+    public int getMax(int a, int b) {
         b = a - b;
         a -= b & (b >> 31);
         return a;
