@@ -11,6 +11,11 @@ public class Chapter17 {
 
     // 17.4
     public int getMax(int a, int b) {
+        int sign = (a - b) >> 31;
+        return a + sign * (a - b);
+    }
+
+    public int getMax(int a, int b) {
         b = a - b;
         a -= b & (b >> 31);
         return a;
