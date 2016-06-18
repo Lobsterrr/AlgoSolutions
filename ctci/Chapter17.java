@@ -9,6 +9,13 @@ public class Chapter17 {
         return AB;
     }
 
+    // 17.4
+    public int getMax(int a, int b) {
+        b = a - b;
+        a -= b & (b >> 31);
+        return a;
+    }
+
     // 17.9
     public int getFrequency(String[] article, int n, String word) {
         // write code here
