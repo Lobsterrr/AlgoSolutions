@@ -6,7 +6,7 @@ public class Chapter9 {
         int[] dp = new int[4];
         dp[0] = 1;
         for (int i = 1; i <= n; ++i) {
-            dp[i % 3] = (dp[(i + 2) % 3] + dp[(i + 1) % 3] + dp[i % 3]) % mod;
+            dp[i % 3] = ((dp[(i + 2) % 3] + dp[(i + 1) % 3]) % mod + dp[i % 3]) % mod;
         }
         return dp[n % 3];
     }
