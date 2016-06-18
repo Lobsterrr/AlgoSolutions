@@ -11,27 +11,6 @@ public class Chapter9 {
         return dp[n % 3];
     }
 
-    public int countWays(int n) {
-        int mod = 1000000007;
-        int[] dp = new int[n + 1];
-        dp[0] = 1;
-        for (int i = 1; i <= n; ++i) {
-            if (i >= 1) {
-                dp[i] += dp[i - 1];
-                dp[i] %= mod;
-            }
-            if (i >= 2) {
-                dp[i] += dp[i - 2];
-                dp[i] %= mod;
-            }
-            if (i >= 3) {
-                dp[i] += dp[i - 3];
-                dp[i] %= mod;
-            }
-        }
-        return dp[n];
-    }
-
     // 9.2
     public int countWays(int x, int y) {
         int[] dp = new int[y];
