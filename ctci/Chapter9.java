@@ -8,12 +8,15 @@ public class Chapter9 {
         for (int i = 1; i <= n; ++i) {
             if (i >= 1) {
                 dp[i] += dp[i - 1];
+                dp[i] %= mod;
             }
             if (i >= 2) {
                 dp[i] += dp[i - 2];
+                dp[i] %= mod;
             }
             if (i >= 3) {
                 dp[i] += dp[i - 3];
+                dp[i] %= mod;
             }
         }
         return dp[n];
