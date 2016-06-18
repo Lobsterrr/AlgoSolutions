@@ -16,6 +16,7 @@ public class Chapter17 {
     }
 
     public int getMax(int a, int b) {
+        // a + b + |a - b| 最大值的两倍，同理a + b - |a - b|是最小值的两倍
         return (a + b + Math.abs(a - b)) / 2;
     }
 
