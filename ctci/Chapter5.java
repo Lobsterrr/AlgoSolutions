@@ -14,7 +14,11 @@ public class Chapter5 {
 
     // 5.6
     public int exchangeOddEven(int x) {
-        return ((x & 0xAAAAAAAA) >> 1) | ((x & 0x55555555) << 1);
+        return ((x & 0xAAAAAAAA) >>> 1) | ((x & 0x55555555) << 1);
+    }
+
+    public int exchangeOddEven(int x) {
+        return (((x & 0xAAAAAAAA) >> 1) & 0x7FFFFFFF) | ((x & 0x55555555) << 1);
     }
 
 }
