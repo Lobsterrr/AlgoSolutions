@@ -26,6 +26,17 @@ public class Chapter17 {
         return a;
     }
 
+    // 17.8
+    public int geMaxSum(int[] A, int n) {
+        int maxSum = Integer.MIN_VALUE;
+        for (int i = 0, curSum = 0; i < A.length; ++i) {
+            curSum += A[i];
+            maxSum = Math.max(maxSum, curSum);
+            curSum = Math.max(curSum, 0);
+        }
+        return maxSum;
+    }
+
     // 17.9
     public int getFrequency(String[] article, int n, String word) {
         // write code here
