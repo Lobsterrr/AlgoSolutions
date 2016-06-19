@@ -10,4 +10,11 @@ public class Chapter18 {
         return A;
     }
 
+    public int addAB(int A, int B) {
+        if (B == 0) {
+            return A;
+        }
+        return addAB(A ^ B, (A & B) << 1);
+    }
+
 }
