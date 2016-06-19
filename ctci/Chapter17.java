@@ -27,7 +27,7 @@ public class Chapter17 {
     }
 
     // 17.8
-    public int geMaxSum(int[] A, int n) {
+    public int getMaxSum(int[] A, int n) {
         int maxSum = Integer.MIN_VALUE;
         for (int i = 0, curSum = 0; i < A.length; ++i) {
             curSum += A[i];
