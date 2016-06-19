@@ -67,11 +67,8 @@ public class Rehashing {
             while (head != null) {
                 ListNode node = head;
                 head = head.next;
-                node.next = null;
                 int index = (node.val % capacity + capacity) % capacity;
-                if (result[index] != null) {
-                    node.next = result[index];
-                }
+                node.next = result[index] == null ? null : result[index];
                 result[index] = node;
             }
         }
