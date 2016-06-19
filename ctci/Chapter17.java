@@ -9,6 +9,16 @@ public class Chapter17 {
         return AB;
     }
 
+    // 17.3
+    public int getFactorSuffixZero(int n) {
+        int result = 0;
+        while (n > 0) {
+            n /= 5;
+            result += n;
+        }
+        return result;
+    }
+
     // 17.4
     public int getMax(int a, int b) {
         int sign = (a - b) >> 31;
