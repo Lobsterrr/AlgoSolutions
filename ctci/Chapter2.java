@@ -13,7 +13,14 @@ public class Chapter2 {
 
     // 2.3
     public boolean removeNode(ListNode pNode) {
-
+        if (pNode == null || pNode.next == null) {
+            pNode = null;
+            return false;
+        } else {
+            pNode.val = pNode.next.val;
+            pNode.next = pNode.next.next;
+            return true;
+        }
     }
 
 }
