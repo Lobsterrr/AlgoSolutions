@@ -12,4 +12,9 @@ public class Chapter5 {
         return count;
     }
 
+    // 5.6
+    public int exchangeOddEven(int x) {
+        return (x & 0xAAAAAAAA) | (x & 0x55555555);
+    }
+
 }
