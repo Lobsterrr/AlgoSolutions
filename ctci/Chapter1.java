@@ -16,7 +16,18 @@ public class Chapter1 {
 
     // 1.4
     public String replaceSpace(String iniString, int length) {
-
+        String result = "";
+        for (int i = 0; i < iniString.length(); ++i) {
+            if (iniString.charAt(i) != ' ') {
+                result += iniString.charAt(i);
+            } else {
+                result += "%20";
+                while (i < iniString.length() && iniString.charAt(i) == ' ') {
+                    i++;
+                }
+            }
+        }
+        return result;
     }
 
 }
