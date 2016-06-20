@@ -8,14 +8,12 @@ public class Chapter3 {
     }
 
     public int pop() {
-        while (!stack1.isEmpty()) {
-            stack2.push(stack1.pop());
+        if (stack2.isEmpty()) {
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
+            }
         }
-        int head = stack2.pop();
-        while (!stack2.isEmpty()) {
-            stack1.push(stack2.pop());
-        }
-        return head;
+        return stack2.pop();
     }
 
 }
