@@ -6,7 +6,7 @@ public class Chapter1 {
         }
         int len = iniString.length();
         for (int i = 0; i < len / 2; ++i) {
-            iniString = iniString.charAt(len - 1 - i) + iniString.substring(i + 1, len - 1 - i) + iniString.charAt(i);
+            iniString = iniString.substring(0, i) + iniString.charAt(len - 1 - i) + iniString.substring(i + 1, len - 1 - i) + iniString.charAt(i) + iniString.substring(len - i, len);
         }
         return iniString;
     }
