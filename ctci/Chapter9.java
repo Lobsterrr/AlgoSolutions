@@ -30,12 +30,14 @@ public class Chapter9 {
 
     // 9.8
     public int countWays(int n) {
+        int mod = 1000000007;
         int[] coins = {1, 5, 10, 25};
         int[] dp = new int[n + 1];
         dp[0] = 1;
         for (int coin : coins) {
             for (int i = coin; i <= n; ++i) {
                 dp[i] += dp[i - coin];
+                dp[i] %= mod;
             }
         }
         return dp[n];
