@@ -4,12 +4,12 @@ public class Chapter1 {
         if (iniString == null) {
             return iniString;
         }
-        for (int i = 0; i < iniString / 2; ++i) {
+        for (int i = 0; i < iniString.length() / 2; ++i) {
             iniString = iniString.substring(0, i) 
-                + iniString.charAt(iniString - 1 - i) 
-                + iniString.substring(i + 1, iniString - 1 - i) 
+                + iniString.charAt(iniString.length() - 1 - i) 
+                + iniString.substring(i + 1, iniString.length() - 1 - i) 
                 + iniString.charAt(i) 
-                + iniString.substring(iniString - i, iniString);
+                + iniString.substring(iniString.length() - i, iniString.length());
         }
         return iniString;
     }
