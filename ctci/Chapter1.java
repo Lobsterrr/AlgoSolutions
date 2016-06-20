@@ -17,14 +17,10 @@ public class Chapter1 {
     // 1.4
     public String replaceSpace(String iniString, int length) {
         StringBuilder sb = new StringBuilder();
-
-
-
-        String result = "";
         for (int i = 0; i < iniString.length(); ++i) {
-            result += iniString.charAt(i) == ' ' ? "%20" : iniString.charAt(i);
+            sb.append(iniString.charAt(i) == ' ' ? "%20" : iniString.charAt(i))
         }
-        return result;
+        return sb.toString();
     }
 
 }
