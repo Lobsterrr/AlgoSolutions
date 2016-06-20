@@ -14,4 +14,9 @@ public class Chapter1 {
         return iniString;
     }
 
+    // 1.4
+    public String replaceSpace(String iniString, int length) {
+
+    }
+
 }
