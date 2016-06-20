@@ -22,9 +22,6 @@ public class Chapter1 {
                 result += iniString.charAt(i);
             } else {
                 result += "%20";
-                while (i < iniString.length() && iniString.charAt(i) == ' ') {
-                    i++;
-                }
             }
         }
         return result;
