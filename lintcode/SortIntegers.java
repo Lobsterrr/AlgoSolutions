@@ -34,7 +34,7 @@ public class SortIntegers {
     public void insertSort(int[] A) {
         for (int i = 1; i < A.length; ++i) {
             for (int j = i; j >= 1 && A[j] < A[j - 1]; --j) {
-                swap(A, i - 1, j);
+                swap(A, j - 1, j);
             }
         }
     }
