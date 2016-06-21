@@ -11,7 +11,7 @@ public class SortIntegers {
      * @return void
      */
     public void sortIntegers(int[] A) {
-        bubbleSort(A);
+        quicksort(A, 0, A.length - 1);
     }
 
     // bubble sort
