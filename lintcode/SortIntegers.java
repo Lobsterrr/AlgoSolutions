@@ -33,10 +33,8 @@ public class SortIntegers {
     // insertion sort
     public void insertSort(int[] A) {
         for (int i = 1; i < A.length; ++i) {
-            for (int j = i; j >= 1; --j) {
-                if (A[j - 1] > A[j]) {
-                    swap(A, i - 1, j);
-                }
+            for (int j = i; j >= 1 && A[j] < A[j - 1]; --j) {
+                swap(A, i - 1, j);
             }
         }
     }
