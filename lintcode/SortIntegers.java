@@ -14,4 +14,21 @@ public class SortIntegers {
 
     }
 
+    // bubble sort
+    public void bubbleSort(int[] A) {
+        for (int i = 0; i < A.length; ++i) {
+            for (int j = 1; j <= A.length - 1 - i; ++j) {
+                if (A[j] < A[j - 1]) {
+                    swap(A, j - 1, j);
+                }
+            }
+        }
+    }
+
+    public void swap(int[] A, int i, int j) {
+        int tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
+    }
+
 }
