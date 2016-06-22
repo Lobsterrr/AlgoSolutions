@@ -31,9 +31,9 @@ public class RegularExpressionMatching {
             return s.length() == 1 && (p.charAt(0) == '.' || p.charAt(0) == s.charAt(0));
         } else {
             if (p.charAt(1) != '*') {
-
+                return (p.charAt(0) == '.' || p.charAt(0) == s.charAt(0)) && isMatch(s.substring(1), p.substring(1));
             } else {
-
+                return (p.charAt(0) == '.' || p.charAt(0) == s.charAt(0)) && isMatch(s.substring(1), p); 
             }
         }
     }
