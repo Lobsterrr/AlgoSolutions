@@ -25,6 +25,22 @@ public class RegularExpressionMatching {
      * @return: A boolean
      */
     public boolean isMatch(String s, String p) {
+        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
+        dp[0][0] = true;
+        for (int i = 0; i < s.length(); ++i) {
+            for (int j = 0; j < p.length(); ++j) {
+                if (p.charAt(j) != '.' && p.charAt(j) != '*') {
+                    dp[i][j] = dp[i - 1][j - 1] && s.charAt(i) == p.charAt(j);
+                } else if (p.charAt(j) == '.') {
+
+                } else if (p.charAt(j) == '*') {
+
+                }
+            }
+        }
+    }
+    
+    public boolean isMatch(String s, String p) {
         if (p.length() == 0) {
             return s.length() == 0;
         } else if (p.length() == 1) {
