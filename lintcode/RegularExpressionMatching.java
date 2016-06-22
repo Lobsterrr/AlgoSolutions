@@ -30,11 +30,11 @@ public class RegularExpressionMatching {
         for (int i = 0; i < s.length(); ++i) {
             for (int j = 0; j < p.length(); ++j) {
                 if (p.charAt(j) != '.' && p.charAt(j) != '*') {
-                    dp[i][j] = dp[i - 1][j - 1] && s.charAt(i) == p.charAt(j);
+                    dp[i + 1][j + 1] = dp[i][j] && s.charAt(i) == p.charAt(j);
                 } else if (p.charAt(j) == '.') {
-
+                    dp[i + 1][j + 1] = dp[i][j];
                 } else if (p.charAt(j) == '*') {
-
+                    dp[i + 1][j + 1] = dp[]
                 }
             }
         }
