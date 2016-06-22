@@ -35,11 +35,12 @@ public class RegularExpressionMatching {
                     dp[i + 1][j + 1] = dp[i][j];
                 } else if (p.charAt(j) == '*') {
                     if (j >= 1) {
-                        dp[i + 1][j + 1] = dp[i + 1][j - 1] || dp[]
+                        dp[i + 1][j + 1] = dp[i + 1][j - 1] || dp[i][j + 1];
                     }
                 }
             }
         }
+        return dp[s.length()][p.length()];
     }
     
     public boolean isMatch(String s, String p) {
