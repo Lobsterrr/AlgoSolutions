@@ -44,6 +44,9 @@ public class RegularExpressionMatching {
     }
     
     public boolean isMatch(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
         if (p.length() == 0) {
             return s.length() == 0;
         } else if (p.length() == 1) {
