@@ -39,10 +39,11 @@ public class Chapter9 {
                 if (i == 0 || j == 0) {
                     dp[i][j] = map[i][j] != 1 ? 0 : 1;
                 } else {
-
+                    dp[i][j] = map[i][j] != 1 ? 0 : dp[i][j - 1] + dp[i - 1][j];
                 }
             }
         }
+        return dp[x - 1][y - 1];
     }
 
     // 9.3-1
