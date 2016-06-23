@@ -28,6 +28,16 @@ public class Chapter9 {
         return dp[y - 1];
     }
 
+    // 9.3-1
+    public boolean findMagicIndex(int[] A, int n) {
+        for (int i = 0; i < A.length; ++i) {
+            if (A[i] == i) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // 9.8
     public int countWays(int n) {
         int mod = 1000000007;
