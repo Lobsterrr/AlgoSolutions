@@ -28,6 +28,23 @@ public class Chapter9 {
         return dp[y - 1];
     }
 
+    // 9.2-2
+    public int countWays(int[][] map, int x, int y) {
+        if (map == null) {
+            return 0;
+        }
+        int[][] dp = new int[x][y];
+        for (int i = 0; i < x; ++i) {
+            for (int j = 0; j < y; ++j) {
+                if (i == 0 || j == 0) {
+                    dp[i][j] = map[i][j] != 1 ? 0 : 1;
+                } else {
+
+                }
+            }
+        }
+    }
+
     // 9.3-1
     public boolean findMagicIndex(int[] A, int n) {
         return binarySearch(A, 0, A.length - 1);
