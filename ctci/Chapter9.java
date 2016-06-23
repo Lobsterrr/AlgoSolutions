@@ -30,11 +30,11 @@ public class Chapter9 {
 
     // 9.3-1
     public boolean findMagicIndex(int[] A, int n) {
-
+        return binarySearch(A, 0, A.length - 1);
     }
 
     public boolean binarySearch(int[] A, int low, int high) {
-        while (low <= high) {
+        while (0 <= low && low <= high && high < A.length) {
             int mid = low + ((high - low) << 1);
             if (A[mid] == mid) {
                 return true;
