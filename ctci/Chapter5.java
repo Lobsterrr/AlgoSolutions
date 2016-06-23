@@ -3,7 +3,7 @@ public class Chapter5 {
     // 5.1
     public int binInsert(int n, int m, int j, int i) {
         int left = n >> i << i;
-        int right = n << (32 - j) >> (32 - j);
+        int right = n << (32 - j) >>> (32 - j);
         return left | (m << j) | right;
     }
 
