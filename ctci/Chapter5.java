@@ -1,6 +1,7 @@
 public class Chapter5 {
 
     // 5.1
+    // not consider negative number
     public int binInsert(int n, int m, int j, int i) {
         int left = n >> i << i;
         int right = n << (32 - j) >>> (32 - j);
