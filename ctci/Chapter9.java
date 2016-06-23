@@ -35,7 +35,7 @@ public class Chapter9 {
 
     public boolean binarySearch(int[] A, int low, int high) {
         while (0 <= low && low <= high && high < A.length) {
-            int mid = low + ((high - low) << 1);
+            int mid = low + ((high - low) >> 1);
             if (A[mid] == mid) {
                 return true;
             } else if (A[mid] < mid) {
