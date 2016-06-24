@@ -18,6 +18,15 @@ public class Chapter2 {
         if (k > len) {
             return null;
         }
+        ListNode cur = head;
+        for (ListNode pNode = head, step = 0; pNode != null; pNode = pNode.next, step++) {
+            if (step > k) {
+                cur = cur.next;
+            }
+        }
+        return cur;
+
+
         ListNode cur1 = head;
         ListNode cur2 = head;
         int step = 0;
