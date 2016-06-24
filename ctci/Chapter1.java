@@ -1,5 +1,10 @@
 public class Chapter1 {
 
+    // 1.1
+    public boolean checkDifferent(String iniString) {
+
+    }
+
     public String reverseString(String iniString) {
         if (iniString == null) {
             return iniString;
