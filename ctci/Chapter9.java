@@ -53,33 +53,6 @@ public class Chapter9 {
         return dp[y - 1];
     }
 
-
-    public int countWays(int[][] map, int x, int y) {
-        if (map == null) {
-            return 0;
-        }
-        int mod = 1000000007;
-        int[][] dp = new int[x][y];
-        for (int i = 0; i < x; ++i) {
-            for (int j = 0; j < y; ++j) {
-                if (map[i][j] != 1) {
-                    dp[i][j] = 0;
-                } else {
-                    if (i == 0 && j == 0) {
-                        dp[i][j] = 1;
-                    } else if (i == 0 && j > 0) {
-                        dp[i][j] = dp[i][j - 1];
-                    } else if (i > 0 && j == 0) {
-                        dp[i][j] = dp[i - 1][j];
-                    } else if (i > 0 && j > 0) {
-                        dp[i][j] = (dp[i][j - 1] + dp[i - 1][j]) % mod;
-                    }
-                }
-            }
-        }
-        return dp[x - 1][y - 1];
-    }
-
     // 9.3-1
     public boolean findMagicIndex(int[] A, int n) {
         return binarySearch(A, 0, A.length - 1);
