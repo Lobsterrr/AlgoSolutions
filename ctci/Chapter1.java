@@ -38,4 +38,9 @@ public class Chapter1 {
         return sb.toString();
     }
 
+    // 1.6
+    public int[][] transformImage(int[][] mat, int n) {
+
+    }
+
 }
