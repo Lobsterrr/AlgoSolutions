@@ -15,6 +15,9 @@ public class Chapter2 {
     public ListNode FindKthToTail(ListNode head, int k) {
         int len = 0;
         for (ListNode cur = head; cur != null; cur = cur.next, len++);
+        if (k > len) {
+            return null;
+        }
         ListNode cur1 = head;
         ListNode cur2 = head;
         int step = 0;
