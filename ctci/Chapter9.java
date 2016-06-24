@@ -44,8 +44,6 @@ public class Chapter9 {
                         dp[j] = 1;
                     } else if (i == 0 && j > 0) {
                         dp[j] = dp[j - 1];
-                    } else if (i > 0 && j == 0) {
-
                     } else if (i > 0 && j > 0) {
                         dp[j] = (dp[j] + dp[j - 1]) % mod;
                     }
