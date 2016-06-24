@@ -19,26 +19,13 @@ public class Chapter2 {
             return null;
         }
         ListNode cur = head;
-        int step = 0;
+        int step = 1;
         for (ListNode pNode = head; pNode != null; pNode = pNode.next, step++) {
             if (step > k) {
                 cur = cur.next;
             }
         }
         return cur;
-
-
-        ListNode cur1 = head;
-        ListNode cur2 = head;
-        int step = 0;
-        while (cur1 != null) {
-            cur1 = cur1.next;
-            step++;
-            if (step > k) {
-                cur2 = cur2.next;
-            }
-        }
-        return cur2;
     }
 
     // 2.3
