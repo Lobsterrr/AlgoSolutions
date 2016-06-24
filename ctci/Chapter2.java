@@ -21,7 +21,7 @@ public class Chapter2 {
         while (cur1 != null) {
             cur1 = cur1.next;
             step++;
-            if (step > len - k) {
+            if (step > k) {
                 cur2 = cur2.next;
             }
         }
