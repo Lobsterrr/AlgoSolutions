@@ -2,7 +2,17 @@ public class Chapter1 {
 
     // 1.1
     public boolean checkDifferent(String iniString) {
-
+        if (iniString.length() > 256) {
+            return false;
+        }
+        for (int i = 0; i < iniString.length(); ++i) {
+            for (int j = i + 1; j < iniString.length(); ++j) {
+                if (iniString.charAt(i) == iniString.charAt(j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public String reverseString(String iniString) {
