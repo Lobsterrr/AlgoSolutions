@@ -35,18 +35,13 @@ public class Chapter9 {
         }
         int mod = 1000000007;
         int[] dp = new int[y];
+        dp[0] = 1;
         for (int i = 0; i < x; ++i) {
             for (int j = 0; j < y; ++j) {
                 if (map[i][j] != 1) {
                     dp[j] = 0;
-                } else {
-                    if (i == 0 && j == 0) {
-                        dp[j] = 1;
-                    } else if (i == 0 && j > 0) {
-                        dp[j] = dp[j - 1];
-                    } else if (i > 0 && j > 0) {
-                        dp[j] = (dp[j] + dp[j - 1]) % mod;
-                    }
+                } else if (j > 0) {
+                    dp[j] = (dp[j] + dp[j - 1]) % mod;
                 }
             }
         }
