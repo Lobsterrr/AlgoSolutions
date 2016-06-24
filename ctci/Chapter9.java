@@ -34,6 +34,16 @@ public class Chapter9 {
             return 0;
         }
         int mod = 1000000007;
+        int[] dp = new int[y];
+
+    }
+
+
+    public int countWays(int[][] map, int x, int y) {
+        if (map == null) {
+            return 0;
+        }
+        int mod = 1000000007;
         int[][] dp = new int[x][y];
         for (int i = 0; i < x; ++i) {
             for (int j = 0; j < y; ++j) {
