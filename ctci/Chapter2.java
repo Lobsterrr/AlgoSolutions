@@ -48,6 +48,11 @@ public class Chapter2 {
             cur1 = cur1.next;
             cur2 = cur2.next.next;
         }
+
+    }
+
+    public ListNode reverse(ListNode head) {
+
     }
 
 }
