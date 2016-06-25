@@ -77,9 +77,6 @@ public class Chapter17 {
 
     // 17.13
     public ListNode treeToList(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
         Stack<TreeNode> stack = new Stack<TreeNode>();
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
