@@ -42,13 +42,16 @@ public class Chapter2 {
 
     // 2.7
     public boolean isPalindrome(ListNode pHead) {
-        ListNode cur1 = head;
-        ListNode cur2 = head;
+        if (pHead == null || pHead.next == null) {
+            return true;
+        }
+        ListNode cur1 = head.next;
+        ListNode cur2 = head.next;
         while (cur2 != null && cur2.next != null) {
             cur1 = cur1.next;
             cur2 = cur2.next.next;
         }
-
+        
     }
 
     public ListNode reverse(ListNode head) {
