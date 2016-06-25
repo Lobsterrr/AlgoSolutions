@@ -1,3 +1,21 @@
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+/*
+public class TreeNode {
+    int val = 0;
+    TreeNode left = null;
+    TreeNode right = null;
+    public TreeNode(int val) {
+        this.val = val;
+    }
+}*/
 public class Chapter17 {
 
     // 17.1
@@ -55,6 +73,24 @@ public class Chapter17 {
             count += s.equals(word) ? 1 : 0;
         }
         return count;
+    }
+
+    // 17.13
+    public ListNode treeToList(TreeNode root) {
+        // write code here
+        if (root == null) {
+            return null;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = treeToList(root.left);
+        ListNode cur = dummy;
+        while (cur.next != null) {
+            cur = cur.next;
+        }
+        cur.next = new ListNode(root.val);
+        cur = cur.next;
+        cur.next = treeToList(root.right);
+        return dummy.next;
     }
 
 }
