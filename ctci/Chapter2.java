@@ -61,7 +61,6 @@ public class Chapter2 {
             prev.next = cur.next;
             cur.next = head;
             head = cur;
-            prev = prev.next;
         }
         return head;
     }
