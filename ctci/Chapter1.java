@@ -40,7 +40,21 @@ public class Chapter1 {
 
     // 1.6
     public int[][] transformImage(int[][] mat, int n) {
-
+        if (mat == null) {
+            return null;
+        }
+        int xLen = mat.length;
+        int yLen = mat[0].length;
+        for (int i = 0; i < xLen / 2; ++i) {
+            for (int j = 0; j < yLen / 2; ++j) {
+                int tmp = mat[i][j];
+                mat[i][j] = mat[xLen - 1 - j][i];
+                mat[xLen - 1 - j][i] = mat[xLen - 1 - i][yLen - 1 - j];
+                mat[xLen - 1 - i][yLen - 1 - j] = mat[j][yLen - 1 - i];
+                mat[j][yLen - 1 - i] = tmp;
+            }
+        }
+        return mat;
     }
 
 }
