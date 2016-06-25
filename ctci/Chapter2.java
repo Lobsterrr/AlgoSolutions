@@ -45,14 +45,14 @@ public class Chapter2 {
         if (pHead == null || pHead.next == null) {
             return true;
         }
-        ListNode cur1 = head;
-        ListNode cur2 = head.next;
+        ListNode cur1 = pHead;
+        ListNode cur2 = pHead.next;
         while (cur2 != null && cur2.next != null) {
             cur1 = cur1.next;
             cur2 = cur2.next.next;
         }
         cur2 = reverse(cur1.next);
-        cur1 = head;
+        cur1 = pHead;
         while (cur2 != null && cur1.val == cur2.val) {
             cur1 = cur1.next;
             cur2 = cur2.next;
