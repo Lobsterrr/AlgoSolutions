@@ -52,7 +52,9 @@ public class Chapter2 {
     }
 
     public ListNode reverse(ListNode head) {
-
+        if (head == null || head.next == null) {
+            return head;
+        }
     }
 
 }
