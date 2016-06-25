@@ -90,16 +90,6 @@ public class Chapter17 {
                 cur = cur.next;
                 root = root.right;
             }
-
-
-            while (root != null) {
-                stack.push(root);
-                root = root.left;
-            }
-            root = stack.pop();
-            cur.next = new ListNode(root.val);
-            cur = cur.next;
-            root = root.right;
         }
         return dummy.next;
     }
