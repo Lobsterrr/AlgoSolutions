@@ -76,6 +76,7 @@ public class Chapter17 {
     }
 
     // 17.13
+    // iterate
     public ListNode treeToList(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         ListNode dummy = new ListNode(0);
@@ -94,6 +95,7 @@ public class Chapter17 {
         return dummy.next;
     }
 
+    // recursion
     public ListNode treeToList(TreeNode root) {
         if (root == null) {
             return null;
