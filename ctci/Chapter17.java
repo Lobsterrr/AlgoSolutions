@@ -81,6 +81,17 @@ public class Chapter17 {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
         while (root != null || !stack.isEmpty()) {
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+                cur.next = new ListNode(root.val);
+                cur = cur.next;
+                root = root.right;
+            }
+
+
             while (root != null) {
                 stack.push(root);
                 root = root.left;
