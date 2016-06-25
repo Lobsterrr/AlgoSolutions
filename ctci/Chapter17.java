@@ -80,6 +80,26 @@ public class Chapter17 {
         if (root == null) {
             return null;
         }
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            cur.next = new ListNode(root.val);
+            cur = cur.next;
+            root = root.right;
+        }
+        return dummy.next;
+    }
+
+    public ListNode treeToList(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
         ListNode dummy = new ListNode(0);
         dummy.next = treeToList(root.left);
         ListNode cur = dummy;
