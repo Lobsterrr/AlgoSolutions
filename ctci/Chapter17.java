@@ -77,7 +77,6 @@ public class Chapter17 {
 
     // 17.13
     public ListNode treeToList(TreeNode root) {
-        // write code here
         if (root == null) {
             return null;
         }
