@@ -55,6 +55,15 @@ public class Chapter2 {
         if (head == null || head.next == null) {
             return head;
         }
+        ListNode prev = head;
+        while (prev.next != null) {
+            ListNode cur = prev.next;
+            prev.next = cur.next;
+            cur.next = head;
+            head = cur;
+            prev = prev.next;
+        }
+        return head;
     }
 
 }
