@@ -40,4 +40,11 @@ public class Chapter2 {
         }
     }
 
+    // 2.7
+    public boolean isPalindrome(ListNode pHead) {
+        int len = 0;
+        for (ListNode cur = head; cur != null; cur = cur.next, len++);
+
+    }
+
 }
