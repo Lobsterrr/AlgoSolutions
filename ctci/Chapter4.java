@@ -33,7 +33,7 @@ public class Chapter4 {
                 result.add(new ArrayList<Integer>(list));
             }
         }
-        dfs(root.left, target, sum, result, list);
+        dfs(root.left, target, sum, result, new ArrayList<Integer>(list));
         dfs(root.right, target, sum, result, list);
     }
 
