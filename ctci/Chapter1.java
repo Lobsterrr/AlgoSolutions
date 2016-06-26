@@ -39,7 +39,7 @@ public class Chapter1 {
     }
 
     // 1.5
-    public String zipString(iniString) {
+    public String zipString(String iniString) {
         if (iniString == null) {
             return iniString;
         }
