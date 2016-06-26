@@ -35,6 +35,8 @@ Can you do it in both BFS and DFS?
  */
 public class TopologicalSorting {
 
+    public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode graph) {
 
+    }
 
 }
