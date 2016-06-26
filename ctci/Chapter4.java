@@ -25,7 +25,7 @@ public class Chapter4 {
         list.add(root);
         if (root.left == null && root.right == null) {
             if (target == sum) {
-                
+                result.add(new ArrayList<Integer>(list));
             }
         }
     }
