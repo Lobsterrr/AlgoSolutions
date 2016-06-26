@@ -47,7 +47,8 @@ public class Chapter1 {
         for (int i = 0; i < iniString.length(); ++i) {
             sb.append(iniString.charAt(i));
             int count = 1;
-            while (i < iniString.length() - 1 && iniString.charAt(i) == iniString.charAt(i + 1)) {
+            while (i < iniString.length() - 1 
+                    && iniString.charAt(i) == iniString.charAt(i + 1)) {
                 i++;
                 count++;
             }
