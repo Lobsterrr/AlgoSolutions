@@ -43,7 +43,7 @@ public class Chapter1 {
         if (iniString == null) {
             return iniString;
         }
-        int result = "";
+        String result = "";
         for (int i = 0; i < iniString.length(); ++i) {
             result += iniString.charAt(i);
             int count = 1;
