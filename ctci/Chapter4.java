@@ -21,7 +21,8 @@ public class Chapter4 {
         return result;
     }
 
-    public void dfs(TreeNode root, int target, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list) {
+    public void dfs(TreeNode root, int target, 
+            ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list) {
         if (root == null) {
             return;
         }
