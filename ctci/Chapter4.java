@@ -28,10 +28,8 @@ public class Chapter4 {
         }
         list.add(root.val);
         sum += root.val;
-        if (root.left == null && root.right == null) {
-            if (target == sum) {
-                result.add(list);
-            }
+        if (root.left == null && root.right == null && target == sum) {
+            result.add(list);
         }
         dfs(root.left, target, sum, result, new ArrayList<Integer>(list));
         dfs(root.right, target, sum, result, new ArrayList<Integer>(list));
