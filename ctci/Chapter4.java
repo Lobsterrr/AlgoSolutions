@@ -26,7 +26,7 @@ public class Chapter4 {
         if (root == null) {
             return;
         }
-        list.add(root);
+        list.add(root.val);
         sum += root.val;
         if (root.left == null && root.right == null) {
             if (target == sum) {
