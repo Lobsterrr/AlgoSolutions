@@ -44,31 +44,6 @@ public class Chapter1 {
             return iniString;
         }
         StringBuilder sb = new StringBuilder();
-        for (int i = 0, count = 1; i < iniString.length(); ++i) {
-            if (i == 0 || iniString.charAt(i) != iniString(i - 1)) {
-                if (i > 0) {
-                    sb.append(count);
-                }
-                sb.append(iniString.charAt(i));
-                count = 1;
-            } else {
-                count++;
-                if (i == iniString.length() - 1) {
-                    sb.append(count);
-                }
-            }
-        }
-        if (sb.toString().length() > iniString.length()) {
-            return iniString;
-        }
-        return sb.toString();
-    }
-
-    public String zipString(String iniString) {
-        if (iniString == null) {
-            return iniString;
-        }
-        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < iniString.length(); ++i) {
             sb.append(iniString.charAt(i));
             int count = 1;
