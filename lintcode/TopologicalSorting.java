@@ -40,7 +40,9 @@ public class TopologicalSorting {
      * @return: Any topological order for the given graph.
      */
     public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode graph) {
-
+        if (graph == null || graph.size() == 0) {
+            return null;
+        }
     }
 
 }
