@@ -25,6 +25,14 @@ The topological order can be:
 Challenge 
 Can you do it in both BFS and DFS?
  */
+/**
+ * Definition for Directed graph.
+ * class DirectedGraphNode {
+ *     int label;
+ *     ArrayList<DirectedGraphNode> neighbors;
+ *     DirectedGraphNode(int x) { label = x; neighbors = new ArrayList<DirectedGraphNode>(); }
+ * };
+ */
 public class TopologicalSorting {
 
 
