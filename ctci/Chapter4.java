@@ -30,7 +30,7 @@ public class Chapter4 {
         sum += root.val;
         if (root.left == null && root.right == null) {
             if (target == sum) {
-                result.add(new ArrayList<Integer>(list));
+                result.add(list);
             }
         }
         dfs(root.left, target, sum, result, new ArrayList<Integer>(list));
