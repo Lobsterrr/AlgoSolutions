@@ -43,20 +43,20 @@ public class Chapter1 {
         if (iniString == null) {
             return iniString;
         }
-        String result = "";
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < iniString.length(); ++i) {
-            result += iniString.charAt(i);
+            sb.append(iniString.charAt(i));
             int count = 1;
             while (i < iniString.length() - 1 && iniString.charAt(i) == iniString.charAt(i + 1)) {
                 i++;
                 count++;
             }
-            result += count;
+            sb.append(count);
         }
-        if (result.length() > iniString.length()) {
-            result = iniString;
+        if (sb.toString().length() > iniString.length()) {
+            return iniString;
         }
-        return result;
+        return sb.toString();
     }
 
     // 1.6
