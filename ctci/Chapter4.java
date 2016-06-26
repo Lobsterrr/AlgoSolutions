@@ -23,11 +23,14 @@ public class Chapter4 {
             return;
         }
         list.add(root);
+        sum += root.val;
         if (root.left == null && root.right == null) {
             if (target == sum) {
                 result.add(new ArrayList<Integer>(list));
             }
         }
+        dfs(root.left, target, sum, result, list);
+        dfs(root.right, target, sum, result, list);
     }
 
 }
