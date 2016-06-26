@@ -15,12 +15,14 @@ public class Chapter4 {
 
     // 4.9
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result 
+            = new ArrayList<ArrayList<Integer>>();
         dfs(root, target, 0, result, new ArrayList<Integer>());
         return result;
     }
 
-    public void dfs(TreeNode root, int target, int sum, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list) {
+    public void dfs(TreeNode root, int target, int sum, 
+            ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list) {
         if (root == null) {
             return;
         }
