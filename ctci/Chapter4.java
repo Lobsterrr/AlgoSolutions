@@ -19,7 +19,15 @@ public class Chapter4 {
     }
 
     public void dfs(TreeNode root, int target, int sum, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list) {
-        
+        if (root == null) {
+            return;
+        }
+        list.add(root);
+        if (root.left == null && root.right == null) {
+            if (target == sum) {
+                
+            }
+        }
     }
 
 }
