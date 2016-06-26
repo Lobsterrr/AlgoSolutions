@@ -38,6 +38,27 @@ public class Chapter1 {
         return sb.toString();
     }
 
+    // 1.5
+    public String zipString(iniString) {
+        if (iniString == null) {
+            return iniString;
+        }
+        int result = "";
+        for (int i = 0; i < iniString.length(); ++i) {
+            result += iniString.charAt(i);
+            int count = 1;
+            while (i < iniString.length() - 1 && iniString.charAt(i) == iniString.charAt(i + 1)) {
+                i++;
+                count++;
+            }
+            result += count;
+        }
+        if (result.length() > iniString.length()) {
+            result = iniString;
+        }
+        return result;
+    }
+
     // 1.6
     public int[][] transformImage(int[][] mat, int n) {
         if (mat == null) {
