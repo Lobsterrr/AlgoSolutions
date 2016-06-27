@@ -4,7 +4,7 @@ public class Finder {
         int low = 0;
         int high = A.lenght - 1;
         while (low <= high) {
-            int mid = low + (high - low) >> 1;
+            int mid = low + ((high - low) >> 1);
             if (A[mid] == x) {
                 return mid;
             }
