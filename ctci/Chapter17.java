@@ -75,6 +75,20 @@ public class Chapter17 {
         return count;
     }
 
+    // 17.12
+    public int countPairs(int[] A, int n, int sum) {
+        int count = 0;
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int a : A) {
+            if (map.contains(a)) {
+                count++;
+            } else {
+                map.put(sum - a, a);
+            }
+        }
+        return count;
+    }
+
     // 17.13
     // iterate
     public ListNode treeToList(TreeNode root) {
