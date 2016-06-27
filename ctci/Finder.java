@@ -22,7 +22,7 @@ public class Finder {
                 }
             }
         }
-        return low;
+        return -1;
     }
 
 }
