@@ -80,7 +80,7 @@ public class Chapter17 {
         int count = 0;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int a : A) {
-            if (map.contains(a)) {
+            if (map.containsKey(a)) {
                 count++;
             } else {
                 map.put(sum - a, a);
