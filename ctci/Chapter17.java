@@ -90,6 +90,9 @@ public class Chapter17 {
             } else if (A[i] + A[j] > sum) {
                 j--;
             } else {
+                if (i == j) {
+                    continue;
+                }
                 int iHigh = i + 1;
                 for (; iHigh < j && A[iHigh] == A[iHigh - 1]; ++iHigh);
                 iHigh--;
