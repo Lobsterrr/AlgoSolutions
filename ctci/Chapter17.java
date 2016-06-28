@@ -112,7 +112,6 @@ public class Chapter17 {
             if (A[i] >= sum) {
                 continue;
             }
-
             for (int j = 0; j < i && A[j] + A[i] <= sum; ++j) {
                 if (A[i] + A[j] == sum) {
                     count++;
