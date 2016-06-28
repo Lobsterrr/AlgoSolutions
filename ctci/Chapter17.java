@@ -93,14 +93,10 @@ public class Chapter17 {
             }
             if (A[i] + A[j] == sum) {
                 int iHigh = i + 1;
-                while (iHigh < j && A[iHigh] == A[iHigh - 1]) {
-                    iHigh++;
-                }
+                for (; iHigh < j && A[iHigh] == A[iHigh - 1]; ++iHigh);
                 iHigh--;
                 int jLow = j - 1;
-                while (jLow > i && A[jLow] == A[jLow + 1]) {
-                    jLow--;
-                }
+                for (; jLow > i && A[jLow] == A[jLow + 1]; --jLow);
                 jLow++;
                 count += (iHigh - i + 1) * (j - jLow + 1);
                 i = iHigh + 1;
