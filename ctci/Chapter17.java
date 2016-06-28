@@ -95,14 +95,12 @@ public class Chapter17 {
                     break;
                 } else {
                     int iHigh = i + 1;
-                    for (; iHigh < j && A[iHigh] == A[iHigh - 1]; ++iHigh);
-                    iHigh--;
+                    for (; iHigh <= j && A[iHigh] == A[i]; ++iHigh);
                     int jLow = j - 1;
-                    for (; jLow > i && A[jLow] == A[jLow + 1]; --jLow);
-                    jLow++;
-                    count += (iHigh - i + 1) * (j - jLow + 1);
-                    i = iHigh + 1;
-                    j = jLow - 1;
+                    for (; jLow >= i && A[jLow] == A[j]; --jLow);
+                    count += (iHigh - i) * (j - jLow);
+                    i = iHigh;
+                    j = jLow;
                 }
             }
         }
