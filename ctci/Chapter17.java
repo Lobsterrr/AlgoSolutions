@@ -92,16 +92,20 @@ public class Chapter17 {
             } else {
                 if (i == j) {
                     continue;
+                } 
+                if (A[i] == A[j]) {
+                    count += (j - i + 1) * (j - i) / 2;
+                } else {
+                    int iHigh = i + 1;
+                    for (; iHigh < j && A[iHigh] == A[iHigh - 1]; ++iHigh);
+                    iHigh--;
+                    int jLow = j - 1;
+                    for (; jLow > i && A[jLow] == A[jLow + 1]; --jLow);
+                    jLow++;
+                    count += (iHigh - i + 1) * (j - jLow + 1);
+                    i = iHigh + 1;
+                    j = jLow - 1;
                 }
-                int iHigh = i + 1;
-                for (; iHigh < j && A[iHigh] == A[iHigh - 1]; ++iHigh);
-                iHigh--;
-                int jLow = j - 1;
-                for (; jLow > i && A[jLow] == A[jLow + 1]; --jLow);
-                jLow++;
-                count += (iHigh - i + 1) * (j - jLow + 1);
-                i = iHigh + 1;
-                j = jLow - 1;
             }
         }
         return count;
