@@ -77,13 +77,19 @@ public class Chapter17 {
 
     // 17.12
     public int countPairs(int[] A, int n, int sum) {
+        if (A == null || A.length == 0 || A.length == 1) {
+            return 0;
+        }
         int count = 0;
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int a : A) {
-            if (map.containsKey(a)) {
-                count++;
-            } else {
-                map.put(sum - a, a);
+        Arrays.sort(A);
+        for (int i = A.length - 1; i >= 0; --i) {
+            if (A[i] >= sum) {
+                continue;
+            }
+            for (int j = 0; j < i && A[j] + A[i] <= sum; ++j) {
+                if (A[i] + A[j] == sum) {
+                    count++;
+                }
             }
         }
         return count;
