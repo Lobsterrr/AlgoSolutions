@@ -90,9 +90,6 @@ public class Chapter17 {
             } else if (A[i] + A[j] > sum) {
                 j--;
             } else {
-                if (i == j) {
-                    continue;
-                } 
                 if (A[i] == A[j]) {
                     count += (j - i + 1) * (j - i) / 2;
                     break;
