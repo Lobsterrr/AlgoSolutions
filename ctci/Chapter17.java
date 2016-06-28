@@ -88,6 +88,9 @@ public class Chapter17 {
             while (i < j && A[i] + A[j] < sum) {
                 i++;
             }
+            if (i >= j) {
+                continue;
+            }
             if (A[i] + A[j] == sum) {
                 int iHigh = i + 1;
                 while (iHigh < j && A[iHigh] == A[iHigh - 1]) {
