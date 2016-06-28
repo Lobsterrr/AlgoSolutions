@@ -95,6 +95,7 @@ public class Chapter17 {
                 } 
                 if (A[i] == A[j]) {
                     count += (j - i + 1) * (j - i) / 2;
+                    break;
                 } else {
                     int iHigh = i + 1;
                     for (; iHigh < j && A[iHigh] == A[iHigh - 1]; ++iHigh);
