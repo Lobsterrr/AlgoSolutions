@@ -105,17 +105,8 @@ public class Chapter17 {
                 count += (iHigh - i + 1) * (j - jLow + 1);
                 i = iHigh + 1;
                 j = jLow - 1;
-            }
-        }
-
-        for (int i = A.length - 1, j = 0; i >= 0; --i) {
-            if (A[i] >= sum) {
-                continue;
-            }
-            for (int j = 0; j < i && A[j] + A[i] <= sum; ++j) {
-                if (A[i] + A[j] == sum) {
-                    count++;
-                }
+            } else {
+                j--;
             }
         }
         return count;
