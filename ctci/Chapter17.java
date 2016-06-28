@@ -82,10 +82,37 @@ public class Chapter17 {
         }
         int count = 0;
         Arrays.sort(A);
-        for (int i = A.length - 1; i >= 0; --i) {
+        int i = 0;
+        int j = A.length - 1;
+        while (j >= 0 && A[j] >= sum) {
+            j--;
+        }
+        while (i < j) {
+            while (i < j && A[i] + A[j] < sum) {
+                i++;
+            }
+            if (A[i] + A[j] == sum) {
+                int iHigh = i + 1;
+                while (iHigh < j && A[iHigh] == A[iHigh - 1]) {
+                    iHigh++;
+                }
+                iHigh--;
+                int jLow = j - 1;
+                while (jLow > i && A[jLow] == A[jLow + 1]) {
+                    jLow--;
+                }
+                jLow++;
+                count += (iHigh - i + 1) * (j - jLow + 1);
+                i = iHigh + 1;
+                j = jLow - 1;
+            }
+        }
+
+        for (int i = A.length - 1, j = 0; i >= 0; --i) {
             if (A[i] >= sum) {
                 continue;
             }
+
             for (int j = 0; j < i && A[j] + A[i] <= sum; ++j) {
                 if (A[i] + A[j] == sum) {
                     count++;
