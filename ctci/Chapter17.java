@@ -84,9 +84,6 @@ public class Chapter17 {
         Arrays.sort(A);
         int i = 0;
         int j = A.length - 1;
-        while (j >= 0 && A[j] >= sum) {
-            j--;
-        }
         while (i < j) {
             while (i < j && A[i] + A[j] < sum) {
                 i++;
