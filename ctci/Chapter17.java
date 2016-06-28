@@ -85,13 +85,11 @@ public class Chapter17 {
         int i = 0;
         int j = A.length - 1;
         while (i < j) {
-            while (i < j && A[i] + A[j] < sum) {
+            if (A[i] + A[j] < sum) {
                 i++;
-            }
-            if (i >= j) {
-                continue;
-            }
-            if (A[i] + A[j] == sum) {
+            } else if (A[i] + A[j] > sum) {
+                j--;
+            } else {
                 int iHigh = i + 1;
                 for (; iHigh < j && A[iHigh] == A[iHigh - 1]; ++iHigh);
                 iHigh--;
@@ -101,8 +99,6 @@ public class Chapter17 {
                 count += (iHigh - i + 1) * (j - jLow + 1);
                 i = iHigh + 1;
                 j = jLow - 1;
-            } else {
-                j--;
             }
         }
         return count;
