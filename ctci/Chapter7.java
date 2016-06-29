@@ -59,8 +59,8 @@ public class Chapter7 {
         if (b < 0) {
             b = negative(b);
         }
-        int result = b;
-        for (int sum = 0; sum <= a; sum += b, ++result);
+        int result = 1;
+        for (int sum = b; sum <= a; sum += b, ++result);
         return flag ? result : negative(result);
     }
 
