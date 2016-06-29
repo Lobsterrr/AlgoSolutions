@@ -16,9 +16,6 @@ public class Sqrt {
 /*******************************************************************/
 
     public int sqrt(int x) {
-        if (x == 0) {
-            return 0;
-        }
         int low = 1;
         int high = x;
         while (low <= high) {
