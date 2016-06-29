@@ -18,6 +18,18 @@ public class Chapter4 {
         if (vals == null || vals.length == 0) {
             return null;
         }
+        return buildMinimalBST(vals, 0, vals.length - 1);
+    }
+
+    public TreeNode buildMinimalBST(int[] vals, int low, int high) {
+        if (vals == null || vals.length == 0 || low < 0 || high >= vals.length || low > high) {
+            return null;
+        }
+        int mid = low + (high - low) / 2;
+        TreeNode root = new TreeNode(vals[mid]);
+        root.left = buildMinimalBST(vals, low, mid - 1);
+        root.high = buildMinimalBST(vals, mid + 1, high);
+        return root;
     }
 
     // 4.9
