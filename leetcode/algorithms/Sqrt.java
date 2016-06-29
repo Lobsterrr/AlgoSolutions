@@ -7,7 +7,7 @@ public class Sqrt {
 
     public int sqrt(int x) {
         int result = 0;
-        for (int bit = 1 << 15; bit > 0; bit >>= 1) {
+        for (int bit = 1 << 15; bit > 0; bit >>>= 1) {
             result |= bit;
             if (result > x / result) {
                 result ^= bit;
