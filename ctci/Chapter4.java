@@ -13,6 +13,13 @@ public class TreeNode {
 */
 public class Chapter4 {
 
+    // 4.3
+    public int buildMinimalBST(int[] vals) {
+        if (vals == null || vals.length == 0) {
+            return null;
+        }
+    }
+
     // 4.9
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
         ArrayList<ArrayList<Integer>> result 
