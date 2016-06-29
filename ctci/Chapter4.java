@@ -16,9 +16,13 @@ public class Chapter4 {
     // 4.3
     public int buildMinimalBST(int[] vals) {
         if (vals == null || vals.length == 0) {
-            return null;
+            return 0;
         }
-        return buildMinimalBST(vals, 0, vals.length - 1);
+        int h = 1;
+        while ((2 << h - 1) < vals.length) {
+            h++;
+        }
+        return h;
     }
 
     public TreeNode buildMinimalBST(int[] vals, int low, int high) {
