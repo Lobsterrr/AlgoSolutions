@@ -72,4 +72,36 @@ public class InvertBinaryTree {
         }
         return root;
     }
+
+    public TreeNode invertTree(TreeNode root) {
+        TreeNode dummy = new TreeNode(0);
+        dummy.left = root;
+        TreeNode p = dummy;
+        while (p != null) {
+            TreeNode q = p.left;
+            if (q != null) {
+                while (q.right != null && q.right != p) {
+                    q = q.right;
+                }
+                if (q.right == p) {
+                    for (TreeNode r = p.left; ; r = r.left) {
+                        TreeNode tmp = r.left;
+                        r.left = r.right;
+                        r.right = tmp;
+                        if (r == q) {
+                            break;
+                        }
+                    }
+                    q.left = null;
+                } else {
+                    q.right = p;
+                    p = p.left;
+                    continue;
+                }
+            }
+            p = p.right;
+        }
+        return dummy.left;
+    }
+
 }
