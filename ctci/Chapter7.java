@@ -8,11 +8,11 @@ public class Chapter7 {
     // 7.4
     public int calc(int a, int b, int type) {
         if (type == 1) {
-
+            multiple(a, b);
         } else if (type == 0) {
-
+            divide(a, b);
         } else if (type == -1) {
-
+            minus(a, b);
         }
         return Integer.MAX_VALUE;
     }
