@@ -75,6 +75,7 @@ public class InvertBinaryTree {
 
 /*********************************************************/
 
+    // Morris post-order traversal
     // O(1) space.
     public TreeNode invertTree(TreeNode root) {
         TreeNode dummy = new TreeNode(0);
