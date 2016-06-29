@@ -7,7 +7,14 @@ public class Chapter7 {
 
     // 7.4
     public int calc(int a, int b, int type) {
-        
+        if (type == 1) {
+
+        } else if (type == 0) {
+
+        } else if (type == -1) {
+
+        }
+        return Integer.MAX_VALUE;
     }
 
     public int negative(int x) {
@@ -54,7 +61,7 @@ public class Chapter7 {
         }
         int result = b;
         for (int sum = 0; sum <= a; sum += b, ++result);
-        return result;
+        return flag ? result : negative(result);
     }
 
 }
