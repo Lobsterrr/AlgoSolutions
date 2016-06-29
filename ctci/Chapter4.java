@@ -19,9 +19,7 @@ public class Chapter4 {
             return 0;
         }
         int h = 1;
-        while ((2 << h - 1) < vals.length) {
-            h++;
-        }
+        for (; (2 << h - 1) < vals.length; ++h);
         return h;
     }
 
