@@ -20,9 +20,9 @@ public class Sqrt {
 
     public int sqrt(int x) {
         int result = 0;
-        for (int mask = 1 << 15; mask != 0; mask >> 1) {
+        for (int mask = 1 << 15; mask != 0; mask >>= 1) {
             int next = result | mask;
-            if (next < x / next) {
+            if (next <= x / next) {
                 result = next;
             }
         }
