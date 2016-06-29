@@ -13,7 +13,7 @@ public class ValidPerfectSquare {
         double y = 0;
         while (y != x) {
             y = x;
-            x = (x + y / x) / 2;
+            x = (x + num / x) / 2;
         }
         return (int) x;
     }
