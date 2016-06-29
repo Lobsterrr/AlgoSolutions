@@ -11,7 +11,7 @@ public class ValidPerfectSquare {
     public int sqrt(int num) {
         double x = num;
         double y = 0;
-        while (x != y) {
+        while (y != x) {
             y = x;
             x = (x + y / x) / 2;
         }
