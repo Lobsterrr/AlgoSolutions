@@ -16,11 +16,7 @@
 public class ValidPerfectSquare {
 
     public boolean isPerfectSquare(int num) {
-        int i = 1;
-        while (num > 0) {
-            num -= 2 * i - 1;
-            i++;
-        }
+        for (int i = 1; num > 0; num -= 2 * i - 1, --i);
         return num == 0;
     }
 
