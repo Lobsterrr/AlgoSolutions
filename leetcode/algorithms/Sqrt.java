@@ -7,7 +7,7 @@ public class Sqrt {
 
     public int sqrt(int x) {
         long result = 0;
-        int bit = 1L << 16;
+        long bit = 1L << 16;
         while (bit > 0) {
             result |= bit;
             if (result * result > x) {
@@ -17,6 +17,8 @@ public class Sqrt {
         }
         return (int) result;
     }
+
+/*******************************************************************/
 
     public int sqrt(int x) {
         long result = x;
