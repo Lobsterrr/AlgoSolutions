@@ -6,10 +6,8 @@
 public class Sqrt {
 
     public int sqrt(int x) {
-        double result = x;
-        double last = 0;
-        while (last != result) {
-            last = result;
+        long result = x;
+        while (result * result > x) {
             result = (result + x / result) / 2;
         }
         return (int) result;
