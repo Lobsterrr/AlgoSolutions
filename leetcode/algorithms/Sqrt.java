@@ -6,6 +6,17 @@
 public class Sqrt {
 
     public int sqrt(int x) {
+        int result = 0;
+        for (int bit = 1 << 15; bit > 0; bit >>= 1) {
+            result |= bit;
+            if (result * result > x) {
+                result ^= bit;
+            }
+        }
+        return result;
+    }
+
+    public int sqrt(int x) {
         long result = 0;
         for (long bit = 1L << 16; bit > 0; bit >>= 1) {
             result |= bit;
