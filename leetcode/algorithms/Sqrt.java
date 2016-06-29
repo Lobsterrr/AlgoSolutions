@@ -7,13 +7,11 @@ public class Sqrt {
 
     public int sqrt(int x) {
         long result = 0;
-        long bit = 1L << 16;
-        while (bit > 0) {
+        for (long bit = 1L << 16; bit > 0; bit >>= 1) {
             result |= bit;
             if (result * result > x) {
                 result ^= bit;
             }
-            bit >>= 1;
         }
         return (int) result;
     }
