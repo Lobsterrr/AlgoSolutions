@@ -29,7 +29,7 @@ public class Sqrt {
                 high = mid - 1;
             }
         }
-        return low;
+        return low - 1;
     }
 
     public int sqrt(int x) {
