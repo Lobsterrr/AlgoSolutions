@@ -41,4 +41,20 @@ public class Chapter7 {
         return a + negative(b);
     }
 
+    public int divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException();
+        }
+        boolean flag = a >= 0 && b > 0 || a < 0 && b < 0;
+        if (a < 0) {
+            a = negative(a);
+        }
+        if (b < 0) {
+            b = negative(b);
+        }
+        int result = b;
+        for (int sum = 0; sum <= a; sum += b, ++result);
+        return result;
+    }
+
 }
