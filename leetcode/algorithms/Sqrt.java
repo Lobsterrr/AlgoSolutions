@@ -16,28 +16,6 @@ public class Sqrt {
         return result;
     }
 
-    public int sqrt(int x) {
-        long result = 0;
-        for (long bit = 1L << 16; bit > 0; bit >>= 1) {
-            result |= bit;
-            if (result * result > x) {
-                result ^= bit;
-            }
-        }
-        return (int) result;
-    }
-
-    public int sqrt(int x) {
-        int result = 0;
-        for (int mask = 1 << 15; mask != 0; mask >>= 1) {
-            int next = result | mask;
-            if (next <= x / next) {
-                result = next;
-            }
-        }
-        return result;
-    }
-
 /*******************************************************************/
 
     public int sqrt(int x) {
