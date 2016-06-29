@@ -59,7 +59,7 @@ public class Chapter7 {
         if (b < 0) {
             b = negative(b);
         }
-        int result = 1;
+        int result = 0;
         for (int sum = b; sum <= a; sum += b, ++result);
         return flag ? result : negative(result);
     }
