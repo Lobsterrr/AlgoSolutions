@@ -16,6 +16,14 @@
 public class ValidPerfectSquare {
 
     public boolean isPerfectSquare(int num) {
+        int i = 1;
+        while (num > 0) {
+            num -= 2 * i - 1;
+        }
+        return num == 0;
+    }
+
+    public boolean isPerfectSquare(int num) {
         int sqrt = sqrt(num);
         return sqrt * sqrt == num;
     }
