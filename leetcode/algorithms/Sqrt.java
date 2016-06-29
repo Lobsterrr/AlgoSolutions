@@ -17,7 +17,7 @@ public class Sqrt {
     }
 
 /*******************************************************************/
-
+ 
     public int sqrt(int x) {
         long result = x;
         while (result * result > x) {
