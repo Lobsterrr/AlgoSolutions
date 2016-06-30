@@ -19,7 +19,7 @@ public class ValidPerfectSquare {
         int sqrt = 0;
         for (int mask = 1 << 15; mask > 0; mask >>>= 1) {
             sqrt |= mask;
-            if (sqrt > x / sqrt) {
+            if (sqrt > num / sqrt) {
                 sqrt ^= mask;
             }
         }
