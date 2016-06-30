@@ -15,6 +15,7 @@
  */
 public class ValidPerfectSquare {
 
+    // O(1) time, O(1) space.
     public boolean isPerfectSquare(int num) {
         int sqrt = 0;
         for (int mask = 1 << 15; mask > 0; mask >>>= 1) {
