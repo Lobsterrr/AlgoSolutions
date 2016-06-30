@@ -16,7 +16,13 @@
 public class ValidPerfectSquare {
 
     public boolean isPerfectSquare(int num) {
-        int sqrt = sqrt(num);
+        int sqrt = 0;
+        for (int mask = 1 << 15; mask > 0; mask >>>= 1) {
+            result |= mask;
+            if (result > x / result) {
+                result ^= mask;
+            }
+        }
         return sqrt * sqrt == num;
     }
 
