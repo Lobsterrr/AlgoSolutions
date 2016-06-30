@@ -26,17 +26,6 @@ public class ValidPerfectSquare {
         return sqrt * sqrt == num;
     }
 
-    public int sqrt(int x) {
-        int result = 0;
-        for (int mask = 1 << 15; mask > 0; mask >>>= 1) {
-            result |= mask;
-            if (result > x / result) {
-                result ^= mask;
-            }
-        }
-        return result;
-    }
-
 /*******************************************************************/
 
     public boolean isPerfectSquare(int num) {
