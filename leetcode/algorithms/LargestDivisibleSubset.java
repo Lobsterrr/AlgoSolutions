@@ -19,7 +19,7 @@ Result: [1,2,4,8]
 public class LargestDivisibleSubset {
 
     public List<Integer> largestDivisibleSubset(int[] nums) {
-
+        List<Integer> result = new ArrayList<Integer>();
     }
 
 }
