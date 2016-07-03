@@ -20,6 +20,10 @@ public class LargestDivisibleSubset {
 
     public List<Integer> largestDivisibleSubset(int[] nums) {
         List<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+
+        }
+        return result;
     }
 
 }
