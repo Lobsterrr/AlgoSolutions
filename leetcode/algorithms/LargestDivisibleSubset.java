@@ -19,6 +19,9 @@ Result: [1,2,4,8]
 public class LargestDivisibleSubset {
 
     public List<Integer> largestDivisibleSubset(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
         List<Integer> result = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; ++i) {
 
