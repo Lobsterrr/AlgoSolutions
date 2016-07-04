@@ -30,9 +30,9 @@ public class LargestDivisibleSubset {
                 if (nums[i] % nums[j] == 0) {
                     list.add(0, nums[j]);
                 }
-                if (result.size() < list.size()) {
-                    result = list;
-                }
+            }
+            if (result.size() < list.size()) {
+                result = list;
             }
         }
         return result;
