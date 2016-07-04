@@ -22,9 +22,18 @@ public class LargestDivisibleSubset {
         if (nums == null || nums.length == 0) {
             return null;
         }
+        Arrays.sort(nums);
         List<Integer> result = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; ++i) {
-
+            List<Integer> list = new ArrayList<Integer>();
+            for (int j = i; j >= 0; --j) {
+                if (nums[i] % nums[j] == 0) {
+                    list.add(0, nums[j]);
+                }
+                if (result.size() < list.size()) {
+                    result = list;
+                }
+            }
         }
         return result;
     }
