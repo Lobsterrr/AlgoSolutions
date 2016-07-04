@@ -39,8 +39,9 @@ public class LargestDivisibleSubset {
                 maxIndex = i;
             }
         }
-        for (int i = maxIndex; i >= 0; --i) {
-            if (nums[maxIndex] % nums[i] == 0) {
+        result.add(nums[maxIndex]);
+        for (int i = maxIndex - 1; i >= 0; --i) {
+            if (result.get(0) % nums[i] == 0) {
                 result.add(0, nums[i]);
             }
         }
