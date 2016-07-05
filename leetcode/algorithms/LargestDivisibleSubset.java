@@ -41,28 +41,7 @@ public class LargestDivisibleSubset {
             }
         }
         for (int i = maxIndex; i >= 0; i = preIndex[i]) {
-            result.add(nums[i]);
-        }
-        return result;
-    }
-
-    public List<Integer> largestDivisibleSubset(int[] nums) {
-        List<Integer> result = new ArrayList<Integer>();
-        if (nums == null || nums.length == 0) {
-            return result;
-        }
-        Arrays.sort(nums);
-        for (int i = 0; i < nums.length; ++i) {
-            List<Integer> list = new ArrayList<Integer>();
-            list.add(0, nums[i]);
-            for (int j = i - 1; j >= 0; --j) {
-                if (list.get(0) % nums[j] == 0) {
-                    list.add(0, nums[j]);
-                }
-            }
-            if (result.size() < list.size()) {
-                result = list;
-            }
+            result.add(0, nums[i]);
         }
         return result;
     }
