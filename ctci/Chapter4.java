@@ -23,6 +23,20 @@ public class Chapter4 {
         return h;
     }
 
+    // 4.7
+    public int getLCA(int a, int b) {
+        if (a <= 0 || b <= 0) {
+            throw new IllegalArgumentException("illegal input: " + a + ", " + b);
+        }
+        if (a == b) {
+            return a;
+        } else if (a > b) {
+            return getLCA(a / 2, b);
+        } else {
+            return getLCA(a, b / 2);
+        }
+    }
+
     // 4.9
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
         ArrayList<ArrayList<Integer>> result 
