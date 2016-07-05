@@ -19,6 +19,8 @@ public class NextElement {
                     }
                     if (stack.size() == 0) {
                         result[i] = -1;
+                    } else {
+                        result[i] = stack.peek();
                     }
                 }
                 stack.push(A[i]);
