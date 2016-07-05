@@ -16,25 +16,6 @@ public class NextElement {
                 result[i] = stack.peek();
             }
             stack.push(A[i]);
-
-
-            if (stack.isEmpty()) {
-                result[i] = -1;
-            } else {
-                if (A[i] < stack.peek()) {
-                    result[i] = stack.peek();
-                } else {
-                    while (stack.size() > 0 && A[i] >= stack.peek()) {
-                        stack.pop();
-                    }
-                    if (stack.size() == 0) {
-                        result[i] = -1;
-                    } else {
-                        result[i] = stack.peek();
-                    }
-                }
-            }
-            stack.push(A[i]);
         }
         return result;
     }
