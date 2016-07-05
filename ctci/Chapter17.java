@@ -27,6 +27,22 @@ public class Chapter17 {
         return AB;
     }
 
+    // 17.2
+    public boolean checkWon(int[][] board) {
+        if (board == null || board.length != 3) {
+            return false;
+        }
+        if (board[0][0] + board[1][1] + board[2][2] == 3 || board[0][2] + board[1][1] + board[2][0] == 3) {
+            return true;
+        }
+        for (int i = 0; i < 2; ++i) {
+            if (board[i][0] + board[i][1] + board[i][2] == 3 || board[0][i] + board[1][i] + board[2][i] == 3) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // 17.3
     public int getFactorSuffixZero(int n) {
         int result = 0;
