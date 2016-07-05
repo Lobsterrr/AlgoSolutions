@@ -7,6 +7,17 @@ public class NextElement {
         int[] result = new int[A.length];
         Stack<Integer> stack = new Stack<Integer>();
         for (int i = A.length - 1; i >= 0; --i) {
+            while (stack.size() > 0 && A[i] >= stack.peek()) {
+                stack.pop();
+            }
+            if (stack.size() == 0) {
+                result[i] = -1;
+            } else {
+                result[i] = stack.peek();
+            }
+            stack.push(A[i]);
+
+
             if (stack.isEmpty()) {
                 result[i] = -1;
             } else {
