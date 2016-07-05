@@ -14,24 +14,14 @@ public class NextElement {
                 if (A[i] < stack.peek()) {
                     result[i] = stack.peek();
                 } else {
-
+                    while (stack.size() > 0 && A[i] >= stack.peek()) {
+                        stack.pop();
+                    }
+                    if (stack.size() == 0) {
+                        result[i] = -1;
+                    }
+                    stack.push(A[i]);
                 }
-            }
-
-
-            if (stack.size() > 0 && stack.peek() < A[i]) {
-                while (stack.size() > 0 && stack.peek() < A[i]) {
-                    stack.pop();
-                }
-                if (stack.isEmty()) {
-                    
-                }
-            }
-
-            if (stack.isEmty()) {
-                result[i] = -1;
-            } else {
-                result[i] = stack.peek();
             }
         }
         return result;
