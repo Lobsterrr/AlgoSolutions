@@ -5,15 +5,34 @@ public class NextElement {
             return null;
         }
         int[] result = new int[A.length];
-        for (int i = 0; i < A.length; ++i) {
-            int value = -1;
-            for (int j = i + 1; j < A.length; ++j) {
-                if (A[j] > A[i]) {
-                    value = A[j];
-                    break;
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = A.length - 1; i >= 0; --i) {
+            if (stack.isEmpty()) {
+                result[i] = -1;
+                stack.push(A[i]);
+            } else {
+                if (A[i] < stack.peek()) {
+                    result[i] = stack.peek();
+                } else {
+
                 }
             }
-            result[i] = value;
+
+
+            if (stack.size() > 0 && stack.peek() < A[i]) {
+                while (stack.size() > 0 && stack.peek() < A[i]) {
+                    stack.pop();
+                }
+                if (stack.isEmty()) {
+                    
+                }
+            }
+
+            if (stack.isEmty()) {
+                result[i] = -1;
+            } else {
+                result[i] = stack.peek();
+            }
         }
         return result;
     }
