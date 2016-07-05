@@ -9,7 +9,6 @@ public class NextElement {
         for (int i = A.length - 1; i >= 0; --i) {
             if (stack.isEmpty()) {
                 result[i] = -1;
-                stack.push(A[i]);
             } else {
                 if (A[i] < stack.peek()) {
                     result[i] = stack.peek();
@@ -23,8 +22,8 @@ public class NextElement {
                         result[i] = stack.peek();
                     }
                 }
-                stack.push(A[i]);
             }
+            stack.push(A[i]);
         }
         return result;
     }
