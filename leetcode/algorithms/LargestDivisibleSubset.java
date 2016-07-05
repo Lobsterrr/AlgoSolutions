@@ -25,25 +25,24 @@ public class LargestDivisibleSubset {
         }
         Arrays.sort(nums);
         int[] dp = new int[nums.length];
+        int[] preIndex = new int[nums.length];
         dp[0] = 1;
+        int maxIndex = 0;
+        int maxLength = 1;
         for (int i = 1; i < nums.length; ++i) {
             for (int j = i - 1; j >= 0; --j) {
-                if (nums[i] % nums[j] == 0) {
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                if (nums[i] % nums[j] == 0 && dp[i] < dp[j] + 1) {
+                    dp[i] = dp[j] + 1;
+                    preIndex[i] = j;
                 }
             }
-        }
-        int maxIndex = 0;
-        for (int i = 0; i < nums.length; ++i) {
-            if (dp[i] > dp[maxIndex]) {
+            if (maxLength < dp[i]) {
+                maxLength = dp[i];
                 maxIndex = i;
             }
         }
-        result.add(nums[maxIndex]);
-        for (int i = maxIndex - 1; i >= 0; --i) {
-            if (result.get(0) % nums[i] == 0) {
-                result.add(0, nums[i]);
-            }
+        for (int i = maxIndex; i >= 0; i = preIndex[i];) {
+            result.add(nums[i]);
         }
         return result;
     }
