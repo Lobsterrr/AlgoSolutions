@@ -7,9 +7,7 @@ public class Chapter7 {
 
     // 7.3
     public boolean checkCrossLine(double s1, double s2, double y1, double y2) {
-        double ds = s1 - s2;
-        double dy = y1 - y2;
-        return Math.abs(ds) > 0 || Math.abs(dy) < 0.000001;
+        return Math.abs(s1 - s2) > 0 || Math.abs(y1 - y2) < 0.000001;
     }
 
     // 7.4
