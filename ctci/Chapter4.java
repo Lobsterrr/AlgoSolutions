@@ -24,6 +24,22 @@ public class Chapter4 {
     }
 
     // 4.7
+    // iteration
+    public int getLCA(int a, int b) {
+        if (a <= 0 || b <= 0) {
+            throw new IllegalArgumentException("illegal input: " + a + ", " + b);
+        }
+        while (a != b) {
+            if (a > b) {
+                a /= 2;
+            } else if (a < b) {
+                b /= 2;
+            }
+        }
+        return a;
+    }
+
+    // recursion
     public int getLCA(int a, int b) {
         if (a <= 0 || b <= 0) {
             throw new IllegalArgumentException("illegal input: " + a + ", " + b);
