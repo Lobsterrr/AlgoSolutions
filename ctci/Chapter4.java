@@ -32,7 +32,7 @@ public class Chapter4 {
         while (a != b) {
             if (a > b) {
                 a /= 2;
-            } else if (a < b) {
+            } else {
                 b /= 2;
             }
         }
