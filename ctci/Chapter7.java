@@ -5,6 +5,11 @@ public class Chapter7 {
         return 1 - 1.0 / (1 << n - 1);
     }
 
+    // 7.3
+    public boolean checkCrossLine(double s1, double s2, double y1, double y2) {
+        return s1 != s2 || y1 == y2;
+    }
+
     // 7.4
     public int calc(int a, int b, int type) {
         if (type == 1) {
