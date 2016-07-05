@@ -20,8 +20,8 @@ public class NextElement {
                     if (stack.size() == 0) {
                         result[i] = -1;
                     }
-                    stack.push(A[i]);
                 }
+                stack.push(A[i]);
             }
         }
         return result;
