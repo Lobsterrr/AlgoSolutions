@@ -10,11 +10,7 @@ public class NextElement {
             while (stack.size() > 0 && A[i] >= stack.peek()) {
                 stack.pop();
             }
-            if (stack.size() == 0) {
-                result[i] = -1;
-            } else {
-                result[i] = stack.peek();
-            }
+            result[i] = stack.size() == 0 ? -1 : stack.peek();
             stack.push(A[i]);
         }
         return result;
