@@ -21,15 +21,16 @@ public class NextElement {
             return null;
         }
         int[] result = new int[A.length];
+        Arrays.fill(result, -1);
         for (int i = 0; i < A.length; ++i) {
-            result[i] = Integer.MAX_VALUE;
             for (int j = i + 1; j < A.length; ++j) {
                 if (A[i] < A[j]) {
-                    result[i] = Math.min(result[i], A[j]);
+                    if (result[i] == -1) {
+                        result = A[j];
+                    } else {
+                        result = Math.min(result[i], A[j]);
+                    }
                 }
-            }
-            if (result[i] == Integer.MAX_VALUE) {
-                result[i] = -1;
             }
         }
         return result;
