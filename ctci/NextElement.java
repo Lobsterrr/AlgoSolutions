@@ -25,7 +25,7 @@ public class NextElement {
             result[i] = Integer.MAX_VALUE;
             for (int j = i + 1; j < A.length; ++j) {
                 if (A[i] < A[j]) {
-                    result[i] = Math.max(result[i], A[j]);
+                    result[i] = Math.min(result[i], A[j]);
                 }
             }
             if (result[i] == Integer.MAX_VALUE) {
