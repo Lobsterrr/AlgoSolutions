@@ -18,7 +18,7 @@ public class NextElement {
 
     public int[] findNext(int[] A, int n) {
         if (A == null || A.length == 0) {
-            return 0;
+            return null;
         }
         int[] result = new int[A.length];
         for (int i = 0; i < A.length; ++i) {
