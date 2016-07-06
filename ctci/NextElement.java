@@ -16,14 +16,14 @@ public class NextElement {
         return result;
     }
 
-    public int[] findNext(int[] A, int n) {
+    public int[] findNext2(int[] A, int n) {
         if (A == null || A.length == 0) {
             return null;
         }
         int[] result = new int[A.length];
         for (int i = 0; i < A.length; ++i) {
             result[i] = Integer.MAX_VALUE;
-            for (int j = i + 1; j >= A.length; ++j) {
+            for (int j = i + 1; j < A.length; ++j) {
                 if (A[i] < A[j]) {
                     result[i] = Math.max(result[i], A[j]);
                 }
