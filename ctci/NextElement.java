@@ -26,9 +26,9 @@ public class NextElement {
             for (int j = i + 1; j < A.length; ++j) {
                 if (A[i] < A[j]) {
                     if (result[i] == -1) {
-                        result = A[j];
+                        result[i] = A[j];
                     } else {
-                        result = Math.min(result[i], A[j]);
+                        result[i] = Math.min(result[i], A[j]);
                     }
                 }
             }
