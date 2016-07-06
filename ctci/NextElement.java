@@ -29,7 +29,7 @@ public class NextElement {
                 }
             }
             if (result[i] == Integer.MAX_VALUE) {
-                result = -1;
+                result[i] = -1;
             }
         }
         return result;
