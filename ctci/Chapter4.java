@@ -38,6 +38,28 @@ public class Chapter4 {
         if (root == null || dep <= 0) {
             return dummy.next;
         }
+        List<TreeNode> prevLevel = new ArrayList<TreeNode>();
+        List<TreeNode> curLevel = new ArrayList<TreeNode>();
+        prevLevel.add(root);
+        while (prevLevel.size() > 0 && dep > 1) {
+            for (TreeNode node : prevLevel) {
+                if (node.left != null) {
+                    curLevel.add(node.left);
+                }
+                if (node.right != null) {
+                    curLevel.add(node.right);
+                }
+            }
+            prevLevel = curLevel;
+            curLevel = new ArrayList<TreeNode>();
+            dep--;
+        }
+        ListNode cur = dummy;
+        for (TreeNode node : prevLevel) {
+            cur.next = new ListNode(node.val);
+            cur = cur.next;
+        }
+        return dummy.next;
     }
 
     // 4.7
