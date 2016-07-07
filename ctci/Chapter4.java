@@ -10,6 +10,15 @@ public class TreeNode {
     }
 
 }
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
 */
 public class Chapter4 {
 
@@ -22,6 +31,9 @@ public class Chapter4 {
         for (; (2 << h - 1) < vals.length; ++h);
         return h;
     }
+
+    // 4.4
+
 
     // 4.7
     // iteration
