@@ -33,7 +33,12 @@ public class Chapter4 {
     }
 
     // 4.4
-
+    public ListNode getTreeLevel(TreeNode root, int dep) {
+        ListNode dummy = new ListNode(0);
+        if (root == null || dep <= 0) {
+            return dummy.next;
+        }
+    }
 
     // 4.7
     // iteration
