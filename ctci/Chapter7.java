@@ -113,12 +113,12 @@ public class Chapter7 {
                     tmp /= 7;
                 }
                 if (tmp == 1) {
-                    result++;
                     k--;
                 }
             }
+            result++;
         }
-        return result;
+        return result - 1;
     }
 
 }
