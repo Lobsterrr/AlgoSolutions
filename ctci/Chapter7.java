@@ -74,12 +74,12 @@ public class Chapter7 {
         if (k <= 0) {
             throw new IllegalArgumentException();
         }
-        int[] result = new int[k];
+        int[] result = new int[k + 1];
         int i3 = 0;
         int i5 = 0;
         int i7 = 0;
         result[0] = 1;
-        for (int i = 1; i < k; ++i) {
+        for (int i = 1; i <= k; ++i) {
             result[i] = Math.min(result[i3] * 3, Math.min(result[i5] * 5, result[i7] * 7));
             if (result[i] == result[i3] * 3) {
                 i3++;
@@ -91,7 +91,7 @@ public class Chapter7 {
                 i7++;
             }
         }
-        return result[k - 1];
+        return result[k];
     }
 
 }
