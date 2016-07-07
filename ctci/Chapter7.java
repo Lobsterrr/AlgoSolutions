@@ -80,7 +80,8 @@ public class Chapter7 {
         int i7 = 0;
         result[0] = 1;
         for (int i = 1; i <= k; ++i) {
-            result[i] = Math.min(result[i3] * 3, Math.min(result[i5] * 5, result[i7] * 7));
+            result[i] = Math.min(result[i3] * 3, 
+                    Math.min(result[i5] * 5, result[i7] * 7));
             if (result[i] == result[i3] * 3) {
                 i3++;
             }
@@ -92,6 +93,32 @@ public class Chapter7 {
             }
         }
         return result[k];
+    }
+
+    public int findKth(int k) {
+        if (k <= 0) {
+            throw new IllegalArgumentException();
+        }
+        int result = 3;
+        while (k > 0) {
+            int tmp = result;
+            while (tmp % 3 == 0 || tmp % 5 == 0 || tmp % 7 == 0) {
+                if (tmp % 3 == 0) {
+                    tmp /= 3;
+                }
+                if (tmp % 5 == 0) {
+                    tmp /= 5;
+                }
+                if (tmp % 7 == 0) {
+                    tmp /= 7;
+                }
+                if (tmp == 1) {
+                    result++;
+                    k--;
+                }
+            }
+        }
+        return result;
     }
 
 }
