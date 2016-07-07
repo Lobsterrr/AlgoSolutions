@@ -31,63 +31,23 @@ public class Chapter1 {
     
     // 1.3
     public boolean checkSam(String stringA, String stringB) {
-        if (stringA == null && stringB == null || stringA.length == 0 && stringB.length() == 0
-                
-                // 1.3
-                public boolean checkSam(String stringA, String stringB) {
-                    if (stringA == null && stringB == null || stringA.length == 0 && stringB.length() == 0)
-                }
-                
-                // 1.3
-                public boolean checkSam(String stringA, String stringB) {
-                    if (stringA == null && stringB == null || stringA.length == 0 && stringB.length() == 0)
-                }
-                
-                // 1.3
-                public boolean checkSam(String stringA, String stringB) {
-                    if (stringA == null && stringB == null || stringA.length == 0 && stringB.length() == 0)
-                }
-                
-                // 1.3
-                public boolean checkSam(String stringA, String stringB) {
-                    if (stringA == null && stringB == null || stringA.length == 0 && stringB.length() == 0)
-                }
-                
-                // 1.3
-                public boolean checkSam(String stringA, String stringB) {
-                    if (stringA == null && stringB == null || stringA.length == 0 && stringB.length() == 0)
-                }
-                
-                // 1.3
-                public boolean checkSam(String stringA, String stringB) {
-                    if (stringA == null && stringB == null || stringA.length == 0 && stringB.length() == 0)
-                }
-                
-                // 1.3
-                public boolean checkSam(String stringA, String stringB) {
-                    if (stringA == null && stringB == null || stringA.length == 0 && stringB.length() == 0)
-                }
-                
-                // 1.3
-                public boolean checkSam(String stringA, String stringB) {
-                    if (stringA == null && stringB == null) {
-                        return false;
-                    }
-                    if (stringA == null && stringB != null || stringA != null && stringB == null || stringA.length() != stringB.length()) {
-                        return false;
-                    }
-                    int[] count = new int[stringA.length()];
-                    for (int i = 0; i < stringA.length(); ++i) {
-                        count[stringA.charAt(i)]++;
-                        count[stringB.charAt(i)]--;
-                    }
-                    for (int c : count) {
-                        if (c != 0) {
-                            return false;
-                        }
-                    }
-                    return true;
-                })
+        if (stringA == null && stringB == null) {
+            return false;
+        }
+        if (stringA == null && stringB != null || stringA != null && stringB == null || stringA.length() != stringB.length()) {
+            return false;
+        }
+        int[] count = new int[stringA.length()];
+        for (int i = 0; i < stringA.length(); ++i) {
+            count[stringA.charAt(i)]++;
+            count[stringB.charAt(i)]--;
+        }
+        for (int c : count) {
+            if (c != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     // 1.4
