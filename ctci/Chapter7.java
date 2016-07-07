@@ -80,7 +80,7 @@ public class Chapter7 {
         int i7 = 0;
         result[0] = 1;
         for (int i = 1; i < k; ++i) {
-            result[i] = Math.min(result[i3] * 3, Math.min(result[i5] * 5, result[i7] * 5));
+            result[i] = Math.min(result[i3] * 3, Math.min(result[i5] * 5, result[i7] * 7));
             if (result[i] == result[i3] * 3) {
                 i3++;
             }
