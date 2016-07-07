@@ -40,6 +40,11 @@ public class Chapter2 {
         }
     }
 
+    // 2.5
+    public ListNode plusAB(ListNode a, ListNode b) {
+
+    }
+
     // 2.7
     public boolean isPalindrome(ListNode pHead) {
         if (pHead == null || pHead.next == null) {
