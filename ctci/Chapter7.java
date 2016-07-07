@@ -100,7 +100,7 @@ public class Chapter7 {
             throw new IllegalArgumentException();
         }
         int result = 3;
-        while (k > 0) {
+        for (; k > 0; ++result) {
             int tmp = result;
             while (tmp % 3 == 0 || tmp % 5 == 0 || tmp % 7 == 0) {
                 if (tmp % 3 == 0) {
@@ -116,7 +116,6 @@ public class Chapter7 {
                     k--;
                 }
             }
-            result++;
         }
         return result - 1;
     }
