@@ -34,7 +34,8 @@ public class Chapter1 {
         if (stringA == null && stringB == null) {
             return false;
         }
-        if (stringA == null && stringB != null || stringA != null && stringB == null || stringA.length() != stringB.length()) {
+        if (stringA == null && stringB != null || stringA != null 
+                && stringB == null || stringA.length() != stringB.length()) {
             return false;
         }
         int[] count = new int[128];
