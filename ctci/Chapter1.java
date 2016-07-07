@@ -102,6 +102,56 @@ public class Chapter1 {
         return mat;
     }
 
+    // 1.7
+    public int[][] clearZero(int[][] mat, int n) {
+        if (mat == null || mat.length == 0) {
+            return mat;
+        }
+        boolean isFirstRowZero = false;
+        boolean isFirstColZero = false;
+        for (int i = 0; i < mat[0].length; ++i) {
+            if (mat[0][i] == 0) {
+                isFirstRowZero = true;
+                break;
+            }
+        }
+        for (int i = 0; i < mat.length; ++i) {
+            if (mat[i][0] == 0) {
+                isFirstColZero = true;
+                break;
+            }
+        }
+        for (int i = 1; i < mat.length; ++i) {
+            for (int j = 1; j < mat[i].length; ++j) {
+                if (mat[i][j] == 0) {
+                    mat[i][0] = 0;
+                    mat[0][j] = 0;
+                }
+            }
+        }
+        for (int i = 0; i < mat.length; ++i) {
+            if (mat[i][0] == 0) {
+                for (int j = 0; j < mat[i].length; ++j) {
+                    mat[i][j] = 0;
+                }
+            }
+        }
+        for (int j = 0; j < mat[0].length; ++j) {
+            if (mat[0][j] == 0) {
+                for (int i = 0; i < mat.length; ++i) {
+                    mat[i][j] = 0;
+                }
+            }
+        }
+        for (int i = 0; i < mat.length && isFirstColZero; ++i) {
+            mat[i][0] = 0;
+        }
+        for (int i = 0; i < mat[0].length && isFirstRowZero; ++i) {
+            mat[0][i] = 0;
+        }
+        return mat;
+    }
+
     // 1.8
     public boolean checkReverseEqual(String s1, String s2) {
         return (s1 + s1).contains(s2);
