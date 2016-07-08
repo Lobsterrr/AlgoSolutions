@@ -22,7 +22,7 @@ public class SuperPow {
         int result = 1;
         for (int i = b.length - 1; i >= 0; --i) {
             result = result * pow(a, b[i]) % mod;
-            a = pow(a % mod, 10);
+            a = pow(a, 10);
         }
         return result;
     }
@@ -31,9 +31,9 @@ public class SuperPow {
         int result = 1;
         while (n != 0) {
             if ((n & 1) != 0) {
-                result = result * a % mod;
+                result = result * (a % mod) % mod;
             }
-            a = a * a % mod;
+            a = (a % mod) * (a % mod) % mod;
             n >>= 1;
         }
         return result;
