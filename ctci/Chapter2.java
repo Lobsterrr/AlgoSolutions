@@ -58,7 +58,7 @@ public class Chapter2 {
             cur = cur.next;
         }
         cur1.next = dummy2.next;
-        cur2 = null;
+        cur2.next = null;
         return dummy1.next;
     }
 
