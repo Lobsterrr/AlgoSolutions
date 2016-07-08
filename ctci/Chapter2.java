@@ -58,6 +58,7 @@ public class Chapter2 {
             cur = cur.next;
         }
         cur1.next = dummy2.next;
+        cur2 = null;
         return dummy1.next;
     }
 
