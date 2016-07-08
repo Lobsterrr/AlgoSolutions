@@ -42,7 +42,23 @@ public class Chapter2 {
 
     // 2.4
     public ListNode partition(ListNode pHead, int x) {
-
+        ListNode dummy1 = new ListNode(0);
+        ListNode dummy2 = new ListNode(0);
+        ListNode cur1 = dummy1;
+        ListNode cur2 = dummy2;
+        ListNode cur = pHead;
+        while (cur != null) {
+            if (cur.val < x) {
+                cur1.next = cur;
+                cur1 = cur1.next;
+            } else {
+                cur2.next = cur;
+                cur2 = cur2.next;
+            }
+            cur = cur.next;
+        }
+        cur1.next = dummy2.next;
+        return dummy1.next;
     }
 
     // 2.5
