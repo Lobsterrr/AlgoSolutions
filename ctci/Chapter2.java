@@ -42,7 +42,23 @@ public class Chapter2 {
 
     // 2.5
     public ListNode plusAB(ListNode a, ListNode b) {
-
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        ListNode curA = a;
+        ListNode curB = b;
+        int carrier = 0;
+        while (curA != null || curB != null || carrier != 0) {
+            int sum = carrier;
+            if (curA != null) {
+                sum += curA.val;
+            }
+            if (curB != null) {
+                sum += curB.val;
+            }
+            cur.next = new ListNode(sum % 10);
+            carrier = sum / 10;
+        }
+        return dummy.next;
     }
 
     // 2.7
