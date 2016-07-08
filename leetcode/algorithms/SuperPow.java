@@ -37,7 +37,6 @@ public class SuperPow {
                 result = result * (a % mod) % mod;
             }
             a = (a % mod) * (a % mod) % mod;
-            n >>= 1;
         }
         return result;
     }
