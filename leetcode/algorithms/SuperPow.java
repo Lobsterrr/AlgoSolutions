@@ -32,8 +32,7 @@ public class SuperPow {
 
     public int pow(int a, int n) {
         int result = 1;
-        a %= mod;
-        for (; n != 0; n >>= 1, a = a * a % mod) {
+        for (a %= mod; n != 0; n >>= 1, a = a * a % mod) {
             if ((n & 1) != 0) {
                 result = result * a % mod;
             }
