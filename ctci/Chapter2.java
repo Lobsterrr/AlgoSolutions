@@ -40,6 +40,11 @@ public class Chapter2 {
         }
     }
 
+    // 2.4
+    public ListNode partition(ListNode pHead, int x) {
+
+    }
+
     // 2.5
     public ListNode plusAB(ListNode a, ListNode b) {
         ListNode dummy = new ListNode(0);
