@@ -17,7 +17,14 @@
 public class SuperPow {
 
     public int superPow(int a, int[] b) {
-
+        int pow = 1;
+        int mod = 1337;
+        for (int i = 0, base = 1; i < b.length; ++i, base *= 10) {
+            for (int j = 1; j <= b[i] * base; ++j) {
+                pow = pow * a % mod;
+            }
+        }
+        return pow;
     }
 
 }
