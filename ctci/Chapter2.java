@@ -59,27 +59,6 @@ public class Chapter2 {
         return dummy.next;
     }
 
-    public ListNode plusAB(ListNode a, ListNode b) {
-        ListNode dummy = new ListNode(0);
-        ListNode cur = dummy;
-        int carrier = 0;
-        while (a != null || b != null || carrier != 0) {
-            int sum = carrier;
-            if (a != null) {
-                sum += a.val;
-                a = a.next;
-            }
-            if (b != null) {
-                sum += b.val;
-                b = b.next;
-            }
-            cur.next = new ListNode(sum % 10);
-            cur = cur.next;
-            carrier = sum / 10;
-        }
-        return dummy.next;
-    }
-
     // 2.7
     public boolean isPalindrome(ListNode pHead) {
         if (pHead == null || pHead.next == null) {
