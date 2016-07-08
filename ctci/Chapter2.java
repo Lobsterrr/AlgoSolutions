@@ -44,7 +44,8 @@ public class Chapter2 {
     public ListNode plusAB(ListNode a, ListNode b) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
-        for (int carrier = 0; a != null || b != null || carrier != 0; cur = cur.next, carrier /= 10) {
+        for (int carrier = 0; a != null || b != null || carrier != 0; 
+                cur = cur.next, carrier /= 10) {
             if (a != null) {
                 carrier += a.val;
                 a = a.next;
