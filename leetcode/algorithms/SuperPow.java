@@ -21,7 +21,7 @@ public class SuperPow {
         int mod = 1337;
         for (int i = b.length - 1, base = 1; i >= 0; --i, base *= 10) {
             for (int j = 1; j <= b[i] * base; ++j) {
-                pow = pow * a % mod;
+                pow = pow * (a % mod) % mod;
             }
         }
         return pow;
