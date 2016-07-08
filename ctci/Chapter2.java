@@ -46,16 +46,15 @@ public class Chapter2 {
         ListNode dummy2 = new ListNode(0);
         ListNode cur1 = dummy1;
         ListNode cur2 = dummy2;
-        ListNode cur = pHead;
-        while (cur != null) {
-            if (cur.val < x) {
-                cur1.next = cur;
+        while (pHead != null) {
+            if (pHead.val < x) {
+                cur1.next = pHead;
                 cur1 = cur1.next;
             } else {
-                cur2.next = cur;
+                cur2.next = pHead;
                 cur2 = cur2.next;
             }
-            cur = cur.next;
+            pHead = pHead.next;
         }
         cur1.next = dummy2.next;
         cur2.next = null;
