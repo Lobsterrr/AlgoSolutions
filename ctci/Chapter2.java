@@ -44,18 +44,19 @@ public class Chapter2 {
     public ListNode plusAB(ListNode a, ListNode b) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
-        ListNode curA = a;
-        ListNode curB = b;
         int carrier = 0;
-        while (curA != null || curB != null || carrier != 0) {
+        while (a != null || b != null || carrier != 0) {
             int sum = carrier;
-            if (curA != null) {
-                sum += curA.val;
+            if (a != null) {
+                sum += a.val;
+                a = a.next;
             }
-            if (curB != null) {
-                sum += curB.val;
+            if (b != null) {
+                sum += b.val;
+                b = b.next;
             }
             cur.next = new ListNode(sum % 10);
+            cur = cur.next;
             carrier = sum / 10;
         }
         return dummy.next;
