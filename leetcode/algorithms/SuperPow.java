@@ -19,13 +19,12 @@ public class SuperPow {
     public static final int mod = 1337;
 
     public int superPow(int a, int[] b) {
-        int pow = 1;
-        for (int i = b.length - 1, base = 1; i >= 0; --i, base *= 10) {
-            for (int j = 1; j <= b[i] * base; ++j) {
-                pow = pow * (a % mod) % mod;
-            }
+        int result = 1;
+        for (int i = b.length - 1; i >= 0; --i) {
+            result = result * pow(a, b[i]) % mod;
+            a = pow(a, 10);
         }
-        return pow;
+        return result;
     }
 
     public int pow(int a, int n) {
