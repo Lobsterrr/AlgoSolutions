@@ -72,7 +72,7 @@ public class Chapter2 {
                 sum += b.val;
                 b = b.next;
             }
-            cur.next = new ListNode(sum % 10);
+            cur.next = new ListNode(carrier % 10);
             cur = cur.next;
             carrier = sum / 10;
         }
