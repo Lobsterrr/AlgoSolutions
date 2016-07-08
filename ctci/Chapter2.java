@@ -53,6 +53,7 @@ public class Chapter2 {
                 carrier += b.val;
                 b = b.next;
             }
+            cur.next = new ListNode(sum % 10);
         }
         return dummy.next;
     }
