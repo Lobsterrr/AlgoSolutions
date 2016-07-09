@@ -24,7 +24,14 @@ public class Chapter4 {
 
     // 4.1
     public boolean isBalance(TreeNode root) {
+        
+    }
 
+    public int depth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.max(depth(root.left), depth(root.right));
     }
 
     // 4.3
