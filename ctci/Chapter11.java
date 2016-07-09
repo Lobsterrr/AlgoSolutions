@@ -23,10 +23,8 @@ public class Chapter11 {
         int[] dp = new int[men.length];
         Arrays.fill(dp, 1);
         for (int i = 1; i < men.length; ++i) {
-            for (int j = 0; j < i; ++j) {
-                if (men[i] > men[j]) {
-                    dp[i] = Math.max(dp[i], dp[j]);
-                }
+            for (int j = i - 1; j >= 0 && men[i] <= men[j]; --j) {
+                men[i] = Math.max(men[i], men[j] + 1);
             }
         }
         return dp[men.length - 1];
