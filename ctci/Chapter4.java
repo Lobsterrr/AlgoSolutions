@@ -24,7 +24,10 @@ public class Chapter4 {
 
     // 4.1
     public boolean isBalance(TreeNode root) {
-        
+        if (root == null) {
+            return true;
+        }
+        return Math.abs(depth(root.left) - depth(root.right)) <= 1;
     }
 
     public int depth(TreeNode root) {
