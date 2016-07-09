@@ -24,17 +24,22 @@ public class Chapter4 {
 
     // 4.1
     public boolean isBalance(TreeNode root) {
-        if (root == null) {
-            return true;
-        }
-        return Math.abs(depth(root.left) - depth(root.right)) <= 1;
+        return checkDepth(root) != -1;
     }
 
-    public int depth(TreeNode root) {
+    public int checkDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        return 1 + Math.max(depth(root.left), depth(root.right));
+        int left = checkDepth(root.left);
+        if (left == -1) {
+            return -1;
+        }
+        int right = checkDepth(root.right);
+        if (right == -1 || Math.abs(left - right) > 1) {
+            return -1;
+        }
+        return 1 + Math.max(left, right);
     }
 
     // 4.3
