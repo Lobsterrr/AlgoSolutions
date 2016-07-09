@@ -15,4 +15,9 @@ public class Chapter11 {
         return null;
     }
 
+    // 11.7
+    public int getHeight(int[] men, int n) {
+
+    }
+
 }
