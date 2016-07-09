@@ -22,6 +22,11 @@ public class ListNode {
 */
 public class Chapter4 {
 
+    // 4.1
+    public boolean isBalance(TreeNode root) {
+
+    }
+
     // 4.3
     public int buildMinimalBST(int[] vals) {
         if (vals == null || vals.length == 0) {
