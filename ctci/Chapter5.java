@@ -10,7 +10,9 @@ public class Chapter5 {
 
     // 5.3
     public int[] getCloseNumber(int x) {
-
+        int low = x;
+        int i = 0; 
+        for (; i < 32 && (x & 1 << i) != 0; ++i);
     }
 
     // 5.5
