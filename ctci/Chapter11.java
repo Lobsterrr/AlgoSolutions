@@ -15,12 +15,4 @@ public class Chapter11 {
         return null;
     }
 
-    // 1.5
-    public int findString(String[] str, int n, String x) {
-        if (str == null || str.length == 0) {
-            return -1;
-        }
-
-    }
-
 }
