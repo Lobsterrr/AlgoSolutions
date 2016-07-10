@@ -8,6 +8,11 @@ public class Chapter5 {
         return left | (m << j) | right;
     }
 
+    // 5.3
+    public int[] getCloseNumber(int x) {
+
+    }
+
     // 5.5
     public int calcCost(int A, int B) {
         // write code here
