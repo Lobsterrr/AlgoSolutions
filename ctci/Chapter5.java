@@ -11,10 +11,11 @@ public class Chapter5 {
     // 5.3
     public int[] getCloseNumber(int x) {
         int i = 0; 
-        for (; i < 32 && (x & 1 << i) != 0; ++i);
-        for (; i < 32 && (x & 1 << 1) != 1; ++i);
-        int low = x | (1 << i - 1);
-        low &= ~(1 << i);
+        for (int i = 1; i < 32; ++i) {
+            if ()
+        }
+
+        return new int{low, high};
     }
 
     // 5.5
