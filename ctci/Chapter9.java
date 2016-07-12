@@ -83,6 +83,23 @@ public class Chapter9 {
         return findMagicIndex(A, low, mid - 1) || findMagicIndex(A, mid + 1, high);
     }
 
+    // 9.6
+    public boolean chkParenthesis(String A, int n) {
+        for (int i = 0, count = 0; i < A.length(); ++i) {
+            if (A.charAt(i) == '(') {
+                count++;
+            } else if (A.charAt(i) == ')') {
+                count--;
+            } else {
+                return false;
+            }
+            if (count < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     // 9.8
     public int countWays(int n) {
         int mod = 1000000007;
