@@ -31,7 +31,7 @@ public class Chapter5 {
         mask <<= i - count;
         low = (low >>> i << i) | mask;
         for (i = 0, count = 0; i < 32; ++i) {
-            if ((x >>> i & 1) == 0) {
+            if ((x >>> i & 1) == 1) {
                 count++;
             }
             if ((x >>> i & 1) == 1 && (x >>> i + 1 & 1) == 0) {
