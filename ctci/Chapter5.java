@@ -12,7 +12,7 @@ public class Chapter5 {
     public int[] getCloseNumber(int x) {
         int low = 0;
         int high = 0;
-        int i = 1;
+        int i = 0;
         for (; i < 32; ++i) {
             if ((x & 1 << i) == 0 && (x & (1 << i + 1)) == 1) {
                 low = x | (1 << i);
