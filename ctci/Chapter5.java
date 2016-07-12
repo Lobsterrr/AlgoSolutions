@@ -18,7 +18,6 @@ public class Chapter5 {
     public int getPrev(int x) {
         int i = 0;
         int count = 0;
-        int mask = 0;
         for (; i < 32; ++i) {
             if ((x >>> i & 1) == 1) {
                 count++;
@@ -27,14 +26,16 @@ public class Chapter5 {
                 break;
             }
         }
-        mask = ((1 << count) - 1) << (i - count);
+        int mask = ((1 << count) - 1) << (i - count);
         int result = x & ~(1 << i + 1) | (1 << i);
         result = result >>> i << i | mask;
         return result;
     }
 
     public int getNext(int x) {
-
+        int i = 0;
+        int count = 0;
+        int mask =
     }
 
     // 5.5
