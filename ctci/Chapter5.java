@@ -29,7 +29,7 @@ public class Chapter5 {
             mask |= 1 << j;
         }
         mask <<= i - count;
-        low = low & mask | mask;
+        low = (low >>> i << i) | mask;
         for (i = 0; i < 32; ++i) {
             if ((x >>> i & 1) == 1 && (x >>> i + 1 & 1) == 0) {
                 high = x & ~(1 << i);
