@@ -14,7 +14,7 @@ public class Chapter5 {
         int high = 0;
         int i = 0;
         for (; i < 32; ++i) {
-            if ((x & 1 << i) == 0 && (x & (1 << i + 1)) == 1) {
+            if ((x >>> i & 1) == 0 && (x >>> i + 1 & 1) == 1) {
                 low = x | (1 << i);
                 low &= ~(1 << i + 1);
                 break;
@@ -22,7 +22,7 @@ public class Chapter5 {
         }
         i++;
         for (; i < 32; ++i) {
-            if ((x & 1 << i) == 1 && (x & (1 << i + 1)) == 0) {
+            if ((x >>> i & 1) == 1 && (x >>> i + 1 & 1) == 0) {
                 high = x & ~(1 << i);
                 high |= 1 << i + 1;
                 break;
