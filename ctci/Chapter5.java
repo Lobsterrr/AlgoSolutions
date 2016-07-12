@@ -41,7 +41,8 @@ public class Chapter5 {
             }
         }
         count--;
-        for (int j = 0, mask = 0; j < count; ++j) {
+        mask = 0;
+        for (int j = 0; j < count; ++j) {
             mask |= 1 << j;
         }
         high = high >>> i << i | mask;
