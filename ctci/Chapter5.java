@@ -35,7 +35,18 @@ public class Chapter5 {
     public int getNext(int x) {
         int i = 0;
         int count = 0;
-        int mask =
+        for (; i < 32; ++i) {
+            if ((x >>> i & 1) == 1) {
+                count++;
+            }
+            if ((x >>> i & 1) == 1 && (x >>> (i + 1) & 1) == 0) {
+                break;
+            }
+        }
+        int mask = (1 << (--count)) - 1;
+        int result = x & ~(1 << i) | (1 << i + 1);
+        result = result >>> i << i | mask;
+        return result;
     }
 
     // 5.5
