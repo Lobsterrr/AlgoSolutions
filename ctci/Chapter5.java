@@ -12,14 +12,25 @@ public class Chapter5 {
     public int[] getCloseNumber(int x) {
         int low = 0;
         int high = 0;
-        for (int i = 0; i < 32; ++i) {
+        int count = 0;
+        int i = 0;
+        for (i = 0; i < 32; ++i) {
+            if ((x >>> i & 1) == 1) {
+                count++;
+            }
             if ((x >>> i & 1) == 0 && (x >>> i + 1 & 1) == 1) {
                 low = x | (1 << i);
                 low &= ~(1 << i + 1);
                 break;
             }
         }
-        for (int i = 0; i < 32; ++i) {
+        int mask = 0;
+        for (int j = 0; j < count; ++j) {
+            mask |= 1 << j;
+        }
+        mask <<= i - count;
+        low = low & mask | mask;
+        for (i = 0; i < 32; ++i) {
             if ((x >>> i & 1) == 1 && (x >>> i + 1 & 1) == 0) {
                 high = x & ~(1 << i);
                 high |= 1 << i + 1;
