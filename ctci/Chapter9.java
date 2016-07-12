@@ -67,6 +67,22 @@ public class Chapter9 {
         return false;
     }
 
+    // 9.3-2
+    public boolean findMagicIndex(int[] A, int n) {
+        return findMagicIndex(A, 0, A.length - 1);
+    }
+
+    public boolean findMagicIndex(int[] A, int low, int high) {
+        if (A == null || A.length == 0 || low < 0 || high >= A.length || low > high) {
+            return false;
+        }
+        int mid = low + (high - low) / 2;
+        if (A[mid] == mid) {
+            return true;
+        }
+        return findMagicIndex(A, low, mid) || findMagicIndex(A, mid + 1, high);
+    }
+
     // 9.8
     public int countWays(int n) {
         int mod = 1000000007;
