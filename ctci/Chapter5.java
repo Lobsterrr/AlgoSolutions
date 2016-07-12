@@ -10,7 +10,7 @@ public class Chapter5 {
 
     // 5.3
     public int[] getCloseNumber(int x) {
-        return {
+        return int[]{
             getPrev(x), getNext(x)
         };
     }
