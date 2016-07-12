@@ -30,13 +30,21 @@ public class Chapter5 {
         }
         mask <<= i - count;
         low = (low >>> i << i) | mask;
-        for (i = 0; i < 32; ++i) {
+        for (i = 0, count = 0; i < 32; ++i) {
+            if ((x >>> i & 1) == 0) {
+                count++;
+            }
             if ((x >>> i & 1) == 1 && (x >>> i + 1 & 1) == 0) {
                 high = x & ~(1 << i);
                 high |= 1 << i + 1;
                 break;
             }
         }
+        count--;
+        for (int j = 0, mask = 0; j < count; ++j) {
+            mask |= 1 << j;
+        }
+        high = high >>> i << i | mask;
         return new int[]{low, high};
     }
 
