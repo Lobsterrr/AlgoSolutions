@@ -80,7 +80,7 @@ public class Chapter9 {
         if (A[mid] == mid) {
             return true;
         }
-        return findMagicIndex(A, low, mid) || findMagicIndex(A, mid + 1, high);
+        return findMagicIndex(A, low, mid - 1) || findMagicIndex(A, mid + 1, high);
     }
 
     // 9.8
