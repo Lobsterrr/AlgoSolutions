@@ -85,6 +85,9 @@ public class Chapter9 {
 
     // 9.6
     public boolean chkParenthesis(String A, int n) {
+        if (A == null || A.length() == 0) {
+            return false;
+        }
         for (int i = 0, count = 0; i < A.length(); ++i) {
             if (A.charAt(i) == '(') {
                 count++;
