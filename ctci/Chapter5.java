@@ -22,7 +22,7 @@ public class Chapter5 {
             if ((x >>> i & 1) == 1) {
                 count++;
             }
-            if ((x >>> i & 1) == 0 && (x >>> (i + 1) & 1 == 1) == 1) {
+            if ((x >>> i & 1) == 0 && (x >>> (i + 1) & 1) == 1) {
                 break;
             }
         }
