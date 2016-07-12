@@ -28,7 +28,7 @@ public class Chapter5 {
                 break;
             }
         }
-        return new int{low, high};
+        return new int[]{low, high};
     }
 
     // 5.5
