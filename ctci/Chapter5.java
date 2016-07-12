@@ -40,7 +40,6 @@ public class Chapter5 {
                 break;
             }
         }
-        count--;
         mask = 0;
         for (int j = 0; j < count; ++j) {
             mask |= 1 << j;
