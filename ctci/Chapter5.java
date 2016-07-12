@@ -49,6 +49,14 @@ public class Chapter5 {
         return new int[]{low, high};
     }
 
+    public int getPrev(int x) {
+
+    }
+
+    public int getNext(int x) {
+
+    }
+
     // 5.5
     public int calcCost(int A, int B) {
         // write code here
