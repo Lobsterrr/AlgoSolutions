@@ -32,6 +32,20 @@ public class Chapter18 {
                 yList.add(i);
             }
         }
+        int ix = 0;
+        int iy = 0;
+        int result = Integer.MAX_VALUE;
+        while (true) {
+            result = Math.min(result, Math.abs(xList.get(ix) - yList.get(iy)));
+            if (xList.get(ix) == yList.get(iy)) {
+                return 0;
+            } else if (xList.get(ix) < yList.get(iy)) {
+                ix++;
+            } else {
+                iy++;
+            }
+        }
+        return result;
     }
 
 }
