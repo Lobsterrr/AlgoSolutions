@@ -24,6 +24,14 @@ public class Chapter18 {
         }
         List<Integer> xList = new ArrayList<Integer>();
         List<Integer> yList = new ArrayList<Integer>();
+        for (int i = 0; i < article.length; ++i) {
+            if (article[i].equals(x)) {
+                xList.add(i);
+            }
+            if (article[i].equals(y)) {
+                yList.add(i);
+            }
+        }
     }
 
 }
