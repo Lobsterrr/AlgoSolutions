@@ -22,7 +22,8 @@ public class Chapter18 {
         if (article == null || article.length == 0) {
             return -1;
         }
-
+        List<Integer> xList = new ArrayList<Integer>();
+        List<Integer> yList = new ArrayList<Integer>();
     }
 
 }
