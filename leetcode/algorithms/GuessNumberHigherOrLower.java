@@ -8,6 +8,9 @@ public class GuessNumberHigherOrLower {
     }
 
     public int guessNumber(int low, int high) {
+        if (low <= 0 || low > high) {
+            throw new IllegalArgumentException("illegal input");
+        }
         int mid = low + (high - low) / 2;
         if (guess(mid) == 0) {
             return mid;
