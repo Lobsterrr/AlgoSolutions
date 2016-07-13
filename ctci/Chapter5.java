@@ -71,4 +71,14 @@ public class Chapter5 {
         return (((x & 0xAAAAAAAA) >> 1) & 0x7FFFFFFF) | ((x & 0x55555555) << 1);
     }
 
+    // 5.7
+    public int findMissing(int[][] numbers, int n) {
+        for (int i = 0; i < numbers.length; ++i) {
+            if (i % 2 != numbers[i][0]) {
+                return i;
+            }
+        }
+        return numbers.length;
+    }
+
 }
