@@ -22,14 +22,16 @@ public class Chapter11 {
         }
         int[] dp = new int[men.length];
         Arrays.fill(dp, 1);
+        int result = 0;
         for (int i = 1; i < men.length; ++i) {
             for (int j = 0; j < i; ++j) {
                 if (men[i] > men[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
+            result = Math.max(result, dp[i]);
         }
-        return dp[men.length - 1];
+        return result;
     }
 
 }
