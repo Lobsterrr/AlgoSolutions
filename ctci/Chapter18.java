@@ -32,10 +32,16 @@ public class Chapter18 {
                 yList.add(i);
             }
         }
+        if (xList.get(0) >= yList.get(yList.size() - 1)) {
+            return xList.get(0) - yList.get(yList.size() - 1);
+        }
+        if (xList.get(xList.size() - 1) <= yList.get(0)) {
+            return yList.get(0) - xList.get(xList.size() - 1);
+        }
         int ix = 0;
         int iy = 0;
         int result = Integer.MAX_VALUE;
-        while (true) {
+        while (ix < xList.size() && iy < yList.size()) {
             result = Math.min(result, Math.abs(xList.get(ix) - yList.get(iy)));
             if (xList.get(ix) == yList.get(iy)) {
                 return 0;
