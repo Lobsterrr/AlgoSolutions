@@ -30,7 +30,7 @@ public class Chapter3 {
         }
         while (!stack2.isEmpty()) {
             int x = stack2.pop();
-            if (stack1.isEmpty() || stack.peek() <= x) {
+            if (stack1.isEmpty() || stack1.peek() <= x) {
                 stack1.push(x);
             } else {
                 while (!stack1.isEmpty() && stack1.peek() > x) {
