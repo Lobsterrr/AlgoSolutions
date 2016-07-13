@@ -19,9 +19,11 @@ public class Chapter3 {
 
     // 3.6
     public ArrayList<Integer> twoStacksSort(int[] numbers) {
-        Stack<Integer> stack1 = new Stack<Integer>();
-        Stack<Integer> stack2 = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<Integer>();
+        ArrayList<Integer> result = new ArrayList<Integer>();
 
+
+        return result;
     }
 
 }
