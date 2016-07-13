@@ -19,7 +19,9 @@ public class Chapter18 {
 
     // 18.5
     public int getDistance(String[] article, int n, String x, String y) {
-
+        if (article == null || article.length == 0) {
+            return -1;
+        }
     }
 
 }
