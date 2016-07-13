@@ -19,10 +19,29 @@ public class Chapter3 {
 
     // 3.6
     public ArrayList<Integer> twoStacksSort(int[] numbers) {
-        Stack<Integer> stack = new Stack<Integer>();
         ArrayList<Integer> result = new ArrayList<Integer>();
-
-
+        if (numbers == null || numbers.length == 0) {
+            return result;
+        }
+        Stack<Integer> stack1 = new Stack<Integer>();
+        Stack<Integer> stack2 = new Stack<Integer>();
+        for (int number : numbers) {
+            stack2.push(number);
+        }
+        while (!stack2.isEmpty()) {
+            int x = stack2.pop();
+            if (stack1.isEmpty() || stack.peek() <= x) {
+                stack1.push(x);
+            } else {
+                while (!stack1.isEmpty() && stack1.peek() > x) {
+                    stack2.push(stack1.pop());
+                }
+                stack1.push(x);
+            }
+        }
+        while (!stack1.isEmpty()) {
+            result.add(stack1.pop());
+        }
         return result;
     }
 
