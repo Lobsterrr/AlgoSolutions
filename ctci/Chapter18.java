@@ -22,6 +22,7 @@ public class Chapter18 {
         if (article == null || article.length == 0) {
             return -1;
         }
+
     }
 
 }
