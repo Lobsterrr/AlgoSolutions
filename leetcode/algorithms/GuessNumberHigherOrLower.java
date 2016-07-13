@@ -24,6 +24,7 @@ public class GuessNumberHigherOrLower {
         return guessNumber(1, n);
     }
 
+    // iteration
     public int guessNumber(int low, int high) {
         if (low <= 0 || low > high) {
             throw new IllegalArgumentException("illegal input");
@@ -42,6 +43,7 @@ public class GuessNumberHigherOrLower {
         return low;
     }
 
+    // recursion
     public int guessNumber(int low, int high) {
         if (low <= 0 || low > high) {
             throw new IllegalArgumentException("illegal input");
