@@ -17,7 +17,19 @@ public class Chapter11 {
 
     // 11.7
     public int getHeight(int[] men, int n) {
-
+        if (men == null || men.length == 0) {
+            return 0;
+        }
+        int[] dp = new int[men.length];
+        Arrays.fill(dp, 1);
+        for (int i = 1; i < men.length; ++i) {
+            for (int j = 0; j < i; ++j) {
+                if (men[i] > men[j]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+            }
+        }
+        return dp[men.length - 1];
     }
 
 }
