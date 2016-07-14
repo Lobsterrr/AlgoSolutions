@@ -23,7 +23,7 @@ public class Chapter11 {
         int[] dp = new int[men.length];
         int len = 0;
         for (int m : men) {
-            int index = Arrays.binarySearch(men, 0, len, m);
+            int index = Arrays.binarySearch(dp, 0, len, m);
             if (index < 0) {
                 index = -(index + 1);
             }
