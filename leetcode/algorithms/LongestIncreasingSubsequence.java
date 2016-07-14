@@ -21,8 +21,7 @@ public class LongestIncreasingSubsequence {
             if (list.size() == 0 || list.get(list.size() - 1) < num) {
                 list.add(num);
             } else {
-                int index = findPosition(list, num);
-                list.set(index, num);
+                list.set(findPosition(list, num), num);
             }
         }
         return list.size();
