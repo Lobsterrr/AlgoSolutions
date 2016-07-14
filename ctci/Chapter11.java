@@ -16,6 +16,7 @@ public class Chapter11 {
     }
 
     // 11.7
+    // O(n * lg (n))
     public int getHeight(int[] men, int n) {
         if (men == null || men.length == 0) {
             return 0;
@@ -35,6 +36,7 @@ public class Chapter11 {
         return len;
     }
 
+    // O(n ^ 2)
     public int getHeight(int[] men, int n) {
         if (men == null || men.length == 0) {
             return 0;
