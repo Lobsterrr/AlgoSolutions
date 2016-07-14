@@ -21,6 +21,25 @@ public class Chapter11 {
             return 0;
         }
         int[] dp = new int[men.length];
+        int len = 0;
+        for (int m : men) {
+            int index = Arrays.binarySearch(men, 0, len, m);
+            if (index < 0) {
+                index = -(index + 1);
+            }
+            dp[index] = m;
+            if (index == len) {
+                len++;
+            }
+        }
+        return len;
+    }
+
+    public int getHeight(int[] men, int n) {
+        if (men == null || men.length == 0) {
+            return 0;
+        }
+        int[] dp = new int[men.length];
         Arrays.fill(dp, 1);
         int result = 0;
         for (int i = 1; i < men.length; ++i) {
