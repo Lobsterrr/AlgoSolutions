@@ -22,6 +22,24 @@ public class Chapter18 {
         if (article == null || article.length == 0) {
             return -1;
         }
+        int result = article.length;
+        for (int i = 0, ix = -1, iy = -1; i < article.length; ++i) {
+            if (article[i].equals(x)) {
+                ix = i;
+            } else if (article[i].equals(y)) {
+                iy = i;
+            }
+            if (ix != -1 && iy != -1) {
+                result = Math.min(result, Math.abs(ix - iy));
+            }
+        }
+        return result;
+    }
+
+    public int getDistance(String[] article, int n, String x, String y) {
+        if (article == null || article.length == 0) {
+            return -1;
+        }
         List<Integer> xList = new ArrayList<Integer>();
         List<Integer> yList = new ArrayList<Integer>();
         for (int i = 0; i < article.length; ++i) {
