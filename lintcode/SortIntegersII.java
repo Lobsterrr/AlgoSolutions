@@ -37,7 +37,7 @@ public class SortIntegersII {
 /*********************************************************/
 
     public void mergesort(int[] A, int low, int high) {
-        if (low < 0 || high >= A.length || low >= high - 1) {
+        if (low < 0 || high >= A.length || low >= high) {
             return;
         }
         int mid = low + (high - low) / 2;
