@@ -15,11 +15,25 @@ public class SortIntegersII {
     }
 
     public void quicksort(int[] A, int low, int high) {
-
+        if (A == null || A.length <= 1 || low < 0 
+                || high >= A.length || low >= high) {
+            return;
+        }
+        int index = low;
+        for (int i = low; i < high; ++i) {
+            if (A[i] <= A[high]) {
+                swap(A, i, index++);
+            }
+        }
+        swap(A, index, high);
+        quicksort(A, low, index - 1);
+        quicksort(A, index + 1, high);
     }
 
     public void swap(int[] A, int i, int j) {
-
+        int tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
     }
 
 }
