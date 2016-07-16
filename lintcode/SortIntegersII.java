@@ -48,7 +48,7 @@ public class SortIntegersII {
         int iHigh = mid + 1;
         for (int i = 0; i < cache.length; ++i) {
             if (A[iLow] < A[iHigh]) {
-                cache[i] = A[iLow]++;
+                cache[i] = A[iLow++];
             } else {
                 cache[i] = A[iHigh++];
             }
@@ -57,7 +57,19 @@ public class SortIntegersII {
             A[low + i] = cache[i];
         }
     }
-        
+
+    public void merge(int[] A, int low, int mid, int high) {
+        int[] cache = new int[high - low + 1];
+        int iLow = low;
+        int iHigh = mid + 1;
+        for (int i = 0; i < cache.length; ++i) {
+            if (A[iLow] < A[iHigh]) {
+                cache[i] = A[iLow++];
+            } else {
+                cache[i] = A[iHigh++];   
+            }
+        }
+    }
 
     public void swap(int[] A, int i, int j) {
         int tmp = A[i];
