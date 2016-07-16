@@ -17,6 +17,8 @@ public class SortIntegersII {
         quicksort(A, 0, A.length - 1);
     }
 
+/*********************************************************/
+
     public void quicksort(int[] A, int low, int high) {
         if (low < 0 || high >= A.length || low >= high) {
             return;
@@ -31,6 +33,31 @@ public class SortIntegersII {
         quicksort(A, low, index - 1);
         quicksort(A, index + 1, high);
     }
+
+/*********************************************************/
+
+    public void mergesort(int[] A, int low, int high) {
+        if (low < 0 || high >= A.length || low >= high - 1) {
+            return;
+        }
+        int mid = low + (high - low) / 2;
+        mergesort(A, low, mid);
+        mergesort(A, mid + 1, high);
+        int[] cache = new int[high - low + 1];
+        int iLow = low;
+        int iHigh = mid + 1;
+        for (int i = 0; i < cache.length; ++i) {
+            if (A[iLow] < A[iHigh]) {
+                cache[i] = A[iLow]++;
+            } else {
+                cache[i] = A[iHigh++];
+            }
+        }
+        for (int i = 0; i < cache.length; ++i) {
+            A[low + i] = cache[i];
+        }
+    }
+        
 
     public void swap(int[] A, int i, int j) {
         int tmp = A[i];
