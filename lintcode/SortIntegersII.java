@@ -51,11 +51,14 @@ public class SortIntegersII {
         int iLow = low;
         int iHigh = mid + 1;
         for (int i = 0; i < cache.length; ++i) {
-            if (A[iLow] < A[iHigh]) {
+            if (iHigh > high || A[iLow] < A[iHigh]) {
                 cache[i] = A[iLow++];
             } else {
                 cache[i] = A[iHigh++];   
             }
+        }
+        for (int i = 0; i < cache.length; ++i) {
+            A[low + i] = cache[i];
         }
     }
 
