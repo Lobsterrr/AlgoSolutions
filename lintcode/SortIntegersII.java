@@ -11,7 +11,10 @@ public class SortIntegersII {
      * @return void
      */
     public void sortIntegers2(int[] A) {
-        
+        if (A == null || A.length <= 1) {
+            return;
+        }
+        quicksort(A, 0, A.length - 1);
     }
 
     public void quicksort(int[] A, int low, int high) {
