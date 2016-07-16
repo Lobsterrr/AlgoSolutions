@@ -43,19 +43,7 @@ public class SortIntegersII {
         int mid = low + (high - low) / 2;
         mergesort(A, low, mid);
         mergesort(A, mid + 1, high);
-        int[] cache = new int[high - low + 1];
-        int iLow = low;
-        int iHigh = mid + 1;
-        for (int i = 0; i < cache.length; ++i) {
-            if (A[iLow] < A[iHigh]) {
-                cache[i] = A[iLow++];
-            } else {
-                cache[i] = A[iHigh++];
-            }
-        }
-        for (int i = 0; i < cache.length; ++i) {
-            A[low + i] = cache[i];
-        }
+        merge(A, low, mid, high);
     }
 
     public void merge(int[] A, int low, int mid, int high) {
