@@ -18,8 +18,7 @@ public class SortIntegersII {
     }
 
     public void quicksort(int[] A, int low, int high) {
-        if (A == null || A.length <= 1 || low < 0 
-                || high >= A.length || low >= high) {
+        if (low < 0 || high >= A.length || low >= high) {
             return;
         }
         int index = low;
