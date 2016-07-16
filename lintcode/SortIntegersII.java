@@ -1,5 +1,6 @@
 /*
- * Given an integer array, sort it in ascending order. Use quick sort, merge sort, heap sort or any O(nlogn) algorithm.
+ * Given an integer array, sort it in ascending order. Use quick 
+ * sort, merge sort, heap sort or any O(nlogn) algorithm.
 
 Have you met this question in a real interview? Yes
 Example
@@ -17,7 +18,7 @@ public class SortIntegersII {
         quicksort(A, 0, A.length - 1);
     }
 
-/*********************************************************/
+/*******************************************************************/
 
     public void quicksort(int[] A, int low, int high) {
         if (low < 0 || high >= A.length || low >= high) {
@@ -34,7 +35,7 @@ public class SortIntegersII {
         quicksort(A, index + 1, high);
     }
 
-/*********************************************************/
+/*******************************************************************/
 
     public void mergesort(int[] A, int low, int high) {
         if (low < 0 || high >= A.length || low >= high) {
