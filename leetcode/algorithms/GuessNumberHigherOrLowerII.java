@@ -31,7 +31,24 @@
 public class GuessNumberHigherOrLowerII {
 
     public int getMoneyAmount(int n) {
-        
+        if (n < 1) {
+            return 0;
+        }
+        int[][] dp = new int[n + 1][n + 1];
+    }
+
+    public int getMoneyAmount(int[][] dp, int low, int high) {
+        if (low >= high) {
+            return 0;
+        }
+        if (dp[low][high] != 0) {
+            return dp[low][high];
+        }
+        dp[low][high] = Integer.MAX_VALUE;
+        for (int i = low; i <= high; ++i) {
+            dp[low][high] = Math.min(dp[low][high], i + Math.min(getMoneyAmount(dp, low, i), getMoneyAmount(dp, i + 1, high)));
+        }
+        return dp[low][high];
     }
 
 }
