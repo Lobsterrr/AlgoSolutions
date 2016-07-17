@@ -47,7 +47,9 @@ public class GuessNumberHigherOrLowerII {
         }
         dp[low][high] = Integer.MAX_VALUE;
         for (int i = low; i <= high; ++i) {
-            dp[low][high] = Math.min(dp[low][high], i + Math.max(getMoneyAmount(dp, low, i), getMoneyAmount(dp, i + 1, high)));
+            dp[low][high] = Math.min(dp[low][high], 
+                    i + Math.max(getMoneyAmount(dp, low, i), 
+                        getMoneyAmount(dp, i + 1, high)));
         }
         return dp[low][high];
     }
