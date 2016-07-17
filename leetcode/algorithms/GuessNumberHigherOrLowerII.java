@@ -46,7 +46,7 @@ public class GuessNumberHigherOrLowerII {
             return 0;
         }
         int[][] dp = new int[n + 1][n + 1];
-        for (int i = n - 1; i > 0; --i) {
+        for (int i = n; i > 0; --i) {
             for (int j = i + 1; j <= n; ++j) {
                 dp[i][j] = Integer.MAX_VALUE;
                 for (int k = i; k < j; ++k) {
