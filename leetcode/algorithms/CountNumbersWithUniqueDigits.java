@@ -18,6 +18,13 @@ public class CountNumbersWithUniqueDigits {
         int[] digits = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         int result = 0;
 
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return digits.length;
+        } else if (n > 1) {
+
+        }
 
         return result;
     }
