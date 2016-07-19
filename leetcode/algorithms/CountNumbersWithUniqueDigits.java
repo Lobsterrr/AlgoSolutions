@@ -23,16 +23,24 @@
 public class CountNumbersWithUniqueDigits {
 
     public int countNumbersWithUiqueDigits(int n) {
-        int[] digits = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int result = 0;
+        int result = 10;
         if (n < 1 || n > 10) {
             return 0;
         } else if (n == 1) {
-            return digits.length;
+            return 10;
         } else if (n > 1) {
-
+            for (int i = 2; i <= n; ++i) {
+                result += 9 * factorial(9) / factorial(10 - i);
+            }
         }
+        return result;
+    }
 
+    public int factorial(int n) {
+        int result = 1;
+        for (int i = 1; i <= n; ++i) {
+            result *= i;
+        }
         return result;
     }
 
