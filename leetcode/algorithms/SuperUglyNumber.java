@@ -14,6 +14,9 @@ Note:
 public class SuperUglyNumber {
 
     public int nthSuperUglyNumber(int n, int[] primes) {
+        if (n < 0 || primes == null || primes.length == 0) {
+            0;
+        }
         int[] result = new int[n];
         result[0] = 1;
         int[] index = new int[primes.length];
