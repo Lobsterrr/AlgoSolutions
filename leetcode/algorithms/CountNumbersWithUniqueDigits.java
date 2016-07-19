@@ -44,8 +44,9 @@ public class CountNumbersWithUniqueDigits {
         } else if (n == 1) {
             return 10;
         } else if (n > 1) {
+            int N = 9 * factorial(9);
             for (int i = 2; i <= n; ++i) {
-                result += 9 * factorial(9) / factorial(10 - i);
+                result += N / factorial(10 - i);
             }
         }
         return result;
