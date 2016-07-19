@@ -34,6 +34,12 @@ public class SortIntegersII {
         quicksort(A, index + 1, high);
     }
 
+    public void swap(int[] A, int i, int j) {
+        int tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
+    }
+
 /*******************************************************************/
 
     public void mergesort(int[] A, int low, int high) {
@@ -60,12 +66,6 @@ public class SortIntegersII {
         for (int i = 0; i < cache.length; ++i) {
             A[low + i] = cache[i];
         }
-    }
-
-    public void swap(int[] A, int i, int j) {
-        int tmp = A[i];
-        A[i] = A[j];
-        A[j] = tmp;
     }
 
 }
