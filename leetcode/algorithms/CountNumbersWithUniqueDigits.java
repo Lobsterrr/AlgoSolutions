@@ -23,6 +23,16 @@
 public class CountNumbersWithUniqueDigits {
 
     public int countNumbersWithUniqueDigits(int n) {
+        if (n < 0 || n > 10) {
+            return 0;
+        }
+        int[] result = {
+            1, 10, 91, 739, 5275, 32491, 168571, 712891, 2345851, 5611771, 8877691
+        };
+        return result[i];
+    }
+
+    public int countNumbersWithUniqueDigits(int n) {
         int result = 10;
         if (n < 0 || n > 10) {
             return 0;
