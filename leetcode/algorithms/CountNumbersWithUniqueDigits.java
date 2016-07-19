@@ -33,6 +33,8 @@ public class CountNumbersWithUniqueDigits {
         return result[n];
     }
 
+/*******************************************************************/
+
     public int countNumbersWithUniqueDigits(int n) {
         int result = 10;
         if (n < 0 || n > 10) {
