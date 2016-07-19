@@ -37,20 +37,18 @@ public class CountNumbersWithUniqueDigits {
 /*******************************************************************/
 
     public int countNumbersWithUniqueDigits(int n) {
-        int result = 10;
-        if (n < 0 || n > 10) {
-            return 0;
-        } else if (n == 0) {
+        if (n == 0) {
             return 1;
         } else if (n == 1) {
             return 10;
         } else if (n > 1) {
+            int result = 10;
             int N = 9 * factorial(9);
             for (int i = 2; i <= n; ++i) {
                 result += N / factorial(10 - i);
             }
         }
-        return result;
+        return 0;
     }
 
     public int factorial(int n) {
