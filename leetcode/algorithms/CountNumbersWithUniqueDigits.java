@@ -22,7 +22,7 @@
  */
 public class CountNumbersWithUniqueDigits {
 
-    public int countNumbersWithUiqueDigits(int n) {
+    public int countNumbersWithUniqueDigits(int n) {
         int result = 10;
         if (n < 1 || n > 10) {
             return 0;
