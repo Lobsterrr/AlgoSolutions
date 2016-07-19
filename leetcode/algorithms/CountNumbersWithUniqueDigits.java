@@ -41,6 +41,20 @@ public class CountNumbersWithUniqueDigits {
             return 1;
         } else if (1 <= n && n <= 10) {
             int result = 10;
+            for (int i = 2, permutation = 9; i <= n; ++i) {
+                permutation *= 11 - i;
+                result += permutation;
+            }
+            return result;
+        }
+        return 0;
+    }
+
+    public int countNumbersWithUniqueDigits(int n) {
+        if (n == 0) {
+            return 1;
+        } else if (1 <= n && n <= 10) {
+            int result = 10;
             for (int i = 2, N = 9 * factorial(9); i <= n; ++i) {
                 result += N / factorial(10 - i);
             }
