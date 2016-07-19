@@ -25,7 +25,6 @@ public class SuperUglyNumber {
             for (int j = 0; j < index.length; ++j) {
                 if (result[i] == primes[j] * result[index[j]]) {
                     index[j]++;
-                    break;
                 }
             }
         }
