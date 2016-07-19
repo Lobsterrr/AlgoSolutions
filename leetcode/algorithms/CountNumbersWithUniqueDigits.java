@@ -13,7 +13,7 @@
  * number, number of steps to get that number and a bitmask which 
  * represent which number is marked as visited so far in the current 
  * number). Start with state (0,0,0) and count all valid number till 
- * we reach number of steps equals to 10n.
+ * we reach number of steps equals to 10 ^ n.
  * This problem can also be solved using a dynamic programming 
  * approach and some knowledge of combinatorics.
  * Let f(k) = count of numbers with unique digits with length equals 
