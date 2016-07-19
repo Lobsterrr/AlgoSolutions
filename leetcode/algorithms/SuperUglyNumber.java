@@ -20,7 +20,7 @@ public class SuperUglyNumber {
         for (int i = 1; i < n; ++i) {
             result[i] = Integer.MAX_VALUE;
             for (int j = 0; j < index.length; ++j) {
-                result[i] = Math.min(result, primes[j] * result[index[j]]);
+                result[i] = Math.min(result[i], primes[j] * result[index[j]]);
             }
             for (int j = 0; j < index.length; ++j) {
                 if (result[i] == primes[j] * result[inde[j]]) {
