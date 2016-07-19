@@ -50,25 +50,4 @@ public class CountNumbersWithUniqueDigits {
         return 0;
     }
 
-    public int countNumbersWithUniqueDigits(int n) {
-        if (n == 0) {
-            return 1;
-        } else if (1 <= n && n <= 10) {
-            int result = 10;
-            for (int i = 2, N = 9 * factorial(9); i <= n; ++i) {
-                result += N / factorial(10 - i);
-            }
-            return result;
-        }
-        return 0;
-    }
-
-    public int factorial(int n) {
-        int result = 1;
-        for (int i = 1; i <= n; ++i) {
-            result *= i;
-        }
-        return result;
-    }
-
 }
