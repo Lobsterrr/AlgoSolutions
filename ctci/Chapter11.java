@@ -60,6 +60,13 @@ public class Chapter11 {
         if (A == null || A.length == 0) {
             return 0;
         }
+        int[] result = new int[A.length];
+        List<Integer> list = new ArrayList<Integer>();
+        for (int a : A) {
+            int index = 0;
+            for (int )
+        }
+        return result;
     }
 
 }
