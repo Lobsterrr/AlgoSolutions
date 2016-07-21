@@ -73,8 +73,8 @@ public class Chapter11 {
                     low = mid + 1;
                 }
             }
-            list.add(low, A[i]);
-            result[i] = low;
+            list.add(high, A[i]);
+            result[i] = high;
         }
         return result;
     }
