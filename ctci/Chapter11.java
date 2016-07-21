@@ -67,10 +67,10 @@ public class Chapter11 {
             int high = list.size();
             while (low <= high) {
                 int mid = low + (high - low) / 2;
-                if (list.get(mid) > A[i]) {
-                    high = mid;
-                } else {
+                if (list.get(mid) < A[i]) {
                     low = mid + 1;
+                } else {
+                    high = mid;
                 }
             }
             list.add(high, A[i]);
