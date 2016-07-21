@@ -79,32 +79,4 @@ public class Chapter11 {
         return result;
     }
 
-    public int[] getRankOfNumber(int[] A, int n) {
-        if (A == null || A.length == 0) {
-            return null;
-        }
-        int[] result = new int[A.length];
-        List<Integer> list = new ArrayList<Integer>();
-        for (int i = 0; i < A.length; ++i) {
-            if (list.size() == 0) {
-                result[i] = list.size();
-                list.add(A[i]);
-            } else {
-                int low = 0;
-                int high = list.size() - 1;
-                while (low <= high) {
-                    int mid = low + (high - low) / 2;
-                    if (list.get(mid) > A[i]) {
-                        high = mid - 1;
-                    } else {
-                        low = mid + 1;
-                    }
-                }
-                result[i] = low;
-                list.add(low, A[i]);
-            }
-        }
-        return result;
-    }
-
 }
