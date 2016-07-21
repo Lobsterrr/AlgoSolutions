@@ -58,7 +58,7 @@ public class Chapter11 {
     // 11.8
     public int[] getRankOfNumber(int[] A, int n) {
         if (A == null || A.length == 0) {
-            return 0;
+            return null;
         }
         int[] result = new int[A.length];
         List<Integer> list = new ArrayList<Integer>();
