@@ -55,4 +55,9 @@ public class Chapter11 {
         return result;
     }
 
+    // 11.8
+    public int[] getRankOfNumber(int[] A, int n) {
+
+    }
+
 }
