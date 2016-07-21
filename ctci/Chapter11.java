@@ -65,7 +65,7 @@ public class Chapter11 {
         for (int i = 0; i < A.length; ++i) {
             int low = 0;
             int high = list.size();
-            while (low <= high) {
+            while (low < high) {
                 int mid = low + (high - low) / 2;
                 if (list.get(mid) < A[i]) {
                     low = mid + 1;
