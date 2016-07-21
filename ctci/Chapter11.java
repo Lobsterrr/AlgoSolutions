@@ -65,6 +65,7 @@ public class Chapter11 {
         for (int i = 0; i < A.length; ++i) {
             if (list.size() == 0) {
                 result[i] = list.size();
+                list.add(A[i]);
             } else {
                 int low = 0;
                 int high = list.size() - 1;
