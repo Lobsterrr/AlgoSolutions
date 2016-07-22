@@ -28,12 +28,12 @@ public class PatchingArray {
         int result = 0;
         int sum = 1;
         int i = 0;
-        while (i < nums.length && sum <= n) {
-            if (nums[i] > sum) {
+        while (sum <= n) {
+            if (i < nums.length && nums[i] <= sum) {
+                sum += nums[i++];
+            } else {
                 result++;
                 sum *= 2;
-            } else {
-                sum += nums[i++];
             }
         }
         return result;
