@@ -32,8 +32,8 @@ public class PatchingArray {
             if (i < nums.length && nums[i] <= sum) {
                 sum += nums[i++];
             } else {
+                sum += sum == 0 ? 1 : sum;
                 result++;
-                sum *= 2;
             }
         }
         return result;
