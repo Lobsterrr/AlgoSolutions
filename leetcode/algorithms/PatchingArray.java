@@ -29,10 +29,10 @@ public class PatchingArray {
         int sum = 1;
         int i = 0;
         while (sum <= n) {
-            if (i < nums.length && nums[i] <= sum) {
+            if (i == 0 || i < nums.length && nums[i] <= sum + 1) {
                 sum += nums[i++];
             } else {
-                sum += sum == 0 ? 1 : sum;
+                sum += sum + 1;
                 result++;
             }
         }
