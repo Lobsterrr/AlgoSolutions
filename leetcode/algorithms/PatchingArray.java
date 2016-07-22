@@ -29,7 +29,7 @@ public class PatchingArray {
         int sum = 0;
         int i = 0;
         while (sum <= n) {
-            if (i == 0 || i < nums.length && nums[i] <= sum + 1) {
+            if (i == 0 && nums.length > 0 || i < nums.length && nums[i] <= sum + 1) {
                 sum += nums[i++];
             } else {
                 sum += sum + 1;
