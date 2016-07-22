@@ -22,7 +22,7 @@ Return 0.
 public class PatchingArray {
 
     public int minPatches(int[] nums, int n) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null) {
             return -1;
         }
         int result = 0;
