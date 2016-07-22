@@ -26,7 +26,7 @@ public class PatchingArray {
             return -1;
         }
         int result = 0;
-        int sum = 1;
+        int sum = 0;
         int i = 0;
         while (sum <= n) {
             if (i == 0 || i < nums.length && nums[i] <= sum + 1) {
