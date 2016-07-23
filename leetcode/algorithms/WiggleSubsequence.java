@@ -28,11 +28,21 @@ public class WiggleSubsequence {
         int maxLen = 1;
         boolean isAsc = false;
         for (int i = 1, curLen = 1; i < nums.length; ++i) {
-            if (i == 1) {
+            if (i == 1 || curLen == 1) {
                 curLen++;
                 isAsc = nums[i] > nums[i - 1];
             } else {
+                if (isAsc) {
+                    if (nums[i] < nums[i - 1]) {
+                        curLen++;
+                        maxLen = Math.max(maxLen, curLen);
+                        isAsc = !isAsc;
+                    } else {
+                        curLen = 1;
+                    }
+                } else {
 
+                }
             }
             maxLen = Math.max(maxLen, curLen);
         }
