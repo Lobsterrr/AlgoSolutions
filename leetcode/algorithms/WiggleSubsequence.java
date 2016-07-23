@@ -22,6 +22,11 @@
 public class WiggleSubsequence {
 
     public int wiggleMaxLength(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int maxLen = 1;
+        boolean isAsc = false;
         for (int i = 0; i < nums.length; ++i) {
 
         }
