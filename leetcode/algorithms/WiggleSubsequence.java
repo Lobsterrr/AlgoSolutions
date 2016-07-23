@@ -41,6 +41,7 @@ public class WiggleSubsequence {
             }
             maxLen = Math.max(maxLen, curLen);
         }
+        return maxLen;
     }
 
 }
