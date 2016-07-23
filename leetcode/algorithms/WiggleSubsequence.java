@@ -32,16 +32,11 @@ public class WiggleSubsequence {
                 curLen++;
                 isAsc = nums[i] > nums[i - 1];
             } else {
-                if (isAsc) {
-                    if (nums[i] < nums[i - 1]) {
-                        curLen++;
-                        maxLen = Math.max(maxLen, curLen);
-                        isAsc = !isAsc;
-                    } else {
-                        curLen = 1;
-                    }
+                if (isAsc && nums[i] < nums[i - 1] || !isAsc && nums[i] > nums[i - 1]) {
+                    curLen++;
+                    isAsc = !isAsc;
                 } else {
-
+                    curLen = 1;
                 }
             }
             maxLen = Math.max(maxLen, curLen);
