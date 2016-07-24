@@ -45,28 +45,4 @@ public class WiggleSubsequence {
         return result;
     }
 
-    public int wiggleMaxLength(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-        int maxLen = 1;
-        boolean isAsc = false;
-        for (int i = 1, curLen = 1; i < nums.length; ++i) {
-            if (i == 1) {
-                curLen++;
-                isAsc = nums[i] > nums[i - 1];
-            } else {
-                if (isAsc && nums[i] < nums[i - 1] || !isAsc && nums[i] > nums[i - 1]) {
-                    curLen++;
-                    isAsc = !isAsc;
-                } else {
-                    curLen = 2;
-                    isAsc = nums[i] > nums[i - 1];
-                }
-            }
-            maxLen = Math.max(maxLen, curLen);
-        }
-        return maxLen;
-    }
-
 }
