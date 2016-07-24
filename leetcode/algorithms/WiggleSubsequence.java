@@ -70,8 +70,7 @@ public class WiggleSubsequence {
             for (int j = 0; j < i; ++j) {
                 if (nums[i] < nums[j]) {
                     dp[i][0] = Math.max(dp[i][0], dp[j][1] + 1);
-                }
-                if (nums[i] > nums[j]) {
+                } else if (nums[i] > nums[j]) {
                     dp[i][1] = Math.max(dp[i][1], dp[j][0] + 1);
                 }
                 result = Math.max(result, Math.max(dp[i][0], dp[i][1]));
