@@ -36,6 +36,20 @@ public class WiggleSubsequence {
         if (nums == null || nums.length == 0) {
             return 0;
         }
+        int count = 1;
+        for (int i = 1; i < nums.length; ++i) {
+            if (nums[i] > nums[i - 1]) {
+
+            } else if (nums[i] < nums[i - 1]) {
+
+            }
+        }
+    }
+
+    public int wiggleMaxLength(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
         int result = 1;
         //dp[i][0] means nums[i] is the smaller than the previous 
         //while dp[i][1] means larger.
