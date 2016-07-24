@@ -42,7 +42,7 @@ public class WiggleSubsequence {
                 result = Math.max(result, Math.max(dp[i][0], dp[i][1]));
             }
         }
-        return dp[nums.length];
+        return result;
     }
 
     public int wiggleMaxLength(int[] nums) {
