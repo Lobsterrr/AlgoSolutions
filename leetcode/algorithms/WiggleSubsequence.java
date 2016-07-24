@@ -32,6 +32,7 @@
  */
 public class WiggleSubsequence {
 
+    O(n) time, O(1) space.
     // 直接计算拐点个数
     public int wiggleMaxLength(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -50,6 +51,7 @@ public class WiggleSubsequence {
         return count;
     }
 
+    // O(n ^ 2) time, O(n) space.
     public int wiggleMaxLength(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
