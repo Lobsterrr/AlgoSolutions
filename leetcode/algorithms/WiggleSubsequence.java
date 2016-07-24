@@ -51,6 +51,8 @@ public class WiggleSubsequence {
         return result;
     }
 
+/*****************************************************************************/
+
     // O(n ^ 2) time, O(n) space.
     public int wiggleMaxLength(int[] nums) {
         if (nums == null || nums.length == 0) {
