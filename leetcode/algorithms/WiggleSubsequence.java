@@ -40,6 +40,24 @@ public class WiggleSubsequence {
         }
         int count = 1;
         for (int i = 1; i < nums.length; ++i) {
+            if (i > 1 && (nums[i] >= nums[i - 1] && nums[i - 1] >= nums[i - 2] || nums[i] <= nums[i - 1] && nums[i - 1] <= nums[i - 2])) {
+                continue;
+            }
+            if (nums[i] > nums[i - 1]) {
+                count++;
+            } else if (nums[i] < nums[i - 1]) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int wiggleMaxLength(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int count = 1;
+        for (int i = 1; i < nums.length; ++i) {
             if (nums[i] > nums[i - 1]) {
                 count++;
                 for (; i + 1 < nums.length && nums[i + 1] >= nums[i]; ++i);
