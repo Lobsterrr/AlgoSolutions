@@ -41,14 +41,14 @@ public class WiggleSubsequence {
             if (nums[i] > nums[i - 1]) {
                 count++;
                 int j = i;
-                while (j + 1 < nums.length && nums[j + 1] > nums[j]) {
+                while (j + 1 < nums.length && nums[j + 1] >= nums[j]) {
                     j++;
                 }
                 i = j;
             } else if (nums[i] < nums[i - 1]) {
                 count++;
                 int j = i;
-                while (j + 1 < nums.length && nums[j + 1] < nums[j]) {
+                while (j + 1 < nums.length && nums[j + 1] <= nums[j]) {
                     j++;
                 }
                 i = j;
