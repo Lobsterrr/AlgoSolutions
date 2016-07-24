@@ -26,7 +26,8 @@ public class WiggleSubsequence {
             return 0;
         }
         int result = 1;
-        int[][] dp = new int[nums.length][2];  //dp[i][0] means nums[i] is the smaller than the previous while dp[i][1] means larger.
+        //dp[i][0] means nums[i] is the smaller than the previous while dp[i][1] means larger.
+        int[][] dp = new int[nums.length][2];
         dp[0][0] = 1;
         dp[0][1] = 1;
         for (int i = 1; i < nums.length; ++i) {
