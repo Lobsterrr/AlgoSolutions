@@ -94,6 +94,7 @@ public class Chapter4 {
         if (root == null) {
             return 0;
         }
+        return 1 + Math.max(depth(root.left), root.right);
         if (root.left == null && root.right == null) {
             return 1;
         }
