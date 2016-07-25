@@ -26,7 +26,7 @@ What limitation we need to add to the question to allow negative numbers?
 public class CombinationSumIV {
 
     public int combinationSum4(int[] nums, int target) {
-        int[] dp = new int[target];
+        int[] dp = new int[target + 1];
         dp[0] = 1;
         for (int num : nums) {
             for (int i = num; i <= target; ++i) {
