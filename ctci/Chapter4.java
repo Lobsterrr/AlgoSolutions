@@ -94,6 +94,9 @@ public class Chapter4 {
         if (root == null) {
             return 0;
         }
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
     }
 
     // 4.7
