@@ -87,7 +87,7 @@ public class Chapter4 {
         if (root == null || root.left == null && root.right == null) {
             return true;
         }
-        return Math.abs(depth(root.lef) - depth(root.right)) <= 1 && checkBST(root.left) && checkBST(root.right);
+        return Math.abs(depth(root.left) - depth(root.right)) <= 1 && checkBST(root.left) && checkBST(root.right);
     }
 
     public int depth(TreeNode root) {
