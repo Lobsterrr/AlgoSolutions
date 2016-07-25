@@ -94,7 +94,7 @@ public class Chapter4 {
         if (root == null) {
             return 0;
         }
-        return 1 + Math.max(depth(root.left), root.right);
+        return 1 + Math.max(depth(root.left), depth(root.right));
     }
 
     // 4.7
