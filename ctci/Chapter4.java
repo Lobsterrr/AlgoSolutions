@@ -82,6 +82,13 @@ public class Chapter4 {
         return dummy.next;
     }
 
+    // 4.5
+    public boolean checkBST(TreeNode root) {
+        if (root == null || root.left == null && root.right == null) {
+            return true;
+        }
+    }
+
     // 4.7
     // iteration
     public int getLCA(int a, int b) {
