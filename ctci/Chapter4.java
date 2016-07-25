@@ -87,6 +87,13 @@ public class Chapter4 {
         if (root == null || root.left == null && root.right == null) {
             return true;
         }
+        
+    }
+
+    public int depth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
     }
 
     // 4.7
