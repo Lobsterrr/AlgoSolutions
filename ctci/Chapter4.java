@@ -111,7 +111,7 @@ public class Chapter4 {
 /*******************************************************************/
 
     public boolean checkBST(TreeNode root) {
-        return checkBST(root, Integer.MIN_VALUE - 1, Integer.MAX_VALUE + 1);
+        return checkBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
     public boolean checkBST(TreeNode root, long min, long max) {
