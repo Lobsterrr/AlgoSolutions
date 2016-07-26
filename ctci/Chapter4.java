@@ -87,17 +87,25 @@ public class Chapter4 {
         if (root == null || root.left == null && root.right == null) {
             return true;
         }
-        if (root.left != null && root.val <= root.left.val || root.right != null && root.val >= root.right.val) {
-            return false;
+        if (root.left != null) {
+            TreeNode node = root.left;
+            while (node.right != null) {
+                node = node.right;
+            }
+            if (root.val <= root.left.val || root.val <= node.val) {
+                return false;
+            }
         }
-        return Math.abs(depth(root.left) - depth(root.right)) <= 1 && checkBST(root.left) && checkBST(root.right);
-    }
-
-    public int depth(TreeNode root) {
-        if (root == null) {
-            return 0;
+        if (root.right != null) {
+            TreeNode node = root.right;
+            while (node.left != null) {
+                node = node.left;
+            }
+            if (root.val >= root.right.val || root.val >= node.val) {
+                return false;
+            }
         }
-        return 1 + Math.max(depth(root.left), depth(root.right));
+        return checkBST(root.left) && checkBST(root.right);
     }
 
     // 4.7
