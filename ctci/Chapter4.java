@@ -84,7 +84,7 @@ public class Chapter4 {
 
     // 4.5
     public boolean checkBST(TreeNode root) {
-        if (root == null || root.left == null && root.right == null) {
+        if (root == null) {
             return true;
         }
         if (root.left != null) {
