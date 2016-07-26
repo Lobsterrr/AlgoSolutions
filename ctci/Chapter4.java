@@ -108,6 +108,21 @@ public class Chapter4 {
         return checkBST(root.left) && checkBST(root.right);
     }
 
+/*******************************************************************/
+
+    public boolean checkBST(TreeNode root) {
+        checkBST(root, Integer.MIN_VALUE - 1, Integer.MAX_VALUE + 1);
+    }
+
+    public boolean checkBST(TreeNode root, long min, long max) {
+        if (root == null) {
+            return true;
+        }
+        return min < root.val && root.val < max 
+            && checkBST(root.left, min, root.val) 
+            && checkBST(root.right, root.val, max);
+    }
+
     // 4.7
     // iteration
     public int getLCA(int a, int b) {
