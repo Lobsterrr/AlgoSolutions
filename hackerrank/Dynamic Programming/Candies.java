@@ -48,7 +48,7 @@ public class Candies {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
         int[] ratings = new int[N];
-
+        System.out.println(minCandies(ratings));
     }
 
     public static long minCandies(int[] ratings) {
