@@ -92,7 +92,7 @@ public class Chapter4 {
             while (cur.right != null) {
                 cur = cur.right;
             }
-            if (root.val <= root.left.val || root.val <= cur.val) {
+            if (root.val <= cur.val) {
                 return false;
             }
         }
@@ -101,7 +101,7 @@ public class Chapter4 {
             while (cur.left != null) {
                 cur = cur.left;
             }
-            if (root.val >= root.right.val || root.val >= cur.val) {
+            if (root.val >= cur.val) {
                 return false;
             }
         }
