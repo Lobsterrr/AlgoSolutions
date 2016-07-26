@@ -88,20 +88,20 @@ public class Chapter4 {
             return true;
         }
         if (root.left != null) {
-            TreeNode node = root.left;
-            while (node.right != null) {
-                node = node.right;
+            TreeNode cur = root.left;
+            while (cur.right != null) {
+                cur = cur.right;
             }
-            if (root.val <= root.left.val || root.val <= node.val) {
+            if (root.val <= root.left.val || root.val <= cur.val) {
                 return false;
             }
         }
         if (root.right != null) {
-            TreeNode node = root.right;
-            while (node.left != null) {
-                node = node.left;
+            TreeNode cur = root.right;
+            while (cur.left != null) {
+                cur = cur.left;
             }
-            if (root.val >= root.right.val || root.val >= node.val) {
+            if (root.val >= root.right.val || root.val >= cur.val) {
                 return false;
             }
         }
