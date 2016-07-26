@@ -48,6 +48,9 @@ public class Candies {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
         int[] ratings = new int[N];
+        for (int i = 0; i < N; ++i) {
+            ratings[i] = in.nextInt();
+        }
         System.out.println(minCandies(ratings));
     }
 
