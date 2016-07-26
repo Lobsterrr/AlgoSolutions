@@ -87,6 +87,9 @@ public class Chapter4 {
         if (root == null || root.left == null && root.right == null) {
             return true;
         }
+        if (root.left != null && root.val <= root.left.val || root.right != null && root.val >= root.right.val) {
+            return false;
+        }
         return Math.abs(depth(root.left) - depth(root.right)) <= 1 && checkBST(root.left) && checkBST(root.right);
     }
 
