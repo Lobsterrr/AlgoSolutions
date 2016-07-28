@@ -57,9 +57,24 @@ public class TheMaximumSubarray {
             }
             int sum1 = Integer.MIN_VALUE;
             int sum2 = Integer.MIN_VALUE;
-            for (int j = 0; j < N; ++j) {
-
+            for (int j = 0, curSum1 = 0,; j < N; ++j) {
+                curSum1 += array[j];
+                curSum2 += array[j];
+                sum1 = Math.max(sum1, curSum1);
+                if (sum2 == Integer.MIN_VALUE) {
+                    sum2 = array[j];
+                }
+                if (array[j] > 0) {
+                    if (sum2 < 0) {
+                        sum2 = 0;
+                    }
+                    sum2 += array[j];
+                }
+                if (curSum1 < 0) {
+                    curSum1 = 0;
+                }
             }
+            System.out.println(sum1 + " " + sum2);
         }
     }
 
