@@ -69,7 +69,8 @@ public class TheMaximumSubarray {
                     sum2 = Math.max(sum2 + array[j], Math.max(array[j], sum2));
                 }
             }
-            System.out.println(sum1 + " " + sum2);    
+            System.out.println(sum1 + " " + sum2);
+        }
     }
 
 }
