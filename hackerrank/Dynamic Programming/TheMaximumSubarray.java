@@ -51,7 +51,15 @@ public class TheMaximumSubarray {
         int T = in.nextInt();
         for (int i = 0; i < T; ++i) {
             int N = in.nextInt();
+            int[] array = new int[N];
+            for (int j = 0; j < N; ++j) {
+                array[j] = in.nextInt();
+            }
+            int sum1 = Integer.MIN_VALUE;
+            int sum2 = Integer.MIN_VALUE;
+            for (int j = 0; j < N; ++j) {
 
+            }
         }
     }
 
