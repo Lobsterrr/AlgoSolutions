@@ -68,11 +68,8 @@ public class TheMaximumSubarray {
                 if (curSum1 < 0) {
                     curSum1 = 0;
                 }
-                if (j == 0) {
-                    sum2 += array[j];
-                } else {
-                    sum2 = Math.max(sum2 + array[j], Math.max(array[j], sum2));
-                }
+                sum2 = j == 0 ? array[j] : 
+                    Math.max(sum2 + array[j], Math.max(array[j], sum2));
             }
             System.out.println(sum1 + " " + sum2);
         }
