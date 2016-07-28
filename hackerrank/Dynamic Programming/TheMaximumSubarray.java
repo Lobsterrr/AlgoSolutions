@@ -56,25 +56,20 @@ public class TheMaximumSubarray {
                 array[j] = in.nextInt();
             }
             int sum1 = Integer.MIN_VALUE;
-            int sum2 = Integer.MIN_VALUE;
+            int sum2 = 0;
             for (int j = 0, curSum1 = 0; j < N; ++j) {
                 curSum1 += array[j];
                 sum1 = Math.max(sum1, curSum1);
                 if (curSum1 < 0) {
                     curSum1 = 0;
                 }
-                if (sum2 == Integer.MIN_VALUE) {
-                    sum2 = array[j];
-                }
-                
-                if (sum2 == Integer.MIN_VALUE) {
+                if (j == 0) {
                     sum2 += array[j];
                 } else {
                     sum2 = Math.max(sum2 + array[j], Math.max(array[j], sum2));
                 }
             }
-            System.out.println(sum1 + " " + sum2);
-        }
+            System.out.println(sum1 + " " + sum2);    
     }
 
 }
