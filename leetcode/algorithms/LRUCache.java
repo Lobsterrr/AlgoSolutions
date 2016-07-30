@@ -6,8 +6,12 @@ set(key, value) - Set or insert the value if the key is not already present. Whe
  */
 public class LRUCache {
 
+    List<Integer> list;
+    int cacheIndex;
+
     public LRUCache(int capacity) {
-        
+        list = new LinkedList<Integer>();
+        cacheIndex = 0;
     }
     
     public int get(int key) {
@@ -15,7 +19,12 @@ public class LRUCache {
     }
     
     public void set(int key, int value) {
-        
+        if (get(key) == -1) {
+            list.add(value);
+            cacheIndex = list.size() - 1;
+        } else {
+            
+        }
     }
 
 }
