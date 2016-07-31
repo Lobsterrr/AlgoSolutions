@@ -18,14 +18,15 @@ public class CopyBooks {
         }
         int[] pageSum = new int[page.length];
         int maxPage = 0;
+        int[] dp = new int[k + 1][pages.length + 1];
         for (int i = 0; i < pages.length; ++i) {
             pageSum[i] = i == 0 ? pages[i] : pages[i] + pageSum[i - 1];
             maxPage = Math.max(maxPage, pages[i]);
+            dp[1][i + 1] = pageSum[i];
         }
         if (k >= pages.length) {
             return maxPage;
         }
-        int[] dp = new int[k + 1][pages.length + 1];
         for (int i = 2; i <= k; ++i) {
             for (int j = 1; j < pages.length; ++j) {
                 for (int p = i - 1; p < j; ++p) {
