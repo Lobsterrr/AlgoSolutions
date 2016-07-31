@@ -28,9 +28,14 @@ public class CopyBooks {
         int[] dp = new int[k + 1][pages.length + 1];
         for (int i = 2; i <= k; ++i) {
             for (int j = 1; j < pages.length; ++j) {
-
+                for (int p = i - 1; p < j; ++p) {
+                    int last = dp[i - 1][j];
+                    int cur = pageSum[j] - pageSum[p];
+                    dp[i][j] = Math.min(dp[i][j], Math.max(last, cur));
+                }
             }
         }
+        return dp[k][pages.length];
     }
 
 }
