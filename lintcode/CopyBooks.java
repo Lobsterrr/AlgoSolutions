@@ -31,7 +31,7 @@ public class CopyBooks {
             for (int j = 1; j < pages.length; ++j) {
                 dp[i][j] = Integer.MAX_VALUE;
                 for (int p = i - 1; p < j; ++p) {
-                    int last = dp[i - 1][j];
+                    int last = dp[i - 1][p];
                     int cur = pageSum[j] - pageSum[p];
                     dp[i][j] = Math.min(dp[i][j], Math.max(last, cur));
                 }
