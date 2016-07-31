@@ -13,7 +13,24 @@ Could you do this in O(n*k) time ?
 public class CopyBooks {
 
     public int copyBooks(int[] pages, int k) {
+        if (pages == null || pages.length == 0) {
+            return 0;
+        }
+        int[] pageSum = new int[page.length];
+        int maxPage = 0;
+        for (int i = 0; i < pages.length; ++i) {
+            pageSum[i] = i == 0 ? pages[i] : pages[i] + pageSum[i - 1];
+            maxPage = Math.max(maxPage, pages[i]);
+        }
+        if (k >= pages.length) {
+            return maxPage;
+        }
+        int[] dp = new int[k + 1][pages.length + 1];
+        for (int i = 2; i <= k; ++i) {
+            for (int j = 1; j < pages.length; ++j) {
 
+            }
+        }
     }
 
 }
