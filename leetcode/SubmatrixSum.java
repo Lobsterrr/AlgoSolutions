@@ -29,8 +29,12 @@ public class SubmatrixSum {
         int yLen = matrix[0].length;
         int[][] sum = new int[xLen + 1][yLen + 1];
         for (int i = 0; i < xLen; ++i) {
-            for (int j = 0; j < yLen; ++j) {
-
+            for (int j = i; j < xLen; ++j) {
+                Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+                for (int k = 0; k < yLen; ++k) {
+                    int area = 
+                    if (map.containsKey())
+                }
             }
         }
     }
