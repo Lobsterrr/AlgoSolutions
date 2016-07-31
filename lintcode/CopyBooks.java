@@ -16,7 +16,7 @@ public class CopyBooks {
         if (pages == null || pages.length == 0) {
             return 0;
         }
-        int[] pageSum = new int[page.length];
+        int[] pageSum = new int[pages.length];
         int maxPage = 0;
         int[] dp = new int[k + 1][pages.length + 1];
         for (int i = 0; i < pages.length; ++i) {
