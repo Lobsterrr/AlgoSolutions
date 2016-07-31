@@ -16,6 +16,8 @@ O(n ^ 3) time.
  */
 public class SubmatrixSum {
 
+    public int[][] submatrixSum(int[][] matrix) {
 
+    }
 
 }
