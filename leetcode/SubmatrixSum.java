@@ -32,8 +32,12 @@ public class SubmatrixSum {
             for (int j = i; j < xLen; ++j) {
                 Map<Integer, Integer> map = new HashMap<Integer, Integer>();
                 for (int k = 0; k < yLen; ++k) {
-                    int area = 
-                    if (map.containsKey())
+                    int area = sum[j + 1][k + 1] - sum[i + 1][k + 1];
+                    if (map.containsKey(area)) {
+                        result[0][1] = i
+                    } else {
+                        map.put(area, k);
+                    }
                 }
             }
         }
