@@ -18,7 +18,7 @@ public class CopyBooks {
         }
         int[] pageSum = new int[pages.length];
         int maxPage = 0;
-        int[] dp = new int[k + 1][pages.length + 1];
+        int[][] dp = new int[k + 1][pages.length + 1];
         for (int i = 0; i < pages.length; ++i) {
             pageSum[i] = i == 0 ? pages[i] : pages[i] + pageSum[i - 1];
             maxPage = Math.max(maxPage, pages[i]);
