@@ -7,7 +7,6 @@
  * continuous.) Each person have can copy one page per minute. Return 
  * the number of smallest minutes need to copy all the books.
 
-Have you met this question in a real interview? Yes
 Example
 Given array A = [3,2,4], k = 2.
 
