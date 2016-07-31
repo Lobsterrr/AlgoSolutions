@@ -21,7 +21,18 @@ public class SubmatrixSum {
      * @return the coordinate of the left-up and right-down number
      */
     public int[][] submatrixSum(int[][] matrix) {
+        int[][] result = new int[2][2];
+        if (matrix == null || matrix.length == 0) {
+            return result;
+        }
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+        int[][] sum = new int[xLen + 1][yLen + 1];
+        for (int i = 0; i < xLen; ++i) {
+            for (int j = 0; j < yLen; ++j) {
 
+            }
+        }
     }
 
 }
