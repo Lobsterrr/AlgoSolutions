@@ -1,5 +1,6 @@
 /*
- * Given an integer matrix, find a submatrix where the sum of numbers is zero. Your code should return the coordinate of the left-up and right-down number.
+ * Given an integer matrix, find a submatrix where the sum of numbers is zero. 
+ * Your code should return the coordinate of the left-up and right-down number.
 
 Example
 Given matrix
@@ -30,7 +31,8 @@ public class SubmatrixSum {
         int[][] sum = new int[xLen + 1][yLen + 1];
         for (int i = 0; i < xLen; ++i) {
             for (int j = 0; j < yLen; ++j) {
-                sum[i + 1][j + 1] = matrix[i][j] + sum[i + 1][j] + sum[i][j + 1] - sum[i][j];
+                sum[i + 1][j + 1] = matrix[i][j] 
+                    + sum[i + 1][j] + sum[i][j + 1] - sum[i][j];
             }
         }
         for (int i = 0; i < xLen; ++i) {
