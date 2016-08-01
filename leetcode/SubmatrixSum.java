@@ -30,14 +30,15 @@ public class SubmatrixSum {
         int[][] sum = new int[xLen + 1][yLen + 1];
         for (int i = 0; i < xLen; ++i) {
             for (int j = 0; j < yLen; ++j) {
-                if (i == 0 && j == 0) {
-                    sum[i + 1][j + 1] = matrix[i][j];
-                } else if (i == 0 && j > 0) {
-                    sum[i + 1][j + 1] = sum[i + 1][j] + matrix[i][j];
-                } else if (i > 0 && j == 0) {
-                    sum[i + 1][j + 1] = sum[i][j + 1] + matrix[i][j];
-                } else {
-                    sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + matrix[i][j];
+                sum[i + 1][j + 1] = matrix[i][j];
+                if (i > 0) {
+                    sum[i + 1][j + 1] += sum[i][j + 1];
+                }
+                if (j > 0) {
+                    sum[i + 1][j + 1] += sum[i + 1][j];
+                }
+                if (i > 0 && j > 0) {
+                    sum[i + 1][j + 1] -= sum[i][j];
                 }
             }
         }
@@ -48,8 +49,8 @@ public class SubmatrixSum {
                     int area = sum[j][k + 1] - sum[i][k + 1];
                     if (map.containsKey(area)) {
                         result[0][0] = i;
-                        result[0][1] = map.get(area);
-                        result[1][0] = j;
+                        result[0][1] = map.get(area) + 1;
+                        result[1][0] = j - 1;
                         result[1][1] = k;
                         return result;
                     } else {
