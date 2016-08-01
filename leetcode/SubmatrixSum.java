@@ -33,11 +33,19 @@ public class SubmatrixSum {
                 if (i == 0 && j == 0) {
                     sum[i + 1][j + 1] = matrix[i][j];
                 } else if (i == 0 && j > 0) {
-                    sum[i + 1][j + 1] = 
+                    sum[i + 1][j + 1] = sum[i + 1][j] + matrix[i][j];
                 } else if (i > 0 && j == 0) {
-
+                    sum[i + 1][j + 1] = sum[i][j + 1] + matrix[i][j];
                 } else {
+                    sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + matrix[i][j];
+                }
+
+
+                if (i > 0 && j > 0) {
                     sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j];
+                } else {
+                    sum[i + 1][j + 1] += matrix[i][j];
+                    if ()
                 }
             }
         }
