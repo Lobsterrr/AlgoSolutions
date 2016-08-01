@@ -45,13 +45,13 @@ public class SubmatrixSum {
         for (int i = 0; i < xLen; ++i) {
             for (int j = i + 1; j <= xLen; ++j) {
                 Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-                for (int k = 0; k < yLen; ++k) {
-                    int area = sum[j][k + 1] - sum[i][k + 1];
+                for (int k = 0; k <= yLen; ++k) {
+                    int area = sum[j][k] - sum[i][k];
                     if (map.containsKey(area)) {
                         result[0][0] = i;
-                        result[0][1] = map.get(area) + 1;
+                        result[0][1] = map.get(area);
                         result[1][0] = j - 1;
-                        result[1][1] = k;
+                        result[1][1] = k - 1;
                         return result;
                     } else {
                         map.put(area, k);
