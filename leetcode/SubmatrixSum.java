@@ -31,13 +31,13 @@ public class SubmatrixSum {
         for (int i = 0; i < xLen; ++i) {
             for (int j = 0; j < yLen; ++j) {
                 if (i == 0 && j == 0) {
-
+                    sum[i + 1][j + 1] = matrix[i][j];
                 } else if (i == 0 && j > 0) {
-
+                    sum[i + 1][j + 1] = 
                 } else if (i > 0 && j == 0) {
 
                 } else {
-
+                    sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j];
                 }
             }
         }
