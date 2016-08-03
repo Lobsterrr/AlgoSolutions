@@ -19,7 +19,28 @@
 public class KthSmallestElementInASortedMatrix {
 
     public int kthSmallest(int[][] matrix, int k) {
-        
+        if (matrix == null || matrix.length == 0) {
+            return 0;
+        }
+        List<Integer> list = new ArrayList<Integer>();
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+        int[] index = new int[yLen];
+        while (list.size() < k) {
+            int min = Integer.MAX_VALUE;
+            int minIndex = 0;
+            for (int i = 0; i < yLen; ++i) {
+                if (index[i] < xLen) {
+                    if (min >= matrix[index[i]][i]) {
+                        min = matrix[index[i]][i];
+                        minIndex = i;
+                    }
+                }
+            }
+            index[minIndex]++;
+            list.add(min);
+        }
+        return list.get(k - 1);
     }
 
 }
