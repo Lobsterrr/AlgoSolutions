@@ -32,13 +32,11 @@ public class KthSmallestElementInASortedMatrix {
             if (count < k) {
                 low = mid + 1;
             } else {
-                high = mid - 1;
+                high = mid;
             }
         }
         return low;
     }
-
-/*******************************************************************/
 
     public int searchSmallerCount(int[][] matrix, int target) {
         int i = matrix.length - 1;
@@ -54,6 +52,8 @@ public class KthSmallestElementInASortedMatrix {
         }
         return count;
     }
+
+/*******************************************************************/
 
     // time O(k * n), space O(max(n, k))
     public int kthSmallest(int[][] matrix, int k) {
