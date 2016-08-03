@@ -27,6 +27,21 @@ public class KthSmallestElementInASortedMatrix {
 
     }
 
+    public int searchSmallerCount(int[][] matrix, int target) {
+        int i = matrix.length - 1;
+        int j = 0;
+        int count = 0;
+        while (i >= 0 && j < matrix[0].length) {
+            if (matrix[i][j] < target) {
+                j++;
+                count += i + 1;
+            } else {
+                i--;
+            }
+        }
+        return count;
+    }
+
     // time O(k * n), space O(max(n, k))
     public int kthSmallest(int[][] matrix, int k) {
         if (matrix == null || matrix.length == 0) {
