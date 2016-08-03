@@ -20,7 +20,7 @@ public class KthSmallestElementInASortedMatrix {
 
     public int kthSmallest(int[][] matrix, int k) {
         if (matrix == null || matrix.length == 0) {
-            return 0;
+            throw new IllegalArgumentException();
         }
         List<Integer> list = new ArrayList<Integer>();
         int xLen = matrix.length;
