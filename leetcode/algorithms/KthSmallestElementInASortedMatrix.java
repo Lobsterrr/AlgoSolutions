@@ -20,6 +20,8 @@
  */
 public class KthSmallestElementInASortedMatrix {
 
+    // time O(n * lg(matrix[matrix.length - 1][matrix[0].length - 1] -
+    // matrix[0][0]))
     public int kthSmallest(int[][] matrix, int k) {
         if (matrix == null || matrix.length == 0) {
             throw new IllegalArgumentException();
