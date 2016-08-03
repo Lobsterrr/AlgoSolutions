@@ -26,14 +26,12 @@ public class KthSmallestElementInASortedMatrix {
             throw new IllegalArgumentException();
         }
         List<Integer> list = new ArrayList<Integer>();
-        int xLen = matrix.length;
-        int yLen = matrix[0].length;
-        int[] index = new int[yLen];
+        int[] index = new int[matrix[0].length];
         while (list.size() < k) {
             int min = Integer.MAX_VALUE;
             int minIndex = 0;
-            for (int i = 0; i < yLen; ++i) {
-                if (index[i] < xLen) {
+            for (int i = 0; i < matrix[0].length; ++i) {
+                if (index[i] < matrix.length) {
                     if (min >= matrix[index[i]][i]) {
                         min = matrix[index[i]][i];
                         minIndex = i;
