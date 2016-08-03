@@ -24,7 +24,18 @@ public class KthSmallestElementInASortedMatrix {
         if (matrix == null || matrix.length == 0) {
             throw new IllegalArgumentException();
         }
-
+        int low = matrix[0][0];
+        int high = matrix[matrix.length - 1][matrix[0].length - 1];
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            int count = searchSmallerCount(matrix, mid);
+            if (count < k) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return low;
     }
 
     public int searchSmallerCount(int[][] matrix, int target) {
@@ -32,7 +43,7 @@ public class KthSmallestElementInASortedMatrix {
         int j = 0;
         int count = 0;
         while (i >= 0 && j < matrix[0].length) {
-            if (matrix[i][j] < target) {
+            if (matrix[i][j] <= target) {
                 j++;
                 count += i + 1;
             } else {
