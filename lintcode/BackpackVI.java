@@ -5,7 +5,6 @@
 
 The different sequences are counted as different combinations.
 
-Have you met this question in a real interview? Yes
 Example
 Given nums = [1, 2, 4], target = 4
 
