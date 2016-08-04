@@ -23,16 +23,12 @@ public class SimplifyPath {
      */
     public String simplifyPath(String path) {
         String[] array = path.split("/");
-        List<String> list = new ArrayList<String>();
+        LinkedList<String> list = new LinkedList<String>();
         for (String s : array) {
-            if (s.equals(".") || s.equals("")) {
-                continue;
+            if (s.equals("..") && list.size() > 0) {
+                list.removeLast();
             }
-            if (s.equals("..")) {
-                if (list.size() > 0) {
-                    list.remove(list.size() - 1);
-                }
-            } else {
+            if (!s.equals(".") && !s.equals("")) {
                 list.add(s);
             }
         }
