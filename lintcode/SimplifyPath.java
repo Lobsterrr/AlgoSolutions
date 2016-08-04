@@ -28,8 +28,10 @@ public class SimplifyPath {
             if (s.equals(".") || s.equals("")) {
                 continue;
             }
-            if (s.equals("..") && list.size() > 0) {
-                list.remove(list.size() - 1);
+            if (s.equals("..")) > 0) {
+                if (list.size()) {
+                    list.remove(list.size() - 1);
+                }
             } else {
                 list.add(s);
             }
