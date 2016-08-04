@@ -34,10 +34,14 @@ public class SimplifyPath {
                 list.add(s);
             }
         }
-        String result = "/";
+        String result = "";
         for (String s : list) {
-
+            result += "/" + s;
         }
+        if (result.length() == 0) {
+            result += "/";
+        }
+        return result;
     }
 
 }
