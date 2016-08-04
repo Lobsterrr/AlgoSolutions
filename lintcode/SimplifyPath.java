@@ -28,7 +28,7 @@ public class SimplifyPath {
             if (s.equals("..") && list.size() > 0) {
                 list.removeLast();
             }
-            if (!s.equals(".") && !s.equals("")) {
+            if (!s.equals(".") && !s.equals("..") && !s.equals("")) {
                 list.add(s);
             }
         }
