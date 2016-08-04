@@ -1,7 +1,6 @@
 /*
  * Given an absolute path for a file (Unix-style), simplify it.
 
-Have you met this question in a real interview? Yes
 Example
 "/home/", => "/home"
 
