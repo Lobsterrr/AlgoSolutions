@@ -22,7 +22,22 @@ public class SimplifyPath {
      * @return the simplified path
      */
     public String simplifyPath(String path) {
+        String[] array = path.split("/");
+        List<String> list = new ArrayList<String>();
+        for (String s : array) {
+            if (s.equals(".")) {
+                continue;
+            }
+            if (s.equals("..") && list.size() > 0) {
+                list.remove(list.size() - 1);
+            } else {
+                list.add(s);
+            }
+        }
+        String result = "/";
+        for (String s : list) {
 
+        }
     }
 
 }
