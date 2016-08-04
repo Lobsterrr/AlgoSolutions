@@ -69,6 +69,11 @@ public class Chapter7 {
         return flag ? result : negative(result);
     }
 
+    // 7.5
+    public double[] getBipartition(Point[] A, Point[] B) {
+
+    }
+
     // 7.7
     public int findKth(int k) {
         if (k <= 0) {
@@ -120,4 +125,17 @@ public class Chapter7 {
         return result - 1;
     }
 
+}
+
+class Point {
+    int x;
+    int y;
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    public Point() {
+        this.x = 0;
+        this.y = 0;
+    }
 }
