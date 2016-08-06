@@ -5,7 +5,6 @@
 
 We suggest you finish problem Segment Tree Build and Segment Tree Query II first.
 
-Have you met this question in a real interview? Yes
 Example
 For array [1,2,7,8,5], and queries [1,8,5], return [0,4,2]
 
