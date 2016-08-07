@@ -23,7 +23,18 @@ public class CountOfSmallerNumber {
      *          are smaller that the given integer
      */
     public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
-
+        ArrayList<Inteter> result = new ArrayList<Inteter>();
+        if (A == null || A.length == 0 || queries == null || queries.length == 0) {
+            return result;
+        }
+        for (int query : queries) {
+            int count = 0;
+            for (int a : A) {
+                count += a < query ? 1 : 0;
+            }
+            result.add(count);
+        }
+        return result;
     }
 
 }
