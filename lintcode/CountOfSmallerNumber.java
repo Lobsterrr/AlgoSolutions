@@ -1,9 +1,13 @@
 /*
- * Give you an integer array (index from 0 to n-1, where n is the size of this array, value from 0 to 10000) and an query list. For each query, give you an integer, return the number of element in the array that are smaller than the given integer.
+ * Give you an integer array (index from 0 to n-1, where n is the size of this 
+ * array, value from 0 to 10000) and an query list. For each query, give you an 
+ * integer, return the number of element in the array that are smaller than the 
+ * given integer.
 
  Notice
 
-We suggest you finish problem Segment Tree Build and Segment Tree Query II first.
+We suggest you finish problem Segment Tree Build and Segment Tree Query II 
+first.
 
 Example
 For array [1,2,7,8,5], and queries [1,8,5], return [0,4,2]
@@ -24,7 +28,8 @@ public class CountOfSmallerNumber {
      */
     public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
         ArrayList<Inteter> result = new ArrayList<Inteter>();
-        if (A == null || A.length == 0 || queries == null || queries.length == 0) {
+        if (A == null || A.length == 0 
+                || queries == null || queries.length == 0) {
             return result;
         }
         for (int query : queries) {
