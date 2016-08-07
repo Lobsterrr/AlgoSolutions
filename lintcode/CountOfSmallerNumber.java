@@ -28,8 +28,7 @@ public class CountOfSmallerNumber {
      */
     public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-        if (A == null || A.length == 0 
-                || queries == null || queries.length == 0) {
+        if (queries == null || queries.length == 0) {
             return result;
         }
         for (int query : queries) {
