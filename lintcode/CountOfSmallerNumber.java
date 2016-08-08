@@ -26,6 +26,10 @@ public class CountOfSmallerNumber {
      * @return: The number of element in the array that 
      *          are smaller that the given integer
      */
+
+
+/*****************************************************************************/
+
     public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         if (queries == null || queries.length == 0) {
