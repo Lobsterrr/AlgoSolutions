@@ -26,10 +26,12 @@ public class MinimumAdjustmentCost {
         if (A == null || A.length == 0) {
             return 0;
         }
+        int result = 0;
         int[] dp = new int[A.length];
         for (int i = 0; i < A.length; ++i) {
-
+            
         }
+        return result;
     }
 
 }
