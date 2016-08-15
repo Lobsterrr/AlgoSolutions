@@ -9,7 +9,9 @@ public class Pow {
         double base = n >= 0 ? x : 1 / x;
         n = Math.abs(n);
         while (n > 0) {
-            result *= base;
+            if (n % 2 != 0) {
+                result *= base;
+            }
             base *= base;
             n /= 2;
         }
