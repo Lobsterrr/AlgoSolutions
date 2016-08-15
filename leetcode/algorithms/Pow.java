@@ -6,7 +6,7 @@ public class Pow {
 
     public double myPow(double x, int n) {
         double result = 1.0;
-        long step = Math.abs(n);
+        long step = Math.abs((long) n);
         if (n < 0) {
             x = 1.0 / x;
         }
