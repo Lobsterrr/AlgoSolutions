@@ -6,14 +6,16 @@ public class Pow {
 
     public double myPow(double x, int n) {
         double result = 1.0;
-        double base = n >= 0 ? x : 1 / x;
-        n = Math.abs(n);
-        while (n > 0) {
-            if (n % 2 != 0) {
-                result *= base;
+        long step = Math.abs(n);
+        if (n < 0) {
+            x = 1.0 / x;
+        }
+        while (step > 0) {
+            if (step % 2 != 0) {
+                result *= x;
             }
-            base *= base;
-            n /= 2;
+            x *= x;
+            step >>= 1;
         }
         return result;
     }
