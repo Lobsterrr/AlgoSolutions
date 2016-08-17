@@ -1,5 +1,10 @@
 public class Chapter3 {
 
+    // 3.3
+    public ArrayList<ArrayList<Integer>> setOfStacks(int[][] ope, int size) {
+        // write code here
+    }
+
     // 3.5
     Stack<Integer> stack1 = new Stack<Integer>();
     Stack<Integer> stack2 = new Stack<Integer>();
