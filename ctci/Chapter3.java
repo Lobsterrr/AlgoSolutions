@@ -15,10 +15,17 @@ public class Chapter3 {
                 }
                 list.add(ope[i][1]);
             } else if (ope[i][0] == 2) {// pop
-                
+                if (list.size() == 0 && result.size() > 0) {
+                    list = result.remove(result.size() - 1); 
+                }
+                if (list.size() > 0) {
+                    list.remove(list.size() - 1);
+                }
             }
         }
-
+        if (list.size() > 0) {
+            result.add(list);
+        }
         return result;
     }
 
