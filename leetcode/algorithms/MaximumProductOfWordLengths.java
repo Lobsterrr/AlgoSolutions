@@ -23,7 +23,10 @@
 public class MaximumProductOfWordLengths {
 
     public int maxProduct(String[] words) {
+        int result = 0;
 
+
+        return result;
     }
 
 }
