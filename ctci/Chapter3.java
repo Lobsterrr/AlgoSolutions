@@ -2,7 +2,12 @@ public class Chapter3 {
 
     // 3.3
     public ArrayList<ArrayList<Integer>> setOfStacks(int[][] ope, int size) {
-        // write code here
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if (ope == null || ope.length == 0) {
+            return result;
+        }
+
+        return result;
     }
 
     // 3.5
