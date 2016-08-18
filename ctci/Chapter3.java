@@ -6,6 +6,18 @@ public class Chapter3 {
         if (ope == null || ope.length == 0) {
             return result;
         }
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i = 0; i < ope.length; ++i) {
+            if (ope[i][0] == 1) {// push
+                if (list.size() >= size) {
+                    result.add(list);
+                    list = new ArrayList<Integer>();
+                }
+                list.add(ope[i][1]);
+            } else if (ope[i][0] == 2) {// pop
+                
+            }
+        }
 
         return result;
     }
