@@ -24,8 +24,14 @@ public class MaximumProductOfWordLengths {
 
     public int maxProduct(String[] words) {
         int result = 0;
-
-
+        for (int i = 0; i < words.length; ++i) {
+            if (words[i].length() == 0) {
+                continue;
+            }
+            for (int j = i + 1; j < words.length; ++j) {
+                result = Math.max(result, words[i].length() * words[j].length());
+            }
+        }
         return result;
     }
 
