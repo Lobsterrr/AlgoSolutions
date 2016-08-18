@@ -29,4 +29,22 @@ public class MaximumProductOfWordLengths {
         return result;
     }
 
+    public boolean hasNoCommonLetters(String s1, String s2) {
+        if (s1 == null || s2 == null) {
+            return true;
+        }
+        int[] count = new int[26];
+        for (int i = 0; i < s1.length(); ++i) {
+            if (count[s1.charAt(i) - 'a'] == 0) {
+                count[s1.charAt(i) - 'a']++;
+            }
+        }
+        for (int i = 0; i < s2.length(); ++i) {
+            if (count[s2.charAt(i) - 'a'] > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
