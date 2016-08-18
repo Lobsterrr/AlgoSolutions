@@ -29,7 +29,9 @@ public class MaximumProductOfWordLengths {
                 continue;
             }
             for (int j = i + 1; j < words.length; ++j) {
-                result = Math.max(result, words[i].length() * words[j].length());
+                if (hasNoCommonLetters(words[i], words[j])) {
+                    result = Math.max(result, words[i].length() * words[j].length());
+                }
             }
         }
         return result;
