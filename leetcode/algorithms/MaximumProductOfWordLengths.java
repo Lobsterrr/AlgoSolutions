@@ -23,6 +23,16 @@
 public class MaximumProductOfWordLengths {
 
     public int maxProduct(String[] words) {
+        if (words == null || words.length == 0) {
+            return 0;
+        }
+        int[] mask = new int[26];
+        for (int i = 0; i < words.length; ++i) {
+
+        }
+    }
+
+    public int maxProduct(String[] words) {
         int result = 0;
         for (int i = 0; i < words.length; ++i) {
             if (words[i].length() == 0) {
