@@ -27,7 +27,7 @@ public class MaximumProductOfWordLengths {
             return 0;
         }
         int result = 0;
-        int[] masks = new int[26];
+        int[] masks = new int[words.length];
         for (int i = 0; i < words.length; ++i) {
             int mask = 0;
             for (int j = 0; j < words[i].length(); ++j) {
