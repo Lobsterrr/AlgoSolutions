@@ -43,37 +43,4 @@ public class MaximumProductOfWordLengths {
         return result;
     }
 
-    public int maxProduct(String[] words) {
-        int result = 0;
-        for (int i = 0; i < words.length; ++i) {
-            if (words[i].length() == 0) {
-                continue;
-            }
-            for (int j = i + 1; j < words.length; ++j) {
-                if (hasNoCommonLetters(words[i], words[j])) {
-                    result = Math.max(result, words[i].length() * words[j].length());
-                }
-            }
-        }
-        return result;
-    }
-
-    public boolean hasNoCommonLetters(String s1, String s2) {
-        if (s1 == null || s2 == null) {
-            return true;
-        }
-        int[] count = new int[26];
-        for (int i = 0; i < s1.length(); ++i) {
-            if (count[s1.charAt(i) - 'a'] == 0) {
-                count[s1.charAt(i) - 'a']++;
-            }
-        }
-        for (int i = 0; i < s2.length(); ++i) {
-            if (count[s2.charAt(i) - 'a'] > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
 }
