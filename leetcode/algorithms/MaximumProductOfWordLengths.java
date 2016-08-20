@@ -29,11 +29,9 @@ public class MaximumProductOfWordLengths {
         int result = 0;
         int[] masks = new int[words.length];
         for (int i = 0; i < words.length; ++i) {
-            int mask = 0;
             for (int j = 0; j < words[i].length(); ++j) {
-                mask |= 1 << (words[i].charAt(j) - 'a');
+                masks[i] |= 1 << (words[i].charAt(j) - 'a');
             }
-            masks[i] = mask;
             for (int j = 0; j < i; ++j) {
                 if ((masks[i] & masks[j]) == 0) {
                     result = Math.max(result, 
