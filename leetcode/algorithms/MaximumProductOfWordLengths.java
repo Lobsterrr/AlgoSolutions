@@ -26,10 +26,21 @@ public class MaximumProductOfWordLengths {
         if (words == null || words.length == 0) {
             return 0;
         }
-        int[] mask = new int[26];
+        int result = 0;
+        int[] masks = new int[26];
         for (int i = 0; i < words.length; ++i) {
-
+            int mask = 0;
+            for (int j = 0; j < words[i].length(); ++j) {
+                mask |= 1 << (words[i].charAt(i) - 'a');
+            }
+            masks[i] = mask;
+            for (int j = 0; j < i; ++j) {
+                if (masks[i] & masks[j] != 0) {
+                    result = Math.max(result, words[i].length() * words[j].length());
+                }
+            }
         }
+        return result;
     }
 
     public int maxProduct(String[] words) {
