@@ -31,7 +31,7 @@ public class MaximumProductOfWordLengths {
         for (int i = 0; i < words.length; ++i) {
             int mask = 0;
             for (int j = 0; j < words[i].length(); ++j) {
-                mask |= 1 << (words[i].charAt(i) - 'a');
+                mask |= 1 << (words[i].charAt(j) - 'a');
             }
             masks[i] = mask;
             for (int j = 0; j < i; ++j) {
