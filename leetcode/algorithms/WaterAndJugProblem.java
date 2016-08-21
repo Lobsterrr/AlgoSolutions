@@ -20,7 +20,7 @@
 public class WaterAndJugProblem {
 
     public boolean canMeasureWater(int x, int y, int z) {
-        return gcd(x, y) != 0 && z % gcd(x, y) == 0;
+        return z == 0 || gcd(x, y) != 0 && z % gcd(x, y) == 0;
     }
 
     public int gcd(int x, int y) {
