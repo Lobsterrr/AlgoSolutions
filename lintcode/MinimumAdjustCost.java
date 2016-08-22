@@ -22,8 +22,6 @@ public class MinimumAdjustmentCost {
      * @param A: An integer array.
      * @param target: An integer.
      */
-//
-
     public int MinAdjustmentCost(ArrayList<Integer> A, int target) {
         if (A == null || A.length == 0) {
             return 0;
