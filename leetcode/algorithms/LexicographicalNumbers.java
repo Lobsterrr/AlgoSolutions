@@ -7,6 +7,8 @@
  */
 public class LexicographicalNumbers {
 
-
+    public List<Integer> lexicalOrder(int n) {
+        
+    }
 
 }
