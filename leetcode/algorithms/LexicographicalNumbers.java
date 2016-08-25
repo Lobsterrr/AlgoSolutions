@@ -8,7 +8,9 @@
 public class LexicographicalNumbers {
 
     public List<Integer> lexicalOrder(int n) {
-        
+        List<Integer> result = new ArrayList<Integer>();
+
+        return result;
     }
 
 }
