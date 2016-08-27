@@ -12,6 +12,9 @@ public class LexicographicalNumbers {
         if (n < 0) {
             return result;
         }
+        for (int i = 0, cur = 1; i <= n; ++i) {
+
+        }
         return result;
     }
 
