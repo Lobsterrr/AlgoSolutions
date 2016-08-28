@@ -46,7 +46,7 @@ public class LexicographicalNumbers {
         if (value * 10 <= n) {
             value *= 10;
         } else {
-            if (value >= 10) {
+            if (value >= n) {
                 value /= 10;
             }
             value += 1;
