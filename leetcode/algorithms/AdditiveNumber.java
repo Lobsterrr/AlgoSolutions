@@ -32,10 +32,10 @@ public class AdditiveNumber {
             return true;
         }
         for (int i = 1; i < num.length(); ++i) {
-            if (num.charAt(i) == '0') {
-                continue;
-            }
             for (int j = i + 1; j < num.length(); ++j) {
+                if (num.charAt(i) == '0' && j > i + 1) {
+                    continue;
+                }
                 String prev = num.substring(0, i);
                 String cur = num.substring(i, j);
                 int index = j;
