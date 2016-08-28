@@ -33,18 +33,24 @@ public class AdditiveNumber {
         }
         for (int i = 1; i < num.length(); ++i) {
             for (int j = i + 1; j < num.length(); ++j) {
-                if (num.charAt(0) == '0' && i > 1 || num.charAt(i) == '0' && j > i + 1) {
+                if (num.charAt(0) == '0' && i > 1 
+                        || num.charAt(i) == '0' && j > i + 1) {
                     continue;
                 }
                 String prev = num.substring(0, i);
                 String cur = num.substring(i, j);
                 int index = j;
                 while (true) {
-                    String next = "" + (Long.parseLong(prev) + Long.parseLong(cur));
-                    if (index + next.length() == num.length() && next.equals(num.substring(index, index + next.length()))) {
+                    String next = "" + (Long.parseLong(prev) 
+                            + Long.parseLong(cur));
+                    if (index + next.length() == num.length() 
+                            && next.equals(num.substring(index, 
+                                    index + next.length()))) {
                         return true;
                     }
-                    if (index + next.length() > num.length() || !next.equals(num.substring(index, index + next.length()))) {
+                    if (index + next.length() > num.length() 
+                            || !next.equals(num.substring(index, 
+                                    index + next.length()))) {
                         break;
                     }
                     prev = cur;
