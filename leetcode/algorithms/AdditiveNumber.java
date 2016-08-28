@@ -31,7 +31,7 @@ public class AdditiveNumber {
         if (num.length() == 0) {
             return true;
         }
-        for (int i = 0; i < num.length(); ++i) {
+        for (int i = 1; i < num.length(); ++i) {
             for (int j = i + 1; j < num.length(); ++j) {
                 String prev = num.substring(0, i);
                 String cur = num.substring(i, j);
