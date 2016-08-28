@@ -25,7 +25,17 @@
 public class AdditiveNumber {
 
     public boolean isAdditiveNumber(String num) {
+        if (num == null) {
+            return false;
+        }
+        if (num.length() == 0) {
+            return true;
+        }
+        for (int i = 0; i < num.length(); ++i) {
+            for (int j = i + 1; j < num.length(); ++j) {
 
+            }
+        }
     }
 
     public boolean checkInt(String s) {
