@@ -29,4 +29,32 @@ public class LexicographicalNumbers {
         return result;
     }
 
+    public List<Integer> lexicalOrder(int n) {
+        List<Integer> result = new ArrayList<Integer>();
+        if (n < 0) {
+            return result;
+        }
+        helper(result, n, 1);
+        return result;
+    }
+
+    public void helper(List<Integer> result, int n, int value) {
+        if (value > n) {
+            return;
+        }
+        result.add(value);
+        if (value * 10 <= n) {
+            value *= 10;
+        } else {
+            if (value >= 10) {
+                value /= 10;
+            }
+            value += 1;
+            while (value % 10 == 0) {
+                value /= 10;
+            }
+        }
+        helper(result, n, value);
+    }
+
 }
