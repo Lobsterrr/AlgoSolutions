@@ -32,6 +32,9 @@ public class AdditiveNumber {
             return true;
         }
         for (int i = 1; i < num.length(); ++i) {
+            if (num.charAt(0) == '0' && i > 1) {
+                continue;
+            }
             for (int j = i + 1; j < num.length(); ++j) {
                 if (num.charAt(i) == '0' && j > i + 1) {
                     continue;
