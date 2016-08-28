@@ -39,7 +39,7 @@ public class LexicographicalNumbers {
     }
 
     public void helper(List<Integer> result, int n, int value) {
-        if (value >= n) {
+        if (result.size() >= n) {
             return;
         }
         result.add(value);
