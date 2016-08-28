@@ -31,27 +31,22 @@ public class LexicographicalNumbers {
 
     public List<Integer> lexicalOrder(int n) {
         List<Integer> result = new ArrayList<Integer>();
-        helper(result, n, 1);
+        for (int i = 1; i <= 9; ++i) {
+            helper(result, n, i);
+        }
         return result;
     }
 
     public void helper(List<Integer> result, int n, int value) {
-        if (result.size() >= n) {
+        if (value > n) {
             return;
         }
         result.add(value);
-        if (value * 10 <= n) {
-            value *= 10;
-        } else {
-            if (value >= n) {
-                value /= 10;
-            }
-            value += 1;
-            while (value % 10 == 0) {
-                value /= 10;
+        for (int i = 0; i <= 9; ++i) {
+            if (value * 10 + i <= n) {
+                helper(result, n, value * 10 + i);
             }
         }
-        helper(result, n, value);
     }
 
 }
