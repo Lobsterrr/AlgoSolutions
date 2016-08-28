@@ -37,8 +37,7 @@ public class AdditiveNumber {
                 String cur = num.substring(i, j);
                 int index = j;
                 while (true) {
-                    String next = prev + cur;
-                    String next = "" + (Integer.parseLong(prev) + Integer.parseLong(cur));
+                    String next = "" + (Long.parseLong(prev) + Long.parseLong(cur));
                     if (index + next.length() == num.length() && next.equals(num.substring(index, index + next.length()))) {
                         return true;
                     }
@@ -47,6 +46,7 @@ public class AdditiveNumber {
                     }
                     prev = cur;
                     cur = next;
+                    index += next.length();
                 }
             }
         }
