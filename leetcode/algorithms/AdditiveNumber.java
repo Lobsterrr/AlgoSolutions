@@ -32,6 +32,9 @@ public class AdditiveNumber {
             return true;
         }
         for (int i = 1; i < num.length(); ++i) {
+            if (i + 1 < num.lenght() && num.charAt(i + 1) == '0') {
+                continue;
+            }
             for (int j = i + 1; j < num.length(); ++j) {
                 String prev = num.substring(0, i);
                 String cur = num.substring(i, j);
