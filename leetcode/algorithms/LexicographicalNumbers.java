@@ -13,11 +13,11 @@ public class LexicographicalNumbers {
             return result;
         }
         for (int i = 0, cur = 1; i <= n; ++i) {
-            if (cur <= n) {
-                result.add(cur);
+            result.add(cur);
+            if (cur * 10 <= n) {
                 cur *= 10;
             } else {
-                if (cur > n) {
+                if (cur >= n) {
                     cur /= 10;
                 }
                 cur += 1;
