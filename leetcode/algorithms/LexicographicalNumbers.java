@@ -12,15 +12,18 @@ public class LexicographicalNumbers {
         if (n < 0) {
             return result;
         }
-        for (int i = 1, cur = 1; i <= n; ++i) {
-            result.add(cur);
-            if (cur * 10 <= n) {
-                cur *= 10;
+        for (int i = 1, value = 1; i <= n; ++i) {
+            result.add(value);
+            if (value * 10 <= n) {
+                value *= 10;
             } else {
-                if (cur >= n) {
-                    cur /= 10;
+                if (value >= n) {
+                    value /= 10;
                 }
-                cur += 1;
+                value += 1;
+                while (value % 10 == 0) {
+                    value /= 10;
+                }
             }
         }
         return result;
