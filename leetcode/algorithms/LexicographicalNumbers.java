@@ -12,7 +12,7 @@ public class LexicographicalNumbers {
         if (n < 0) {
             return result;
         }
-        for (int i = 0, cur = 1; i <= n; ++i) {
+        for (int i = 1, cur = 1; i <= n; ++i) {
             result.add(cur);
             if (cur * 10 <= n) {
                 cur *= 10;
