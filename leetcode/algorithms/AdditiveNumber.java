@@ -33,9 +33,24 @@ public class AdditiveNumber {
         }
         for (int i = 0; i < num.length(); ++i) {
             for (int j = i + 1; j < num.length(); ++j) {
-
+                String prev = num.substring(0, i);
+                String cur = num.substring(i, j);
+                int index = j;
+                while (true) {
+                    String next = prev + cur;
+                    String next = "" + (Integer.parseLong(prev) + Integer.parseLong(cur));
+                    if (index + next.length() == num.length() && next.equals(num.substring(index, index + next.length()))) {
+                        return true;
+                    }
+                    if (index + next.length() > num.length() || !next.equals(num.substring(index, index + next.length()))) {
+                        break;
+                    }
+                    prev = cur;
+                    cur = next;
+                }
             }
         }
+        return false;
     }
 
     public boolean checkInt(String s) {
