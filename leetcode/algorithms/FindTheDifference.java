@@ -22,16 +22,16 @@ public class FindTheDifference {
 
     public char findTheDifference(String s, String t) {
         char result = 0;
-        for (int i = 0; i < Math.max(s.length(), t.length()); ++i) {
-            if (i < s.length()) {
-                result ^= s.charAt(i);
-            }
-            if (i < t.length()) {
-                result ^= t.charAt(i);
-            }
+        for (int i = 0; i < s.length(); ++i) {
+            result ^= s.charAt(i);
+        }
+        for (int i = 0; i < t.length(); ++i) {
+            result ^= t.charAt(i);
         }
         return result;
     }
+
+/*******************************************************************/
 
     public char findTheDifference(String s, String t) {
         int[] map = new int[256];
