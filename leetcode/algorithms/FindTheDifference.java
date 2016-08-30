@@ -27,7 +27,7 @@ public class FindTheDifference {
                 result ^= s.charAt(i);
             }
             if (i < t.length()) {
-                result ^= t.length();
+                result ^= t.charAt(i);
             }
         }
         return result;
