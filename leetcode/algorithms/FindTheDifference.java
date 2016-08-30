@@ -21,6 +21,10 @@
 public class FindTheDifference {
 
     public char findTheDifference(String s, String t) {
+
+    }
+
+    public char findTheDifference(String s, String t) {
         int[] map = new int[256];
         for (int i = 0; i < t.length(); ++i) {
             map[t.charAt(i) - 'a']++;
@@ -28,7 +32,7 @@ public class FindTheDifference {
                 map[s.charAt(i) - 'a']--;
             }
         }
-        char result = '';
+        char result = 0;
         for (int i = 0; i < map.length; ++i) {
             if (map[i] > 0) {
                 result = (char) ('a' + i);
