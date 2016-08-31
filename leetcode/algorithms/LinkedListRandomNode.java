@@ -33,25 +33,17 @@ public class LinkedListRandomNode {
 class Solution {
 
     ListNode head;
-    int len;
 
     /** @param head The linked list's head.
         Note that the head is guaranteed to be not null, so it contains at least 
         one node. */
     public Solution(ListNode head) {
         this.head = head;
-        for (ListNode cur = head; cur != null; cur = cur.next, len++);
     }
     
     /** Returns a random node's value. */
     public int getRandom() {
         Random rnd = new Random();
-        int step = rnd.nextInt(len);
-        ListNode cur = head;
-        for (int i = 0; i < step; ++i) {
-            cur = cur.next;
-        }
-        return cur.val;
     }
 }
 
