@@ -43,7 +43,6 @@ class Solution {
     
     /** Returns a random node's value. */
     public int getRandom() {
-        Random rnd = new Random();
     }
 }
 
