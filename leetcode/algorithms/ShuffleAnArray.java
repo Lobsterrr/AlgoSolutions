@@ -22,19 +22,31 @@ public class ShuffleAnArray {
 }
 
 class Solution {
+    
+    int[] array;
 
     public Solution(int[] nums) {
-        
+        array = nums;
     }
     
     /** Resets the array to its original configuration and return it. */
     public int[] reset() {
-        
+        return array;    
     }
     
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
-        
+        Random rnd = new Random();
+        for (int i = nums.length; i > 1; --i) {
+            swap(nums, i - 1, rnd.nextInt(i));
+        }
+        return nums;
+    }
+
+    public void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
     }
 }
 
