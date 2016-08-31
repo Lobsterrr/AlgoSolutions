@@ -23,26 +23,26 @@ public class ShuffleAnArray {
 
 class Solution {
     
-    int[] array;
-    int[] copy;
+    int[] nums;
+    int[] backup;
 
     public Solution(int[] nums) {
-        this.array = Arrays.copyOf(nums, nums.length);
-        this.copy = Arrays.copyOf(nums, nums.length);
+        this.nums = Arrays.backupOf(nums, nums.length);
+        this.backup = Arrays.backupOf(nums, nums.length);
     }
     
-    /** Resets the array to its original configuration and return it. */
+    /** Resets the nums to its original configuration and return it. */
     public int[] reset() {
-        return copy;
+        return backup;
     }
     
-    /** Returns a random shuffling of the array. */
+    /** Returns a random shuffling of the nums. */
     public int[] shuffle() {
         Random rnd = new Random();
-        for (int i = array.length; i > 1; --i) {
-            swap(array, i - 1, rnd.nextInt(i));
+        for (int i = nums.length; i > 1; --i) {
+            swap(nums, i - 1, rnd.nextInt(i));
         }
-        return array;
+        return nums;
     }
 
     public void swap(int[] nums, int i, int j) {
