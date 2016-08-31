@@ -27,8 +27,8 @@ class Solution {
     int[] backup;
 
     public Solution(int[] nums) {
-        this.nums = Arrays.backupOf(nums, nums.length);
-        this.backup = Arrays.backupOf(nums, nums.length);
+        this.nums = Arrays.copyOf(nums, nums.length);
+        this.backup = Arrays.copyOf(nums, nums.length);
     }
     
     /** Resets the nums to its original configuration and return it. */
