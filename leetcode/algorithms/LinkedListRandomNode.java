@@ -29,27 +29,21 @@ public class LinkedListRandomNode {
  */
 class Solution {
 
-    ListNode dummy;
-    ListNode cur;
+    ListNode head;
     int len;
 
     /** @param head The linked list's head.
         Note that the head is guaranteed to be not null, so it contains at least one node. */
     public Solution(ListNode head) {
-        dummy = new ListNode(0);
-        dummy.next = head;
-        cur = dummy;
-        while (cur.next != null) {
-            len++;
-            cur = cur.next;
-        }
-        cur.next = head;
+        this.head = head;
+        for (ListNode cur = head; cur != null; cur = cur.next, len++);
     }
     
     /** Returns a random node's value. */
     public int getRandom() {
         Random rnd = new Random();
         int step = rnd.nextInt(len);
+        ListNode cur = head;
         for (int i = 0; i < step; ++i) {
             cur = cur.next;
         }
