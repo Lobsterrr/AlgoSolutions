@@ -27,8 +27,8 @@ class Solution {
     int[] copy;
 
     public Solution(int[] nums) {
-        this.array = nums;
-        this.copy = nums;
+        this.array = Arrays.copyOf(nums, nums.length);
+        this.copy = Arrays.copyOf(nums, nums.length);
     }
     
     /** Resets the array to its original configuration and return it. */
@@ -39,7 +39,7 @@ class Solution {
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
         Random rnd = new Random();
-        for (int i = nums.length; i > 1; --i) {
+        for (int i = array.length; i > 1; --i) {
             swap(array, i - 1, rnd.nextInt(i));
         }
         return array;
