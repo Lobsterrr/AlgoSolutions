@@ -18,7 +18,17 @@
 public class IsSubsequence {
 
     public boolean isSubsequence(String s, String t) {
-        
+        if (s == null || t == null) {
+            return false;
+        }
+        boolean[][] dp = new boolean[t.length() + 1][s.length() + 1];
+        dp[0][0] = true;
+        for (int j = 0; j < t.length(); ++j) {
+            for (int i = 0; i < s.length(); ++i) {
+                dp[i][j] = dp[i][j];
+            }
+        }
+        return dp[t.length()][s.length()];
     }
 
 }
