@@ -21,11 +21,11 @@ public class IsSubsequence {
         if (s == null || t == null) {
             return false;
         }
-        boolean[][] dp = new boolean[t.length() + 1][s.length() + 1];
+        boolean[][] dp = new boolean[s.length() + 1][t.length() + 1];
         dp[0][0] = true;
-        for (int j = 0; j < t.length(); ++j) {
-            for (int i = 0; i < s.length(); ++i) {
-                dp[i][j] = dp[i][j];
+        for (int i = 0; i < s.length(); ++i) {
+            for (int j = i; j < t.length(); ++j) {
+                dp[i + 1][j + 1] = dp[i + 1][j + 1] || dp[i + 1][j] || dp[i][j] && s.charAt(i) == t.charAt(j);
             }
         }
         return dp[t.length()][s.length()];
