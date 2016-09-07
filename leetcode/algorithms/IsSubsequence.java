@@ -30,38 +30,4 @@ public class IsSubsequence {
         return i == s.length();
     }
 
-    public boolean isSubsequence(String s, String t) {
-        if (s == null || t == null) {
-            return false;
-        }
-        if (s.equals("")) {
-            return true;
-        }
-        for (int i = 0, j = 0; i < s.length() && j < t.length(); ++j) {
-            if (s.charAt(i) == t.charAt(j)) {
-                i++;
-            }
-            if (i == s.length()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean isSubsequence(String s, String t) {
-        if (s == null || t == null) {
-            return false;
-        }
-        boolean[][] dp = new boolean[s.length() + 1][t.length() + 1];
-        for (int i = 0; i <= t.length(); ++i) {
-            dp[0][i] = true;
-        }
-        for (int i = 0; i < s.length(); ++i) {
-            for (int j = i; j < t.length(); ++j) {
-                dp[i + 1][j + 1] = dp[i + 1][j + 1] || dp[i + 1][j] || dp[i][j] && s.charAt(i) == t.charAt(j);
-            }
-        }
-        return dp[s.length()][t.length()];
-    }
-
 }
