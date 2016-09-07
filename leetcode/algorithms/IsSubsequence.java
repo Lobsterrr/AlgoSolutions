@@ -21,17 +21,31 @@ public class IsSubsequence {
         if (s == null || t == null) {
             return false;
         }
+        int i = 0;
+        for (int j = 0; i < s.length() && j < t.length(); ++j) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++;
+            }
+        }
+        return i == s.length();
+    }
+
+    public boolean isSubsequence(String s, String t) {
+        if (s == null || t == null) {
+            return false;
+        }
         if (s.equals("")) {
             return true;
         }
-        boolean[] dp = new boolean[t.length() + 1];
-        dp[0] = true;
-        for (int i = 0; i < s.length(); ++i) {
-            for (int j = 0; j < t.length(); ++j) {
-                dp[j + 1] = dp[j + 1] || dp[j] || dp[j] && s.charAt(i) == t.charAt(j);
+        for (int i = 0, j = 0; i < s.length() && j < t.length(); ++j) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++;
+            }
+            if (i == s.length()) {
+                return true;
             }
         }
-        return dp[t.length()];
+        return false;
     }
 
     public boolean isSubsequence(String s, String t) {
