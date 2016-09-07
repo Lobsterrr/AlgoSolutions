@@ -25,6 +25,7 @@ public class IsSubsequence {
             return true;
         }
         boolean[] dp = new boolean[t.length() + 1];
+        dp[0] = true;
         for (int i = 0; i < s.length(); ++i) {
             for (int j = 0; j < t.length(); ++j) {
                 dp[j + 1] = dp[j + 1] || dp[j] || dp[j] && s.charAt(i) == t.charAt(j);
