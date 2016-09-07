@@ -28,7 +28,7 @@ public class IsSubsequence {
                 dp[i + 1][j + 1] = dp[i + 1][j + 1] || dp[i + 1][j] || dp[i][j] && s.charAt(i) == t.charAt(j);
             }
         }
-        return dp[t.length()][s.length()];
+        return dp[s.length()][t.length()];
     }
 
 }
