@@ -21,6 +21,22 @@ public class IsSubsequence {
         if (s == null || t == null) {
             return false;
         }
+        if (s.equals("")) {
+            return true;
+        }
+        boolean[] dp = new int[t.length() + 1];
+        for (int i = 0; i < s.length(); ++i) {
+            for (int j = 0; j < t.length(); ++j) {
+                dp[j + 1] = dp[j + 1] || dp[j] || dp[j] && s.charAt(i) == t.charAt(j);
+            }
+        }
+        return dp[t.length()];
+    }
+
+    public boolean isSubsequence(String s, String t) {
+        if (s == null || t == null) {
+            return false;
+        }
         boolean[][] dp = new boolean[s.length() + 1][t.length() + 1];
         for (int i = 0; i <= t.length(); ++i) {
             dp[0][i] = true;
