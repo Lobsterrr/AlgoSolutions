@@ -22,7 +22,9 @@ public class IsSubsequence {
             return false;
         }
         boolean[][] dp = new boolean[s.length() + 1][t.length() + 1];
-        dp[0][0] = true;
+        for (int i = 0; i <= t.length(); ++i) {
+            dp[0][i] = true;
+        }
         for (int i = 0; i < s.length(); ++i) {
             for (int j = i; j < t.length(); ++j) {
                 dp[i + 1][j + 1] = dp[i + 1][j + 1] || dp[i + 1][j] || dp[i][j] && s.charAt(i) == t.charAt(j);
