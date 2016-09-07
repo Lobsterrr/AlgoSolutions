@@ -47,7 +47,7 @@ class Solution {
     public int getRandom() {
         ListNode result = null;
         ListNode cur = head;
-        for (int i = 1; cur != null; ++i) {
+        for (int i = 1; cur != null; cur = cur.next, ++i) {
             if (rnd.nextInt(i) == 0) {
                 result = cur;
             }
