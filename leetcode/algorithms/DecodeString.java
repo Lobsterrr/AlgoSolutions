@@ -21,20 +21,6 @@ public class DecodeString {
         if (s == null) {
             return result;
         }
-        for (int i = 0; i < s.length(); ++i) {
-            if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
-                int startIndex = i;
-                while (i < s.length() && s.charAt(i) >= '0' && s.charAt(i) <= '9') {
-                    i++;
-                }
-                stack.push(s.substring(startIndex, i));
-                i--;
-            } else if (s.charAt(i) == '[') {
-
-            } else if (s.charAt(i) == ']') {
-                int times = Integer.parseInt(stack.pop());
-            }
-        }
     }
 
 }
