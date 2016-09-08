@@ -16,14 +16,10 @@
 public class DecodeString {
 
     public String decodeString(String s) {
-        Stack<String> stack = new Stack<String>();
         String result = "";
         if (s == null) {
             return result;
         }
-
-
-
         return result;
     }
 
