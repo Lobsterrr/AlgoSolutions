@@ -20,6 +20,8 @@ public class DecodeString {
         if (s == null) {
             return result;
         }
+        Stack<Integer> numStack = new Stack<Integer>();
+        Stack<String> strStack = new Stack<Integer>();
         return result;
     }
 
