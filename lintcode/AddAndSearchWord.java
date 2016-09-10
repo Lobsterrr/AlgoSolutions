@@ -34,3 +34,15 @@ public class AddAndSearchWord {
 // WordDictionary wordDictionary = new WordDictionary();
 // wordDictionary.addWord("word");
 // wordDictionary.search("pattern");
+
+class TrieNode {
+
+    TrieNode[] children;
+    boolean isLeaf;
+
+    public TrieNode() {
+        children = new TrieNode[26];
+        isLeaf = false;
+    }
+
+}
