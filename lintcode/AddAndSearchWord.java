@@ -46,3 +46,7 @@ class TrieNode {
     }
 
 }
+
+class Trie {
+
+}
