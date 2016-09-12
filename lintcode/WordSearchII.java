@@ -44,6 +44,28 @@ public class WordSearchII {
 
 }
 
+class Trie {
+
+    private TrieNode root;
+
+    public Trie() {
+        root = new TrieNode();
+    }
+
+    public void insert(String word) {
+
+    }
+
+    public boolean startsWith(String prefix) {
+
+    }
+
+    public boolean search(String word) {
+
+    }
+
+}
+
 class TrieNode {
 
     TrieNode[] children;
