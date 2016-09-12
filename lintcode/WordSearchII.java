@@ -56,7 +56,20 @@ public class WordSearchII {
         if (i < 0 || i >= isVisited.length || j < 0 || j >= isVisited[0].length || isVisited[i][j]) {
             return;
         }
-
+        if (!trie.startsWith(s)) {
+            return;
+        }
+        if (trie.search(s)) {
+            set.add(s);
+        }
+        isVisited[i][j] = true;
+        s += board[i][j];
+        board[i][j] = '#';
+        dfs(words, trie, set, isVisited, i + 1, j, s);
+        dfs(words, trie, set, isVisited, i - 1, j, s);
+        dfs(words, trie, set, isVisited, i, j + 1, s);
+        dfs(words, trie, set, isVisited, i, j - 1, s);
+        board[i][j] = s.charAt(s.length() - 1);
     }
 
 }
