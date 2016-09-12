@@ -44,6 +44,7 @@ public class WordSearchII {
         for (String word : words) {
             trie.insert(word);
         }
+        boolean[][] isVisited = new boolean[baord.length][board[0].length];
         for (int i = 0; i < board.length; ++i) {
             for (int j = 0; j < board[0].length; ++j) {
                 dfs(words, set, isVisited, i, j, "");
