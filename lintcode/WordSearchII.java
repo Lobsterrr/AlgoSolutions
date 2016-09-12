@@ -69,6 +69,7 @@ public class WordSearchII {
         dfs(board, trie, set, isVisited, i - 1, j, s);
         dfs(board, trie, set, isVisited, i, j + 1, s);
         dfs(board, trie, set, isVisited, i, j - 1, s);
+        isVisited[i][j] = false;
     }
 
 }
