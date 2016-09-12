@@ -38,7 +38,24 @@ public class WordSearchII {
      * @param words: A list of string
      * @return: A list of string
      */
-    public ArrayList<String> wordSearchII(char[][] board, ArrayList<String>) {
+    public ArrayList<String> wordSearchII(char[][] board, ArrayList<String> words) {
+        Set<String> set = new HashSet<String>();
+        Trie trie = new Trie();
+        for (String word : words) {
+            trie.insert(word);
+        }
+        for (int i = 0; i < board.length; ++i) {
+            for (int j = 0; j < board[0].length; ++j) {
+                dfs(words, set, isVisited, i, j, "");
+            }
+        }
+        return new ArrayList<String>(set);
+    }
+
+    public void dfs(ArrayList<String> words, Trie trie, Set<String> set, boolean[][] isVisited, int i, int j, String s) {
+        if (i < 0 || i >= isVisited.length || j < 0 || j >= isVisited[0].length || isVisited[i][j]) {
+            return;
+        }
 
     }
 
@@ -82,7 +99,7 @@ class Trie {
             }
             cur = cur.children[c - 'a'];
         }
-        return cur.children[c - 'a'].isLeaf;
+        return cur.isLeaf;
     }
 
 }
