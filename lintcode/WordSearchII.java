@@ -1,5 +1,7 @@
 /*
- * Given a matrix of lower alphabets and a dictionary. Find all words in the dictionary that can be found in the matrix. A word can start from any position in the matrix and go left/right/up/down to the adjacent position. 
+ * Given a matrix of lower alphabets and a dictionary. Find all words in the 
+ * dictionary that can be found in the matrix. A word can start from any 
+ * position in the matrix and go left/right/up/down to the adjacent position. 
 
 Example
 Given matrix:
@@ -38,7 +40,8 @@ public class WordSearchII {
      * @param words: A list of string
      * @return: A list of string
      */
-    public ArrayList<String> wordSearchII(char[][] board, ArrayList<String> words) {
+    public ArrayList<String> wordSearchII(char[][] board, 
+            ArrayList<String> words) {
         Set<String> set = new HashSet<String>();
         Trie trie = new Trie();
         for (String word : words) {
@@ -53,8 +56,10 @@ public class WordSearchII {
         return new ArrayList<String>(set);
     }
 
-    public void dfs(char[][] board, Trie trie, Set<String> set, boolean[][] isVisited, int i, int j, String s) {
-        if (i < 0 || i >= isVisited.length || j < 0 || j >= isVisited[0].length || isVisited[i][j]) {
+    public void dfs(char[][] board, Trie trie, Set<String> set, 
+            boolean[][] isVisited, int i, int j, String s) {
+        if (i < 0 || i >= isVisited.length || j < 0 
+                || j >= isVisited[0].length || isVisited[i][j]) {
             return;
         }
         s += board[i][j];
