@@ -64,12 +64,10 @@ public class WordSearchII {
         }
         isVisited[i][j] = true;
         s += board[i][j];
-        board[i][j] = '#';
         dfs(words, trie, set, isVisited, i + 1, j, s);
         dfs(words, trie, set, isVisited, i - 1, j, s);
         dfs(words, trie, set, isVisited, i, j + 1, s);
         dfs(words, trie, set, isVisited, i, j - 1, s);
-        board[i][j] = s.charAt(s.length() - 1);
     }
 
 }
