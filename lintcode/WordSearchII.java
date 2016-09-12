@@ -52,10 +52,11 @@ public class WordSearchII {
         return new ArrayList<String>(set);
     }
 
-    public void dfs(ArrayList<String> words, Trie trie, Set<String> set, boolean[][] isVisited, int i, int j, String s) {
+    public void dfs(char[][] board, Trie trie, Set<String> set, boolean[][] isVisited, int i, int j, String s) {
         if (i < 0 || i >= isVisited.length || j < 0 || j >= isVisited[0].length || isVisited[i][j]) {
             return;
         }
+        s += board[i][j];
         if (!trie.startsWith(s)) {
             return;
         }
@@ -63,7 +64,6 @@ public class WordSearchII {
             set.add(s);
         }
         isVisited[i][j] = true;
-        s += board[i][j];
         dfs(words, trie, set, isVisited, i + 1, j, s);
         dfs(words, trie, set, isVisited, i - 1, j, s);
         dfs(words, trie, set, isVisited, i, j + 1, s);
