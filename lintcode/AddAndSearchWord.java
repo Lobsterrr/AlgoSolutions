@@ -58,11 +58,19 @@ class Trie {
     }
 
     public void insert(String s) {
+        TrieNode cur = root;
+        for (char c : s.toCharArray()) {
+            if (cur.children[c - 'a'] == null) {
+                cur.children[c - 'a'] = new TrieNode();
+            }
+            cur = cur.children[c - 'a'];
+        }
+        cur.isLeaf = true;
     }
 
     public boolean startsWith(String prefix) {
         TrieNode cur = root;
-        for (char c : s.toCharArray()) {
+        for (char c : prefix.toCharArray()) {
             if (cur.children[c - 'a'] == null) {
                 return false;
             }
