@@ -50,11 +50,9 @@ class TrieNode {
 class Trie {
 
     TrieNode root;
-    boolean isLeaf;
 
     public Trie() {
         root = new TrieNode();
-        isLeaf = false;
     }
 
     public void insert(String s) {
