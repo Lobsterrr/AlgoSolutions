@@ -49,4 +49,37 @@ class TrieNode {
 
 class Trie {
 
+    TrieNode root;
+    boolean isLeaf;
+
+    public Trie() {
+        root = new TrieNode();
+        isLeaf = false;
+    }
+
+    public void insert(String s) {
+    }
+
+    public boolean startsWith(String prefix) {
+        TrieNode cur = root;
+        for (char c : s.toCharArray()) {
+            if (cur.children[c - 'a'] == null) {
+                return false;
+            }
+            cur = cur.children[c - 'a'];
+        }
+        return false;
+    }
+
+    public boolean search(String s) {
+        TrieNode cur = root;
+        for (char c : s.toCharArray()) {
+            if (cur.children[c - 'a'] == null) {
+                return false;
+            }
+            cur = cur.children[c - 'a'];
+        }
+        return cur.isLeaf;
+    }
+
 }
