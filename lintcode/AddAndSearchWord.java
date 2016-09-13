@@ -33,8 +33,14 @@ public class AddAndSearchWord {
     public boolean search(String word) {
         // Write your code here
         for (char c : word.toCharArray()) {
+
         }
     }
+
+    public boolean dfs(Trie root, String s) {
+        
+    }
+
 }
 // Your WordDictionary object will be instantiated and called as such:
 // WordDictionary wordDictionary = new WordDictionary();
