@@ -19,15 +19,21 @@ search(".ad")  // return true
 search("b..")  // return true
  */
 public class AddAndSearchWord {
+
+    Trie trie = new Trie();
+
     // Adds a word into the data structure.
     public void addWord(String word) {
         // Write your code here
+        trie.insert(word);
     }
 
     // Returns if the word is in the data structure. A word could
     // contain the dot character '.' to represent any one letter.
     public boolean search(String word) {
         // Write your code here
+        for (char c : word.toCharArray()) {
+        }
     }
 }
 // Your WordDictionary object will be instantiated and called as such:
