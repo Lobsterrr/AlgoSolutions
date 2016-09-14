@@ -49,7 +49,7 @@ public class AddAndSearchWord {
                 return false;
             } else {
                 return trie.children[s.charAt(0) - 'a'] != null && trie.isLeaf;
-            }             
+            }
         } else {
             if (s.charAt(0) == '.') {
                 boolean flag = false;
