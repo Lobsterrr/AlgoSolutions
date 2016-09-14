@@ -38,7 +38,10 @@ public class AddAndSearchWord {
     }
 
     public boolean dfs(Trie root, String s) {
-        
+        if (s.length() == 1 && root.children[s.charAt(0)] != null && root.isLeaf) {
+            return true;
+        }
+        if ()
     }
 
 }
