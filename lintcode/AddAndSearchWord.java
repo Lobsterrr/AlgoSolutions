@@ -53,7 +53,7 @@ class TrieNode {
     boolean isLeaf;
 
     public TrieNode() {
-        children = new TrieNode[26];
+        children = new TrieNode[128];
         isLeaf = false;
     }
 
@@ -70,10 +70,10 @@ class Trie {
     public void insert(String s) {
         TrieNode cur = root;
         for (char c : s.toCharArray()) {
-            if (cur.children[c - 'a'] == null) {
-                cur.children[c - 'a'] = new TrieNode();
+            if (cur.children[c] == null) {
+                cur.children[c] = new TrieNode();
             }
-            cur = cur.children[c - 'a'];
+            cur = cur.children[c];
         }
         cur.isLeaf = true;
     }
@@ -81,10 +81,10 @@ class Trie {
     public boolean startsWith(String prefix) {
         TrieNode cur = root;
         for (char c : prefix.toCharArray()) {
-            if (cur.children[c - 'a'] == null) {
+            if (cur.children[c] == null) {
                 return false;
             }
-            cur = cur.children[c - 'a'];
+            cur = cur.children[c];
         }
         return false;
     }
@@ -92,10 +92,10 @@ class Trie {
     public boolean search(String s) {
         TrieNode cur = root;
         for (char c : s.toCharArray()) {
-            if (cur.children[c - 'a'] == null) {
+            if (cur.children[c] == null) {
                 return false;
             }
-            cur = cur.children[c - 'a'];
+            cur = cur.children[c];
         }
         return cur.isLeaf;
     }
