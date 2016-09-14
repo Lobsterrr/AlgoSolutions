@@ -1,7 +1,9 @@
 /*
- * Design a data structure that supports the following two operations: addWord(word) and search(word)
+ * Design a data structure that supports the following two operations: 
+ * addWord(word) and search(word)
 
-search(word) can search a literal word or a regular expression string containing only letters a-z or ..
+search(word) can search a literal word or a regular expression string 
+containing only letters a-z or ..
 
 A . means it can represent any one letter.
 
@@ -50,10 +52,12 @@ public class AddAndSearchWord {
             return root.isLeaf;
         }
         if (s.charAt(0) != '.') {
-            return root.children[s.charAt(0) - 'a'] != null && dfs(root.children[s.charAt(0) - 'a'], s.substring(1));
+            return root.children[s.charAt(0) - 'a'] != null 
+                && dfs(root.children[s.charAt(0) - 'a'], s.substring(1));
         } else {
-            for (char c = 'a'; c <= 'z'; ++c) {
-                if (root.children[c - 'a'] != null && dfs(root.children[c - 'a'], s.substring(1))) {
+            for (int i = 0; i < 26; ++i) {
+                if (root.children[i] != null 
+                        && dfs(root.children[i], s.substring(1))) {
                     return true;
                 }
             }
