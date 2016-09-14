@@ -32,16 +32,35 @@ public class AddAndSearchWord {
     // contain the dot character '.' to represent any one letter.
     public boolean search(String word) {
         // Write your code here
-        for (char c : word.toCharArray()) {
-
-        }
+        return dfs(trie, word);
     }
 
-    public boolean dfs(Trie root, String s) {
-        if (s.length() == 1 && root.children[s.charAt(0)] != null && root.isLeaf) {
-            return true;
+    public boolean dfs(Trie trie, String s) {
+        if (s == null || s.length() == 0) {
+            return false;
         }
-        if ()
+        if (s.length() == 1) {
+            if (s.charAt(0) == '.') {
+                for (int i = 0; i < 26; ++i) {
+                    if (trie.children[i] != null && trie.isLeaf) {
+                        return true;
+                    }
+                }
+                return false;
+            } else {
+                return trie.children[s.charAt(0) - 'a'] != null && trie.isLeaf;
+            }             
+        } else {
+            if (s.charAt(0) == '.') {
+                boolean flag = false;
+                for (char c = 'a'; c <= 'z'; ++c) {
+                    flag = flag || dfs(trie.children[c - 'a'], s.substring(1));
+                }
+                return flag;
+            } else {
+                return dfs(trie.children[s.charAt(0) - 'a'], s.substring(1));
+            }
+        }
     }
 
 }
