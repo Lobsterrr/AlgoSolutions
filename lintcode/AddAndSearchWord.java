@@ -49,10 +49,7 @@ public class AddAndSearchWord {
             return root.isLeaf;
         }
         if (s.charAt(0) != '.') {
-            if (root.children[s.charAt(0) - 'a'] == null) {
-                return false;
-            }
-            return dfs(root.children[s.charAt(0) - 'a'], s.substring(1));
+            return root.children[s.charAt(0) - 'a'] && dfs(root.children[s.charAt(0) - 'a'], s.substring(1));
         } else {
             for (char c = 'a'; c <= 'z'; ++c) {
                 if (root.children[c - 'a'] != null && dfs(root.children[c - 'a'], s.substring(1))) {
