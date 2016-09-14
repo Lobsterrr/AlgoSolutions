@@ -20,19 +20,47 @@ search("b..")  // return true
  */
 public class AddAndSearchWord {
 
+    TrieNode root = new TrieNode();
 
     // Adds a word into the data structure.
     public void addWord(String word) {
         // Write your code here
+        TrieNode cur = root;
+        for (char c : word.toCharArray()) {
+            if (cur.children[c - 'a'] == null) {
+                cur.children[c - 'a'] = new TrieNode();
+            }
+            cur = cur.children[c - 'a'];
+        }
     }
 
     // Returns if the word is in the data structure. A word could
     // contain the dot character '.' to represent any one letter.
     public boolean search(String word) {
         // Write your code here
+        return dfs(root, word);
     }
 
-    public boolean dfs(Trie trie, String s) {
+    public boolean dfs(TrieNode root, String s) {
+        if (s == null) {
+            return false;
+        }
+        if (s.equals("")) {
+            return root.isLeaf;
+        }
+        if (s.charAt(0) != '.') {
+            if (root.children[s.charAt(0) - 'a'] == null) {
+                return false;
+            }
+            return dfs(root.children[s.charAt(0) - 'a'], s.substring(1));
+        } else {
+            for (char c = 'a'; c <= 'z'; ++c) {
+                if (root.children[c - 'a'] != null && dfs(root.children[c - 'a'], s.substring(1))) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
 }
