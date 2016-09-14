@@ -32,6 +32,7 @@ public class AddAndSearchWord {
             }
             cur = cur.children[c - 'a'];
         }
+        cur.isLeaf = true;
     }
 
     // Returns if the word is in the data structure. A word could
