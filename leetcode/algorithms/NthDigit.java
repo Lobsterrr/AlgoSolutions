@@ -33,11 +33,11 @@ public class NthDigit {
         }
         int i = 1;
         int count = 0;
-        while (count < n) {
-            
+        while (count + ("" + i).length() < n) {
+            count += ("" + i).length();
             i++;
         }
-        return -1;
+        return ("" + i).charAt(n - count) - '0';
     }
 
 }
