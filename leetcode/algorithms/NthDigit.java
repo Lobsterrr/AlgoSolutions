@@ -25,7 +25,9 @@
 public class NthDigit {
 
     public int findNthDigit(int n) {
-
+        if (0 < n && n < 10) {
+            return n;
+        }
     }
 
 }
