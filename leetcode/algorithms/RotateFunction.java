@@ -28,6 +28,24 @@ public class RotateFunction {
         if (A == null || A.length == 0) {
             return 0;
         }
+        int sum = 0;
+        int tmp = 0;
+        for (int i = 0; i < A.length; ++i) {
+            sum += A[i];
+            tmp = i * A[i];
+        }
+        int result = tmp;
+        for (int i = 1; i < A.length; ++i) {
+            tmp += sum - A.length * A[A.length - i];
+            result = Math.max(result, tmp);
+        }
+        return result;
+    }
+
+    public int maxRotateFunction(int[] A) {
+        if (A == null || A.length == 0) {
+            return 0;
+        }
         int result = Integer.MIN_VALUE;
         for (int i = 0; i < A.length; ++i) {
             int sum = 0;
