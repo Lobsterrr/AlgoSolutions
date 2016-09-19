@@ -26,7 +26,7 @@ public class RotateFunction {
 
     // O(n) time, O(1) space.
     public int maxRotateFunction(int[] A) {
-        if (A == null || A.length == 0) {
+        if (A == null) {
             return 0;
         }
         int sum = 0;
