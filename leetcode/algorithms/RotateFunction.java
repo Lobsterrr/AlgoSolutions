@@ -33,7 +33,7 @@ public class RotateFunction {
         int tmp = 0;
         for (int i = 0; i < A.length; ++i) {
             sum += A[i];
-            tmp = i * A[i];
+            tmp += i * A[i];
         }
         int result = tmp;
         for (int i = 1; i < A.length; ++i) {
