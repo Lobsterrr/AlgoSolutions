@@ -31,6 +31,11 @@ public class NthDigit {
         if (0 < n && n < 10) {
             return n;
         }
+        int i = 1;
+        int count = 0;
+        while (count < n) {
+
+        }
     }
 
 }
