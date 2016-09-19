@@ -28,9 +28,6 @@
 public class NthDigit {
 
     public int findNthDigit(int n) {
-        if (0 < n && n < 10) {
-            return n;
-        }
         int i = 1;
         int count = 0;
         while (count + ("" + i).length() < n) {
