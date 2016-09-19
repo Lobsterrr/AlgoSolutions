@@ -34,7 +34,8 @@ public class NthDigit {
         int i = 1;
         int count = 0;
         while (count < n) {
-
+            
+            i++;
         }
         return -1;
     }
