@@ -37,7 +37,7 @@ public class NthDigit {
             count += ("" + i).length();
             i++;
         }
-        return ("" + i).charAt(n - count) - '0';
+        return ("" + i).charAt(n - count - 1) - '0';
     }
 
 }
