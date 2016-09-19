@@ -36,6 +36,7 @@ public class NthDigit {
         while (count < n) {
 
         }
+        return -1;
     }
 
 }
