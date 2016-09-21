@@ -36,7 +36,12 @@ public class NthDigit {
         for (; index < digitSum.length && digitSum[index] < n; ++index);
         int remainder = n - digitSum[index - 1];
         int num = remainder / index + Math.pow(10, index - 1);
-
+        int tmpRemainder = digitSum[i - 1] + index * (num - Math.pow(10, index - 1) + 1);
+        int diff = tmpRemainder - n;
+        for (; diff > 0; diff--) {
+            num /= 10;
+        }
+        return num % 10;
     }
 
 }
