@@ -34,7 +34,7 @@ public class NthDigit {
         }
         int index = 0;
         for (; index < digitSum.length && digitSum[index] < n; ++index);
-        int remainder = n - digitSum[index - 1] - 1;
+        int remainder = n - digitSum[index - 1] - 1; // less than real remainder
         int num = remainder / index + (int) Math.pow(10, index - 1);
         int diff = index - (remainder % index + 1);
         for (; diff > 0; diff--) {
