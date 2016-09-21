@@ -33,17 +33,11 @@ public class NthDigit {
             digitSum[i] = digitSum[i - 1] + i * 9 * Math.pow(10, i - 1);
         }
         int index = 0;
-        for (; index < digitSum.length && n < digitSum[index]; ++index);
+        for (; index < digitSum.length && digitSum[index] < n; ++index);
+        int remainder = n - digitSum[index - 1];
+        int num = remainder / index + Math.pow(10, index - 1);
+
     }
 
-    public int findNthDigit(int n) {
-        int i = 1;
-        int count = 0;
-        while (count + ("" + i).length() < n) {
-            count += ("" + i).length();
-            i++;
-        }
-        return ("" + i).charAt(n - count - 1) - '0';
-    }
 
 }
