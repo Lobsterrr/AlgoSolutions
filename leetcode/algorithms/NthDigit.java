@@ -29,9 +29,8 @@ public class NthDigit {
 
     public int findNthDigit(int n) {
         int len = 1;
-        while (n > len * 9 * (Math.pow(10, len - 1))) {
+        for (; n > len * 9 * (Math.pow(10, len - 1)); ++len) {
             n -= len * 9 * Math.pow(10,len - 1);
-            len++;
         }
         int num = (int) Math.pow(10, len - 1) + (n - 1) / len;
         num /= ((int) Math.pow(10, len - 1 - (n - 1) % len));
