@@ -30,13 +30,13 @@ public class NthDigit {
     public int findNthDigit(int n) {
         int[] digitSum = new int[9];
         for (int i = 1; i < digitSum.length; ++i) {
-            digitSum[i] = digitSum[i - 1] + i * 9 * Math.pow(10, i - 1);
+            digitSum[i] = digitSum[i - 1] + i * 9 * (int) Math.pow(10, i - 1);
         }
         int index = 0;
         for (; index < digitSum.length && digitSum[index] < n; ++index);
         int remainder = n - digitSum[index - 1];
-        int num = remainder / index + Math.pow(10, index - 1);
-        int tmpRemainder = digitSum[index - 1] + index * (num - Math.pow(10, index - 1) + 1);
+        int num = remainder / index + (int) Math.pow(10, index - 1);
+        int tmpRemainder = digitSum[index - 1] + index * (num - (int) Math.pow(10, index - 1) + 1);
         int diff = tmpRemainder - n;
         for (; diff > 0; diff--) {
             num /= 10;
