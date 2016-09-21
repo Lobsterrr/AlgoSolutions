@@ -22,6 +22,10 @@ public class DecodeString {
         }
         Stack<Integer> numStack = new Stack<Integer>();
         Stack<String> strStack = new Stack<Integer>();
+        for (char c : s.toCharArray()) {
+
+        }
+
         return result;
     }
 
