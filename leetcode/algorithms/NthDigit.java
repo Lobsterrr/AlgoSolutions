@@ -28,6 +28,13 @@
 public class NthDigit {
 
     public int findNthDigit(int n) {
+        int[] digitSum = new int[9];
+        for (int i = 1; i < digitSum.length; ++i) {
+            digitSum[i] = digitSum[i - 1] + i * 9 * Math.pow(10, i - 1);
+        }
+    }
+
+    public int findNthDigit(int n) {
         int i = 1;
         int count = 0;
         while (count + ("" + i).length() < n) {
