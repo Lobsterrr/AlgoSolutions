@@ -32,6 +32,8 @@ public class NthDigit {
         for (int i = 1; i < digitSum.length; ++i) {
             digitSum[i] = digitSum[i - 1] + i * 9 * Math.pow(10, i - 1);
         }
+        int index = 0;
+        for (; index < digitSum.length && n < digitSum[index]; ++index);
     }
 
     public int findNthDigit(int n) {
