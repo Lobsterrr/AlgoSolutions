@@ -33,7 +33,7 @@ public class NthDigit {
             n -= len * 9 * Math.pow(10,len - 1);
         }
         int num = (int) Math.pow(10, len - 1) + (n - 1) / len;
-        num /= ((int) Math.pow(10, len - 1 - (n - 1) % len));
+        num /= ((int) Math.pow(10, len - ((n - 1) % len + 1)));
         return num % 10;
     }
 
