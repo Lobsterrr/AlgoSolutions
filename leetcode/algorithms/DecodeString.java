@@ -23,7 +23,9 @@ public class DecodeString {
         Stack<Integer> numStack = new Stack<Integer>();
         Stack<String> strStack = new Stack<Integer>();
         for (char c : s.toCharArray()) {
+            if (Character.isDigit(c)) {
 
+            }
         }
 
         return result;
