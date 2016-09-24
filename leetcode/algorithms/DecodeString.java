@@ -22,16 +22,16 @@ public class DecodeString {
         }
         Stack<Integer> numStack = new Stack<Integer>();
         Stack<String> strStack = new Stack<Integer>();
-        for (char c : s.toCharArray()) {
-            if (Character.isDigit(c)) {
-                numStack.push(c - '0');
-            } else if (c == '[') {
+        char[] ch = s.toCharArray();
+        for (int i = 0; i < ch.length; ++i) {
+            if (Character.isDigit(ch[i])) {
 
-            } else if (c == ']') {
+            } else if (ch[i] == '[') {
+
+            } else if (ch[i] == ']') {
 
             }
         }
-
         return result;
     }
 
