@@ -24,7 +24,7 @@ public class DecodeString {
         Stack<String> strStack = new Stack<Integer>();
         for (char c : s.toCharArray()) {
             if (Character.isDigit(c)) {
-
+                numStack.push(c - '0');
             }
         }
 
