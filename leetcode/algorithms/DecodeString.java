@@ -47,7 +47,8 @@ public class DecodeString {
                     tmp += cur;
                 }
                 String top = strStack.pop();
-                top += tmp;
+                cur = top + tmp;
+                top = tmp;
                 strStack.push(top);
             } else if (Character.isLetter(ch[i])) {
                 cur += ch[i];
