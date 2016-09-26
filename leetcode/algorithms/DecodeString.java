@@ -28,7 +28,6 @@ public class DecodeString {
         Stack<Integer> numStack = new Stack<Integer>();
         Stack<String> strStack = new Stack<String>();
         char[] ch = s.toCharArray();
-        String cur = "";
         for (int i = 0; i < ch.length; ++i) {
             if (Character.isDigit(ch[i])) {
                 int num = 0;
@@ -38,20 +37,20 @@ public class DecodeString {
                 i--;
                 numStack.push(num);
             } else if (ch[i] == '[') {
-                strStack.push(cur);
-                cur = "";
+                strStack.push(result);
+                result = "";
             } else if (ch[i] == ']') {
                 int times = numStack.pop();
                 String tmp = "";
                 for (int j = 0; j < times; ++j) {
-                    tmp += cur;
+                    tmp += result;
                 }
-                cur = strStack.pop() + tmp;
+                result = strStack.pop() + tmp;
             } else if (Character.isLetter(ch[i])) {
-                cur += ch[i];
+                result += ch[i];
             }
         }
-        return cur;
+        return result;
     }
 
 }
