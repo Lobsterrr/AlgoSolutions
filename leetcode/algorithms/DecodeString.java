@@ -46,15 +46,13 @@ public class DecodeString {
                 for (int j = 0; j < times; ++j) {
                     tmp += cur;
                 }
-                String top = strStack.pop();
-                cur = top + tmp;
-                top = tmp;
-                strStack.push(top);
+                cur = strStack.pop() + tmp;
+                strStack.push(cur);
             } else if (Character.isLetter(ch[i])) {
                 cur += ch[i];
             }
         }
-        return strStack.peek();
+        return cur;
     }
 
 }
