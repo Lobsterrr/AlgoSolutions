@@ -33,11 +33,16 @@ public class DecodeString {
                 i--;
                 numStack.push(num);
             } else if (ch[i] == '[') {
-
+                strStack.push(cur);
+                cur = "";
             } else if (ch[i] == ']') {
-
+                int times = numStack.pop();
+                String strTop = strStack.pop();
+                for (int i = 0; i < times; ++i) {
+                    cur += strTop;
+                }
             } else if (Character.isLetter(ch[i])) {
-
+                cur += ch[i];
             }
         }
         return result;
