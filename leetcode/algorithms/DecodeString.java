@@ -43,7 +43,7 @@ public class DecodeString {
             } else if (ch[i] == ']') {
                 int times = numStack.pop();
                 String strTop = strStack.pop();
-                for (int i = 0; i < times; ++i) {
+                for (int j = 0; j < times; ++j) {
                     cur += strTop;
                 }
             } else if (Character.isLetter(ch[i])) {
