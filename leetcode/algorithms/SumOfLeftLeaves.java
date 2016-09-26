@@ -32,20 +32,7 @@ public class SumOfLeftLeaves {
         } else if (root.left == null && root.right == null) {
             return isLeft ? root.val : 0;
         }
-        return sumOfLeftLeaves(root.left, true) + sumOfLeftLeaves(root.right, false);
-
-
-
-
-        if (root == null) {
-            return 0;
-        } else if (root.left == null && root.right == null) {
-            return isLeft ? root.val : 0;
-        } else if (root.left == null && root.right != null) {
-            return sumOfLeftLeaves(root.right, false);
-        } else if (root.left != null && root.right == null) {
-            return sumOfLeftLeaves(root.left, true);
-        }
-        return sumOfLeftLeaves(root.left, true) + sumOfLeftLeaves(root.right, false);
+        return sumOfLeftLeaves(root.left, true) 
+            + sumOfLeftLeaves(root.right, false);
     }
 }
