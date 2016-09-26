@@ -41,13 +41,14 @@ public class DecodeString {
                 strStack.push(cur);
                 cur = "";
             } else if (ch[i] == ']') {
+                strStack.push(cur);
+                String top = strStack.pop();
                 int times = numStack.pop();
                 String tmp = "";
                 for (int j = 0; j < times; ++j) {
-                    tmp += cur;
+                    tmp += top;
                 }
                 cur = strStack.pop() + tmp;
-                strStack.push(cur);
             } else if (Character.isLetter(ch[i])) {
                 cur += ch[i];
             }
