@@ -29,6 +29,23 @@ public class SumOfLeftLeaves {
     public int sumOfLeftLeaves(TreeNode root, boolean isLeft) {
         if (root == null) {
             return 0;
+        }
+        int sum = 0;
+        if (root.left == null && root.right == null) {
+            sum += isLeft ? root.val : 0;
+        }
+        if (root.left != null) {
+            sum += sumOfLeftLeaves(root.left, true);
+        }
+        if (root.right != null) {
+            sum += sumOfLeftLeaves(root.right, false);
+        }
+        return sum;
+
+
+
+        if (root == null) {
+            return 0;
         } else if (root.left == null && root.right == null) {
             return isLeft ? root.val : 0;
         } else if (root.left == null && root.right != null) {
@@ -36,8 +53,7 @@ public class SumOfLeftLeaves {
         } else if (root.left != null && root.right == null) {
             return sumOfLeftLeaves(root.left, true);
         } else {
-            return sumOfLeftLeaves(root.left, true) 
-                + sumOfLeftLeaves(root.right, false);
+            return sumOfLeftLeaves(root.left, true) + sumOfLeftLeaves(root.right, false);
         }
     }
 }
