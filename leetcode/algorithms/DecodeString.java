@@ -23,12 +23,20 @@ public class DecodeString {
         Stack<Integer> numStack = new Stack<Integer>();
         Stack<String> strStack = new Stack<Integer>();
         char[] ch = s.toCharArray();
+        String cur = "";
         for (int i = 0; i < ch.length; ++i) {
             if (Character.isDigit(ch[i])) {
-
+                int num = 0;
+                while (i < ch.length && Character.isDigit(ch[i])) {
+                    num = 10 * num + (ch[i] - '0');
+                }
+                i--;
+                numStack.push(num);
             } else if (ch[i] == '[') {
 
             } else if (ch[i] == ']') {
+
+            } else if (Character.isLetter(ch[i])) {
 
             }
         }
