@@ -33,7 +33,7 @@ public class DecodeString {
             if (Character.isDigit(ch[i])) {
                 int num = 0;
                 while (i < ch.length && Character.isDigit(ch[i])) {
-                    num = 10 * num + (ch[i] - '0');
+                    num = 10 * num + (ch[i++] - '0');
                 }
                 i--;
                 numStack.push(num);
