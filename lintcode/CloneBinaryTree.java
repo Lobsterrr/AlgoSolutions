@@ -1,7 +1,6 @@
 /*
  * For the given binary tree, return a deep copy of it.
 
-Have you met this question in a real interview? Yes
 Example
 Given a binary tree:
 
