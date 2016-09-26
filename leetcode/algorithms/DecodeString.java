@@ -43,7 +43,7 @@ public class DecodeString {
             } else if (ch[i] == ']') {
                 int times = numStack.pop();
                 String tmp = "";
-                for (int i = 0; i < times; ++i) {
+                for (int j = 0; j < times; ++j) {
                     tmp += cur;
                 }
                 String top = strStack.pop();
