@@ -42,18 +42,18 @@ public class DecodeString {
                 cur = "";
             } else if (ch[i] == ']') {
                 int times = numStack.pop();
-                String strTop = strStack.pop();
-                for (int j = 0; j < times; ++j) {
-                    cur += strTop;
+                String tmp = "";
+                for (int i = 0; i < times; ++i) {
+                    tmp += cur;
                 }
-                strTop = strStack.pop();
-                strTop += cur;
-                strStack.push(strTop);
+                String top = strStack.pop();
+                top += tmp;
+                strStack.push(top);
             } else if (Character.isLetter(ch[i])) {
                 cur += ch[i];
             }
         }
-        return result;
+        return strStack.peek();
     }
 
 }
