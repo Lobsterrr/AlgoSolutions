@@ -36,7 +36,8 @@ public class SumOfLeftLeaves {
         } else if (root.left != null && root.right == null) {
             return sumOfLeftLeaves(root.left, true);
         } else {
-            return sumOfLeftLeaves(root.left, true) + sumOfLeftLeaves(root.right, false);
+            return sumOfLeftLeaves(root.left, true) 
+                + sumOfLeftLeaves(root.right, false);
         }
     }
 }
