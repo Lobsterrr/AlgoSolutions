@@ -21,7 +21,7 @@ public class DecodeString {
             return result;
         }
         Stack<Integer> numStack = new Stack<Integer>();
-        Stack<String> strStack = new Stack<Integer>();
+        Stack<String> strStack = new Stack<String>();
         char[] ch = s.toCharArray();
         String cur = "";
         for (int i = 0; i < ch.length; ++i) {
