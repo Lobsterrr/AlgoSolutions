@@ -35,6 +35,10 @@ public class CloneBinaryTree {
      * @return root of new tree
      */
     public TreeNode cloneTree(TreeNode root) {
+
+    }
+
+    public TreeNode cloneTree(TreeNode root) {
         if (root == null) {
             return null;
         }
