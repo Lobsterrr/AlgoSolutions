@@ -35,7 +35,18 @@ public class CloneBinaryTree {
      * @return root of new tree
      */
     public TreeNode cloneTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        TreeNode copy = new TreeNode(root.val);
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode cur1 = root;
+        TreeNode cur2 = copy;
+        while (cur1 != null || !stack.isEmpty()) {
+            if (cur1 != null) {
 
+            }
+        }
     }
 
     public TreeNode cloneTree(TreeNode root) {
