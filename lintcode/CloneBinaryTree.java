@@ -42,11 +42,20 @@ public class CloneBinaryTree {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
         Map<TreeNode, TreeNode> map = new HashMap<TreeNode, TreeNode>();
+        map.put(root, copy);
         while (!stack.isEmpty()) {
             TreeNode cur = stack.pop();
             if (cur.left != null && !map.containsKey(cur.left)) {
-                map.put()
+                stack.push(cur.left);
+                TreeNode copyNode = new TreeNode(cur.left.val);
+                map.put(cur.left, copyNode);
             }
+            if (cur.right != null && !map.containsKey(cur.right)) {
+                stack.push(cur.right);
+                TreeNode copyNode = new TreeNode(cur.right.val);
+                map.put(cur.right, copyNode);
+            }
+            map.get(cur).left = map.get()
         }
     }
 
