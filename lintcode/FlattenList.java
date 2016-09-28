@@ -5,7 +5,6 @@
 
 If the element in the given list is a list, it can contain list too.
 
-Have you met this question in a real interview? Yes
 Example
 Given [1,2,[1,2]], return [1,2,1,2].
 
