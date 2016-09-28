@@ -40,7 +40,10 @@ public class CloneBinaryTree {
         }
         TreeNode copy = new TreeNode(root.val);
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        stack.push(root);
+        while (root != null || !stack.isEmpty()) {
+
+        }
+        return copy;
     }
 
     public TreeNode cloneTree(TreeNode root) {
