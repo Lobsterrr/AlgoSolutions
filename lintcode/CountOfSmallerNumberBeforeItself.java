@@ -29,6 +29,7 @@ public class CountOfSmallerNumberBeforeItself {
 
     class SegmentTree {
         int[] array;
+
     }
 
 }
