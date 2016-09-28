@@ -34,6 +34,7 @@ public class CloneBinaryTree {
      * @param root: The root of binary tree
      * @return root of new tree
      */
+    //postorder traversal
     public TreeNode cloneTree(TreeNode root) {
         if (root == null) {
             return null;
@@ -44,7 +45,8 @@ public class CloneBinaryTree {
         TreeNode child = root;
         while (!stack.isEmpty()) {
             TreeNode cur = stack.peek();
-            if (cur.left == null && cur.right == null || cur.left == child || cur.right == child) {
+            if (cur.left == null && cur.right == null 
+                    || cur.left == child || cur.right == child) {
                 child = stack.pop();
                 map.put(child, new TreeNode(child.val));
                 map.get(child).left = map.get(child.left);
@@ -61,6 +63,8 @@ public class CloneBinaryTree {
         return map.get(root);
     }
 
+/*******************************************************************/
+    //preorder traversal
     public TreeNode cloneTree(TreeNode root) {
         if (root == null) {
             return null;
