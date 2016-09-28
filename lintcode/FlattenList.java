@@ -42,7 +42,7 @@ public class FlattenList {
         List<Integer> result = new ArrayList<Integer>();
         for (NestedInteger nestedInteger : nestedList) {
             if (nestedInteger.isInteger()) {
-                result.add(nestedInteger);
+                result.add(nestedInteger.getInteger());
             } else {
                 result.addAll(flatten(nestedInteger));
             }
