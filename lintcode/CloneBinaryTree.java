@@ -64,7 +64,7 @@ public class CloneBinaryTree {
     }
 
 /*******************************************************************/
-    //preorder traversal
+    //inorder traversal
     public TreeNode cloneTree(TreeNode root) {
         if (root == null) {
             return null;
