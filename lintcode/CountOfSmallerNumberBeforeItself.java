@@ -21,7 +21,9 @@ public class CountOfSmallerNumberBeforeItself {
      */ 
     public ArrayList<Integer> countOfSmallerNumberII(int[] A) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-
+        if (A == null || A.length == 0) {
+            return result;
+        }
         return result;
     }
 
