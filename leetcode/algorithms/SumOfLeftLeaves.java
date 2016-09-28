@@ -30,7 +30,8 @@ public class SumOfLeftLeaves {
         while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             if (node != null) {
-                if (node.left != null && node.left.left == null && node.left.right == null) {
+                if (node.left != null && node.left.left == null 
+                        && node.left.right == null) {
                     result += node.left.val;
                 }
                 stack.push(node.left);
@@ -39,6 +40,8 @@ public class SumOfLeftLeaves {
         }
         return result;
     }
+
+/*******************************************************************/
 
     public int sumOfLeftLeaves(TreeNode root) {
         return sumOfLeftLeaves(root, false);
