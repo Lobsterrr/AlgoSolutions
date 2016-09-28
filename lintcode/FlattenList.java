@@ -44,7 +44,7 @@ public class FlattenList {
             if (nestedInteger.isInteger()) {
                 result.add(nestedInteger.getInteger());
             } else {
-                result.addAll(flatten(nestedInteger));
+                result.addAll(flatten(nestedInteger.getList()));
             }
         }
         return result;
