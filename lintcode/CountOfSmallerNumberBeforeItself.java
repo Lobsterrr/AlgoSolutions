@@ -27,4 +27,8 @@ public class CountOfSmallerNumberBeforeItself {
         return result;
     }
 
+    class SegmentTree {
+
+    }
+
 }
