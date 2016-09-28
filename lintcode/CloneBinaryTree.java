@@ -55,7 +55,8 @@ public class CloneBinaryTree {
                 TreeNode copyNode = new TreeNode(cur.right.val);
                 map.put(cur.right, copyNode);
             }
-            map.get(cur).left = map.get()
+            map.get(cur).left = map.get(copyNode.left);
+            map.get(cur).right = map.get(copyNode.right);
         }
     }
 
