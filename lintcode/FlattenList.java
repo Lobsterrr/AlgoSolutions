@@ -1,5 +1,18 @@
 /*
- *
+ * Given a list, each element in the list can be a list or integer. flatten it into a simply list with integers.
+
+ Notice
+
+If the element in the given list is a list, it can contain list too.
+
+Have you met this question in a real interview? Yes
+Example
+Given [1,2,[1,2]], return [1,2,1,2].
+
+Given [4,[3,[2,[1]]]], return [4,3,2,1].
+
+Challenge 
+Do it in non-recursive.
  */
 /**
  * // This is the interface that allows for creating nested lists.
