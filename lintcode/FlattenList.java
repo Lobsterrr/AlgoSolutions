@@ -1,5 +1,6 @@
 /*
- * Given a list, each element in the list can be a list or integer. flatten it into a simply list with integers.
+ * Given a list, each element in the list can be a list or integer. 
+ * flatten it into a simply list with integers.
 
  Notice
 
