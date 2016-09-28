@@ -20,7 +20,9 @@ public class CountOfSmallerNumberBeforeItself {
      *          smaller than it and return count number array
      */ 
     public ArrayList<Integer> countOfSmallerNumberII(int[] A) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
 
+        return result;
     }
 
 }
