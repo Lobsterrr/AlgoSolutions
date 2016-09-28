@@ -38,7 +38,15 @@ public class FlattenList {
     // @param nestedList a list of NestedInteger
     // @return a list of integer
     public List<Integer> flatten(List<NestedInteger> nestedList) {
-
+        List<Integer> result = new ArrayList<Integer>();
+        for (NestedInteger nestedInteger : nestedList) {
+            if (nestedInteger.isInteger) {
+                result.add(nestedInteger);
+            } else {
+                result.addAll(flatten(nestedInteger));
+            }
+        }
+        return result;
     }
 
 }
