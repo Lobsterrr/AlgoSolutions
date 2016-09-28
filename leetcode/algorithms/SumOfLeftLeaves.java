@@ -24,6 +24,23 @@
 public class SumOfLeftLeaves {
 
     public int sumOfLeftLeaves(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        int result = 0;
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            if (node != null) {
+                if (node.left != null && node.left.left == null && node.left.right == null) {
+                    result += node.left.val;
+                }
+                stack.push(node.left);
+                stack.push(node.right);
+            }
+        }
+        return result;
+    }
+
+    public int sumOfLeftLeaves(TreeNode root) {
         return sumOfLeftLeaves(root, false);
     }
 

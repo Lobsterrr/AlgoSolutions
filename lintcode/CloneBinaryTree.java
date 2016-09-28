@@ -39,9 +39,10 @@ public class CloneBinaryTree {
             return null;
         }
         TreeNode copy = new TreeNode(root.val);
+        TreeNode cur = root;
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        while (root != null || !stack.isEmpty()) {
-
+        while (cur != null || !stack.isEmpty()) {
+            
         }
         return copy;
     }
