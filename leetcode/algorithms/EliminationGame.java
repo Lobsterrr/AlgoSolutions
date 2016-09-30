@@ -26,7 +26,25 @@
 public class EliminationGame {
 
     public int lastRemaining(int n) {
-        
+        List<Integer> list = new LinkedList<Integer>();
+        for (int i = 1; i <= n; ++i) {
+            list.add(i);
+        }
+        boolean L2R = true;
+        while (list.size() > 1) {
+            if (L2R) {
+                for (int i = (list.size() - 1) / 2 * 2; i >= 0; i -= 2) {
+                    list.remove(i);
+                }
+            } else {
+                for (int i = list.size() - 1; i >= 0; i -= 2) {
+                    list.remove(i);
+                }
+            }
+
+
+            L2R ~= L2R;
+        }
     }
 
 }
