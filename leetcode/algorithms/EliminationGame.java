@@ -37,20 +37,4 @@ public class EliminationGame {
         return head;
     }
 
-    public int lastRemaining(int n) {
-        int step = 1;
-        int start = 1;
-        int remaining = n;
-        boolean L2R = true;
-        while (remaining > 1) {
-            if (L2R || remaining % 2 == 1) {
-                start += step;
-            }
-            L2R = !L2R;
-            step *= 2;
-            remaining /= 2;
-        }
-        return start;
-    }
-
 }
