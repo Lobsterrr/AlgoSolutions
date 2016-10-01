@@ -41,7 +41,7 @@ public class EliminationGame {
                     list.remove(i);
                 }
             }
-            L2R ~= L2R;
+            L2R = !L2R;
         }
         return list.get(0);
     }
