@@ -26,14 +26,14 @@
 public class EliminationGame {
 
     public int lastRemaining(int n) {
-        int start = 1;
+        int head = 1;
         boolean L2R = true;
         for (int step = 1, remaining = n; remaining > 1; L2R = !L2R, step *= 2, remaining /= 2) {
             if (L2R || remaining % 2 == 1) {
-                start += step;
+                head += step;
             }
         }
-        return start;
+        return head;
     }
 
     public int lastRemaining(int n) {
