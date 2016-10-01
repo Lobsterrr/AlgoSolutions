@@ -38,6 +38,7 @@ public class EliminationGame {
             step *= 2;
             remaining /= 2;
         }
+        return start;
     }
 
     public int lastRemaining(int n) {
