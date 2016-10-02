@@ -20,7 +20,10 @@
 public class LongestPalindrome {
 
     public int longestPalindrome(String s) {
-
+        int[] count = new int[256];
+        for (int i = 0; i < s.length(); ++i) {
+            count[s.charAt(i)]++;
+        }
     }
 
 }
