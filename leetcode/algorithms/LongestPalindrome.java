@@ -25,7 +25,15 @@ public class LongestPalindrome {
             count[s.charAt(i)]++;
         }
         int result = 0;
-
+        int maxOdd = 0;
+        for (int c : count) {
+            if (c % 2 == 0) {
+                result += c;
+            } else {
+                maxOdd = Math.max(maxOdd, c);
+            }
+        }
+        result += maxOdd;
         return result;
     }
 
