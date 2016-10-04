@@ -21,15 +21,15 @@
 public class LongestPalindrome {
 
     public int longestPalindrome(String s) {
-        int[] count = new int[256];
+        int[] counts = new int[256];
         for (int i = 0; i < s.length(); ++i) {
-            count[s.charAt(i)]++;
+            counts[s.charAt(i)]++;
         }
         int result = 0;
         boolean hasOdd = false;
-        for (int c : count) {
-            result += c / 2 * 2;
-            if (c % 2 == 1) {
+        for (int count : counts) {
+            result += count / 2 * 2;
+            if (count % 2 == 1) {
                 hasOdd = true;
             }
         }
