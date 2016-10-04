@@ -26,15 +26,14 @@ public class LongestPalindrome {
             count[s.charAt(i)]++;
         }
         int result = 0;
-        int maxOdd = 0;
+        boolean hasOdd = false;
         for (int c : count) {
-            if (c % 2 == 0) {
-                result += c;
-            } else {
-                maxOdd = Math.max(maxOdd, c);
+            result += c / 2 * 2;
+            if (c % 2 == 1) {
+                hasOdd = true;
             }
         }
-        result += maxOdd;
+        result += hasOdd ? 1 : 0;
         return result;
     }
 
