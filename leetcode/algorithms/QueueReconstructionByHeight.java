@@ -21,4 +21,13 @@ public class QueueReconstructionByHeight {
 
     }
 
+    public void swap(int[][] array, int row1, int row2) {
+        int tmp0 = array[row1][0];
+        int tmp1 = array[row1][1];
+        array[row1][0] = array[row2][0];
+        array[row1][1] = array[row2][1];
+        array[row2][0] = tmp0;
+        array[row2][1] = tmp1;
+    }
+
 }
