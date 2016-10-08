@@ -128,7 +128,7 @@ public class Chapter4 {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
         boolean isPVisited = false;
-        while (cur != null || !stack.isEmtpy()) {
+        while (cur != null || !stack.isEmpty()) {
             if (cur != null) {
                 stack.push(cur);
                 cur = cur.left;
@@ -144,6 +144,7 @@ public class Chapter4 {
                 }
             }
         }
+        return -1;
     }
 
     // 4.7
