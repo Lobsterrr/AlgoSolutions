@@ -28,8 +28,7 @@ public class QueueReconstructionByHeight {
             }
         });
         for (int i = 1; i < people.length; ++i) {
-            int count = 0;
-            for (int j = 0; j < i; ++j) {
+            for (int j = 0, count = 0; j < i; ++j) {
                 if (count == people[i][1]) {
                     int[] tmp = {people[i][0], people[i][1]};
                     for (int k = i; k > j; --k) {
