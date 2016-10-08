@@ -125,7 +125,21 @@ public class Chapter4 {
 
     // 4.6
     public int findSucc(TreeNode root, int p) {
-
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode cur = root;
+        boolean isPVisited = false;
+        while (cur != null || !stack.isEmtpy()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                TreeNode node = stack.pop();
+                cur = node.left;
+                if (node.val == p) {
+                    isPVisited = true;
+                }
+            }
+        }
     }
 
     // 4.7
