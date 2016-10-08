@@ -34,40 +34,4 @@ public class QueueReconstructionByHeight {
         return list.toArray(new int[people.length][]);
     }
 
-/*****************************************************************************/
-
-    public int[][] reconstructQueue(int[][] people) {
-        if (people == null || people.length == 0) {
-            return people;
-        }
-        for (int i = people.length - 1; i >= 0; --i) {
-            for (int j = people.length - 1; j >= i; --j) {
-                if (people[i][0] < people[j][0] || people[i][0] == people[j][0] 
-                        && people[i][1] > people[j][1]) {
-                    swap(people, i, j);
-                }
-            }
-        }
-        List<Integer> indexList = new LinkedList<Integer>();
-        List<Integer> valueList = new LinkedList<Integer>();
-        for (int i = 0; i < people.length; ++i) {
-            indexList.add(people[i][1], people[i][0]);
-            valueList.add(people[i][1], people[i][1]);
-        }
-        for (int i = 0; i < people.length; ++i) {
-            people[i][0] = indexList.get(i);
-            people[i][1] = valueList.get(i);
-        }
-        return people;
-    }
-
-    public void swap(int[][] array, int row1, int row2) {
-        int tmp0 = array[row1][0];
-        int tmp1 = array[row1][1];
-        array[row1][0] = array[row2][0];
-        array[row1][1] = array[row2][1];
-        array[row2][0] = tmp0;
-        array[row2][1] = tmp1;
-    }
-
 }
