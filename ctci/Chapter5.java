@@ -16,7 +16,7 @@ public class Chapter5 {
             int integer = (int) twice;
             num = twice - integer;
             result += integer;
-            if (result.length() >= 64) {
+            if (result.length() >= 32) {
                 return "Error";
             }
         }
