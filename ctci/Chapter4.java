@@ -42,6 +42,11 @@ public class Chapter4 {
         return 1 + Math.max(left, right);
     }
 
+    // 4.2
+    public boolean checkPath(UndirectedGraphNode a, UndirectedGraphNode b) {
+
+    }
+
     // 4.3
     public int buildMinimalBST(int[] vals) {
         if (vals == null || vals.length == 0) {
