@@ -19,7 +19,7 @@ public class QueueReconstructionByHeight {
 
     public int[][] reconstructQueue(int[][] people) {
         for (int i = people.length - 1; i >= 0; --i) {
-            for (int j = people.length - i; j >= i; --j) {
+            for (int j = people.length - 1; j >= i; --j) {
                 if (people[i][0] < people[j][0]) {
                     swap(people, i, j);
                 } else if (people[i][0] == people[j][0]) {
