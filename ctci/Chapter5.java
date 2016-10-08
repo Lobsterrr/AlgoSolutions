@@ -10,12 +10,15 @@ public class Chapter5 {
     
     // 5.2
     public String printBin(double num) {
-        String result = "";
+        String result = "0.";
         while (num != 0) {
             double twice = 2 * num;
             int integer = (int) twice;
             num = twice - integer;
             result += integer;
+            if (result.length() >= 32) {
+                return "Error";
+            }
         }
         return result;
     }
