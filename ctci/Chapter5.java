@@ -11,7 +11,7 @@ public class Chapter5 {
     // 5.2
     public String printBin(double num) {
         String result = "0.";
-        while (num != 0) {
+        while (num > 0) {
             double twice = 2 * num;
             int integer = (int) twice;
             num = twice - integer;
