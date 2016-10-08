@@ -23,7 +23,8 @@ public class QueueReconstructionByHeight {
         }
         for (int i = people.length - 1; i >= 0; --i) {
             for (int j = people.length - 1; j >= i; --j) {
-                if (people[i][0] < people[j][0] || people[i][0] == people[j][0] && people[i][1] > people[j][1]) {
+                if (people[i][0] < people[j][0] || people[i][0] == people[j][0] 
+                        && people[i][1] > people[j][1]) {
                     swap(people, i, j);
                 }
             }
