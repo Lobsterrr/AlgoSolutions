@@ -1,4 +1,4 @@
-/**
+/*
 public class TreeNode {
     int val = 0;
     TreeNode left = null;
@@ -10,7 +10,7 @@ public class TreeNode {
     }
 
 }
-/*
+
 public class ListNode {
     int val;
     ListNode next = null;
@@ -18,7 +18,18 @@ public class ListNode {
     ListNode(int val) {
         this.val = val;
     }
-}*/
+}
+
+public class UndirectedGraphNode {
+    int label = 0;
+    UndirectedGraphNode left = null;
+    UndirectedGraphNode right = null;
+    ArrayList<UndirectedGraphNode> neighbors = new ArrayList<UndirectedGraphNode>();
+
+    public UndirectedGraphNode(int label) {
+        this.label = label;
+    }
+}
 */
 public class Chapter4 {
 
