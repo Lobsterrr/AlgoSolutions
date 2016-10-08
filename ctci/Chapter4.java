@@ -136,12 +136,10 @@ public class Chapter4 {
                 TreeNode node = stack.pop();
                 if (isPVisited) {
                     return node.val;
-                } else {
-                    if (node.val == p) {
-                        isPVisited = true;
-                    }
-                    cur = node.right;
+                } else if (node.val == p) {
+                    isPVisited = true;
                 }
+                cur = node.right;
             }
         }
         return -1;
