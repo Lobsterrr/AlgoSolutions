@@ -134,9 +134,13 @@ public class Chapter4 {
                 cur = cur.left;
             } else {
                 TreeNode node = stack.pop();
-                cur = node.left;
-                if (node.val == p) {
-                    isPVisited = true;
+                if (isPVisited) {
+                    return node.val;
+                } else {
+                    if (node.val == p) {
+                        isPVisited = true;
+                    }
+                    cur = node.right;
                 }
             }
         }
