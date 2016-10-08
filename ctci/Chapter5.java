@@ -10,7 +10,14 @@ public class Chapter5 {
     
     // 5.2
     public String printBin(double num) {
-
+        String result = "";
+        while (num != 0) {
+            double twice = 2 * num;
+            int integer = (int) twice;
+            num = twice - integer;
+            result += integer;
+        }
+        return result;
     }
 
     // 5.3
