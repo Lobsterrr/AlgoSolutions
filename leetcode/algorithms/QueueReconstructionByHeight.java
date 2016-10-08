@@ -21,7 +21,7 @@ public class QueueReconstructionByHeight {
         if (people == null || people.length == 0) {
             return people;
         }
-        Arrays.sort(people, new Comparator<int[]> {
+        Arrays.sort(people, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
                 return o1[0] == o2[0] ? o1[1] - o2[1] : o2[0] - o1[0];
@@ -29,9 +29,9 @@ public class QueueReconstructionByHeight {
         });
         List<int[]> list = new LinkedList<int[]>();
         for (int[] p : people) {
-            list.add(p[1], people);
+            list.add(p[1], p);
         }
-        return list.toArray(new int[people.length]);
+        return list.toArray(new int[people.length][]);
     }
 
 /*****************************************************************************/
