@@ -43,7 +43,6 @@ public class QueueReconstructionByHeight {
             people[i][1] = valueList.get(i);
         }
         return people;
-        return people;
     }
 
     public void swap(int[][] array, int row1, int row2) {
