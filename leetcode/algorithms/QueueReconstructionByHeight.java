@@ -31,13 +31,13 @@ public class QueueReconstructionByHeight {
             int count = 0;
             for (int j = 0; j < i; ++j) {
                 if (count == people[i][1]) {
-                    int[][] tmp = {people[i][0], people[i][1]};
+                    int[] tmp = {people[i][0], people[i][1]};
                     for (int k = i; k > j; --k) {
                         people[k][0] = people[k - 1][0];
                         people[k][1] = people[k - 1][1];
                     }
-                    people[j][0] = tmp[0][0];
-                    people[j][1] = tmp[0][1];
+                    people[j][0] = tmp[0];
+                    people[j][1] = tmp[1];
                     break;
                 }
                 if (people[j][0] >= people[i][0]) {
