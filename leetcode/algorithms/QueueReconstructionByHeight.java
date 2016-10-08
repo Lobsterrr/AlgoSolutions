@@ -29,6 +29,17 @@ public class QueueReconstructionByHeight {
                 }
             }
         }
+        List<Integer> indexList = new ArrayList<Integer>();
+        List<Integer> valueList = new ArrayList<Integer>();
+        for (int i = 0; i < people.length; ++i) {
+            indexList.add(people[i][1], people[i][0]);
+            valueList.add(people[i][1], people[i][1]);
+        }
+        for (int i = 0; i < people.length; ++i) {
+            people[i][0] = indexList.get(i);
+            people[i][1] = valueList.get(i);
+        }
+        return people;
         return people;
     }
 
