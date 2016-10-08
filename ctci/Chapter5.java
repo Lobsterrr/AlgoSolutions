@@ -7,6 +7,11 @@ public class Chapter5 {
         int right = n << (32 - j) >>> (32 - j);
         return left | (m << j) | right;
     }
+    
+    // 5.2
+    public String printBin(double num) {
+
+    }
 
     // 5.3
     public int[] getCloseNumber(int x) {
