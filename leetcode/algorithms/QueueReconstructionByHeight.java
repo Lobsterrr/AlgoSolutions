@@ -27,6 +27,39 @@ public class QueueReconstructionByHeight {
                 return o1[0] == o2[0] ? o1[1] - o2[1] : o2[0] - o1[0];
             }
         });
+        for (int i = 1; i < people.length; ++i) {
+            int count = 0;
+            for (int j = 0; j < i; ++j) {
+                if (count == people[i][1]) {
+                    int[][] tmp = {people[i][0], people[i][1]};
+                    for (int k = i; k > j; --k) {
+                        people[k][0] = people[k - 1][0];
+                        people[k][1] = people[k - 1][1];
+                    }
+                    people[j][0] = tmp[0][0];
+                    people[j][1] = tmp[0][1];
+                    break;
+                }
+                if (people[j][0] >= people[i][0]) {
+                    count++;
+                }
+            }
+        }
+        return people;
+    }
+
+/*****************************************************************************/
+
+    public int[][] reconstructQueue(int[][] people) {
+        if (people == null || people.length == 0) {
+            return people;
+        }
+        Arrays.sort(people, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0] == o2[0] ? o1[1] - o2[1] : o2[0] - o1[0];
+            }
+        });
         List<int[]> list = new LinkedList<int[]>();
         for (int[] p : people) {
             list.add(p[1], p);
