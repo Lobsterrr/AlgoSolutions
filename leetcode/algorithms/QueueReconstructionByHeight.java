@@ -36,8 +36,7 @@ public class QueueReconstructionByHeight {
                         people[k][0] = people[k - 1][0];
                         people[k][1] = people[k - 1][1];
                     }
-                    people[j][0] = tmp[0];
-                    people[j][1] = tmp[1];
+                    people[j] = tmp;
                     break;
                 }
                 if (people[j][0] >= people[i][0]) {
