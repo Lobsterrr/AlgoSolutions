@@ -34,6 +34,8 @@ public class QueueReconstructionByHeight {
         return list.toArray(new int[people.length]);
     }
 
+/*****************************************************************************/
+
     public int[][] reconstructQueue(int[][] people) {
         if (people == null || people.length == 0) {
             return people;
