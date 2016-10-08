@@ -123,6 +123,11 @@ public class Chapter4 {
             && checkBST(root.right, root.val, max);
     }
 
+    // 4.6
+    public int findSucc(TreeNode root, int p) {
+
+    }
+
     // 4.7
     // iteration
     public int getLCA(int a, int b) {
