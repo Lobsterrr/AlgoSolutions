@@ -65,6 +65,22 @@ public class Chapter4 {
                     return true;
                 }
                 set.add(neighbor);
+                dfs(neighbor, b, set);
+                set.remove(neighbor);
+            }
+        }
+        return false;
+    }
+
+    public boolean dfs(UndirectedGraphNode a, UndirectedGraphNode b, Set<UndirectedGraphNode> set) {
+        boolean result = false;
+        for (UndirectedGraphNode neighbor : a.neighbors) {
+            if (!set.contains(neighbor)) {
+                if (neighbor == b) {
+                    result = true;
+                    return result;
+                }
+                set.add(neighbor);
                 dfs(neighbors, b, set);
                 set.remove(neighbor);
             }
