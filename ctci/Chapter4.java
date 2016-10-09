@@ -55,7 +55,21 @@ public class Chapter4 {
 
     // 4.2
     public boolean checkPath(UndirectedGraphNode a, UndirectedGraphNode b) {
+        return dfs(a, b, new HashSet<UndirectedGraphNode>());
+    }
 
+    public boolean dfs(UndirectedGraphNode a, UndirectedGraphNode b, Set<UndirectedGraphNode> set) {
+        for (UndirectedGraphNode neighbor : a.neighbors) {
+            if (!set.contains(neighbor)) {
+                if (neighbor == b) {
+                    return true;
+                }
+                set.add(neighbor);
+                dfs(neighbors, b, set);
+                set.remove(neighbor);
+            }
+        }
+        return false;
     }
 
     // 4.3
