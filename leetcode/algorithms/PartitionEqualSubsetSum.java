@@ -23,7 +23,7 @@ public class PartitionEqualSubsetSum {
 
     public boolean canPartition(int[] nums) {
         List<List<Integer>> list = combinationSum2(nums);
-        return false;
+        return list.size() > 0;
     }
 
      public List<List<Integer>> combinationSum2(int[] nums) {
