@@ -26,6 +26,7 @@ public class PartitionEqualSubsetSum {
         for (int num : nums) {
             sum += num;
         }
+        return false;
     }
 
 }
