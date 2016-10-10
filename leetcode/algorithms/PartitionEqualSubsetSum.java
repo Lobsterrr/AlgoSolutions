@@ -26,6 +26,8 @@ public class PartitionEqualSubsetSum {
         for (int num : nums) {
             sum += num;
         }
+
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         return false;
     }
 
