@@ -27,8 +27,32 @@ public class PartitionEqualSubsetSum {
             sum += num;
         }
 
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         return false;
+    }
+
+     public List<List<Integer>> combinationSum2(int[] num, int target) {
+        Arrays.sort(num);
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        int sum = 0;
+        for (int value : num) {
+            sum += value;
+        }
+        dfs(result, new ArrayList<Integer>(), num, 0, 0, sum);
+        return result;
+    }
+
+    public void dfs(List<List<Integer>> result, List<Integer> list, int[] num, int position, int curSum, int sum) {
+        if (2 * curSum == sum) {
+            result.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for (int i = position; i <= num.length - 1 && 2 * curSum < sum; i++) {
+            if (i > position && num[i] == num[i - 1])
+                continue;
+            list.add(num[i]);
+            dfs(result, list, num, i + 1, curSum + num[i], sum);
+            list.remove(list.size() - 1);
+        }
     }
 
 }
