@@ -13,11 +13,10 @@ public class AddString {
     public String addString(String num1, String num2) {
         String result = "";
         for (int i = num1.length() - 1, j = num2.length() - 1, carrier = 0; 
-                i >= 0 || j >= 0 || carrier > 0; --i, --j) {
+                i >= 0 || j >= 0 || carrier > 0; --i, --j, carrier /= 10) {
             carrier += i >= 0 ? num1.charAt(i) - '0' : 0;
             carrier += j >= 0 ? num2.charAt(j) - '0' : 0;
             result = (carrier % 10) + result;
-            carrier = carrier / 10;
         }
         return result;
     }
