@@ -27,7 +27,7 @@ public class PartitionEqualSubsetSum {
     }
 
      public List<List<Integer>> combinationSum2(int[] nums) {
-        Arrays.sort(num);
+        Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         int sum = 0;
         for (int num : nums) {
