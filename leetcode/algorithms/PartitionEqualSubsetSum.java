@@ -36,7 +36,7 @@ public class PartitionEqualSubsetSum {
         return dfs(nums, 0, sum);
     }
 
-    public void dfs(int[] nums, int position, sum) {
+    public boolean dfs(int[] nums, int position, int sum) {
         if (sum == 0) {
             return true;
         }
