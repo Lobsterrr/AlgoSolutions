@@ -22,32 +22,22 @@
 public class PartitionEqualSubsetSum {
 
     public boolean canPartition(int[] nums) {
-        return combinationSum2(nums).size() > 0;
-    }
-
-     public List<List<Integer>> combinationSum2(int[] nums) {
-        Arrays.sort(nums);
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
         int sum = 0;
         for (int num : nums) {
             sum += num;
         }
-        dfs(result, new ArrayList<Integer>(), nums, 0, 0, sum);
-        return result;
+        if (sum % 2 != 0) {
+            return false;
+        }
+        sum /= 2;
+        return dfs(nums, sum);
     }
 
-    public void dfs(List<List<Integer>> result, List<Integer> list, int[] num, int position, int curSum, int sum) {
-        if (2 * curSum == sum) {
-            result.add(new ArrayList<Integer>(list));
-            return;
-        }
-        for (int i = position; i <= num.length - 1 && 2 * curSum < sum; i++) {
-            if (i > position && num[i] == num[i - 1])
-                continue;
-            list.add(num[i]);
-            dfs(result, list, num, i + 1, curSum + num[i], sum);
-            list.remove(list.size() - 1);
-        }
+    public void dfs() {
+
     }
 
 }
