@@ -77,7 +77,7 @@ public class PartitionEqualSubsetSum {
         if (position == 0 && sum != 0) {
             return false;
         }
-        if (nums[position - 1] > 0) {
+        if (nums[position - 1] > sum) {
             return dfs(nums, position - 1, sum);
         }
         return dfs(nums, position - 1, sum) || dfs(nums, position - 1, sum - nums[position - 1]);
