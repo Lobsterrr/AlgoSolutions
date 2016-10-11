@@ -33,6 +33,7 @@ public class PartitionEqualSubsetSum {
             return false;
         }
         sum /= 2;
+        Arrays.sort(nums);
         return dfs(nums, 0, sum);
     }
 
