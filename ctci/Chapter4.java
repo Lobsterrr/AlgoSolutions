@@ -53,41 +53,6 @@ public class Chapter4 {
         return 1 + Math.max(left, right);
     }
 
-    // 4.2
-    public boolean checkPath(UndirectedGraphNode a, UndirectedGraphNode b) {
-        return dfs(a, b, new HashSet<UndirectedGraphNode>());
-    }
-
-    public boolean dfs(UndirectedGraphNode a, UndirectedGraphNode b, Set<UndirectedGraphNode> set) {
-        for (UndirectedGraphNode neighbor : a.neighbors) {
-            if (!set.contains(neighbor)) {
-                if (neighbor == b) {
-                    return true;
-                }
-                set.add(neighbor);
-                dfs(neighbor, b, set);
-                set.remove(neighbor);
-            }
-        }
-        return false;
-    }
-
-    public boolean dfs(UndirectedGraphNode a, UndirectedGraphNode b, Set<UndirectedGraphNode> set) {
-        boolean result = false;
-        for (UndirectedGraphNode neighbor : a.neighbors) {
-            if (!set.contains(neighbor)) {
-                if (neighbor == b) {
-                    result = true;
-                    return result;
-                }
-                set.add(neighbor);
-                dfs(neighbors, b, set);
-                set.remove(neighbor);
-            }
-        }
-        return false;
-    }
-
     // 4.3
     public int buildMinimalBST(int[] vals) {
         if (vals == null || vals.length == 0) {
