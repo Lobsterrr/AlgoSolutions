@@ -56,7 +56,27 @@ public class PartitionEqualSubsetSum {
 /*****************************************************************************/
 
     public boolean canPartition(int[] nums) {
-   
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        if (sum % 2 != 0) {
+            return false;
+        }
+        Arrays.sort(nums);
+        boolean[] dp = new boolean[sum / 2 + 1];
+        dp[0] = true;
+        for (int i = 1; i <= sum / 2; ++i) {
+            for (int j = 0; j < nums.length; ++j) {
+                if (i >= nums[j]) {
+                    dp[i] = dp[i] || dp[i - nums[j]];
+                }
+            }
+        }
+        return dp[sum / 2];
     }
 
 }
