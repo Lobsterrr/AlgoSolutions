@@ -34,9 +34,8 @@ public class PartitionEqualSubsetSum {
         if (sum % 2 != 0) {
             return false;
         }
-        sum /= 2;
         Arrays.sort(nums);
-        return dfs(nums, 0, sum);
+        return dfs(nums, 0, sum / 2);
     }
 
     public boolean dfs(int[] nums, int position, int sum) {
