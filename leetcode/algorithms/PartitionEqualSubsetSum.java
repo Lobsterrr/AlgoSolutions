@@ -81,18 +81,6 @@ public class PartitionEqualSubsetSum {
             return dfs(nums, position - 1, sum);
         }
         return dfs(nums, position - 1, sum) || dfs(nums, position - 1, sum - nums[position - 1]);
-
-
-
-        for (int i = position; i < nums.length && sum > 0; ++i) {
-            if (i > position && nums[i] == nums[i - 1]) {
-                continue;
-            }
-            if (dfs(nums, i + 1, sum - nums[i])) {
-                return true;
-            }
-        }
-        return false;
     }
 
 }
