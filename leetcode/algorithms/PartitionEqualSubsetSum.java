@@ -66,7 +66,6 @@ public class PartitionEqualSubsetSum {
         if (sum % 2 != 0) {
             return false;
         }
-        Arrays.sort(nums);
         boolean[][] dp = new boolean[sum / 2 + 1][nums.length + 1];
         for (int i = 0; i <= nums.length; ++i) {
             dp[0][i] = true;
