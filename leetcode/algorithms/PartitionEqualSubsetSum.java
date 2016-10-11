@@ -33,11 +33,19 @@ public class PartitionEqualSubsetSum {
             return false;
         }
         sum /= 2;
-        return dfs(nums, sum);
+        return dfs(nums, 0, sum);
     }
 
-    public void dfs() {
-
+    public void dfs(int[] nums, int position, sum) {
+        if (sum == 0) {
+            return true;
+        }
+        for (int i = position + 1; i < nums.length; ++i) {
+            if (dfs(nums, i, sum - nums[position])) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
