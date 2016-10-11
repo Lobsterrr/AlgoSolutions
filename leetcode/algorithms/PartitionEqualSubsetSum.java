@@ -67,9 +67,7 @@ public class PartitionEqualSubsetSum {
             return false;
         }
         boolean[][] dp = new boolean[sum / 2 + 1][nums.length + 1];
-        for (int i = 0; i <= nums.length; ++i) {
-            dp[0][i] = true;
-        }
+        Arrays.fill(dp[0], true);
         for (int i = 1; i <= sum / 2; ++i) {
             for (int j = 1; j <= nums.length; ++j) {
                 dp[i][j] = dp[i][j - 1];
