@@ -69,13 +69,13 @@ public class PartitionEqualSubsetSum {
         Arrays.sort(nums);
         boolean[][] dp = new boolean[sum / 2 + 1][nums.length + 1];
         for (int i = 0; i <= nums.length; ++i) {
-            dp[0][j] = true;
+            dp[0][i] = true;
         }
         for (int i = 1; i <= sum / 2; ++i) {
-            for (int j = 0; j < nums.length; ++j) {
+            for (int j = 1; j <= nums.length; ++j) {
                 dp[i][j] = dp[i][j - 1];
-                if (i >= nums[j]) {
-                    dp[i][j] = dp[i][j] || dp[i - nums[j]][j - 1];
+                if (i >= nums[j - 1]) {
+                    dp[i][j] = dp[i][j] || dp[i - nums[j - 1]][j - 1];
                 }
             }
         }
