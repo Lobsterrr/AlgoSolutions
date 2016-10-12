@@ -21,7 +21,10 @@
 public class BinaryWatch {
 
     public List<String> readBinaryWatch(int num) {
+        List<String> result = new ArrayList<String>();
 
+
+        return result;
     }
 
 }
