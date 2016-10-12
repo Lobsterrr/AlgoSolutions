@@ -22,7 +22,9 @@ public class BinaryWatch {
 
     public List<String> readBinaryWatch(int num) {
         List<String> result = new ArrayList<String>();
-
+        if (num > 8) {
+            return result;
+        }
 
         return result;
     }
