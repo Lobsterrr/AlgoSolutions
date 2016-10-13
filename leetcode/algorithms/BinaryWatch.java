@@ -40,7 +40,7 @@ public class BinaryWatch {
         } else if (num == 7) {
 
         } else if (num == 8) {
-
+            result.add()
         }
 
         return result;
