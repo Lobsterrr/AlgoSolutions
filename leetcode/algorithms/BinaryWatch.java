@@ -26,7 +26,16 @@ public class BinaryWatch {
             return result;
         }
         if (num == 1) {
-
+            result.add("8:00");
+            result.add("4:00");
+            result.add("2:00");
+            result.add("1:00");
+            result.add("0:32");
+            result.add("0:16");
+            result.add("0:08");
+            result.add("0:04");
+            result.add("0:02");
+            result.add("0:01");
         } else if (num == 2) {
 
         } else if (num == 3) {
