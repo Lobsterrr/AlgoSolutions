@@ -40,7 +40,11 @@ public class BinaryWatch {
         } else if (num == 7) {
 
         } else if (num == 8) {
-            result.add()
+            List<String> hours = new ArrayList<String>();
+            Liist<String> minutes = new ArrayList<String>();
+            hours.add("7");
+            hours.add("11");
+
         }
 
         return result;
