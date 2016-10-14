@@ -44,9 +44,16 @@ public class BinaryWatch {
             Liist<String> minutes = new ArrayList<String>();
             hours.add("7");
             hours.add("11");
-
+            minutes.add("31");
+            minutes.add("47");
+            minutes.add("55");
+            minutes.add("59");
+            for (String hour : hours) {
+                for (String minute : minutes) {
+                    result.add(hour + ":" + minute);
+                }
+            }
         }
-
         return result;
     }
 
