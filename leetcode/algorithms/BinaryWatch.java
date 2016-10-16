@@ -25,6 +25,11 @@ public class BinaryWatch {
         if (num > 8 || num <= 0) {
             return result;
         }
+        for (int i = 0; i < 3; ++i) {
+
+        }
+
+
         if (num == 1) {
             result.add("8:00");
             result.add("4:00");
