@@ -25,7 +25,8 @@ public class BinaryWatch {
         if (num > 8 || num <= 0) {
             return result;
         }
-        for (int i = 0; i < 3; ++i) {
+        int min = Math.max(0, num - 5);
+        for (int i = min; i < 3; ++i) {
 
         }
 
