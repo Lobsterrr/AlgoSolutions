@@ -19,7 +19,9 @@
 public class BattleshipsInABoard {
 
     public int countBattleships(char[][] board) {
-
+        if (board == null || board.length == 0) {
+            return 0;
+        }
     }
 
 }
