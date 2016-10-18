@@ -28,6 +28,10 @@ public class BattleshipsInABoard {
         if (board == null || board.length == 0) {
             return 0;
         }
+        int result = 0;
+        
+
+        return result;
     }
 
 }
