@@ -40,6 +40,8 @@ public class ArithmeticSlices {
         return result;
     }
 
+/*****************************************************************************/
+
     public int numberOfArithmeticSlices(int[] A) {
         int result = 0;
         int[] dp = new int[A.length];
@@ -49,6 +51,8 @@ public class ArithmeticSlices {
         }
         return result;
     }
+
+/*****************************************************************************/
 
     public int numberOfArithmeticSlices(int[] A) {
         int result = 0;
