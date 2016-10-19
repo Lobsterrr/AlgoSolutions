@@ -48,8 +48,22 @@ public class BinaryWatch {
                 hours.add("7");
             }
             int m = num - h;
-            
+            if (m == 0) {
+                minutes.add("00");
+            } else if (m == 1) {
+                for (int i = 0; i < 5; ++i) {
+                    int minute = 1 << i;
+                    minutes.add((minute < 10 ? "0" : "") + minute);
+                }
+            } else if (m == 2) {
 
+            } else if (m == 3) {
+
+            } else if (m == 4) {
+
+            } else if (m == 5) {
+
+            }
         }
         return result;
     }
