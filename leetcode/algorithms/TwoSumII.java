@@ -14,16 +14,15 @@ public class TwoSumII {
         int start = 0;
         int end = numbers.length - 1;
         while (start < numbers.length && end >= 0) {
-            int sum = numbers[start] + numbers[end];
-            if (sum == target) {
+            if (numbers[start] + numbers[end] == target) {
                 return new int[] {start + 1, end + 1};
-            } else if (sum < target) {
+            } else if (numbers[start] + numbers[end] < target) {
                 start++;
             } else {
                 end--;
             }
         } 
-        return null;
+        return new int[2];
     }
 
 }
