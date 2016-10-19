@@ -28,9 +28,15 @@ public class BinaryWatch {
 
     public List<String> readBinaryWatch(int num) {
         List<String> result = new ArrayList<String>();
-
-
-
+        for (int h = 0; h < 12; ++i) {
+            for (int m = 0; m < 60; ++m) {
+                if (hammingWeight(h) + hammingWeight(m) == num) {
+                    String hour = "" + h;
+                    String minute = m < 10 ? "0" : "" + m;
+                    result.add(hour + ":" + minute);
+                }
+            }
+        }
         return result;
     }
 
