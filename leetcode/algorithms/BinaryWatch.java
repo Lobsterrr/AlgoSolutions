@@ -26,7 +26,7 @@ public class BinaryWatch {
             return result;
         }
         int min = Math.max(0, num - 5);
-        for (int h = min; h <= 3; ++h) {
+        for (int h = min; h <= Math.min(3, num); ++h) {
             List<String> hours = new ArrayList<String>();
             List<String> minutes = new ArrayList<String>();
             if (h == 0) {
@@ -48,7 +48,7 @@ public class BinaryWatch {
                 hours.add("7");
             }
             int m = num - h;
-
+            
 
         }
         return result;
