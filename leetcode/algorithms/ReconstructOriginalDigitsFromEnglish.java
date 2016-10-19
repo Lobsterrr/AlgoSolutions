@@ -4,7 +4,8 @@
 
  * Note:
  * Input contains only lowercase English letters.
- * Input is guaranteed to be valid and can be transformed to its original digits. 
+ * Input is guaranteed to be valid and can be transformed to its original 
+ * digits. 
  * That means invalid inputs such as "abc" or "zerone" are not permitted.
  * Input length is less than 50,000.
  * Example 1:
