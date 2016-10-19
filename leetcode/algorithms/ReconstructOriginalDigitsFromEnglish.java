@@ -17,4 +17,6 @@
  * 
  * Output: "45"
  */
+public class ReconstructOriginalDigitsFromEnglish {
 
+}
