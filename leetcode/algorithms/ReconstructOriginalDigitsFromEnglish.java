@@ -19,4 +19,8 @@
  */
 public class ReconstructOriginalDigitsFromEnglish {
 
+    public String originalDigits(String s) {
+
+    }
+
 }
