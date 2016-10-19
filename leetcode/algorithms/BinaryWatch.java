@@ -27,6 +27,28 @@ public class BinaryWatch {
         }
         int min = Math.max(0, num - 5);
         for (int h = min; h <= 3; ++h) {
+            List<String> hours = new ArrayList<String>();
+            List<String> minutes = new ArrayList<String>();
+            if (h == 0) {
+                hours.add("0");
+            } else if (h == 1) {
+                hours.add("1");
+                hours.add("2");
+                hours.add("4");
+                hours.add("8");
+            } else if (h == 2) {
+                hours.add("12");
+                hours.add("10");
+                hours.add("9");
+                hours.add("6");
+                hours.add("5");
+                hours.add("3");
+            } else if (h == 3) {
+                hours.add("11");
+                hours.add("7");
+            }
+            int m = num - h;
+
 
         }
         return result;
