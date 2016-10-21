@@ -26,6 +26,7 @@
  */
 public class RemoveKDigits {
 
+    // time sapce: O(n)
     public String removeKdigits(String num, int k) {
         Stack<Character> stack = new Stack<Character>();
         for (int i = 0; i < num.length(); ++i) {
@@ -50,6 +51,7 @@ public class RemoveKDigits {
 
 /*****************************************************************************/
 
+    // time space: O(kn)
     public String removeKdigits(String num, int k) {
         StringBuffer sb = new StringBuffer("0").append(num);
         int i;
