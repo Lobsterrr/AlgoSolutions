@@ -51,7 +51,7 @@ public class RemoveKDigits {
 
 /*****************************************************************************/
 
-    // time space: O(kn)
+    // time space: O(k * n)
     public String removeKdigits(String num, int k) {
         StringBuffer sb = new StringBuffer("0").append(num);
         int i;
