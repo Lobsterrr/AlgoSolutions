@@ -23,7 +23,19 @@
 public class RemoveKDigits {
 
     public String removeKdigits(String num, int k) {
-
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i < num.length(); ++i) {
+            if (k <= 0 || stack.isEmpty() || (num.charAt(i) - '0') >= stack.peek()) {
+                stack.push(num.charAt(i) - '0');
+            } else if (k > 0 && !stack.isEmpty() && (num.charAt(i) - '0') < stack.peek()) {
+                stack.pop();
+            }
+        }
+        String result = "";
+        while (!stack.isEmpty()) {
+            result = stack.pop() + result;
+        }
+        return result;
     }
 
 }
