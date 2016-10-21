@@ -29,6 +29,7 @@ public class RemoveKDigits {
                 stack.push(num.charAt(i) - '0');
             } else if (k > 0 && !stack.isEmpty() && (num.charAt(i) - '0') < stack.peek()) {
                 stack.pop();
+                k--;
             }
         }
         String result = "";
