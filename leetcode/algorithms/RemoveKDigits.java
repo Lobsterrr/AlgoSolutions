@@ -31,11 +31,13 @@ public class RemoveKDigits {
             }
             stack.push(num.charAt(i) - '0');
         }
-        String result = "";
+        int result = 0;
+        int base = 1;
         while (!stack.isEmpty()) {
-            result = stack.pop() + result;
+            result += stack.pop() * base;
+            base *= 10;
         }
-        return result;
+        return String.valueOf(result);
     }
 
 }
