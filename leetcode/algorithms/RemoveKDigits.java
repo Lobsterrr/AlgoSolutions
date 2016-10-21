@@ -45,10 +45,7 @@ public class RemoveKDigits {
         int i = 0;
         for (; i < result.length() && result.charAt(i) == '0'; ++i);
         result = result.substring(i);
-        if (result.length() == 0) {
-            result = "0";
-        }
-        return result;
+        return result.length() == 0 ? "0" : result;
     }
 
 }
