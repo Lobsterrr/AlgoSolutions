@@ -24,18 +24,20 @@ public class RemoveKDigits {
 
     public String removeKdigits(String num, int k) {
         Stack<Integer> stack = new Stack<Integer>();
-        for (int i = 0; i < num.length(); ++i) {
-            if (k > 0 && !stack.isEmpty() && (num.charAt(i) - '0') < stack.peek()) {
+        for (int i = 0, count = 0; i < num.length(); ++i) {
+            if (count < k && !stack.isEmpty() && (num.charAt(i) - '0') < stack.peek()) {
                 stack.pop();
-                k--;
+                count++;
             }
             stack.push(num.charAt(i) - '0');
         }
         int result = 0;
         int base = 1;
-        while (!stack.isEmpty()) {
+        int count = num.length() - k;
+        while (count > 0 && !stack.isEmpty()) {
             result += stack.pop() * base;
             base *= 10;
+            count--;
         }
         return String.valueOf(result);
     }
