@@ -51,7 +51,7 @@ public class RemoveKDigits {
 /*****************************************************************************/
 
     public String removeKdigits(String num, int k) {
-        StringBuffer sb = new StringBuffer(num);
+        StringBuffer sb = new StringBuffer("0").append(num);
         int i;
         int j;
         for (i = 0; i < k; i++) {
@@ -61,9 +61,6 @@ public class RemoveKDigits {
         }
         while (sb.length() > 1 && sb.charAt(0)=='0') {
             sb.delete(0,1);
-        }
-        if (sb.length() == 0) {
-            sb.append("0");
         }
         return sb.toString();
     }
