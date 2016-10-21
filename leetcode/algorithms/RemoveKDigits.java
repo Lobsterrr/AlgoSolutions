@@ -35,18 +35,15 @@ public class RemoveKDigits {
             }
             stack.push(num.charAt(i));
         }
-        while (k > 0) {
+        while (k-- > 0) {
             stack.pop();
-            k--;
         }
         String result = "";
         while (!stack.isEmpty()) {
             result = stack.pop() + result;
         }
         int i = 0;
-        while (i < result.length() && result.charAt(i) == '0') {
-            i++;
-        }
+        for (; i < result.length() && result.charAt(i) == '0'; ++i);
         result = result.substring(i);
         if (result.length() == 0) {
             result = "0";
