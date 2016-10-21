@@ -33,13 +33,14 @@ public class RemoveKDigits {
         }
         int result = 0;
         int base = 1;
-        int count = num.length() - k;
-        while (count > 0 && !stack.isEmpty()) {
-            result += stack.pop() * base;
-            base *= 10;
-            count--;
+        while (!stack.isEmpty()) {
+            if (stack.size() > num - k) {
+                stack.pop();
+            } else {
+                result += stack.pop() * base;
+                base *= 10;
+                count--;
+            }
         }
         return String.valueOf(result);
     }
-
-}
