@@ -54,11 +54,9 @@ public class RemoveKDigits {
     // time space: O(k * n)
     public String removeKdigits(String num, int k) {
         StringBuffer sb = new StringBuffer("0").append(num);
-        int i;
-        int j;
-        for (i = 0; i < k; i++) {
-            for (j = 0; j < sb.length() - 1 
-                    && sb.charAt(j) <= sb.charAt(j + 1); j++);
+        for (int i = 0; i < k; i++) {
+            int j = 0;
+            for (; j < sb.length() - 1 && sb.charAt(j) <= sb.charAt(j + 1); j++);
             sb.delete(j, j + 1);
         }
         while (sb.length() > 1 && sb.charAt(0)=='0') {
