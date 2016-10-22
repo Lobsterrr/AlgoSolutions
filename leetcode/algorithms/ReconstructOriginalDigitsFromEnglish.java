@@ -20,6 +20,8 @@
 public class ReconstructOriginalDigitsFromEnglish {
 
     public String originalDigits(String s) {
+        // one, two, three, four, five, six, seven, eight, nine, zero
+        // unique: g, u, w, x, z
 
     }
 
