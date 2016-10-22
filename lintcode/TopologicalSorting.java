@@ -39,12 +39,11 @@ public class TopologicalSorting {
      * @param graph: A list of Directed graph node
      * @return: Any topological order for the given graph.
      */
-    public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode graph) {
+    public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode> graph) {
         if (graph == null || graph.size() == 0) {
             return null;
         }
         ArrayList<DirectedGraphNode> result = new ArrayList<DirectedGraphNode>();
-
 
         return result;
     }
