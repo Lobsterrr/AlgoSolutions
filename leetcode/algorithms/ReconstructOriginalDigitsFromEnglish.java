@@ -34,7 +34,7 @@ public class ReconstructOriginalDigitsFromEnglish {
         int n = count['n' - 'a'];
         int o = count['o' - 'a'];
         int r = count['r' - 'a'];
-        int s = count['s' - 'a'];
+        int ss = count['s' - 'a'];
         int t = count['t' - 'a'];
         int u = count['u' - 'a']; // define four;
         int v = count['v' - 'a'];
@@ -57,7 +57,7 @@ public class ReconstructOriginalDigitsFromEnglish {
         o -= w;
 
         // process six;
-        s -= x; // define seven;
+        ss -= x; // define seven;
         i -= x;
 
         // process eight;
@@ -91,7 +91,7 @@ public class ReconstructOriginalDigitsFromEnglish {
         if (x > 0) {
             result += "six";
         }
-        if (s > 0) {
+        if (ss > 0) {
             result += "seven";
         }
         if (g > 0) {
