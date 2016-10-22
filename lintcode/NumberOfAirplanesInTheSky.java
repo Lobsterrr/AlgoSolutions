@@ -40,10 +40,8 @@ public class NumberOfAirplanesInTheSky {
         Collections.sort(list, new Comparator<Point>() {
             @Override
             public int compare(Point p1, Point p2) {
-                if (p1.time == p2.time) {
-                    return p1.flag - p2.flag;
-                }
-                return p1.time - p2.time;
+                return p1.time == p2.time ? 
+                    p1.flag - p2.flag : p1.time - p2.time;
             }
         });
         int result = 0;
