@@ -69,9 +69,9 @@ public class ReconstructOriginalDigitsFromEnglish {
         i -= f; // define nine;
         int[] nums = {z, o, w, h, u, f, x, ss, g, i};
         String result = "";
-        for (int i = 0; i < nums.length; ++i) {
-            for (int j = 0; j < nums[i]; ++j) {
-                result += i;
+        for (int j = 0; j < nums.length; ++j) {
+            for (int k = 0; k < nums[j]; ++k) {
+                result += j;
             }
         }
         return result;
