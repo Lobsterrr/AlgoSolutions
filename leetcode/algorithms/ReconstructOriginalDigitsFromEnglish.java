@@ -22,18 +22,18 @@ public class ReconstructOriginalDigitsFromEnglish {
     public String originalDigits(String s) {
         // one, two, three, four, five, six, seven, eight, nine, zero
         // unique: g, u, w, x, z
-        int[] count = new int[26];
+        int[] count = new int[256];
         for (int i = 0; i < s.length(); ++i) {
-            count[s.charAt(i) - 'a']++;
+            count[s.charAt(i)]++;
         }
-        count['o' - 'a'] -= count['u' - 'a'] + count['w' - 'a'] + count['z' - 'a'];
-        count['f' - 'a'] -= count['u' - 'a'];
-        count['s' - 'a'] -= count['x' - 'a'];
-        count['h' - 'a'] -= count['g' - 'a'];
-        count['i' - 'a'] -= count['g' - 'a'] + count['x' - 'a'] + count['f' - 'a'];
-        int[] nums = {count['z' - 'a'], count['o' - 'a'], count['w' - 'a'], 
-            count['h' - 'a'], count['u' - 'a'], count['f' - 'a'], count['x' - 'a'], 
-            count['s' - 'a'], count['g' - 'a'], count['i' - 'a']};
+        count['o'] -= count['u'] + count['w'] + count['z'];
+        count['f'] -= count['u'];
+        count['s'] -= count['x'];
+        count['h'] -= count['g'];
+        count['i'] -= count['g'] + count['x'] + count['f'];
+        int[] nums = {count['z'], count['o'], count['w'], 
+            count['h'], count['u'], count['f'], count['x'], 
+            count['s'], count['g'], count['i']};
         String result = "";
         for (int i = 0; i < nums.length; ++i) {
             for (int j = 0; j < nums[i]; ++j) {
