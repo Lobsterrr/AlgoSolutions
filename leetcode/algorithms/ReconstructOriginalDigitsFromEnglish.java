@@ -42,31 +42,11 @@ public class ReconstructOriginalDigitsFromEnglish {
         int x = count['x' - 'a']; // define six;
         int z = count['z' - 'a']; // define zero;
 
-        // process zero;
-        e -= z;
-        r -= z;
-        o -= z;
-
-        // process four;
+        o -= u + w + z; // define one;
         f -= u; // define five
-        o -= u;
-        r -= u;
-
-        // process two;
-        t -= w;
-        o -= w; // define one;
-
-        // process six;
         ss -= x; // define seven;
-        i -= x;
-
-        // process eight;
-        e -= g;
-        i -= g;
         h -= g; // define three;
-        t -= g;
-
-        i -= f; // define nine;
+        i -= g + x + f; // define nine;
 
         int[] nums = {z, o, w, h, u, f, x, ss, g, i};
         String result = "";
