@@ -47,12 +47,9 @@ public class NumberOfAirplanesInTheSky {
             }
         });
         int result = 0;
-        for (int i = 0, count = 0; i < list.size(); ++i) {
-            if (list.get(i).flag == 1) {
-                count++;
-            } else {
-                count--;
-            }
+        int count = 0;
+        for (Point point : list) {
+            count += point.flag == 1 ? 1 : -;
             result = Math.max(result, count);
         }
         return result;
@@ -60,7 +57,7 @@ public class NumberOfAirplanesInTheSky {
 
     class Point {
         int time;
-        int flag
+        int flag;
 
         Point(int time, int flag) {
             this.time = time;
