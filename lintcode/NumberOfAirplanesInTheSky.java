@@ -5,7 +5,6 @@
 
 If landing and flying happens at the same time, we consider landing should happen at first.
 
-Have you met this question in a real interview? Yes
 Example
 For interval list
 
