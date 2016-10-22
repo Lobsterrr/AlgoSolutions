@@ -31,7 +31,7 @@ public class ReconstructOriginalDigitsFromEnglish {
         count['s' - 'a'] -= count['x' - 'a'];
         count['h' - 'a'] -= count['g' - 'a'];
         count['i' - 'a'] -= count['g' - 'a'] + count['x' - 'a'] + count['f' - 'a'];
-        int nums = {count['z' - 'a'], count['o' - 'a'], count['w' - 'a'], 
+        int[] nums = {count['z' - 'a'], count['o' - 'a'], count['w' - 'a'], 
             count['h' - 'a'], count['u' - 'a'], count['f' - 'a'], count['x' - 'a'], 
             count['s' - 'a'], count['g' - 'a'], count['i' - 'a']};
         String result = "";
