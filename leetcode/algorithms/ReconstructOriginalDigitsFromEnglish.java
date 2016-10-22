@@ -35,9 +35,9 @@ public class ReconstructOriginalDigitsFromEnglish {
             count['h' - 'a'], count['u' - 'a'], count['f' - 'a'], count['x' - 'a'], 
             count['s' - 'a'], count['g' - 'a'], count['i' - 'a']};
         String result = "";
-        for (int j = 0; j < nums.length; ++j) {
-            for (int k = 0; k < nums[j]; ++k) {
-                result += j;
+        for (int i = 0; i < nums.length; ++i) {
+            for (int j = 0; j < nums[i]; ++j) {
+                result += i;
             }
         }
         return result;
