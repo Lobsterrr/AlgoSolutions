@@ -71,34 +71,34 @@ public class ReconstructOriginalDigitsFromEnglish {
 
         String result = "";
         if (z > 0) {
-            result += "zore";
+            result += "0";
         }
         if (o > 0) {
-            result += "one";
+            result += "1";
         }
         if (w > 0) {
-            result += "two";
+            result += "2";
         }
         if (h > 0) {
-            result += "three";
+            result += "3";
         }
         if (u > 0) {
-            result += "four";
+            result += "4";
         }
         if (f > 0) {
-            result += "five";
+            result += "5";
         }
         if (x > 0) {
-            result += "six";
+            result += "6";
         }
         if (ss > 0) {
-            result += "seven";
+            result += "7";
         }
         if (g > 0) {
-            result += "eight";
+            result += "8";
         }
         if (i > 0) {
-            result += "nine";
+            result += "9";
         }
         return result;
     }
