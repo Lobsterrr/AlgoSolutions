@@ -26,29 +26,14 @@ public class ReconstructOriginalDigitsFromEnglish {
         for (int i = 0; i < s.length(); ++i) {
             count[s.charAt(i) - 'a']++;
         }
-        int e = count['e' - 'a'];
-        int f = count['f' - 'a'];
-        int g = count['g' - 'a']; // define eight;
-        int h = count['h' - 'a'];
-        int i = count['i' - 'a'];
-        int n = count['n' - 'a'];
-        int o = count['o' - 'a'];
-        int r = count['r' - 'a'];
-        int ss = count['s' - 'a'];
-        int t = count['t' - 'a'];
-        int u = count['u' - 'a']; // define four;
-        int v = count['v' - 'a'];
-        int w = count['w' - 'a']; // define two;
-        int x = count['x' - 'a']; // define six;
-        int z = count['z' - 'a']; // define zero;
-
-        o -= u + w + z; // define one;
-        f -= u; // define five
-        ss -= x; // define seven;
-        h -= g; // define three;
-        i -= g + x + f; // define nine;
-
-        int[] nums = {z, o, w, h, u, f, x, ss, g, i};
+        count['o' - 'a'] -= count['u' - 'a'] + count['w' - 'a'] + count['z' - 'a'];
+        count['f' - 'a'] -= count['u' - 'a'];
+        count['s' - 'a'] -= count['x' - 'a'];
+        count['h' - 'a'] -= count['g' - 'a'];
+        count['i' - 'a'] -= count['g' - 'a'] + count['x' - 'a'] + count['f' - 'a'];
+        int nums = {count['z' - 'a'], count['o' - 'a'], count['w' - 'a'], 
+            count['h' - 'a'], count['u' - 'a'], count['f' - 'a'], count['x' - 'a'], 
+            count['s' - 'a'], count['g' - 'a'], count['i' - 'a']};
         String result = "";
         for (int j = 0; j < nums.length; ++j) {
             for (int k = 0; k < nums[j]; ++k) {
