@@ -54,7 +54,7 @@ public class ReconstructOriginalDigitsFromEnglish {
 
         // process two;
         t -= w;
-        o -= w;
+        o -= w; // define one;
 
         // process six;
         ss -= x; // define seven;
@@ -66,8 +66,7 @@ public class ReconstructOriginalDigitsFromEnglish {
         h -= g; // define three;
         t -= g;
 
-        i -= f + u + x; // define nine;
-        o -= z + w + u; // define one;
+        i -= f; // define nine;
 
         String result = "";
         if (z > 0) {
