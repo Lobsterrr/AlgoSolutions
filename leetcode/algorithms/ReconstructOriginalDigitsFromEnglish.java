@@ -67,37 +67,12 @@ public class ReconstructOriginalDigitsFromEnglish {
         t -= g;
 
         i -= f; // define nine;
-
+        int[] nums = {z, o, w, h, u, f, x, ss, g, i};
         String result = "";
-        if (z > 0) {
-            result += "0";
-        }
-        if (o > 0) {
-            result += "1";
-        }
-        if (w > 0) {
-            result += "2";
-        }
-        if (h > 0) {
-            result += "3";
-        }
-        if (u > 0) {
-            result += "4";
-        }
-        if (f > 0) {
-            result += "5";
-        }
-        if (x > 0) {
-            result += "6";
-        }
-        if (ss > 0) {
-            result += "7";
-        }
-        if (g > 0) {
-            result += "8";
-        }
-        if (i > 0) {
-            result += "9";
+        for (int i = 0; i < nums.length; ++i) {
+            for (int j = 0; j < nums[i]; ++j) {
+                result += i;
+            }
         }
         return result;
     }
