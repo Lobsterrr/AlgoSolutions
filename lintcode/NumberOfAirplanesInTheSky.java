@@ -49,7 +49,7 @@ public class NumberOfAirplanesInTheSky {
         int result = 0;
         int count = 0;
         for (Point point : list) {
-            count += point.flag == 1 ? 1 : -;
+            count += point.flag == 1 ? 1 : -1;
             result = Math.max(result, count);
         }
         return result;
