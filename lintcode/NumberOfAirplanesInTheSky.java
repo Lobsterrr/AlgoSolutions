@@ -35,7 +35,7 @@ public class NumberOfAirplanesInTheSky {
         List<Point> list = new ArrayList<Point>();
         for (Interval airplane : airplanes) {
             list.add(new Point(airplane.start, true));
-            list.add(new Point(airplane.end, false))
+            list.add(new Point(airplane.end, false));
         }
         Collections.sort(list, new Comparator<Point>() {
             @Override
