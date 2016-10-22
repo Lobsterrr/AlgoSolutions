@@ -34,8 +34,8 @@ public class NumberOfAirplanesInTheSky {
     public int countOfAirplanes(List<Interval> airplanes) {
         List<Point> list = new ArrayList<Point>();
         for (Interval airplane : airplanes) {
-            list.add(new Point(airplane.start, true));
-            list.add(new Point(airplane.end, false));
+            list.add(new Point(airplane.start, 1));
+            list.add(new Point(airplane.end, 0));
         }
         Collections.sort(list, new Comparator<Point>() {
             @Override
@@ -47,21 +47,21 @@ public class NumberOfAirplanesInTheSky {
         for (int i = 0, count = 0; i < list.size(); ++i) {
             if (list.get(i).isStart) {
                 count++;
-                result = Math.max(result, count);
             } else {
                 count--;
             }
+            result = Math.max(result, count);
         }
         return result;
     }
 
     class Point {
         int time;
-        boolean isStart;
+        int flag
 
-        Point(int time, boolean isStart) {
+        Point(int time, int flag) {
             this.time = time;
-            this.isStart = isStart;
+            this.flag = flag;
         }
     }
 
