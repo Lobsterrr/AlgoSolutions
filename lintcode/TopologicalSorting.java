@@ -43,6 +43,10 @@ public class TopologicalSorting {
         if (graph == null || graph.size() == 0) {
             return null;
         }
+        ArrayList<DirectedGraphNode> result = new ArrayList<DirectedGraphNode>();
+
+
+        return result;
     }
 
 }
