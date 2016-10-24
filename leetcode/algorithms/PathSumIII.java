@@ -39,7 +39,9 @@
 public class PathSumIII {
 
     public int pathSum(TreeNode root, int sum) {
+        int result = 0;
 
+        return result;
     }
 
 }
