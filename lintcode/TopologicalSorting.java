@@ -58,7 +58,7 @@ public class TopologicalSorting {
         }
         while (!queue.isEmpty()) {
             DirectedGraphNode head = queue.poll();
-            for (DirectedGraphNode node : head) {
+            for (DirectedGraphNode node : head.neighbors) {
                 map.put(node, map.get(node) - 1);
                 if (map.get(node) == 0) {
                     result.add(node);
