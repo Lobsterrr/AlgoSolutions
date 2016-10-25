@@ -58,12 +58,12 @@ public class TopologicalSorting {
             }
         }
         while (!queue.isEmpty()) {
-            DirectedGraphNode head = queue.poll();
-            for (DirectedGraphNode node : head.neighbors) {
-                map.put(node, map.get(node) - 1);
-                if (map.get(node) == 0) {
-                    result.add(node);
-                    queue.offer(node);
+            DirectedGraphNode node = queue.poll();
+            for (DirectedGraphNode neighbor : node.neighbors) {
+                map.put(neighbor, map.get(neighbor) - 1);
+                if (map.get(neighbor) == 0) {
+                    result.add(neighbor);
+                    queue.offer(neighbor);
                 }
             }
         }
