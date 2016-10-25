@@ -53,6 +53,7 @@ public class TopologicalSorting {
         Queue<DirectedGraphNode> queue = new LinkedList<DirectedGraphNode>();
         for (DirectedGraphNode node : graph) {
             if (!map.containsKey(node)) {
+                result.add(node);
                 queue.offer(node);
             }
         }
