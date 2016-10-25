@@ -45,8 +45,17 @@ public class TopologicalSorting {
         }
         ArrayList<DirectedGraphNode> result = new ArrayList<DirectedGraphNode>();
         HashMap<DirectedGraphNode, Integer> map = new HashMap<DirectedGraphNode, Integer>();
+        for (DirectedGraphNode node : graph) {
+            for (DirectedGraphNode neighbor : node.neighbors) {
+                map.put(neighbor, map.containsKey(neighbor) ? map.get(neighbor) + 1 : 1);
+            }
+        }
         Queue<DirectedGraphNode> queue = new LinkedList<DirectedGraphNode>();
-
+        for (DirectedGraphNode node : graph) {
+            if (!map.containsKey(node)) {
+                queue.offer(node);
+            }
+        }
 
         return result;
     }
