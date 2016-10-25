@@ -44,6 +44,7 @@ public class TopologicalSorting {
             return null;
         }
         ArrayList<DirectedGraphNode> result = new ArrayList<DirectedGraphNode>();
+        HashMap<DirectedGraphNode, Integer> map = new HashMap<DirectedGraphNode, Integer>();
         Queue<DirectedGraphNode> queue = new LinkedList<DirectedGraphNode>();
 
 
