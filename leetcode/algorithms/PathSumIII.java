@@ -39,9 +39,10 @@
 public class PathSumIII {
 
     public int pathSum(TreeNode root, int sum) {
-        int result = 0;
-
-        return result;
+        if (root == null) {
+            return 0;
+        }
+        return dfs(root, sum) + pathSum(root.left, sum) + pathSum(root.right,sum);
     }
 
     public int dfs(TreeNode root, int sum) {
