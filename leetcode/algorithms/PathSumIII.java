@@ -44,13 +44,15 @@ public class PathSumIII {
         return result;
     }
 
-    public int dfs(TreeNode root, int sum, int result) {
+    public int dfs(TreeNode root, int sum) {
+        int result = 0;
         if (root == null) {
             return result;
         }
-        if (root.left == null && root.right == null && sum + root.val == result) {
-            return result;
+        if (sum == 0) {
+            result++;
         }
+        return result + dfs(root.left, sum - root.val) + dfs(root.right, sum - root.val);
     }
 
 }
