@@ -50,7 +50,7 @@ public class PathSumIII {
         if (root == null) {
             return result;
         }
-        if (sum == 0) {
+        if (sum == root.val) {
             result++;
         }
         return result + dfs(root.left, sum - root.val) + dfs(root.right, sum - root.val);
