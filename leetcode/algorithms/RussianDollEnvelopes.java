@@ -15,7 +15,9 @@ public class RussianDollEnvelopes {
 
     public int maxEnvelopes(int[][] envelopes) {
         int result = 0;
+        for (int envelope : envelopes) {
 
+        }
         return result;
     }
 
