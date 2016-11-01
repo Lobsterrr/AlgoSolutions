@@ -1,5 +1,3 @@
 My algorithms code
 
 TODO:
-
-//
