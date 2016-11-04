@@ -51,8 +51,9 @@ public class PathSumIII {
             return 0;
         }
         int result = sum == root.val ? 1 : 0;
-        return result + dfs(root.left, sum - root.val) 
+        result += dfs(root.left, sum - root.val) 
             + dfs(root.right, sum - root.val);
+        return result;
     }
 
 }
