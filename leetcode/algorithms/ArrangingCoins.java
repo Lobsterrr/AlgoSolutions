@@ -30,7 +30,7 @@
 public class ArrangingCoins {
 
     public int arrangeCoins(int n) {
-        return (int) ((Math.sqrt(1.0 + 8 * n) - 1) / 2);
+        return (int) ((Math.sqrt(1 + 8.0 * n) - 1) / 2);
     }
 
     public int arrangeCoins(int n) {
