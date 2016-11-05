@@ -34,7 +34,33 @@
 public class FindAllAnagramsInAString {
 
     public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<Integer>();
+        if (s == null || p == null || s.length() < p.length()) {
+            return result;
+        }
+        for (int i = 0; i < s.length(); ++i) {
+            if (isAnagram(s.substring(i, i + p.length()), p)) {
+                result.add(i);
+            }
+        }
+        return result;
+    }
 
+    public boolean isAnagram(String s, String p) {
+        if (s == null || p == null || s.length() != p.length()) {
+            return false;
+        }
+        int[] count = new int[128];
+        for (int i = 0; i < s.length(); ++i) {
+            count[s.charAt(i) - 'a']++;
+            count[p.charAt(i) - 'a']--;
+        }
+        for (int c : count) {
+            if (c != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
