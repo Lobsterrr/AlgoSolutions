@@ -30,7 +30,11 @@
 public class ArrangingCoins {
 
     public int arrangeCoins(int n) {
-
+        int result = 0;
+        while ((1 << result) < n) {
+            result++;
+        }
+        return result;
     }
 
 }
