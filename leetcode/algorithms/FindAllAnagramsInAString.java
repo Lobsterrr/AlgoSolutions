@@ -38,7 +38,7 @@ public class FindAllAnagramsInAString {
         if (s == null || p == null || s.length() < p.length()) {
             return result;
         }
-        for (int i = 0; i < s.length(); ++i) {
+        for (int i = 0; i < s.length() - p.length() + 1; ++i) {
             if (isAnagram(s.substring(i, i + p.length()), p)) {
                 result.add(i);
             }
