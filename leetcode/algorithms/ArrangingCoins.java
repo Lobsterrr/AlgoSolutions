@@ -35,11 +35,7 @@ public class ArrangingCoins {
 
     public int arrangeCoins(int n) {
         int result = 0;
-        int sum = 0;
-        while (n - sum >= result + 1) {
-            result++;
-            sum += result;
-        }
+        for (int sum = 0; n - sum >= result + 1; ++result, sum += result);
         return result;
     }
 
