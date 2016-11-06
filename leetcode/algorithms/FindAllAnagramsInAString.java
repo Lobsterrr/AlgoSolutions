@@ -50,7 +50,7 @@ public class FindAllAnagramsInAString {
                 count--;
             }
             hash[high]--;
-            high--;
+            high++;
             if (count == 0) {
                 result.add(low);
             }
