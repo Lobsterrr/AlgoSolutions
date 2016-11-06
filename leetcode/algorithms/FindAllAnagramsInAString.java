@@ -65,6 +65,8 @@ public class FindAllAnagramsInAString {
         return result;
     }
 
+/*****************************************************************************/
+
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> result = new ArrayList<Integer>();
         if (s == null || p == null || s.length() < p.length()) {
