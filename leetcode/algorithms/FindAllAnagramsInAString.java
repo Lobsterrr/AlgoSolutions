@@ -46,6 +46,13 @@ public class FindAllAnagramsInAString {
         int high = 0;
         int count = p.length();
         while (high < s.length()) {
+            if (high - low == p.length()) {
+                if (hash[s.charAt(low)] >= 0) {
+                    count++;
+                }
+                hash[s.charAt(low)]++;
+                low++;
+            }
             if (hash[s.charAt(high)] >= 1) {
                 count--;
             }
@@ -53,13 +60,6 @@ public class FindAllAnagramsInAString {
             high++;
             if (count == 0) {
                 result.add(low);
-            }
-            if (high - low == p.length()) {
-                if (hash[s.charAt(low)] >= 0) {
-                    count++;
-                }
-                hash[s.charAt(low)]++;
-                low++;
             }
         }
         return result;
