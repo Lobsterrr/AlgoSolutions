@@ -43,12 +43,12 @@ public class FindAllAnagramsInAString {
             hash[p.charAt(i)]++;
         }
         for (int count = p.length(), start = 0, i = 0; i < s.length(); ++i) {
-            if (i - low == p.length()) {
-                if (hash[s.charAt(low)] >= 0) {
+            if (i - start == p.length()) {
+                if (hash[s.charAt(start)] >= 0) {
                     count++;
                 }
-                hash[s.charAt(low)]++;
-                low++;
+                hash[s.charAt(start)]++;
+                start++;
             }
             if (hash[s.charAt(i)] >= 1) {
                 count--;
