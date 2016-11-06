@@ -58,8 +58,8 @@ public class FindAllAnagramsInAString {
                 if (hash[s.charAt(low)] >= 0) {
                     count++;
                 }
-                low++;
                 hash[s.charAt(low)]++;
+                low++;
             }
         }
         return result;
