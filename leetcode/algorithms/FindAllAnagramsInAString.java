@@ -61,38 +61,6 @@ public class FindAllAnagramsInAString {
         return result;
     }
 
-    public List<Integer> findAnagrams(String s, String p) {
-        List<Integer> result = new ArrayList<Integer>();
-        if (s == null || p == null || s.length() < p.length()) {
-            return result;
-        }
-        int[] hash = new int[256];
-        for (int i = 0; i < p.length(); ++i) {
-            hash[p.charAt(i)]++;
-        }
-        int low = 0;
-        int high = 0;
-        int count = p.length();
-        while (high < s.length()) {
-            if (high - low == p.length()) {
-                if (hash[s.charAt(low)] >= 0) {
-                    count++;
-                }
-                hash[s.charAt(low)]++;
-                low++;
-            }
-            if (hash[s.charAt(high)] >= 1) {
-                count--;
-            }
-            hash[s.charAt(high)]--;
-            high++;
-            if (count == 0) {
-                result.add(low);
-            }
-        }
-        return result;
-    }
-
 /*****************************************************************************/
 
     public List<Integer> findAnagrams(String s, String p) {
