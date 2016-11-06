@@ -50,10 +50,10 @@ public class FindAllAnagramsInAString {
         if (s == null || p == null || s.length() != p.length()) {
             return false;
         }
-        int[] count = new int[128];
+        int[] count = new int[256];
         for (int i = 0; i < s.length(); ++i) {
-            count[s.charAt(i) - 'a']++;
-            count[p.charAt(i) - 'a']--;
+            count[s.charAt(i)]++;
+            count[p.charAt(i)]--;
         }
         for (int c : count) {
             if (c != 0) {
