@@ -40,7 +40,12 @@
 public class FindRightInterval {
 
     public int[] findRightInterval(Interval[] intervals) {
+        if (intervals == null) {
+            return null;
+        }
+        int[] result = new int[intervals];
 
+        return result;
     }
 
 }
