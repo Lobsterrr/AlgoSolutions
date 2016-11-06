@@ -38,6 +38,38 @@ public class FindAllAnagramsInAString {
         if (s == null || p == null || s.length() < p.length()) {
             return result;
         }
+        int[] hash = new int[256];
+        for (int i = 0; i < p.length(); ++i) {
+            hash[p.charAt(i)]++;
+        }
+        int low = 0;
+        int high = 0;
+        int count = p.length();
+        while (high < s.length()) {
+            if (hash[high] >= 1) {
+                count--;
+            }
+            hash[high]--;
+            high--;
+            if (count == 0) {
+                result.add(low);
+            }
+            if (high - low == p.length()) {
+                if (hash[low] >= 0) {
+                    count++;
+                }
+                low++;
+                hash[low]++;
+            }
+        }
+        return result;
+    }
+
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<Integer>();
+        if (s == null || p == null || s.length() < p.length()) {
+            return result;
+        }
         for (int i = 0; i < s.length() - p.length() + 1; ++i) {
             if (isAnagram(s.substring(i, i + p.length()), p)) {
                 result.add(i);
