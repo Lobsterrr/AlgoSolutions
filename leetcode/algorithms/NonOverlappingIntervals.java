@@ -42,10 +42,21 @@ public class NonOverlappingIntervals {
 
     public int eraseOverlappingIntervals(Interval[] intervals) {
         if (intervals == null || intervals.length == 0) {
-            return -1;
+            return 0;
         }
         int result = 0;
-
+        Arrays.sort(intervals, new Comparator<Interval>() {
+            @Override
+            public int compare(Interval o1, Interval o2) {
+                return o1.start - o2.start;
+            }
+        });
+        for (int i = 1, lastEnd = intervals[0].end; i < intervals.length; ++i) {
+            if (intervals[i].start < lastEnd) {
+                result++;
+                lastEnd = Math.min(lastEnd, intervals[i].end);
+            }
+        }
         return result;
     }
 
