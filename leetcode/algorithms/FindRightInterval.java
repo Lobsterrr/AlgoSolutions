@@ -46,9 +46,8 @@ public class FindRightInterval {
         int[] result = new int[intervals.length];
         for (int i = 0; i < intervals.length; ++i) {
             result[i] = -1;
-            int j = i + 1;
-            while (j < intervals.length) {
-                if (intervals[j].start >= intervals[i].end) {
+            for (int j = 0; j < intervals.length; ++j) {
+                if (j != i && intervals[i].end <= intervals[j].start) {
                     result[i] = j;
                     break;
                 }
