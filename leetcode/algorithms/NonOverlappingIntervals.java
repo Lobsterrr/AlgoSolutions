@@ -55,6 +55,8 @@ public class NonOverlappingIntervals {
             if (intervals[i].start < lastEnd) {
                 result++;
                 lastEnd = Math.min(lastEnd, intervals[i].end);
+            } else {
+                lastEnd = intervals[i].end;
             }
         }
         return result;
