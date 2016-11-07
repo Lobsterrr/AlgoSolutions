@@ -22,17 +22,15 @@ public class MinimumMovesToEqualArrayElements {
         if (nums == null || nums.length == 0 || nums.length == 1) {
             return 0;
         }
-        int n = nums.length;
-        long sum = 0;
-        long max = Long.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
         for (int num : nums) {
-            sum += num;
-            max = Math.max(max, num);
+            min = Math.min(min, num);
         }
-        while ((n * max - sum) % (n - 1) != 0) {
-            max++;
+        int result = 0;
+        for (int num : nums) {
+            result += num - min;
         }
-        return (int) ((n * max - sum) / (n - 1));
+        return result;
     }
 
 }
