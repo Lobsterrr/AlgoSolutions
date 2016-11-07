@@ -63,6 +63,8 @@ public class FindRightInterval {
         return result;
 	}
 
+/*****************************************************************************/
+
     public int[] findRightInterval(Interval[] intervals) {
         if (intervals == null) {
             return null;
