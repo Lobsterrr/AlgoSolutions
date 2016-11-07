@@ -44,13 +44,13 @@ public class NonOverlappingIntervals {
         if (intervals == null || intervals.length == 0) {
             return 0;
         }
-        int result = 0;
         Arrays.sort(intervals, new Comparator<Interval>() {
             @Override
             public int compare(Interval o1, Interval o2) {
                 return o1.start - o2.start;
             }
         });
+        int result = 0;
         for (int i = 1, prevEnd = intervals[0].end; i < intervals.length; ++i) {
             if (intervals[i].start < prevEnd) {
                 result++;
