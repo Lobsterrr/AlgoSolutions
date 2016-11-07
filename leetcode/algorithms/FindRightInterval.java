@@ -54,12 +54,15 @@ public class FindRightInterval {
         for (int i = 0; i < intervals.length; ++i) {
             result[i] = -1;
             for (int j = 0; j < intervals.length; ++j) {
+                if (j == i) {
+                    continue;
+                }
                 int curStart = Integer.MAX_VALUE;
-                if (j != i && intervals[i].end <= intervals[j].start) {
+                if (intervals[i].end <= intervals[j].start) {
                     if (curStart > intervals[j].start) {
                         result[i] = j;
+                        curStart = intervals[j].start;
                     }
-                    curStart = Math.min(curStart, intervals[j].start);
                 }
             }
         }
