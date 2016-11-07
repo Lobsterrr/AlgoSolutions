@@ -50,6 +50,30 @@ public class FindRightInterval {
         if (intervals == null) {
             return null;
         }
+        int[] starts = new int[intervals.length];
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < intervals.length; ++i) {
+            starts[i] = intervals[i].start;
+            map.put(intervals.start, i);
+        }
+        Arrays.sort(starts);
+        int[] result = new int[intervals.length];
+        for (int i = 0; i < intervals.length; ++i) {
+            int j = 0;
+            for (; j < intervals.length && starts[j] < intervals[i].end; ++j);
+            if (j == intervals.length) {
+                result[i] = -1;
+            } else {
+                result[i] = map.get(starts[j]);
+            }
+        }
+        return result;
+    }
+
+    public int[] findRightInterval(Interval[] intervals) {
+        if (intervals == null) {
+            return null;
+        }
         int[] result = new int[intervals.length];
         for (int i = 0; i < intervals.length; ++i) {
             result[i] = -1;
