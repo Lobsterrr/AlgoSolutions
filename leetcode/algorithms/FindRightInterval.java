@@ -49,7 +49,6 @@ public class FindRightInterval {
     public int[] findRightInterval(Interval[] intervals) {
         if (intervals == null) {
             return null;
-            
         }
         int[] result = new int[intervals.length];
         TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
