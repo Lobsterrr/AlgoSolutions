@@ -19,7 +19,20 @@
 public class MinimumMovesToEqualArrayElements {
 
     public int minMoves(int[] nums) {
-
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int n = nums.length;
+        long sum = 0;
+        long max = Long.MIN_VALUE;
+        for (int num : nums) {
+            sum += num;
+            max = Math.max(max, num);
+        }
+        while ((n * max - sum) % (n - 1) != 0) {
+            max++;
+        }
+        return (n * max - sum) / (n - 1);
     }
 
 }
