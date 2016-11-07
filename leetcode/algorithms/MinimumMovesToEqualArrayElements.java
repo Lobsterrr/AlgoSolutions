@@ -32,7 +32,7 @@ public class MinimumMovesToEqualArrayElements {
         while ((n * max - sum) % (n - 1) != 0) {
             max++;
         }
-        return (n * max - sum) / (n - 1);
+        return (int) ((n * max - sum) / (n - 1));
     }
 
 }
