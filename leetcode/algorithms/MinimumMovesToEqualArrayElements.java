@@ -19,7 +19,7 @@
 public class MinimumMovesToEqualArrayElements {
 
     public int minMoves(int[] nums) {
-        if (nums == null || nums.length == 0 || nums.length == 1) {
+        if (nums == null) {
             return 0;
         }
         int min = Integer.MAX_VALUE;
