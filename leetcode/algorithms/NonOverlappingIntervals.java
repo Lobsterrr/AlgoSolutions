@@ -41,6 +41,9 @@
 public class NonOverlappingIntervals {
 
     public int eraseOverlappingIntervals(Interval[] intervals) {
+        if (intervals == null || intervals.length == 0) {
+            return -1;
+        }
         int result = 0;
 
         return result;
