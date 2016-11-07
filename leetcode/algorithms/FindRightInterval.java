@@ -6,8 +6,8 @@
  * For any interval i, you need to store the minimum interval j's index, which 
  * means that the interval j has the minimum start point to build the "right" 
  * relationship for interval i. If the interval j doesn't exist, store -1 for 
- * the interval i. Finally, you need output the stored value of each interval as
- * an array.
+ * the interval i. Finally, you need output the stored value of each interval 
+ * as * an array.
  * 
  * Note:
  * You may assume the interval's end point is always bigger than its start 
