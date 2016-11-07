@@ -54,7 +54,7 @@ public class FindRightInterval {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < intervals.length; ++i) {
             starts[i] = intervals[i].start;
-            map.put(intervals.start, i);
+            map.put(intervals[i].start, i);
         }
         Arrays.sort(starts);
         int[] result = new int[intervals.length];
