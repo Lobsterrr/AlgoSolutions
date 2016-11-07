@@ -58,7 +58,6 @@ public class FindRightInterval {
                 if (j != i && intervals[i].end <= intervals[j].start) {
                     if (curStart > intervals[j].start) {
                         result[i] = j;
-                        break;
                     }
                     curStart = Math.min(curStart, intervals[j].start);
                 }
