@@ -23,14 +23,12 @@ public class MinimumMovesToEqualArrayElements {
             return 0;
         }
         int min = Integer.MAX_VALUE;
+        long sum = 0;
         for (int num : nums) {
             min = Math.min(min, num);
+            sum += num;
         }
-        int result = 0;
-        for (int num : nums) {
-            result += num - min;
-        }
-        return result;
+        return (int) (sum - min * nums.length);
     }
 
 }
