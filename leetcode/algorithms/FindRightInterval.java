@@ -51,7 +51,7 @@ public class FindRightInterval {
             return null;
         }
         int[] result = new int[intervals.length];
-        Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
+        TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
         for (int i = 0; i < intervals.length; ++i) {
             map.put(intervals[i].start, i);
         }
