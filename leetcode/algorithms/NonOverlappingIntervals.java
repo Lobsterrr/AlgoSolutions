@@ -51,12 +51,12 @@ public class NonOverlappingIntervals {
                 return o1.start - o2.start;
             }
         });
-        for (int i = 1, lastEnd = intervals[0].end; i < intervals.length; ++i) {
-            if (intervals[i].start < lastEnd) {
+        for (int i = 1, prevEnd = intervals[0].end; i < intervals.length; ++i) {
+            if (intervals[i].start < prevEnd) {
                 result++;
-                lastEnd = Math.min(lastEnd, intervals[i].end);
+                prevEnd = Math.min(prevEnd, intervals[i].end);
             } else {
-                lastEnd = intervals[i].end;
+                prevEnd = intervals[i].end;
             }
         }
         return result;
