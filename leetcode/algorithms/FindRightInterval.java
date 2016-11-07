@@ -49,6 +49,23 @@ public class FindRightInterval {
     public int[] findRightInterval(Interval[] intervals) {
         if (intervals == null) {
             return null;
+            
+        }
+        int[] result = new int[intervals.length];
+        TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
+        for (int i = 0; i < intervals.length; ++i) {
+        	map.put(intervals[i].start, i);
+        }
+        for (int i = 0; i < intervals.length; ++i) {
+        	Integer key = map.ceilingKey(intervals[i].start);
+        	result[i] = key == null ? -1 : map.get(key);
+        }
+        return result;
+	}
+
+    public int[] findRightInterval(Interval[] intervals) {
+        if (intervals == null) {
+            return null;
         }
         int[] starts = new int[intervals.length];
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -62,25 +79,6 @@ public class FindRightInterval {
             int j = 0;
             for (; j < intervals.length && starts[j] < intervals[i].end; ++j);
             result[i] = j == intervals.length ? -1 : map.get(starts[j]);
-        }
-        return result;
-    }
-
-    public int[] findRightInterval(Interval[] intervals) {
-        if (intervals == null) {
-            return null;
-        }
-        int[] result = new int[intervals.length];
-        for (int i = 0; i < intervals.length; ++i) {
-            result[i] = -1;
-            for (int j = 0, minStart = Integer.MAX_VALUE; j < intervals.length; ++j) {
-                if (j != i && intervals[i].end <= intervals[j].start) {
-                    if (minStart > intervals[j].start) {
-                        result[i] = j;
-                        minStart = intervals[j].start;
-                    }
-                }
-            }
         }
         return result;
     }
