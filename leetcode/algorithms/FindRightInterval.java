@@ -57,7 +57,7 @@ public class FindRightInterval {
         	map.put(intervals[i].start, i);
         }
         for (int i = 0; i < intervals.length; ++i) {
-        	Integer key = map.ceilingKey(intervals[i].start);
+        	Integer key = map.ceilingKey(intervals[i].end);
         	result[i] = key == null ? -1 : map.get(key);
         }
         return result;
