@@ -31,7 +31,7 @@ public class FindTheDifference {
         char result = 0;
         for (int i = 0; i < hash.length; ++i) {
             if (hash[i] < 0) {
-                result = (char) ('a' + i);
+                result = (char) i;
             }
         }
         return result;
