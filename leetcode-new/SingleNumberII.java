@@ -9,7 +9,7 @@ without using extra memory?
 public class SingleNumberII {
 
     public int singleNumber(int[] nums) {
-        result = 0;
+        int result = 0;
         int[] bits = new int[32];
         for (int i = 0; i < 32; ++i) {
             for (int num : nums) {
