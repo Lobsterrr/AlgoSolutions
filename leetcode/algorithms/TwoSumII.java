@@ -19,7 +19,7 @@ public class TwoSumII {
         while (start < end && numbers[start] + numbers[end] != target) {
             if (numbers[start] + numbers[end] < target) {
                 start++;
-            } else {
+            } else if (numbers[start] + numbers[end] > target) {
                 end--;
             }
         } 
