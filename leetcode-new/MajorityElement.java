@@ -8,7 +8,20 @@ exist in the array.
 public class MajorityElement {
 
     public int majorityElement(int[] nums) {
-
+        int candidate = Integer.MAX_VALUE;
+        int count = 1;
+        for (int num : nums) {
+            if (num == candidate) {
+                count++;
+            } else {
+                count--;
+            }
+            if (count == 0) {
+                candidate = num;
+                count = 1;
+            }
+        }
+        return candidate;
     }
 
 }
