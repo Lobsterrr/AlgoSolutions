@@ -16,7 +16,7 @@ public class TwoSumII {
         while (i < j && numbers[i] + numbers[j] != target) {
             if (numbers[i] + numbers[j] < target) {
                 i++;
-            } else if (numbers[i] + numbers[j] > target) {
+            } else {
                 j--;
             }
         }
