@@ -21,7 +21,7 @@ You may find this Wikipedia article useful.
 public class AddDigits {
 
     public int addDigits(int num) {
-
+        return (num - 1) % 9 + 1;
     }
 
 }
