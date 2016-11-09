@@ -22,15 +22,16 @@ public class FindTheDifference {
 
     public char findTheDifference(String s, String t) {
         int[] hash = new int[256];
-        char result = '';
         for (int i = 0; i < t.length(); ++i) {
             if (i < s.length()) {
                 hash[s.charAt(i)]++;
             }
             hash[t.charAt(i)]--;
-            if (hash[t.charAt(i)] < 0) {
-                result = t.charAt(i);
-                break;
+        }
+        char result = 0;
+        for (int i = 0; i < hash.length; ++i) {
+            if (hash[i] < 0) {
+                result = (char) ('a' + i);
             }
         }
         return result;
