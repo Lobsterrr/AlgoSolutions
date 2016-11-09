@@ -11,7 +11,7 @@ public class ReverseString {
         if (s == null) {
             return null;
         }
-        return new StringBuilder().reverse(s).toString();
+        return new StringBuilder(s).reverse().toString();
     }
 
 }
