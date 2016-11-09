@@ -16,8 +16,7 @@ public class TwoSumII {
     public int[] twoSum(int[] numbers, int target) {
         int start = 0;
         int end = numbers.length - 1;
-        while (start < numbers.length && end >= 0 
-                && numbers[start] + numbers[end] != target) {
+        while (start < end && numbers[start] + numbers[end] != target) {
             if (numbers[start] + numbers[end] < target) {
                 start++;
             } else {
