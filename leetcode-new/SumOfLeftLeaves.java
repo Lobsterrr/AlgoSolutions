@@ -54,7 +54,8 @@ public class SumOfLeftLeaves {
         if (root.left == null && root.right == null) {
             return isLeft ? root.val : 0;
         }
-        return sumOfLeftLeaves(root.left, true) + sumOfLeftLeaves(root.right, false);
+        return sumOfLeftLeaves(root.left, true) 
+            + sumOfLeftLeaves(root.right, false);
     }
 
 }
