@@ -31,6 +31,8 @@ public class FindTheDifference {
         return result;
     }
 
+/*****************************************************************************/
+
     public char findTheDifference(String s, String t) {
         int[] hash = new int[256];
         for (int i = 0; i < t.length(); ++i) {
