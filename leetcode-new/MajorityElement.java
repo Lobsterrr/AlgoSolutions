@@ -8,16 +8,11 @@ exist in the array.
 public class MajorityElement {
 
     public int majorityElement(int[] nums) {
-        int candidate = Integer.MAX_VALUE;
-        int count = 1;
-        for (int num : nums) {
-            if (num == candidate) {
-                count++;
-            } else {
-                count--;
-            }
-            if (count == 0) {
-                candidate = num;
+        int candidate = 0;
+        for (int i = 0, count = 0; i < nums.length; ++i) {
+            count += nums[i] == candidate ? 1 : -1;
+            if (count <= 0) {
+                candidate = nums[i];
                 count = 1;
             }
         }
