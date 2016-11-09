@@ -38,7 +38,7 @@ public class ReverseLinkedList {
         ListNode cur = result;
         for (; cur.next != null; cur = cur.next);
         cur.next = head;
-        return sub;
+        return result;
     }
 
 }
