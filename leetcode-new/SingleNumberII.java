@@ -20,6 +20,8 @@ public class SingleNumberII {
         return result;
     }
 
+/*****************************************************************************/
+
     public int singleNumber(int[] nums) {
         int ones = 0;
         int twos = 0;
