@@ -24,23 +24,18 @@ respectively. Return 24.
 public class SumOfLeftLeaves {
 
     public int sumOfLeftLeaves(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
         int result = 0;
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode cur = root;
-        while (cur != null || !stack.isEmpty()) {
-            if (cur != null) {
-                stack.push(cur);
-                cur = cur.left;
-            } else {
-                TreeNode node = stack.pop();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            if (node != null) {
+                stack.push(node.left);
+                stack.push(node.right);
                 if (node.left != null && node.left.left == null 
                         && node.left.right == null) {
                     result += node.left.val;
                 }
-                cur = node.right;
             }
         }
         return result;
