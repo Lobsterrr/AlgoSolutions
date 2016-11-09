@@ -14,6 +14,9 @@ What if the inputs contain unicode characters? How would you adapt your solution
 public class ValidAnagram {
 
     public boolean isAnagram(String s, String t) {
+        if (s == null || t == null || s.length() != t.length()) {
+            return false;
+        }
         int[] hash = new int[256];
         for (int i = 0; i < s.length(); ++i) {
             hash[s.charAt(i)]++;
