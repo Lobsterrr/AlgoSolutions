@@ -17,16 +17,15 @@ public class SingleNumberIII {
             xor ^= num;
         }
         int mask = xor & ~(xor - 1);
-        int a = 0;
-        int b = 0;
+        int[] result = new int[2];
         for (int num : nums) {
             if ((num & mask) == 0) {
-                a ^= num;
+                result[0] ^= num;
             } else {
-                b ^= num;
+                result[1] ^= num;
             }
         }
-        return new int[] {a, b};
+        return result;
     }
 
 }
