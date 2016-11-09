@@ -36,7 +36,8 @@ public class SumOfLeftLeaves {
                 cur = cur.left;
             } else {
                 TreeNode node = stack.pop();
-                if (node.left != null && node.left.left == null && node.left.right == null) {
+                if (node.left != null && node.left.left == null 
+                        && node.left.right == null) {
                     result += node.left.val;
                 }
                 cur = node.right;
