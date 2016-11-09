@@ -14,12 +14,12 @@ public class RansomNote {
 
     public boolean canConstruct(String ransomNote, String magazine) {
         int[] hash = new int[256];
-        for (int i = 0; i < ransomNote.length(); ++i) {
-            hash[ransomNote.charAt(i)]++;
-        }
         for (int i = 0; i < magazine.length(); ++i) {
-            hash[magazine.charAt(i)]--;
-            if (hash[magazine.charAt(i)] < 0) {
+            hash[magazine.charAt(i)]++;
+        }
+        for (int i = 0; i < ransomNote.length(); ++i) {
+            hash[ransomNote.charAt(i)]--;
+            if (hash[ransomNote.charAt(i)] < 0) {
                 return false;
             }
         }
