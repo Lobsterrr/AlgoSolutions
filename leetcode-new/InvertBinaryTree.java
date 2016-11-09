@@ -34,6 +34,8 @@ public class InvertBinaryTree {
         return root;
     }
 
+/*****************************************************************************/
+
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
             return null;
@@ -55,6 +57,8 @@ public class InvertBinaryTree {
         }
         return root;
     }
+
+/*****************************************************************************/
 
     public TreeNode invertTree(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
