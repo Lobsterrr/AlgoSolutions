@@ -21,8 +21,7 @@ public class RansomNote {
             hash[magazine.charAt(i)]++;
         }
         for (int i = 0; i < ransomNote.length(); ++i) {
-            hash[ransomNote.charAt(i)]--;
-            if (hash[ransomNote.charAt(i)] < 0) {
+            if (--hash[ransomNote.charAt(i)] < 0) {
                 return false;
             }
         }
