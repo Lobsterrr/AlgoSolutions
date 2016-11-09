@@ -9,6 +9,20 @@ without using extra memory?
 public class SingleNumberII {
 
     public int singleNumber(int[] nums) {
+        result = 0;
+        int[] bits = new int[32];
+        for (int i = 0; i < 32; ++i) {
+            for (int num : nums) {
+                bits[i] += (num >>> i) & 1;
+            }
+            result |= (bits[i] % 3) << i;
+        }
+        return result;
+    }
+
+/*****************************************************************************/
+
+    public int singleNumber(int[] nums) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
             map.put(num, 1 + (map.containsKey(num) ? 1 : 0));
