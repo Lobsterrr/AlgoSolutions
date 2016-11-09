@@ -29,4 +29,18 @@ public class ReverseLinkedList {
         return head;
     }
 
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode sub = reverseList(head.next);
+        head.next = null;
+        ListNode cur = sub;
+        while (cur != null && cur.next != null) {
+            cur = cur.next;
+        }
+        cur.next = head;
+        return sub;
+    }
+
 }
