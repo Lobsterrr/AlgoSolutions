@@ -21,17 +21,17 @@ public class QueueReconstructionByHeight {
         if (people == null || people.length == 0) {
             return people;
         }
-        Arrays.sort(people, new Comparator<Integer[]>() {
+        Arrays.sort(people, new Comparator<int[]>() {
             @Override
-            public int compare(Integer[] o1, Integer[] o2) {
+            public int compare(int[] o1, int[] o2) {
                 return o1[0] == o2[0] ? o1[1] - o2[1] : o2[0] - o1[0];
             }
         });
-        List<Integer> list = new ArrayList<Integer>();
+        List<int[]> list = new ArrayList<int[]>();
         for (int[] p : people) {
             list.add(p[1], p);
         }
-        return list.toArray(new int[people.length][0]):
+        return list.toArray(new int[people.length][0]);
     }
 
 }
