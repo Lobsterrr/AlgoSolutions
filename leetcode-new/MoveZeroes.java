@@ -12,7 +12,7 @@ Minimize the total number of operations.
 public class MoveZeroes {
 
     public void moveZeroes(int[] nums) {
-        if (nums == null || nums.length <= 1) {
+        if (nums == null || nums.length == 0) {
             return;
         }
         for (int i = 0, toPlaceIndex = 0; i < nums.length; ++i) {
