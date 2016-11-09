@@ -20,6 +20,8 @@ public class ReverseString {
         return new String(A);
     }
 
+/*****************************************************************************/
+
     public String reverseString(String s) {
         if (s == null) {
             return null;
