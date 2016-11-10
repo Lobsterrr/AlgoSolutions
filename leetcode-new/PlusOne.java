@@ -12,7 +12,9 @@ public class PlusOne {
         for (; i >= 0 && digits[i] == 9; --i) {
             digits[i] = 0;
         }
-        if (i < 0) {
+        if (i >= 0) {
+            digits[i]++;
+        } else if (i < 0) {
             digits = new int[digits.length + 1];
             digits[0] = 1;
         }
