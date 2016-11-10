@@ -22,8 +22,7 @@ public class PascalTriangle {
                 list.add(1);
                 for (int j = 1; j < i - 1; ++j) {
                     List<Integer> prev = result.get(i - 2);
-                    int value = prev.get(j - 1) + prev.get(j);
-                    list.add(value);
+                    list.add(prev.get(j - 1) + prev.get(j));
                 }
             }
             list.add(1);
