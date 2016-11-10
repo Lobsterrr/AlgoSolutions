@@ -24,11 +24,11 @@ public class SortColors {
         if (nums == null || nums.length == 0) {
             return;
         }
-        for (int i = 0, j = nums.length - 1, k = 0; k <= j; ++k) {
-            if (nums[k] < 1) {
-                swap(nums, i++, k);
-            } else if (nums[k] > 1) {
-                swap(nums, j--, k--);
+        for (int low = 0, high = nums.length - 1, i = 0; i <= high; ++i) {
+            if (nums[i] < 1) {
+                swap(nums, low++, i);
+            } else if (nums[i] > 1) {
+                swap(nums, high--, i--);
             }
         }
     }
