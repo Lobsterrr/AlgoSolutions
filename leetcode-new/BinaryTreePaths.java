@@ -25,20 +25,20 @@ public class BinaryTreePaths {
 
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<String>();
-        binaryTreePaths(root, new StringBuilder(), result);
+        binaryTreePaths(root, "", result);
         return result;
     }
 
-    public void binaryTreePaths(TreeNode root, StringBuilder sb, List<String> result) {
+    public void binaryTreePaths(TreeNode root, String path, List<String> result) {
         if (root == null) {
             return;
         }
         sb.append("->" + root.val);
         if (root.left == null && root.right == null) {
-            result.add(sb.delete(0, 2).toString());
+            result.add(path.substring(2).toString());
         }
-        binaryTreePaths(root.left, new StringBuilder(sb), result);
-        binaryTreePaths(root.right, new StringBuilder(sb), result);
+        binaryTreePaths(root.left, path, result);
+        binaryTreePaths(root.right, path, result);
     }
 
 }
