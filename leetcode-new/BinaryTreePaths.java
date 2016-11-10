@@ -24,7 +24,12 @@ All root-to-leaf paths are:
 public class BinaryTreePaths {
 
     public List<String> binaryTreePaths(TreeNode root) {
+        List<String> result = new ArrayList<String>();
+        if (root == null) {
+            return result;
+        }
 
+        return result;
     }
 
 }
