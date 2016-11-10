@@ -18,8 +18,11 @@ There is a more generic way of solving this problem.
 public class PalindromeNumber {
 
     public boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false;
+        }
         int copy = x;
-        int y = 0;
+        long y = 0;
         while (x != 0) {
             y = 10 * y + x % 10;
             x /= 10;
