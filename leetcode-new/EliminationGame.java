@@ -26,7 +26,19 @@ Output:
 public class EliminationGame {
 
     public int lastRemaining(int n) {
-
+        int head = 1;
+        boolean isL2R = true;
+        int step = 1;
+        int remaining = n;
+        while (remaining > 1) {
+            if (isL2R || remaining % 2 != 0) {
+                head += step;
+            }
+            isL2R = !isL2R;
+            step *= 2;
+            remaining /= 2;
+        }
+        return head;
     }
 
 }
