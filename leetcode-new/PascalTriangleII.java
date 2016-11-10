@@ -18,19 +18,4 @@ public class PascalTriangleII {
         return result;
     }
 
-    public List<Integer> getRow(int rowIndex) {
-        List<Integer> result = new ArrayList<Integer>();
-        getRow(rowIndex, 0, result);
-        return result;
-    }
-
-    public void getRow(int rowIndex, int i, List<Integer> result) {
-        if (i == rowIndex) {
-            return;
-        }
-        int size = result.size();
-        result.add(result.get(size - 2) + result.get(size - 1));
-        getRow(rowIndex, i + 1, result);
-    }
-
 }
