@@ -16,12 +16,11 @@ public class PascalTriangle {
 
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        for (int n = 0; n < numRows; n++) {
-            int nCk = 1;
+        for (int n = 1; n <= numRows; ++n) {
             List<Integer> list = new ArrayList<Integer>();
-            for (int k = 0; k <= n; k++) {
+            for (int k = 1, nCk = 1; k <= n; ++k) {
                 list.add(nCk);
-                nCk = nCk * (n - k) / (k + 1);
+                nCk = nCk * (n - k) / k;
             }
             result.add(list);
         }
