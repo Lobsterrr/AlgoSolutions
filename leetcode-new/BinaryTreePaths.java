@@ -35,13 +35,13 @@ public class BinaryTreePaths {
         }
         sb.append("->" + root.val);
         if (root.left == null && root.right == null) {
-            result.add(new StringBuilder(sb).delete(0, 2).toString());
+            result.add(sb.delete(0, 2).toString());
         }
         if (root.left != null) {
-            binaryTreePaths(root.left, sb, result);
+            binaryTreePaths(root.left, new StringBuilder(sb), result);
         }
         if (root.right != null) {
-            binaryTreePaths(root.right, sb, result);
+            binaryTreePaths(root.right, new StringBuilder(sb), result);
         }
     }
 
