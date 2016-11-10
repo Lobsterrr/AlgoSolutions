@@ -25,11 +25,24 @@ public class BinaryTreePaths {
 
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<String>();
-        if (root == null) {
-            return result;
-        }
-
+        binaryTreePaths(root, new StringBuilder(), result);
         return result;
+    }
+
+    public void binaryTreePaths(TreeNode root, StringBuilder sb, List<String> result) {
+        if (root == null) {
+            return;
+        }
+        sb.append("->" + root.val);
+        if (root.left == null && root.right == null) {
+            result.add(new StringBuilder(sb).delete(0, 2).toString());
+        }
+        if (root.left != null) {
+            binaryTreePaths(root.left, sb, result);
+        }
+        if (root.right != null) {
+            binaryTreePaths(root.right, sb, result);
+        }
     }
 
 }
