@@ -18,8 +18,7 @@ public class PascalTriangle {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         for (int n = 1; n <= numRows; ++n) {
             List<Integer> list = new ArrayList<Integer>();
-            int nCk = 1;
-            for (int k = 1; k <= n; ++k) {
+            for (int k = 1, nCk = 1; k <= n; ++k) {
                 list.add(nCk);
                 nCk = nCk * (n - k) / k;
             }
