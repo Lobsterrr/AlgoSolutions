@@ -11,9 +11,6 @@ public class PascalTriangleII {
 
     public List<Integer> getRow(int rowIndex) {
         List<Integer> result = new ArrayList<Integer>();
-        if (rowIndex < 0) {
-            return result;
-        }
         for (int k = 0, nCk = 1; k <= rowIndex; ++k) {
             result.add(nCk);
             nCk = (int) ((long) nCk * (rowIndex - k) / (k + 1)); 
