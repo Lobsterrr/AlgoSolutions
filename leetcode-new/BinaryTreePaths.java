@@ -37,12 +37,8 @@ public class BinaryTreePaths {
         if (root.left == null && root.right == null) {
             result.add(sb.delete(0, 2).toString());
         }
-        if (root.left != null) {
-            binaryTreePaths(root.left, new StringBuilder(sb), result);
-        }
-        if (root.right != null) {
-            binaryTreePaths(root.right, new StringBuilder(sb), result);
-        }
+        binaryTreePaths(root.left, new StringBuilder(sb), result);
+        binaryTreePaths(root.right, new StringBuilder(sb), result);
     }
 
 }
