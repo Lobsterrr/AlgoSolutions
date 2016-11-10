@@ -26,7 +26,7 @@ public class PascalTriangleII {
 
     public void getRow(int rowIndex, int i, List<Integer> result) {
         if (i == rowIndex) {
-            return result;
+            return;
         }
         int size = result.size();
         result.add(result.get(size - 2) + result.get(size - 1));
