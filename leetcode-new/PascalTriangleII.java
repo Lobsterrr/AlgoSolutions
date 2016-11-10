@@ -16,7 +16,7 @@ public class PascalTriangleII {
         }
         for (int k = 0, nCk = 1; k <= rowIndex; ++k) {
             result.add(nCk);
-            nCk = nCk * (rowIndex - k) / (k + 1); 
+            nCk = (int) ((long) nCk * (rowIndex - k) / (k + 1)); 
         }
         return result;
     }
