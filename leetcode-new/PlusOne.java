@@ -20,7 +20,9 @@ public class PlusOne {
             return result;
         }
         i = digits.length - 1;
-        for (; i >= 0 && digits[i] == 9; --i);
+        for (; i >= 0 && digits[i] == 9; --i) {
+            digits[i] = 0;
+        }
         digits[i]++;
         return digits;
     }
