@@ -33,7 +33,7 @@ public class BinaryTreePaths {
         if (root == null) {
             return;
         }
-        sb.append("->" + root.val);
+        path += "->" + root.val;
         if (root.left == null && root.right == null) {
             result.add(path.substring(2).toString());
         }
