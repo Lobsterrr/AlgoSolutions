@@ -26,7 +26,7 @@ public class IntersectionOfTwoArrays {
                 }
                 i++;
                 j++;
-            } else if (nums1[i] < nums[j]) {
+            } else if (nums1[i] < nums2[j]) {
                 i++;
             } else {
                 j++;
