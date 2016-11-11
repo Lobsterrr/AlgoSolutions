@@ -21,3 +21,44 @@ solution.getRandom();
 public class LinkedListRandomNode {
 
 }
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+
+    Random rnd = null;
+    ListNode head = null;
+
+    /** @param head The linked list's head.
+        Note that the head is guaranteed to be not null, 
+        so it contains at least one node. */
+    public Solution(ListNode head) {
+        this.rnd = new Random();
+        this.head = head;
+    }
+    
+    /** Returns a random node's value. */
+    public int getRandom() {
+        ListNode cur = head;
+        int result = 0;
+        for (int i = 1; cur != null; ++i) {
+            if (rnd.getInt(i) == 0) {
+                result = cur.val;
+            }
+        }
+        return result;
+    }
+
+}
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution obj = new Solution(head);
+ * int param_1 = obj.getRandom();
+ */
