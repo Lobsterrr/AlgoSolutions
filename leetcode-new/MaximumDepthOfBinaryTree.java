@@ -26,6 +26,25 @@ public class MaximumDepthOfBinaryTree {
         if (root == null) {
             return 0;
         }
+        Queue<TreeNode> cur = new LinkedList<TreeNode>();
+        Queue<TreeNode> next = new LinkedList<TreeNode>();
+        int depth = 0;
+        cur.offer(root);
+        while (cur.peek() != null) {
+            TreeNode node = cur.poll();
+            if (node.left != null) {
+                next.offer(node.left);
+            }
+            if (node.right != null) {
+                next.offer(node.right);
+            }
+            if (cur.peek == null) {
+                depth++;
+                cur = next;
+                next = new LinkedList<TreeNode>();
+            }
+        }
+        return depth;
     }
 
 }
