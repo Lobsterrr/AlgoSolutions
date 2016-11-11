@@ -14,7 +14,10 @@ not count as extra space for the purpose of space complexity analysis.)
 public class ProductOfArrayExceptSelf {
 
     public int[] productExceptSelf(int[] nums) {
+        int[] result = new int[nums.length];
 
+
+        return result;
     }
 
 }
