@@ -48,7 +48,7 @@ class Solution {
         ListNode cur = head;
         int result = 0;
         for (int i = 1; cur != null; ++i) {
-            if (rnd.getInt(i) == 0) {
+            if (rnd.nextInt(i) == 0) {
                 result = cur.val;
             }
         }
