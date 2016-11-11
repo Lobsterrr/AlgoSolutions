@@ -14,6 +14,30 @@ public class IntersectionOfTwoArrays {
         if (nums1 == null || nums2 == null) {
             return null;
         }
+        Set<Integer> set = new HashSet<Integer>();
+        for (int num : nums1) {
+            set.add(num);
+        }
+        List<Integer> list = new ArrayList<Integer>();
+        for (int num : nums2) {
+            if (set.contains(num)) {
+                list.add(num);
+                set.remove(num);
+            }
+        }
+        int[] result = new int[list.size()];
+        for (int i = 0; i < result.length; ++i) {
+            result[i] = list.get(i);
+        }
+        return result;
+    }
+
+/*****************************************************************************/
+
+    public int[] intersection(int[] nums1, int[] nums2) {
+        if (nums1 == null || nums2 == null) {
+            return null;
+        }
         Arrays.sort(nums1);
         Arrays.sort(nums2);
         List<Integer> list = new ArrayList<Integer>();
