@@ -33,8 +33,8 @@ public class IntersectionOfTwoArrays {
             }
         }
         int[] result = new int[list.size()];
-        for (int i = 0; i < list.size(); ++i) {
-            result[i] = list.get(i);
+        for (int k = 0; k < list.size(); ++k) {
+            result[k] = list.get(k);
         }
         return result;
     }
