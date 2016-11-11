@@ -32,7 +32,11 @@ public class IntersectionOfTwoArrays {
                 j++;
             }
         }
-        return (int[]) list.toArray(new int[list.size()]);
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); ++i) {
+            result[i] = list.get(i);
+        }
+        return result;
     }
 
 }
