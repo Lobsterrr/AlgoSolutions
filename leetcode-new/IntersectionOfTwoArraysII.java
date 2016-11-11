@@ -19,7 +19,24 @@ that you cannot load all elements into the memory at once?
 public class IntersectionOfTwoArraysII {
 
     public int[] intersect(int[] nums1, int[] nums2) {
-
+        if (nums1 == null || nums2 == null) {
+            return null;
+        }
+        Set<Integer> set = new HashSet<Integer>();
+        for (int num : nums1) {
+            set.add(num);
+        }
+        List<Integer> list = new ArrayList<Integer>();
+        for (int num : nums2) {
+            if (set.contains(num)) {
+                list.add(num);
+            }
+        }
+        int[] result = new int[list.size()];
+        for (int i = 0; i < result.length; ++i) {
+            result[i] = list.get(i);
+        }
+        return result;
     }
 
 }
