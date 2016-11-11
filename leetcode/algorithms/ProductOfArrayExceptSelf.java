@@ -21,8 +21,7 @@ public class ProductOfArrayExceptSelf {
         for (int i = 0; i < nums.length; i++) {
             result[i] = i == 0 ? 1 : result[i - 1] * nums[i - 1];
         }
-        int product = 1;
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 1, product = 1; i < nums.length; i++) {
             product *= nums[nums.length - i];
             result[nums.length - 1 - i] *= product;
         }
