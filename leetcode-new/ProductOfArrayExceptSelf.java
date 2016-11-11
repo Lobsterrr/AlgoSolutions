@@ -14,9 +14,16 @@ not count as extra space for the purpose of space complexity analysis.)
 public class ProductOfArrayExceptSelf {
 
     public int[] productExceptSelf(int[] nums) {
+        if (nums == null) {
+            return null;
+        }
         int[] result = new int[nums.length];
+        for (int i = 0; i < nums.length; ++i) {
+            result[i] = i == 0 ? 1 : result[i - 1] * nums[i - 1];
+        }
+        for (int rightProduct = 1, i = nums.length - 1; i >= 0; --i) {
 
-
+        }
         return result;
     }
 
