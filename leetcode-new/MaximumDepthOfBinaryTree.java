@@ -38,7 +38,7 @@ public class MaximumDepthOfBinaryTree {
             if (node.right != null) {
                 next.offer(node.right);
             }
-            if (cur.peek == null) {
+            if (cur.peek() == null) {
                 depth++;
                 cur = next;
                 next = new LinkedList<TreeNode>();
