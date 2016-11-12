@@ -24,7 +24,10 @@ public class BestTimeToBuyAndSellStockIII {
             rightMin = Math.min(rightMin, prices[len - 1 - i]);
             if (i == 0) {
                 leftProfit[i] = 0;
-                rightProfit[]
+                rightProfit[len - 1 - i] = 0;
+            } else {
+                leftProfit[i] = Math.max(leftProfit[i - 1], prices[i] - leftMin);
+                rightProfit[len - 1 - i] = Math.max(rightProfit[len - i], prices[i] - rightMin);
             }
         }
 
