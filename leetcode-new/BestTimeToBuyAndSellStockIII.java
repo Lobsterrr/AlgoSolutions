@@ -30,7 +30,13 @@ public class BestTimeToBuyAndSellStockIII {
             }
         }
         int result = 0;
-
+        for (int i = 0; i < len; ++i) {
+            if (i == 0) {
+                result = Math.max(result, rightProfit[i])
+            } else {
+                result = Math.max(result, leftProfit[i] + rightProfit[i]);
+            }
+        }
         return result;
     }
 
