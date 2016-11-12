@@ -18,23 +18,23 @@ public class BestTimeToBuyAndSellStockIII {
         int len = prices.length;
         int[] leftProfit = new int[len];
         int[] rightProfit = new int[len];
-        for (int i = 0, leftMin = Integer.MAX_VALUE, rightMin = Integer.MAX_VALUE; i < len; ++i) {
+        for (int i = 0, leftMin = Integer.MAX_VALUE, rightMax = Integer.MIN_VALUE; i < len; ++i) {
             leftMin = Math.min(leftMin, prices[i]);
-            rightMin = Math.min(rightMin, prices[len - 1 - i]);
+            rightMax = Math.max(rightMax, prices[len - 1 - i]);
             if (i == 0) {
                 leftProfit[i] = 0;
                 rightProfit[len - 1 - i] = 0;
             } else {
                 leftProfit[i] = Math.max(leftProfit[i - 1], prices[i] - leftMin);
-                rightProfit[len - 1 - i] = Math.max(rightProfit[len - i], prices[i] - rightMin);
+                rightProfit[len - 1 - i] = Math.max(rightProfit[len - i], rightMax - prices[i]);
             }
         }
         int result = 0;
         for (int i = 0; i < len; ++i) {
-            if (i == 0) {
-                result = Math.max(result, rightProfit[i]);
-            } else {
-                result = Math.max(result, leftProfit[i] + rightProfit[i]);
+            if (i < len - 1) {
+                result = Math.max(result, leftProfit[i] + rightProfit[i + 1]);
+            } else if (i == len - 1) {
+                result = Math.max(result, leftProfit[i]);
             }
         }
         return result;
