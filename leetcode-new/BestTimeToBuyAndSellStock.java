@@ -20,7 +20,15 @@ In this case, no transaction is done, i.e. max profit = 0.
 public class BestTimeToBuyAndSellStock {
 
     public int maxProfit(int[] prices) {
-
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+        int result = 0;
+        for (int i = 0, min = Integer.MAX_VALUE; i < prices.length; ++i) {
+            min = Math.min(min, prices[i]);
+            result = Math.max(result, prices[i] - min);
+        }
+        return result;
     }
 
 }
