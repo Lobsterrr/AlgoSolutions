@@ -1,5 +1,6 @@
 /*
-Given a column title as appear in an Excel sheet, return its corresponding column number.
+Given a column title as appear in an Excel sheet, return its corresponding 
+column number.
 
 For example:
 
@@ -13,6 +14,15 @@ For example:
  */
 public class ExcelSheetColumnNumber {
 
-
+    public int titleToNumber(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        int result = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            result += 26 * i + (s.charAt(s.length() - 1 - i) - 'A' + 1);
+        }
+        return result;
+    }
 
 }
