@@ -24,6 +24,7 @@ public class DeleteNodeInALinkedList {
             }
             cur = cur.next;
         }
+        node = dummy.next;
         dummy.next = null;
     }
 
