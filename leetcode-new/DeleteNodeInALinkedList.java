@@ -14,7 +14,17 @@ Supposed the linked list is 1 -> 2 -> 3 -> 4 and you are given the third node wi
 public class DeleteNodeInALinkedList {
 
     public void deleteNode(ListNode node) {
-
+        ListNode dummy = new ListNode(0);
+        dummy.next = node;
+        ListNode cur = dummy;
+        while (cur.next != null) {
+            if (cur.next.val == node.val) {
+                cur.next = cur.next.next;
+                break;
+            }
+            cur = cur.next;
+        }
+        dummy.next = null;
     }
 
 }
