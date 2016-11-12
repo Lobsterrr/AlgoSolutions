@@ -16,7 +16,11 @@ public class BestTimeToBuyAndSellStockIII {
             return 0;
         }
         int result = 0;
-
+        int[] leftProfit = new int[prices.length];
+        int[] rightProfit = new int[prices.length];
+        for (int i = 0, leftMin = Integer.MAX_VALUE, rightMin = Integer.MAX_VALUE; i < prices.length; ++i) {
+            leftMin = Math.min(leftMin, prices[i]);
+        }
 
         return result;
     }
