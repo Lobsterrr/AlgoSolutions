@@ -24,7 +24,21 @@ So the maximum value of F(0), F(1), F(2), F(3) is F(3) = 26.
 public class RotateFunction {
 
     public int maxRotateFunction(int[] A) {
-
+        if (A == null || A.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        int f0 = 0;
+        for (int i = 0; i < A.length; ++i) {
+            sum += A[i];
+            f0 += i * A[i];
+        }
+        int result = f0;
+        for (int i = 1; i < A.length; ++i) {
+            f0 += sum - (n - 1) * A[A.length - 1 - i];
+            result = Math.max(result, f0);
+        }
+        return result;
     }
 
 }
