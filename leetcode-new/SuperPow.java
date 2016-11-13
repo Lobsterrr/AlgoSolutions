@@ -18,7 +18,10 @@ public class SuperPow {
 
     public int superPow(int a, int[] b) {
         int result = 0;
-
+        for (int i = 0, base = a; i < b.length; ++i) {
+            result += b[b.length - 1 - i] * base;
+            base = Math.pow(base, 10);
+        }
         return result;
     }
 
