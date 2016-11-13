@@ -7,11 +7,10 @@ public class ContainsDuplicate {
         if (nums == null || nums.length == 0) {
             return true;
         }
-        Arrays.sort(nums) {
-            for (int i = 1; i < nums.length; ++i) {
-                if (nums[i] == nums[i - 1]) {
-                    return false;
-                }
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; ++i) {
+            if (nums[i] == nums[i - 1]) {
+                return false;
             }
         }
         return true;
