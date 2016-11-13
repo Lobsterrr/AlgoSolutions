@@ -7,12 +7,33 @@
 public class ContainsDuplicateII {
 
     public boolean containsNearbyDuplicate(int[] nums, int k) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int i = 0; i < nums.length; i++) {
-            if (!map.containsKey(nums[i]))
-                map.put(nums[i], i);
-            else if (i - map.get(nums[i]) <= k)
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        Set<Integer> set = new HashSet<Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+            if (!set.add(nums[i])) {
                 return true;
+            }
+            if (set.size() > k) {
+                set.remove(nums[i - k]);
+            }
+        }
+        return false;
+    }
+
+/*****************************************************************************/
+
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+            if (map.containsKey(nums[i]) && i - map.get(nums[i]) <= k) {
+                return true;
+            }
+            map.put(nums[i], i);
         }
         return false;
     }
