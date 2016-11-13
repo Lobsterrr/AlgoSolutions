@@ -25,4 +25,17 @@ public class SuperPow {
         return result;
     }
 
+    public int pow(int a, int exp, int mod) {
+        int result = 1;
+        int base = a;
+        while (exp > 0) {
+            if ((exp & 1) != 0) {
+                result *= base;
+            }
+            base *= base;
+            exp >>= 1;
+        }
+        return result;
+    }
+
 }
