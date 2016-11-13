@@ -40,7 +40,7 @@ public class IntersectionOfTwoLinkedLists {
         }
         ListNode cur1 = headA;
         while (cur1.next != null) {
-            cur1 = cur.next;
+            cur1 = cur1.next;
         }
         cur1.next = headB;
         if (!hasCycle(headA)) {
