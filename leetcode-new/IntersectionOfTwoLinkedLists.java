@@ -49,6 +49,12 @@ public class IntersectionOfTwoLinkedLists {
             cur1 = cur1.next;
             cur2 = cur2.next.next;
         }
+        cur1 = headA;
+        while (cur1 != cur2) {
+            cur1 = cur1.next;
+            cur2 = cur2.next;
+        }
+        return cur1;
     }
 
 }
