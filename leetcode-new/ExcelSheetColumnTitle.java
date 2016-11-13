@@ -18,7 +18,7 @@ public class ExcelSheetColumnTitle {
         long exp = 1;
         String result = "";
         while (n > 0) {
-            int remainder = (n - 1) % (26 * exp) + 1;
+            int remainder = (int) ((n - 1) % (26 * exp) + 1);
             result = (char) (remainder / exp + 64) + result;
             exp *= 26;
             n -= remainder;
