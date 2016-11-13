@@ -11,13 +11,16 @@ public class ContainsDuplicateIII {
         }
         TreeSet<Integer> set = new TreeSet<Integer>();
         for (int i = 0; i < nums.length; ++i) {
-            if (set.size() > 0 && Math.abs(nums[i] - set.first()) <= t) {
-                return true;
-            } else {
-                set.add(nums[i]);
-                if (set.size() > k) {
-                    set.remove(new Integer(nums[i - k]));
+            if (set.size() > 0) {
+                Integer ceil = set.ceiling(nums[i]);
+                Integer floor = set.floor(nums[i]);
+                if (ceil != null && Math.abs(ceil.intValue() - nums[i]) <= t || (floor != null && Math.abs(floor.intValue() - nums[i]) <= t)) {
+                    return true; 
                 }
+            }
+            set.add(nums[i]);
+            if (set.size() > k) {
+                set.remove(nums[i - k]);
             }
         }
         return false;
