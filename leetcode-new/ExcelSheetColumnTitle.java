@@ -15,7 +15,7 @@ For example:
 public class ExcelSheetColumnTitle {
 
     public String convertToTitle(int n) {
-        int exp = 1;
+        long exp = 1;
         String result = "";
         while (n > 0) {
             int remainder = (n - 1) % (26 * exp) + 1;
