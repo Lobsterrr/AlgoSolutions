@@ -27,12 +27,12 @@ public class SuperPow {
 
     public int pow(int a, int exp, int mod) {
         int result = 1;
-        int base = a;
+        int base = a % mod;
         while (exp > 0) {
             if ((exp & 1) != 0) {
-                result *= base;
+                result = (result * base) % mod;
             }
-            base *= base;
+            base = (base * base) % mod;
             exp >>= 1;
         }
         return result;
