@@ -3,6 +3,21 @@
  */
 public class ContainsDuplicate {
 
+
+    public boolean containsDuplicate(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        Set<Integer> set = new HashSet<Integer>();
+        for (int num : nums) {
+            if (set.contains(num)) {
+                return true;
+            }
+            set.put(num);
+        }
+        return false;
+    }
+
     public boolean containsDuplicate(int[] nums) {
         if (nums == null || nums.length == 0) {
             return false;
