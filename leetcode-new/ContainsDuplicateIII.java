@@ -16,7 +16,7 @@ public class ContainsDuplicateIII {
             } else {
                 set.add(nums[i]);
                 if (set.size() > k) {
-                    set.remove(nums[i - k]);
+                    set.remove(new Integer(nums[i - k]));
                 }
             }
         }
