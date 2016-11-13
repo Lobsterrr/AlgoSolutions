@@ -42,9 +42,6 @@ public class IntersectionOfTwoLinkedLists {
         while (cur.next != null) {
             cur = cur.next;
         }
-        if (cur == null) {
-            return null;
-        }
         cur.next = headB;
         ListNode cur1 = headA;
         ListNode cur2 = checkCycle(headA);
