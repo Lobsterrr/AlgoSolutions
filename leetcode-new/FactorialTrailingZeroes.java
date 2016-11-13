@@ -6,7 +6,9 @@ Note: Your solution should be in logarithmic time complexity.
 public class FactorialTrailingZeroes {
 
     public int trailingZeroes(int n) {
-
+        int result = 0;
+        for (; n > 0; n /= 5, result += n);
+        return result;
     }
 
 }
