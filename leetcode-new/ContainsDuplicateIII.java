@@ -11,7 +11,7 @@ public class ContainsDuplicateIII {
         }
         TreeSet<Integer> set = new TreeSet<Integer>();
         for (int i = 0; i < nums.length; ++i) {
-            if (set.size() > 0 && nums[i] - set.first() <= t) {
+            if (set.size() > 0 && Math.abs(nums[i] - set.first()) <= t) {
                 return true;
             } else {
                 set.add(nums[i]);
