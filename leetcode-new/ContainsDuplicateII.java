@@ -21,6 +21,8 @@ public class ContainsDuplicateII {
         return false;
     }
 
+/*****************************************************************************/
+
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return false;
