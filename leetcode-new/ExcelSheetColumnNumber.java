@@ -20,7 +20,7 @@ public class ExcelSheetColumnNumber {
         }
         int result = 0;
         for (int i = 0; i < s.length(); ++i) {
-            result += 26 * i + (s.charAt(s.length() - 1 - i) - 'A' + 1);
+            result += (s.charAt(s.length() - 1 - i) - 'A' + 1) * Math.pow(26, i);
         }
         return result;
     }
