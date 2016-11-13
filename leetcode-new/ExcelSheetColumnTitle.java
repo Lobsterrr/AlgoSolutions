@@ -17,7 +17,7 @@ public class ExcelSheetColumnTitle {
     public String convertToTitle(int n) {
         String result = "";
         while (n > 0) {
-            result += (char) (64 + (n - 1) % 26 + 1) + result;
+            result = (char) (64 + (n - 1) % 26 + 1) + result;
             n = (n - 1) / 26;
         }
         return result;
