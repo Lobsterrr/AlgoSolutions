@@ -35,7 +35,7 @@ public class RotateFunction {
         }
         int result = f0;
         for (int i = 1; i < A.length; ++i) {
-            f0 += sum - (A.length - 1) * A[A.length - 1 - i];
+            f0 += sum - A.length * A[A.length - i];
             result = Math.max(result, f0);
         }
         return result;
