@@ -18,9 +18,6 @@ Can you solve it without using extra space?
 public class LinkedListCycle {
 
     public boolean hasCycle(ListNode head) {
-        if (head == null) {
-            return false;
-        }
         ListNode cur1 = head;
         ListNode cur2 = head;
         while (cur2 != null && cur2.next != null) {
