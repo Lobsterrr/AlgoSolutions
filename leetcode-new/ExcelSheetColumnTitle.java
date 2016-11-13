@@ -21,7 +21,7 @@ public class ExcelSheetColumnTitle {
             int remainder = (n - 1) % (26 * exp) + 1;
             result = (char) (remainder + 64) + result;
             exp *= 26;
-            n = n / exp;
+            n = (n - 1) / exp;
         }
         return result;
     }
