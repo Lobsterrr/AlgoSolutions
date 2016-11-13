@@ -13,7 +13,7 @@ public class ContainsDuplicate {
             if (set.contains(num)) {
                 return true;
             }
-            set.put(num);
+            set.add(num);
         }
         return false;
     }
