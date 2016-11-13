@@ -21,7 +21,21 @@ Can you solve it without using extra space?
 public class LinkedListCycleII {
 
     public ListNode detectCycle(ListNode head) {
-
+        ListNode cur1 = head;
+        ListNode cur2 = head;
+        while (cur2 != null && cur2.next != null) {
+            cur1 = cur1.next;
+            cur2 = cur2.next.next;
+            if (cur1 == cur2) {
+                break;
+            }
+        }
+        cur1 = head;
+        while (cur2 != null && cur1 != cur2) {
+            cur1 = cur1.next;
+            cur2 = cur2.next;
+        }
+        return cur2;
     }
 
 }
