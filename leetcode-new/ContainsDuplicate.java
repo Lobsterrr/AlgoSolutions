@@ -5,7 +5,7 @@ public class ContainsDuplicate {
 
     public boolean containsDuplicate(int[] nums) {
         if (nums == null || nums.length == 0) {
-            return true;
+            return false;
         }
         Arrays.sort(nums);
         for (int i = 1; i < nums.length; ++i) {
