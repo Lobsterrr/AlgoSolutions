@@ -51,6 +51,8 @@ public class IntersectionOfTwoLinkedLists {
         }
         cur.next = null;
         return cur2;
+        // After the last while clause, cur1 is not the same as cur2 if cur2 is 
+        // null so that we have to return cur2, not cur1.
     }
 
     public ListNode checkCycle(ListNode head) {
