@@ -18,9 +18,10 @@ public class SuperPow {
 
     public int superPow(int a, int[] b) {
         int result = 1;
+        int mod = 1337;
         for (int i = 0, base = a; i < b.length; ++i) {
-            result *= (int) Math.pow(base, b[b.length - 1 - i]);
-            base = (int) Math.pow(base, 10);
+            result = result * pow(base, b[b.length - 1 - i], mod) % mod;
+            base = pow(base, 10, mod);
         }
         return result;
     }
@@ -28,11 +29,11 @@ public class SuperPow {
     public int pow(int a, int exp, int mod) {
         int result = 1;
         int base = a % mod;
-        while (exp > 0) {
+        while (exp != 0) {
             if ((exp & 1) != 0) {
-                result = (result * base) % mod;
+                result = result * base % mod;
             }
-            base = (base * base) % mod;
+            base = base * base % mod;
             exp >>= 1;
         }
         return result;
