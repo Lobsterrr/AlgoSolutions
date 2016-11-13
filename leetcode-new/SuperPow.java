@@ -19,7 +19,9 @@ public class SuperPow {
     public int superPow(int a, int[] b) {
         int result = 0;
         for (int i = 0, base = a; i < b.length; ++i) {
-            result += (int) Math.pow(base, b[b.length - 1 - i]);
+            if (b[b.length - 1 - i] > 0) {
+                result += (int) Math.pow(base, b[b.length - 1 - i]);
+            }
             base = (int) Math.pow(base, 10);
         }
         return result;
