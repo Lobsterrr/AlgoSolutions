@@ -38,16 +38,15 @@ public class IntersectionOfTwoLinkedLists {
         if (headA == null || headB == null) {
             return null;
         }
-        ListNode cur1 = headA;
-        while (cur1.next != null) {
-            cur1 = cur1.next;
+        ListNode cur = headA;
+        while (cur.next != null) {
+            cur = cur.next;
         }
-        cur1.next = headB;
+        cur.next = headB;
         if (!hasCycle(headA)) {
-            return false;
+            return null;
         }
-
-        cur1 = headA.next;
+        ListNode cur1 = headA.next;
         ListNode cur2 = headA.next.next;
         while (cur1 != cur2) {
             cur1 = cur1.next;
@@ -58,6 +57,7 @@ public class IntersectionOfTwoLinkedLists {
             cur1 = cur1.next;
             cur2 = cur2.next;
         }
+        cur.next = null;
         return cur1;
     }
 
