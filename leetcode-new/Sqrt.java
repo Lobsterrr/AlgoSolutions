@@ -13,7 +13,7 @@ public class Sqrt {
                 sqrt ^= mask;
             }
         }
-        return result;
+        return sqrt;
     }
 
     public int mySqrt(int x) {
