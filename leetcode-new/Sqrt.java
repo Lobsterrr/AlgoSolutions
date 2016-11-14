@@ -13,6 +13,8 @@ public class Sqrt {
         return (int) sqrt;
     }
 
+/*****************************************************************************/
+
     public int mySqrt(int x) {
         double sqrt = x;
         while (true) {
