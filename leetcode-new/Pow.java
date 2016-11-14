@@ -4,6 +4,19 @@ Implement pow(x, n).
 public class Pow {
 
     public double myPow(double x, int n) {
+        double base = n > 0 ? x : 1.0 / x;
+        double result = 1.0;
+        while (n != 0) {
+            if (n % 2 != 0) {
+                result *= base;
+            }
+            base *= base;
+            n >>>= 1;
+        }
+        return result;
+    }
+
+    public double myPow(double x, int n) {
         if (n == 0) {
             return 1.0;
         }
