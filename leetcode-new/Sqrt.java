@@ -10,7 +10,7 @@ public class Sqrt {
         while (true) {
             double y = (1.0 + x / sqrt) / 2;
             if ((int) sqrt == (int) y) {
-                return true;
+                break;
             }
             sqrt = y;
         }
