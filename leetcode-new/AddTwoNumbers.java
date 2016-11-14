@@ -23,7 +23,7 @@ public class AddTwoNumbers {
         while (cur1 != null || cur2 != null) {
             int value1 = cur1 != null ? cur1.val : 0;
             int value2 = cur2 != null ? cur2.val : 0;
-            cur.next = new ListNode(value1 + value2 + carrier) % 10);
+            cur.next = new ListNode((value1 + value2 + carrier) % 10);
             cur = cur.next;
             if (cur1 != null) {
                 cur1 = cur1.next;
