@@ -4,18 +4,17 @@ Implement pow(x, n).
 public class Pow {
 
     public double myPow(double x, int n) {
-        double base = x;
+        long step = Math.abs((long) n);
         if (n < 0) {
-            base = 1.0 / x;
-            n = -n;
+            x = 1.0 / x;
         }
         double result = 1.0;
-        while (n != 0) {
-            if (n % 2 != 0) {
-                result *= base;
+        whiel (step != 0) {
+            if (step % 2 != 0) {
+                result *= x;
             }
-            base *= base;
-            n >>= 1;
+            x *= x;
+            step >>= 1;
         }
         return result;
     }
