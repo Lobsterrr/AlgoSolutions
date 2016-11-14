@@ -12,14 +12,8 @@ public class AddBinary {
         String result = "";
         int carrier = 0;
         for (int i = 0; i < Math.max(a.length(), b.length()); ++i) {
-            int va = 0;
-            int vb = 0;
-            if (i < a.length()) {
-                va = a.charAt(a.length() - 1 - i) - '0';
-            }
-            if (i < b.length()) {
-                vb = b.charAt(b.length() - 1 - i) - '0';
-            }
+            int va = i < a.length() ? a.charAt(a.length() - 1 - i) - '0' : 0;
+            int vb = i < b.length() ? b.charAt(b.length() - 1 - i) - '0' : 0;
             result = ((va + vb + carrier) % 2) + result;
             carrier = (va + vb + carrier) / 2;
         }
