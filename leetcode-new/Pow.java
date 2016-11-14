@@ -9,7 +9,7 @@ public class Pow {
             x = 1.0 / x;
         }
         double result = 1.0;
-        whiel (step != 0) {
+        while (step != 0) {
             if (step % 2 != 0) {
                 result *= x;
             }
