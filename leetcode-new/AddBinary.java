@@ -10,7 +10,8 @@ public class AddBinary {
 
     public String addBinary(String a, String b) {
         String result = "";
-        for (int i = 0, carrier = 0; i < Math.max(a.length(), b.length()); ++i) {
+        int carrier = 0;
+        for (int i = 0; i < Math.max(a.length(), b.length()); ++i) {
             int va = 0;
             int vb = 0;
             if (i < a.length()) {
