@@ -6,6 +6,17 @@ Compute and return the square root of x.
 public class Sqrt {
 
     public int mySqrt(int x) {
+        int sqrt = 0;
+        for (int mask = 1 << 15; mask > 0; mask >>>= 1) {
+            sqrt |= mask;
+            if (sqrt > x / sqrt) {
+                sqrt ^= mask;
+            }
+        }
+        return result;
+    }
+
+    public int mySqrt(int x) {
         long sqrt = x;
         while (sqrt * sqrt > x) {
             sqrt = (sqrt + x / sqrt) / 2;
