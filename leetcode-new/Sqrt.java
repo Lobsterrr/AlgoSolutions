@@ -6,11 +6,11 @@ Compute and return the square root of x.
 public class Sqrt {
 
     public int mySqrt(int x) {
-        int sqrt = x;
-        while ((long) sqrt * sqrt > x) {
+        long sqrt = x;
+        while (sqrt * sqrt > x) {
             sqrt = (sqrt + x / sqrt) / 2;
         }
-        return sqrt;
+        return (int) sqrt;
     }
 
     public int mySqrt(int x) {
