@@ -34,7 +34,7 @@ public class Sqrt {
         int high = x;
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            if (mid < x / mid) {
+            if (mid <= x / mid) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
