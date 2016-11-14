@@ -10,7 +10,7 @@ public class AddBinary {
 
     public String addBinary(String a, String b) {
         String result = "";
-        for (int i = 0, carrier = 0; i <= Math.max(a.length(), b.length()); ++i) {
+        for (int i = 0, carrier = 0; i < Math.max(a.length(), b.length()); ++i) {
             int va = 0;
             int vb = 0;
             if (i < a.length()) {
@@ -21,6 +21,9 @@ public class AddBinary {
             }
             result = ((va + vb + carrier) % 2) + result;
             carrier = (va + vb + carrier) / 2;
+        }
+        if (carrier == 1) {
+            result = carrier + result;
         }
         return result;
     }
