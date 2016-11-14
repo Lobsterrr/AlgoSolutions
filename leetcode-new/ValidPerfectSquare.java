@@ -14,6 +14,8 @@ Returns: False
  */
 public class ValidPerfectSquare {
 
+    public boolean isPerfectSquare(int num) {
 
+    }
 
 }
