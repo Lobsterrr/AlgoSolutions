@@ -38,6 +38,7 @@ public class ValidPerfectSquare {
 
 /*****************************************************************************/
 
+    // O(lg(n))
     public boolean isPerfectSquare(int num) {
         int sqrt = mySqrt(num);
         return sqrt * sqrt == num;
