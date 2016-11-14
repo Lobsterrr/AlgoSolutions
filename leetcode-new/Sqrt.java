@@ -8,7 +8,7 @@ public class Sqrt {
     public int mySqrt(int x) {
         double sqrt = x;
         while (true) {
-            double y = (1.0 + x / sqrt) / 2;
+            double y = (sqrt + x / sqrt) / 2;
             if ((int) sqrt == (int) y) {
                 break;
             }
