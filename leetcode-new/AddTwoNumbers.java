@@ -15,7 +15,28 @@ Output: 7 -> 0 -> 8
 public class AddTwoNumbers {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        ListNode cur1 = l1;
+        ListNode cur2 = l2;
+        int carrier = 0;
+        while (cur1 != null || cur2 != null) {
+            int value1 = cur1 != null ? cur1.val : 0;
+            int value2 = cur2 != null ? cur2.val : 0;
+            cur.next = new ListNode((value1 + value2 + carrier) % 2);
+            cur = cur.next;
+            if (cur1 != null) {
+                cur1 = cur1.next;
+            }
+            if (cur2 != null) {
+                cur2 = cur2.next;
+            }
+            carrier = (value1 + value2 + carrier) / 2;
+        }
+        if (carrier != 0) {
+            cur.next = new ListNode(carrier);
+        }
+        return dummy.next;
     }
 
 }
