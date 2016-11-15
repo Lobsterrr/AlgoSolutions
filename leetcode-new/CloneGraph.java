@@ -34,7 +34,9 @@ public class CloneGraph {
 
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
-
+        if (node == null) {
+            return null;
+        }
     }
 
 }
