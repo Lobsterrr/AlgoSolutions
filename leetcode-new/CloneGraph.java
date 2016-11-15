@@ -33,10 +33,10 @@ Visually, the graph looks like the following:
 public class CloneGraph {
 
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
         if (node == null) {
             return null;
         }
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
         UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
 
 
