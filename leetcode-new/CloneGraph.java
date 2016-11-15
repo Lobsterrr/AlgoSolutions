@@ -51,15 +51,10 @@ public class CloneGraph {
         while (queue.peek() != null) {
             UndirectedGraphNode cur = queue.poll();
             for (UndirectedGraphNode neighbor : cur.neighbors) {
-                queue.offer(neighbor);
-                map.put(neighbor, new UndirectedGraphNode(neighbor.label));
-            }
-        }
-        queue.offer(node);
-        while (queue.peek() != null) {
-            UndirectedGraphNode cur = queue.poll();
-            for (UndirectedGraphNode neighbor : cur.neighbors) {
-                queue.offer(neighbor);
+                if (!map.containsKey(neighbor)) {
+                    queue.offer(neighbor);
+                    map.put(neighbor, new UndirectedGraphNode(neighbor.label));
+                }
                 map.get(cur).neighbors.add(map.get(neighbor));
             }
         }
