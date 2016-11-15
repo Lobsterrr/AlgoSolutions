@@ -13,6 +13,7 @@ Return a deep copy of the list.
  */
 public class CopyListWithRandomPointer {
 
+    // O(n) time, O(n) space.
     public RandomListNode copyRandomList(RandomListNode head) {
         if (head == null) {
             return null;
