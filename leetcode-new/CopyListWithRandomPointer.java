@@ -13,6 +13,21 @@ Return a deep copy of the list.
  */
 public class CopyListWithRandomPointer {
 
-
+    public RandomListNode copyRandomList(RandomListNode head) {
+        if (head == null) {
+            return null;
+        }
+        Map<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
+        RandomListNode cur = head;
+        while (cur != null) {
+            map.put(cur, new RandomListNode(cur.label));
+            cur = cur.next;
+        }
+        cur = head;
+        while (cur != null) {
+            map.get(cur).random = map.get(cur.random);
+        }
+        return map.get(head);
+    }
 
 }
