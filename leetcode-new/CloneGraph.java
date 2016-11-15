@@ -47,6 +47,14 @@ public class CloneGraph {
                 map.put(cur, new UndirectedGraphNode(cur.label));
             }
         }
+        queue.offer(node);
+        while (queue.peek() != null) {
+            UndirectedGraphNode cur = queue.poll();
+            UndirectedGraphNode mirror = map.get(cur);
+            for (UndirectedGraphNode neighbor : cur.neighbors) {
+
+            }
+        }
         return copy;
     }
 
