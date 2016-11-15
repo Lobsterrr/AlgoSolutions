@@ -51,7 +51,7 @@ public class CloneGraph {
             UndirectedGraphNode cur = queue.poll();
             for (UndirectedGraphNode neighbor : cur.neighbors) {
                 queue.offer(neighbor);
-                map.put(cur, new UndirectedGraphNode(cur.label));
+                map.put(neighbor, new UndirectedGraphNode(neighbor.label));
             }
         }
         queue.offer(node);
