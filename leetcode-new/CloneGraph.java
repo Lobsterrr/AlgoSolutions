@@ -43,8 +43,10 @@ public class CloneGraph {
         if (node == null) {
             return null;
         }
-        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
-        Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = 
+            new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        Queue<UndirectedGraphNode> queue 
+            = new LinkedList<UndirectedGraphNode>();
         queue.offer(node);
         UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
         map.put(node, copy);
