@@ -39,8 +39,9 @@ public class CloneGraph {
         Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
         UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
         Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
-        while (true) {
-            map.put(node, copy);
+        queue.offer(copy);
+        while (queue.peek() != null) {
+            UndirectedGraphNode cur = queue.poll();
 
         }
         return copy;
