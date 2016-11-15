@@ -39,6 +39,7 @@ Visually, the graph looks like the following:
  */
 public class CloneGraph {
 
+    // BFS
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         if (node == null) {
             return null;
