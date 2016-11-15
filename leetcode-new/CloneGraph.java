@@ -32,6 +32,9 @@ Visually, the graph looks like the following:
  */
 public class CloneGraph {
 
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
 
+    }
 
 }
