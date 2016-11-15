@@ -37,6 +37,10 @@ public class CloneGraph {
         if (node == null) {
             return null;
         }
+        UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
+
+
+        return copy;
     }
 
 }
