@@ -37,12 +37,15 @@ public class CloneGraph {
             return null;
         }
         Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
-        UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
         Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
-        queue.offer(copy);
+        queue.offer(node);
+        UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
         while (queue.peek() != null) {
             UndirectedGraphNode cur = queue.poll();
-
+            for (UndirectedGraphNode neighbor : cur.neighbors) {
+                queue.offer(neighbor);
+                map.put(cur, new UndirectedGraphNode(cur.label));
+            }
         }
         return copy;
     }
