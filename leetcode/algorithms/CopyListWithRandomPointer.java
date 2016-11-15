@@ -43,26 +43,23 @@ public class CopyListWithRandomPointer {
 
     // O(n) time, O(n) space
     public RandomListNode copyRandomList(RandomListNode head) {
+        if (head == null) {
+            return null;
+        }
         Map<RandomListNode, RandomListNode> map = 
             new HashMap<RandomListNode, RandomListNode>();
-        RandomListNode dummy = new RandomListNode(0);
         RandomListNode cur = head;
-        RandomListNode cur1 = dummy;
         while (cur != null) {
-            RandomListNode node = new RandomListNode(cur.label);
-            map.put(cur, node);
+            map.put(cur, new RandomListNode(cur.label));
             cur = cur.next;
-            cur1.next = node;
-            cur1 = cur1.next;
         }
         cur = head;
-        cur1 = dummy.next;
         while (cur != null) {
-            cur1.random = map.get(cur.random);
+            map.get(cur).next = map.get(cur.next);
+            map.get(cur).random = map.get(cur.random);
             cur = cur.next;
-            cur1 = cur1.next;
         }
-        return dummy.next;
+        return map.get(head);
     }
 
 }
