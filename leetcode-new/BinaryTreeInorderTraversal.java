@@ -32,13 +32,12 @@ public class BinaryTreeInorderTraversal {
         TreeNode cur = root;
         while (!stack.isEmpty() || cur != null) {
             if (cur != null) {
-                result.add(cur.val);
-                if (cur.right != null) {
-                    stack.push(cur.right);
-                }
+                stack.push(cur);
                 cur = cur.left;
             } else {
-                cur = stack.pop();
+                TreeNode node = stack.pop();
+                result.add(node.val);
+                cur = cur.right;
             }
         }
         return result;
