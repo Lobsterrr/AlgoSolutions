@@ -69,9 +69,9 @@ public class BinaryTreePreorderTraversal {
         if (root == null) {
             return;
         }
-        list.add(root);
-        list.addAll(root.left);
-        list.addAll(root.right);
+        list.add(root.val);
+        helper(root.left, list);
+        helper(root.right, list);
     }
 
 }
