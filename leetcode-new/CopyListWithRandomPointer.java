@@ -14,6 +14,29 @@ Return a deep copy of the list.
  */
 public class CopyListWithRandomPointer {
 
+    public RandomListNode copyRandomList(RandomListNode head) {
+        if (head == null) {
+            return null;
+        }
+        RandomListNode cur = head;
+        while (cur != null) {
+            RandomListNode next = cur.next;
+            cur.next = new RandomListNode(cur.label);
+            cur.next.next = next;
+            cur = next;
+        }
+        RandomListNode copy = head.next;
+        cur = head;
+        while (cur != null) {
+            RandomListNode next = cur.next;
+            cur.next = next.next;
+            cur = next;
+        }
+        return copy;
+    }
+
+/*****************************************************************************/
+
     // O(n) time, O(n) space.
     public RandomListNode copyRandomList(RandomListNode head) {
         if (head == null) {
