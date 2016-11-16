@@ -12,6 +12,15 @@ return [1,2,3].
 
 Note: Recursive solution is trivial, could you do it iteratively?
  */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
 public class BinaryTreePreorderTraversal {
 
 
