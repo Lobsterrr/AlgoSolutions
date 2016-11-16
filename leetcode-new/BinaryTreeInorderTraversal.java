@@ -23,6 +23,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
  */
 public class BinaryTreeInorderTraversal {
 
+    // Morris Traversal, O(n) time, O(1) space.
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         TreeNode cur = root;
@@ -32,7 +33,7 @@ public class BinaryTreeInorderTraversal {
                 cur = cur.right;
             } else {
                 TreeNode prev = cur.left;
-                while (prev != null && prev.right != null && prev.right != cur) {
+                while (prev.right != null && prev.right != cur) {
                     prev = prev.right;
                 }
                 if (prev.right != cur) {
