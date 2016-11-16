@@ -25,7 +25,26 @@ public class BinaryTreeInorderTraversal {
 
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
-
+        TreeNode cur = root;
+        while (cur != null) {
+            if (cur.left == null) {
+                result.add(cur.val);
+                cur = cur.right;
+            } else {
+                TreeNode prev = cur.left;
+                while (prev != null && prev.right != null && prev.right != cur) {
+                    prev = prev.right;
+                }
+                if (prev.right != cur) {
+                    prev.right = cur;
+                    cur = cur.left;
+                } else {
+                    prev.right = null;
+                    result.add(cur.val);
+                    cur = cur.right;
+                }
+            }
+        }
         return result;
     }
 
