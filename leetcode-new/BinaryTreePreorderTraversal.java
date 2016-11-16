@@ -31,14 +31,14 @@ public class BinaryTreePreorderTraversal {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
         while (cur != null || !stack.isEmpty()) {
-            if (cur != null) {
+            if (cur == null) {
+                cur = stack.pop();
+            } else {
                 result.add(cur.val);
                 if (cur.right != null) {
                     stack.push(cur.right);
                 }
                 cur = cur.left;
-            } else {
-                cur = stack.pop();
             }
         }
         return result;
