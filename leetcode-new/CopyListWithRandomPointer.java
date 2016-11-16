@@ -25,6 +25,11 @@ public class CopyListWithRandomPointer {
             cur.next.next = next;
             cur = next;
         }
+        cur = head;
+        while (cur != null) {
+            cur.next.random = cur.random.next;
+            cur = cur.next.next;
+        }
         RandomListNode copy = head.next;
         cur = head;
         while (cur != null) {
