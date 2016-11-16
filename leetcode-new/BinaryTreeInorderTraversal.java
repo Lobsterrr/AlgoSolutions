@@ -37,7 +37,7 @@ public class BinaryTreeInorderTraversal {
             } else {
                 TreeNode node = stack.pop();
                 result.add(node.val);
-                cur = cur.right;
+                cur = node.right;
             }
         }
         return result;
