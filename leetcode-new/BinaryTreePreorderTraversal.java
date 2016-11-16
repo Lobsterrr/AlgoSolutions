@@ -23,6 +23,15 @@ Note: Recursive solution is trivial, could you do it iteratively?
  */
 public class BinaryTreePreorderTraversal {
 
-
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        if (root == null) {
+            return result;
+        }
+        result.add(root.val);
+        result.addAll(preorderTraversal(root.left));
+        result.addAll(preorderTraversal(root.right));
+        return result;
+    }
 
 }
