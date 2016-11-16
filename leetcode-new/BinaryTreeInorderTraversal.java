@@ -12,8 +12,22 @@ return [1,3,2].
 
 Note: Recursive solution is trivial, could you do it iteratively?
  */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
 public class BinaryTreeInorderTraversal {
 
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
 
+
+        return result;
+    }
 
 }
