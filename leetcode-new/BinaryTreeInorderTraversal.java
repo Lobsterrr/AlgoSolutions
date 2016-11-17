@@ -24,6 +24,8 @@ Note: Recursive solution is trivial, could you do it iteratively?
 public class BinaryTreeInorderTraversal {
 
     // Morris Traversal, O(n) time, O(1) space.
+    // Thanks to Annie Kim's blog: 
+    // http://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         TreeNode cur = root;
