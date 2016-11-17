@@ -29,8 +29,8 @@ public class UniqueBinarySearchTrees {
             return 1;
         }
         int result = 0;
-        for (int i = 1; i <= n; ++i) {
-            result += numTrees(i - 1) * numTrees(n - i);
+        for (int i = 0; i <= n - 1; ++i) {
+            result += numTrees(i) * numTrees(n - 1 - i);
         }
         return result;
     }
