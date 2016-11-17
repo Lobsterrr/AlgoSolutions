@@ -28,6 +28,15 @@ public class BinaryTreePreorderTraversal {
         if (root == null) {
             return result;
         }
+    }
+
+/*****************************************************************************/
+
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        if (root == null) {
+            return result;
+        }
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
         while (cur != null || !stack.isEmpty()) {
