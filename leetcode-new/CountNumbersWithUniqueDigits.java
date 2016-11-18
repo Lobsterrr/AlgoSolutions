@@ -21,6 +21,8 @@ because a number cannot start with 0].
  */
 public CountNumbersWithUniqueDigits {
 
+    public int countNumbersWithUniqueDigits(int n) {
 
+    }
 
 }
