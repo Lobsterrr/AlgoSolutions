@@ -26,8 +26,14 @@ public CountNumbersWithUniqueDigits {
             return 0;
         }
         int result = 0;
-
-
+        for (int i = 1, factorial = 9; i <= n; ++i) {
+            if (i == 1) {
+                result += 10;
+            } else {
+                factorial *= 10 - i;
+                result += factorial;
+            }
+        }
         return result;
     }
 
