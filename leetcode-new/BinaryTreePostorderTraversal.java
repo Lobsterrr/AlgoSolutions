@@ -28,6 +28,8 @@ public class BinaryTreePostorderTraversal {
         if (root == null) {
             return result;
         }
+
+        return result;
     }
 
 /*****************************************************************************/
