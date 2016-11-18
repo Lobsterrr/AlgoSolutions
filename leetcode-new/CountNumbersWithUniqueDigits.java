@@ -22,6 +22,9 @@ because a number cannot start with 0].
 public CountNumbersWithUniqueDigits {
 
     public int countNumbersWithUniqueDigits(int n) {
+        if (n == 0) {
+            return 1;
+        }
         int result = 0;
         for (int i = 1, factorial = 9; i <= n; ++i) {
             if (i == 1) {
