@@ -27,7 +27,7 @@ public CountNumbersWithUniqueDigits {
             if (i == 1) {
                 result += 10;
             } else {
-                factorial *= 10 - i;
+                factorial *= 11 - i;
                 result += factorial;
             }
         }
