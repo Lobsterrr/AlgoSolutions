@@ -26,7 +26,7 @@ public CountNumbersWithUniqueDigits {
             return 1;
         }
         int result = 0;
-        for (int i = 1, factorial = 9; i <= n; ++i) {
+        for (int i = 1, factorial = 0; i <= n; ++i) {
             factorial *= 11 - i;
             result += factorial;
         }
