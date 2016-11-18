@@ -25,6 +25,10 @@ public CountNumbersWithUniqueDigits {
         if (n < 1) {
             return 0;
         }
+        int result = 0;
+
+
+        return result;
     }
 
 }
