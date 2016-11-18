@@ -24,7 +24,9 @@ Note: Recursive solution is trivial, could you do it iteratively?
 public class BinaryTreePostorderTraversal {
 
     public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
 
+        return result;
     }
 
 }
