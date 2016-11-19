@@ -24,9 +24,11 @@ public class ShuffleAnArray {
 class Solution {
 
     int[] original = null;
+    Random rnd = null;
 
     public Solution(int[] nums) {
         this.original = nums;
+        rnd = new Random();
     }
     
     /** Resets the array to its original configuration and return it. */
@@ -36,7 +38,15 @@ class Solution {
 
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
+        for (int i = nums.length; ++i) {
+            swap(nums, 0, rnd.nextInt(nums.length));
+        }
+    }
 
+    public void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
     }
 
 }
