@@ -19,3 +19,19 @@ solution.shuffle();
 public class ShuffleAnArray {
 
 }
+
+class Solution {
+
+    public Solution() {
+
+    }
+    
+    public int[] reset() {
+
+    }
+
+    public int[] shuffle() {
+
+    }
+
+}
