@@ -39,8 +39,8 @@ class Solution {
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
         Random rnd = new Random();
-        for (int i = 0; i < nums.length; ++i) {
-            swap(nums, 0, rnd.nextInt(nums.length));
+        for (int i = nums.length; i > 0; --i) {
+            swap(nums, i - 1, rnd.nextInt(i));
         }
         return nums;
     }
