@@ -24,10 +24,12 @@ public class ShuffleAnArray {
 class Solution {
 
     int[] original = null;
+    int[] nums = null;
     Random rnd = null;
 
     public Solution(int[] nums) {
         this.original = nums;
+        this.nums = nums;
         rnd = new Random();
     }
     
@@ -41,6 +43,7 @@ class Solution {
         for (int i = 0; i < nums.length; ++i) {
             swap(nums, 0, rnd.nextInt(nums.length));
         }
+        return nums;
     }
 
     public void swap(int[] nums, int i, int j) {
