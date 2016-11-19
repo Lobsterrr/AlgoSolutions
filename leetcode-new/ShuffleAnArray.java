@@ -23,13 +23,15 @@ public class ShuffleAnArray {
 
 class Solution {
 
-    public Solution() {
+    int[] original = null;
 
+    public Solution(int[] nums) {
+        this.original = nums;
     }
     
     /** Resets the array to its original configuration and return it. */
     public int[] reset() {
-
+        return original;
     }
 
     /** Returns a random shuffling of the array. */
