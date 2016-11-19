@@ -27,8 +27,8 @@ class Solution {
     int[] nums = null;
 
     public Solution(int[] nums) {
-        this.original = nums;
-        this.nums = nums;
+        this.original = Arrays.copyOf(nums, nums.length);
+        this.nums = Arrays.copyOf(nums, nums.length);
     }
     
     /** Resets the array to its original configuration and return it. */
