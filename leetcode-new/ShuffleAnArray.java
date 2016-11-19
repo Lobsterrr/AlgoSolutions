@@ -25,12 +25,10 @@ class Solution {
 
     int[] original = null;
     int[] nums = null;
-    Random rnd = null;
 
     public Solution(int[] nums) {
         this.original = nums;
         this.nums = nums;
-        rnd = new Random();
     }
     
     /** Resets the array to its original configuration and return it. */
@@ -40,6 +38,7 @@ class Solution {
 
     /** Returns a random shuffling of the array. */
     public int[] shuffle() {
+        Random rnd = new Random();
         for (int i = 0; i < nums.length; ++i) {
             swap(nums, 0, rnd.nextInt(nums.length));
         }
