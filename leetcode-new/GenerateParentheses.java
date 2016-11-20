@@ -21,19 +21,14 @@ public class GenerateParentheses {
     }
 
     private void helper(List<String> result, String s, int left, int right) {
-        if (left < 0 || right < 0) {
+        if (left < 0 || left > right) {
             return;
         }
         if (left == 0 && right == 0) {
             result.add(s);
         }
-        if (left > 0) {
-            helper(result, "(" + s, left - 1, right);
-            helper(result, s + "("``, left - 1, right);
-        }
-        if (right > 0) {
-            helper(result, s + ")", left, right - 1);
-        }
+        helper(result, s + "(", left - 1, right);
+        helper(result, s + ")", left, right - 1);)
     }
 
 }
