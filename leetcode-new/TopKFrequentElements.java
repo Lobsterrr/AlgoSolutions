@@ -11,6 +11,7 @@ array's size.
  */
 public class TopKFrequentElements {
 
+    // O(n) time, O(n) space.
     public List<Integer> topKFrequent(int[] nums, int k) {
         List<Integer> result = new ArrayList<Integer>();
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
