@@ -11,4 +11,10 @@ array's size.
  */
 public class TopKFrequentElements {
 
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        List<Integer> result = new ArrayList<Integer>();
+
+        return result;
+    }
+
 }
