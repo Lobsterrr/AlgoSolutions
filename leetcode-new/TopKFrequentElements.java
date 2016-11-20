@@ -42,9 +42,11 @@ public class TopKFrequentElements {
         for (int num : nums) {
             map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
         }
-        List<Map.Entry<Integer, Integer>> list = new LinkedList<Map.Entry<Integer, Integer>>(map.entrySet());
+        List<Map.Entry<Integer, Integer>> list = 
+            new LinkedList<Map.Entry<Integer, Integer>>(map.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+            public int compare(Map.Entry<Integer, Integer> o1, 
+                    Map.Entry<Integer, Integer> o2) {
                 return (o2.getValue()).compareTo(o1.getValue());
             }
         });
@@ -63,9 +65,12 @@ public class TopKFrequentElements {
         for (int num : nums) {
             map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
         }
-        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<Map.Entry<Integer, Integer>>(k, new Comparator<Map.Entry<Integer, Integer>>() {
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = 
+            new PriorityQueue<Map.Entry<Integer, Integer>>(k, 
+                    new Comparator<Map.Entry<Integer, Integer>>() {
             @Override
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+            public int compare(Map.Entry<Integer, Integer> o1, 
+                    Map.Entry<Integer, Integer> o2) {
                 return o1.getValue() - o2.getValue();
             }
         });
