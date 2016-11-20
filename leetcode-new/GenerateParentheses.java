@@ -28,7 +28,7 @@ public class GenerateParentheses {
             result.add(s);
         }
         if (left > 0) {
-            helper(result, "(" + s, left - 1, right);)
+            helper(result, "(" + s, left - 1, right);
         }
         if (right > 0) {
             helper(result, s + ")", left, right - 1);
