@@ -17,6 +17,30 @@ public class TopKFrequentElements {
         for (int num : nums) {
             map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
         }
+        List<Integer>[] bucket = new ArrayList<Integer>[nums.length + 1];
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            int key = entry.getKey();
+            if (bucket[map.get(key)] == null) {
+                bucket[map.get(key)] = new ArrayList<Integer>();
+            }
+            bucket[map.get(key)].add(key);
+        }
+        for (int i = bucket.length - 1; i >= 0 && result.size() < k; --i) {
+            if (bucket[i] != null) {
+                result.addAll(bucket[i]);
+            }
+        }
+        return result;
+    }
+
+/*****************************************************************************/
+
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        List<Integer> result = new ArrayList<Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int num : nums) {
+            map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
+        }
         List<Map.Entry<Integer, Integer>> list = new LinkedList<Map.Entry<Integer, Integer>>(map.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
             public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
