@@ -14,4 +14,11 @@ For example, given n = 3, a solution set is:
  */
 public class GenerateParentheses {
 
+    public List<String> generateParenthesis(int n) {
+        List<String> result = new ArrayList<String>();
+
+
+        return result;
+    }
+
 }
