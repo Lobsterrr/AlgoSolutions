@@ -43,7 +43,7 @@ public class GenerateParentheses {
             for (int i = 0; i < n; ++i) {
                 for (String inner : generateParenthesis(i)) {
                     for (String outer : generateParenthesis(n - i - 1)) {
-                        result.add("(" + inner + ")" + outer);)
+                        result.add("(" + inner + ")" + outer);
                     }
                 }
             }
