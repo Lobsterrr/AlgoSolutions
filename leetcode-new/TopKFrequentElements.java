@@ -23,7 +23,7 @@ public class TopKFrequentElements {
                 return (o2.getValue()).compareTo(o1.getValue());
             }
         });
-        for (int i = 0; i < k; ++i) {
+        for (int i = 0; i < k && i < list.size(); ++i) {
             result.add(list.get(i).getKey());
         }
         return result;
