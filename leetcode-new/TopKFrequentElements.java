@@ -15,7 +15,7 @@ public class TopKFrequentElements {
         List<Integer> result = new ArrayList<Integer>();
         Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
         for (int num : nums) {
-            map.put(num, 1 + map.containsKey(num) ? map.get(num) : 0);
+            map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
         }
         List<Map.Entry<Integer, Integer>> list = new LinkedList<Map.Entry<Integer, Integer>>(map.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
