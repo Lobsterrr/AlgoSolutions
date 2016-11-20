@@ -17,7 +17,7 @@ public class TopKFrequentElements {
         for (int num : nums) {
             map.put(num, 1 + (map.containsKey(num) ? map.get(num) : 0));
         }
-        List<Integer>[] bucket = new ArrayList<Integer>[nums.length + 1];
+        List<Integer>[] bucket = new ArrayList[nums.length + 1];
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             int key = entry.getKey();
             if (bucket[map.get(key)] == null) {
