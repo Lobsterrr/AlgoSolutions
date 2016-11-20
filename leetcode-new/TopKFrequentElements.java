@@ -13,7 +13,10 @@ public class TopKFrequentElements {
 
     public List<Integer> topKFrequent(int[] nums, int k) {
         List<Integer> result = new ArrayList<Integer>();
-
+        Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
+        for (int num : nums) {
+            map.put(num, 1 + map.containsKey(num) ? map.get(num) : 0);
+        }
         return result;
     }
 
