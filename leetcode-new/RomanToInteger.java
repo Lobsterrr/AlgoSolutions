@@ -6,7 +6,7 @@ Input is guaranteed to be within the range from 1 to 3999.
 public class RomanToInteger {
 
     public int romanToInt(String s) {
-        Map<Character, Integer> map = new HashMap<Integer, Integer>();
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
         map.put('I', 1);
         map.put('V', 5);
         map.put('X', 10);
