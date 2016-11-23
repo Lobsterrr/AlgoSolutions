@@ -17,28 +17,17 @@ public class IntegerToRoman {
         String result = "";
         for (int base = 1; base <= num; base *= 10) {
             int last = num / base % 10;
-            if (last == 0) {
-                continue;
-            }
-            String tmp = "";
-            int mod5 = last % 5;
-            if (1 <= mod5 && mod5 <= 3) {
-                for (int i = 1; i <= mod5; ++i) {
-                    tmp += map.get(base);
-                }
-                if (last > 5) {
-                    tmp = "" + map.get(5 * base) + tmp;
-                }
-            } else if (mod5 == 0) {
-                tmp = "" + map.get(5 * base);
-            } else if (mod5 == 4){
-                if (last == 4) {
-                    tmp = "" + map.get(base) + map.get(5 * base);
-                } else if (last == 9) {
-                    tmp = "" + map.get(base) + map.get(10 * base);
+            if (1 <= last && last <= 3 || 6 <= last <= 8) {
+                for (int i = 1; i <= last % 5) {
+                    result = result + map.get(base);
                 }
             }
-            result = tmp + result;
+            if (last == 5) {
+                result = map.get(5 * base) + result;
+            }
+            if (last % 5 == 4) {
+                result = map.get(base) + map.get(last + 1);
+            }
         }
         return result;
     }
