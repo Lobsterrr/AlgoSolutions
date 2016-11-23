@@ -26,7 +26,16 @@ public class IntegerToRoman {
                 if (last > 5) {
                     tmp = map.get(5 * base) + tmp;
                 }
+            } else if (mod5 == 0) {
+                tmp = map.get(5 * base);
+            } else if (mod5 == 4){
+                if (last == 4) {
+                    tmp = map.get(base) + map.get(5 * base);
+                } else if (last == 9) {
+                    tmp = map.get(base) + map.get(10 * base);
+                }
             }
+            result = tmp + result;
             num /= 10;
         }
         return result;
