@@ -18,7 +18,7 @@ public class IntegerToRoman {
         for (int base = 1; base <= num; base *= 10) {
             int last = num / base % 10;
             if (1 <= last && last <= 3 || 6 <= last && last <= 8) {
-                for (int i = 1; i <= last % 5) {
+                for (int i = 1; i <= last % 5; ++i) {
                     result = result + map.get(base);
                 }
             }
