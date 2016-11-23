@@ -26,7 +26,7 @@ public class IntegerToRoman {
                 result = map.get(5 * base) + result;
             }
             if (last % 5 == 4) {
-                result = map.get(base) + map.get(last + 1) + result;
+                result = "" + map.get(base) + map.get(last + 1) + result;
             }
         }
         return result;
