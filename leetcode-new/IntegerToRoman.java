@@ -16,7 +16,10 @@ public class IntegerToRoman {
         map.put(1000, 'M');
         String result = "";
         for (int base = 1; base <= num; base *= 10) {
-            int last = num % 10;
+            int last = num / base % 10;
+            if (last == 0) {
+                continue;
+            }
             String tmp = "";
             int mod5 = last % 5;
             if (1 <= mod5 && mod5 <= 3) {
@@ -36,7 +39,6 @@ public class IntegerToRoman {
                 }
             }
             result = tmp + result;
-            num /= 10;
         }
         return result;
     }
