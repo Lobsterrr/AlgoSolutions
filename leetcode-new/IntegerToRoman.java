@@ -20,7 +20,7 @@ public class IntegerToRoman {
             String tmp = "";
             int mod5 = last % 5;
             if (1 <= mod5 && mod5 <= 3) {
-                for (int i = 1; i <= mod5) {
+                for (int i = 1; i <= mod5; ++i) {
                     tmp += map.get(base);
                 }
                 if (last > 5) {
