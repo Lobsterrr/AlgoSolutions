@@ -14,7 +14,7 @@ public class IntegerToRoman {
         map.put(100, 'C');
         map.put(500, 'D');
         map.put(1000, 'M');
-        String reslt = "";
+        String result = "";
         for (int base = 1; base < num; base *= 10) {
             int last = num % 10;
             String tmp = "";
@@ -24,15 +24,15 @@ public class IntegerToRoman {
                     tmp += map.get(base);
                 }
                 if (last > 5) {
-                    tmp = map.get(5 * base) + tmp;
+                    tmp += map.get(5 * base) + tmp;
                 }
             } else if (mod5 == 0) {
-                tmp = map.get(5 * base);
+                tmp += map.get(5 * base);
             } else if (mod5 == 4){
                 if (last == 4) {
-                    tmp = map.get(base) + map.get(5 * base);
+                    tmp += map.get(base) + map.get(5 * base);
                 } else if (last == 9) {
-                    tmp = map.get(base) + map.get(10 * base);
+                    tmp += map.get(base) + map.get(10 * base);
                 }
             }
             result = tmp + result;
