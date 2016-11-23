@@ -22,7 +22,7 @@ public class IntegerToRoman {
                     result = result + map.get(base);
                 }
             }
-            if (last == 5) {
+            if (5 <= last && last <= 8) {
                 result = map.get(5 * base) + result;
             }
             if (last % 5 == 4) {
