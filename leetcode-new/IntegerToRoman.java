@@ -15,7 +15,7 @@ public class IntegerToRoman {
         map.put(500, 'D');
         map.put(1000, 'M');
         String result = "";
-        for (int base = 1; base < num; base *= 10) {
+        for (int base = 1; base <= num; base *= 10) {
             int last = num % 10;
             String tmp = "";
             int mod5 = last % 5;
