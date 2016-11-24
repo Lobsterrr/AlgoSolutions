@@ -7,7 +7,7 @@ public class IntegerToRoman {
 
     public String intToRoman(int num) {
         String result = "";
-        String[] ones = {};
+        String[] ones = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         String[] tens = {};
         String[] hundreds = {};
         String[] thousands = {};
