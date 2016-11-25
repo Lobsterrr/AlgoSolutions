@@ -34,6 +34,8 @@ public class BinaryWatch {
         return result;
     }
 
+    private hammingWeight(int n) {
 
+    }
 
 }
