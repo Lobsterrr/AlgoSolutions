@@ -25,7 +25,9 @@ example "10:2" is not valid, it should be "10:02".
 public class BinaryWatch {
 
     public List<String> readBinaryWatch(int num) {
+        List<String> result = new ArrayList<String>();
 
+        return result;
     }
 
 }
