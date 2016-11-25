@@ -35,7 +35,7 @@ public class BinaryWatch {
     }
 
     private hammingWeight(int n) {
-
+	n = (n & 0x55555555) & ((n & 0xAAAAAAAA) >>> 1);
     }
 
 }
