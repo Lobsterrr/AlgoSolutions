@@ -9,6 +9,8 @@ There is only one duplicate number in the array, but it could be repeated more t
  */
 public class FindTheDuplicateNumber {
 
+    public int findDuplicate(int[] nums) {
 
+    }
 
 }
