@@ -12,4 +12,10 @@ using only constant extra space complexity?
  */
 public class MissingNumber {
 
+    public int missingNumber(int[] nums) {
+        for (int num : nums) {
+        
+        }
+    }
+
 }
