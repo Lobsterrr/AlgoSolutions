@@ -12,6 +12,12 @@ using only constant extra space complexity?
  */
 public class MissingNumber {
 
+    public int missingNumber(int[] nums) {
+
+    }
+
+/*****************************************************************************/
+
     // O(n * lg(n)) time, O(1) space.
     public int missingNumber(int[] nums) {
         Arrays.sort(nums);
