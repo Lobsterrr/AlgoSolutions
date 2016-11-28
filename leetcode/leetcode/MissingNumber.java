@@ -12,6 +12,7 @@ using only constant extra space complexity?
  */
 public class MissingNumber {
 
+    // O(n) time, O(1) space.
     public int missingNumber(int[] nums) {
         int xor = 0;
         for (int i = 0; i < nums.length; ++i) {
@@ -26,7 +27,7 @@ public class MissingNumber {
     public int missingNumber(int[] nums) {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; ++i) {
-            if (i < nums.length && nums[i] != i) {
+            if (nums[i] != i) {
                 return i;
             }
         }
