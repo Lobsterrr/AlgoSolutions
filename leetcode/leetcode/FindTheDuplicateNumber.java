@@ -30,7 +30,7 @@ public class FindTheDuplicateNumber {
 
 /*****************************************************************************/
 
-    // O(n) time, O(1) space. modified the original array.
+    // O(n) time, O(1) space with array modified.
     public int findDuplicate(int[] nums) {
         for (int i = 0; i < nums.length; ++i) {
             int next = Math.abs(nums[i]);
