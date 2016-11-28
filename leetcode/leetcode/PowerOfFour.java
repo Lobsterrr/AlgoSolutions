@@ -10,7 +10,16 @@ Follow up: Could you solve it without loops/recursion?
 public class PowerOfFour {
 
     public boolean isPowerOfFour(int num) {
-
+        if (num == 1) {
+            return true;
+        }
+        while (num > 1) {
+            if (num % 4 != 0) {
+                return false;
+            }
+            num /= 4;
+        }
+        return num == 1;
     }
 
 }
