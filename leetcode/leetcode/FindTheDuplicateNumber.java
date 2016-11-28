@@ -13,7 +13,21 @@ than once.
 public class FindTheDuplicateNumber {
 
     public int findDuplicate(int[] nums) {
-
+        int cur1 = 0;
+        int cur2 = 0;
+        while (cur2 < nums.length && nums[cur2] - 1 < length) {
+            cur1 = nums[cur1] - 1;
+            cur2 = nums[nums[cur2] - 1] - 1;
+            if (cur1 = cur2) {
+                break;
+            }
+        }
+        cur1 = 0;
+        while (cur1 != cur2) {
+            cur1 = nums[cur1] - 1;
+            cur2 = nums[cur2] - 1;
+        }
+        return nums[cur1];
     }
 
 }
