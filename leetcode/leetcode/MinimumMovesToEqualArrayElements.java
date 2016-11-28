@@ -22,6 +22,17 @@ public class MinimumMovesToEqualArrayElements {
 
     public int minMoves(int[] nums) {
         int result = 0;
+        int sum = 0;
+        int min = Integer.MAX_VALUE;
+        for (int num : nums) {
+            sum += num;
+            min = Math.min(min, num);
+        }
+        result = sum - min * nums.length;
+        return result;
+
+
+        int result = 0;
         int min = Integer.MAX_VALUE;
         for (int num : nums) {
             min = Math.min(min, num);
