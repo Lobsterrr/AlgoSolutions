@@ -18,7 +18,7 @@ public class FindTheDuplicateNumber {
         while (cur2 < nums.length && nums[cur2] - 1 < length) {
             cur1 = nums[cur1] - 1;
             cur2 = nums[nums[cur2] - 1] - 1;
-            if (cur1 = cur2) {
+            if (cur1 == cur2) {
                 break;
             }
         }
