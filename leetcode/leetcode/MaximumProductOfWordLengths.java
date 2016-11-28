@@ -29,7 +29,7 @@ public class MaximumProductOfWordLengths {
                 mask[i] |= 1 << (words[i].charAt(j) - 'a');
             }
             for (int j = 0; j < i; ++j) {
-                if (mask[i] & mask[j] != 0) {
+                if ((mask[i] & mask[j]) != 0) {
                     result = Math.max(result, words[i].length() * words[j].length());
                 }
             }
