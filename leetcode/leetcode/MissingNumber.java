@@ -12,6 +12,7 @@ using only constant extra space complexity?
  */
 public class MissingNumber {
 
+    // O(n * lg(n)) time, O(1) space.
     public int missingNumber(int[] nums) {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; ++i) {
