@@ -8,7 +8,7 @@ public class PowerOfTwo {
     }
 
     public boolean isPowerOfTwo(int n) {
-        return Integer.toBinaryString(i, 2).matches("10*");
+        return Integer.toBinaryString(n, 2).matches("10*");
     }
 
 }
