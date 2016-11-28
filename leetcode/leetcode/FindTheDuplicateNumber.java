@@ -12,6 +12,7 @@ than once.
  */
 public class FindTheDuplicateNumber {
 
+    // O(n) time, O(1) space.
     public int findDuplicate(int[] nums) {
         int cur1 = nums[0];
         int cur2 = nums[nums[0]];
@@ -25,6 +26,18 @@ public class FindTheDuplicateNumber {
             cur2 = nums[cur2];
         }
         return cur1;
+    }
+
+
+    // O(n * lg(n)) time, O(1) space.
+    public int findDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; ++i) {
+            if (nums[i] == nums[i - 1]) {
+                return nums[i];
+            }
+        }
+        return -1;
     }
 
 }
