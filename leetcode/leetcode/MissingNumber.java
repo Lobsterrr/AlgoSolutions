@@ -15,11 +15,11 @@ public class MissingNumber {
     public int missingNumber(int[] nums) {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; ++i) {
-            if (nums[i] != i) {
+            if (i < nums.length && nums[i] != i) {
                 return nums[i];
             }
         }
-        return -1;
+        return nums.length;
     }
 
 }
