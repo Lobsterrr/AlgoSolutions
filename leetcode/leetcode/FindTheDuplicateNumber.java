@@ -23,7 +23,7 @@ public class FindTheDuplicateNumber {
             }
         }
         cur1 = 0;
-        while (cur1 != cur2) {
+        while (nums[cur1] != nums[cur2]) {
             cur1 = nums[cur1] - 1;
             cur2 = nums[cur2] - 1;
         }
