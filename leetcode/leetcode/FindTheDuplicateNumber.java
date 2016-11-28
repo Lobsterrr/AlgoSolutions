@@ -28,6 +28,7 @@ public class FindTheDuplicateNumber {
         return cur1;
     }
 
+/*****************************************************************************/
 
     // O(n * lg(n)) time, O(1) space.
     public int findDuplicate(int[] nums) {
