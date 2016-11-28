@@ -15,7 +15,7 @@ public class FindTheDuplicateNumber {
     public int findDuplicate(int[] nums) {
         int cur1 = 0;
         int cur2 = 0;
-        while (cur2 < nums.length && nums[cur2] - 1 < length) {
+        while (cur2 < nums.length && nums[cur2] - 1 < nums.length) {
             cur1 = nums[cur1] - 1;
             cur2 = nums[nums[cur2] - 1] - 1;
             if (cur1 == cur2) {
