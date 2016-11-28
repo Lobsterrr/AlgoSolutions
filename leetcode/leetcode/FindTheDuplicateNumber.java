@@ -19,7 +19,7 @@ public class FindTheDuplicateNumber {
             cur1 = nums[cur1];
             cur2 = nums[nums[cur2]];
         }
-        cur1 = nums[0];
+        cur1 = 0;
         while (cur1 != cur2) {
             cur1 = nums[cur1];
             cur2 = nums[cur2];
