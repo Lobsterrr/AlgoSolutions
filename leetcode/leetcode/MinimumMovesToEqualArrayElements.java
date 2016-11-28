@@ -30,17 +30,6 @@ public class MinimumMovesToEqualArrayElements {
         }
         result = sum - min * nums.length;
         return result;
-
-
-        int result = 0;
-        int min = Integer.MAX_VALUE;
-        for (int num : nums) {
-            min = Math.min(min, num);
-        }
-        for (int num : nums) {
-            result += num - min;
-        }
-        return result;
     }
 
 }
