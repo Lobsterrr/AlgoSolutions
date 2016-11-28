@@ -7,4 +7,8 @@ public class PowerOfTwo {
         return n > 0 && (n & (n - 1)) == 0;
     }
 
+    public boolean isPowerOfTwo(int n) {
+        return Integer.toBinaryString(i, 2).matches("10*");
+    }
+
 }
