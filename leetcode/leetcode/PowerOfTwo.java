@@ -10,6 +10,12 @@ public class PowerOfTwo {
 /*****************************************************************************/
 
     public boolean isPowerOfTwo(int n) {
+        return n > 0 && (1 << 30) % n == 0;
+    }
+
+/*****************************************************************************/
+
+    public boolean isPowerOfTwo(int n) {
         return Integer.toString(n, 2).matches("10*");
     }
 
