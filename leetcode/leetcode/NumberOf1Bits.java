@@ -16,4 +16,10 @@ public class NumberOf1Bits {
         return n;
     }
 
+/*****************************************************************************/
+
+    public int hammingWeight(int n) {
+
+    }
+
 }
