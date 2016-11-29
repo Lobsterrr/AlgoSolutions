@@ -13,4 +13,10 @@ public class PowerOfFour {
         return (num & 0x55555555) != 0 && (num & (num - 1)) == 0;
     }
 
+/*****************************************************************************/
+
+    public boolean isPowerOfFour(int num) {
+        return (num & 0x55555555) != 0 && (num & (num - 1)) == 0;
+    }
+
 }
