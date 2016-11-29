@@ -21,7 +21,12 @@ Test cases had been added to test the overflow behavior.
 public class ReverseInteger {
 
     public int reverse(int x) {
-
+        int reverse = 0;
+        while (x != 0) {
+            reverse = 10 * reverse + x % 10;
+            x /= 10;
+        }
+        return reverse;
     }
 
 }
