@@ -7,6 +7,16 @@ For example, the 32-bit integer ’11' has binary representation
  */
 public class NumberOf1Bits {
 
+    https://en.wikipedia.org/wiki/Hamming_weight
+    http://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetParallel
+    public int hammingWeight(int n) {
+        n = n - ((n >>> 1) & 0x55555555);
+        n = (n & 0x33333333) + ((n >>> 2) & 0x33333333);
+        return (((n + (n >>> 4)) & 0x0f0f0f0f) * 0x01010101) >>> 24;
+    }
+
+/*****************************************************************************/
+
     public int hammingWeight(int n) {
         n = (n & 0x55555555) + ((n >>> 1) & 0x55555555);
         n = (n & 0x33333333) + ((n >>> 2) & 0x33333333);
