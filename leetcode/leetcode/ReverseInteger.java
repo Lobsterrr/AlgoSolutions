@@ -26,7 +26,7 @@ public class ReverseInteger {
             reverse = 10 * reverse + x % 10;
             x /= 10;
         }
-        return reverse > Integer.MAX_VALUE ? 0 : (int) reverse;
+        return reverse > Integer.MAX_VALUE || reverse < Integer.MIN_VALUE ? 0 : (int) reverse;
     }
 
 }
