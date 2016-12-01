@@ -18,9 +18,9 @@ public class AddTwoNumbers {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
-        ListNode cur = dummy;
         int carrier = 0;
-        for (ListNode cur1 = l1, cur2 = l2; cur1 != null || cur2 != null || carrier > 0; cur = cur.next, carrier /= 10) {
+        for (ListNode cur = dummy, cur1 = l1, cur2 = l2; cur1 != null || 
+                cur2 != null || carrier > 0; cur = cur.next, carrier /= 10) {
             carrier += cur1 != null ? cur1.val : 0;
             carrier += cur2 != null ? cur2.val : 0;
             if (cur1 != null) {
