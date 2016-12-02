@@ -25,4 +25,8 @@ The first node is considered odd, the second node even and so on ...
  */
 public class OddEvenLinkedList {
 
+    public ListNode oddEvenList(ListNode head) {
+
+    }
+
 }
