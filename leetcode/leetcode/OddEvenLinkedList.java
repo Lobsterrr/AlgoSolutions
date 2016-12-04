@@ -26,10 +26,22 @@ The first node is considered odd, the second node even and so on ...
 public class OddEvenLinkedList {
 
     public ListNode oddEvenList(ListNode head) {
-        if (head == null) {
+        if (head == null || head.next == null) {
             return head;
         }
-
+        ListNode dummy = new ListNode(0);
+        ListNode cur1 = head;
+        ListNode cur2 = head.next;
+        while (true) {
+            if (cur2 != null && cur2.next != null) {
+                cur1.next = cur2.next;
+                cur1 = cur1.next;
+            }
+            if (cur1 != null && cur1.next != null) {
+                cur2 = cur1.next;
+                cur2 = cur2.next;
+            }
+        }
     }
 
 }
