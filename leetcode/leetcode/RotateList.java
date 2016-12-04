@@ -16,7 +16,18 @@ return 4->5->1->2->3->NULL.
 public class RotateList {
 
     public ListNode rotateRight(ListNode head, int k) {
-
+        ListNode cur1 = head;
+        ListNode cur2 = head;
+        for (; cur2 != null && cur2.next != null; cur2 = cur2.next) {
+            k--;
+            if (k < 0) {
+                cur1 = cur1.next;
+            }
+        }
+        cur2.next = head;
+        head = cur1.next;
+        cur1.next = null;
+        return head;
     }
 
 }
