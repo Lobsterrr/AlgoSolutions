@@ -29,6 +29,12 @@ public class OddEvenLinkedList {
         if (head == null) {
             return head;
         }
+        for (ListNode oddEnd = head, cur = head.next; cur != null && cur.next != null; oddEnd = oddEnd.next, cur = cur.next) {
+            ListNode tmp = cur.next.next;
+            cur.next.next = oddEnd.next;
+            oddEnd.next = cur.next;
+            cur.next = tmp;
+        }
         ListNode oddEnd = head;
         ListNode cur = head.next;
         while (cur != null && cur.next != null) {
