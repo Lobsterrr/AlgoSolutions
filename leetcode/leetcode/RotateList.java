@@ -19,6 +19,8 @@ public class RotateList {
         if (head == null || head.next == null) {
             return head;
         }
+        int len = 1;
+        for (ListNode cur = head; cur.next != null; cur = cur.next, len++);
         ListNode cur1 = head;
         ListNode cur2 = head;
         for (; cur2.next != null; cur2 = cur2.next) {
