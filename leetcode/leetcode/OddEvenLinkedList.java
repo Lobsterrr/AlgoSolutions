@@ -33,7 +33,7 @@ public class OddEvenLinkedList {
         ListNode l2 = head.next;
         ListNode cur1 = l1;
         ListNode cur2 = l2;
-        while (cur1 != null && cur2 != null) {
+        while (cur1 != null && cur1.next != null && cur2 != null && cur2.next != null) {
             if (cur2 != null && cur2.next != null) {
                 cur1.next = cur2.next;
                 cur1 = cur1.next;
