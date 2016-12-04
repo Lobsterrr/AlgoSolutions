@@ -15,4 +15,8 @@ return 4->5->1->2->3->NULL.
  */
 public class RotateList {
 
+    public ListNode rotateRight(ListNode head, int k) {
+
+    }
+
 }
