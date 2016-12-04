@@ -21,7 +21,7 @@ public class RotateList {
         }
         ListNode cur1 = head;
         ListNode cur2 = head;
-        for (; cur2 != null && cur2.next != null; cur2 = cur2.next) {
+        for (; cur2.next != null; cur2 = cur2.next) {
             k--;
             if (k < 0) {
                 cur1 = cur1.next;
