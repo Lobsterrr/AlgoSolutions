@@ -44,7 +44,7 @@ public class OddEvenLinkedList {
         }
         cur2.next = null;
         cur1.next = evenHalf;
-        return l1;
+        return head;
     }
 
 }
