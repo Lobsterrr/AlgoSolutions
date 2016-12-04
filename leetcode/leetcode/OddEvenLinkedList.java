@@ -39,7 +39,7 @@ public class OddEvenLinkedList {
                 cur1 = cur1.next;
             }
             if (cur1 != null && cur1.next != null) {
-                cur2 = cur1.next;
+                cur2.next = cur1.next;
                 cur2 = cur2.next;
             }
         }
