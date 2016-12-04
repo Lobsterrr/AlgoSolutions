@@ -20,18 +20,14 @@ public class RotateList {
             return head;
         }
         int len = 1;
-        for (ListNode cur = head; cur.next != null; cur = cur.next, len++);
-        ListNode cur1 = head;
-        ListNode cur2 = head;
-        for (; cur2.next != null; cur2 = cur2.next) {
-            k--;
-            if (k < 0) {
-                cur1 = cur1.next;
-            }
+        ListNode cur = head;
+        for (; cur.next != null; cur = cur.next, len++);
+        cur.next = head;
+        for (int i = 0; i < len - k % len; ++i) {
+            cur = cur.next;
         }
-        cur2.next = head;
-        head = cur1.next;
-        cur1.next = null;
+        head = cur.next;
+        cur.next = null;
         return head;
     }
 
