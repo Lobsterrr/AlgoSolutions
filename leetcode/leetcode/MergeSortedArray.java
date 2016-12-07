@@ -21,7 +21,7 @@ public class MergeSortedArray {
                     n--;
                 }
             } else if (m > 0 && n <= 0) {
-                nums1[i] = nums[m - 1];
+                nums1[i] = nums1[m - 1];
                 m--;
             } else if (m <= 0 && n > 0) {
                 nums1 = nums2[n - 1];
