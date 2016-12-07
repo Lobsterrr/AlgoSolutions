@@ -33,7 +33,7 @@ public class PartitionList {
                 cur2 = cur2.next;
             }
         }
-        cur2.next = null;
+        cur2.next = null; // 将dummy2从主链中断裂出来
         cur1.next = dummy2.next;
         return dummy1.next;
     }
