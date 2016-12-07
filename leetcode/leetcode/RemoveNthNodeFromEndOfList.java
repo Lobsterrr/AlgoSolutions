@@ -24,14 +24,16 @@ Try to do this in one pass.
 public class RemoveNthNodeFromEndOfList {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode prev = head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
         for (ListNode cur = head; cur != null; --n, cur = cur.next) {
-            if (n <= 0) {
+            if (n < 0) {
                 prev = prev.next;
             }
         }
         prev.next = prev.next.next;
-        return head;
+        return dummy.next;
     }
 
 }
