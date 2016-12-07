@@ -45,19 +45,6 @@ public class ReverseLinkedListII {
         return dummy.next;
     }
 
-    public void reverseList(ListNode head) {
-        if (head == null) {
-            return;
-        }
-        ListNode cur = head;
-        while (cur.next != null) {
-            ListNode next = cur.next;
-            cur.next = cur.next.next;
-            next.next = head;
-            head = next;
-        }
-    }
-
     public ListNode reverseList(ListNode head) {
         if (head == null) {
             return head;
