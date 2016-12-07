@@ -59,7 +59,17 @@ public class ReverseLinkedListII {
     }
 
     public ListNode reverseList(ListNode head) {
-
+        if (head == null) {
+            return head;
+        }
+        ListNode cur = head;
+        while (cur.next != null) {
+            ListNode next = cur.next;
+            cur.next = cur.next.next;
+            next.next = head;
+            head = next;
+        }
+        return head;
     }
 
 }
