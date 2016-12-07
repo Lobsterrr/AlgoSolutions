@@ -19,4 +19,22 @@ return 1->2->2->4->3->5.
  */
 public class PartitionList {
 
+    public ListNode partition(ListNode head, int x) {
+        ListNode dummy1 = new ListNode(0);
+        ListNode dummy2 = new ListNode(0);
+        ListNode cur1 = dummy1;
+        ListNode cur2 = dummy2;
+        for (ListNode cur = head; cur != null; cur = cur.next) {
+            if (cur.val < x) {
+                cur1.next = cur;
+                cur1 = cur1.next;
+            } else {
+                cur2.next = cur;
+                cur2 = cur2.next;
+            }
+        }
+        cur1.next = dummy2.next;
+        return dummy1.next;
+    }
+
 }
