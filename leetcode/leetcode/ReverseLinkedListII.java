@@ -23,6 +23,39 @@ public class ReverseLinkedListII {
     public ListNode reverseBetween(ListNode head, int m, int n) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
+        ListNode curM = dummy;
+        for (int i = 1; i < m; ++i) {
+            curM = curM.next;
+        }
+        ListNode curN = dummy;
+        for (int i = 1; i < n; ++i) {
+            curN = curN.next;
+        }
+        ListNode last = curN.next;
+        curN.next = null;
+        ListNode middle = curM.next;
+        curM.next = null;
+        reverseList(middle);
+        ListNode cur = middle;
+        while (cur != null && cur.next != null) {
+            cur = cur.next;
+        }
+        cur.next = last;
+        curM.next = middle;
+        return dummy.next;
+    }
+
+    public void reverseList(ListNode head) {
+        if (head == null) {
+            return;
+        }
+        ListNode cur = head;
+        while (cur.next != null) {
+            ListNode next = cur.next;
+            cur.next = cur.next.next;
+            next.next = head;
+            head = next;
+        }
     }
 
 }
