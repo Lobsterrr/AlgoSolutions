@@ -9,6 +9,14 @@ For example,
 Given 1->4->3->2->5->2 and x = 3,
 return 1->2->2->4->3->5.
  */
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
 public class PartitionList {
 
 }
