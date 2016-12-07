@@ -58,4 +58,8 @@ public class ReverseLinkedListII {
         }
     }
 
+    public ListNode reverseList(ListNode head) {
+
+    }
+
 }
