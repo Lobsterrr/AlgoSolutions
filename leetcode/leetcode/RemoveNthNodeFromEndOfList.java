@@ -10,6 +10,14 @@ Note:
 Given n will always be valid.
 Try to do this in one pass.
  */
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
 public class RemoveNthNodeFromEndOfList {
 
 }
