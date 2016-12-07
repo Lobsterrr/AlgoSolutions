@@ -33,6 +33,7 @@ public class PartitionList {
                 cur2 = cur2.next;
             }
         }
+        cur2.next = null;
         cur1.next = dummy2.next;
         return dummy1.next;
     }
