@@ -21,7 +21,8 @@ Given m, n satisfy the following condition:
 public class ReverseLinkedListII {
 
     public ListNode reverseBetween(ListNode head, int m, int n) {
-
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
     }
 
 }
