@@ -35,7 +35,7 @@ public class ReverseLinkedListII {
         curN.next = null;
         ListNode middle = curM.next;
         curM.next = null;
-        reverseList(middle);
+        middle = reverseList(middle);
         ListNode cur = middle;
         while (cur != null && cur.next != null) {
             cur = cur.next;
