@@ -30,6 +30,8 @@ public class MergeTwoSortedLists {
         return dummy.next;
     }
 
+/*****************************************************************************/
+
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null || l2 == null) {
             return l1 == null ? l2 : l1;
