@@ -16,15 +16,13 @@ public class MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
-        ListNode cur1 = l1;
-        ListNode cur2 = l2;
-        while (cur1 != null || cur2 != null) {
-            if (cur1 != null && (cur2 == null || cur2 != null && cur1.val < cur2.val)) {
-                cur.next = cur1;
-                cur1 = cur1.next;
+        while (l1 != null || l2 != null) {
+            if (l1 != null && (l2 == null || l2 != null && l1.val < l2.val)) {
+                cur.next = l1;
+                l1 = l1.next;
             } else {
-                cur.next = cur2;
-                cur2 = cur2.next;
+                cur.next = l2;
+                l2 = l2.next;
             }
             cur = cur.next;
         }
