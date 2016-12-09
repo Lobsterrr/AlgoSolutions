@@ -26,7 +26,7 @@ public class MergeTwoSortedLists {
             }
             cur = cur.next;
         }
-        cur.next = l1 != null ? l2 : l2;
+        cur.next = l1 != null ? l1 : l2;
         return dummy.next;
     }
 
