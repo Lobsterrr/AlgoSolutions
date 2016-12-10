@@ -13,4 +13,8 @@ The vowels does not include the letter "y".
  */
 public class ReverseVowelsOfAString {
 
+    public String reverseVowels(String s) {
+
+    }
+
 }
