@@ -16,7 +16,20 @@ public class ReverseVowelsOfAString {
     public String reverseVowels(String s) {
         int i = 0;
         int j = s.length() - 1;
-        StringBuilder
+        StringBuilder sb = new String(s);
+        while (i < j) {
+            if (isVowel(s.charAt(i)) && isVowel(s.charAt(j))) {
+                sb.replace(i, i + 1, s.charAt(j));
+                sb.replace(j, j + 1, s.charAt(i));
+                i++;
+                j--;
+            } else if (!isVowel(s.charAt(i))) {
+                i++;
+            } else {
+                j--;
+            }
+        }
+        return sb.toString();
     }
 
     private boolean isVowel(char c) {
