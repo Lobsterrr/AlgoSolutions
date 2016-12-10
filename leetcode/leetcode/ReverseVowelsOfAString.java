@@ -14,22 +14,19 @@ The vowels does not include the letter "y".
 public class ReverseVowelsOfAString {
 
     public String reverseVowels(String s) {
+        char[] array = s.toCharrArray();
         int i = 0;
-        int j = s.length() - 1;
-        StringBuilder sb = new StringBuilder(s);
+        int j = array.length - 1;
         while (i < j) {
-            if (isVowel(s.charAt(i)) && isVowel(s.charAt(j))) {
-                sb.replace(i, i + 1, "" + s.charAt(j));
-                sb.replace(j, j + 1, "" + s.charAt(i));
+            if (!isVowel(array[i])) {
                 i++;
+            } else if (!isVowel(array[j])) {
                 j--;
-            } else if (!isVowel(s.charAt(i))) {
-                i++;
             } else {
-                j--;
+                swap(array, i++, j--);
             }
         }
-        return sb.toString();
+        return new String(array);
     }
 
     private boolean isVowel(char c) {
@@ -37,4 +34,9 @@ public class ReverseVowelsOfAString {
             || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
     }
 
+    public void swap(char[] array, int i, int j) {
+        char tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
 }
