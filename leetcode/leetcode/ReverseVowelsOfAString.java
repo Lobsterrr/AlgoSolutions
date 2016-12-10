@@ -14,7 +14,7 @@ The vowels does not include the letter "y".
 public class ReverseVowelsOfAString {
 
     public String reverseVowels(String s) {
-        char[] array = s.toCharrArray();
+        char[] array = s.toCharArray();
         int i = 0;
         int j = array.length - 1;
         while (i < j) {
