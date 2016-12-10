@@ -19,8 +19,8 @@ public class ReverseVowelsOfAString {
         StringBuilder sb = new StringBuilder(s);
         while (i < j) {
             if (isVowel(s.charAt(i)) && isVowel(s.charAt(j))) {
-                sb.replace(i, i + 1, s.charAt(j));
-                sb.replace(j, j + 1, s.charAt(i));
+                sb.replace(i, i + 1, "" + s.charAt(j));
+                sb.replace(j, j + 1, "" + s.charAt(i));
                 i++;
                 j--;
             } else if (!isVowel(s.charAt(i))) {
