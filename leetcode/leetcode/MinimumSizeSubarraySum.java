@@ -21,7 +21,7 @@ public class MiniumSizeSubarraySum {
             }
         }
         if (result == Integer.MAX_VALUE) {
-            result = -1;
+            result = 0;
         }
         return result;
     }
