@@ -20,10 +20,7 @@ public class MiniumSizeSubarraySum {
                 sum -= nums[j++];
             }
         }
-        if (result == Integer.MAX_VALUE) {
-            result = 0;
-        }
-        return result;
+        return result == Integer.MAX_VALUE ? 0 : result;
     }
 
 }
