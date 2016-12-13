@@ -14,7 +14,6 @@ public class PermutationsII {
 
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        Arrays.sort(nums);
         result.add(new ArrayList<Integer>());
         for (int i = 0; i < nums.length; ++i) {
             List<List<Integer>> tmp = new ArrayList<List<Integer>>();
