@@ -31,4 +31,29 @@ public class Permutations {
         return result;
     }
 
+/*****************************************************************************/
+
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        boolean[] isVisited = new boolean[nums.length];
+        dfs(result, new ArrayList<Integer>(), num, isVisited);
+        return result;
+    }
+
+    public void dfs(List<List<Integer>> result, List<Integer>list, int[] nums, boolean[] isVisited) {
+        if (list.size() == nums.length) {
+            result.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for (int i = 0; i < nums.length; ++i) {
+            if (!isVisited[i]) {
+                isVisited[i] =true;
+                list.add(nums[i]);
+                dfs(result, list, nums, isVisited);
+                list.remove(list.size() - 1);
+                isVisited[i] = false;
+            }
+        }
+    }
+
 }
