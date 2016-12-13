@@ -29,6 +29,7 @@ public class PermutationsII {
                     tmp.add(list);
                 }
             }
+            result = tmp;
         }
         return result;
     }
