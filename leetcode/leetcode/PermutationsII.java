@@ -50,10 +50,10 @@ public class PermutationsII {
                 isVisited[i] = true;
                 list.add(nums[i]);
                 dfs(result, list, nums, isVisited);
-                isVisited[i] = false;
                 list.remove(list.size() - 1);
+                isVisited[i] = false;
             }
-            while (i > 0 && i < nums.length && nums[i] == nums[i - 1]) {
+            while (i < nums.length - 1 && nums[i] == nums[i + 1]) {
                 i++;
             }
         }
