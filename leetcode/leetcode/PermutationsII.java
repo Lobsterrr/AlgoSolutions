@@ -19,14 +19,12 @@ public class PermutationsII {
         for (int i = 0; i < nums.length; ++i) {
             List<List<Integer>> tmp = new ArrayList<List<Integer>>();
             for (int j = 0; j < result.size(); ++j) {
-                int start = 0;
-                if (i > 0 && nums[i] == nums[i - 1]) {
-                    start = result.get(0).size();
-                }
-                for (int k = start; k <= result.get(j).size(); ++k) {
+                for (int k = 0; k <= result.get(j).size(); ++k) {
                     List<Integer> list = new ArrayList<Integer>(result.get(j));
                     list.add(k, nums[i]);
-                    tmp.add(list);
+                    if (!tmp.contains(item)) {
+                        tmp.add(list);
+                    }
                 }
             }
             result = tmp;
