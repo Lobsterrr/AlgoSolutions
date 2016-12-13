@@ -53,7 +53,7 @@ public class PermutationsII {
                 isVisited[i] = false;
                 list.remove(list.size() - 1);
             }
-            while (i > 0 && nums[i] == nums[i - 1]) {
+            while (i > 0 && i < nums.length && nums[i] == nums[i - 1]) {
                 i++;
             }
         }
