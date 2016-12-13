@@ -40,7 +40,8 @@ public class Permutations {
         return result;
     }
 
-    public void dfs(List<List<Integer>> result, List<Integer>list, int[] nums, boolean[] isVisited) {
+    public void dfs(List<List<Integer>> result, List<Integer>list, 
+            int[] nums, boolean[] isVisited) {
         if (list.size() == nums.length) {
             result.add(new ArrayList<Integer>(list));
             return;
