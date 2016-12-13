@@ -36,7 +36,7 @@ public class Permutations {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         boolean[] isVisited = new boolean[nums.length];
-        dfs(result, new ArrayList<Integer>(), num, isVisited);
+        dfs(result, new ArrayList<Integer>(), nums, isVisited);
         return result;
     }
 
