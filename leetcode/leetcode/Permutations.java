@@ -16,6 +16,7 @@ public class Permutations {
 
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<Integer> tmp = new ArrayList<Integer>();
         tmp.add(nums[0]);
         result.add(tmp);
         for (int i = 1; i < nums.length; ++i) {
