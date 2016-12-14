@@ -13,7 +13,7 @@ Note:
 You may assume the interval's end point is always bigger than its start point.
 You may assume none of these intervals have the same start point.
 Example 1:
-Input: [ [1,2]  ]
+Input: [ [1,2] ]
 
 Output: [-1]
 
