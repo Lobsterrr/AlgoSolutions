@@ -28,6 +28,15 @@ Output: [-1, 2, -1]
 Explanation: There is no satisfied "right" interval for [1,4] and [3,4].
 For [2,3], the interval [3,4] has minimum-"right" start point.
  */
+/**
+ * Definition for an interval.
+ * public class Interval {
+ *     int start;
+ *     int end;
+ *     Interval() { start = 0; end = 0; }
+ *     Interval(int s, int e) { start = s; end = e; }
+ * }
+ */
 public class FindRightInterval {
 
     public int[] findRightInterval(Interval[] intervals) {
