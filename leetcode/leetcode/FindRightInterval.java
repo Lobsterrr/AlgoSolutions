@@ -77,7 +77,7 @@ public class FindRightInterval {
         int[] result = new int[intervals.length];
         for (int i = 0; i < intervals.length; ++i) {
             int j = 0;
-            for (; j < intervals.length && intervals[i].end > starts[j]; ++j);
+            for (; j < intervals.length && starts[j] < intervals[i].end; ++j);
             result[i] = j == intervals.length ? -1 : map.get(starts[j]);
         }
         return result;
