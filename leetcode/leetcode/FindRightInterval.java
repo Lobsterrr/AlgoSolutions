@@ -40,7 +40,19 @@ For [2,3], the interval [3,4] has minimum-"right" start point.
 public class FindRightInterval {
 
     public int[] findRightInterval(Interval[] intervals) {
-
+        if (intervals == null) {
+            return null;
+        }
+        TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
+        for (int i = 0; i < intervals.length; ++i) {
+            map.put(intervals[i].start, i);
+        }
+        int[] result = new int[intervals.length];
+        for (int i = 0; i < intervals.length; ++i) {
+            Integer key = map.ceilingKey(intervals[i].end);
+            result[i] = key == null ? -1 : map.get(key);
+        }
+        return result;
     }
 
 }
