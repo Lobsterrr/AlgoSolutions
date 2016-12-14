@@ -55,4 +55,25 @@ public class FindRightInterval {
         return result;
     }
 
+
+    public int[] findRightInterval(Interval[] intervals) {
+        if (intervals == null) {
+            return null;
+        }
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        int[] starts = new int[intervals.length];
+        for (int i = 0; i < intervals.length; ++i) {
+            starts[i] = intervals[i].start;
+            map.put(intervals[i].start, i);
+        }
+        Arrays.sort(starts);
+        int[] result = new int[intervals.length];
+        for (int i = 0; i < intervals.length; ++i) {
+            int j = 0;
+            for (; j < intervals.length && intervals[i].end > starts[j]; ++j);
+            result[i] = j == intervals.length ? -1 : map.get(starts[j]);
+        }
+        return result;
+    }
+
 }
