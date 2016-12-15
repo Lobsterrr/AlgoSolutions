@@ -13,4 +13,8 @@ height balanced BST.
  */
 public class ConvertSortedArrayToBinaryTree {
 
+    public TreeNode sortedArrayToBST(int[] nums) {
+
+    }
+
 }
