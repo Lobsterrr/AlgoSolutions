@@ -18,7 +18,7 @@ public class ConvertSortedArrayToBinaryTree {
     }
 
     public TreeNode helper(int[] nums, int start, int end) {
-        if (nums == null || start < 0 || start > end) {
+        if (nums == null || start > end) {
             return null;
         }
         int midIndex = start + (end - start) / 2;
