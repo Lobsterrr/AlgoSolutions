@@ -16,14 +16,12 @@ public class PalindromeLinkedList {
 
     public boolean isPalindrome(ListNode head) {
         ListNode second = reverse(getSecondHalf(head));
-        ListNode cur1 = head;
-        ListNode cur2 = second;
-        while (cur2 != null) {
-            if (cur1.val != cur2.val) {
+        while (second != null) {
+            if (head.val != second.val) {
                 return false;
             }
-            cur1 = cur1.next;
-            cur2 = cur2.next;
+            head = head.next;
+            second = second.next;
         }
         return true;
     }
