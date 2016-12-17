@@ -18,4 +18,14 @@ public class PalindromeLinkedList {
 
     }
 
+    public ListNode reverse(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode cur = head.next;
+        while (cur != null) {
+
+        }
+    }
+
 }
