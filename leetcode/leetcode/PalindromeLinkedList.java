@@ -15,9 +15,6 @@ Could you do it in O(n) time and O(1) space?
 public class PalindromeLinkedList {
 
     public boolean isPalindrome(ListNode head) {
-        if (head == null) {
-            return true;
-        }
         ListNode second = reverse(getSecondHalf(head));
         ListNode cur1 = head;
         ListNode cur2 = second;
