@@ -15,7 +15,20 @@ Could you do it in O(n) time and O(1) space?
 public class PalindromeLinkedList {
 
     public boolean isPalindrome(ListNode head) {
-
+        if (head == null) {
+            return false;
+        }
+        ListNode second = reverse(getSecondHalf(head));
+        ListNode cur1 = head;
+        ListNode cur2 = second;
+        while (cur2 != null) {
+            if (cur1.val != cur2.val) {
+                return false;
+            }
+            cur1 = cur1.next;
+            cur2 = cur2.next;
+        }
+        return true;
     }
 
     public ListNode getSecondHalf(ListNode head) {
