@@ -16,7 +16,7 @@ public class PalindromeLinkedList {
 
     public boolean isPalindrome(ListNode head) {
         if (head == null) {
-            return false;
+            return true;
         }
         ListNode second = reverse(getSecondHalf(head));
         ListNode cur1 = head;
