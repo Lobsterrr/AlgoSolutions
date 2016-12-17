@@ -18,8 +18,7 @@ public class PalindromeLinkedList {
         if (head == null) {
             return true;
         }
-        ListNode second = getSecondHalf(head);
-        second = reverse(second);
+        ListNode second = reverse(getSecondHalf(head));
         ListNode cur1 = head;
         ListNode cur2 = second;
         while (cur2 != null) {
