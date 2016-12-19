@@ -34,6 +34,25 @@ public class ValidPalindrome {
                 j--;
             }
         }
+
+
+        for (int i = 0, j = s.length() - 1; i < j;) {
+            char ci = s.charAt(i);
+            char cj = s.charAt(j);
+            if (!Character.isLetterOrDigit(ci)) {
+                i++;
+            } else if (!Character.isLetterOrDigit(cj)) {
+                j--;
+            } else {
+                if (ci != cj 
+                        && (!Character.isLetter(ci) || !Character.isLetter(cj) 
+                            || Math.max(ci, cj) != Math.min(ci, cj) + 32)) {
+                    return false;
+                }
+                i++;
+                j--;
+            }
+        }
         return true;
     }
 
