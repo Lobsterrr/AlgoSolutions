@@ -18,9 +18,9 @@ public class ValidPalindrome {
         int i = 0;
         int j = s.length() - 1;
         while (i < j) {
-            if (!Character.isLetter(s.charAt(i))) {
+            if (!isLetter(s.charAt(i))) {
                 i++;
-            } else if (!Character.isLetter(s.charAt(j))) {
+            } else if (!isLetter(s.charAt(j))) {
                 j--;
             } else {
                 if (s.charAt(i) != s.charAt(j) + 32 && s.charAt(i) != s.charAt(j) - 32) {
