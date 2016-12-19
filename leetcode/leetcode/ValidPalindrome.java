@@ -23,8 +23,8 @@ public class ValidPalindrome {
             } else if (!Character.isLetterOrDigit(cj)) {
                 j--;
             } else {
-                if (ci != cj 
-                        && (!Character.isLetter(ci) || !Character.isLetter(cj) 
+                if (ci != cj && (!Character.isLetter(ci) || 
+                            !Character.isLetter(cj) 
                             || Math.abs(ci - cj) != 32)) {
                     return false;
                 }
