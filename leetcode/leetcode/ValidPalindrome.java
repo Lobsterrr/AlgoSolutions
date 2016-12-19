@@ -23,7 +23,7 @@ public class ValidPalindrome {
             } else if (!isLetter(s.charAt(j))) {
                 j--;
             } else {
-                if (s.charAt(i) != s.charAt(j) + 32 && s.charAt(i) != s.charAt(j) - 32) {
+                if (s.charAt(i) != s.charAt(j) && s.charAt(i) != s.charAt(j) + 32 && s.charAt(i) != s.charAt(j) - 32) {
                     return false;
                 }
                 i++;
