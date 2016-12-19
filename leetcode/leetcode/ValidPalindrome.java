@@ -18,27 +18,6 @@ public class ValidPalindrome {
         int i = 0;
         int j = s.length() - 1;
         while (i < j) {
-            if (!Character.isLetterOrDigit(s.charAt(i))) {
-                i++;
-            } else if (!Character.isLetterOrDigit(s.charAt(j))) {
-                j--;
-            } else {
-                int small = Math.min(s.charAt(i), s.charAt(j));
-                int large = Math.max(s.charAt(i), s.charAt(j));
-                if (small != large && (!Character.isLetter(s.charAt(i)) 
-                            || !Character.isLetter(s.charAt(j)) 
-                            || large != small + 32)) {
-                    return false;
-                }
-                if (s.charAt(i) != s.charAt(j) && (!Character.isLetter(s.charAt(i)) || !Character.isLetter(s.charAt(j)) || Math.max(s.charA) != small + 32)) {
-                    return false;
-                }
-
-                i++;
-                j--;
-            }
-
-
             char ci = s.charAt(i);
             char cj = s.charAt(j);
             if (!Character.isLetterOrDigit(ci)) {
@@ -46,7 +25,9 @@ public class ValidPalindrome {
             } else if (!Character.isLetterOrDigit(cj)) {
                 j--;
             } else {
-                if (ci != cj && (!Character.isLetter(ci) || !Character.isLetter(cj) || Math.max(ci, cj) != Math.min(ci, cj) + 32)) {
+                if (ci != cj 
+                        && (!Character.isLetter(ci) || !Character.isLetter(cj) 
+                            || Math.max(ci, cj) != Math.min(ci, cj) + 32)) {
                     return false;
                 }
                 i++;
