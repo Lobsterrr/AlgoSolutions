@@ -25,7 +25,7 @@ public class ValidPalindrome {
             } else {
                 int small = Math.min(s.charAt(i), s.charAt(j));
                 int large = Math.max(s.charAt(i), s.charAt(j));
-                if (small != large && Character.isLetter(s.charAt(i)) && large != small + 32) {
+                if (small != large && (Character.isLetter(s.charAt(i)) || Character.isLetter(s.charAt(j))) && large != small + 32) {
                     return false;
                 }
                 i++;
