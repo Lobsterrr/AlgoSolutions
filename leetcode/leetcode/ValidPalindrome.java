@@ -25,7 +25,7 @@ public class ValidPalindrome {
             } else {
                 if (ci != cj 
                         && (!Character.isLetter(ci) || !Character.isLetter(cj) 
-                            || Math.max(ci, cj) != Math.min(ci, cj) + 32)) {
+                            || Math.abs(ci - cj) != 32)) {
                     return false;
                 }
                 i++;
