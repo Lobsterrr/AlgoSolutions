@@ -23,7 +23,9 @@ public class ValidPalindrome {
             } else if (!Character.isLetterOrDigit(s.charAt(j))) {
                 j--;
             } else {
-                if (s.charAt(i) != s.charAt(j) && s.charAt(i) != s.charAt(j) + 32 && s.charAt(i) != s.charAt(j) - 32) {
+                int small = Math.min(s.charAt(i), s.charAt(j));
+                int large = Math.max(s.charAt(i), s.charAt(j));
+                if (small != large && Character.isLetter(s.charAt(i)) && large != small + 32) {
                     return false;
                 }
                 i++;
