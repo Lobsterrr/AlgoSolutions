@@ -18,9 +18,9 @@ public class ValidPalindrome {
         int i = 0;
         int j = s.length() - 1;
         while (i < j) {
-            if (!isLetter(s.charAt(i))) {
+            if (!Character.isLetterOrDigit(s.charAt(i))) {
                 i++;
-            } else if (!isLetter(s.charAt(j))) {
+            } else if (!Character.isLetterOrDigit(s.charAt(j))) {
                 j--;
             } else {
                 if (s.charAt(i) != s.charAt(j) && s.charAt(i) != s.charAt(j) + 32 && s.charAt(i) != s.charAt(j) - 32) {
@@ -31,10 +31,6 @@ public class ValidPalindrome {
             }
         }
         return true;
-    }
-
-    private boolean isLetter(char c ) {
-        return 'A' <= c && c <= 'Z' || 'a' <= c && c <= 'z' || '0' <= c && c <= '9';
     }
 
 }
