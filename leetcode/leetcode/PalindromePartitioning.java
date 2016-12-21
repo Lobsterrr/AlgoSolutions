@@ -22,6 +22,10 @@ public class PalindromePartitioning {
             result.add(list);
             return result;
         }
+        for (int i = 1; i < s.length(); ++i) {
+
+        }
+        return result;
     }
 
     private boolean isPalindrome(String s) {
