@@ -18,4 +18,11 @@ public class PalindromePartitioning {
 
     }
 
+    private boolean isPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return true;
+        }
+
+    }
+
 }
