@@ -9,6 +9,7 @@ Given "abcd", return "dcbabcd".
  */
 public class ShortestPalindrome {
 
+    // O(n ^ 2) time.
     public String shortestPalindrome(String s) {
         int i = s.length() - 1;
         for (; i >= 0 && !isPalindrome(s, 0, i); --i);
