@@ -23,10 +23,8 @@ public class PalindromePartitioning {
         }
         for (int i = 1; i < s.length(); ++i) {
             if (isPalindrome(s.substring(0, i))) {
-                for (List<String> sub : partition(s.substring(i))) {
-                    List<String> list = new ArrayList<String>();
-                    list.add(s.substring(0, i));
-                    list.addAll(sub);
+                for (List<String> list : partition(s.substring(i))) {
+                    list.add(0, s.substring(0, i));
                     result.add(list);
                 }
             }
