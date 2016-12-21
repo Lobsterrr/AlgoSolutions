@@ -23,7 +23,12 @@ public class PalindromePartitioning {
             return result;
         }
         for (int i = 1; i < s.length(); ++i) {
-
+            if (isPalindrome(s.substring(i))) {
+                List<String> list = new ArrayList<String>();
+                list.add(s.substring(i));
+                list.addAll(partition(s.substring(i)));
+                result.add(list);
+            }
         }
         return result;
     }
