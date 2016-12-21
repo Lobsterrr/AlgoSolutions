@@ -20,10 +20,9 @@ public class PalindromePartitioning {
             List<String> list = new ArrayList<String>();
             list.add(s);
             result.add(list);
-            return result;
         }
         for (int i = 1; i < s.length(); ++i) {
-            if (isPalindrome(s.substring(i))) {
+            if (isPalindrome(s.substring(0, i))) {
                 for (List<String> sub : partition(s.substring(i))) {
                     List<String> list = new ArrayList<String>();
                     list.add(s.substring(0, i));
