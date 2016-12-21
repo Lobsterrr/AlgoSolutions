@@ -22,7 +22,7 @@ public class PalindromePartitioning {
         if (s == null || s.length() == 0) {
             return true;
         }
-        return s.equals(new StringBuilder(s).reverse());
+        return s.equals(new StringBuilder(s).reverse().toString());
     }
 
 }
