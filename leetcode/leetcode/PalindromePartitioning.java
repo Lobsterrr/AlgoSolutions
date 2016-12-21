@@ -24,10 +24,12 @@ public class PalindromePartitioning {
         }
         for (int i = 1; i < s.length(); ++i) {
             if (isPalindrome(s.substring(i))) {
-                List<String> list = new ArrayList<String>();
-                list.add(s.substring(i));
-                list.addAll(partition(s.substring(i)));
-                result.add(list);
+                for (List<String> sub : partition(s.substring(i))) {
+                    List<String> list = new ArrayList<String>();
+                    list.add(s.substring(0, i));
+                    list.addAll(sub);
+                    result.add(list);
+                }
             }
         }
         return result;
