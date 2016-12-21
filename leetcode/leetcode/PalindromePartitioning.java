@@ -15,7 +15,13 @@ Return
 public class PalindromePartitioning {
 
     public List<List<String>> partition(String s) {
-
+        List<List<String>> result = new ArrayList<List<String>>();
+        if (isPalindrome(s)) {
+            List<String> list = new ArrayList<String>();
+            list.add(s);
+            result.add(list);
+            return result;
+        }
     }
 
     private boolean isPalindrome(String s) {
