@@ -13,4 +13,8 @@ public class ShortestPalindrome {
 
     }
 
+    private boolean isPalindrome(String s, int start, int end) {
+
+    }
+
 }
