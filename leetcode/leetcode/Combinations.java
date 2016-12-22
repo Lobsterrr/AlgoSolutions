@@ -18,7 +18,10 @@ public class Combinations {
 
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-
+        List<Integer> list = new ArrayList<Integer>();
+        for (int i = 1; i <= n; ++i) {
+            list.add(i);
+        }
 
         return result;
     }
