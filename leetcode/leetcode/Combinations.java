@@ -22,7 +22,9 @@ public class Combinations {
         for (int i = 1; i <= n; ++i) {
             list.add(i);
         }
+        for (int i = 1; i <= k; ++i) {
 
+        }
         return result;
     }
 
