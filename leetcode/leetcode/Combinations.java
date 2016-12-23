@@ -24,12 +24,13 @@ public class Combinations {
 
     public void dfs(List<List<Integer>> result, List<Integer> list, int n, int k, int start) {
         if (list.size() == k) {
-            result.add(list);
+            result.add(new ArrayList<Integer>(list));
             return;
         }
         for (int i = start; i <= n; ++i) {
-            List<Integer> item = new ArrayList<Integer>(list);
-            item.add(i);
+            list.add(i);
+            dfs(result, list, n, k, start + 1);
+            list.remove(list.size() - 1);
         }
     }
 
