@@ -22,10 +22,12 @@ public class Combinations {
         for (int i = 1; i <= n; ++i) {
             list.add(i);
         }
-        for (int i = 1; i <= k; ++i) {
-
-        }
+        dfs(result, 0, k);
         return result;
+    }
+
+    public void dfs(List<List<Integer>> result, int start, k) {
+
     }
 
 }
