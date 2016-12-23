@@ -27,7 +27,9 @@ public class Combinations {
     }
 
     public void dfs(List<List<Integer>> result, List<Integer> list, int start, k) {
+        for (int i = start; i < list.size() - k; ++i) {
 
+        }
     }
 
 }
