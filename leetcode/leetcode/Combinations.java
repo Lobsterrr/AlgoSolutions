@@ -23,7 +23,7 @@ public class Combinations {
     }
 
     public void dfs(List<List<Integer>> result, List<Integer> list, int n, int k, int start) {
-        if (list.size() == k) {
+        if (list.size() == k && start <= n + 1) {
             result.add(new ArrayList<Integer>(list));
             return;
         }
