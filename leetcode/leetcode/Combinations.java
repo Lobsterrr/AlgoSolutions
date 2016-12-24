@@ -22,7 +22,8 @@ public class Combinations {
         return result;
     }
 
-    public void dfs(List<List<Integer>> result, List<Integer> list, int n, int k, int start) {
+    public void dfs(List<List<Integer>> result, List<Integer> list, 
+            int n, int k, int start) {
         if (list.size() == k) {
             result.add(new ArrayList<Integer>(list));
             return;
