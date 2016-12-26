@@ -37,5 +37,10 @@ public class Combinations {
 
 /*****************************************************************************/
 
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+
+        return result;
+    }
 
 }
