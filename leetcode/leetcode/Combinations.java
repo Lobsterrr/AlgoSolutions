@@ -47,7 +47,9 @@ public class Combinations {
             }
             return result;
         }
+        for (int i = k; i <= n; ++i) {
 
+        }
         return result;
     }
 
