@@ -48,7 +48,10 @@ public class Combinations {
             return result;
         }
         for (int i = k; i <= n; ++i) {
-
+            for (List<Integer> list : combine(n - 1, k - 1)) {
+                list.add(i);
+                result.add(list);
+            }
         }
         return result;
     }
