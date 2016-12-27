@@ -40,7 +40,12 @@ public class Combinations {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (k == 1) {
-
+            for (int i = 1; i <= n; ++i) {
+                List<Integer> list = new ArrayList<Integer>();
+                list.add(i);
+                result.add(list);
+            }
+            return result;
         }
 
         return result;
