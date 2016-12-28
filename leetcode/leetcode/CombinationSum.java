@@ -17,7 +17,9 @@ A solution set is:
 public class CombinationSum {
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
 
+        return result;
     }
 
 }
