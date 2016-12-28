@@ -1,5 +1,6 @@
 /*
-Given a set of candidate numbers (C) (without duplicates) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+Given a set of candidate numbers (C) (without duplicates) and a target number 
+(T), find all unique combinations in C where the candidate numbers sums to T.
 
 The same repeated number may be chosen from C unlimited number of times.
 
@@ -15,6 +16,8 @@ A solution set is:
  */
 public class CombinationSum {
 
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
 
+    }
 
 }
