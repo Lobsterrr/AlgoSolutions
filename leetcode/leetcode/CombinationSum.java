@@ -19,21 +19,18 @@ public class CombinationSum {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(candidates);
-        dfs(result, new ArrayList<Integer>(), 0, candidates, target, 0);
+        dfs(result, new ArrayList<Integer>(), candidates, target, 0);
         return result;
     }
 
-    public void dfs(List<List<Integer>> result, List<Integer> list, int sum, int[] candidates, int target, int position) {
-        if (sum == target) {
+    public void dfs(List<List<Integer>> result, List<Integer> list, int[] candidates, int target, int position) {
+        if (target == 0) {
             result.add(new ArrayList<Integer>(list));
             return;
         }
-        if (sum > target) {
-            return;
-        }
-        for (int i = position; i < candidates.length; ++i) {
+        for (int i = position; i < candidates.length && target > 0; ++i) {
             list.add(candidates[i]);
-            dfs(result, list, sum + candidates[i], candidates, target, i);
+            dfs(result, list, candidates, target, i);
             list.remove(list.size() - 1);
         }
     }
