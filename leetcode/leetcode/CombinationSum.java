@@ -33,7 +33,7 @@ public class CombinationSum {
         }
         for (int i = position; i < candidates.length; ++i) {
             list.add(candidates[i]);
-            dfs(result, list, sum + candidates[i], candidates, target, i + 1);
+            dfs(result, list, sum + candidates[i], candidates, target, i);
             list.remove(list.size() - 1);
         }
     }
