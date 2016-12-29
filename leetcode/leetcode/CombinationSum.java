@@ -23,10 +23,18 @@ public class CombinationSum {
         return result;
     }
 
-    public void dfs(List<List<Integer>> result, List<Integer> list, int sum, int[] candidates, int target) {
+    public void dfs(List<List<Integer>> result, List<Integer> list, int sum, int[] candidates, int target, int position) {
         if (sum == target) {
             result.add(new ArrayList<Integer>(list));
             return;
+        }
+        if (sum > target) {
+            return;
+        }
+        for (int i = position; i < candidates.length; ++i) {
+            list.add(candidates[i]);
+            dfs(result, list, sum + candidates[i], candidates, target, i + 1);
+            list.remove(list.size() - 1);
         }
     }
 
