@@ -27,7 +27,8 @@ public class CombinationSumII {
     public void dfs(List<List<Integer>> result, List<Integer> list, 
             int[] candidates, int target, int position) {
         if (target == 0) {
-            return 0;
+            result.add(new ArrayList<Integer>(list));
+            return;
         }
         for (int i = position; i < candidates.length && target > 0; ++i) {
             list.add(candidates[i]);
