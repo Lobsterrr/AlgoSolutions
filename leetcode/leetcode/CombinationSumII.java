@@ -31,6 +31,9 @@ public class CombinationSumII {
             return;
         }
         for (int i = position; i < candidates.length && target > 0; ++i) {
+            if (i > 0 && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
             list.add(candidates[i]);
             dfs(result, list, candidates, target - candidates[i], i + 1);
             list.remove(list.size() - 1);
