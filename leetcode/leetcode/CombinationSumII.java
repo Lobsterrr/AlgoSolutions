@@ -17,4 +17,23 @@ A solution set is:
  */
 public class CombinationSumII {
 
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Arrays.sort(candidates);
+        dfs(result, new ArrayList<Integer>(), candidates, target, 0);
+        return result;
+    }
+
+    public void dfs(List<List<Integer>> result, List<Integer> list, 
+            int[] candidates, int target, int position) {
+        if (target == 0) {
+            return 0;
+        }
+        for (int i = position; i < candidates.length && target > 0; ++i) {
+            list.add(candidates[i]);
+            dfs(result, list, candidates, target - candidates[i], i + 1);
+            list.remove(list.size() - 1);
+        }
+    }
+
 }
