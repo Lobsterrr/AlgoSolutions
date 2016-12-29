@@ -23,7 +23,11 @@ public class CombinationSum {
         return result;
     }
 
-    public void dfs(List<List<Integer>> result, List<Integer> list, int[] candidates, int target) {
+    public void dfs(List<List<Integer>> result, List<Integer> list, int sum, int[] candidates, int target) {
+        if (sum == target) {
+            result.add(new ArrayList<Integer>(list));
+            return;
+        }
     }
 
 }
