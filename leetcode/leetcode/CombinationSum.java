@@ -19,7 +19,7 @@ public class CombinationSum {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(candidates);
-
+        dfs(result, new ArrayList<Integer>(), 0, candidates, target, 0);
         return result;
     }
 
