@@ -33,6 +33,11 @@ public class CombinationSumIII {
             result.add(new ArrayList<Integer>(list));
             return;
         }
+        for (int i = position; i <= 9; ++i) {
+            list.add(i);
+            dfs(result, list, k - 1, n - i, position + 1);
+            list.remove(list.size() - 1);
+        }
     }
 
 }
