@@ -24,7 +24,7 @@ public class CombinationSumIII {
 
     public List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        dfs(result, new ArrayList<Integer>(), k, n, 0);
+        dfs(result, new ArrayList<Integer>(), k, n, 1);
         return result;
     }
 
