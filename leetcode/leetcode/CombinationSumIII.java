@@ -37,7 +37,7 @@ public class CombinationSumIII {
         }
         for (int i = position; i <= 9; ++i) {
             list.add(i);
-            dfs(result, list, k - 1, n - i, position + 1);
+            dfs(result, list, k - 1, n - i, i + 1);
             list.remove(list.size() - 1);
         }
     }
