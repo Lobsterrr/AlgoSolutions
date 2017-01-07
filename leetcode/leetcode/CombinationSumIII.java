@@ -29,13 +29,11 @@ public class CombinationSumIII {
     }
 
     public void dfs(List<List<Integer>> result, List<Integer> list, int k, int n, int position) {
-        if (k == 0) {
-            if (n == 0) {
-                result.add(new ArrayList<Integer>(list));
-            }
+        if (k == 0 && n == 0) {
+            result.add(new ArrayList<Integer>(list));
             return;
         }
-        for (int i = position; i <= 9; ++i) {
+        for (int i = position; i <= 9 && n > 0; ++i) {
             list.add(i);
             dfs(result, list, k - 1, n - i, i + 1);
             list.remove(list.size() - 1);
