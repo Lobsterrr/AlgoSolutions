@@ -1,5 +1,6 @@
 /*
-Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target.
+Given an integer array with all positive numbers and no duplicates, find the 
+number of possible combinations that add up to a positive integer target.
 
 Example:
 
@@ -26,5 +27,9 @@ What limitation we need to add to the question to allow negative numbers?
 
  */
 public class CombinationSumIV {
+
+    public int combinationSum4(int[] nums, int target) {
+
+    }
 
 }
