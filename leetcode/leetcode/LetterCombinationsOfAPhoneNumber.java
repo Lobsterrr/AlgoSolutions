@@ -17,7 +17,9 @@ any order you want.
 public class LetterCombinationsOfAPhoneNumber {
 
     public List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<String>();
 
+        return result;
     }
 
 }
