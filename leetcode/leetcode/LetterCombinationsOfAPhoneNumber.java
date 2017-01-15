@@ -29,7 +29,8 @@ public class LetterCombinationsOfAPhoneNumber {
         map.put('8', "tuv");
         map.put('9', "wxyz");
         for (int i = 0; i < digits.length(); ++i) {
-
+            char c = digits.charAt(i);
+            String s = map.get(c);
         }
 
         return result;
