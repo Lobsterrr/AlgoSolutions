@@ -28,15 +28,15 @@ public class LetterCombinationsOfAPhoneNumber {
         map.put('7', "pqrs");
         map.put('8', "tuv");
         map.put('9', "wxyz");
+        result.add("");
         for (int i = 0; i < digits.length(); ++i) {
             char c = digits.charAt(i);
-            String s = map.get(c);
             int size = result.size();
             for (int j = 0; j < size; ++j) {
-
+                String s = result.remove();
+                result.add(s + c);
             }
         }
-
         return result;
     }
 
