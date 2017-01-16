@@ -30,7 +30,7 @@ public class LetterCombinationsOfAPhoneNumber {
         map.put('9', "wxyz");
         for (int i = 0; i < digits.length(); ++i) {
             if (result.size() == 0) {
-                result.add(")");
+                result.add("");
             }
             char c = digits.charAt(i);
             int size = result.size();
