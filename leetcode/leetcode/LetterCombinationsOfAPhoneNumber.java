@@ -28,8 +28,10 @@ public class LetterCombinationsOfAPhoneNumber {
         map.put('7', "pqrs");
         map.put('8', "tuv");
         map.put('9', "wxyz");
-        result.add("");
         for (int i = 0; i < digits.length(); ++i) {
+            if (result.size() == 0) {
+                result.add(")");
+            }
             char c = digits.charAt(i);
             int size = result.size();
             for (int j = 0; j < size; ++j) {
