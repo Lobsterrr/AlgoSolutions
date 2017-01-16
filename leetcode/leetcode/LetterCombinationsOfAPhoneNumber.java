@@ -32,10 +32,10 @@ public class LetterCombinationsOfAPhoneNumber {
             if (result.size() == 0) {
                 result.add("");
             }
-            char c = digits.charAt(i);
             int size = result.size();
             for (int j = 0; j < size; ++j) {
                 String s = result.remove(0);
+                char c = digits.charAt(i);
                 for (int k = 0; k < map.get(c).length(); ++k) {
                     result.add(s + map.get(c).charAt(k));
                 }
