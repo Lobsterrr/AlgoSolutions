@@ -5,7 +5,7 @@ the corresponding bits are different.
 Given two integers x and y, calculate the Hamming distance.
 
 Note:
-0 ≤ x, y < 231.
+0 ≤ x, y < 2 ^ 31.
 
 Example:
 
