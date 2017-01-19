@@ -26,4 +26,8 @@ public class HammingDistance {
         int xor = x ^ y;
     }
 
+    public int hammingWeight(int n) {
+
+    }
+
 }
