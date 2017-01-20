@@ -23,7 +23,7 @@ The above arrows point to positions where the corresponding bits are different.
 public class HammingDistance {
 
     public int hammingDistance(int x, int y) {
-        int xor = x ^ y;
+        return hammingWeight(x ^ y);
     }
 
     public int hammingWeight(int n) {
