@@ -17,4 +17,8 @@ Length of the array will not exceed 10^4.
  */
 public class TotalHammingDistance {
 
+    public int totalHammingDistance(int[] nums) {
+
+    }
+
 }
