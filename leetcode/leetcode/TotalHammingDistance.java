@@ -24,4 +24,8 @@ public class TotalHammingDistance {
 
     }
 
+    public int hammingWeight(int n) {
+
+    }
+
 }
