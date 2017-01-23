@@ -25,7 +25,7 @@ public class TotalHammingDistance {
     }
 
     public int hammingWeight(int n) {
-
+        n = (n & 0x55555555) + ((n >>> 1) & 0x55555555);
     }
 
 }
