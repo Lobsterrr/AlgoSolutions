@@ -27,6 +27,7 @@ public class TotalHammingDistance {
                 result += hammingWeight(nums[i] ^ nums[j]);
             }
         }
+        return result;
     }
 
     public int hammingWeight(int n) {
