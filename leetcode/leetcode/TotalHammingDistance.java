@@ -22,9 +22,15 @@ public class TotalHammingDistance {
 
     public int totalHammingDistance(int[] nums) {
         int result = 0;
-
-
-
+        int[] bitOfOne = new int[32];
+        for (int i = 0; i < 32; ++i) {
+            for (int j = 0; j < nums.length; ++j) {
+                bitOfOne[i] += (nums[j] >>> i) & 1;
+            }
+        }
+        for (int i = 0; i < 32; ++i) {
+            result += bitOfOne[i] * (nums.length - bitOfOne[i]);
+        }
         return result;
     }
 
