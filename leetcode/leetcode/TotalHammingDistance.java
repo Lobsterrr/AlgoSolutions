@@ -20,6 +20,7 @@ Length of the array will not exceed 10^4.
  */
 public class TotalHammingDistance {
 
+    // O(n) time, O(1) space.
     public int totalHammingDistance(int[] nums) {
         int result = 0;
         for (int i = 0; i < 32; ++i) {
