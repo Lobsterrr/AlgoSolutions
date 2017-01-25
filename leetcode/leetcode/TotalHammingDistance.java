@@ -34,6 +34,8 @@ public class TotalHammingDistance {
         return result;
     }
 
+/*****************************************************************************/
+
     public int totalHammingDistance(int[] nums) {
         int result = 0;
         for (int i = 0; i < nums.length; ++i) {
