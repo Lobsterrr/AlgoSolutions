@@ -35,7 +35,6 @@ public class TotalHammingDistance {
 
 /*****************************************************************************/
 
-    /*
     // O(n ^ 2) time, O(1) space.
     public int totalHammingDistance(int[] nums) {
         int result = 0;
@@ -55,6 +54,5 @@ public class TotalHammingDistance {
         n = (n & 0x0000ffff) + ((n >>> 16) & 0x0000ffff);
         return n;
     }
-    */
 
 }
