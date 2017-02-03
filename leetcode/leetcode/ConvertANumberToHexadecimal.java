@@ -36,7 +36,7 @@ public class ConvertANumberToHexadecimal {
             if (n < 10) {
                 result = n + result;
             } else {
-                result = ('a' + (n - 10)) + result;
+                result = ((char) ('a' + (n - 10))) + result;
             }
             num /= 16;
         }
