@@ -31,7 +31,7 @@ public class ConvertANumberToHexadecimal {
 
     public String toHex(int num) {
         String result = "";
-        while (num > 0) {
+        while (num != 0) {
             int n = num % 16;
             if (n < 10) {
                 result = n + result;
