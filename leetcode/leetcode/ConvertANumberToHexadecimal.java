@@ -38,6 +38,7 @@ public class ConvertANumberToHexadecimal {
             } else {
                 result = ('a' + (n - 10)) + result;
             }
+            num /= 16;
         }
         return result;
     }
