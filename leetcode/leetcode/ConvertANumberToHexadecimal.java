@@ -30,11 +30,11 @@ Output:
 public class ConvertANumberToHexadecimal {
 
     public String toHex(int num) {
-        if (num == -1) {
-            return "ffffffff";
-        }
         if (num == 0) {
             return "0";
+        }
+        if (num < 0) {
+
         }
         String result = "";
         while (num != 0) {
