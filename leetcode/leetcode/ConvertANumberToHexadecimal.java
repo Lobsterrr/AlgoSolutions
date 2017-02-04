@@ -33,6 +33,9 @@ public class ConvertANumberToHexadecimal {
         if (num == -1) {
             return "ffffffff";
         }
+        if (num == 0) {
+            return "0";
+        }
         String result = "";
         while (num != 0) {
             int n = num % 16;
