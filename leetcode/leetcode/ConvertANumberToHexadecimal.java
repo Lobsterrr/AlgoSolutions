@@ -30,6 +30,9 @@ Output:
 public class ConvertANumberToHexadecimal {
 
     public String toHex(int num) {
+        if (num == -1) {
+            return "ffffffff";
+        }
         String result = "";
         while (num != 0) {
             int n = num % 16;
