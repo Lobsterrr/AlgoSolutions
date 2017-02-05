@@ -34,7 +34,6 @@ public class ConvertANumberToHexadecimal {
             return "0";
         }
         if (num < 0) {
-
         }
         String result = "";
         while (num != 0) {
