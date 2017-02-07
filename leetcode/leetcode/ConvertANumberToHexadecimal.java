@@ -51,11 +51,11 @@ public class ConvertANumberToHexadecimal {
         }
         String result = "";
         while (num != 0) {
-            int n = num & 15;
-            if (n < 10) {
-                result = n + result;
+            int bit = num & 15;
+            if (bit < 10) {
+                result = bit + result;
             } else {
-                result = ((char) ('a' + (n - 10))) + result;
+                result = ((char) ('a' + (bit - 10))) + result;
             }
             num = num >>> 4;
         }
