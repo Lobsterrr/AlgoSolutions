@@ -39,7 +39,7 @@ public class ConvertANumberToHexadecimal {
         }
         String result = "";
         while (x != 0) {
-            int n = x % 16;
+            int n = x & 15;
             if (n < 10) {
                 result = n + result;
             } else {
