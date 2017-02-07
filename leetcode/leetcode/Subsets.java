@@ -22,6 +22,7 @@ public class Subsets {
     public List<List<Integer>>subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
 
+        return result;
     }
 
 }
