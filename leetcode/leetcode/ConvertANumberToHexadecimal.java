@@ -33,19 +33,15 @@ public class ConvertANumberToHexadecimal {
         if (num == 0) {
             return "0";
         }
-        long x = 0;
-        if (num < 0) {
-            x = num + Integer.MAX_VALUE;
-        }
         String result = "";
-        while (x != 0) {
-            int n = x & 15;
+        while (num != 0) {
+            int n = num & 15;
             if (n < 10) {
                 result = n + result;
             } else {
                 result = ((char) ('a' + (n - 10))) + result;
             }
-            x /= 16;
+            num /= 16;
         }
         return result;
     }
