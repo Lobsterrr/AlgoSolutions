@@ -19,4 +19,8 @@ If nums = [1,2,3], a solution is:
  */
 public class Subsets {
 
+    public List<List<Integer>>subsets(int[] nums) {
+
+    }
+
 }
