@@ -34,14 +34,14 @@ public class ConvertANumberToHexadecimal {
             return "0";
         }
         String result = "";
-        while (num != 0) {
+        while (num != 0 && result.length() < 8) {
             int n = num & 15;
             if (n < 10) {
                 result = n + result;
             } else {
                 result = ((char) ('a' + (n - 10))) + result;
             }
-            num /= 16;
+            num = num >> 4;
         }
         return result;
     }
