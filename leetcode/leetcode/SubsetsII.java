@@ -24,4 +24,8 @@ public class SubsetsII {
         return result;
     }
 
+    public void dfs(List<List<Integer>> result, List<Integer> list, int[] nums, int position) {
+
+    }
+
 }
