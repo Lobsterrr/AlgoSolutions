@@ -1,5 +1,6 @@
 /*
-Given a collection of integers that might contain duplicates, nums, return all possible subsets.
+Given a collection of integers that might contain duplicates, nums, return all
+possible subsets.
 
 Note: The solution set must not contain duplicate subsets.
 
@@ -16,5 +17,9 @@ If nums = [1,2,2], a solution is:
 ]
  */
 public class SubsetsII {
+
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+
+    }
 
 }
