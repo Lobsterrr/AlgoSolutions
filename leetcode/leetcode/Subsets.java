@@ -28,7 +28,9 @@ public class Subsets {
 
     public void dfs(List<List<Integer>> result, List<Integer> list, int[] nums, int position) {
         for (int i = position; i < nums.length; ++i) {
-
+            list.add(nums[i]);
+            dfs(result, list, nums, i + 1);
+            list.remove(list.size() - 1);
         }
     }
 
