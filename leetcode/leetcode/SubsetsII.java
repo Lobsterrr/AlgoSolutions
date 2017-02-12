@@ -30,6 +30,7 @@ public class SubsetsII {
         result.add(new ArrayList<Integer>(list));
         list.add(nums[position]);
         for (int i = position; i < nums.length; ++i) {
+
         }
     }
 
