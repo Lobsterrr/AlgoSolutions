@@ -30,8 +30,12 @@ public class SubsetsII {
         result.add(new ArrayList<Integer>(list));
         list.add(nums[position]);
         for (int i = position; i < nums.length; ++i) {
-
+            if (i > position && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            dfs(result, list, nums, i + 1);
         }
+        list.remove(list.size() - 1);
     }
 
 }
