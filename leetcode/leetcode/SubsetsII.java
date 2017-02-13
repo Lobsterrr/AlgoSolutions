@@ -30,11 +30,11 @@ public class SubsetsII {
         result.add(new ArrayList<Integer>(list));
         for (int i = position; i < nums.length; ++i) {
             list.add(nums[i]);
+            dfs(result, list, nums, i + 1);
+            list.remove(list.size() - 1);
             while (i < nums.length - 1 && nums[i] == nums[i + 1]) {
                 i++;
             }
-            dfs(result, list, nums, i + 1);
-            list.remove(list.size() - 1);
         }
     }
 
