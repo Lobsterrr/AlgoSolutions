@@ -43,7 +43,7 @@ public class SubsetsII {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(nums);
-
+        result.add(new ArrayList<Integer>());
 
         return result;
     }
