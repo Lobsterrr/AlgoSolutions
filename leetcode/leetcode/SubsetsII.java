@@ -45,7 +45,6 @@ public class SubsetsII {
         Arrays.sort(nums);
         result.add(new ArrayList<Integer>());
 
-
         return result;
     }
 
