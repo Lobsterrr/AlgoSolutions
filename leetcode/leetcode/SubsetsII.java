@@ -44,6 +44,10 @@ public class SubsetsII {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(nums);
         result.add(new ArrayList<Integer>());
+        int oldSize = 0;
+        for (int i = 0; i < oldSize; ++i) {
+
+        }
 
         return result;
     }
