@@ -46,12 +46,14 @@ public class SubsetsII {
         result.add(new ArrayList<Integer>());
         int oldSize = result.size();
         for (int i = 0; i < nums.length; ++i) {
-            int start = 0;
+            int start = (i > 0 && nums[i] == nums[i - 1]) ? oldSize : 0;
+            int newSize = result.size();
             for (int j = start; j < oldSize; ++j) {
                 List<Integer> list = new ArrayList<Integer>(result.get(j));
                 list.add(nums[i]);
                 result.add(list);
             }
+            oldSize = newSize;
         }
         return result;
     }
