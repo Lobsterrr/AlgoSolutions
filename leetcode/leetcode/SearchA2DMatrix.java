@@ -19,7 +19,14 @@ Given target = 3, return true.
 public class SearchA2DMatrix {
 
     public boolean searchMatrix(int[][] matrix, int target) {
-
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+        int i = 0;
+        int j = yLen - 1;
+        while () {
+            
+        }
+        return false;
     }
 
 }
