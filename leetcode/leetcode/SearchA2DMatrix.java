@@ -23,7 +23,7 @@ public class SearchA2DMatrix {
         int yLen = matrix[0].length;
         int i = 0;
         int j = yLen - 1;
-        while (true) {
+        while (i < xLen && j >= 0) {
             if (matrix[i][j] == target) {
                 return true;
             } else if (matrix[i][j] < target) {
