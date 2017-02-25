@@ -33,4 +33,9 @@ public class SearchA2DMatrix {
         return false;
     }
 
+    public boolean searchMatrix(int[][] matrix, int target) {
+
+    }
+
 }
+
