@@ -36,13 +36,19 @@ public class SearchA2DMatrix {
         return false;
     }
 
+/*****************************************************************************/
+
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0) {
             return false;
         }
         int xLen = matrix.length;
         int yLen = matrix[0].length;
+        int i = 0;
+        int j = yLen - 1;
+        while (i < j) {
 
+        }
         return false;
     }
 
