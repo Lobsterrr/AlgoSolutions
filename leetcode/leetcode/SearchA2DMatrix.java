@@ -50,6 +50,10 @@ public class SearchA2DMatrix {
             int mid = i + (j - i) / 2;
             if (matrix[mid / j][mid % j] == target) {
                 return true;
+            } else if (matrix[mid / j][mid % j] < target) {
+                i = mid + 1;
+            } else {
+                j = mid - 1;
             }
         }
         return false;
