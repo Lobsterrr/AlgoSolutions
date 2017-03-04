@@ -46,7 +46,7 @@ public class SearchA2DMatrix {
         int yLen = matrix[0].length;
         int i = 0;
         int j = xLen * yLen - 1;
-        while (i < j) {
+        while (i <= j) {
             int mid = i + (j - i) / 2;
             if (matrix[mid / j][mid % j] == target) {
                 return true;
