@@ -18,6 +18,7 @@ Given target = 3, return true.
  */
 public class SearchA2DMatrix {
 
+    // O(lg(m * n))
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0) {
             return false;
@@ -41,6 +42,7 @@ public class SearchA2DMatrix {
     
 /*****************************************************************************/
 
+    // O(m + n)
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0) {
             return false;
