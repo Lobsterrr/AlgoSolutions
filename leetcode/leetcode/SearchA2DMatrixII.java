@@ -25,6 +25,9 @@ public class SearchA2DMatrixII {
         if (matrix == null || matrix.length == 0) {
             return false;
         }
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+
     }
 
 }
