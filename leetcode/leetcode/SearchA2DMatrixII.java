@@ -22,7 +22,9 @@ Given target = 20, return false.
 public class SearchA2DMatrixII {
 
     public boolean searchMatrix(int[][] matrix, int target) {
-
+        if (matrix == null || matrix.length == 0) {
+            return false;
+        }
     }
 
 }
