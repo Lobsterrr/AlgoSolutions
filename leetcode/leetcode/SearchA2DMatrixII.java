@@ -32,7 +32,7 @@ public class SearchA2DMatrixII {
         while (i < xLen && j >= 0) {
             if (matrix[i][j] == target) {
                 return true;
-            } else if (matrix[i][j] > target) {
+            } else if (matrix[i][j] < target) {
                 i++;
             } else {
                 j--;
