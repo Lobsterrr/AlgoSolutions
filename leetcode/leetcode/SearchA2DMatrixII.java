@@ -43,6 +43,11 @@ public class SearchA2DMatrixII {
         if (matrix == null || matrix.length == 0) {
             return false;
         }
+        
+    }
+
+    public boolean binarySearch(int[][] matrix, int rowLow, int rowHigh, int colLow, int colHigh) {
+
     }
 
 }
