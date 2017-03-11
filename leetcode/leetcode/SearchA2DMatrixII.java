@@ -49,7 +49,6 @@ public class SearchA2DMatrixII {
     public boolean binarySearch(int[][] matrix, int target, int rowLow, int rowHigh, int colLow, int colHigh) {
         int row = rowLow + (rowHigh - rowLow) / 2;
 
-
     }
 
 }
