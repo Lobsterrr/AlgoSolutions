@@ -51,8 +51,12 @@ public class SearchA2DMatrixII {
             return false;
         }
         int row = rowLow + (rowHigh - rowLow) / 2;
-        int col = colLow + (colHigh - colLow) / 2;
-        while (row < rowHigh && col )
+        int mid = colLow + (colHigh - colLow) / 2;
+        while (colLow < mid && mid < colHigh) {
+            if (matrix[row][mid] == target) {
+                return true;
+            }
+        }
     }
 
 }
