@@ -46,7 +46,7 @@ public class SearchA2DMatrixII {
         if (matrix == null || matrix.length == 0) {
             return false;
         }
-        
+        return binarySearch(matrix, target, 0, matrix.length - 1, 0, matrix[0].length);
     }
 
     public boolean binarySearch(int[][] matrix, int target, int rowLow, int rowHigh, int colLow, int colHigh) {
@@ -55,7 +55,7 @@ public class SearchA2DMatrixII {
         }
         int row = rowLow + (rowHigh - rowLow) / 2;
         int mid = colLow + (colHigh - colLow) / 2;
-        while (colLow < mid && mid < colHigh) {
+        while (colLow <= mid && mid <= colHigh) {
             if (matrix[row][mid] == target) {
                 return true;
             }
