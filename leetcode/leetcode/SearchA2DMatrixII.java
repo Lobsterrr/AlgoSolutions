@@ -55,11 +55,13 @@ public class SearchA2DMatrixII {
         }
         int row = rowLow + (rowHigh - rowLow) / 2;
         int mid = colLow + (colHigh - colLow) / 2;
+        int start = colLow;
+        int end = colHigh;
         while (colLow <= mid && mid <= colHigh) {
             if (matrix[row][mid] == target) {
                 return true;
             }
-            if ()
+            if (ma)
         }
     }
 
