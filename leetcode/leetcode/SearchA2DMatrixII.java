@@ -61,7 +61,7 @@ public class SearchA2DMatrixII {
             if (matrix[row][mid] == target) {
                 return true;
             }
-            if (matrix)
+            if ()
         }
     }
 
