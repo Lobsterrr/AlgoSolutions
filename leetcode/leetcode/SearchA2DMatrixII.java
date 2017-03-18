@@ -46,10 +46,12 @@ public class SearchA2DMatrixII {
         if (matrix == null || matrix.length == 0) {
             return false;
         }
-        return binarySearch(matrix, target, 0, matrix.length - 1, 0, matrix[0].length);
+        return binarySearch(matrix, target, 0, matrix.length - 1, 0, 
+                matrix[0].length);
     }
 
-    public boolean binarySearch(int[][] matrix, int target, int rowLow, int rowHigh, int colLow, int colHigh) {
+    public boolean binarySearch(int[][] matrix, int target, int rowLow, 
+            int rowHigh, int colLow, int colHigh) {
         if (rowLow > rowHigh || colLow > colHigh) {
             return false;
         }
@@ -61,8 +63,12 @@ public class SearchA2DMatrixII {
             if (matrix[row][mid] == target) {
                 return true;
             }
-            if ()
+            if (matrix[row][mid] < target && target < matrix[row][mid + 1]) {
+                break;
+            }
         }
+        return binarySearch(matrix, target, row + 1, rowHigh, colLow, mid) 
+            || binarySearch(matrix, target, rowLow, row, mid + 1, colHigh);
     }
 
 }
