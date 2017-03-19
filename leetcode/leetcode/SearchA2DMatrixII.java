@@ -65,8 +65,14 @@ public class SearchA2DMatrixII {
             }
             if (matrix[row][mid] < target && target < matrix[row][mid + 1]) {
                 break;
+            } else {
+                if (matrix[row][mid] < target) {
+                    start = mid;
+                } else {
+                    end = mid;
+                }
+                mid = start + (end - start) / 2;
             }
-        }
         return binarySearch(matrix, target, row + 1, rowHigh, colLow, mid) 
             || binarySearch(matrix, target, rowLow, row, mid + 1, colHigh);
     }
