@@ -75,6 +75,8 @@ public class SearchA2DMatrixII {
             }
         return binarySearch(matrix, target, row + 1, rowHigh, colLow, mid) 
             || binarySearch(matrix, target, rowLow, row, mid + 1, colHigh);
+
+        }
     }
 
 }
