@@ -47,7 +47,7 @@ public class SearchA2DMatrixII {
             return false;
         }
         return binarySearch(matrix, target, 0, matrix.length - 1, 0, 
-                matrix[0].length);
+                matrix[0].length - 1);
     }
 
     public boolean binarySearch(int[][] matrix, int target, int rowLow, 
