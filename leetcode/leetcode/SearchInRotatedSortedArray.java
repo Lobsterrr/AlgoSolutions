@@ -35,7 +35,7 @@ public class SearchInRotatedSortedArray {
                 return binarySearch(nums, target, mid + 1, high);
             }
         } else { // target > nums[low]
-            if (nums[mid] > nums[low] && nums[mid] < target) {
+            if (nums[mid] >= nums[low] && nums[mid] < target) {
                 return binarySearch(nums, target, mid + 1, high);
             } else {
                 return binarySearch(nums, target, low, mid - 1);
