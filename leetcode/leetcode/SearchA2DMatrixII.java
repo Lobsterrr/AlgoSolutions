@@ -73,7 +73,7 @@ public boolean searchMatrix(int[][] matrix, int target) {
             if (matrix[row][mid] == target) {
                 return true;
             }
-            if (mid < colHigh && matrix[row][mid] < target && target < matrix[row][mid + 1]) {
+            if (colLow <= mid && mid < colHigh && matrix[row][mid] < target && target < matrix[row][mid + 1]) {
                 break;
             } else {
                 if (matrix[row][mid] < target) {
