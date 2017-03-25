@@ -15,6 +15,12 @@ public class SearchInRotatedSortedArray {
         if (nums == null || nums.length == 0) {
             return -1;
         }
+        int low = 0;
+        int high = nums.length - 1;
+        while (low <= high) {
+
+        }
+        return -1;
     }
 
 /*****************************************************************************/
