@@ -69,9 +69,16 @@ public class SearchA2DMatrixII {
                 // TODO
                 if (matrix[row][mid] < target) {
                     start = mid + 1;
-
+                    if (start > colHigh) {
+                        mid = start;
+                        break;
+                    }
                 } else {
-                    end = mid;
+                    end = mid - 1;
+                    if (end < colLow) {
+                        mid = end;
+                        break;
+                    }
                 }
             }
             mid = start + (end - start) / 2;
