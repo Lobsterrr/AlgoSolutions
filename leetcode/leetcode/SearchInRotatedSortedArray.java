@@ -28,18 +28,9 @@ public class SearchInRotatedSortedArray {
         }
         // 4, 5, 6, 7, 8, 9, 10, 11, 12, 0, 1, 2, 3
         // 6, 7, 0, 1, 2, 3, 4, 5
-        if (nums[low] <= nums[mid] && nums[low] <= target && target < nums[mid]) {
-            return binarySearch(nums, target, low, mid - 1);
-        }
-        return binarySearch(nums, target, mid + 1, high);
-
         if (target < nums[low]) {
             if (nums[mid] > nums[low]) {
-                if (target < nums[mid]) {
-                    // no posible.
-                } else {
-                    return binarySearch(nums, target, mid + 1, high);
-                }
+                return binarySearch(nums, target, mid + 1, high);
             } else {
                 if (nums[mid] < target) {
                     return binarySearch(nums, target, mid + 1, high);
@@ -50,12 +41,12 @@ public class SearchInRotatedSortedArray {
         } else { // target > nums[low]
             if (nums[mid] > nums[low]) {
                 if (nums[mid] > target) {
-
+                    return binarySearch(nums, target, low, mid - 1);
                 } else {
-
+                    return binarySearch(nums, target, mid + 1, high);
                 }
             } else {
-
+                return binarySearch(nums, target, low, mid - 1);
             }
         }
     }
