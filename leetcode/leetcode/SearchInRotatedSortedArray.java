@@ -13,4 +13,8 @@ public class SearchInRotatedSortedArray {
 
     }
 
+    public int binarySearch(int[] nums, int target, int low, int high) {
+
+    }
+
 }
