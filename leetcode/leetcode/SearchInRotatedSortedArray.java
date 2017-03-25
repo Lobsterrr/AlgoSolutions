@@ -9,6 +9,8 @@ You may assume no duplicate exists in the array.
  */
 public class SearchInRotatedSortedArray {
 
+    public int search(int[] nums, int target) {
 
+    }
 
 }
