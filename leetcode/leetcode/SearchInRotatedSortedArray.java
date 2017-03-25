@@ -17,9 +17,19 @@ public class SearchInRotatedSortedArray {
     }
 
     public int binarySearch(int[] nums, int target, int low, int high) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length == 0 || low > high) {
             return -1;
         }
+        int mid = low + (high - low) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        }
+        // 4, 5, 6, 7, 8, 9, 10, 11, 12, 0, 1, 2, 3
+        // 6, 7, 0, 1, 2, 3, 4, 5
+        if (nums[low] <= nums[mid] && nums[mid] > target) {
+            return binarySearch(nums, target, low, mid - 1);
+        }
+        return binarySearch(nums, target, mid + 1, high);
     }
 
 }
