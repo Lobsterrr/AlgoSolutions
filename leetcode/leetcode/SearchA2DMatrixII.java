@@ -79,13 +79,13 @@ public boolean searchMatrix(int[][] matrix, int target) {
                 if (matrix[row][mid] < target) {
                     start = mid + 1;
                     if (start > colHigh) {
-                        mid = start;
+                        mid = colHigh;
                         break;
                     }
                 } else {
                     end = mid - 1;
                     if (end < colLow) {
-                        mid = end;
+                        mid = colLow;
                         break;
                     }
                 }
