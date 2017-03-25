@@ -84,7 +84,7 @@ public class SearchA2DMatrixII {
             mid = start + (end - start) / 2;
         }
         return binarySearch(matrix, target, row + 1, rowHigh, colLow, mid) 
-            || binarySearch(matrix, target, rowLow, row, mid + 1, colHigh);
+            || binarySearch(matrix, target, rowLow, row - 1, mid + 1, colHigh);
     }
 
 }
