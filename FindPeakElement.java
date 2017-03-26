@@ -14,3 +14,10 @@ click to show spoilers.
 Note:
 Your solution should be in logarithmic complexity.
  */
+public class FindPeakElement {
+
+    public int findPeakElement(int[] nums) {
+
+    }
+
+}
