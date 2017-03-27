@@ -27,7 +27,7 @@ public class FindPeakElement {
             if (nums[mid] < nums[mid + 1]) {
                 low = mid + 1;
             } else {
-                end = mid;
+                high = mid;
             }
         }
         return low;
