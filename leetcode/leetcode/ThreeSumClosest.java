@@ -10,7 +10,7 @@ may assume that each input would have exactly one solution.
 public class ThreeSumClosest {
 
     public int threeSumClosest(int[] nums, int target) {
-
+        Arrays.sort(nums);
     }
 
 }
