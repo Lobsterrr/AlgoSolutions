@@ -27,9 +27,9 @@ public class ThreeSumClosest {
                     result = sum;
                 }
                 if (sum < target) {
-                    i++;
+                    j++;
                 } else {
-                    j--;
+                    k--;
                 }
             }
         }
