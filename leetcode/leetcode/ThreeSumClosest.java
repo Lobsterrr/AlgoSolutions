@@ -26,6 +26,11 @@ public class ThreeSumClosest {
                     minDiff = diff;
                     result = sum;
                 }
+                if (sum < target) {
+                    i++;
+                } else {
+                    j--;
+                }
             }
         }
         return result;
