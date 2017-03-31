@@ -22,14 +22,14 @@ public class ThreeSum {
             int high = nums.length - 1;
             while (low < high) {
                 int threeSum = nums[i] + nums[low] + nums[high];
-                if (threeSum == target) {
+                if (threeSum == 0) {
                     List<Integer> list = new ArrayList<Integer>();
                     list.add(nums[i]);
                     list.add(nums[low]);
                     list.add(nums[high]);
                     result.add(list);
                     break;
-                } else if (threeSum < target) {
+                } else if (threeSum < 0) {
                     low++;
                 } else {
                     high--;
