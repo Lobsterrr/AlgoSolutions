@@ -32,8 +32,12 @@ public class ThreeSum {
                     list.add(nums[low]);
                     list.add(nums[high]);
                     result.add(list);
-                    low++;
-                    high--;
+                    do {
+                        low++;
+                    } while (low < high && nums[low] == nums[low - 1]);
+                    do {
+                        high--;
+                    } while (low < high && nums[high] == nums[high + 1]);
                 } else if (threeSum < 0) {
                     low++;
                 } else {
