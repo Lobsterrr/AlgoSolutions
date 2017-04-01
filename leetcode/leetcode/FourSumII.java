@@ -46,43 +46,4 @@ public class FourSumII {
         return result;
     }
 
-    public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
-        if (A == null || A.length == 0 || B == null || B.length == 0 
-                || C == null || C.length == 0 || D == null || D.length == 0) {
-            return 0;
-        }
-        int result = 0;
-        Arrays.sort(A);
-        Arrays.sort(B);
-        Arrays.sort(C);
-        Arrays.sort(D);
-        int minA = -(B[B.length - 1] + C[C.length - 1] + D[D.length - 1]);
-        int maxA = -(B[0] + C[0] + D[0]);
-        if (minA <= A[A.length - 1] && maxA >= A[0]) {
-            for (int a = 0; a < A.length; ++a) {
-                int minB = -(A[a] + C[C.length - 1] + D[D.length - 1]);
-                int maxB = -(A[a] + C[0] + D[0]);
-                if (minB <= B[B.length - 1] && maxB >= B[0]) {
-                    for (int b = 0; b < B.length; ++b) {
-                        int minC = -(A[a] + B[b] + D[D.length - 1]);
-                        int maxC = -(A[a] + B[b] + D[0]);
-                        if (minC <= C[C.length - 1] && maxC >= C[0]) {
-                            for (int c = 0; c < C.length; ++c) {
-                                if (-(A[a] + B[b] + C[c]) <= D[D.length - 1] 
-                                        && -(A[a] + B[b] + C[c]) >= D[0]) {
-                                    for (int d = 0; d < D.length; ++d) {
-                                        if (A[a] + B[b] + C[c] + D[d] == 0) {
-                                            result++;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return result;
-    }
-
 }
