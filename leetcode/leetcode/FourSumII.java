@@ -21,6 +21,7 @@ The two tuples are:
  */
 public class FourSumII {
 
+    // O(n^2) time, O(n) space.
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         if (A == null || A.length == 0 || B == null || B.length == 0 
                 || C == null || C.length == 0 || D == null || D.length == 0) {
@@ -30,7 +31,7 @@ public class FourSumII {
         for (int i = 0; i < A.length; ++i) {
             for (int j = 0; j < B.length; ++j) {
                 int sum = A[i] + B[j];
-                map.put(1 + (map.containsKey(sum) ? map.get(sum) : 0));
+                map.put(sum, 1 + (map.containsKey(sum) ? map.get(sum) : 0));
             }
         }
         int result = 0;
