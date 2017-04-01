@@ -29,19 +29,18 @@ public class FourSumII {
         Arrays.sort(D);
         int minA = -(B[B.length - 1] + C[C.length - 1] + D[D.length - 1]);
         int maxA = -(B[0] + C[0] + D[0]);
-        if (minA <= A[0] && A[A.length - 1] <= maxA) {
+        if (minA <= A[A.length - 1] && maxA >= A[0]) {
             for (int a = 0; a < A.length; ++a) {
                 int minB = -(A[a] + C[C.length - 1] + D[D.length - 1]);
                 int maxB = -(A[a] + C[0] + D[0]);
-                    if (minB <= B[0] && B[B.length - 1] <= maxB) {
+                    if (minB <= B[B.length - 1] && maxB >= B[0]) {
                         for (int b = 0; b < B.length; ++b) {
                             int minC = -(A[a] + B[b] + D[D.length - 1]);
                             int maxC = -(A[a] + B[b] + D[0]);
-                            if (minC <= C[0] && C[C.length - 1] <= maxC) {
+                            if (minC <= C[C.length] && maxC >= C[0]) {
                                 for (int c = 0; c < C.length; ++c) {
-                                    int curSum = -(A[a] + B[b] + C[c]);
                                     for (int d = 0; d < D.length; ++d) {
-                                        if (curSum == D[d]) {
+                                        if (A[a] + B[b] + C[c] + D[d] == 0) {
                                             result++;
                                         }
                                     }
