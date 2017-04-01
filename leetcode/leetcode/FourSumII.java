@@ -23,10 +23,10 @@ public class FourSumII {
 
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         int result = 0;
-        Arrasy.sort(A);
-        Arrasy.sort(B);
-        Arrasy.sort(C);
-        Arrasy.sort(D);
+        Array.sort(A);
+        Array.sort(B);
+        Array.sort(C);
+        Array.sort(D);
         for (int a = 0; a < A.length; ++a) {
             for (int b = 0; b < B.length; ++b) {
                 int min = C[0] + D[0];
