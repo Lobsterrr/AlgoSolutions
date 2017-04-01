@@ -33,15 +33,15 @@ public class FourSumII {
             for (int a = 0; a < A.length; ++a) {
                 int minB = -(A[a] + C[C.length - 1] + D[D.length - 1]);
                 int maxB = -(A[a] + C[0] + D[0]);
-                    if (minB <= B[b] && B[b] <= maxB) {
+                    if (minB <= B[0] && B[B.length - 1] <= maxB) {
                         for (int b = 0; b < B.length; ++b) {
                             int minC = -(A[a] + B[b] + D[D.length - 1]);
                             int maxC = -(A[a] + B[b] + D[0]);
-                            if (minC <= C[c] && C[c] <= maxC) {
-                                int curSum = -(A[a] + B[b] + C[c]);
-                                if (D[0] <= curSum && curSum <= D[D.length - 1]) {
+                            if (minC <= C[0] && C[C.length - 1] <= maxC) {
+                                for (int c = 0; c < C.length; ++c) {
+                                    int curSum = -(A[a] + B[b] + C[c]);
                                     for (int d = 0; d < D.length; ++d) {
-                                        if (curSum + D[d] == 0) {
+                                        if (curSum == D[d]) {
                                             result++;
                                         }
                                     }
