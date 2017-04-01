@@ -37,11 +37,13 @@ public class FourSumII {
                         for (int b = 0; b < B.length; ++b) {
                             int minC = -(A[a] + B[b] + D[D.length - 1]);
                             int maxC = -(A[a] + B[b] + D[0]);
-                            if (minC <= C[C.length] && maxC >= C[0]) {
+                            if (minC <= C[C.length - 1] && maxC >= C[0]) {
                                 for (int c = 0; c < C.length; ++c) {
-                                    for (int d = 0; d < D.length; ++d) {
-                                        if (A[a] + B[b] + C[c] + D[d] == 0) {
-                                            result++;
+                                    if (-(A[a] + B[b] + C[c]) <= D[D.length - 1] && -(A[a] + B[b] + C[c]) >= D[0]) {
+                                        for (int d = 0; d < D.length; ++d) {
+                                            if (A[a] + B[b] + C[c] + D[d] == 0) {
+                                                result++;
+                                            }
                                         }
                                     }
                                 }
