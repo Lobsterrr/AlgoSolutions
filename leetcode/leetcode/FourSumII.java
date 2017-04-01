@@ -23,17 +23,21 @@ public class FourSumII {
 
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         int result = 0;
+        Arrasy.sort(A);
+        Arrasy.sort(B);
+        Arrasy.sort(C);
+        Arrasy.sort(D);
         for (int a = 0; a < A.length; ++a) {
             for (int b = 0; b < B.length; ++b) {
-                for (int c = 0; c < C.length; ++c) {
-                    for (int d = 0; d < D.length; ++d) {
-                        if (A[a] + B[b] + C[c] + D[d] == 0) {
-                            result++;
-                        }
-                    }
+                int min = C[0] + D[0];
+                int max = C[C.length - 1] + D[D.length - 1];
+                if (min <= A[a] + B[b] && A[a] + B[b] <= max) {
+
                 }
             }
         }
+
+    
         return result;
     }
 
