@@ -33,7 +33,16 @@ public class FourSumII {
                 map.put(1 + (map.containsKey(sum) ? map.get(sum) : 0));
             }
         }
-
+        int result = 0;
+        for (int i = 0; i < C.length; ++i) {
+            for (int j = 0; j < D.length; ++j) {
+                int sum = C[i] + D[j];
+                if (map.containsKey(-sum)) {
+                    result += map.get(-sum);
+                }
+            }
+        }
+        return result;
     }
 
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
