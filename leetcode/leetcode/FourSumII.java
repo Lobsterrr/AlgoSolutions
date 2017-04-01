@@ -22,7 +22,10 @@ The two tuples are:
 public class FourSumII {
 
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
+        int result = 0;
 
+
+        return result;
     }
 
 }
