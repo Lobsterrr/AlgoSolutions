@@ -28,18 +28,17 @@ public class FourSumII {
             return 0;
         }
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int i = 0; i < A.length; ++i) {
-            for (int j = 0; j < B.length; ++j) {
-                int sum = A[i] + B[j];
+        for (int a : A) {
+            for (int b : B) {
+                int sum = a + b;
                 map.put(sum, 1 + (map.containsKey(sum) ? map.get(sum) : 0));
             }
         }
         int result = 0;
-        for (int i = 0; i < C.length; ++i) {
-            for (int j = 0; j < D.length; ++j) {
-                int sum = C[i] + D[j];
-                if (map.containsKey(-sum)) {
-                    result += map.get(-sum);
+        for (int c : C) {
+            for (int d : D) {
+                if (map.containsKey(-(c + d))) {
+                    result += map.get(-(c + d));
                 }
             }
         }
