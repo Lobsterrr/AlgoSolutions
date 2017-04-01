@@ -17,7 +17,10 @@ A solution set is:
 public class FourSum {
 
     public List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Arrays.sort(nums);
 
+        return result;
     }
 
 }
