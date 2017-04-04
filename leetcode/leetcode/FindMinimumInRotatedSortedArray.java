@@ -17,11 +17,13 @@ public class FindMinimumInRotatedSortedArray {
             int mid = low + (high - low) / 2;
             if (nums[low] == nums[mid]) {
                 return nums[low];
-            }
-            if (nums[low] < nums[mid]) {
+            } else if (nums[low] < nums[mid]) {
+
+            } else {
 
             }
         }
+        return nums[low];
     }
 
 }
