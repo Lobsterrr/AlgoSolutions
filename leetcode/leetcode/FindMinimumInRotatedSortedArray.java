@@ -25,7 +25,7 @@ public class FindMinimumInRotatedSortedArray {
             } else if (nums[low] < nums[mid]) {
                 low = mid;
             } else {
-                high = mid - 1;
+                high = mid;
             }
         }
         return nums[low];
