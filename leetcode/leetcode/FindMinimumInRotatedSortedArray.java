@@ -13,8 +13,6 @@ public class FindMinimumInRotatedSortedArray {
     public int findMin(int[] nums) {
         int low = 0;
         int high = nums.length - 1;
-        // 3, 4, 5, 6, 7, 8, 9, 1, 2
-        // 8, 9, 1, 2, 3, 4, 5, 6, 7
         while (low < high) {
             int mid = low + (high - low) / 2;
             if (nums[mid] < nums[high]) {
