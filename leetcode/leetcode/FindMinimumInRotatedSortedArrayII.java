@@ -15,7 +15,11 @@ The array may contain duplicates.
 public class FindMinimumInRotatedSortedArrayII {
 
     public int findMin(int[] nums) {
+        int low = 0;
+        int high = nums.length - 1;
+        while (low < high) {
 
+        }
     }
 
 }
