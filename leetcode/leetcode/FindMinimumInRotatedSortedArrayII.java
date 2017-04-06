@@ -34,6 +34,8 @@ public class FindMinimumInRotatedSortedArrayII {
         return nums[low];
     }
 
+/*****************************************************************************/
+
     public int findMin(int[] nums) {
         int low = 0;
         int high = nums.length - 1;
