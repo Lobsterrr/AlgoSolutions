@@ -18,10 +18,30 @@ public class FindMinimumInRotatedSortedArrayII {
         int low = 0;
         int high = nums.length - 1;
         while (low < high) {
+            if (nums[low] == nums[low + 1]) {
+                low++;
+            } else if (nums[high] == nums[high - 1]) {
+                high--;
+            } else {
+                int mid = low + (high - low >> 1);
+                if (nums[mid] < nums[high]) {
+                    high = mid;
+                } else {
+                    low = mid + 1;
+                }
+            }
+        }
+        return nums[low];
+    }
+
+    public int findMin(int[] nums) {
+        int low = 0;
+        int high = nums.length - 1;
+        while (low < high) {
             for (; low < high - 1 && nums[low] == nums[low + 1]; ++low);
             for (; high > low + 1 && nums[high] == nums[high - 1]; --high);
             int mid = low + (high - low >> 1);
-            if (low < high && nums[mid] < nums[high]) {
+            if (nums[mid] < nums[high]) {
                 high = mid;
             } else {
                 low = mid + 1;
