@@ -24,7 +24,7 @@ public class FindMinimumInRotatedSortedArrayII {
             for (; hihg > low + 1 && nums[high] == nums[high - 1]; --high);
             int mid = low + (high - low >> 1);
             // TODO index check
-            if (nums[mid] < nums[high]) {
+            if (low < high && nums[mid] < nums[high]) {
                 high = mid;
             } else {
                 low = mid + 1;
