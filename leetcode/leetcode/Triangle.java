@@ -1,5 +1,6 @@
 /*
-Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
+Given a triangle, find the minimum path sum from top to bottom. Each step you 
+may move to adjacent numbers on the row below.
 
 For example, given the following triangle
 [
@@ -13,5 +14,9 @@ The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 
  */
 public class Triangle {
+
+    public int minimumTotal(List<List<Integer>> triangle) {
+        
+    }
 
 }
