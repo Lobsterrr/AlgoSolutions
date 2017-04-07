@@ -11,15 +11,17 @@ For example, given the following triangle
 ]
 The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 
-
+Note:
+Bonus point if you are able to do this using only O(n) extra space, where n is 
+the total number of rows in the triangle.
  */
 public class Triangle {
 
     public int minimumTotal(List<List<Integer>> triangle) {
         for (int i = triangle.size() - 2; i >= 0; --i) {
             for (int j = 0; j < triangle.get(i).size(); ++j) {
-                int value = triangle.get(i).get(j) + Math.min(triangle.get(i + 1).get(j), triangle.get(i + 1).get(j + 1));
-                triangle.get(i).set(j, value);
+                int min = Math.min(triangle.get(i + 1).get(j), triangle.get(i + 1).get(j + 1));
+                triangle.get(i).set(j, triangle.get(i).get(j) + min);
             }
         }
         return triangle.get(0).get(0);
