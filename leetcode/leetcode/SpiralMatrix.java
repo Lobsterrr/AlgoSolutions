@@ -21,7 +21,7 @@ public class SpiralMatrix {
         }
         int xLen = matrix.length;
         int yLen = matrix[0].length;
-        for (int i = 0; i < (xLen + 1) / 2; ++i) {
+        for (int i = 0; i < (Math.min(xLen, yLen) + 1) / 2; ++i) {
             for (int col = i; col < yLen - i; ++col) {
                 result.add(matrix[i][col]);
             }
