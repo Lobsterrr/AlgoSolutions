@@ -16,7 +16,7 @@ public class SpiralMatrixII {
 
     public int[][] generateMatrix(int n) {
         int[][] result = new int[n][n];
-        int value = 0;
+        int value = 1;
         for (int i = 0; i < (n + 1) / 2; ++i) {
             for (int col = i; col < n - i; ++col) {
                 result[i][col] = value++;
