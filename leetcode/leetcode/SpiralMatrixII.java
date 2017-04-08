@@ -15,7 +15,23 @@ You should return the following matrix:
 public class SpiralMatrixII {
 
     public int[][] generateMatrix(int n) {
-
+        int[][] result = new int[n][n];
+        int value = 0;
+        for (int i = 0; i < (n + 1) / 2; ++i) {
+            for (int col = i; col < n - i; ++col) {
+                result[i][col] = value++;
+            }
+            for (int row = i + 1; row < n; ++row) {
+                result[row][n - 1 - i] = value++;
+            }
+            for (int col = n - 2 - i; col >= i; --col) {
+                result[n - 1 - i][col] = value++;
+            }
+            for (int row = n - 2 - i; row > i; --row) {
+                result[row][i] = value++;
+            }
+        }
+        return result;
     }
 
 }
