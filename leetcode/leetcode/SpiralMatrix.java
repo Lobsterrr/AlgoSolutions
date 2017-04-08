@@ -19,9 +19,19 @@ public class SpiralMatrix {
         int xLen = matrix.length;
         int yLen = matrix[0].length;
         for (int i = 0; i < (xLen + 1) / 2; ++i) {
-
+            for (int col = i; col < yLen - i; ++col) {
+                result.add(matrix[i][col]);
+            }
+            for (int row = i + 1; row < xLen - i; ++row) {
+                result.add(matrix[row][yLen - 1 - i]);
+            }
+            for (int col = yLen - 2 - i; col >= i; --col) {
+                result.add(matrix[xLen - 1 - i][col]);
+            }
+            for (int row = xLen - 2 - i; row >= i + 1; --row) {
+                result.add(matrix[row][i]);
+            }
         }
-
         return result;
     }
 
