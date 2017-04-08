@@ -21,7 +21,7 @@ public class SpiralMatrixII {
             for (int col = i; col < n - i; ++col) {
                 result[i][col] = value++;
             }
-            for (int row = i + 1; row < n; ++row) {
+            for (int row = i + 1; row < n - i; ++row) {
                 result[row][n - 1 - i] = value++;
             }
             for (int col = n - 2 - i; col >= i; --col) {
