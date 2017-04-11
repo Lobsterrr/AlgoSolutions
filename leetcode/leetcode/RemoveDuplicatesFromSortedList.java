@@ -17,7 +17,7 @@ Given 1->1->2->3->3, return 1->2->3.
 public class RemoveDuplicatesFromSortedList {
 
     public ListNode deleteDuplicates(ListNode head) {
-        if (head == null || head.next == null) {
+        if (head == null) {
             return head;
         }
         ListNode prev = head;
@@ -30,6 +30,7 @@ public class RemoveDuplicatesFromSortedList {
             }
             cur = prev.next;
         }
+        return head;
     }
 
 }
