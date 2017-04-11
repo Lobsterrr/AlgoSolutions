@@ -20,6 +20,22 @@ public class RemoveDuplicatesFromSortedList {
         if (head == null) {
             return head;
         }
+        for (ListNode prev = head, cur = prev.next; 
+                cur != null; cur = prev.next) {
+            if (cur.val == prev.val) {
+                prev.next = cur.next;
+            } else {
+                prev = prev.next;
+            }
+        }
+        return head;
+    }
+    
+
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null) {
+            return head;
+        }
         ListNode prev = head;
         ListNode cur = prev.next;
         while (cur != null) {
