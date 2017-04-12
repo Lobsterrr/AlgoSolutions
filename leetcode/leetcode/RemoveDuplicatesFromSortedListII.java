@@ -29,6 +29,7 @@ public class RemoveDuplicatesFromSortedListII {
             if (cur.next != next) {
                 prev.next = next;
             }
+
             prev = prev.next;
             if (prev != null) {
                 cur = prev.next;
