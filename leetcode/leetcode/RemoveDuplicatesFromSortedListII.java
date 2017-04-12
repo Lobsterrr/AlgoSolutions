@@ -17,7 +17,10 @@ Given 1->1->1->2->3, return 2->3.
 public class RemoveDuplicatesFromSortedListII {
 
     public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
 
+        return dummy.next;
     }
 
 }
