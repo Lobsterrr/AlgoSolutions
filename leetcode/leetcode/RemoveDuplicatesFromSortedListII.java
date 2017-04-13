@@ -28,13 +28,6 @@ public class RemoveDuplicatesFromSortedListII {
             }
             prev.next = cursor;
 
-            ListNode next = cur;
-            while (next != null && cur.val == next.val) {
-                next = next.next;
-            }
-            if (cur.next != next) {
-                prev.next = next;
-            }
 
             prev = prev.next;
             if (prev != null) {
