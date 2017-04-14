@@ -20,7 +20,18 @@ public class RemoveDuplicatesFromSortedListII {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode prev = dummy;
+        while (prev.next != null) {
+            ListNode tmp = prev.next;
+            ListNode cur = tmp;
+            while (cur != null && cur.val == tmp.val) {
+                cur = cur.next;
+            }
+            prev.next = cur;
+        }
+
+
         ListNode cur = prev.next;
+
         while (cur != null) {
             ListNode cursor = cur;
             while (cursor != null && cursor.val == cur.val) {
