@@ -25,10 +25,10 @@ public class RemoveDuplicatesFromSortedListII {
             while (cur != null && cur.val == prev.next.val) {
                 cur = cur.next;
             }
-            if (prev.next.next != cur) {
-                prev.next = cur;
-            } else {
+            if (cur == prev.next.next) {
                 prev = prev.next;
+            } else {
+                prev.next = cur;
             }
         }
         return dummy.next;
