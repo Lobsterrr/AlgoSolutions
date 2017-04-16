@@ -9,7 +9,8 @@ Note: Given n will be a positive integer.
 public class ClimbingStairs {
 
     public int climbStairs(int n) {
-
+        int result = 0;
+        return result;
     }
 
 }
