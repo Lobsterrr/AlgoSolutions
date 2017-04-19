@@ -18,18 +18,13 @@ public class ClimbingStairs {
     }
 
     public int climbStairs(int n) {
-        if (n <= 2) {
-            return n;
+        int result = 1;
+        for (int i = 1, j = 1, k = 1; i <= n; ++i) {
+            result = j + k;
+            j = k;
+            k = result;
         }
-        int prev = 1;
-        int cur = 2;
-        for (int i = 3; i <= n; ++i) {
-            cur ^= prev;
-            prev ^= cur;
-            cur ^= prev;
-            cur += prev;
-        }
-        return cur;
+        return result;
     }
 
 }
