@@ -19,7 +19,7 @@ public class ClimbingStairs {
 
     public int climbStairs(int n) {
         int result = 1;
-        for (int i = 1, j = 1, k = 1; i <= n; ++i) {
+        for (int i = 1, j = 0, k = 1; i <= n; ++i) {
             result = j + k;
             j = k;
             k = result;
