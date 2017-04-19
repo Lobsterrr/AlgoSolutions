@@ -10,10 +10,10 @@ public class ClimbingStairs {
 
     public int climbStairs(int n) {
         int result = 1;
-        for (int i = 1, j = 0, k = 1; i <= n; ++i) {
-            result = j + k;
-            j = k;
-            k = result;
+        for (int i = 1, j = 0; i <= n; ++i) {
+            int tmp = result;
+            result += j;
+            j = tmp;
         }
         return result;
     }
