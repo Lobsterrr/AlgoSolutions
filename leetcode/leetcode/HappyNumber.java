@@ -17,7 +17,16 @@ Example: 19 is a happy number
 public class HappyNumber {
 
     public boolean isHappy(int n) {
+        Set<Integer> set = new HashSet<Integer>();
 
+
+    }
+
+    private int getDigitSquareSum(int n) {
+        while (n > 0) {
+
+        }
+        return n;
     }
 
 }
