@@ -18,11 +18,11 @@ public class HappyNumber {
 
     public boolean isHappy(int n) {
         Set<Integer> set = new HashSet<Integer>();
-        while (n != 1 && !set.contains(n)) {
+        while (!set.contains(n)) {
             set.add(n);
             n = digitSquareSum(n);
         }
-        return n == 1;
+        return set.contains(1);
     }
 
     private int digitSquareSum(int n) {
