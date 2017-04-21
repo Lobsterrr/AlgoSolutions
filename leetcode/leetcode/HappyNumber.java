@@ -18,16 +18,17 @@ public class HappyNumber {
 
     public boolean isHappy(int n) {
         Set<Integer> set = new HashSet<Integer>();
-
-
+        while (n != 1 && !set.contains(n)) {
+            set.add(n);
+            n = digitSquareSum(n);
+        }
+        return n == 1;
     }
 
-    private int getDigitSquareSum(int n) {
+    private int digitSquareSum(int n) {
         int sum = 0;
-        while (n > 0) {
-            int last = n % 10;
-            sum += last * last;
-            n /= 10;
+        for (; n > 0; n /= 10) {
+            sum += (n % 10) * (n % 10);
         }
         return sum;
     }
