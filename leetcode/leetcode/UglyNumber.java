@@ -7,6 +7,8 @@ Note that 1 is typically treated as an ugly number.
  */
 public class UglyNumber {
 
+    public boolean isUgly(int num) {
 
+    }
 
 }
