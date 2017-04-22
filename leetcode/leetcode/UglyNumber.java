@@ -10,6 +10,9 @@ Note that 1 is typically treated as an ugly number.
 public class UglyNumber {
 
     public boolean isUgly(int num) {
+        if (n == 0) {
+            return false;
+        }
         while (num % 2 == 0) {
             num /= 2;
         }
