@@ -10,7 +10,9 @@ Note that 1 is typically treated as an ugly number, and n does not exceed 1690.
 public class UglyNumberII {
 
     public int nthUglyNumber(int n) {
-
+        int i2 = 1;
+        int i3 = 1;
+        int i5 = 1;
     }
 
 }
