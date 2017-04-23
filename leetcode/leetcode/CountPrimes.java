@@ -7,7 +7,7 @@ public class CountPrimes {
 
     public int countPrimes(int n) {
         if (n == 0) {
-            return false;
+            return 0;
         }
         boolean[] isPrime = new boolean[n + 1];
         Arrays.fill(isPrime, true);
