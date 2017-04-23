@@ -6,15 +6,15 @@ Count the number of prime numbers less than a non-negative number, n.
 public class CountPrimes {
 
     public int countPrimes(int n) {
-        if (n == 0) {
+        if (n <= 1) {
             return 0;
         }
-        boolean[] isPrime = new boolean[n + 1];
+        boolean[] isPrime = new boolean[n];
         Arrays.fill(isPrime, true);
         isPrime[0] = isPrime[1] = false;
-        for (int i = 1; i * i <= n; ++i) {
+        for (int i = 1; i * i < n; ++i) {
             if (isPrime[i]) {
-                for (int j = i; i * j <= n; ++j) {
+                for (int j = i; i * j < n; ++j) {
                     isPrime[i * j] = false;
                 }
             }
