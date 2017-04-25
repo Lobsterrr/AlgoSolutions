@@ -34,7 +34,9 @@ public class UglyNumberII {
     }
 
     public int nthUglyNumber(int n) {
+        int[] result = new int[n];
 
+        return result[n - 1];
     }
 
 }
