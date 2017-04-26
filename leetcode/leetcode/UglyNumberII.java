@@ -12,10 +12,7 @@ public class UglyNumberII {
     public int nthUglyNumber(int n) {
         int[] result = new int[n];
         result[0] = 1;
-        int i2 = 0;
-        int i3 = 0;
-        int i5 = 0;
-        for (int i = 1; i < n; ++i) {
+        for (int i = 1, i2 = 0, i3 = 0, i5 = 0; i < n; ++i) {
             int next2 = result[i2] * 2;
             int next3 = result[i3] * 3;
             int next5 = result[i5] * 5;
