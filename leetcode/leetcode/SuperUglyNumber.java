@@ -15,7 +15,12 @@ Note:
 public class SuperUglyNumber {
 
     public int nthSuperUglyNumber(int n, int[] primes) {
-        
+        int[] index = new int[primes.length];
+        int[] result = new int[n];
+        result[0] = 1;
+        for (int i = 1; i < n; ++i) {
+
+        }
     }
 
 }
