@@ -21,6 +21,7 @@ public class SuperUglyNumber {
         for (int i = 1; i < n; ++i) {
 
         }
+        return result[n - 1];
     }
 
 }
