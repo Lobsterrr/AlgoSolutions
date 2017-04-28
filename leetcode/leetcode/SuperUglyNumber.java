@@ -19,7 +19,16 @@ public class SuperUglyNumber {
         int[] result = new int[n];
         result[0] = 1;
         for (int i = 1; i < n; ++i) {
-
+            int min = Integer.MAX_VALUE;
+            for (int idx : index) {
+                min = Math.min(min, result[idx] * primes[idx]);
+            }
+            result[i] = min;
+            for (int idx : index) {
+                if (min == result[idx] * primes[idx]) {
+                    index[idx]++;
+                }
+            }
         }
         return result[n - 1];
     }
