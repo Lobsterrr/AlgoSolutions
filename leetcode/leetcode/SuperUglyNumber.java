@@ -20,13 +20,13 @@ public class SuperUglyNumber {
         result[0] = 1;
         for (int i = 1; i < n; ++i) {
             int min = Integer.MAX_VALUE;
-            for (int idx : index) {
-                min = Math.min(min, result[idx] * primes[idx]);
+            for (int j = 0; j < primes.length; ++j) {
+                min = Math.min(min, result[index[j]] * primes[j]);
             }
             result[i] = min;
-            for (int idx : index) {
-                if (min == result[idx] * primes[idx]) {
-                    index[idx]++;
+            for (int j = 0; j < primes.length; ++j) {
+                if (min == result[index[j]] * primes[j]) {
+                    index[j]++;
                 }
             }
         }
