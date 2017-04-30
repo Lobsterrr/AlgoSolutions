@@ -18,7 +18,9 @@ Output:
 public class FindAllNumbersDisappearedInAnArray {
 
     public List<Integer> findDisappearedNumbers(int[] nums) {
-        
+        List<Integer> result = new ArrayList<Integer>();
+
+        return result;
     }
 
 }
