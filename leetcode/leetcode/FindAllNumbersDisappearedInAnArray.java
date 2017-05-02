@@ -33,7 +33,7 @@ public class FindAllNumbersDisappearedInAnArray {
         }
         for (int i = 0; i < nums.length; ++i) {
             if (nums[i] > 0) {
-                result.add(nums[i]);
+                result.add(i + 1);
             }
         }
         return result;
