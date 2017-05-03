@@ -15,6 +15,8 @@ Output:
  */
 public class FindAllDuplicatesInAnArray {
 
+    public List<Integer> findDuplicates(int[] nums) {
 
+    }
 
 }
