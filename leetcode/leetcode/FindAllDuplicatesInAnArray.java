@@ -19,7 +19,6 @@ public class FindAllDuplicatesInAnArray {
         List<Integer> result = new ArrayList<Integer>();
 
 
-
         return result;
     }
 
