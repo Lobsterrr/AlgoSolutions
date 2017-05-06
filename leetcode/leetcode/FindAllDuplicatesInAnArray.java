@@ -58,7 +58,7 @@ public class FindAllDuplicatesInAnArray {
         List<Integer> result = new ArrayList<Integer>();
         int n = nums.length;
         for (int i = 0; i < n; ++i) {
-            nums[nums[i] - 1] += n;
+            nums[(nums[i] - 1) % n] += n;
         }
         for (int i = 0; i < n; ++i) {
             if (nums[i] > 2 * n) {
