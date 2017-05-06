@@ -21,12 +21,32 @@ public class FindAllDuplicatesInAnArray {
             int index = Math.abs(nums[i]) - 1;
             if (nums[index] < 0) {
                 result.add(index + 1);
-            }
-            if (nums[index] > 0) {
+            } else if (nums[index] > 0) {
                 nums[index] *= -1;
             }
         }
         return result;
+    }
+
+    public List<Integer> findDuplicates(int[] nums) {
+        List<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+            if (nums[i] != i + 1) {
+                swap(nums, i, nums[i]);
+            }
+        }
+        for (int i = 0; i < nums.length; ++i) {
+            if (nums[i] != i + 1) {
+                result.add(nums[i]);
+            }
+        }
+        return result;
+    }
+
+    public void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
     }
 
 }
