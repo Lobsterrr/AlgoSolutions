@@ -16,4 +16,8 @@ minimize the number of calls to the API.
       boolean isBadVersion(int version); */
 public class FirstBadVersion {
 
+    public int firstBadVersion(int n) {
+
+    }
+
 }
