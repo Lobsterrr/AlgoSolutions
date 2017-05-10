@@ -12,6 +12,7 @@ Here are few examples.
  */
 public class SearchInsertPosition {
 
+    // O(lg(n)) time, O(1) space.
     public int searchInsert(int[] nums, int target) {
         int low = 0;
         int high = nums.length - 1;
