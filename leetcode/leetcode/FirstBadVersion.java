@@ -20,4 +20,8 @@ public class FirstBadVersion {
 
     }
 
+    public int binarySearch(int low, int high) {
+
+    }
+
 }
