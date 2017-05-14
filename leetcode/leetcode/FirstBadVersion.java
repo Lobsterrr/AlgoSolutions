@@ -18,6 +18,10 @@ public class FirstBadVersion {
 
     public int firstBadVersion(int n) {
 
+
+          
+          
+          
     }
 
     public int binarySearch(int low, int high) {
