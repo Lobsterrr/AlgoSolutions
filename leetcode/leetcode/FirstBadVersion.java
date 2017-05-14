@@ -17,19 +17,17 @@ minimize the number of calls to the API.
 public class FirstBadVersion {
 
     public int firstBadVersion(int n) {
-        return binarySearch(1, n);
-    }
-
-    public int binarySearch(int low, int high) {
-        while (low < high) {
+        int low = 1;
+        int high = n;
+        while (low <= high) {
             int mid = low + ((high - low) >> 1);
             if (isBadVersion(mid)) {
-                high = mid;
+                high = mid - 1;
             } else {
-                low = low + 1;
+                low = mid + 1;
             }
         }
-        return isBadVersion(low);
+        return low;
     }
 
 }
