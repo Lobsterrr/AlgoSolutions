@@ -21,10 +21,7 @@ public class FirstBadVersion {
     }
 
     public int binarySearch(int low, int high) {
-        while (low <= high) {
-            if (low == high) {
-                return isBadVersion(low);
-            }
+        while (low < high) {
             int mid = low + ((high - low) >> 1);
             if (isBadVersion(mid)) {
                 high = mid;
