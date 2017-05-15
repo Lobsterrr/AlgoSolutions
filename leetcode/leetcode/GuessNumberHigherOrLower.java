@@ -31,7 +31,7 @@ public class GuessNumberHigherOrLower {
             int guessResult = guess(mid);
             if (guessResult == 0) {
                 return mid;
-            } else if (guessResult == -1) {
+            } else if (guessResult == 1) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
