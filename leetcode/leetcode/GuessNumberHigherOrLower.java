@@ -24,7 +24,20 @@ Return 6.
 public class GuessNumberHigherOrLower {
 
     public int guessNumber(int n) {
-
+        int low = 1;
+        int high = n;
+        while (low <= high) {
+            int mid = low + ((high - low) >> 2);
+            int guessResult = guess(mid);
+            if (guessResult == 0) {
+                return mid;
+            } else if (guessResult == -1) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return low;
     }
 
 }
