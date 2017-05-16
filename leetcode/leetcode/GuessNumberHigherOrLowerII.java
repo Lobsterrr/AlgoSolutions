@@ -30,6 +30,7 @@ public class GuessNumberHigherOrLowerII {
         int low = 1;
         int high = n;
         while (low < high) {
+            int mid = low + ((high - low) >> 1);
 
         }
     }
