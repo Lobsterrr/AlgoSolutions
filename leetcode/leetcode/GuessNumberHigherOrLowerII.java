@@ -26,7 +26,12 @@ guarantee a win.
 public class GuessNumberHigherOrLowerII {
 
     public int getMoneyAmount(int n) {
+        int sum = 0;
+        int low = 1;
+        int high = n;
+        while (low < high) {
 
+        }
     }
 
 }
