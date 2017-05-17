@@ -15,8 +15,7 @@ The array may contain duplicates.
 public class SearchInRotatedSortedArrayII {
 
     public boolean search(int[] nums, int target) {
-                
-            
+
     }
 
 }
