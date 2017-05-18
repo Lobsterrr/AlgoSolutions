@@ -15,7 +15,14 @@ The array may contain duplicates.
 public class SearchInRotatedSortedArrayII {
 
     public boolean search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        int low = 0;
+        int high = nums.length - 1;
+        while (low <= high) {
 
+        }
     }
 
 }
