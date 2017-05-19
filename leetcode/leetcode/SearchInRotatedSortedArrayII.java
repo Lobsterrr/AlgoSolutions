@@ -24,6 +24,8 @@ public class SearchInRotatedSortedArrayII {
             int mid = low + ((high - low) >> 1);
             if (nums[mid] == target) {
                 return true;
+            } else if (nums[mid] < target) {
+
             }
         }
         return false;
