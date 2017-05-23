@@ -21,6 +21,9 @@ public class SearchInRotatedSortedArrayII {
         int low = 0;
         int high = nums.length - 1;
         while (low <= high) {
+            while (low < high && nums[high - 1] == nums[high]) {
+                high--;
+            }
             int mid = low + ((high - low) >> 1);
             if (nums[mid] == target) {
                 return true;
