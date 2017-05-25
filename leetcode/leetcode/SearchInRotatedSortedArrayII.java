@@ -28,24 +28,16 @@ public class SearchInRotatedSortedArrayII {
             if (nums[mid] == target) {
                 return true;
             } else if (nums[mid] < target) {
-                if (nums[mid] < nums[high]) {
-                    if (nums[high] < target) {
-                        high = mid - 1;
-                    } else {
-                        low = mid + 1;
-                    }
+                if (nums[mid] < nums[high] && nums[high] < target) {
+                    high = mid - 1;
                 } else {
                     low = mid + 1;
                 }
             } else {
-                if (nums[mid] < nums[high]) {
-                    high = mid - 1;
+                if (nums[mid] >= nums[high] && nums[high] >= target) {
+                    low = mid + 1;
                 } else {
-                    if (nums[high] < target) {
-                        high = mid - 1;
-                    } else {
-                        low = mid + 1;
-                    }
+                    high = mid - 1;
                 }
             }
         }
