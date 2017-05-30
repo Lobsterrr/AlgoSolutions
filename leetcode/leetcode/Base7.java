@@ -12,7 +12,12 @@ Note: The input will be in range of [-1e7, 1e7].
 public class Base7 {
 
     public String convertToBase7(int num) {
-
+        String result = "";
+        while (num != 0) {
+            result = (num % 7) + result;
+            num /= 7;
+        }
+        return result;
     }
 
 }
