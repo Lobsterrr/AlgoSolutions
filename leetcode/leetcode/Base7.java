@@ -13,10 +13,10 @@ public class Base7 {
 
     public String convertToBase7(int num) {
         String result = "";
-        while (num != 0) {
+        do {
             result = (num % 7) + result;
             num /= 7;
-        }
+        } while (num != 0);
         return result;
     }
 
