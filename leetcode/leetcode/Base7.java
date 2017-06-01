@@ -12,6 +12,20 @@ Note: The input will be in range of [-1e7, 1e7].
 public class Base7 {
 
     public String convertToBase7(int num) {
+        StringBuilder sb = new StringBuilder();
+        boolean isNegative = num < 0 ? true : false;
+        num = Math.abs(num);
+        do {
+            sb.append(num % 7);
+            num /= 7;
+        } while (num != 0);
+        if (isNegative) {
+            sb.append('-');
+        }
+        return sb.reverse().toString();
+    }
+
+    public String convertToBase7(int num) {
         String result = "";
         boolean isNegative = num < 0 ? true : false;
         num = Math.abs(num);
