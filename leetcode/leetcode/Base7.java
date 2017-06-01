@@ -26,17 +26,13 @@ public class Base7 {
     }
 
     public String convertToBase7(int num) {
-        String result = "";
-        boolean isNegative = num < 0 ? true : false;
-        num = Math.abs(num);
-        do {
-            result = (num % 7) + result;
-            num /= 7;
-        } while (num != 0);
-        if (isNegative) {
-            result = "-" + result;
+        if (num < 0) {
+            return convertToBase7(-num);
+        } else if (0 <= num && num < 7) {
+            return num + "";
+        } else {
+            return convertToBase7(num / 7) + num % 7;
         }
-        return result;
     }
 
 }
