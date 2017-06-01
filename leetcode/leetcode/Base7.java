@@ -13,10 +13,15 @@ public class Base7 {
 
     public String convertToBase7(int num) {
         String result = "";
+        boolean isNegative = num < 0 ? true : false;
+        num = Math.abs(num);
         do {
             result = (num % 7) + result;
             num /= 7;
         } while (num != 0);
+        if (isNegative) {
+            result = "-" + result;
+        }
         return result;
     }
 
