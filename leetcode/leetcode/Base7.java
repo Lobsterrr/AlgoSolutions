@@ -27,7 +27,7 @@ public class Base7 {
 
     public String convertToBase7(int num) {
         if (num < 0) {
-            return convertToBase7(-num);
+            return "-" + convertToBase7(-num);
         } else if (0 <= num && num < 7) {
             return num + "";
         } else {
