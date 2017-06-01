@@ -25,6 +25,8 @@ public class Base7 {
         return sb.reverse().toString();
     }
 
+/*****************************************************************************/
+
     public String convertToBase7(int num) {
         if (num < 0) {
             return "-" + convertToBase7(-num);
