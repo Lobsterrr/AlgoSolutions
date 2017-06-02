@@ -17,4 +17,8 @@ You can assume that you can always reach the last index.
  */
 public class JumpGameII {
 
+    public int jump(int[] nums) {
+
+    }
+
 }
