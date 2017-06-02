@@ -18,7 +18,10 @@ You can assume that you can always reach the last index.
 public class JumpGameII {
 
     public int jump(int[] nums) {
+        int[] dp = new int[nums.length];
+        for (int i = 0; i < nums.length; ++i) {
 
+        }
     }
 
 }
