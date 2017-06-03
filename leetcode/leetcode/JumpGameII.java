@@ -19,7 +19,7 @@ public class JumpGameII {
 
     public int jump(int[] nums) {
         int result = 0;
-        for (int i = 0, end = 0, maxIndex = 0; i < nums.length; ++i) {
+        for (int i = 0, end = 0, maxIndex = 0; i < nums.length - 1; ++i) {
             maxIndex = Math.max(maxIndex, i + nums[i]);
             if (i >= end) {
                 result++;
