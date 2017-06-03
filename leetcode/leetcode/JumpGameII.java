@@ -18,6 +18,18 @@ You can assume that you can always reach the last index.
 public class JumpGameII {
 
     public int jump(int[] nums) {
+        int result = 0;
+        for (int i = 0, end = 0, maxIndex = 0; i < nums.length; ++i) {
+            maxIndex = Math.max(maxIndex, i + nums[i]);
+            if (i >= end) {
+                result++;
+                end = maxIndex;
+            }
+        }
+        return result;
+    }
+
+    public int jump(int[] nums) {
         int[] dp = new int[nums.length];
         Arrays.fill(dp, Integer.MAX_VALUE);
         dp[0] = 0;
