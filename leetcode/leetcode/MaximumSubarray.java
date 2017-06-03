@@ -13,4 +13,16 @@ the divide and conquer approach, which is more subtle.
  */
 public class MaximumSubarray {
 
+    public int maxSubArray(int[] nums) {
+        int maxSum = Integer.MIN_VALUE;
+        for (int i = 0, curSum = 0; i < nums.length; ++i) {
+            curSum += nums[i];
+            maxSum = Math.max(maxSum, curSum);
+            if (curSum < 0) {
+                curSum = 0;
+            }
+        }
+        return maxSum;
+    }
+
 }
