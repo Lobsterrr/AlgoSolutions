@@ -18,6 +18,7 @@ public class HouseRobber {
             prevSum = Math.max(prevSum, result);
             result = Math.max(result, tmp + nums[i]);
         }
+        return result;
     }
 
     public int rob(int[] nums) {
