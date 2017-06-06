@@ -12,6 +12,15 @@ alerting the police.
 public class HouseRobber {
 
     public int rob(int[] nums) {
+        int result = 0;
+        for (int i = 0, prevSum = 0; i < nums.length; ++i) {
+            int tmp = prevSum;
+            prevSum = Math.max(prevSum, result);
+            result = Math.max(result, tmp + nums[i]);
+        }
+    }
+
+    public int rob(int[] nums) {
         int[] dp = new int[nums.length];
         for (int i = 0; i < nums.length; ++i) {
             if (i == 0 || i == 1) {
