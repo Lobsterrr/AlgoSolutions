@@ -12,7 +12,15 @@ alerting the police.
 public class HouseRobber {
 
     public int rob(int[] nums) {
-        
+        int[] dp = new int[nums.length];
+        for (int i = 0; i < nums.length; ++i) {
+            if (i == 0 || i == 1) {
+                dp[i] = nums[i];
+            } else {
+                dp[i] = dp[i - 2] + nums[i];
+            }
+        }
+        return dp[nums.length - 1];
     }
 
 }
