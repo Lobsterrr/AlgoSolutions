@@ -14,7 +14,17 @@ alerting the police.
 public class HouseRobberII {
 
     public int rob(int[] nums) {
-        
+        return Math.max(rob(nums, 0), rob(nums, 1));
+    }
+
+    public int rob(int[] nums, int startIndex) {
+        int result = 0;
+        for (int i = startIndex, preSum = 0; i < nums.length; ++i) {
+            int tmp = preSum;
+            preSum = Math.max(preSum, result);
+            result = Math.max(result, tmp + nums[i]);
+        }
+        return result;
     }
 
 }
