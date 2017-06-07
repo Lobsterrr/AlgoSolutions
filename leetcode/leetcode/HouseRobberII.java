@@ -14,12 +14,13 @@ alerting the police.
 public class HouseRobberII {
 
     public int rob(int[] nums) {
-        return Math.max(rob(nums, 0), rob(nums, 1));
+        return Math.max(rob(nums, 0, nums.length - 2), 
+                rob(nums, 1, nums.length - 1));
     }
 
-    public int rob(int[] nums, int startIndex) {
+    public int rob(int[] nums, int start, int end) {
         int result = 0;
-        for (int i = startIndex, preSum = 0; i < nums.length; ++i) {
+        for (int i = start, preSum = 0; i <= end; ++i) {
             int tmp = preSum;
             preSum = Math.max(preSum, result);
             result = Math.max(result, tmp + nums[i]);
