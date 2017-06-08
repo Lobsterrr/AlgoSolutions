@@ -18,6 +18,15 @@ Example 2:
  1   3   1
 Maximum amount of money the thief can rob = 4 + 5 = 9.
  */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
 public class HouseRobberIII {
 
 }
