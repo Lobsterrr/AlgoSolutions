@@ -29,4 +29,8 @@ Maximum amount of money the thief can rob = 4 + 5 = 9.
  */
 public class HouseRobberIII {
 
+    public int rob(TreeNode root) {
+        
+    }
+
 }
