@@ -33,4 +33,8 @@ public class HouseRobberIII {
         
     }
 
+    public int rob(TreeNode root, boolean robRoot) {
+
+    }
+
 }
