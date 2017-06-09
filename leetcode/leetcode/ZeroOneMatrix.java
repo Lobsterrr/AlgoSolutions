@@ -31,7 +31,7 @@ The cells are adjacent in only four directions: up, down, left and right.
 public class ZeroOneMatrix {
 
     public int[][] updateMatrix(int[][] matrix) {
-        
+
     }
 
 }
