@@ -26,9 +26,9 @@ public class HouseRobberII {
             return nums[0];
         }
         int result = 0;
-        for (int i = start, preSum = 0; i <= end; ++i) {
-            int tmp = preSum;
-            preSum = Math.max(preSum, result);
+        for (int i = start, prevSum = 0; i <= end; ++i) {
+            int tmp = prevSum;
+            prevSum = Math.max(prevSum, result);
             result = Math.max(result, tmp + nums[i]);
         }
         return result;
