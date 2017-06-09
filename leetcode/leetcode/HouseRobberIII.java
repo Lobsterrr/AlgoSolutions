@@ -30,11 +30,20 @@ Maximum amount of money the thief can rob = 4 + 5 = 9.
 public class HouseRobberIII {
 
     public int rob(TreeNode root) {
-        
+        return Math.max(rob(root, true), rob(root, false));
     }
 
     public int rob(TreeNode root, boolean robRoot) {
-
+        if (root == null) {
+            return 0;
+        }
+        int sum = 0;
+        if (robRoot) {
+            sum += root.val + rob(root.left, false) + rob(root.right, false);
+        } else {
+            sum += rob(root.left, true) + rob(root.right, true);
+        }
+        return sum;
     }
 
 }
