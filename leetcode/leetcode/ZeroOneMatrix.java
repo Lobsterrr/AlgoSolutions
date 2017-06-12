@@ -39,4 +39,14 @@ public class ZeroOneMatrix {
         return result;
     }
 
+    public int calculate(int[][] matrix, int i, int j) {
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+
+    }
+
+    public int getOne(int[][] matrix, int i, int j) {
+
+    }
+
 }
