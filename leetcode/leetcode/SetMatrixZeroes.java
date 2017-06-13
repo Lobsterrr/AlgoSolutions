@@ -13,7 +13,14 @@ Could you devise a constant space solution?
 public class SetMatrixZeroes {
 
     public void setZeroes(int[][] matrix) {
-        
+        if (matrix == null || matrix.length == 0) {
+            return;
+        }
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+        for (int i = 0; i < xLen; ++i) {
+
+        }
     }
 
 }
