@@ -12,4 +12,8 @@ Could you devise a constant space solution?
  */
 public class SetMatrixZeroes {
 
+    public void setZeroes(int[][] matrix) {
+        
+    }
+
 }
