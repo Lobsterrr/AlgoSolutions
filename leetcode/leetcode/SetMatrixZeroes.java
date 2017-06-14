@@ -74,7 +74,7 @@ public class SetMatrixZeroes {
         for (int i = 0; i < xLen; ++i) {
             for (int j = 0; j < yLen; ++j) {
                 if (matrix[i][j] == 0) {
-                    queue.offer(i * xLen + j);
+                    queue.offer(i * yLen + j);
                 }
             }
         }
