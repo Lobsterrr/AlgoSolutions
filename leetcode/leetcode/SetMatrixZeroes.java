@@ -79,7 +79,7 @@ public class SetMatrixZeroes {
             }
         }
         while (!queue.isEmpty()) {
-            int index = queue.pop();
+            int index = queue.poll();
             int rowIndex = index / yLen;
             int colIndex = index % yLen;
             for (int i = 0; i < yLen; ++i) {
