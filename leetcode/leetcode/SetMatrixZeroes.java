@@ -70,6 +70,33 @@ public class SetMatrixZeroes {
         }
         int xLen = matrix.length;
         int yLen = matrix[0].length;
+        Queue<Integer> queue = new LinkedList<Integer>();
+        for (int i = 0; i < xLen; ++i) {
+            for (int j = 0; j < yLen; ++j) {
+                if (matrix[i][j] == 0) {
+                    queue.offer(i * xLen + j);
+                }
+            }
+        }
+        while (!queue.isEmpty()) {
+            int index = queue.pop();
+            int rowIndex = index / yLen;
+            int colIndex = index % yLen;
+            for (int i = 0; i < yLen; ++i) {
+                matrix[rowIndex][i] = 0;
+            }
+            for (int i = 0; i < xLen; ++i) {
+                matrix[i][colIndex] = 0;
+            }
+        }
+    }
+
+    public void setZeroes(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) {
+            return;
+        }
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
         int[] rows = new int[xLen];
         int[] cols = new int[yLen];
         for (int i = 0; i < xLen; ++i) {
