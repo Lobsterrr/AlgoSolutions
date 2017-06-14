@@ -18,8 +18,29 @@ public class SetMatrixZeroes {
         }
         int xLen = matrix.length;
         int yLen = matrix[0].length;
+        int[] rows = new int[xLen];
+        int[] cols = new int[yLen];
         for (int i = 0; i < xLen; ++i) {
-
+            for (int j = 0; j < yLen; ++j) {
+                if (matrix[i][j] == 0) {
+                    rows[i] = 1;
+                    cols[j] = 1;
+                }
+            }
+        }
+        for (int i = 0; i < rows.length; ++i) {
+            if (rows[i] == 1) {
+                for (int j = 0; j < yLen; ++j) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        for (int i = 0; i < cols.length; ++i) {
+            if (cols[i] == 1) {
+                for (int j = 0; j < xLen; ++j) {
+                    matrix[j][i] = 0;
+                }
+            }
         }
     }
 
