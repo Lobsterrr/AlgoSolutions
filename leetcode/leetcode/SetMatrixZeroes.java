@@ -18,6 +18,58 @@ public class SetMatrixZeroes {
         }
         int xLen = matrix.length;
         int yLen = matrix[0].length;
+        boolean isRowZeroes = false;
+        boolean isColzeroes = false;
+        for (int i = 0; i < yLen && !isRowZeroes; ++i) {
+            if (matrix[0][i] == 0) {
+                isRowZeroes = true;
+            }
+        }
+        for (int i = 0; i < xLen && !isColzeroes; ++i) {
+            if (matrix[i][0] == 0) {
+                isColzeroes = true;
+            }
+        }
+        for (int i = 1; i < xLen; ++i) {
+            for (int j = 1; j < yLen; ++j) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
+                }
+            }
+        }
+        for (int i = 1; i < xLen; ++i) {
+            if (matrix[i][0] == 0) {
+                for (int j = 1; j < yLen; ++j) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        for (int i = 1; i < yLen; ++i) {
+            if (matrix[0][i] == 0) {
+                for (int j = 0; j < xLen; ++j) {
+                    matrix[j][i] = 0;
+                }
+            }
+        }
+        if (isRowZeroes) {
+            for (int i = 0; i < yLen; ++i) {
+                matrix[0][i] = 0;
+            }
+        }
+        if (isColzeroes) {
+            for (int i = 0; i < xLen; ++i) {
+                matrix[i][0] = 0;
+            }
+        }
+    }
+
+    public void setZeroes(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) {
+            return;
+        }
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
         int[] rows = new int[xLen];
         int[] cols = new int[yLen];
         for (int i = 0; i < xLen; ++i) {
