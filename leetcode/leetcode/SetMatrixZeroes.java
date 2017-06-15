@@ -16,6 +16,36 @@ public class SetMatrixZeroes {
         if (matrix == null || matrix.length == 0) {
             return;
         }
+        int rowLen = matrix.length;
+        int colLen = matrix.length;
+        int col0 = 1;
+        for (int i = 0; i < rowLen; ++i) {
+            if (matrix[i][0] == 0) {
+                col0 = 0;
+            }
+            for (int j = 1; j < colLen; ++j) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
+                }
+            }
+        }
+        for (int i = rowLen - 1; i >= 0; --i) {
+            for (int j = colLen - 1; j >= 1; --j) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                    matrix[i][j] = 0;
+                }
+            }
+            if (col0 == 0) {
+                matrix[i][0] = 0;
+            }
+        }
+    }
+
+    public void setZeroes(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) {
+            return;
+        }
         int xLen = matrix.length;
         int yLen = matrix[0].length;
         boolean isRowZeroes = false;
