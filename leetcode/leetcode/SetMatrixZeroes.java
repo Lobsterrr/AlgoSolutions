@@ -17,7 +17,7 @@ public class SetMatrixZeroes {
             return;
         }
         int rowLen = matrix.length;
-        int colLen = matrix.length;
+        int colLen = matrix[0].length;
         int col0 = 1;
         for (int i = 0; i < rowLen; ++i) {
             if (matrix[i][0] == 0) {
