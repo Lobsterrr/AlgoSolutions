@@ -31,6 +31,13 @@ public class SymmetricTree {
         if (root == null || root.left == null || root.right == null) {
             return true;
         }
+        if (root.left == null && root.right != null || root.left != null && root.right == null) {
+            return false;
+        }
+        if (root.left != null || root.right != null) {
+            return root.left.val == root.right.val && isSymmetric(root.left) && isSymmetric(root.right);
+        }
+        return false;
     }
 
 }
