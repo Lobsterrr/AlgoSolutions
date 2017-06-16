@@ -31,7 +31,26 @@ public class SymmetricTree {
         if (root == null) {
             return true;
         }
-        return isSymmetric(root.left, root.right);
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root.left);
+        queue.offer(root.right);
+        while (!queue.isEmpty()) {
+            TreeNode leftChild = queue.poll();
+            TreeNode rightChild = queue.poll();
+            if (leftChild == null && rightChild == null) {
+                continue;
+            }
+            if (leftChild == null && rightChild != null 
+                    || leftChild != null && rightChild == null 
+                    || leftChild.val != rightChild.val) {
+                return false;
+            }
+            queue.offer(leftChild.left);
+            queue.offer(rightChild.right);
+            queue.offer(leftChild.right);
+            queue.offer(rightChild.left);
+        }
+        return true;
     }
 
 /*****************************************************************************/
