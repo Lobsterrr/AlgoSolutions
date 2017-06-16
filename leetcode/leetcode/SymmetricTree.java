@@ -34,7 +34,7 @@ public class SymmetricTree {
         if (root.left == null && root.right != null || root.left != null && root.right == null) {
             return false;
         }
-        if (root.left != null || root.right != null) {
+        if (root.left != null && root.right != null) {
             return root.left.val == root.right.val && isSymmetric(root.left) && isSymmetric(root.right);
         }
         return false;
