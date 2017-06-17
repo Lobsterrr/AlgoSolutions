@@ -28,7 +28,32 @@ return its bottom-up level order traversal as:
 public class BinaryTreeLevelOrderTraversalII {
 
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return result;
+        }
+        Queue<TreeNode> current = new LinkedList<TreeNode>();
+        Queue<TreeNode> next = new LinkedList<TreeNode>();
+        queue.offer(root);
+        List<Integer> list = new ArrayList<Integer>();
+        while (!queue.isEmpty()) {
+            TreeNode node = current.poll();
+            if (node.left != null) {
+                next.offer(node.left);
+            }
+            if (node.right != null) {
+                next.offer(node.right);
+            }
+            list.add(node.val);
+            if (current.isEmpty()) {
+                result.add(list);
+                list = new ArrayList<Integer>();
+                current = next;
+                next = new LinkedList<TreeNode>();
+            }
+        }
+        Collections.reverse(result);
+        return result;
     }
 
 }
