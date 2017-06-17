@@ -71,7 +71,7 @@ public class BinaryTreeLevelOrderTraversalII {
         if (level >= result.size()) {
             result.add(new ArrayList<Integer>());
         }
-        result.add(root.val);
+        result.get(level).add(root.val);
         levelOrderBottom(root.left, level + 1, result);
         levelOrderBottom(root.right, level + 1, result);
     }
