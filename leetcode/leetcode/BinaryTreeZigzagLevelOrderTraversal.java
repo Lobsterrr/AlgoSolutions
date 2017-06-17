@@ -29,7 +29,36 @@ return its zigzag level order traversal as:
 public class BinaryTreeZigzagLevelOrderTraversal {
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return result;
+        }
+        List<Integer> list = new ArrayList<Integer>();
+        boolean isL2R = true;
+        Queue<TreeNode> curLayer = new LinkedList<TreeNode>();
+        Queue<TreeNode> nextLayer = new LinkedList<TreeNode>();
+        curLayer.offer(root);
+        while (!curLayer.isEmpty()) {
+            TreeNode node = curLayer.poll();
+            list.add(node.val);
+            if (node.left != null) {
+                nextLayer.offer(node.left);
+            }
+            if (node.right != null) {
+                nextLayer.offer(node.right);
+            }
+            if (curLayer.isEmpty()) {
+                if (!isL2R) {
+                    Collections.reverse(list);
+                }
+                isL2R = !isL2R;
+                result.add(list);
+                list = new ArrayList<Integer>();
+                curLayer = nextLayer;
+                nextLayer = new LinkedList<TreeNode>();
+            }
+        }
+        return result;
     }
 
 }
