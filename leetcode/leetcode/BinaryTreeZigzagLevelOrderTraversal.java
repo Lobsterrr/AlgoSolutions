@@ -61,4 +61,26 @@ public class BinaryTreeZigzagLevelOrderTraversal {
         return result;
     }
 
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        return result;
+    }
+
+    public void zigzagLevelOrder(TreeNode root, int level, 
+            List<List<Integer>> result) {
+        if (root == null) {
+            return;
+        }
+        if (level >= result.size()) {
+            result.add(new ArrayList<Integer>());
+        }
+        if (level % 2 == 0) {
+            result.get(level).add(root.val);
+        } else {
+            result.get(level).add(0, root.val);
+        }
+        zigzagLevelOrder(root.left, level + 1, result);
+        zigzagLevelOrder(root.right, level + 1, result);
+    }
+
 }
