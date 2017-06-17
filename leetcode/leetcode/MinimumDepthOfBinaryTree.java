@@ -25,4 +25,31 @@ public class MinimumDepthOfBinaryTree {
         return 1 + Math.min(minDepth(root.left), minDepth(root.right));
     }
 
+    public int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int result = 0;
+        Queue<TreeNode> curLayer = new LinkedList<TreeNode>();
+        Queue<TreeNode> nextLayer = new LinkedList<TreeNode>();
+        curLayer.offer(root);
+        while (!curLayer.isEmpty()) {
+            TreeNode node = curLayer.poll();
+            if (node.left == null && node.right == null) {
+                return ++result;
+            }
+            if (node.left != null) {
+                nextLayer.offer(node.left);
+            }
+            if (node.right != null) {
+                nextLayer.offer(node.right);
+            }
+            if (curLayer.isEmpty()) {
+                curLayer = next;
+                next = new LinkedList<TreeNode>();
+            }
+        }
+        return result;
+    }
+
 }
