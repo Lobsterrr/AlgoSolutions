@@ -38,13 +38,13 @@ public class BinaryTreeLevelOrderTraversalII {
         List<Integer> list = new ArrayList<Integer>();
         while (!current.isEmpty()) {
             TreeNode node = current.poll();
+            list.add(node.val);
             if (node.left != null) {
                 next.offer(node.left);
             }
             if (node.right != null) {
                 next.offer(node.right);
             }
-            list.add(node.val);
             if (current.isEmpty()) {
                 result.add(list);
                 list = new ArrayList<Integer>();
