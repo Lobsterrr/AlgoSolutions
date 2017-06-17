@@ -45,8 +45,8 @@ public class MinimumDepthOfBinaryTree {
                 nextLayer.offer(node.right);
             }
             if (curLayer.isEmpty()) {
-                curLayer = next;
-                next = new LinkedList<TreeNode>();
+                curLayer = nextLayer;
+                nextLayer = new LinkedList<TreeNode>();
             }
         }
         return result;
