@@ -34,6 +34,16 @@ public class BinaryTreeZigzagLevelOrderTraversal {
             return result;
         }
         List<Integer> list = new ArrayList<Integer>();
+
+        return result;
+    }
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return result;
+        }
+        List<Integer> list = new ArrayList<Integer>();
         boolean isL2R = true;
         Queue<TreeNode> curLayer = new LinkedList<TreeNode>();
         Queue<TreeNode> nextLayer = new LinkedList<TreeNode>();
@@ -60,6 +70,8 @@ public class BinaryTreeZigzagLevelOrderTraversal {
         }
         return result;
     }
+
+/*****************************************************************************/
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
