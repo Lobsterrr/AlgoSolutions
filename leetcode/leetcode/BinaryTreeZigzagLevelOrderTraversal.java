@@ -34,19 +34,37 @@ public class BinaryTreeZigzagLevelOrderTraversal {
         if (root == null) {
             return result;
         }
-        List<Integer> list = new ArrayList<Integer>();
         Deque<TreeNode> curLayer = new LinkedList<TreeNode>();
         Deque<TreeNode> nextLayer = new LinkedList<TreeNode>();
         curLayer.offerLast(root);
+        List<Integer> list = new ArrayList<Integer>();
         while (!curLayer.isEmpty()) {
             if (result.size() % 2 == 0) {
                 TreeNode node = curLayer.pollFirst();
+                list.add(node.val);
+                if (node.left != null) {
+                    nextLayer.offerLast(node.left);
+                }
+                if (node.right != null) {
+                    nextLayer.offerLast(node.right);
+                }
             } else {
                 TreeNode node = curLayer.pollLast();
+                list.add(node.val);
+                if (node.right != null) {
+                    nextLayer.offerFirst(node.right);
+                }
+                if (node.left != null) {
+                    nextLayer.offerFirst(node.left);
+                }
+            }
+            if (curLayer.isEmpty()) {
+                result.add(list);
+                list = new ArrayList<TreeNode>();
+                curLayer = nextLayer;
+                nextLayer = new LinkedList<TreeNode>();
             }
         }
-
-
         return result;
     }
 
