@@ -8,7 +8,18 @@ return 2 because 13 = 4 + 9.
 public class PerfectSquares {
 
     public int numSquares(int n) {
-        
+        int[] dp = new int[n + 1];
+        for (int i = 1; i <= n; ++i) {
+            if ((int) Math.pow(Math.sqrt(i), 2) == i) {
+                dp[i] = 1;
+            } else {
+                int minNum = Integer.MAX_VALUE;
+                for (int j = 1; j * j < i; ++j) {
+                    minNum = Math.min(minNum, dp[i - j * j] + 1);
+                }
+            }
+        }
+        return dp[n];
     }
 
 }
