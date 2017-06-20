@@ -28,6 +28,7 @@ return its zigzag level order traversal as:
  */
 public class BinaryTreeZigzagLevelOrderTraversal {
 
+    // without reversal operation.
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (root == null) {
@@ -66,6 +67,8 @@ public class BinaryTreeZigzagLevelOrderTraversal {
         }
         return result;
     }
+
+/*****************************************************************************/
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
