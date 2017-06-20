@@ -60,7 +60,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
             }
             if (curLayer.isEmpty()) {
                 result.add(list);
-                list = new ArrayList<TreeNode>();
+                list = new ArrayList<Integer>();
                 curLayer = nextLayer;
                 nextLayer = new LinkedList<TreeNode>();
             }
