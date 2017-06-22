@@ -8,7 +8,9 @@ return 2 because 13 = 4 + 9.
 public class PerfectSquares {
 
     public int numSquares(int n) {
-
+        while (n % 4 == 0) {
+            n /= 4;
+        }
     }
 
     public int numSquares(int n) {
