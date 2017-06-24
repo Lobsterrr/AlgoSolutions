@@ -18,8 +18,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
             return 0;
         }
         int[] map = new int[256];
-        for (int i = 0; i < s.length(); ++i) {
-
+        for (int i = 0, j = 0; i < s.length(); ++i) {
+            
         }
     }
 
