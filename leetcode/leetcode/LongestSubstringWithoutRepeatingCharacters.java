@@ -14,7 +14,13 @@ must be a substring, "pwke" is a subsequence and not a substring.
 public class LongestSubstringWithoutRepeatingCharacters {
 
     public int lengthOfLongestSubstring(String s) {
-        
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        int[] map = new int[256];
+        for (int i = 0; i < s.length(); ++i) {
+
+        }
     }
 
 }
