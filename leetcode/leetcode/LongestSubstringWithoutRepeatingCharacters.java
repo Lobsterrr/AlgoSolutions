@@ -21,7 +21,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
         int result = 0;
         for (int i = 0, j = 0; i < s.length(); ++i) {
             if (map[s.charAt(i)] != 0) {
-                j = Math.max(j, map[s.charAt(j)] + 1);
+                j = Math.max(j, map[s.charAt(i)] + 1);
             }
             map[s.charAt(i)] = i;
             result = Math.max(result, i - j + 1);
