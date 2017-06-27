@@ -18,7 +18,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
             return 0;
         }
         int result = 0;
-        int[] map = new int[256];
+        int[] map = new int[128];
         for (int i = 0, j = 1; i < s.length(); ++i) {
             if (map[s.charAt(i)] != 0) {
                 j = Math.max(j, map[s.charAt(i)] + 1);
