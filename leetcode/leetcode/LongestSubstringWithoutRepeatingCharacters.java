@@ -19,12 +19,12 @@ public class LongestSubstringWithoutRepeatingCharacters {
         }
         int result = 0;
         int[] map = new int[256];
-        for (int i = 0, j = 0; i < s.length(); ++i) {
+        for (int i = 0, j = 1; i < s.length(); ++i) {
             if (map[s.charAt(i)] != 0) {
                 j = Math.max(j, map[s.charAt(i)] + 1);
             }
             map[s.charAt(i)] = i + 1;
-            result = Math.max(result, i + 1 - j + 1);
+            result = Math.max(result, i - j + 2);
         }
         return result;
     }
