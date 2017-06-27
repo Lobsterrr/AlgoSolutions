@@ -17,13 +17,13 @@ public class LongestSubstringWithoutRepeatingCharacters {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        int[] map = new int[256];
         int result = 0;
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
         for (int i = 0, j = 0; i < s.length(); ++i) {
-            if (map[s.charAt(i)] != 0) {
-                j = Math.max(j, map[s.charAt(i)] + 1);
+            if (map.get(s.charAt(i)) != null) {
+                j = Math.max(j, map.get(s.charAt(i)) + 1);
             }
-            map[s.charAt(i)] = i + 1;
+            map.put(s.charAt(i), i);
             result = Math.max(result, i - j + 1);
         }
         return result;
