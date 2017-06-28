@@ -34,9 +34,6 @@ public class ValidateBinaryTree {
         if (root == null) {
             return true;
         }
-        if (root.left == null && root.right == null) {
-            return true;
-        }
         if (root.left != null) {
             TreeNode cur = root.left; // search the max node value of left tree.
             while (cur.right != null) {
