@@ -31,17 +31,37 @@ Binary tree [1,2,3], return false.
 public class ValidateBinaryTree {
 
     public boolean isValidBST(TreeNode root) {
-        if (root == null || root.left == null && root.right == null) {
+        if (root == null) {
             return true;
         }
-        if (root.left != null && root.right == null) {
-            return root.val > root.left.val && isValidBST(root.left);
-        } else if (root.left == null && root.right != null) {
-            return root.val < root.right.val && isValidBST(root.right);
-        } else {
-            return root.val > root.left.val && root.val < root.right.val 
-                && isValidBST(root.left) && isValidBST(root.right);
+        if (root.left == null && root.right == null) {
+            return true;
         }
+        if (root.left != null) {
+            TreeNode cur = root.left; // search the max node value of left tree.
+            while (cur != null && cur.right != null) {
+                if (cur.val >= cur.right.val) {
+                    return false;
+                }
+                cur = cur.right;
+            }
+            if (cur.val >= root.val) {
+                return false;
+            }
+        }
+        if (root.right != null) {
+            TreeNode cur = root.right; // search the min node value of right tree.
+            while (cur != null && cur.left != null) {
+                if (cur.val <= cur.left.val) {
+                    return false;
+                }
+                cur = cur.left;
+            }
+            if (cur.val <= root.val) {
+                return false;
+            }
+        }
+        return isValidBST(root.left) && isValidBST(root.right);
     }
 
 }
