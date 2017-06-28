@@ -28,5 +28,8 @@ Binary tree [1,2,3], return false.
  */
 public class ValidateBinaryTree {
 
+    public boolean isValidBST(TreeNode root) {
+        
+    }
 
 }
