@@ -31,7 +31,16 @@ Binary tree [1,2,3], return false.
 public class ValidateBinaryTree {
 
     public boolean isValidBST(TreeNode root) {
-        
+        if (root == null || root.left == null && root.right == null) {
+            return true;
+        }
+        if (root.left != null && root.right == null) {
+            return root.val > root.left.val && isValidBST(root.left);
+        } else if (root.left == null && root.right != null) {
+            return root.val < root.right.val && isValidBST(root.right);
+        } else (root.left != null && root.right != null) {
+            return root.val > root.left.val && root.val < root.right.val && isValidBST(root.left) && isValidBST(root.right);
+        }
     }
 
 }
