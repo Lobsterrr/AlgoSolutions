@@ -39,7 +39,7 @@ public class ValidateBinaryTree {
         }
         if (root.left != null) {
             TreeNode cur = root.left; // search the max node value of left tree.
-            while (cur != null && cur.right != null) {
+            while (cur.right != null) {
                 if (cur.val >= cur.right.val) {
                     return false;
                 }
@@ -51,7 +51,7 @@ public class ValidateBinaryTree {
         }
         if (root.right != null) {
             TreeNode cur = root.right; // search the min node value of right tree.
-            while (cur != null && cur.left != null) {
+            while (cur.left != null) {
                 if (cur.val <= cur.left.val) {
                     return false;
                 }
