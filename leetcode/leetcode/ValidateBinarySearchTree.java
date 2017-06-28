@@ -38,7 +38,7 @@ public class ValidateBinaryTree {
             return root.val > root.left.val && isValidBST(root.left);
         } else if (root.left == null && root.right != null) {
             return root.val < root.right.val && isValidBST(root.right);
-        } else (root.left != null && root.right != null) {
+        } else {
             return root.val > root.left.val && root.val < root.right.val && isValidBST(root.left) && isValidBST(root.right);
         }
     }
