@@ -17,6 +17,16 @@ Example 2:
   2   3
 Binary tree [1,2,3], return false.
  */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
 public class ValidateBinaryTree {
+
 
 }
