@@ -17,4 +17,8 @@ the list, only nodes itself can be changed.
  */
 public class SwapNodesInPairs {
 
+    public ListNode swapPairs(ListNode head) {
+        
+    }
+
 }
