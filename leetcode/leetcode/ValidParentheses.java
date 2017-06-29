@@ -18,8 +18,7 @@ public class ValidParentheses {
                 stack.push(c);
             }
             if (c == ')' || c == ']' || c == '}') {
-                char top = stack.pop();
-                if (Math.abs(c - top) > 2) {
+                if (stack.isEmpty() || Math.abs(c - stack.pop()) > 2) {
                     return false;
                 }
             }
