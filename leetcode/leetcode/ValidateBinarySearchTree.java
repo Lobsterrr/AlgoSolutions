@@ -44,16 +44,17 @@ public class ValidateBinaryTree {
     public boolean isValidBST(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
+        long prevValue = Long.MIN_VALUE;
         while (cur != null || !stack.isEmpty()) {
             if (cur != null) {
                 stack.push(cur);
                 cur = cur.left;
             } else {
                 TreeNode node = stack.pop();
-                if (node.left != null && node.val <= node.left.val 
-                        || node.right != null && node.val >= node.right.val) {
+                if (node.val <= prevValue) {
                     return false;
                 }
+                prevValue = node.val;
                 cur = node.right;
             }
         }
