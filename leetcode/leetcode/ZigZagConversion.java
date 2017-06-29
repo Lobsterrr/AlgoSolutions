@@ -15,4 +15,8 @@ convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
  */
 public class ZigZagConversion {
 
+    public String convert(String s, int numRows) {
+        
+    }
+
 }
