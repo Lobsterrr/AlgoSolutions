@@ -18,9 +18,6 @@ the list, only nodes itself can be changed.
 public class SwapNodesInPairs {
 
     public ListNode swapPairs(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode prev = dummy;
