@@ -40,6 +40,8 @@ public class ValidateBinaryTree {
             && isValidBST(root.right, root.val, max);
     }
 
+/*****************************************************************************/
+
     // inorder traversal.
     public boolean isValidBST(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -60,6 +62,8 @@ public class ValidateBinaryTree {
         }
         return true;
     }
+
+/*****************************************************************************/
 
     public boolean isValidBST(TreeNode root) {
         if (root == null) {
