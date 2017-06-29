@@ -40,6 +40,25 @@ public class ValidateBinaryTree {
             && isValidBST(root.right, root.val, max);
     }
 
+    // inorder traversal.
+    public boolean isValidBST(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                TreeNode node = stack.pop();
+                if (node.left != null && node.val <= node.left.val 
+                        || node.right != null && node.val >= node.right.val) {
+                    return false;
+                }
+                cur = node.right;
+            }
+        }
+        return true;
+    }
 
     public boolean isValidBST(TreeNode root) {
         if (root == null) {
