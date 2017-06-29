@@ -20,7 +20,8 @@ public class SwapNodesInPairs {
     public ListNode swapPairs(ListNode head) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        for (ListNode prev = dummy, cur = prev.next; cur != null && cur.next != null; prev = cur, cur = prev.next) {
+        for (ListNode prev = dummy, cur = prev.next; cur != null 
+                && cur.next != null; prev = cur, cur = prev.next) {
             prev.next = cur.next;
             cur.next = cur.next.next;
             prev.next.next = cur;
