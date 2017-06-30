@@ -23,7 +23,8 @@ public class TrappingRainWater {
         rightMax[len - 1] = height[len - 1];
         for (int i = 1; i < len; ++i) {
             leftMax[i] = Math.max(leftMax[i - 1], height[i]);
-            rightMax[len - 1 - i] = Math.max(rightMax[len - i], height[len - 1 - i]);
+            rightMax[len - 1 - i] = Math.max(rightMax[len - i], 
+                    height[len - 1 - i]);
         }
         int result = 0;
         for (int i = 1; i < len - 1; ++i) {
