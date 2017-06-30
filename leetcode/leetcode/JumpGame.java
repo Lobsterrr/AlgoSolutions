@@ -14,7 +14,7 @@ A = [3,2,1,0,4], return false.
 public class JumpGame {
 
     public boolean canJump(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null) {
             return false;
         }
         for (int i = 0, maxIndex = 0; maxIndex >= i && i < nums.length; ++i) {
