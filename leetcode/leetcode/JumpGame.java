@@ -27,7 +27,7 @@ public class JumpGame {
                 return false;
             }
         }
-        return false;
+        return true;
     }
 
 }
