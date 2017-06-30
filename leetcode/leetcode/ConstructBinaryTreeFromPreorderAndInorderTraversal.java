@@ -15,4 +15,8 @@ You may assume that duplicates do not exist in the tree.
  */
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
 
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        
+    }
+
 }
