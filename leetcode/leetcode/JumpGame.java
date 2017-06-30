@@ -17,17 +17,13 @@ public class JumpGame {
         if (nums == null || nums.length == 0) {
             return false;
         }
-        int maxIndex = 0;
-        for (int i = 0; i < nums.length; ++i) {
+        for (int i = 0, maxIndex = 0; maxIndex >= i && i < nums.length; ++i) {
             maxIndex = Math.max(maxIndex, i + nums[i]);
             if (maxIndex >= nums.length - 1) {
                 return true;
             }
-            if (maxIndex < i + 1) {
-                return false;
-            }
         }
-        return true;
+        return false;
     }
 
 }
