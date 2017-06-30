@@ -12,4 +12,8 @@ Marcos for contributing this image!
  */
 public class TrappingRainWater {
 
+    public int trap(int[] height) {
+        
+    }
+
 }
