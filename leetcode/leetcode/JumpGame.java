@@ -23,6 +23,9 @@ public class JumpGame {
             if (maxIndex >= nums.length - 1) {
                 return true;
             }
+            if (maxIndex < i + 1) {
+                return false;
+            }
         }
         return false;
     }
