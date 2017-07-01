@@ -15,7 +15,7 @@ Note: m and n will be at most 100.
  */
 public class UniquePaths {
 
-    // O(m * n) time, O(1) space.
+    // O(m * n) time, O(1) space using formula.
     public int uniquePaths(int m, int n) {
         if (m <= 0 || n <= 0) {
             return 0;
