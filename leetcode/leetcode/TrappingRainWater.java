@@ -24,15 +24,13 @@ public class TrappingRainWater {
             if (height[start] < height[end]) {
                 int k = start + 1;
                 while (k <= end && height[k] <= height[start]) {
-                    result += height[start] - height[k];
-                    k++;
+                    result += height[start] - height[k++];
                 }
                 start = k;
             } else {
                 int k = end - 1;
                 while (k >= start && height[k] <= height[end]) {
-                    result += height[end] - height[k];
-                    k--;
+                    result += height[end] - height[k--];
                 }
                 end = k;
             }
