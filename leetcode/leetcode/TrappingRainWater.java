@@ -30,7 +30,7 @@ public class TrappingRainWater {
                 start = k;
             } else {
                 int k = end - 1;
-                while (k >= 0 && height[k] <= height[end]) {
+                while (k >= start && height[k] <= height[end]) {
                     result += height[end] - height[k];
                     k--;
                 }
