@@ -19,6 +19,28 @@ public class TrappingRainWater {
         }
         int start = 0;
         int end = height.length - 1;
+        int leftMax = 0;
+        int rightMax = 0;
+        int result = 0;
+        while (start < end) {
+            if (leftMax < rightMax) {
+                result += Math.max(leftMax - height[start], 0);
+                leftMax = Math.max(leftMax, height[start++]);
+            } else {
+                result += Math.max(rightMax - height[end], 0);
+                rightMax = Math.max(rightMax, height[end--]);
+            }
+        }
+        return result;
+    }
+
+    // O(n) time, O(1) space.
+    public int trap(int[] height) {
+        if (height == null || height.length < 3) {
+            return 0;
+        }
+        int start = 0;
+        int end = height.length - 1;
         int result = 0;
         while (start < end) {
             if (height[start] < height[end]) {
