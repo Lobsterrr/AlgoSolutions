@@ -12,7 +12,6 @@ Marcos for contributing this image!
  */
 public class TrappingRainWater {
 
-    // TODO
     // O(n) time, O(1) space.
     public int trap(int[] height) {
         if (height == null || height.length < 3) {
@@ -23,7 +22,7 @@ public class TrappingRainWater {
         int result = 0;
         while (start < end) {
             int k;
-            if (start < end) {
+            if (height[start] < height[end]) {
                 k = start + 1;
                 while (height[k] <= height[start]) {
                     result += height[start] - height[k];
