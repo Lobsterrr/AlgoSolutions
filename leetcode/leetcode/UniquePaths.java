@@ -20,9 +20,16 @@ public class UniquePaths {
         if (m <= 0 || n <= 0) {
             return 0;
         }
-        int result = 1;
-        for (int i = 1; i <= m - 1; ++i) {
-            result = result * (n + m - 1 - i) / i;
+        return combination(m - 1, m + n - 2);
+    }
+
+    public long combination(int m, int n) {
+        if (m > n) {
+            throw new IllegalArgumentException("m is larger than n.");
+        }
+        long result = 1;
+        for (int i = 1; i <= m; ++i) {
+            result = result * (n + 1 - i) / i;
         }
         return result;
     }
