@@ -15,12 +15,17 @@ Note: m and n will be at most 100.
  */
 public class UniquePaths {
 
-    // TODO
     // O(m * n) time, O(1) space.
     public int uniquePaths(int m, int n) {
         if (m <= 0 || n <= 0) {
             return 0;
         }
+    }
+
+    public void swap(int x, int y) {
+        int tmp = x;
+        x = y;
+        y = tmp;
     }
 
 /*****************************************************************************/
