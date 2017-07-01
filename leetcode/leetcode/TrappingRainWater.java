@@ -18,6 +18,28 @@ public class TrappingRainWater {
         if (height == null || height.length < 3) {
             return 0;
         }
+        int start = 0;
+        int end = height.length - 1;
+        int result = 0;
+        while (start < end) {
+            int k;
+            if (start < end) {
+                k = start + 1;
+                while (height[k] <= height[start]) {
+                    result += height[start] - height[k];
+                    k++;
+                }
+                start = k;
+            } else {
+                k = end - 1;
+                while (height[k] <= height[end]) {
+                    result += height[end] - height[k];
+                    k--;
+                }
+                end = k;
+            }
+        }
+        return result;
     }
 
     // O(n) time, O(n) space.
