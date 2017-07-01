@@ -20,12 +20,11 @@ public class UniquePaths {
         if (m <= 0 || n <= 0) {
             return 0;
         }
-    }
-
-    public void swap(int x, int y) {
-        int tmp = x;
-        x = y;
-        y = tmp;
+        int result = 1;
+        for (int i = 1; i <= m - 1; ++i) {
+            result = result * (n + m - 1 - i) / i;
+        }
+        return result;
     }
 
 /*****************************************************************************/
