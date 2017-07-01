@@ -42,6 +42,8 @@ public class TrappingRainWater {
         return result;
     }
 
+/*****************************************************************************/
+
     // O(n) time, O(n) space.
     public int trap(int[] height) {
         if (height == null || height.length < 3) {
