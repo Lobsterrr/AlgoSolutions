@@ -22,7 +22,7 @@ public class TrappingRainWater {
         int leftMax = 0;
         int rightMax = 0;
         int result = 0;
-        while (start < end) {
+        while (start <= end) {
             if (leftMax < rightMax) {
                 result += Math.max(leftMax - height[start], 0);
                 leftMax = Math.max(leftMax, height[start++]);
@@ -33,6 +33,8 @@ public class TrappingRainWater {
         }
         return result;
     }
+
+/*****************************************************************************/
 
     // O(n) time, O(1) space.
     public int trap(int[] height) {
