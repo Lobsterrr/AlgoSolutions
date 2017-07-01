@@ -20,7 +20,7 @@ public class UniquePaths {
         if (m <= 0 || n <= 0) {
             return 0;
         }
-        return combination(m - 1, m + n - 2);
+        return (int) combination(m - 1, m + n - 2);
     }
 
     public long combination(int m, int n) {
