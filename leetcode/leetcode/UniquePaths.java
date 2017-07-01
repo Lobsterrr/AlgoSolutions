@@ -20,6 +20,9 @@ public class UniquePaths {
         if (m <= 0 || n <= 0) {
             return 0;
         }
+        if (m > n) {
+            swap(m, n);
+        }
         return (int) combination(m - 1, m + n - 2);
     }
 
@@ -32,6 +35,12 @@ public class UniquePaths {
             result = result * (n + 1 - i) / i;
         }
         return result;
+    }
+
+    public void swap(int x, int y) {
+        int tmp = x;
+        x = y;
+        y = tmp;
     }
 
 /*****************************************************************************/
