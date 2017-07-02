@@ -19,4 +19,9 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
         
     }
 
+    public TreeNode buildTree(int[] preorder, int pStart, int pEnd, 
+            int[] inorder, int iStart, int iEnd) {
+
+    }
+
 }
