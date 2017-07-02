@@ -21,7 +21,11 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
 
     public TreeNode buildTree(int[] preorder, int pStart, int pEnd, 
             int[] inorder, int iStart, int iEnd) {
-
+        if (preorder == null || pStart < 0 || pEnd >= preorder.length 
+                || pStart > pEnd || inorder == null || iStart < 0 
+                || iEnd >= inorder.length || iStart > iEnd) {
+            return null;
+        }
     }
 
 }
