@@ -34,7 +34,7 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
         int i = iStart;
         for (; i <= iEnd && inorder[i] != preorder[pStart]; ++i);
         root.left = buildTree(preorder, pStart + 1, i - iStart + pStart, inorder, iStart, i - 1);
-        root.right = buildTree(preorder, i + 1 - iStart - pStart, pEnd, inorder, i + 1, iEnd);
+        root.right = buildTree(preorder, i + 1 - iStart + pStart, pEnd, inorder, i + 1, iEnd);
         return root;
     }
 
