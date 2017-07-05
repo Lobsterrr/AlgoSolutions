@@ -27,9 +27,6 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
                 || pEnd - pStart != iEnd - iStart) {
             return null;
         }
-        if (pStart == pEnd) {
-            return new TreeNode(preorder[pStart]);
-        }
         TreeNode root = new TreeNode(preorder[pStart]);
         int i = iStart;
         for (; i <= iEnd && inorder[i] != preorder[pStart]; ++i);
