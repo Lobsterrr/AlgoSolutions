@@ -16,7 +16,8 @@ You may assume that duplicates do not exist in the tree.
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        return buildTree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
+        return buildTree(preorder, 0, preorder.length - 1, 
+                inorder, 0, inorder.length - 1);
     }
 
     public TreeNode buildTree(int[] preorder, int pStart, int pEnd, 
