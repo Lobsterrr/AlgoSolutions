@@ -28,7 +28,16 @@ For k = 3, you should return: 3->2->1->4->5
 public class ReverseNodesInKGroup {
 
     public ListNode reverseKGroup(ListNode head, int k) {
-        
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+        ListNode cur = dummy.next;
+        while (true) {
+            int i = 0;
+            while (cur != null) {
+
+            }
+        }
     }
 
 }
