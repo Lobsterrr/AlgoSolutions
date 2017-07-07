@@ -30,12 +30,12 @@ public class ReverseNodesInKGroup {
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode prev = dummy;
-        ListNode cur = dummy.next;
+        ListNode cur = dummy;
         while (true) {
             int i = 0;
-            while (cur != null) {
-
+            while (cur != null && i < k) {
+                cur = cur.next;
+                i++;
             }
         }
     }
