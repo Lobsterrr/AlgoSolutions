@@ -31,8 +31,8 @@ public class ReverseNodesInKGroup {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode headTail = dummy;
-        ListNode cursor = dummy;
         while (true) {
+            ListNode cursor = headTail;
             int i = 0;
             while (cursor != null && i < k) {
                 cursor = cursor.next;
@@ -54,7 +54,10 @@ public class ReverseNodesInKGroup {
                 middle = cur;
                 cur = prev.next;
             }
+            headTail.next = middle;
+            headTail = prev;
         }
+        return dummy.next;
     }
 
 }
