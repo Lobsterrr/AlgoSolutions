@@ -16,6 +16,7 @@ public class AddDigits {
      * @param num a non-negative integer
      * @return one digit
      */
+    // O(1) time.
     public int addDigits(int num) {
         return (num - 1) % 9 + 1;
     }
