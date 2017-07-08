@@ -38,7 +38,7 @@ public class ReverseNodesInKGroup {
                 cursor = cursor.next;
                 i++;
             }
-            if (i != k) {
+            if (cursor == null) {
                 break;
             }
             ListNode middle = headTail.next;
