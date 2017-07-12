@@ -9,7 +9,16 @@ Note: You may not slant the container and n is at least 2.
 public class ContainerWithMostWater {
 
     public int maxArea(int[] height) {
-        
+        if (height == null || height.length == 0) {
+            return 0;
+        }
+        int result = 0;
+        int low = 0;
+        int high = height.length - 1;
+        while (low <= high) {
+
+        }
+        return result;
     }
 
 }
