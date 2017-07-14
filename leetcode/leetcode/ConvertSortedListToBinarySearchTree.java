@@ -29,16 +29,14 @@ public class ConvertSortedListToBinarySearchTree {
         dummy.next = head;
         ListNode prev = dummy;
         ListNode fast = head;
-        ListNode slow = head;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
-            slow = slow.next;
             prev = prev.next;
         }
+        TreeNode root = new TreeNode(prev.next.val);
+        root.right = sortedListToBST(prev.next.next);
         prev.next = null;
-        TreeNode root = new TreeNode(slow.val);
-        root.left = sortedListToBST(head);
-        root.right = sortedListToBST(slow.next);
+        root.left = sortedListToBST(dummy.next);
         return root;
     }
 
