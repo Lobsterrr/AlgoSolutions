@@ -22,7 +22,24 @@ it to a height balanced BST.
 public class ConvertSortedListToBinarySearchTree {
 
     public TreeNode sortedListToBST(ListNode head) {
-        
+        if (head == null) {
+            return null;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            prev = prev.next;
+        }
+        prev.next = null;
+        TreeNode root = new TreeNode(cur.val);
+        root.left = sortedListToBST(head);
+        root.right = sortedListToBST(cur.next);
+        return root;
     }
 
 }
