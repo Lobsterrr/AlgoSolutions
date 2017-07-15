@@ -15,7 +15,40 @@ The solution is guaranteed to be unique.
 public class GasStation {
 
     public int canCompleteCircuit(int[] gas, int[] cost) {
-        
+        if (gas == null || cost == null || gas.length != cost.length) {
+            return -1;
+        }
+        int totalGas = 0;
+        int totalCost = 0;
+        for (int i = 0; i < gas.length; ++i) {
+            totalGas += gas[i];
+            totalCost += cost[i];
+        }
+        if (totalGas < totalCost) {
+            return -1;
+        }
+        for (int i = 0; i < gas.length; ++i) {
+            boolean isCircleCompleted = check(gas, cost, i);
+            if (isCircleCompleted) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public boolean check(int[] gas, int[] cost, int startIndex) {
+        if (gas == null || cost == null || gas.length != cost.length) {
+            return false;
+        }
+        int len = gas.length;
+        int remainder = 0;
+        for (int i = 0; i < len; ++i) {
+            remainder += gas[(startIndex + 1) % len] - cost[(startIndex + 1) % len];
+            if (remainder < 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
