@@ -43,7 +43,7 @@ public class GasStation {
         int len = gas.length;
         int remainder = 0;
         for (int i = 0; i < len; ++i) {
-            remainder += gas[(startIndex + 1) % len] - cost[(startIndex + 1) % len];
+            remainder += gas[(startIndex + i) % len] - cost[(startIndex + i) % len];
             if (remainder < 0) {
                 return false;
             }
