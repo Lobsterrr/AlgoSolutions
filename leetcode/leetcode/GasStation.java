@@ -20,7 +20,7 @@ public class GasStation {
         }
         int total = 0;
         int remainder = 0;
-        int result = -1;
+        int result = 0;
         for (int i = 0; i < gas.length; ++i) {
             total += gas[i] - cost[i];
             remainder += gas[i] - cost[i];
