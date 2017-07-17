@@ -38,7 +38,7 @@ to the next node of a pre-order traversal.
 public class FlattenBinaryTreeToLinkedList {
 
     public void flatten(TreeNode root) {
-        
+        ListNode cur = root;
     }
 
 }
