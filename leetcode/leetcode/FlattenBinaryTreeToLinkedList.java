@@ -39,13 +39,38 @@ public class FlattenBinaryTreeToLinkedList {
 
     public void flatten(TreeNode root) {
         if (root == null || root.left == null && root.right == null) {
-            return root;
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        TreeNode cur = root;
+        TreeNode leftMost = null;
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                TreeNode node = stack.pop();
+                if (node.left == null) {
+                    leftMost = node;
+                }
+                cur = node.right;
+                node.right = node.left;
+                node.left = null;
+
+            }
+        }
+    }
+
+    public void flatten(TreeNode root) {
+        if (root == null || root.left == null && root.right == null) {
+            return;
         }
         flatten(root.left);
         flatten(root.right);
+        TreeNode right = root.right;
+        root.right = root.left;
         root.left = null;
-        root.right = left;
-
         TreeNode cur = root;
         while (cur.right != null) {
             cur = cur.right;
