@@ -44,14 +44,13 @@ public class FlattenBinaryTreeToLinkedList {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
         TreeNode cur = root;
-        TreeNode leftMost = null;
-        while (cur != null || !stack.isEmpty()) {
+        while (!stack.isEmpty()) {
 
         }
     }
 
     public void flatten(TreeNode root) {
-        if (root == null || root.left == null && root.right == null) {
+        if (root == null) {
             return;
         }
         flatten(root.left);
