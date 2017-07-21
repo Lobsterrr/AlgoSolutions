@@ -31,7 +31,8 @@ public class PathSum {
         if (root.left == null && root.right == null && root.val == sum) {
             return true;
         }
-        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+        return hasPathSum(root.left, sum - root.val) 
+            || hasPathSum(root.right, sum - root.val);
     }
 
 }
