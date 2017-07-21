@@ -37,6 +37,7 @@ to the next node of a pre-order traversal.
  */
 public class FlattenBinaryTreeToLinkedList {
 
+    // O(n) time, O(1) space.
     public void flatten(TreeNode root) {
         TreeNode cur = root;
         while (cur != null) {
@@ -56,14 +57,23 @@ public class FlattenBinaryTreeToLinkedList {
 /*****************************************************************************/
 
     public void flatten(TreeNode root) {
-        if (root == null || root.left == null && root.right == null) {
+        if (root == null) {
             return;
         }
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
-        TreeNode cur = root;
         while (!stack.isEmpty()) {
-
+            TreeNode node = stack.pop();
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+            node.left = null;
+            if (!stack.isEmpty()) {
+                node.right = stack.peek();
+            }
         }
     }
 
