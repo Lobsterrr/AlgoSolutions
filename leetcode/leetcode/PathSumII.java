@@ -34,7 +34,8 @@ public class PathSumII {
         return result;
     }
 
-    public void pathSum(TreeNode root, int sum, List<List<Integer>> result, List<Integer> list) {
+    public void pathSum(TreeNode root, int sum, List<List<Integer>> result, 
+            List<Integer> list) {
         if (root == null) {
             return;
         }
