@@ -1,5 +1,6 @@
 /*
-Given a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number.
+Given a binary tree containing digits from 0-9 only, each root-to-leaf path 
+could represent a number.
 
 An example is the root-to-leaf path 1->2->3 which represents the number 123.
 
@@ -66,7 +67,8 @@ public class SumRootToLeafNumbers {
         if (root.left == null && root.right == null) {
             return 10 * sum + root.val;
         }
-        return sumNumbers(root.left, 10 * sum + root.val) + sumNumbers(root.right, 10 * sum + root.val);
+        return sumNumbers(root.left, 10 * sum + root.val) 
+            + sumNumbers(root.right, 10 * sum + root.val);
     }
 
 }
