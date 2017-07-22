@@ -31,14 +31,16 @@ public class PathSum {
             if (cur != null) {
                 stack.push(cur);
                 sum -= cur.val;
-                cur = cur.left;
-            } else {
-                cur = stack.pop();
                 if (cur.left == null && cur.right == null && sum == 0) {
                     return true;
                 }
-                sum += cur.val;
-                cur = cur.right;
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                if (cur.right != null) {
+                    sum += cur.val;
+                    cur = cur.right;
+                }
             }
         }
         return false;
