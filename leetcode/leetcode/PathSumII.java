@@ -29,7 +29,21 @@ return
 public class PathSumII {
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        pathSum(root, sum, result, new ArrayList<Integer>());
+        return result;
+    }
+
+    public void pathSum(TreeNode root, int sum, List<List<Integer>> result, List<Integer> list) {
+        if (root == null) {
+            return;
+        }
+        if (root.left == null && root.right == null && root.val == sum) {
+            list.add(root.val);
+            result.add(list);
+        }
+        pathSum(root.left, sum - root.val, result, list);
+        pathSum(root.right, sum - root.val, result, list);
     }
 
 }
