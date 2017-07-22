@@ -38,8 +38,8 @@ public class PathSumII {
         if (root == null) {
             return;
         }
+        list.add(root.val);
         if (root.left == null && root.right == null && root.val == sum) {
-            list.add(root.val);
             result.add(list);
         }
         pathSum(root.left, sum - root.val, result, list);
