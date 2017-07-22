@@ -42,8 +42,8 @@ public class PathSumII {
         if (root.left == null && root.right == null && root.val == sum) {
             result.add(list);
         }
-        pathSum(root.left, sum - root.val, result, list);
-        pathSum(root.right, sum - root.val, result, list);
+        pathSum(root.left, sum - root.val, result, new ArrayList<Integer>(list));
+        pathSum(root.right, sum - root.val, result, new ArrayList<Integer>(list));
     }
 
 }
