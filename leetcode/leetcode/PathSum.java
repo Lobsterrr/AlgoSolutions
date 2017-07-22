@@ -47,29 +47,10 @@ public class PathSum {
                 sumStack.push(nodeSum + node.right.val);
             }
         }
-    }
-
-    public boolean hasPathSum(TreeNode root, int sum) {
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode cur = root;
-        while (!stack.isEmpty() || cur != null) {
-            if (cur != null) {
-                stack.push(cur);
-                sum -= cur.val;
-                if (cur.left == null && cur.right == null && sum == 0) {
-                    return true;
-                }
-                cur = cur.left;
-            } else {
-                cur = stack.pop();
-                if (cur.right == null) {
-                    sum += cur.val;
-                }
-                cur = cur.right;
-            }
-        }
         return false;
     }
+
+/*****************************************************************************/
 
     public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) {
