@@ -28,22 +28,22 @@ public class PathSum {
         if (root == null) {
             return false;
         }
-        Stack<TreeNode> stack = new Stack<TreeNode>();
+        Stack<TreeNode> nodeStack = new Stack<TreeNode>();
         Stack<Integer> sumStack = new Stack<Integer>();
-        stack.push(root);
+        nodeStack.push(root);
         sumStack.push(root.val);
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
+        while (!nodeStack.isEmpty()) {
+            TreeNode node = nodeStack.pop();
             int nodeSum = sumStack.pop();
             if (node.left == null && node.right == null && nodeSum == sum) {
                 return true;
             }
             if (node.left != null) {
-                stack.push(node.left);
+                nodeStack.push(node.left);
                 sumStack.push(nodeSum + node.left.val);
             }
             if (node.right != null) {
-                stack.push(node.right);
+                nodeStack.push(node.right);
                 sumStack.push(nodeSum + node.right.val);
             }
         }
