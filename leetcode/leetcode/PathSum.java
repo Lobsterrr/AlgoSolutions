@@ -28,6 +28,29 @@ public class PathSum {
         if (root == null) {
             return false;
         }
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode cur = root;
+        while (!stack.isEmpty() || cur != null) {
+            if (cur != null) {
+                stack.push(cur);
+                sum -= cur.val;
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                if (cur.left == null && cur.right == null && sum == 0) {
+                    return true;
+                }
+                sum += cur.val;
+                cur = cur.right;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasPathSum(TreeNode root, int sum) {
+        if (root == null) {
+            return false;
+        }
         if (root.left == null && root.right == null) {
             return root.val == sum;
         }
