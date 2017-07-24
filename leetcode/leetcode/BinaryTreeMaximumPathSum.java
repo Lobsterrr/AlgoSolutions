@@ -23,7 +23,9 @@ Return 6.
 public class BinaryTreeMaximumPathSum {
 
     public int maxPathSum(TreeNode root) {
-        
+        if (roo == null) {
+            return 0;
+        }
     }
 
 }
