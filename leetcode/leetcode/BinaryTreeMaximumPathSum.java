@@ -48,4 +48,13 @@ public class BinaryTreeMaximumPathSum {
         return result;
     }
 
+    public int getPathSum(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return root.val;
+        }
+    }
+
 }
