@@ -22,39 +22,25 @@ Return 6.
  */
 public class BinaryTreeMaximumPathSum {
 
+    int maxSum = Integer.MIN_VALUE;
+
     public int maxPathSum(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-        if (root.left == null && root.right == null) {
-            return root.val;
-        }
-        int result = root.val;
-        int left = Integer.MIN_VALUE;
-        int right = Integer.MIN_VALUE;
-        if (root.left != null) {
-            left = maxPathSum(root.left);
-            result = Math.max(result, left);
-            result = Math.max(result, root.val + left);
-        }
-        if (root.right != null) {
-            right = maxPathSum(root.right);
-            result = Math.max(result, right);
-            result = Math.max(result, root.val + right);
-        }
-        if (root.left != null && root.right != null) {
-            result = Math.max(result, root.val + left + right);
-        }
-        return result;
+        getPathSum(root);
+        return maxSum;
     }
 
     public int getPathSum(TreeNode root) {
         if (root == null) {
+            maxSum = Math.max(maxSum, 0);
             return 0;
         }
-        if (root.left == null && root.right == null) {
-            return root.val;
+        if (root.left != null) {
+            maxSum = Math.max(maxSum, root.val + Math.max(0, getPathSum(root.left)));
         }
+        if (root.right != null) {
+            maxSum = Math.max(maxSum, root.val + Math.max(0, getPathSum(root.right)));
+        }
+        return root.val + Math.max(0, Math.max(getPathSum(root.left), getPathSum(root.right)));
     }
 
 }
