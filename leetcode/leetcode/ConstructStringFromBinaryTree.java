@@ -49,12 +49,10 @@ public class ConstructStringFromBinaryTree {
         }
         String result = String.valueOf(t.val);
         if (t.left != null) {
-            String L = tree2str(t.left);
-            result += "(" + L + ")";
+            result += "(" + tree2str(t.left); + ")";
         }
         if (t.right != null) {
-            String R = tree2str(t.right);
-            result += "(" + R + ")";
+            result += "(" + tree2str(t.right); + ")";
         }
         return result;
     }
