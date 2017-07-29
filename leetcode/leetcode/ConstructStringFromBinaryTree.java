@@ -54,7 +54,7 @@ public class ConstructStringFromBinaryTree {
             result += "()";
         }
         if (t.right != null) {
-            result += "(" + tree2str(t.right); + ")";
+            result += "(" + tree2str(t.right) + ")";
         }
         return result;
     }
