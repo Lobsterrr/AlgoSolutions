@@ -9,7 +9,7 @@ public class LongestCommonPrefix {
             return null;
         }
         int i = 0;
-        boolean isValid = true;
+        boolean isValid = i < strs[0].length();
         while (isValid) {
             char c = strs[0].charAt(i);
             for (int j = 0; j < strs.length; ++j) {
