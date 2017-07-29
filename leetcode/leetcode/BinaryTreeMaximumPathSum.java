@@ -35,8 +35,8 @@ public class BinaryTreeMaximumPathSum {
         }
         int L = Math.max(0, getPathSum(root.left));
         int R = Math.max(0, getPathSum(root.right));
-        maxSum = Math.max(maxSum, root.val + 
-                Math.max(Math.max(0, L + R), Math.max(L, R)));
+        maxSum = Math.max(maxSum, root.val 
+                + Math.max(Math.max(0, L + R), Math.max(L, R)));
         return root.val + Math.max(0, Math.max(L, R));
     }
 
