@@ -6,14 +6,14 @@ public class LongestCommonPrefix {
 
     public String longestCommonPrefix(String[] strs) {
         if (strs == null || strs.length == 0) {
-            return null;
+            return "";
         }
         int i = 0;
         boolean isValid = true;
         while (isValid) {
             for (int j = 0; j < strs.length; ++j) {
                 if (strs[j] == null || strs[j].length() == 0) {
-                    return null;
+                    return "";
                 }
                 char c = strs[0].charAt(i);
                 if (strs[j].charAt(i) != c) {
