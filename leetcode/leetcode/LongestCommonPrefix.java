@@ -5,6 +5,9 @@ strings.
 public class LongestCommonPrefix {
 
     public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return null;
+        }
         int i = 0;
         boolean isValid = true;
         while (isValid) {
