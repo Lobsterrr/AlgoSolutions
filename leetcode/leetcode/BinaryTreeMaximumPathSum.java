@@ -25,16 +25,16 @@ public class BinaryTreeMaximumPathSum {
     int maxSum = Integer.MIN_VALUE;
 
     public int maxPathSum(TreeNode root) {
-        getPathSum(root);
+        maxUpDownPathSum(root);
         return maxSum;
     }
 
-    public int getPathSum(TreeNode root) {
+    public int maxUpDownPathSum(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        int L = Math.max(0, getPathSum(root.left));
-        int R = Math.max(0, getPathSum(root.right));
+        int L = Math.max(0, maxUpDownPathSum(root.left));
+        int R = Math.max(0, maxUpDownPathSum(root.right));
         maxSum = Math.max(maxSum, root.val 
                 + Math.max(Math.max(0, L + R), Math.max(L, R)));
         return root.val + Math.max(0, Math.max(L, R));
