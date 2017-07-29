@@ -50,15 +50,11 @@ public class ConstructStringFromBinaryTree {
         String result = String.valueOf(t.val);
         if (t.left != null) {
             String L = tree2str(t.left);
-            if (!L.equals("")) {
-                result += "(" + L + ")";
-            }
+            result += "(" + L + ")";
         }
         if (t.right != null) {
             String R = tree2str(t.right);
-            if (!R.equals("")) {
-                result += "(" + R + ")";
-            }
+            result += "(" + R + ")";
         }
         return result;
     }
