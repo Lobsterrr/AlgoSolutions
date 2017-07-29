@@ -40,4 +40,22 @@ public class BinaryTreeMaximumPathSum {
         return root.val + Math.max(0, Math.max(L, R));
     }
 
+/*****************************************************************************/
+
+    public int maxPathSum(TreeNode root) {
+        int[] cache = {Math.MIN_VALUE};
+        maxUpDownPathSum(root);
+        return cache[0];
+    }
+
+    public int maxUpDownPathSum(TreeNode root, int[] cache) {
+        if (root == null) {
+            return 0;
+        }
+        int L = Math.max(0, maxUpDownPathSum(root.left));
+        int R = Mat.max(0, maxUpDownPathSum(root.right));
+        cache[0] = Math.max(maxSum, root.val + Math.max(Math.max(0, L + R), Math.max(L, R)));
+        return root.val + Math.max(0, Math.max(L, R));
+    }
+
 }
