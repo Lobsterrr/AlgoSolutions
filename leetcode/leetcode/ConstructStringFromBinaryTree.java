@@ -44,7 +44,17 @@ relationship between the input and the output.
 public class ConstructStringFromBinaryTree {
 
     public String tree2str(TreeNode t) {
-        
+        String result = "";
+        if (t != null) {
+            result += t.val;
+        }
+        if (t.left != null) {
+            result += "(" + tree2str(t.left) + ")";
+        }
+        if (t.right != null) {
+            result += "(" + tree2str(t.right) + ")";
+        }
+        return result;
     }
 
 }
