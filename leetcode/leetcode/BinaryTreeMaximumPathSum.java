@@ -44,7 +44,7 @@ public class BinaryTreeMaximumPathSum {
 
     public int maxPathSum(TreeNode root) {
         int[] cache = {Integer.MIN_VALUE};
-        maxUpDownPathSum(root);
+        maxUpDownPathSum(root, cache);
         return cache[0];
     }
 
