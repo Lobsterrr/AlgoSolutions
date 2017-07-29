@@ -8,28 +8,14 @@ public class LongestCommonPrefix {
         if (strs == null || strs.length == 0) {
             return "";
         }
-        int i = 0;
-        boolean isValid = true;
-        while (isValid) {
-            for (int j = 0; j < strs.length; ++j) {
-                if (strs[j] == null || strs[j].length() == 0) {
-                    return "";
+        for (int i = 0; i < strs[0].length(); ++i) {
+            for (int j = 1; j < strs.length; ++j) {
+                if (i >= strs[j].length() || strs[0].charAt(i) != strs[j].charAt(i)) {
+                    return strs[0].substring(0, i);
                 }
-                char c = strs[0].charAt(i);
-                if (strs[j].charAt(i) != c) {
-                    isValid = false;
-                    --i;
-                    break;
-                }
-                if (i == strs[j].length() - 1) {
-                    isValid = false;
-                }
-            }
-            if (isValid) {
-                ++i;
             }
         }
-        return strs[0].substring(0, i + 1);
+        return strs[0];
     }
 
 }
