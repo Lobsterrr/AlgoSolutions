@@ -47,16 +47,16 @@ public class ConstructStringFromBinaryTree {
         if (t == null) {
             return "";
         }
-        String result = String.valueOf(t.val);
+        StrinBuilder sb = new StringBuilder(t.val);
         if (t.left != null) {
-            result += "(" + tree2str(t.left) + ")";
+            sb.append("(").append(tree2str(t.left)).append(")");
         } else if (t.right != null) {
-            result += "()";
+            sb.append("()");
         }
         if (t.right != null) {
-            result += "(" + tree2str(t.right) + ")";
+            sb.append("(").append(tree2str(t.right)).append(")");
         }
-        return result;
+        return sb.toString();
     }
 
 }
