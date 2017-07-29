@@ -47,7 +47,7 @@ public class ConstructStringFromBinaryTree {
         if (t == null) {
             return "";
         }
-        StrinBuilder sb = new StringBuilder(t.val);
+        StringBuilder sb = new StringBuilder(t.val);
         if (t.left != null) {
             sb.append("(").append(tree2str(t.left)).append(")");
         } else if (t.right != null) {
