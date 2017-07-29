@@ -31,26 +31,12 @@ public class BinaryTreeMaximumPathSum {
 
     public int getPathSum(TreeNode root) {
         if (root == null) {
-            maxSum = Math.max(maxSum, 0);
             return 0;
         }
-        if (root.left == null && root.right == null) {
-            maxSum = Math.max(maxSum, root.val);
-            return root.val;
-        } else if (root.left == null && root.right != null) { 
-            int R = Math.max(0, getPathSum(root.right));
-            maxSum = Math.max(maxSum, root.val + Math.max(0, R));
-            return root.val + Math.max(0, R);
-        } else if (root.left != null && root.right == null) {
-            int L = Math.max(0, getPathSum(root.left));
-            maxSum = Math.max(maxSum, root.val + Math.max(0, L));
-            return root.val + Math.max(0, root.val + Math.max(0, L));
-        } else {
-            int L = Math.max(0, getPathSum(root.left));
-            int R = Math.max(0, getPathSum(root.right));
-            maxSum = Math.max(maxSum, root.val + Math.max(0, Math.max(L, Math.max(R, L + R))));
-            return root.val + Math.max(0, Math.max(L, Math.max(R, L + R)));
-        }
+        int L = Math.max(0, getPathSum(root.left));
+        int R = Math.max(0, getPathSum(root.right));
+        maxSum = Math.max(maxSum, root.val + Math.max(Math.max(0, L + R), Math.max(L, R)));
+        return root.val + Math.max(0, Math.max(L, R));
     }
 
 }
