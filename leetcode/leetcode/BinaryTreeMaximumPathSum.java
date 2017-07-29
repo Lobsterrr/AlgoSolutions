@@ -24,6 +24,25 @@ Return 6.
  */
 public class BinaryTreeMaximumPathSum {
 
+    public int maxPathSum(TreeNode root) {
+        int[] cache = {Integer.MIN_VALUE};
+        maxUpDownPathSum(root, cache);
+        return cache[0];
+    }
+
+    public int maxUpDownPathSum(TreeNode root, int[] cache) {
+        if (root == null) {
+            return 0;
+        }
+        int L = Math.max(0, maxUpDownPathSum(root.left, cache));
+        int R = Math.max(0, maxUpDownPathSum(root.right, cache));
+        cache[0] = Math.max(cache[0], root.val 
+                + Math.max(Math.max(0, L + R), Math.max(L, R)));
+        return root.val + Math.max(0, Math.max(L, R));
+    }
+
+/*****************************************************************************/
+
     int maxSum = Integer.MIN_VALUE;
 
     public int maxPathSum(TreeNode root) {
@@ -38,25 +57,6 @@ public class BinaryTreeMaximumPathSum {
         int L = Math.max(0, maxUpDownPathSum(root.left));
         int R = Math.max(0, maxUpDownPathSum(root.right));
         maxSum = Math.max(maxSum, root.val 
-                + Math.max(Math.max(0, L + R), Math.max(L, R)));
-        return root.val + Math.max(0, Math.max(L, R));
-    }
-
-/*****************************************************************************/
-
-    public int maxPathSum(TreeNode root) {
-        int[] cache = {Integer.MIN_VALUE};
-        maxUpDownPathSum(root, cache);
-        return cache[0];
-    }
-
-    public int maxUpDownPathSum(TreeNode root, int[] cache) {
-        if (root == null) {
-            return 0;
-        }
-        int L = Math.max(0, maxUpDownPathSum(root.left, cache));
-        int R = Math.max(0, maxUpDownPathSum(root.right, cache));
-        cache[0] = Math.max(cache[0], root.val 
                 + Math.max(Math.max(0, L + R), Math.max(L, R)));
         return root.val + Math.max(0, Math.max(L, R));
     }
