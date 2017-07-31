@@ -15,7 +15,10 @@ public class InterleavingString {
         if (s1 == null || s2 == null || s3 == null || s1.length() + s2.length() != s3.length()) {
             return false;
         }
-
+        int len1 = s1.length();
+        int len2 = s2.length();
+        int len3 = s3.length();
+        boolean[][] dp = new boolean[len1 + 1][len2 + 1];
     }
 
 }
