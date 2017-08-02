@@ -12,8 +12,8 @@ When s3 = "aadbbbaccc", return false.
 public class InterleavingString {
 
     public boolean isInterleave(String s1, String s2, String s3) {
-        if (s1 == null || s2 == null || s3 == null || 
-                s1.length() + s2.length() != s3.length()) {
+        if (s1 == null || s2 == null || s3 == null 
+                || s1.length() + s2.length() != s3.length()) {
             return false;
         }
         int len1 = s1.length();
@@ -29,9 +29,10 @@ public class InterleavingString {
         }
         for (int i = 1; i < s1.length; ++i) {
             for (int j = 1; j < s2.length; ++j) {
-
+                dp[i + 1][j + 1] = dp[i][j + 1] && s1.charAt(i) == s3.charAt(i + j) || dp[i + 1][j] && s2.charAt(j) == s3.charAt(i + j);
             }
         }
+        return dp[len1][len2];
     }
 
 }
