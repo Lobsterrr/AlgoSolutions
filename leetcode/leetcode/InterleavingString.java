@@ -18,7 +18,6 @@ public class InterleavingString {
         }
         int len1 = s1.length();
         int len2 = s2.length();
-        int len3 = s3.length();
         boolean[][] dp = new boolean[len1 + 1][len2 + 1];
         dp[0][0] = true;
         for (int i = 0; i < len1; ++i) {
