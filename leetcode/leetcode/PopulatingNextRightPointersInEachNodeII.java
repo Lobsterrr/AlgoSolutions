@@ -30,6 +30,7 @@ After calling your function, the tree should look like:
  */
 public class PopulatingNextRightPointersInEachNode {
 
+    // O(n) time, O(1) space.
     public void connect(TreeLinkNode root) {
         TreeLinkNode cur = root;
         while (cur != null) {
@@ -60,6 +61,7 @@ public class PopulatingNextRightPointersInEachNode {
 
 /*****************************************************************************/
 
+    // O(n) time, O(n) space.
     public void connect(TreeLinkNode root) {
         if (root == null) {
             return;
