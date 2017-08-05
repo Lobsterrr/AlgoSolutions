@@ -16,24 +16,22 @@ public class InterleavingString {
                 || s1.length() + s2.length() != s3.length()) {
             return false;
         }
-        int len1 = s1.length();
-        int len2 = s2.length();
-        boolean[][] dp = new boolean[len1 + 1][len2 + 1];
+        boolean[][] dp = new boolean[s1.length() + 1][s2.length() + 1];
         dp[0][0] = true;
-        for (int i = 0; i < len1; ++i) {
+        for (int i = 0; i < s1.length(); ++i) {
             dp[i + 1][0] = dp[i][0] && s1.charAt(i) == s3.charAt(i);
         }
-        for (int i = 0; i < len2; ++i) {
+        for (int i = 0; i < s2.length(); ++i) {
             dp[0][i + 1] = dp[0][i] && s2.charAt(i) == s3.charAt(i);
         }
-        for (int i = 0; i < len1; ++i) {
-            for (int j = 0; j < len2; ++j) {
+        for (int i = 0; i < s1.length(); ++i) {
+            for (int j = 0; j < s2.length(); ++j) {
                 dp[i + 1][j + 1] 
                     = dp[i][j + 1] && s1.charAt(i) == s3.charAt(i + j + 1) 
                     || dp[i + 1][j] && s2.charAt(j) == s3.charAt(i + j + 1);
             }
         }
-        return dp[len1][len2];
+        return dp[s1.length()][s2.length()];
     }
 
 }
