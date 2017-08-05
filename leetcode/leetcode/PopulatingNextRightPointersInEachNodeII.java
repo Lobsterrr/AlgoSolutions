@@ -30,4 +30,7 @@ After calling your function, the tree should look like:
  */
 public class PopulatingNextRightPointersInEachNode {
 
+    public void connect(TreeLinkNode root) {
+    }
+
 }
