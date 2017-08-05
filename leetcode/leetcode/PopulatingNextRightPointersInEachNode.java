@@ -82,9 +82,6 @@ public class PopulatingNextRightPointersInEachNode {
 /*****************************************************************************/
 
     public void connect(TreeLinkNode root) {
-        if (root == null) {
-            return;
-        }
         TreeLinkNode xCur = root;
         while (xCur != null) {
             TreeLinkNode yCur = xCur;
