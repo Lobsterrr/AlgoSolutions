@@ -31,6 +31,26 @@ After calling your function, the tree should look like:
 public class PopulatingNextRightPointersInEachNode {
 
     public void connect(TreeLinkNode root) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeLinkNode> curLayer = new LinkedList<TreeLinkNode>();
+        Queue<TreeLinkNode> nextLayer = new LinkedList<TreeLinkNode>();
+        curLayer.offer(root);
+        while (curLayer.peek() != null) {
+            TreeLinkNode node = curLayer.poll();
+            node.next = curLayer.peek();
+            if (node.left != null) {
+                nextLayer.offer(node.left);
+            }
+            if (node.right != null) {
+                nextLayer.offer(node.right);
+            }
+            if (curLayer.peek() == null) {
+                curLayer = nextLayer;
+                nextLayer = new LinkedList<TreeLinkNode>();
+            }
+        }
     }
 
 }
