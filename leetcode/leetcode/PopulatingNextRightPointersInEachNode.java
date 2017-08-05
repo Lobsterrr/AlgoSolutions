@@ -92,8 +92,8 @@ public class PopulatingNextRightPointersInEachNode {
                 if (yCur.left != null) {
                     yCur.left.next = yCur.right;
                 }
-                if (yCur.right != null) {
-                    yCur.right.next = yCur.next == null ? null : yCur.next.left;
+                if (yCur.right != null && yCur.next != null) {
+                    yCur.right.next = yCur.next.left;
                 }
                 yCur = yCur.next;
             }
