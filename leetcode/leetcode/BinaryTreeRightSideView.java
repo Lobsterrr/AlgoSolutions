@@ -27,17 +27,6 @@ public class BinaryTreeRightSideView {
         if (root == null) {
             return result;
         }
-
-
-
-        return result;
-    }
-
-    public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
-        if (root == null) {
-            return result;
-        }
         Queue<TreeNode> curLayer = new LinkedList<TreeNode>();
         Queue<TreeNode> nextLayer = new LinkedList<TreeNode>();
         curLayer.offer(root);
