@@ -35,4 +35,8 @@ enters and the bottom-right room where the princess is imprisoned.
  */
 public class DungeonGame {
 
+    public int calculateMinimumHP(int[][] dungeon) {
+
+    }
+
 }
