@@ -51,27 +51,19 @@ public class BinaryTreeRightSideView {
 
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
-        if (root == null) {
-            return result;
-        }
-        Queue<TreeNode> curLayer = new LinkedList<TreeNode>();
-        Queue<TreeNode> nextLayer = new LinkedList<TreeNode>();
-        curLayer.offer(root);
-        while (!curLayer.isEmpty()) {
-            TreeNode node = curLayer.poll();
-            if (node.left != null) {
-                nextLayer.offer(node.left);
-            }
-            if (node.right != null) {
-                nextLayer.offer(node.right);
-            }
-            if (curLayer.isEmpty()) {
-                result.add(node.val);
-                curLayer = nextLayer;
-                nextLayer = new LinkedList<TreeNode>();
-            }
-        }
+        dfs(root, result, 0);
         return result;
+    }
+
+    public void dfs(TreeNode root, List<Integer> result, int depth) {
+        if (root == null) {
+            return;
+        }
+        if (result.size() == depth) {
+            result.add(root.val);
+        }
+        dfs(root.right, result, depth + 1);
+        dfs(root.left, result, depth + 1);
     }
 
 }
