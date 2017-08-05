@@ -87,7 +87,7 @@ public class PopulatingNextRightPointersInEachNode {
         }
         TreeLinkNode xCur = root;
         while (xCur != null) {
-            yCur = xCur;
+            TreeLinkNode yCur = xCur;
             while (yCur != null) {
                 if (yCur.left != null) {
                     yCur.left.next = yCur.right;
