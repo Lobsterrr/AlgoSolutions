@@ -36,7 +36,13 @@ enters and the bottom-right room where the princess is imprisoned.
 public class DungeonGame {
 
     public int calculateMinimumHP(int[][] dungeon) {
+        int xLen = dungeon.length;
+        int yLen = dungeon[0].length;
+        for (int i = xLen - 1; i >= 0; --i) {
+            for (int j = yLen - 1; j >= 0; --j) {
 
+            }
+        }
     }
 
 }
