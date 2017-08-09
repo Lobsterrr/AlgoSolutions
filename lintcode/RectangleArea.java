@@ -11,6 +11,10 @@ rec.getArea(); // should get 12
  */
 public class RectangleArea {
 
+}
+
+class Rectangle {
+
     /*
      * Define two public attributes width and height of type int.
      */
@@ -22,7 +26,7 @@ public class RectangleArea {
      * Define a constructor which expects two parameters width and height here.
      */
     // write your code here
-    public RectangleArea(int width, int height) {
+    public Rectangle(int width, int height) {
         this.width = width;
         this.height = height;
     }
