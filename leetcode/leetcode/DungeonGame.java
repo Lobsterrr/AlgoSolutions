@@ -47,7 +47,7 @@ public class DungeonGame {
                 } else if (i < xLen - 1 && j == yLen - 1) {
                     dungeon[i][j] = Math.max(0, dungeon[i + 1][j] - dungeon[i][j]);
                 } else if (i < xLen - 1 && j < yLen - 1) {
-                    dungeon[i][j] = Math.max(0, Math.min(dungeon[i][j + 1], dungeon[i + 1][j]));
+                    dungeon[i][j] = Math.max(0, Math.min(dungeon[i][j + 1], dungeon[i + 1][j]) - dungeon[i][j]);
                 }
             }
         }
