@@ -41,11 +41,11 @@ public class DungeonGame {
         for (int i = xLen - 1; i >= 0; --i) {
             for (int j = yLen - 1; j >= 0; --j) {
                 if (i == xLen - 1 && j < yLen - 1) {
-
+                    dungeon[i][j] += dungeon[i][j + 1];
                 } else if (i < xLen - 1 && j == yLen - 1) {
-
+                    dungeon[i][j] += dungeon[i + 1][j];
                 } else if (i < xLne - 1 && j < yLen - 1) {
-
+                    dungeon[i][j] += Math.min(dungeon[i + 1][j], dungeon[i][j + 1]);
                 }
             }
         }
