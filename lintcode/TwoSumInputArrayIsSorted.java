@@ -13,4 +13,24 @@ return [1, 2]
  */
 public class TwoSumInputArrayIsSorted {
 
+    /*
+     * @param nums an array of Integer
+     * @param target = nums[index1] + nums[index2]
+     * @return [index1 + 1, index2 + 1] (index1 < index2)
+     */
+    public int[] twoSum(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1;
+        while (low < high) {
+            if (nums[low] + nums[high] == target) {
+                return new int[] {low + 1, high + 1};
+            } else if (nums[low] + nums[high] < target) {
+                low++;
+            } else {
+                high--;
+            }
+        }
+        return null;
+    }
+
 }
