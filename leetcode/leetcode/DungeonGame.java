@@ -43,11 +43,14 @@ public class DungeonGame {
                 if (i == xLen - 1 && j == yLen - 1) {
                     dungeon[i][j] = Math.max(1, 1 - dungeon[i][j]);
                 } else if (i == xLen - 1 && j < yLen - 1) {
-                    dungeon[i][j] = Math.max(1, dungeon[i][j + 1] - dungeon[i][j]);
+                    dungeon[i][j] = Math.max(1,
+                            dungeon[i][j + 1] - dungeon[i][j]);
                 } else if (i < xLen - 1 && j == yLen - 1) {
-                    dungeon[i][j] = Math.max(1, dungeon[i + 1][j] - dungeon[i][j]);
+                    dungeon[i][j] = Math.max(1,
+                            dungeon[i + 1][j] - dungeon[i][j]);
                 } else if (i < xLen - 1 && j < yLen - 1) {
-                    dungeon[i][j] = Math.max(1, Math.min(dungeon[i][j + 1], dungeon[i + 1][j]) - dungeon[i][j]);
+                    dungeon[i][j] = Math.max(1, Math.min(dungeon[i][j + 1],
+                                dungeon[i + 1][j]) - dungeon[i][j]);
                 }
             }
         }
