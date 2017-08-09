@@ -51,7 +51,7 @@ public class DungeonGame {
                 }
             }
         }
-        return dungeon[0][0];
+        return dungeon[0][0] > 0 ? dungeon[0][0] : 1;
     }
 
 }
