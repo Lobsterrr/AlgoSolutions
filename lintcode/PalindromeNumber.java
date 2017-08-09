@@ -21,9 +21,8 @@ public class PalindromeNumber {
     public boolean palindromeNumber(int num) {
         int reverse = 0;
         int copy = num;
-        while (num != 0) {
+        for (; num != 0; num /= 10) {
             reverse = 10 * reverse + num % 10;
-            num /= 10;
         }
         return reverse == copy;
     }
