@@ -9,4 +9,8 @@ What is the minimum candies you must give?
  */
 public class Candy {
 
+    public int candy(int[] ratings) {
+
+    }
+
 }
