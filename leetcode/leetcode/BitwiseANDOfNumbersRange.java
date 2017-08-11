@@ -14,7 +14,7 @@ public class BitwiseANDOfNumbersRange {
             mask = (mask >> (i + 1));
             mask = (mask << (i + 1));
             result &= mask;
-            delta >> 1;
+            delta = (delta >> 1);
         }
         return result;
     }
