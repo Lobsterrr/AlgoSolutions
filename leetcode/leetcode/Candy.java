@@ -20,8 +20,8 @@ public class Candy {
             }
         }
         for (int i = candies.length - 2; i >= 0; --i) {
-            if (ratings[i] > ratings[i + 1]) {
-                candies[i] = Math.max(candies[i], candies[i + 1] + 1);
+            if (ratings[i] > ratings[i + 1] && candies[i] <= candies[i + 1]) {
+                candies[i] = candies[i + 1] + 1;
             }
         }
         int result = 0;
