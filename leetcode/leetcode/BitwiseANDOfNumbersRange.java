@@ -10,7 +10,7 @@ public class BitwiseANDOfNumbersRange {
         int delta = n - m;
         int mask = 0xFFFFFFFF;
         int result = m & n;
-        for (int i = 0; delta > 0; --i) {
+        for (int i = 0; delta > 0; ++i) {
             mask = (mask >> (i + 1)) << (i + 1);
             result &= mask;
             delta = (delta >> 1);
