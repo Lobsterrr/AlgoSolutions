@@ -8,9 +8,7 @@ public class BitwiseANDOfNumbersRange {
 
     public int rangeBitwiseAnd(int m, int n) {
         int mask = 0xFFFFFFFF;
-        while ((m & mask) != (n & mask)) {
-            mask <<= 1;
-        }
+        for (; (m & mask) != (n & mask); mask <<= 1);
         return m & mask;
     }
 
