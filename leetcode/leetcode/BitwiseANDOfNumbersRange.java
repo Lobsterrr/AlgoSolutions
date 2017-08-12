@@ -7,6 +7,14 @@ For example, given the range [5, 7], you should return 4.
 public class BitwiseANDOfNumbersRange {
 
     public int rangeBitwiseAnd(int m, int n) {
+        int mask = 0xFFFFFFFF;
+        while ((m & mask) != (n & mask)) {
+            mask <<= 1;
+        }
+        return m & mask;
+    }
+
+    public int rangeBitwiseAnd(int m, int n) {
         int delta = n - m;
         int mask = 0xFFFFFFFF;
         int result = m & n;
