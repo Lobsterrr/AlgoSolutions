@@ -8,4 +8,8 @@ Try to come up as many solutions as you can, there are at least 3 different ways
  */
 public class RotateArray {
 
+    public void rotate(int[] nums, int k) {
+        
+    }
+
 }
