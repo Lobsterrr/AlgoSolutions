@@ -35,11 +35,14 @@ class BSTIterator {
 
     /** @return the next smallest number */
     public int next() {
-        TreeNode cur = root;
-        while (cur != null && cur.left != null) {
-            cur = cur.left;
+        if (hasNext()) {
+            TreeNode cur = root;
+            while (cur != null && cur.left != null) {
+                cur = cur.left;
+            }
+            return cur.val;
         }
-        return cur.val;
+        return -1;
     }
 
 }
