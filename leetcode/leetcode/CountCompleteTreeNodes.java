@@ -18,7 +18,19 @@ have between 1 and 2h nodes inclusive at the last level h.
 public class CountCompleteTreeNodes {
 
     public int countNodes(TreeNode root) {
-
+        int count = 0;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (root != null || !stack.isEmpty()) {
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                TreeNode node = stack.pop();
+                count++;
+                root = node.right;
+            }
+        }
+        return count;
     }
 
 }
