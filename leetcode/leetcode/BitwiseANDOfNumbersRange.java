@@ -6,6 +6,11 @@ For example, given the range [5, 7], you should return 4.
  */
 public class BitwiseANDOfNumbersRange {
 
+    /*
+     * Analysis:
+     *
+     * To find the binary common prefix of m and n.
+     */
     public int rangeBitwiseAnd(int m, int n) {
         int mask = 0xFFFFFFFF;
         for (; (m & mask) != (n & mask); mask <<= 1);
