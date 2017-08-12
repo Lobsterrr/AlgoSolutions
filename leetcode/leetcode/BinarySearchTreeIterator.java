@@ -22,18 +22,24 @@ public class BinarySearchTreeIterator {
 
 class BSTIterator {
 
-    public BSTIterator(TreeNode root) {
+    private TreeNode root;
 
+    public BSTIterator(TreeNode root) {
+        this.root = root;
     }
 
     /** @return whether we have a next smallest number */
     public boolean hasNext() {
-
+        return root == null;
     }
 
     /** @return the next smallest number */
     public int next() {
-
+        TreeNode cur = root;
+        while (cur != null && cur.left != null) {
+            cur = cur.left;
+        }
+        return cur.val;
     }
 
 }
