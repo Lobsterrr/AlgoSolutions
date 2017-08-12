@@ -53,7 +53,7 @@ class BSTIterator {
 
     /** @return the next smallest number */
     public int next() {
-        return queue.pop().val;
+        return queue.poll().val;
     }
 
 }
