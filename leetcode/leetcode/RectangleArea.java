@@ -16,6 +16,10 @@ public class RectangleArea {
         }
         int areaAbcd = (C - A) * (D - B);
         int areaEfgh = (G - E) * (H - F);
+        int areaOverlap = 0;
+
+
+        int areaOverlap = Math.abs((C - E) * (H - B));
         int areaOverlap = Math.abs((C - E) * (D - F));
         return areaAbcd + areaEfgh - areaOverlap;
     }
