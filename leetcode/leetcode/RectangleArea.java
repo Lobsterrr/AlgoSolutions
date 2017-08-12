@@ -14,6 +14,9 @@ public class RectangleArea {
         if (B >= H || D <= F || A >= G || C <= E) {
             return 0;
         }
+        int areaAbcd = (C - A) * (D - B);
+        int areaEfgh = (G - E) * (H - F);
+
     }
 
 }
