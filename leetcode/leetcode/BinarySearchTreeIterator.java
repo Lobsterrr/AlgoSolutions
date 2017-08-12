@@ -23,13 +23,11 @@ public class BinarySearchTreeIterator {
 class BSTIterator {
 
     private TreeNode root;
-    private List<TreeNode> list;
-    private int index;
+    private Queue<TreeNode> queue;
 
     public BSTIterator(TreeNode root) {
         this.root = root;
-        this.list = new ArrayList<TreeNode>();
-        int index = 0;
+        this.queue = new LinkedList<TreeNode>();
         init();
     }
 
@@ -42,7 +40,7 @@ class BSTIterator {
                 cur = cur.left;
             } else {
                 TreeNode top = stack.pop();
-                list.add(top);
+                queue.add(top);
                 cur = top.right;
             }
         }
@@ -50,12 +48,12 @@ class BSTIterator {
 
     /** @return whether we have a next smallest number */
     public boolean hasNext() {
-        return index != list.size();
+        return !queue.isEmpty();
     }
 
     /** @return the next smallest number */
     public int next() {
-        return list.get(index++).val;
+        return queue.pop().val;
     }
 
 }
