@@ -23,23 +23,39 @@ public class BinarySearchTreeIterator {
 class BSTIterator {
 
     private TreeNode root;
+    private List<TreeNode> list;
+    private int index;
 
     public BSTIterator(TreeNode root) {
         this.root = root;
+        this.list = new ArrayList<TreeNode>();
+        int index = 0;
+        init();
+    }
+
+    public void init() {
+        TreeNode cur = root;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                TreeNode top = stack.pop();
+                list.add(top);
+                top = top.right;
+            }
+        }
     }
 
     /** @return whether we have a next smallest number */
     public boolean hasNext() {
-        return root != null;
+        return index != list.size();
     }
 
     /** @return the next smallest number */
     public int next() {
-        TreeNode cur = root;
-        while (cur != null && cur.left != null) {
-            cur = cur.left;
-        }
-        return cur.val;
+        return list.get(index++).val;
     }
 
 }
