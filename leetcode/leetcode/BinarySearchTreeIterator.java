@@ -43,7 +43,7 @@ class BSTIterator {
             } else {
                 TreeNode top = stack.pop();
                 list.add(top);
-                top = top.right;
+                cur = top.right;
             }
         }
     }
