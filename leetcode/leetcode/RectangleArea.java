@@ -11,12 +11,19 @@ public class RectangleArea {
 
     public int computeArea(int A, int B, int C, int D,
             int E, int F, int G, int H) {
-        if (B >= H || D <= F || A >= G || C <= E) {
+        if (A >= G || C <= E || B >= H || D <= F) {
             return 0;
         }
         int areaAbcd = (C - A) * (D - B);
         int areaEfgh = (G - E) * (H - F);
         int areaOverlap = 0;
+        if (A <= E) {
+            if (B >= F) {
+                areaOverlap = (Math.min(C, G) - E) * (H - B);
+            } else {
+
+            }
+        }
 
 
         int areaOverlap = Math.abs((C - E) * (H - B));
