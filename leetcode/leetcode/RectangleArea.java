@@ -16,7 +16,8 @@ public class RectangleArea {
         if (A >= G || C <= E || B >= H || D <= F) {
             return areaAbcd + areaEfgh;
         }
-        int areaOverlap = (Math.min(C, G) - Math.max(A, E)) * (Math.min(D, H) - Math.max(B, F));
+        int areaOverlap = (Math.min(C, G) - Math.max(A, E))
+            * (Math.min(D, H) - Math.max(B, F));
         return areaAbcd + areaEfgh - areaOverlap;
     }
 
