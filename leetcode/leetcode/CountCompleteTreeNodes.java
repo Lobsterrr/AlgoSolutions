@@ -21,6 +21,26 @@ public class CountCompleteTreeNodes {
         if (root == null) {
             return 0;
         }
+        int leftHeight = completeTreeHeight(root.left);
+        int rightHeight = completeTreeHeight(root.right);
+        if (leftHeight == rightHeight) {
+            return (1 << leftHeight) + countNodes(root.right);
+        }
+        return (1 << rightHeight) + countNodes(root.left);
+    }
+
+    public int completeTreeHeight(TreeNode root) {
+        int height = 0;
+        for (TreeNode cur = root; cur != null; height++, cur = cur.left);
+        return height;
+    }
+
+/*****************************************************************************/
+
+    public int countNodes(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
         int left = 0;
         int right = 0;
         for (TreeNode cur = root; cur != null; left++, cur = cur.left);
