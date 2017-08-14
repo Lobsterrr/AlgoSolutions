@@ -34,11 +34,11 @@ public class CountAndSay {
                 if (result.charAt(j) == result.charAt(j - 1)) {
                     count++;
                 } else {
-                    sb.append(String.valueOf(count) + result.charAt(j - 1));
+                    sb.append(count).append(result.charAt(j - 1));
                     count = 1;
                 }
             }
-            sb.append(String.valueOf(count) + result.charAt(result.length() - 1));
+            sb.append(count).append(result.charAt(result.length() - 1));
             result = sb.toString();
         }
         return result;
