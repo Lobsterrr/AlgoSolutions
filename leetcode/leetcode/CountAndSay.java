@@ -26,6 +26,11 @@ Output: "1211"
 public class CountAndSay {
 
     public String countAndSay(int n) {
+        String result = "";
+        for (int i = 1; i <= n; ++i) {
+
+        }
+        return result;
     }
 
 }
