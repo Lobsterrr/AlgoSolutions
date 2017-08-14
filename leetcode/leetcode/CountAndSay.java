@@ -29,12 +29,14 @@ public class CountAndSay {
         String result = "1";
         for (int i = 2; i <= n; ++i) {
             String tmp = "";
-            for (int j = 1, count = 1; j < result.length(); ++j) {
-                if (result.charAt(j) == result.charAt(j - 1)) {
-                    count++;
-                } else {
-                    tmp += count + result.charAt(j - 1);
-                    count = 1;
+            for (int j = 0, count = 1; j < result.length(); ++j) {
+                if (j > 0) {
+                    if (result.charAt(j) == result.charAt(j - 1)) {
+                        count++;
+                    } else {
+                        tmp += count + result.charAt(j - 1);
+                        count = 1;
+                    }
                 }
                 if (j == result.length() - 1) {
                     tmp += count + result.charAt(j - 1);
