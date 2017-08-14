@@ -28,21 +28,21 @@ public class CountAndSay {
     public String countAndSay(int n) {
         String result = "1";
         for (int i = 2; i <= n; ++i) {
-            StringBuilder tmp = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             for (int j = 0, count = 1; j < result.length(); ++j) {
                 if (j > 0) {
                     if (result.charAt(j) == result.charAt(j - 1)) {
                         count++;
                     } else {
-                        tmp.append(count + result.charAt(j - 1));
+                        sb.append(count + result.charAt(j - 1));
                         count = 1;
                     }
                 }
                 if (j == result.length() - 1) {
-                    tmp.append(count + result.charAt(j - 1));
+                    sb.append(count + result.charAt(j));
                 }
             }
-            result = tmp.toString();
+            result = sb.toString();
         }
         return result;
     }
