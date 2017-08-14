@@ -34,12 +34,12 @@ public class CountAndSay {
                     if (result.charAt(j) == result.charAt(j - 1)) {
                         count++;
                     } else {
-                        sb.append(count + result.charAt(j - 1));
+                        sb.append(String.valueOf(count) + result.charAt(j - 1));
                         count = 1;
                     }
                 }
                 if (j == result.length() - 1) {
-                    sb.append(count + result.charAt(j));
+                    sb.append(String.valueOf(count) + result.charAt(j));
                 }
             }
             result = sb.toString();
