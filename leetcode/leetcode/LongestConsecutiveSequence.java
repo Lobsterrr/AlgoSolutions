@@ -11,6 +11,9 @@ Your algorithm should run in O(n) complexity.
 public class LongestConsecutiveSequence {
 
     public int longestConsecutive(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
         Arrays.sort(nums);
         int result = Integer.MIN_VALUE;
         int count = 1;
