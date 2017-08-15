@@ -11,7 +11,19 @@ Your algorithm should run in O(n) complexity.
 public class LongestConsecutiveSequence {
 
     public int longestConsecutive(int[] nums) {
-
+        Arrays.sort(nums);
+        int result = Integer.MIN_VALUE;
+        int count = 1;
+        for (int i = 1; i < nums.length; ++i) {
+            if (nums[i] == nums[i - 1] + 1) {
+                count++;
+            } else {
+                result = Math.max(result, count);
+                count = 1;
+            }
+        }
+        result = Math.max(result, count);
+        return result;
     }
 
 }
