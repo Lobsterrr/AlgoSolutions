@@ -15,7 +15,7 @@ public class LongestConsecutiveSequence {
             return 0;
         }
         Arrays.sort(nums);
-        int result = Integer.MIN_VALUE;
+        int result = 1;
         int count = 1;
         for (int i = 1; i < nums.length; ++i) {
             if (nums[i] == nums[i - 1] + 1) {
