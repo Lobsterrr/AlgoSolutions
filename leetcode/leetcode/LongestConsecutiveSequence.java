@@ -29,7 +29,7 @@ public class LongestConsecutiveSequence {
             while (set.contains(high)) {
                 set.remove(high++);
             }
-            result = Math.max(result, high - low);
+            result = Math.max(result, high - low - 1);
         }
         return result;
     }
