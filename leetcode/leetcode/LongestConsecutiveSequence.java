@@ -61,8 +61,8 @@ public class LongestConsecutiveSequence {
         int upper = high + map.get(high) - 1;
         int lower = low - map.get(low) + 1;
         int len = upper - lower + 1;
-        map.put(high, len);
-        map.put(low, len);
+        map.put(upper, len);
+        map.put(lower, len);
         return len;
     }
 
