@@ -39,11 +39,19 @@ public class LongestConsecutiveSequence {
         if (nums == null || nums.length == 0) {
             return 0;
         }
+        int result = 1;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
-            map.put(num, 1);
+            if (!map.containsKey(num)) {
+                map.put(num, 1);
+                if (map.containsKey(num - 1)) {
+                    result = Math.max(result, merge(map, num - 1, num));
+                }
+                if (map.containsKey(num + 1)) {
+                    result = Math.max(result, merge(map, num, num + 1));
+                }
+            }
         }
-        int result = 1;
 
         return result;
     }
