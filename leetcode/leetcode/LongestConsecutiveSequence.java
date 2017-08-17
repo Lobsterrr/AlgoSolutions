@@ -22,10 +22,10 @@ public class LongestConsecutiveSequence {
                 int left = map.containsKey(num - 1) ? map.get(num - 1) : 0;
                 int right = map.containsKey(num + 1) ? map.get(num + 1) : 0;
                 int consecLen = left + right + 1;
-                result = Math.max(result, consecLen);
                 map.put(num, consecLen);
                 map.put(num - left, consecLen);
                 map.put(num + right, consecLen);
+                result = Math.max(result, consecLen);
             }
         }
         return result;
