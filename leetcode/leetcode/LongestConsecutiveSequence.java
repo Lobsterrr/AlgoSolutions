@@ -15,21 +15,18 @@ public class LongestConsecutiveSequence {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        Set<Integer> set = new HashSet<Integer>();
-        for(int num : nums) {
-            set.add(num);
-        }
         int result = 1;
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
-            int low = num;
-            int high = num + 1;
-            while (set.contains(low)) {
-                set.remove(low--);
+            if (!map.containsKey(num)) {
+                int left = map.containsKey(num - 1) ? map.get(num - 1) : 0;
+                int right = map.containsKey(num + 1) ? map.get(num + 1) : 0;
+                int consecLen = left + right + 1;
+                result = Math.max(result, consecLen);
+                map.put(num, consecLen);
+                map.put(num - left, consecLen);
+                map.put(num + right, consecLen);
             }
-            while (set.contains(high)) {
-                set.remove(high++);
-            }
-            result = Math.max(result, high - low - 1);
         }
         return result;
     }
