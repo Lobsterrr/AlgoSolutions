@@ -44,7 +44,17 @@ public class LongestConsecutiveSequence {
             map.put(num, 1);
         }
         int result = 1;
+
         return result;
+    }
+
+    public int merge(Map<Integer, Integer> map, int low, int high) {
+        int upper = high + map.get(high) - 1;
+        int lower = low - map.get(low) + 1;
+        int len = upper - lower + 1;
+        map.put(high, len);
+        map.put(low, len);
+        return len;
     }
 
 /*****************************************************************************/
