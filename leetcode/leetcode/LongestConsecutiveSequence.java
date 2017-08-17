@@ -44,6 +44,29 @@ public class LongestConsecutiveSequence {
         }
         int result = 1;
         for (int num : nums) {
+            if (!set.contains(num - 1)) {
+                int count = 0;
+                while (set.contains(num)) {
+                    count++;
+                    set.remove(num++);
+                }
+                result = Math.max(result, count);
+            }
+        }
+        return result;
+    }
+
+    // O(n) time, O(n) space.
+    public int longestConsecutive(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        Set<Integer> set = new HashSet<Integer>();
+        for(int num : nums) {
+            set.add(num);
+        }
+        int result = 1;
+        for (int num : nums) {
             int low = num;
             int high = num + 1;
             while (set.contains(low)) {
