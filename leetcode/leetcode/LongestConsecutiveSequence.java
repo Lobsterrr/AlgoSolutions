@@ -34,6 +34,8 @@ public class LongestConsecutiveSequence {
         return result;
     }
 
+/*****************************************************************************/
+
     // O(n) time, O(n) space.
     public int longestConsecutive(int[] nums) {
         if (nums == null || nums.length == 0) {
