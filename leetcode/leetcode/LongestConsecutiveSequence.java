@@ -39,22 +39,11 @@ public class LongestConsecutiveSequence {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        Set<Integer> set = new HashSet<Integer>();
-        for(int num : nums) {
-            set.add(num);
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int num : nums) {
+            map.put(num, 1);
         }
         int result = 1;
-        for (int num : nums) {
-            int low = num;
-            int high = num + 1;
-            while (set.contains(low)) {
-                set.remove(low--);
-            }
-            while (set.contains(high)) {
-                set.remove(high++);
-            }
-            result = Math.max(result, high - low - 1);
-        }
         return result;
     }
 
