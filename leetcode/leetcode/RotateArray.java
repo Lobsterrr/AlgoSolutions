@@ -19,7 +19,11 @@ public class RotateArray {
     public void rotate(int[] nums, int k) {
         int len = nums.length;
         for (int i = 0; i < gcd(len, k); ++i) {
-
+            int tmp = nums[len - 1 - i];
+            for (int j = 1; j < len / gcd(len, k); ++j) {
+                nums[len - 1 - (j - 1) * k] = nums[len - 1 - i * k % len];
+            }
+            nums[]
         }
 
 
