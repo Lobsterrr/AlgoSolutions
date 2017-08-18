@@ -18,11 +18,26 @@ public class RotateArray {
 
     public void rotate(int[] nums, int k) {
         int len = nums.length;
+        for (int i = 0; i < gcd(len, k); ++i) {
+
+        }
+
+
         int tmp = nums[len - 1];
-        for (int i = 1; i < nums.length; ++i) {
-            nums[len - 1 - (i - 1) * k % len] = nums[len - 1 - i * k % len];
+        for (int i = 1; i < len; ++i) {
+            int cur = len - 1 - (i - 1) * k % len;
+            int prev = len - 1 - i * k % len;
+            nums[cur] = nums[prev];
+            if (prev == len - 1) {
+                nums[cur] = tmp;
+            }
+
         }
         nums[(k % len + len - 1) % len] = tmp;
+    }
+
+    public int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 
 }
