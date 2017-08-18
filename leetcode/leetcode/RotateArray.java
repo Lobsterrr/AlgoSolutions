@@ -21,6 +21,7 @@ public class RotateArray {
         for (int i = 1; i < nums.length; ++i) {
             nums[len - 1 - (i - 1) * k % len] = nums[len - 1 - i * k % len];
         }
+        nums[k - 1] = tmp;
     }
 
 }
