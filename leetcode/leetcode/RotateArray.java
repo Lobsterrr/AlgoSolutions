@@ -18,6 +18,7 @@ public class RotateArray {
 
     public void rotate(int[] nums, int k) {
         int len = nums.length;
+        int tmp = nums[len - 1];
         for (int i = 1; i < nums.length; ++i) {
             nums[len - 1 - (i - 1) * k % len] = nums[len - 1 - i * k % len];
         }
