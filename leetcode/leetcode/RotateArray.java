@@ -17,7 +17,10 @@ Related problem: Reverse Words in a String II
 public class RotateArray {
 
     public void rotate(int[] nums, int k) {
-
+        int len = nums.length;
+        for (int i = 1; i < nums.length; ++i) {
+            nums[len - 1 - (i - 1) * k % len] = nums[len - 1 - i * k % len];
+        }
     }
 
 }
