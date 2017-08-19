@@ -26,7 +26,7 @@ public class RotateArray {
 
     public void reverse(int[] nums, int low, int high) {
         if (nums == null || nums.length == 0 || low < 0
-                || hight >= nums.length || low > high) {
+                || high >= nums.length || low > high) {
             return;
         }
         for (int i = low; i < (low + high) / 2; ++i) {
