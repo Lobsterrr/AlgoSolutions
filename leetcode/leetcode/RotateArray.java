@@ -29,7 +29,7 @@ public class RotateArray {
                 || high >= nums.length || low > high) {
             return;
         }
-        for (int i = low; i < (low + high) / 2; ++i) {
+        for (int i = low; i <= (low + high) / 2; ++i) {
             int tmp = nums[i];
             nums[i] = nums[low + high - i];
             nums[low + high - i] = tmp;
