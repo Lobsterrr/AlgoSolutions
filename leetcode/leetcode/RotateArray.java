@@ -16,9 +16,12 @@ Related problem: Reverse Words in a String II
  */
 public class RotateArray {
 
+    // O(n) time, O(1) space.
     public void rotate(int[] nums, int k) {
         int len = nums.length;
-
+        reverse(nums, 0, len - 1 - k);
+        reverse(nums, len - k, len - 1);
+        reverse(nums, 0, len - 1);
     }
 
     public void reverse(int[] nums, int low, int high) {
