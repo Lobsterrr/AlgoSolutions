@@ -21,8 +21,21 @@ public class RotateArray {
 
     }
 
+    public void reverse(int[] nums, int low, int high) {
+        if (nums == null || nums.length == 0 || low < 0
+                || hight >= nums.length || low > high) {
+            return;
+        }
+        for (int i = low; i < (low + high) / 2; ++i) {
+            int tmp = nums[i];
+            nums[i] = nums[low + high - i];
+            nums[low + high - i] = tmp;
+        }
+    }
+
 /*****************************************************************************/
 
+    // O(n) time, O(1) space.
     public void rotate(int[] nums, int k) {
         int len = nums.length;
         int gcd = gcd(len, k);
