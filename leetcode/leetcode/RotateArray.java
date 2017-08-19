@@ -21,24 +21,11 @@ public class RotateArray {
         int gcd = gcd(len, k);
         for (int i = 0; i < gcd; ++i) {
             int tmp = nums[len - 1 - i];
-            for (int j = 1; j < len / gcd; ++j) {
-                nums[len - 1 - i - (j - 1) * k] = nums[len - 1 - i - j * k % len];
+            for (int j = 0; j < len / gcd - 1; ++j) {
+                nums[len - 1 - i - j * k] = nums[len - 1 - i - (j + 1) * k % len];
             }
-            nums[]
+            nums[len - 1 - i - (len / gcd - 1) * k] = tmp;
         }
-
-
-        int tmp = nums[len - 1];
-        for (int i = 1; i < len; ++i) {
-            int cur = len - 1 - (i - 1) * k % len;
-            int prev = len - 1 - i * k % len;
-            nums[cur] = nums[prev];
-            if (prev == len - 1) {
-                nums[cur] = tmp;
-            }
-
-        }
-        nums[(k % len + len - 1) % len] = tmp;
     }
 
     public int gcd(int a, int b) {
