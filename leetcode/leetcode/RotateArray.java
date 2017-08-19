@@ -22,7 +22,7 @@ public class RotateArray {
         for (int i = 0; i < gcd; ++i) {
             int tmp = nums[len - 1 - i];
             for (int j = 0; j < len / gcd - 1; ++j) {
-                nums[((len - 1 - i - j * k) % len + len) % len] = nums[((len - 1 - i - (j + 1) * k % len) % len + len) % len];
+                nums[((len - 1 - i - j * k) % len + len) % len] = nums[((len - 1 - i - (j + 1) * k) % len + len) % len];
             }
             nums[((len - 1 - i - (len / gcd - 1) * k) % len + len) % len] = tmp;
         }
