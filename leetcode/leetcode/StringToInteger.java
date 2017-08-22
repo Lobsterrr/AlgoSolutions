@@ -45,7 +45,9 @@ public class StringToInteger {
             isNegative = str.charAt(0) == '-';
             i++;
         }
+        for (; i < str.length(); ++i) {
 
+        }
     }
 
     public String trim(String str) {
