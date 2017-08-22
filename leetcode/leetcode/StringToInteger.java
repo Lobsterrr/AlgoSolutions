@@ -36,6 +36,16 @@ public class StringToInteger {
 
     public int myAtoi(String str) {
         str = trim(str);
+        if (str == null || str.length() == null) {
+            return 0;
+        }
+        boolean isNegative = false;
+        int i = 0;
+        if (str.charAt(0) == '+' || str.charAt(0) == '-') {
+            isNegative = str.charAt(0) == '-';
+            i++;
+        }
+
     }
 
     public String trim(String str) {
