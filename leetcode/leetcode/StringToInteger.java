@@ -45,9 +45,23 @@ public class StringToInteger {
             isNegative = str.charAt(0) == '-';
             i++;
         }
+        long result = 0;
         for (; i < str.length(); ++i) {
-
+            if (!Character.isDigit(str.charAt(i))) {
+                return 0;
+            }
+            result = 10 * result + (str.charAt(i) - '0');
         }
+        if (isNegative) {
+            result = -result;
+        }
+        if (result > Integer.MAX_VALUE) {
+            return Integer.MAX_VALUE;
+        }
+        if (result < Integer.MIN_VALUE) {
+            return Integer.MIN_VALUE;
+        }
+        return result;
     }
 
     public String trim(String str) {
