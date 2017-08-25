@@ -64,7 +64,7 @@ public class StringToInteger {
         return result;
     }
 
-    public String trim(String str) {
+    private String trim(String str) {
         if (str == null) {
             return str;
         }
