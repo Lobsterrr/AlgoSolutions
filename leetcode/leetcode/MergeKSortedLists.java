@@ -22,7 +22,11 @@ public class MergeKSortedLists {
                 return a.val - b.val;
             }
         });
-        Collections.addAll(queue, lists);
+        for(ListNode list : lists) {
+            if (list != null) {
+                queue.add(list);
+            }
+        }
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
         while (!queue.isEmpty()) {
