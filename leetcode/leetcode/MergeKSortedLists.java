@@ -20,6 +20,16 @@ public class MergeKSortedLists {
         return result;
     }
 
+/*****************************************************************************/
+
+    public ListNode mergeKLists(ListNode[] lists) {
+        ListNode result = null;
+        for (int i = 0; i < lists.length; ++i) {
+            result = merge2Lists(result, lists[i]);
+        }
+        return result;
+    }
+
     private ListNode merge2Lists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
