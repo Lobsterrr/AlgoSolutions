@@ -48,7 +48,7 @@ public class StringToInteger {
         long result = 0;
         for (; i < str.length(); ++i) {
             if (!Character.isDigit(str.charAt(i))) {
-                return 0;
+                break;
             }
             result = 10 * result + (str.charAt(i) - '0');
         }
