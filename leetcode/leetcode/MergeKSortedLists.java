@@ -23,11 +23,17 @@ public class MergeKSortedLists {
 /*****************************************************************************/
 
     public ListNode mergeKLists(ListNode[] lists) {
-        ListNode result = null;
-        for (int i = 0; i < lists.length; ++i) {
-            result = merge2Lists(result, lists[i]);
+        if (lists == null || lists.length == 0) {
+            return 0;
         }
-        return result;
+        int last = lists.length - 1;
+        while (last > 0) {
+            int cur = 0;
+            while (cur < last) {
+                lists[cur] = merge2Lists(lists[cur++], lists[last--]);
+            }
+        }
+        return lists[0];
     }
 
     private ListNode merge2Lists(ListNode l1, ListNode l2) {
