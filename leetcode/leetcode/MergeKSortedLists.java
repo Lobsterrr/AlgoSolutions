@@ -13,8 +13,8 @@ describe its complexity.
 public class MergeKSortedLists {
 
     public ListNode mergeKLists(ListNode[] lists) {
-        ListNode result = lists[0];
-        for (int i = 1; i < lists.length; ++i) {
+        ListNode result = null;
+        for (int i = 0; i < lists.length; ++i) {
             result = merge2Lists(result, lists[i]);
         }
         return result;
