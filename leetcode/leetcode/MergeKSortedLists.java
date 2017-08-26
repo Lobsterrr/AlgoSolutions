@@ -35,11 +35,7 @@ public class MergeKSortedLists {
             }
             cur = cur.next;
         }
-        if (cur1 != null) {
-            cur.next = cur1;
-        } else {
-            cur.next = cur2;
-        }
+        cur.next = cur1 != null ? cur1 : cur2;
         return dummy.next;
     }
 
