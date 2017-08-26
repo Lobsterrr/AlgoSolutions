@@ -35,7 +35,7 @@ or INT_MIN (-2147483648) is returned.
 public class StringToInteger {
 
     public int myAtoi(String str) {
-        str = trim(str);
+        str = str.trim();
         if (str == null || str.length() == 0) {
             return 0;
         }
@@ -65,17 +65,6 @@ public class StringToInteger {
             return Integer.MIN_VALUE;
         }
         return Math.toIntExact(result);
-    }
-
-    private String trim(String str) {
-        if (str == null) {
-            return str;
-        }
-        int low = 0;
-        int high = str.length() - 1;
-        for (; low <= high && str.charAt(low) == ' '; ++low);
-        for (; high > low && str.charAt(high) == ' '; --high);
-        return low > high ? "" : str.substring(low, high + 1);
     }
 
 }
