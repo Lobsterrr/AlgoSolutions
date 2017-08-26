@@ -49,40 +49,8 @@ public class StringToInteger {
         }
         result *= sign;
         result = Math.min(result, Integer.MAX_VALUE);
-        result = Math.max(result, Integer.MIN_VAUE);
+        result = Math.max(result, Integer.MIN_VALUE);
         return (int) result;
-
-
-
-        if (str == null || str.length() == 0) {
-            return 0;
-        }
-        boolean isNegative = false;
-        int i = 0;
-        if (str.charAt(0) == '+' || str.charAt(0) == '-') {
-            isNegative = str.charAt(0) == '-';
-            i++;
-        }
-        long result = 0;
-        for (; i < str.length(); ++i) {
-            if (!Character.isDigit(str.charAt(i))) {
-                break;
-            }
-            result = 10 * result + (str.charAt(i) - '0');
-            if (result > Integer.MAX_VALUE) {
-                break;
-            }
-        }
-        if (isNegative) {
-            result = -result;
-        }
-        if (result > Integer.MAX_VALUE) {
-            return Integer.MAX_VALUE;
-        }
-        if (result < Integer.MIN_VALUE) {
-            return Integer.MIN_VALUE;
-        }
-        return Math.toIntExact(result);
     }
 
 }
