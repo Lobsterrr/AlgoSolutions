@@ -25,7 +25,7 @@ public class MergeKSortedLists {
         ListNode cur = dummy;
         ListNode cur1 = l1;
         ListNode cur2 = l2;
-        while (l1 != null && l2 != null) {
+        while (cur1 != null && cur2 != null) {
             if (cur1.val < cur2.val) {
                 cur.next = cur1;
                 cur1 = cur1.next;
