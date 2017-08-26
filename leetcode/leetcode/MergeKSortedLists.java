@@ -13,14 +13,30 @@ describe its complexity.
 public class MergeKSortedLists {
 
     public ListNode mergeKLists(ListNode[] lists) {
-        ListNode result = null;
-        for (int i = 0; i < lists.length; ++i) {
-            result = merge2Lists(result, lists[i]);
+        if (lists == null || lists.length == 0) {
+            return null;
         }
-        return result;
+        PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>() {
+            @Override
+            public int compare(ListNode a, ListNode b) {
+                return a.val - b.val;
+            }
+        });
+        for(ListNode list : lists) {
+            queue.add(list);
+        }
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        while (!queue.isEmpty()) {
+            ListNode list = queue.poll();
+            cur.next = list;
+            cur = cur.next;
+            if (list.next != null) {
+                queue.add(list.next);
+            }
+        }
+        return dummy.next;
     }
-
-/*****************************************************************************/
 
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
