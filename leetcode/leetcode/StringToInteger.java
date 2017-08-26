@@ -36,6 +36,24 @@ public class StringToInteger {
 
     public int myAtoi(String str) {
         str = str.trim();
+        double result = 0;
+        int sign = 1;
+        for (int i = 0; i < str.length(); ++i) {
+            if (i == 0 && (str.charAt(i) == '+' || str.charAt(i) == '-')) {
+                sign = str.charAt(i) == '+' ? 1 : -1;
+            } else if (str.charAt(i) < '0' || str.charAt(i) > '9') {
+                break;
+            } else {
+                result = 10 * result + (str.charAt(i) - '0');
+            }
+        }
+        result *= sign;
+        result = Math.min(result, Integer.MAX_VALUE);
+        result = Math.max(result, Integer.MIN_VAUE);
+        return (int) result;
+
+
+
         if (str == null || str.length() == 0) {
             return 0;
         }
