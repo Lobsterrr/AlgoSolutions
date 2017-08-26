@@ -72,7 +72,7 @@ public class StringToInteger {
         int high = str.length() - 1;
         for (; low <= high && str.charAt(low) == ' '; ++low);
         for (; high > low && str.charAt(high) == ' '; --high);
-        return low >= high ? "" : str.substring(low, high + 1);
+        return low > high ? "" : str.substring(low, high + 1);
     }
 
 }
