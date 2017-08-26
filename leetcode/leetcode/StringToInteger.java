@@ -51,6 +51,9 @@ public class StringToInteger {
                 break;
             }
             result = 10 * result + (str.charAt(i) - '0');
+            if (result > Integer.MAX_VALUE) {
+                break;
+            }
         }
         if (isNegative) {
             result = -result;
