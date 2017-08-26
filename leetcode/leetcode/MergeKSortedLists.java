@@ -13,7 +13,13 @@ describe its complexity.
 public class MergeKSortedLists {
 
     public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null || lists.length == 0) {
+            return null;
+        }
+        ListNode[] index = new ListNode[lists.length];
+        for (int i = 0; i < index.length; ++i) {
 
+        }
     }
 
 }
