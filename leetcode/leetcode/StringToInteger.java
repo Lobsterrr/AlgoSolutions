@@ -61,7 +61,7 @@ public class StringToInteger {
         if (result < Integer.MIN_VALUE) {
             return Integer.MIN_VALUE;
         }
-        return result;
+        return Math.toIntExact(result);
     }
 
     private String trim(String str) {
