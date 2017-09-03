@@ -21,8 +21,10 @@ public class MedianOfTwoSortedArrays {
 
     }
 
-    public int findKthOfSortedArrays(int[] nums1, int low1, int high1, int[] nums2, int low2, int high2) {
-
+    public int findKthOfSortedArrays(int[] nums1, int low1, int high1, int[] nums2, int low2, int high2, int k) {
+        int len1 = high1 - low1 + 1;
+        int len2 = high2 - low2 + 1;
+        int len = len1 + len2;
     }
 
 }
