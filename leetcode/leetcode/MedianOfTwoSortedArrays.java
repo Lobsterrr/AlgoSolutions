@@ -25,6 +25,8 @@ public class MedianOfTwoSortedArrays {
         int len1 = high1 - low1 + 1;
         int len2 = high2 - low2 + 1;
         int len = len1 + len2;
+        int k1 = len1 * k / len;
+        int k2 = len2 * k / len;
     }
 
 }
