@@ -40,6 +40,7 @@ public class RegularExpressionMatching {
         }
         if (cp == '*') {
             for (int i = 0; i < p.length(); ++i) {
+
             }
         }
     }
