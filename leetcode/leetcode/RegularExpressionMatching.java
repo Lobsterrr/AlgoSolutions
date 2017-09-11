@@ -21,27 +21,14 @@ isMatch("aab", "c*a*b") → true
 public class RegularExpressionMatching {
 
     public boolean isMatch(String s, String p) {
-        if (s == null || p == null) {
-            return s == p;
-        }
-        if (s.equals(p)) {
-            return true;
+        if (p == null) {
+            return s == null;
         }
         if (p.length() == 0) {
             return s.length() == 0;
         }
-        char cp = p.charAt(p.length() - 1);
-        char cs = s.charAt(s.length() - 1);
-        if (cp != '.' && cp != '*') {
-            return cp == cs && isMatch(s.substring(0, s.length() - 1), p.substring(0, p.length() - 1));
-        }
-        if (cp == '.') {
-            return isMatch(s.substring(0, s.length() - 1), p.substring(0, p.length() - 1));
-        }
-        if (cp == '*') {
-            for (int i = 0; i < p.length(); ++i) {
-
-            }
+        if (p.length() == 1) {
+            return s.length() == 1 && (p.charAt(0) == '.' || p.equals(s));
         }
     }
 
