@@ -30,6 +30,9 @@ public class RegularExpressionMatching {
         if (p.length() == 1) {
             return s.length() == 1 && (p.charAt(0) == '.' || p.equals(s));
         }
+        if (p.charA(1) == '*') {
+
+        }
     }
 
 }
