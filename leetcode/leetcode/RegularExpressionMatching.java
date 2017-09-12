@@ -32,6 +32,8 @@ public class RegularExpressionMatching {
         }
         if (p.charA(1) == '*') {
 
+        } else {
+
         }
     }
 
