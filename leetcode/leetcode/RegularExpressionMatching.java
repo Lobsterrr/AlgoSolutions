@@ -31,7 +31,7 @@ public class RegularExpressionMatching {
             return s.length() == 1 && (p.charAt(0) == '.' || p.equals(s));
         }
         if (p.charA(1) == '*') {
-            if ()
+            if (p.charAt(0) == '.')
         } else {
 
         }
