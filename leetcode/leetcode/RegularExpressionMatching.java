@@ -28,7 +28,7 @@ public class RegularExpressionMatching {
         int len2 = p.length();
         boolean[][] dp = new boolean[len1 + 1][len2 + 1];
         dp[0][0] = true;
-        for (int i = 0; i < len2; ++i) {
+        for (int i = 1; i < len2; ++i) {
             if (p.charAt(i) == '*' && dp[0][i]) {
                 dp[0][i + 1] = true;
             }
@@ -51,6 +51,8 @@ public class RegularExpressionMatching {
         return dp[len1][len2];
     }
 
+/*****************************************************************************/
+
     public boolean isMatch(String s, String p) {
         if (p == null) {
             return s == null;
@@ -62,9 +64,13 @@ public class RegularExpressionMatching {
             return s.length() == 1 && (p.charAt(0) == '.' || p.equals(s));
         }
         if (p.charAt(1) == '*') {
-            return isMatch(s, p.substring(2)) || s.length() > 0 && (p.charAt(0) == '.' || p.charAt(0) == s.charAt(0)) && isMatch(s.substring(1), p);
+            return isMatch(s, p.substring(2)) || s.length() > 0
+                && (p.charAt(0) == '.' || p.charAt(0) == s.charAt(0))
+                && isMatch(s.substring(1), p);
         } else {
-            return s.length() > 0 && (p.charAt(0) == '.' || p.charAt(0) == s.charAt(0)) && isMatch(s.substring(1), p.substring(1));
+            return s.length() > 0 && (p.charAt(0) == '.'
+                    || p.charAt(0) == s.charAt(0))
+                && isMatch(s.substring(1), p.substring(1));
         }
     }
 
