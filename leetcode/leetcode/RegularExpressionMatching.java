@@ -30,7 +30,7 @@ public class RegularExpressionMatching {
         if (p.length() == 1) {
             return s.length() == 1 && (p.charAt(0) == '.' || p.equals(s));
         }
-        if (p.charA(1) == '*') {
+        if (p.charAt(1) == '*') {
             return isMatch(s, p.substring(2)) || s.length() > 0 && (p.charAt(0) == '.' || p.charAt(0) == s.charAt(0)) && isMatch(s.substring(1), p);
         } else {
             return s.length() > 0 && (p.charAt(0) == '.' || p.charAt(0) == s.charAt(0)) && isMatch(s.substring(1), p.substring(1));
