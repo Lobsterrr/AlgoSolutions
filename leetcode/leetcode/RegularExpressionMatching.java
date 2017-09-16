@@ -29,7 +29,7 @@ public class RegularExpressionMatching {
         boolean[][] dp = new boolean[len1 + 1][len2 + 1];
         dp[0][0] = true;
         for (int i = 0; i < len2; ++i) {
-            if (p.charAt(i) == '*'{
+            if (p.charAt(i) == '*') {
                 if (dp[0][i] || i >= 1 && dp[0][i - 1]) {
                     dp[0][i + 1] = true;
                 }
