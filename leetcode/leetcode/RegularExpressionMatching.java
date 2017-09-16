@@ -29,10 +29,8 @@ public class RegularExpressionMatching {
         boolean[][] dp = new boolean[len1 + 1][len2 + 1];
         dp[0][0] = true;
         for (int i = 0; i < len2; ++i) {
-            if (p.charAt(i) == '*') {
-                if (dp[0][i] || i >= 1 && dp[0][i - 1]) {
-                    dp[0][i + 1] = true;
-                }
+            if (p.charAt(i) == '*' && (dp[0][i] || i >= 1 && dp[0][i - 1])) {
+                dp[0][i + 1] = true;
             }
         }
         for (int i = 0; i < len1; ++i) {
@@ -41,11 +39,14 @@ public class RegularExpressionMatching {
                     dp[i + 1][j + 1] = dp[i][j];
                 }
                 if (p.charAt(j) == '*' && j > 0) {
-                    if (p.charAt(j - 1) != s.charAt(i) && p.charAt(j - 1) != '.') {
+                    if (p.charAt(j - 1) != s.charAt(i)
+                            && p.charAt(j - 1) != '.') {
                         dp[i + 1][j + 1] = dp[i + 1][j - 1];
                     }
-                    if (p.charAt(j - 1) == '.' || p.charAt(j - 1) == s.charAt(i)) {
-                        dp[i + 1][j + 1] = dp[i][j + 1] || dp[i + 1][j] || dp[i + 1][j - 1];
+                    if (p.charAt(j - 1) == '.'
+                            || p.charAt(j - 1) == s.charAt(i)) {
+                        dp[i + 1][j + 1] = dp[i][j + 1] || dp[i + 1][j]
+                            || dp[i + 1][j - 1];
                     }
                 }
             }
