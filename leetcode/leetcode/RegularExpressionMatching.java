@@ -39,7 +39,7 @@ public class RegularExpressionMatching {
                     dp[i + 1][j + 1] = dp[i][j];
                 }
                 if (p.charAt(j) == '*' && j > 0) {
-                    if (p.charAt(j - 1) != s.charAt(i)) {
+                    if (p.charAt(j - 1) != s.charAt(i) && p.charAt(j - 1) != '.') {
                         dp[i + 1][j + 1] = dp[i + 1][j - 1];
                     }
                     if (p.charAt(j - 1) == '.' || p.charAt(j - 1) == s.charAt(i)) {
