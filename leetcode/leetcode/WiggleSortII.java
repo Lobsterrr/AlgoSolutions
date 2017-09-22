@@ -19,7 +19,7 @@ public class WiggleSortII {
             return;
         }
         for (int i = 1; i < nums.length; ++i) {
-
+            if ()
         }
     }
 
