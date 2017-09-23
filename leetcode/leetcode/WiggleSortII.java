@@ -18,8 +18,9 @@ public class WiggleSortII {
         if (nums == null || nums.length < 2) {
             return;
         }
+        Arrays.sort(nums);
         for (int i = 1; i < nums.length; ++i) {
-            if ()
+
         }
     }
 
