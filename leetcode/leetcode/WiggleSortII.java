@@ -19,8 +19,18 @@ public class WiggleSortII {
             return;
         }
         Arrays.sort(nums);
-        for (int i = 1; i < nums.length; ++i) {
+        1, 1, 1, 4, 5, 6;
+        1, 6, 1, 5, 1, 4;
+        1, 6, 1, 4, 5, 1;
+        1, 6, 1, 5, 4, 1;
 
+        1, 1, 2, 2, 3, 3;
+        1, 2, 1, 3, 2, 3;
+        int len = nums.length;
+        for (int i = 1; i < len / 2; i += 2) {
+            int tmp = nums[i];
+            nums[i] = nums[len / 2 + i / 2];
+            nums[len / 2 + i / 2] = tmp;
         }
     }
 
