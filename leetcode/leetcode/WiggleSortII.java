@@ -18,12 +18,10 @@ public class WiggleSortII {
         if (nums == null || nums.length < 2) {
             return;
         }
-        Arrays.sort(nums);
-        int len = nums.length;
-        for (int i = 1; i < len / 2; i += 2) {
-            int tmp = nums[i];
-            nums[i] = nums[len / 2 + i / 2];
-            nums[len / 2 + i / 2] = tmp;
+        int[] tmp = Arrays.copyOf(nums, nums.length);
+        Arrays.sort(tmp);
+        for (int i = nums.length - 1, j = 0, k = i / 2 + 1; i >= 0; --i) {
+            nums[i] = i % 2 == 0 ? tmp[j++] : tmp[k++];
         }
     }
 
