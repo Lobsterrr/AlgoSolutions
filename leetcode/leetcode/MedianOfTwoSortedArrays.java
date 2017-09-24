@@ -18,6 +18,12 @@ The median is (2 + 3)/2 = 2.5
 public class MedianOfTwoSortedArrays {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int[] tmp = new int[nums1.length + nums2.length];
+
+    }
+
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
     }
 
