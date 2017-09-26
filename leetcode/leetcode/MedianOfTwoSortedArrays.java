@@ -19,7 +19,11 @@ public class MedianOfTwoSortedArrays {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int[] tmp = new int[nums1.length + nums2.length];
+        for (int i = 0; i < tmp.length; ++i) {
+            if (i < nums1.length) {
 
+            }
+        }
     }
 
 
