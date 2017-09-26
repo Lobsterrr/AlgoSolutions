@@ -21,7 +21,9 @@ public class MedianOfTwoSortedArrays {
         int[] tmp = new int[nums1.length + nums2.length];
         for (int i = 0; i < tmp.length; ++i) {
             if (i < nums1.length) {
-
+                tmp[i] = nums1[i];
+            } else {
+                tmp[i] = nums2[i - nums1.length];
             }
         }
     }
