@@ -26,6 +26,7 @@ public class MedianOfTwoSortedArrays {
                 tmp[i] = nums2[i - nums1.length];
             }
         }
+        Arrays.sort(tmp);
     }
 
 
