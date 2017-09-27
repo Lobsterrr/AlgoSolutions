@@ -27,6 +27,9 @@ public class MedianOfTwoSortedArrays {
             }
         }
         Arrays.sort(tmp);
+        if (tmp.length % 2 == 1) {
+            return (double) tmp[tmp.length / 2];
+        }
     }
 
 
