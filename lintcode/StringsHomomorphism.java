@@ -35,10 +35,12 @@ public class StringsHomomorphism {
         Map<Character, Character> stMap = new HashMap<Character, Character>();
         Map<Character, Character> tsMap = new HashMap<Character, Character>();
         for (int i = 0; i < s.length(); ++i) {
-            if (stMap.get(s.charAt(i)) != null && stMap.get(s.charAt(i)) != t.charAt(i)) {
+            if (stMap.get(s.charAt(i)) != null
+                    && stMap.get(s.charAt(i)) != t.charAt(i)) {
                 return false;
             }
-            if (tsMap.get(t.charAt(i)) != null && tsMap.get(t.charAt(i)) != s.charAt(i)) {
+            if (tsMap.get(t.charAt(i)) != null
+                    && tsMap.get(t.charAt(i)) != s.charAt(i)) {
                 return false;
             }
             stMap.put(s.charAt(i), t.charAt(i));
