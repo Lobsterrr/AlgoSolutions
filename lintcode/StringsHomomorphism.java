@@ -35,8 +35,8 @@ public class StringsHomomorphism {
         int[] map1 = new int[256];
         int[] map2 = new int[256];
         for (int i = 0; i < s.length(); ++i) {
-            if (map1[charAt(i)] != 0 && map1[s.charAt(i)] != t.charAt(i)
-                    || (map2[charAt(i)] != null && map2[charAt(i)] != s.charAt(i))) {
+            if (map1[s.charAt(i)] != 0 && map1[s.charAt(i)] != t.charAt(i)
+                    || (map2[t.charAt(i)] != 0 && map2[t.charAt(i)] != s.charAt(i))) {
                 return false;
             }
             map1[s.charAt(i)] = t.charAt(i);
