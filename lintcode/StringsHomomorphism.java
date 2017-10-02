@@ -32,25 +32,17 @@ public class StringsHomomorphism {
         if (s.length() != t.length()) {
             return false;
         }
-        Map<Character, Character> map = new HashMap<Character, Character>();
+        Map<Character, Character> stMap = new HashMap<Character, Character>();
+        Map<Character, Character> tsMap = new HashMap<Character, Character>();
         for (int i = 0; i < s.length(); ++i) {
-            if (!map.containsKey(s.charAt(i))) {
-                map.put(s.charAt(i), t.charAt(i));
-            } else {
-                if (map.get(s.charAt(i)) != t.charAt(i)) {
-                    return false;
-                }
+            if (stMap.get(s.charAt(i)) != null && stMap.get(s.charAt(i)) != t.charAt(i)) {
+                return false;
             }
-        }
-        map.clear();
-        for (int i = 0; i < t.length(); ++i) {
-            if (!map.containsKey(t.charAt(i))) {
-                map.put(t.charAt(i), s.charAt(i));
-            } else {
-                if (map.get(t.charAt(i)) != s.charAt(i)) {
-                    return false;
-                }
+            if (tsMap.get(t.charAt(i)) != null && tsMap.get(t.charAt(i)) != s.charAt(i)) {
+                return false;
             }
+            stMap.put(s.charAt(i), t.charAt(i));
+            tsMap.put(t.charAt(i), s.charAt(i));
         }
         return true;
     }
