@@ -15,6 +15,25 @@ public class CheckSumOfSquareNumbers {
      * @param : the given number
      * @return: whether whether there're two integers
      */
+    public boolean checkSumOfSquareNumbers(int num) {
+        if (num < 0) {
+            return false;
+        }
+        int i = 0;
+        int j = (int) Math.sqrt(num);
+        while (i <= j) {
+            int sum = i * i + j * j;
+            if (sum == num) {
+                return true;
+            } else if (sum < num) {
+                i++;
+            } else {
+                j--;
+            }
+        }
+        return false;
+    }
+
     // TLE
     public boolean checkSumOfSquareNumbers(int num) {
         for (int i = 0; i * i <= num; ++i) {
