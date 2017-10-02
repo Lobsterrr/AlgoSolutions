@@ -21,7 +21,7 @@ public class FirstPositionUniqueCharacter {
             map.put(s.charAt(i), 1 + (map.get(s.charAt(i)) == null ? 0 : map.get(s.charAt(i))));
         }
         for (int i = 0; i < s.length(); ++i) {
-            if (map.get(i) == 1) {
+            if (map.get(s.charAt(i)) == 1) {
                 return i;
             }
         }
