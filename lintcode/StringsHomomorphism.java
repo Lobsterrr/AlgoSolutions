@@ -42,6 +42,16 @@ public class StringsHomomorphism {
                 }
             }
         }
+        map.clear();
+        for (int i = 0; i < t.length(); ++i) {
+            if (!map.containsKey(t.charAt(i))) {
+                map.put(t.charAt(i), s.charAt(i));
+            } else {
+                if (map.get(t.charAt(i)) != s.charAt(i)) {
+                    return false;
+                }
+            }
+        }
         return true;
     }
 
