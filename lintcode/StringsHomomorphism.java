@@ -34,7 +34,13 @@ public class StringsHomomorphism {
         }
         Map<Character, Character> map = new HashMap<Character, Character>();
         for (int i = 0; i < s.length(); ++i) {
-
+            if (!map.containsKey(s.charAt(i))) {
+                map.put(s.charAt(i), t.charAt(i));
+            } else {
+                if (map.get(s.charAt(i)) != t.charAt(i)) {
+                    return false;
+                }
+            }
         }
         return true;
     }
