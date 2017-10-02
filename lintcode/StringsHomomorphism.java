@@ -32,8 +32,17 @@ public class StringsHomomorphism {
         if (s.length() != t.length()) {
             return false;
         }
+        int[] map1 = new int[256];
+        int[] map2 = new int[256];
+        for (int i = 0; i < s.length(); ++i) {
+
+        }
+
+
+
         Map<Character, Character> stMap = new HashMap<Character, Character>();
         Map<Character, Character> tsMap = new HashMap<Character, Character>();
+
         for (int i = 0; i < s.length(); ++i) {
             if (stMap.get(s.charAt(i)) != null
                     && stMap.get(s.charAt(i)) != t.charAt(i)) {
