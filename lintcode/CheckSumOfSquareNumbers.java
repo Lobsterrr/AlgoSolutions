@@ -19,6 +19,20 @@ public class CheckSumOfSquareNumbers {
         if (num < 0) {
             return false;
         }
+        for (int i = 0; i * i <= num; ++i) {
+            int delta = num - i * i;
+            int sqrt = (int) Math.sqrt(delta);
+            if (sqrt * sqrt == delta) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkSumOfSquareNumbers(int num) {
+        if (num < 0) {
+            return false;
+        }
         boolean[] isSquare = new boolean[num + 1];
         isSquare[0] = true;
         for (int i = 1; i * i <= num; ++i) {
