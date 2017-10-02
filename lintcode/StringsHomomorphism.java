@@ -35,25 +35,12 @@ public class StringsHomomorphism {
         int[] map1 = new int[256];
         int[] map2 = new int[256];
         for (int i = 0; i < s.length(); ++i) {
-
-        }
-
-
-
-        Map<Character, Character> stMap = new HashMap<Character, Character>();
-        Map<Character, Character> tsMap = new HashMap<Character, Character>();
-
-        for (int i = 0; i < s.length(); ++i) {
-            if (stMap.get(s.charAt(i)) != null
-                    && stMap.get(s.charAt(i)) != t.charAt(i)) {
+            if (map1[charAt(i)] != 0 && map1[s.charAt(i)] != t.charAt(i)
+                    || (map2[charAt(i)] != null && map2[charAt(i)] != s.charAt(i))) {
                 return false;
             }
-            if (tsMap.get(t.charAt(i)) != null
-                    && tsMap.get(t.charAt(i)) != s.charAt(i)) {
-                return false;
-            }
-            stMap.put(s.charAt(i), t.charAt(i));
-            tsMap.put(t.charAt(i), s.charAt(i));
+            map1[s.charAt(i)] = t.charAt(i);
+            map2[t.charAt(i)] = s.charAt(i);
         }
         return true;
     }
