@@ -43,6 +43,7 @@ public class CheckSumOfSquareNumbers {
     }
 
 
+    // OOM
     public boolean checkSumOfSquareNumbers(int num) {
         if (num < 0) {
             return false;
