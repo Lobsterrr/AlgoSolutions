@@ -12,7 +12,11 @@ public class Factorial {
      * @return:  the factorial of n
      */
     public String factorial(int n) {
-        // write your code here
+        BigDecimal bigDecimal = BigDecimal.ONE;
+        for (int i = 1; i <= n; ++i) {
+            bigDecimal = bigDecimal.multiply(BigDecimal.valueOf(i));
+        }
+        return bigDecimal.toString();
     }
 
 }
