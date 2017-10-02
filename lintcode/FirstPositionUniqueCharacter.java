@@ -16,12 +16,12 @@ public class FirstPositionUniqueCharacter {
         if (s == null) {
             return -1;
         }
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        int[] count = new int[256];
         for (int i = 0; i < s.length(); ++i) {
-            map.put(s.charAt(i), 1 + (map.get(s.charAt(i)) == null ? 0 : map.get(s.charAt(i))));
+            count[s.charAt(i)]++;
         }
         for (int i = 0; i < s.length(); ++i) {
-            if (map.get(s.charAt(i)) == 1) {
+            if (count[s.charAt(i)] == 1) {
                 return i;
             }
         }
