@@ -30,10 +30,10 @@ public class CheckSumOfSquareNumbers {
         if (num < 0) {
             return false;
         }
+        Set<Integer> set = new HashSet<Integer>();
         for (int i = 0; i * i <= num; ++i) {
-            int delta = num - i * i;
-            int sqrt = (int) Math.sqrt(delta);
-            if (sqrt * sqrt == delta) {
+            set.add(i * i);
+            if (set.contains(num - i * i)) {
                 return true;
             }
         }
