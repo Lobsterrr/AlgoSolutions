@@ -16,7 +16,7 @@ public class CheckSumOfSquareNumbers {
      * @return: whether whether there're two integers
      */
     public boolean checkSumOfSquareNumbers(int num) {
-        boolean[] isSquare = new int[num + 1];
+        boolean[] isSquare = new boolean[num + 1];
         isSquare[0] = true;
         for (int i = 1; i * i <= num; ++i) {
             isSquare[i * i] = true;
