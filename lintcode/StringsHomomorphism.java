@@ -20,4 +20,13 @@ Given s = "paper", t = "title", return true.
  */
 public class StringsHomomorphism {
 
+    /*
+     * @param s: a string
+     * @param t: a string
+     * @return: true if the characters in s can be replaced to get t or false
+     */
+    public boolean isIsomorphic(String s, String t) {
+        // write your code here
+    }
+
 }
