@@ -34,6 +34,8 @@ public class CheckSumOfSquareNumbers {
         return false;
     }
 
+/*****************************************************************************/
+
     // TLE
     public boolean checkSumOfSquareNumbers(int num) {
         for (int i = 0; i * i <= num; ++i) {
@@ -45,6 +47,8 @@ public class CheckSumOfSquareNumbers {
         }
         return false;
     }
+
+/*****************************************************************************/
 
     // TLE
     public boolean checkSumOfSquareNumbers(int num) {
@@ -61,6 +65,7 @@ public class CheckSumOfSquareNumbers {
         return false;
     }
 
+/*****************************************************************************/
 
     // OOM
     public boolean checkSumOfSquareNumbers(int num) {
