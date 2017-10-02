@@ -26,7 +26,17 @@ public class StringsHomomorphism {
      * @return: true if the characters in s can be replaced to get t or false
      */
     public boolean isIsomorphic(String s, String t) {
-        // write your code here
+        if (s == null || t == null) {
+            return s == t;
+        }
+        if (s.length() != t.length()) {
+            return false;
+        }
+        Map<Character, Character> map = new HashMap<Character, Character>();
+        for (int i = 0; i < s.length(); ++i) {
+
+        }
+        return true;
     }
 
 }
