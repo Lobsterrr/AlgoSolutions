@@ -7,4 +7,12 @@ return 2432902008176640000
  */
 public class Factorial {
 
+    /*
+     * @param : an integer
+     * @return:  the factorial of n
+     */
+    public String factorial(int n) {
+        // write your code here
+    }
+
 }
