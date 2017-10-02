@@ -15,6 +15,7 @@ public class CheckSumOfSquareNumbers {
      * @param : the given number
      * @return: whether whether there're two integers
      */
+    // TLE
     public boolean checkSumOfSquareNumbers(int num) {
         for (int i = 0; i * i <= num; ++i) {
             int delta = num - i * i;
@@ -26,6 +27,7 @@ public class CheckSumOfSquareNumbers {
         return false;
     }
 
+    // TLE
     public boolean checkSumOfSquareNumbers(int num) {
         if (num < 0) {
             return false;
