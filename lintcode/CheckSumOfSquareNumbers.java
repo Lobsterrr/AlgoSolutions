@@ -16,6 +16,17 @@ public class CheckSumOfSquareNumbers {
      * @return: whether whether there're two integers
      */
     public boolean checkSumOfSquareNumbers(int num) {
+        for (int i = 0; i * i <= num; ++i) {
+            int delta = num - i * i;
+            int sqrt = (int) Math.sqrt(delta);
+            if (sqrt * sqrt == delta) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkSumOfSquareNumbers(int num) {
         if (num < 0) {
             return false;
         }
@@ -28,6 +39,7 @@ public class CheckSumOfSquareNumbers {
         }
         return false;
     }
+
 
     public boolean checkSumOfSquareNumbers(int num) {
         if (num < 0) {
