@@ -17,4 +17,12 @@ Given nums = [5,4,4,3,2,1] return 4
  */
 public class FindTheDuplicateNumber {
 
+    /**
+     * @param nums an array containing n + 1 integers which is between 1 and n
+     * @return the duplicate one
+     */
+    public int findDuplicate(int[] nums) {
+        // Write your code here
+    }
+
 }
