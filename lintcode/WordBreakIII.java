@@ -23,12 +23,11 @@ public class WordBreakIII {
     private int result = 0;
 
     public int wordBreak3(String s, Set<String> dict) {
-        for (int i = 1; i < s.length(); ++i) {
-            if (dict.contains(s.substring(0, i)) && dict.contains(s.substring(i))) {
-                result++;
-            }
-        }
         return result;
+    }
+
+    public void wordBreakHelper(String s, Set<String> dict, int start, int len) {
+
     }
 
 }
