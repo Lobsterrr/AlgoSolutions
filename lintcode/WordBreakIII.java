@@ -29,7 +29,8 @@ public class WordBreakIII {
         return result.size();
     }
 
-    public void dfs(String s, Set<String> dict, List<List<String>> result, List<String> list, int start, int len) {
+    public void dfs(String s, Set<String> dict, List<List<String>> result,
+            List<String> list, int start, int len) {
         if (start == len) {
             result.add(new ArrayList<String>(list));
         }
