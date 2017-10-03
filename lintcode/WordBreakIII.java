@@ -46,18 +46,19 @@ public class WordBreakIII {
             return 0;
         }
         List<List<String>> result = new ArrayList<List<String>>();
-        wordBreakHelper(s, dict, result, new ArrayList<String>(), 0, s.length());
+        dfs(s, dict, result, new ArrayList<String>(), 0, s.length());
         return result.size();
     }
 
-    public void wordBreakHelper(String s, Set<String> dict, List<List<String>> result, List<String> list, int start, int len) {
+    public void dfs(String s, Set<String> dict, List<List<String>> result, List<String> list, int start, int len) {
         if (start == len) {
             result.add(new ArrayList<String>(list));
         }
         for (int i = start; i < len; ++i) {
             if (dict.contains(s.substring(start, i + 1))) {
                 list.add(s.substring(start, i + 1));
-                wordBreakHelper(s, dict, result, list, i + 1, len);
+                dfs(s, dict, result, list, i + 1, len);
+                list.remove(list.size() - 1);
             }
         }
     }
