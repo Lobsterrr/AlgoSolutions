@@ -35,8 +35,7 @@ public class WordBreakIII {
             result++;
         }
         for (int i = start; i < len; ++i) {
-            String sub = s.substring(start, i + 1);
-            if (dict.contains(sub)) {
+            if (dict.contains(s.substring(start, i + 1))) {
                 wordBreakHelper(s, dict, i + 1, len);
             }
         }
