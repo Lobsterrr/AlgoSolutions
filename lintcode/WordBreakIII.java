@@ -20,27 +20,6 @@ public class WordBreakIII {
      * @param : A set of word
      * @return: the number of possible sentences.
      */
-    private int result = 0;
-
-    public int wordBreak3(String s, Set<String> dict) {
-        if (s == null || dict == null) {
-            return 0;
-        }
-        wordBreakHelper(s, dict, 0, s.length());
-        return result;
-    }
-
-    public void wordBreakHelper(String s, Set<String> dict, int start, int len) {
-        if (start == len) {
-            result++;
-        }
-        for (int i = start; i < len; ++i) {
-            if (dict.contains(s.substring(start, i + 1))) {
-                wordBreakHelper(s, dict, i + 1, len);
-            }
-        }
-    }
-
     public int wordBreak3(String s, Set<String> dict) {
         if (s == null || dict == null) {
             return 0;
@@ -59,6 +38,29 @@ public class WordBreakIII {
                 list.add(s.substring(start, i + 1));
                 dfs(s, dict, result, list, i + 1, len);
                 list.remove(list.size() - 1);
+            }
+        }
+    }
+
+/*****************************************************************************/
+
+    private int result = 0;
+
+    public int wordBreak3(String s, Set<String> dict) {
+        if (s == null || dict == null) {
+            return 0;
+        }
+        wordBreakHelper(s, dict, 0, s.length());
+        return result;
+    }
+
+    public void wordBreakHelper(String s, Set<String> dict, int start, int len) {
+        if (start == len) {
+            result++;
+        }
+        for (int i = start; i < len; ++i) {
+            if (dict.contains(s.substring(start, i + 1))) {
+                wordBreakHelper(s, dict, i + 1, len);
             }
         }
     }
