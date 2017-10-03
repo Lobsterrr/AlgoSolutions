@@ -20,8 +20,9 @@ public class WordBreakIII {
      * @param : A set of word
      * @return: the number of possible sentences.
      */
+    private int result = 0;
+
     public int wordBreak3(String s, Set<String> dict) {
-        int result = 0;
         for (int i = 1; i < s.length(); ++i) {
             if (dict.contains(s.substring(0, i)) && dict.contains(s.substring(i))) {
                 result++;
