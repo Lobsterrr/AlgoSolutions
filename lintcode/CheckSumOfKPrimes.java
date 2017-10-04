@@ -23,6 +23,7 @@ public class CheckSumOfKPrimes {
      * @return: if N can be expressed in the form of sum of K primes, return
      * true; otherwise, return false.
      */
+    // TLE
     public boolean isSumOfKPrimes(int n, int k) {
         if (n < 2 * k) {
             return false;
@@ -59,6 +60,7 @@ public class CheckSumOfKPrimes {
 
 /*****************************************************************************/
 
+    // OOM
     public boolean isSumOfKPrimes(int n, int k) {
         if (n < 2 * k) {
             return false;
