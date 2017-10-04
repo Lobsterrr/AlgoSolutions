@@ -36,14 +36,4 @@ public class FindTheDuplicateNumber {
         return fast;
     }
 
-    public int findDuplicate(int[] nums) {
-        int fast = nums[0];
-        int slow = nums[0];
-        do {
-            slow = nums[slow - 1];
-            fast = nums[nums[fast - 1] - 1];
-        } while (fast != slow);
-        return fast;
-    }
-
 }
