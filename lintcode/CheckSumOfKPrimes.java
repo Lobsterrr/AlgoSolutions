@@ -16,4 +16,14 @@ Return false
  */
 public class CheckSumOfKPrimes {
 
+    /*
+     * @param : an int
+     * @param : an int
+     * @return: if N can be expressed in the form of sum of K primes, return
+     * true; otherwise, return false.
+     */
+    public boolean isSumOfKPrimes(int n, int k) {
+        // write your code here
+    }
+
 }
