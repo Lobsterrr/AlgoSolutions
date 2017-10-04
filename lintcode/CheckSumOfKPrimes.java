@@ -27,16 +27,15 @@ public class CheckSumOfKPrimes {
         if (n < 2 * k) {
             return false;
         }
-        boolean[] prime = isPrime(n);
         if (k == 1) {
-            return prime[n];
+            return isPrime(n);
         }
         if (k > 2) {
             return true;
         }
         // k == 2;
         for (int i = 2; i <= n / 2; ++i) {
-            if (prime[i] && prime[n - i]) {
+            if (isPrime(i) && isPrime(n - i)) {
                 return true;
             }
         }
