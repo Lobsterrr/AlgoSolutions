@@ -43,6 +43,41 @@ public class CheckSumOfKPrimes {
         return false;
     }
 
+    public boolean isPrime(int n) {
+        if (n < 2) {
+            return false;
+        }
+        if (n % 2 == 0 || n % 3 == 0 || n % 5 == 0 || n % 7 == 0) {
+            return n == 2 || n == 3 || n == 5 || n == 7;
+        }
+        for (int i = 11; i * i <= n; i += 2) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isSumOfKPrimes(int n, int k) {
+        if (n < 2 * k) {
+            return false;
+        }
+        boolean[] prime = isPrime(n);
+        if (k == 1) {
+            return prime[n];
+        }
+        if (k > 2) {
+            return true;
+        }
+        // k == 2;
+        for (int i = 2; i <= n / 2; ++i) {
+            if (prime[i] && prime[n - i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean[] isPrime(int n) {
         boolean[] prime = new boolean[n + 1];
         Arrays.fill(prime, true);
