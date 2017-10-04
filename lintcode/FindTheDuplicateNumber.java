@@ -22,18 +22,13 @@ public class FindTheDuplicateNumber {
      * @return the duplicate one
      */
     public int findDuplicate(int[] nums) {
-        int fast = nums[nums[0] - 1];
+        int fast = nums[0];
         int slow = nums[0];
-        while (fast != slow) {
+        do {
             slow = nums[slow - 1];
             fast = nums[nums[fast - 1] - 1];
-        }
-        fast = 1;
-        while (fast != slow) {
-            fast = nums[fast - 1];
-            slow = nums[slow - 1];
-        }
-        return nums[fast - 1];
+        } while (fast != slow);
+        return fast;
     }
 
 }
