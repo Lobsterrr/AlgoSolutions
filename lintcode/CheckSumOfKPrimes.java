@@ -34,7 +34,11 @@ public class CheckSumOfKPrimes {
         Arrays.fill(prime, true);
         prime[0] = prime[1] = false;
         for (int i = 2; i * i <= n; ++i) {
-
+            if (prime[i]) {
+                for (int j = i; j * i <= n; ++j) {
+                    prime[i * j] = false;
+                }
+            }
         }
         return prime;
     }
