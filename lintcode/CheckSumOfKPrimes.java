@@ -57,6 +57,8 @@ public class CheckSumOfKPrimes {
         return true;
     }
 
+/*****************************************************************************/
+
     public boolean isSumOfKPrimes(int n, int k) {
         if (n < 2 * k) {
             return false;
