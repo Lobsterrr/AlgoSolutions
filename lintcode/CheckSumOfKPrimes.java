@@ -1,5 +1,6 @@
 /*
-Given two numbers n and k. We need to find out if n can be written as sum of k prime numbers.
+Given two numbers n and k. We need to find out if n can be written as sum of k
+prime numbers.
 
  Notice
 
@@ -23,7 +24,19 @@ public class CheckSumOfKPrimes {
      * true; otherwise, return false.
      */
     public boolean isSumOfKPrimes(int n, int k) {
-        // write your code here
+        if (n < 2 * k) {
+            return false;
+        }
+    }
+
+    public boolean[] isPrime(int n) {
+        boolean[] prime = new boolean[n + 1];
+        Arrays.fill(prime, true);
+        prime[0] = prime[1] = false;
+        for (int i = 2; i * i <= n; ++i) {
+
+        }
+        return prime;
     }
 
 }
