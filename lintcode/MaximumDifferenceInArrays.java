@@ -21,4 +21,12 @@ array and pick 5 in the second array.
  */
 public class MaximumDifferenceInArrays {
 
+    /*
+     * @param : an array of arrays
+     * @return: return the max distance among arrays
+     */
+    public int maxDiff(int[][] arrs) {
+        // write your code here
+    }
+
 }
