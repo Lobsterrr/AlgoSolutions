@@ -30,24 +30,24 @@ public class MaximumSubarrayDifference {
 
         for (int i = 0, localMax = 0, localMin = 0; i < nums.length; ++i) {
             localMax += nums[i];
-            leftMax[i] = Math.max(i == 0 ? 
+            leftMax[i] = Math.max(i == 0 ?
                     Integer.MIN_VALUE : leftMax[i - 1], localMax);
             localMax = Math.max(localMax, 0);
 
             localMin += nums[i];
-            leftMin[i] = Math.min(i == 0 ? 
+            leftMin[i] = Math.min(i == 0 ?
                     Integer.MAX_VALUE : leftMin[i - 1], localMin);
             localMin = Math.min(localMin, 0);
         }
 
         for (int i = nums.length - 1, localMax = 0, localMin = 0; i >= 0; --i) {
             localMax += nums[i];
-            rightMax[i] = Math.max(i == nums.length - 1 ? 
+            rightMax[i] = Math.max(i == nums.length - 1 ?
                     Integer.MIN_VALUE : rightMax[i + 1], localMax);
             localMax = Math.max(localMax, 0);
 
             localMin += nums[i];
-            rightMin[i] = Math.min(i == nums.length - 1 ? 
+            rightMin[i] = Math.min(i == nums.length - 1 ?
                     Integer.MAX_VALUE : rightMin[i + 1], localMin);
             localMin = Math.min(localMin, 0);
         }
