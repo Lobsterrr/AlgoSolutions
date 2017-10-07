@@ -26,6 +26,16 @@ public class MaximumDifferenceInArrays {
      * @return: return the max distance among arrays
      */
     public int maxDiff(int[][] arrs) {
+        int result = Integer.MIN_VALUE;
+        for (int i = 0; i < arrs.length; ++i) {
+            for (int j = i + 1; j < arrs[i].length; ++j) {
+                result = Math.max(result, Math.abs(arrs[]))
+            }
+        }
+        return result;
+    }
+
+    public int maxDiff(int[][] arrs) {
         int[][] pair = new int[arrs.length][2];
         for (int i = 0; i < arrs.length; ++i) {
             int max = Integer.MIN_VALUE;
