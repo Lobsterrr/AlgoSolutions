@@ -41,7 +41,6 @@ public class MaximumDifferenceInArrays {
 
     // ERROR
     public int maxDiff(int[][] arrs) {
-        int[][] pair = new int[arrs.length][2];
         for (int i = 0; i < arrs.length; ++i) {
             int max = Integer.MIN_VALUE;
             int min = Integer.MAX_VALUE;
@@ -49,14 +48,14 @@ public class MaximumDifferenceInArrays {
                 max = Math.max(max, arrs[i][j]);
                 min = Math.min(min, arrs[i][j]);
             }
-            pair[i][0] = min;
-            pair[i][1] = max;
+            arrs[i][0] = min;
+            arrs[i][arrs[i].length - 1] = max;
         }
         int result = Integer.MIN_VALUE;
         for (int i = 0; i < arrs.length; ++i) {
             for (int j = i + 1; j < arrs.length; ++j) {
-                int a = Math.abs(pair[i][1] - pair[j][0]);
-                int b = Math.abs(pair[j][1] - pair[i][0]);
+                int a = Math.abs(arrs[i][arrs[i].length - 1] - arrs[j][0]);
+                int b = Math.abs(pair[j][arrs[j].length - 1] - pair[i][0]);
                 result = Math.max(result, Math.max(a, b));
             }
         }
