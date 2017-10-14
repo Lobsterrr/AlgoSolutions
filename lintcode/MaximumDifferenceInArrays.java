@@ -27,14 +27,13 @@ public class MaximumDifferenceInArrays {
      */
     public int maxDiff(int[][] arrs) {
         int xLen = arrs.length;
-        int yLen = arrs[0].length;
         for (int i = 0; i < xLen; ++i) {
             Arrays.sort(arrs[i]);
         }
         int result = Integer.MIN_VALUE;
         for (int i = 0; i < xLen; ++i) {
             for (int j = i + 1; j < xLen; ++j) {
-                result = Math.max(result, Math.abs(arrs[j][yLen - 1] - arrs[i][0]));
+                result = Math.max(result, Math.abs(arrs[j][arrs[j].length - 1] - arrs[i][0]));
             }
         }
         return result;
