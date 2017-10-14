@@ -30,7 +30,7 @@ public class MedianOfTwoSortedArrays {
         if (tmp.length % 2 == 1) {
             return (double) tmp[tmp.length / 2];
         }
-
+        return (double) (tmp[tmp.length / 2 - 1] + tmp[tmp.length / 2]);
     }
 
 
