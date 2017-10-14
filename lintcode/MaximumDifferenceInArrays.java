@@ -41,7 +41,7 @@ public class MaximumDifferenceInArrays {
         for (int i = 0; i < arrs.length; ++i) {
             for (int j = i + 1; j < arrs.length; ++j) {
                 int a = Math.abs(arrs[i][arrs[i].length - 1] - arrs[j][0]);
-                int b = Math.abs(pair[j][arrs[j].length - 1] - pair[i][0]);
+                int b = Math.abs(pair[j][arrs[j].length - 1] - arrs[i][0]);
                 result = Math.max(result, Math.max(a, b));
             }
         }
