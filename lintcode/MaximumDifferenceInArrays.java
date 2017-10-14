@@ -35,6 +35,7 @@ public class MaximumDifferenceInArrays {
         return result;
     }
 
+    // ERROR
     public int maxDiff(int[][] arrs) {
         int[][] pair = new int[arrs.length][2];
         for (int i = 0; i < arrs.length; ++i) {
