@@ -16,7 +16,15 @@ public class CalculateMaximumValue {
      * @return: the maximum value
      */
     public int calcMaxValue(String str) {
-        // write your code here
+        if (str == null || str.length() == 0) {
+            throw new IllegalArgumentException();
+        }
+        int result = str.charAt(0) - '0';
+        for (int i = 1; i < str.length(); ++i) {
+            int value = str.charAt(i) - '0';
+            result = Math.max(result + value, result * value);
+        }
+        return result;
     }
 
 }
