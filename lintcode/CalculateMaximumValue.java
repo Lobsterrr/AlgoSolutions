@@ -17,7 +17,7 @@ public class CalculateMaximumValue {
      */
     public int calcMaxValue(String str) {
         if (str == null || str.length() == 0) {
-            throw new IllegalArgumentException();
+            return 0;
         }
         int result = str.charAt(0) - '0';
         for (int i = 1; i < str.length(); ++i) {
