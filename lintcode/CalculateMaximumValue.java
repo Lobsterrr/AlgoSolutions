@@ -19,8 +19,8 @@ public class CalculateMaximumValue {
         if (str == null || str.length() == 0) {
             return 0;
         }
-        int result = str.charAt(0) - '0';
-        for (int i = 1; i < str.length(); ++i) {
+        int result = 0;
+        for (int i = 0; i < str.length(); ++i) {
             int value = str.charAt(i) - '0';
             result = Math.max(result + value, result * value);
         }
