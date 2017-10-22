@@ -36,7 +36,27 @@ public class TwoSumBSTEdition {
      * @return: two numbers from tree which sum is n
      */
     public int[] twoSum(TreeNode root, int n) {
-        // write your code here
+        int[] result = new int[2];
+        if (root == null || root.left == null && root.right == null) {
+            return result;
+        }
+
+
+
+        return result;
+    }
+
+    public boolean binarySearch(TreeNode root, int value) {
+        if (root == null) {
+            return false;
+        }
+        if (root.val == value) {
+            return true;
+        }
+        if (root.val < value) {
+            return binarySearch(root.right, value);
+        }
+        return binarySearch(root.left, value);
     }
 
 }
