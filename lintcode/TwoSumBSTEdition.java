@@ -37,25 +37,50 @@ public class TwoSumBSTEdition {
      */
     public int[] twoSum(TreeNode root, int n) {
         int[] result = new int[2];
-        if (root == null || root.left == null && root.right == null) {
-            return result;
+        List<Integer> list = inorderMorrisTraversal(root);
+        int i = 0;
+        int j = list.size() - 1;
+        while (i < j) {
+            int sum = list.get(i) + list.get(j);
+            if (sum == n) {
+                result[0] = list.get(i);
+                result[1] = list.get(j);
+                break;
+            } else if (sum < n) {
+                i++;
+            } else {
+                j--;
+            }
         }
-
-
         return result;
     }
 
-    public boolean binarySearch(TreeNode root, int value) {
+    public List<Integer> inorderMorrisTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
         if (root == null) {
-            return false;
+            return result;
         }
-        if (root.val == value) {
-            return true;
+        TreeNode cur = root;
+        while (cur != null) {
+            if (cur.left == null) {
+                result.add(cur.val);
+                cur = cur.right;
+            } else {
+                TreeNode prev = cur.left;
+                while (prev.left != null && prev.right != cur) {
+                    prev = prev.left;
+                }
+                if (prev.right == null) {
+                    prev.right = cur;
+                    cur = cur.left;
+                } else {
+                    prev.right = null;
+                    result.add(cur.val);
+                    cur = cur.right;
+                }
+            }
         }
-        if (root.val < value) {
-            return binarySearch(root.right, value);
-        }
-        return binarySearch(root.left, value);
+        return result;
     }
 
 }
