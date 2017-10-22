@@ -15,4 +15,14 @@ return "168"
  */
 public class BigIntegerAddition {
 
+    /*
+     * @param num1: a non-negative integers
+     * @param num2: a non-negative integers
+     * @return: return sum of num1 and num2
+     */
+    public String addStrings(String num1, String num2) {
+        int len1 = num1.length();
+        int len2 = num2.length();
+    }
+
 }
