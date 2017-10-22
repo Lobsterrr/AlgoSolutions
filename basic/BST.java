@@ -115,10 +115,10 @@ public class BST {
                 }
                 if (prev.right == null) {
                     prev.right = cur;
-                    result.add(cur);
                     cur = cur.left;
                 } else {
                     prev.right = null;
+                    result.add(cur);
                     cur = cur.right;
                 }
             }
