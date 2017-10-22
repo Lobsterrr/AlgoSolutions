@@ -6,7 +6,6 @@ list.
 
 n will be less than 20,000.
 
-Have you met this question in a real interview? Yes
 Example
 Given nums = [1, 2, 3, 4]
 return False // There is no 132 pattern in the sequence.
