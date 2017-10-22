@@ -36,9 +36,7 @@ public class BigIntegerAddition {
             carrier = sum / 10;
 
         }
-        if (carrier > 0) {
-            result = carrier + result;
-        }
+        result = carrier > 0 ? (carrier + result) : result;
         return result;
     }
 
