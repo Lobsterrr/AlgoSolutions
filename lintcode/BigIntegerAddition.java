@@ -21,8 +21,27 @@ public class BigIntegerAddition {
      * @return: return sum of num1 and num2
      */
     public String addStrings(String num1, String num2) {
-        int len1 = num1.length();
-        int len2 = num2.length();
+        String result = "";
+        int i = num1.length() - 1;
+        int j = num2.length() - 1;
+        int carrier = 0;
+        while (i >= 0 || j >= 0) {
+            int sum = carrier;
+            if (i >= 0) {
+                sum += num1.charAt(i) - '0';
+                i--;
+            }
+            if (j >= 0) {
+                sum += num2.charAt(j) - '0';
+                j--;
+            }
+            result = (sum % 10) + result;
+            carrier /= 10;
+        }
+        if (carrier > 0) {
+            result = carrier + result;
+        }
+        return result;
     }
 
 }
