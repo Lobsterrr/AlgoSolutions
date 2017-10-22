@@ -28,15 +28,13 @@ public class BigIntegerAddition {
         while (i >= 0 || j >= 0) {
             int sum = carrier;
             if (i >= 0) {
-                sum += num1.charAt(i) - '0';
-                i--;
+                sum += num1.charAt(i--) - '0';
             }
             if (j >= 0) {
-                sum += num2.charAt(j) - '0';
-                j--;
+                sum += num2.charAt(j--) - '0';
             }
             result = (sum % 10) + result;
-            carrier /= 10;
+            carrier = sum / 10;
         }
         if (carrier > 0) {
             result = carrier + result;
