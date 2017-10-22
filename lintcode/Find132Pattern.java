@@ -16,4 +16,12 @@ return True // There is a 132 pattern in the sequence: [1, 4, 2].
  */
 public class Find132Pattern {
 
+    /*
+     * @param nums: a list of n integers
+     * @return: true if there is a 132 pattern or false
+     */
+    public boolean find132pattern(int[] nums) {
+        // write your code here
+    }
+
 }
