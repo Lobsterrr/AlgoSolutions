@@ -71,7 +71,7 @@ public class TwoSumBSTEdition {
             } else {
                 TreeNode prev = cur.left;
                 while (prev.right != null && prev.right != cur) {
-                    prev = prev.left;
+                    prev = prev.right;
                 }
                 if (prev.right == null) {
                     prev.right = cur;
