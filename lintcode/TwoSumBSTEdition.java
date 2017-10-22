@@ -36,8 +36,11 @@ public class TwoSumBSTEdition {
      * @return: two numbers from tree which sum is n
      */
     public int[] twoSum(TreeNode root, int n) {
-        int[] result = new int[2];
         List<Integer> list = inorderMorrisTraversal(root);
+        if (list.size() < 2) {
+            return null;
+        }
+        int[] result = new int[2];
         int i = 0;
         int j = list.size() - 1;
         while (i < j) {
