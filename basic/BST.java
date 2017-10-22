@@ -1,5 +1,5 @@
 public class BST {
-    
+
     private TreeNode root;
 
     BST() {
