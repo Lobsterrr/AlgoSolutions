@@ -22,10 +22,8 @@ public class BigIntegerAddition {
      */
     public String addStrings(String num1, String num2) {
         String result = "";
-        int i = num1.length() - 1;
-        int j = num2.length() - 1;
         int carrier = 0;
-        while (i >= 0 || j >= 0) {
+        for (int i = num1.length() - 1, j = num2.length() - 1; i >= 0 || j >= 0;) {
             int sum = carrier;
             if (i >= 0) {
                 sum += num1.charAt(i--) - '0';
@@ -35,6 +33,7 @@ public class BigIntegerAddition {
             }
             result = (sum % 10) + result;
             carrier = sum / 10;
+
         }
         if (carrier > 0) {
             result = carrier + result;
