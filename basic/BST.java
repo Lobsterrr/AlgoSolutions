@@ -123,6 +123,7 @@ public class BST {
                 }
             }
         }
+        return result;
     }
 
 }
