@@ -98,6 +98,33 @@ public class BST {
         return null;
     }
 
+    public static List<TreeNode> inorderMorrisTraversal(TreeNode root) {
+        List<TreeNode> result = new ArrayList<TreeNode>();
+        if (root == null) {
+            return result;
+        }
+        TreeNode cur = root;
+        while (cur != null) {
+            if (cur.left == null) {
+                result.add(cur);
+                cur = cur.right;
+            } else {
+                TreeNode prev = cur.left;
+                while (prev.right != null && prev.right != cur) {
+                    prev = prev.right;
+                }
+                if (prev.right == null) {
+                    prev.right = cur;
+                    result.add(cur);
+                    cur = cur.left;
+                } else {
+                    prev.right = null;
+                    cur = cur.right;
+                }
+            }
+        }
+    }
+
 }
 
 class TreeNode {
