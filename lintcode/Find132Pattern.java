@@ -23,14 +23,25 @@ public class Find132Pattern {
         if (nums == null || nums.length < 3) {
             return false;
         }
-        for (int i = 0; i < nums.length; ++i) {
-            for (int j = i + 2; j < nums.length; ++j) {
-                for (int k = i + 1; k < j; ++k) {
-                    if (nums[i] < nums[j] && nums[j] < nums[k]) {
-                        return true;
-                    }
-                }
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < nums.length) {
+            while (i < nums.length && nums[i] > nums[i + 1]) {
+                ++i;
             }
+            j = i + 1;
+            while (j < nums.length && nums[j] < nums[j + 1]) {
+                ++j
+            }
+            k = j + 1;
+            while (k < nums.length) {
+                if (nums[i] < nums[j] && nums[k] > nums[j]) {
+                    return true;
+                }
+                k++;
+            }
+            i = j + 1;
         }
         return false;
     }
