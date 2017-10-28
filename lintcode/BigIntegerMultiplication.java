@@ -34,37 +34,4 @@ public class BigIntegerMultiplication {
         return sb.toString();
     }
 
-    public String multiply(String num1, String num2) {
-        int[] arr1 = new int[num1.length()];
-        int[] arr2 = new int[num2.length()];
-        for (int i = 0; i < num1.length(); ++i) {
-            arr1[i] = num1.charAt(i) - '0';
-        }
-        for (int i = 0; i < num2.length(); ++i) {
-            arr2[i] = num2.charAt(i) - '0';
-        }
-        int[] arr3 = new int[arr1.length + arr2.length];
-        for (int i = arr1.length - 1; i >= 0; --i) {
-            int carrier = 0;
-            for (int j = arr2.length - 1; j >= 0; --j) {
-                int product = arr1[i] * arr2[j];
-                int sum = product + carrier + arr3[i + j + 1];
-                carrier = sum / 10;
-                arr3[i + j + 1] = sum % 10;
-            }
-            arr3[i] = carrier;
-        }
-        StringBuilder sb = new StringBuilder();
-        for (int value : arr3) {
-            if (sb.length() == 0 && value == 0) {
-                continue;
-            }
-            sb.append(value);
-        }
-        if (sb.length() == 0) {
-            sb.append(0);
-        }
-        return sb.toString();
-    }
-
 }
