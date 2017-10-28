@@ -18,7 +18,22 @@ public class BinaryTreeMaximumNode {
      * @return: the max node
      */
     public TreeNode maxNode(TreeNode root) {
-        // write your code here
+        if (root == null) {
+            return null;
+        }
+        if (root.left == null && root.right == null) {
+            return root;
+        }
+        TreeNode result = root;
+        TreeNode leftMax = maxNode(root.left);
+        TreeNode rightMax = maxNode(root.right);
+        if (leftMax != null && leftMax.val > result.val) {
+            result = leftMax;
+        }
+        if (rightMax != null && rightMax.val > result.val) {
+            result = rightMax;
+        }
+        return result;
     }
 
 }
