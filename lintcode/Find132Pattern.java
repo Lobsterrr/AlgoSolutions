@@ -20,7 +20,19 @@ public class Find132Pattern {
      * @return: true if there is a 132 pattern or false
      */
     public boolean find132pattern(int[] nums) {
-        // write your code here
+        if (nums == null || nums.length < 3) {
+            return false;
+        }
+        for (int i = 0; i < nums.length; ++i) {
+            for (int j = i + 2; j < nums.length; ++j) {
+                for (int k = i + 1; k < j; ++k) {
+                    if (nums[i] < nums[j] && nums[j] < nums[k]) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
 }
