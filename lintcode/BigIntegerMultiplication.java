@@ -25,7 +25,7 @@ public class BigIntegerMultiplication {
                 int product = arr1[i] * arr2[j];
                 int sum = product + carrier + arr3[i + j];
                 carrier = sum / 10;
-                arr3 = sum % 10;
+                arr3[arr1.length + arr2.length - i - j - 2] = sum % 10;
             }
             arr3[arr1.length - 1 - i + arr2.length] = carrier;
         }
