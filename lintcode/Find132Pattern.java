@@ -37,6 +37,8 @@ public class Find132Pattern {
         return false;
     }
 
+/*****************************************************************************/
+
     public boolean find132pattern(int[] nums) {
         if (nums == null || nums.length < 3) {
             return false;
