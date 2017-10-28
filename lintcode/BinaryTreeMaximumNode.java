@@ -21,9 +21,6 @@ public class BinaryTreeMaximumNode {
         if (root == null) {
             return null;
         }
-        if (root.left == null && root.right == null) {
-            return root;
-        }
         TreeNode result = root;
         TreeNode leftMax = maxNode(root.left);
         TreeNode rightMax = maxNode(root.right);
