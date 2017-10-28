@@ -30,11 +30,11 @@ public class BigIntegerMultiplication {
             arr3[arr1.length - 1 - i + arr2.length] = carrier;
         }
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < arr3.length; ++i) {
-            if (sb.length() == 0 && arr3[i] == 0) {
+        for (int value : arr3) {
+            if (sb.length() == 0 && value == 0) {
                 continue;
             }
-            sb.append(arr3[i]);
+            sb.append(value);
         }
         return sb.toString();
     }
