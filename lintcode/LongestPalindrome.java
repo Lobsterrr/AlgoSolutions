@@ -20,28 +20,20 @@ public class LongestPalindrome {
      * @return: the length of the longest palindromes that can be built
      */
     public int longestPalindrome(String s) {
-        int maxPalindromeLen = 0;
-        for (int i = 1; i <= s.length(); ++i) {
-            if (isPalindrome(s.substring(0, i))) {
-                maxPalindromeLen = Math.max(maxPalindromeLen, i);
-            }
-            if (isPalindrome(s.substring(s.length() - i))) {
-                maxPalindromeLen = Math.max(maxPalindromeLen, i);
-            }
+        int[] count = new int[256];
+        for (int i = 0; i < s.length(); ++i) {
+            count[s.charAt(i)]++;
         }
-        return s.length() - maxPalindromeLen;
-    }
-
-    public boolean isPalindrome(String s) {
-        if (s == null) {
-            return false;
-        }
-        for (int i = 0; i < s.length() / 2; ++i) {
-            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
-                return false;
+        boolean hasOdd = false;
+        int result = 0;
+        for (int c : count) {
+            result += c / 2 * 2;
+            if (c % 2 != 0) {
+                hasOdd = true;
             }
         }
-        return true;
+        result += hasOdd ? 1 : 0;
+        return result;
     }
 
 }
