@@ -23,11 +23,11 @@ public class BigIntegerMultiplication {
             int carrier = 0;
             for (int j = arr2.length - 1; j >= 0; --j) {
                 int product = arr1[i] * arr2[j];
-                int sum = product + carrier + arr3[i + j];
+                int sum = product + carrier + arr3[i + j + 1];
                 carrier = sum / 10;
-                arr3[arr1.length + arr2.length - i - j - 2] = sum % 10;
+                arr3[i + j + 1] = sum % 10;
             }
-            arr3[arr1.length - 1 - i + arr2.length] = carrier;
+            arr3[i] = carrier;
         }
         StringBuilder sb = new StringBuilder();
         for (int value : arr3) {
