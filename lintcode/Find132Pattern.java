@@ -25,9 +25,9 @@ public class Find132Pattern {
         }
         int i = 0;
         while (i < nums.length) {
-            for (i < nums.length - 1 && nums[i] > nums[i + 1]; ++i);
+            for (; i < nums.length - 1 && nums[i] > nums[i + 1]; ++i);
             int j = i + 1;
-            for (;j < nums.length - 1 && nums[j] < nums[j + 1]; ++j);
+            for (; j < nums.length - 1 && nums[j] < nums[j + 1]; ++j);
             for (int k = j + 1; k < nums.length; ++k) {
                 if (nums[i] < nums[k] && nums[k] < nums[j]) {
                     return true;
