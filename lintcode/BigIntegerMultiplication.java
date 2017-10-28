@@ -36,6 +36,9 @@ public class BigIntegerMultiplication {
             }
             sb.append(value);
         }
+        if (sb.length() == 0) {
+            sb.append(0);
+        }
         return sb.toString();
     }
 
