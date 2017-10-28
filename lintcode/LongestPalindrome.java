@@ -15,4 +15,12 @@ One longest palindrome that can be built is "dccaccd", whose length is 7.
  */
 public class LongestPalindrome {
 
+    /*
+     * @param s: a string which consists of lowercase or uppercase letters
+     * @return: the length of the longest palindromes that can be built
+     */
+    public int longestPalindrome(String s) {
+        // write your code here
+    }
+
 }
