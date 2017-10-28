@@ -20,6 +20,24 @@ public class Find132Pattern {
      * @return: true if there is a 132 pattern or false
      */
     public boolean find132pattern(int[] nums) {
+        if (nums == null) {
+            return false;
+        }
+        Stack<Integer> stack = new Stack<Integer>();
+        int ak = Integer.MIN_VALUE;
+        for (int i = nums.length - 1; i >= 0; --i) {
+            if (nums[i] < ak) {
+                return true;
+            }
+            while (!stack.isEmpty() && nums[i] > stack.peek()) {
+                ak = stack.pop();
+            }
+            stack.push(nums[i]);
+        }
+        return false;
+    }
+
+    public boolean find132pattern(int[] nums) {
         if (nums == null || nums.length < 3) {
             return false;
         }
