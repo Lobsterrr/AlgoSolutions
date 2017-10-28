@@ -21,12 +21,11 @@ public class BigIntegerMultiplication {
             }
             array[i] = carrier;
         }
+        int i = 0;
+        for (; i < array.length && array[i] == 0; ++i);
         StringBuilder sb = new StringBuilder();
-        for (int value : array) {
-            if (sb.length() == 0 && value == 0) {
-                continue;
-            }
-            sb.append(value);
+        for (int j = i; j < array.length; ++j) {
+            sb.append(array[j]);
         }
         if (sb.length() == 0) {
             sb.append(0);
