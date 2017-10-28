@@ -31,6 +31,9 @@ public class BigIntegerMultiplication {
         }
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < arr3.length; ++i) {
+            if (sb.length() == 0 && arr3[i] == 0) {
+                continue;
+            }
             sb.append(arr3[i]);
         }
         return sb.toString();
