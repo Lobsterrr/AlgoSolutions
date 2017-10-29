@@ -34,12 +34,12 @@ public class OneBitAndTwoBitCharacters {
         boolean prev = true;
         boolean cur = true;
         for (int i = 0; i < bits.length; ++i) {
-            boolean newCur = cur && bits[i] == 0;
+            boolean tmpCur = cur;
+            boolean cur = cur && bits[i] == 0;
             if (i > 0) {
-                newCur = newCur || prev && bits[i - 1] == 1;
+                cur = cur || prev && bits[i - 1] == 1;
             }
-            prev = cur;
-            cur = newCur;
+            prev = tmpCur;
         }
         return prev;
     }
