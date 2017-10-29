@@ -35,7 +35,7 @@ public class OneBitAndTwoBitCharacters {
         boolean cur = true;
         for (int i = 0; i < bits.length; ++i) {
             boolean tmpCur = cur;
-            boolean cur = cur && bits[i] == 0;
+            cur = cur && bits[i] == 0;
             if (i > 0) {
                 cur = cur || prev && bits[i - 1] == 1;
             }
