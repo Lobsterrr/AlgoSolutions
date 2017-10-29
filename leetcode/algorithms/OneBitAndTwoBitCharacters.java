@@ -35,6 +35,7 @@ public class OneBitAndTwoBitCharacters {
         while (i < bits.length - 1) {
             i += bits[i] == 0 ? 1 : 2;
         }
+        return i == bits.length - 1;
     }
 
     public boolean isOneBitCharacter(int[] bits) {
