@@ -72,6 +72,7 @@ public class OneBitAndTwoBitCharacters {
 
 /*****************************************************************************/
 
+    // dp, O(n) time, O(n) space.
     public boolean isOneBitCharacter(int[] bits) {
         if (bits == null || bits.length == 0) {
             return false;
