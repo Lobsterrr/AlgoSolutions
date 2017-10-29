@@ -44,6 +44,8 @@ public class OneBitAndTwoBitCharacters {
         return prev;
     }
 
+/*****************************************************************************/
+
     public boolean isOneBitCharacter(int[] bits) {
         if (bits == null || bits.length == 0) {
             return false;
