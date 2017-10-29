@@ -31,6 +31,23 @@ public class OneBitAndTwoBitCharacters {
         if (bits == null || bits.length == 0) {
             return false;
         }
+        boolean prev = true;
+        boolean cur = true;
+        for (int i = 0; i < bits.length; ++i) {
+            boolean newCur = cur && bits[i] == 0;
+            if (i > 0) {
+                newCur = newCur || prev && bits[i - 1] == 1;
+            }
+            prev = cur;
+            cur = newCur;
+        }
+        return prev;
+    }
+
+    public boolean isOneBitCharacter(int[] bits) {
+        if (bits == null || bits.length == 0) {
+            return false;
+        }
         boolean[] dp = new boolean[bits.length + 1];
         dp[0] = true;
         for (int i = 0; i < bits.length; ++i) {
