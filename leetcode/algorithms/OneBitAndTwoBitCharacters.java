@@ -31,12 +31,27 @@ public class OneBitAndTwoBitCharacters {
         if (bits == null || bits.length == 0) {
             return false;
         }
+        int step = 0;
+        for (int i = 0; i < bits.length; i += step) {
+            step = bits[i] + 1;
+        }
+        return step == 1;
+    }
+
+/*****************************************************************************/
+
+    public boolean isOneBitCharacter(int[] bits) {
+        if (bits == null || bits.length == 0) {
+            return false;
+        }
         int i = 0;
         while (i < bits.length - 1) {
             i += bits[i] == 0 ? 1 : 2;
         }
         return i == bits.length - 1;
     }
+
+/*****************************************************************************/
 
     public boolean isOneBitCharacter(int[] bits) {
         if (bits == null || bits.length == 0) {
