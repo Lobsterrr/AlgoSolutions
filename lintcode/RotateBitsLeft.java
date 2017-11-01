@@ -17,4 +17,13 @@ Given n = 123, d = 4
  */
 public class RotateBitsLeft {
 
+    /*
+     * @param : a number
+     * @param : digit needed to be rorated
+     * @return: a number
+     */
+    public int leftRotate(int n, int d) {
+        return (n >> 32 - d) | (n << d);
+    }
+
 }
