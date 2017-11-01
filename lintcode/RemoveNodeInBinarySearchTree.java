@@ -62,7 +62,7 @@ public class RemoveNodeInBinarySearchTree {
                 return root.left;
             }
         } else if (value < root.val) {
-            root.left == removeNode(root.left, value);
+            root.left = removeNode(root.left, value);
             return root;
         } else {
             root.right = removeNode(root.right, value);
