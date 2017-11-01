@@ -51,7 +51,7 @@ public class RemoveNodeInBinarySearchTree {
         }
         if (value == root.val) {
             if (root.left == null || root.right == null) {
-                root == root.left != null ? root.left : root.right;
+                root = root.left != null ? root.left : root.right;
             } else {
                 TreeNode right = root.right;
                 TreeNode cur = root.left;
