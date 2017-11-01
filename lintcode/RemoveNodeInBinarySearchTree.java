@@ -50,28 +50,20 @@ public class RemoveNodeInBinarySearchTree {
             return root;
         }
         if (value == root.val) {
+            if (root.left == null || root.right == null) {
+                return root.left != null ? root.left : root.right;
+            } else {
+                TreeNode right = root.right;
+                TreeNode cur = root.left;
+                while (cur.right != null) {
+                    cur = cur.right;
+                }
+                cur.right = right;
+                return root.left;
+            }
+        } else if (value < root.val) {
 
         }
-    }
-
-    public TreeNode getMaxNode(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-        while (root.right != null) {
-            root = root.right;
-        }
-        return root;
-    }
-
-    public TreeNode getMinNode(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-        while (root.left != null) {
-            root = root.left;
-        }
-        return root;
     }
 
 }
