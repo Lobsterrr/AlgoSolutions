@@ -47,7 +47,7 @@ public class RemoveNodeInBinarySearchTree {
      */
     public TreeNode removeNode(TreeNode root, int value) {
         if (root == null) {
-            return root;
+            return null;
         }
         if (value == root.val) {
             if (root.left == null || root.right == null) {
