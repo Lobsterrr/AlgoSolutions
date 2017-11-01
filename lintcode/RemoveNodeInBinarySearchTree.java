@@ -46,7 +46,32 @@ public class RemoveNodeInBinarySearchTree {
      * @return: The root of the binary search tree after removal.
      */
     public TreeNode removeNode(TreeNode root, int value) {
-        // write your code here
+        if (root == null) {
+            return root;
+        }
+        if (value == root.val) {
+
+        }
+    }
+
+    public TreeNode getMaxNode(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        while (root.right != null) {
+            root = root.right;
+        }
+        return root;
+    }
+
+    public TreeNode getMinNode(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
     }
 
 }
