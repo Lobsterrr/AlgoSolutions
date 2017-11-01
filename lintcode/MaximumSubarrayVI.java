@@ -19,4 +19,12 @@ The subarray [6] has maximum XOR value
  */
 public class MaximumSubarrayVI {
 
+    /*
+     * @param : the array
+     * @return: the max xor sum of the subarray in a given array
+     */
+    public int maxXorSubarray(int[] nums) {
+        // write code here
+    }
+
 }
