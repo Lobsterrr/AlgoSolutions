@@ -51,7 +51,7 @@ public class RemoveNodeInBinarySearchTree {
         }
         if (value == root.val) {
             if (root.left == null || root.right == null) {
-                return root.left != null ? root.left : root.right;
+                root == root.left != null ? root.left : root.right;
             } else {
                 TreeNode right = root.right;
                 TreeNode cur = root.left;
@@ -59,15 +59,14 @@ public class RemoveNodeInBinarySearchTree {
                     cur = cur.right;
                 }
                 cur.right = right;
-                return root.left;
+                root = root.left;
             }
         } else if (value < root.val) {
             root.left = removeNode(root.left, value);
-            return root;
         } else {
             root.right = removeNode(root.right, value);
-            return root;
         }
+        return root;
     }
 
 }
