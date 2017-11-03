@@ -27,8 +27,10 @@ cache.get(4);       // returns 4
  */
 public class LRUCache {
 
-    public LRUCache(int capacity) {
+    private int capacity;
 
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
     }
 
     public int get(int key) {
