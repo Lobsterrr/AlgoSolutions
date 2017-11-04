@@ -22,7 +22,6 @@ public class SplitString {
     public void dfs(String s, List<List<String>> result, List<String> list) {
         if (s.length() == 0) {
             result.add(new ArrayList<String>(list));
-            return;
         }
         for (int i = 1; i <= Math.min(2, s.length()); ++i) {
             list.add(s.substring(0, i));
