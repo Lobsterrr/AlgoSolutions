@@ -24,7 +24,7 @@ public class SplitString {
             result.add(new ArrayList<String>(list));
             return;
         }
-        for (int i = 1; i <= 2; ++i) {
+        for (int i = 1; i <= Math.min(2, s.length()); ++i) {
             list.add(s.substring(0, i));
             dfs(s.substring(i), result, list);
             list.remove(list.size() - 1);
