@@ -14,7 +14,11 @@ public class SplitString {
      * @return: all possible split string array
      */
     public List<List<String>> splitString(String s) {
-        // write your code here
+        List<List<String>> result = new ArrayList<List<String>>();
+
+
+
+        return result;
     }
 
 }
