@@ -20,4 +20,13 @@ return 3 // Status can be: [on, off], [off, on], [off, off]
  */
 public class LightsSwitcher {
 
+    /*
+     * @param : number of lights
+     * @param : number of operations
+     * @return: the number of status
+     */
+    public int flipLights(int n, int m) {
+        // write your code here
+    }
+
 }
