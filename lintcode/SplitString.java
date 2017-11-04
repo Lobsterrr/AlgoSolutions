@@ -15,10 +15,20 @@ public class SplitString {
      */
     public List<List<String>> splitString(String s) {
         List<List<String>> result = new ArrayList<List<String>>();
-
-
-
+        dfs(s, result, new ArrayList<String>());
         return result;
+    }
+
+    public void dfs(String s, List<List<String>> result, List<String> list) {
+        if (s.length() == 0) {
+            result.add(new ArrayList<String>(list));
+            return;
+        }
+        for (int i = 1; i <= 2; ++i) {
+            list.add(s.substring(0, i));
+            dfs(s.substring(i), result, list);
+            list.remove(list.size() - 1);
+        }
     }
 
 }
