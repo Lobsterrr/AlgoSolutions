@@ -56,7 +56,7 @@ public class LRUCache {
             list.remove(Integer.valueOf(key));
             list.add(key);
         } else {
-            if (map.size == capacity) {
+            if (map.size() == capacity) {
                 Integer removedKey = list.remove(0);
                 map.remove(removedKey);
             }
