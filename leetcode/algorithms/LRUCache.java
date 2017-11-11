@@ -31,12 +31,12 @@ public class LRUCache {
 
     private Map<Integer, Intege> map;
 
-    private Queue<Integer> queue;
+    private List<Integer> list;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
         this.map = new HashMap<Integer, Integer>(capacity);
-        this.queue = new LinkedList<Integer>();
+        this.list = new LinkedList<Integer>();
     }
 
     public int get(int key) {
