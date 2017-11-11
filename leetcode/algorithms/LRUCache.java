@@ -41,8 +41,7 @@ public class LRUCache {
 
     public int get(int key) {
         if (map.containsKey(key)) {
-            Integer removedKey = list.remove(0);
-            map.remove(removedKey);
+            list.remove(0);
             list.add(key);
             return map.get(key);
         } else {
