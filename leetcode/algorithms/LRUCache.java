@@ -50,23 +50,19 @@ public class LRUCache {
     }
 
     public void put(int key, int value) {
-        if (map.size() == capacity) {
-            if (map.containsKey(key)) {
-                map.put(key, value);
+        if (map.containsKey(key)) {
+            map.put(key, value);
 
-                list.remove(Integer.valueOf(key));
-                list.add(key);
-            } else {
+            list.remove(Integer.valueOf(key));
+            list.add(key);
+        } else {
+            if (map.size == capacity) {
                 Integer removedKey = list.remove(0);
                 map.remove(removedKey);
-                map.put(key, value);
-
-                list.add(key);
             }
+            map.put(key, value);
+            list.add(key);
         }
-
-
-
     }
 
 }
