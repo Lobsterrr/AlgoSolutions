@@ -29,16 +29,35 @@ public class LRUCache {
 
     private int capacity;
 
+    private Map<Integer, Intege> map;
+
+    private Queue<Integer> queue;
+
     public LRUCache(int capacity) {
         this.capacity = capacity;
+        this.map = new HashMap<Integer, Integer>(capacity);
+        this.queue = new LinkedList<Integer>();
     }
 
     public int get(int key) {
-
+        if (map.containsKey(key)) {
+            Integer removedKey = list.remove(0);
+            map.remove(removedKey);
+            list.add(key);
+            return map.get(key);
+        } else {
+            return -1;
+        }
+        return map.get(key) == null ? -1 : map.get(key);
     }
 
     public void put(int key, int value) {
-
+        if (map.size() == capacity) {
+            Integer removedKey = list.remove(0);
+            map.remove(removedKey);
+        }
+        list.add(key);
+        map.put(key, value);
     }
 
 }
