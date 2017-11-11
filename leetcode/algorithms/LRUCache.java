@@ -29,7 +29,7 @@ public class LRUCache {
 
     private int capacity;
 
-    private Map<Integer, Intege> map;
+    private Map<Integer, Integer> map;
 
     private List<Integer> list;
 
@@ -48,7 +48,6 @@ public class LRUCache {
         } else {
             return -1;
         }
-        return map.get(key) == null ? -1 : map.get(key);
     }
 
     public void put(int key, int value) {
