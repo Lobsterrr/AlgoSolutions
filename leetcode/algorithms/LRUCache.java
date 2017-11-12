@@ -28,11 +28,8 @@ cache.get(4);       // returns 4
 public class LRUCache {
 
     private int capacity;
-
     private Map<Integer, DeNode> map;
-
     private DeNode head;
-
     private DeNode tail;
 
 
@@ -57,19 +54,21 @@ public class LRUCache {
     }
 
     public void put(int key, int value) {
-        DeNode node = new DeNode(key, value);
         if (map.containsKey(key)) {
+            Node node = map.get(key);
+            node.value = value;
 
-            map.remove(key);
             deleteNode(node);
+            addToHead(node);
         } else {
             if (map.size() == capacity) {
                 map.remove(tail.prev.value);
                 deleteNode(tail.prev);
             }
+            DeNode node = new DeNode(key, value);
+            addToHead(node);
+            map.put(key, node);
         }
-        addToHead(node);
-        map.put(key, node);
     }
 
     private void addToHead(DeNode node) {
