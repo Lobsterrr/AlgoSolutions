@@ -62,7 +62,7 @@ public class LRUCache {
             addToHead(node);
         } else {
             if (map.size() == capacity) {
-                map.remove(tail.prev.value);
+                map.remove(tail.prev.key);
                 deleteNode(tail.prev);
             }
             DeNode node = new DeNode(key, value);
