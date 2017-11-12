@@ -52,7 +52,6 @@ public class LRUCache {
     public void put(int key, int value) {
         if (map.containsKey(key)) {
             map.put(key, value);
-
             list.remove(Integer.valueOf(key));
             list.add(key);
         } else {
