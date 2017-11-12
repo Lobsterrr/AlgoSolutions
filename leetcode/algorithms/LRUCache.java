@@ -59,21 +59,17 @@ public class LRUCache {
     public void put(int key, int value) {
         DeNode node = new DeNode(key, value);
         if (map.containsKey(key)) {
-            map.remove(key);
 
-            map.put(key, node);
+            map.remove(key);
             deleteNode(node);
-            addToHead(node);
         } else {
             if (map.size() == capacity) {
                 map.remove(tail.prev.value);
                 deleteNode(tail.prev);
-            } else {
-                map.put(key, node);
-                deleteNode(node);
-                addToHead(node);
             }
         }
+        addToHead(node);
+        map.put(key, node);
     }
 
     private void addToHead(DeNode node) {
