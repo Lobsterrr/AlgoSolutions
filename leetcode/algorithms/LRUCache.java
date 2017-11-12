@@ -102,10 +102,10 @@ public class LRUCache {
 
 class DeNode {
 
-    private int key;
-    private int value;
-    private DeNode prev;
-    private DeNode next;
+    int key;
+    int value;
+    DeNode prev;
+    DeNode next;
 
     public DeNode(int key, int value) {
         this.key = key;
