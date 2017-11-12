@@ -66,6 +66,20 @@ public class LRUCache {
 
 }
 
+class DeNode {
+
+    private int key;
+    private int value;
+    private DeNode prev;
+    private DeNode next;
+
+    public DeNode(int key, int value) {
+        this.key = key;
+        this.value = value;
+    }
+
+}
+
 /**
  * Your LRUCache object will be instantiated and called as such:
  * LRUCache obj = new LRUCache(capacity);
