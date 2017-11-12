@@ -48,9 +48,8 @@ public class LRUCache {
             deleteNode(node);
             addToHead(node);
             return node.value;
-        } else {
-            return -1;
         }
+        return -1;
     }
 
     public void put(int key, int value) {
