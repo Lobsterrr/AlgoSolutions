@@ -47,24 +47,17 @@ public class IsomorphicStrings {
         if (s.length() != t.length()) {
             return false;
         }
-        Map<Character, Character> map0 = new HashMap<Character, Character>();
-        Map<Character, Character> map1 = new HashMap<Character, Character>();
+        int[] map0 = new int[256];
+        int[] map1 = new int[256];
         for (int i = 0; i < s.length(); ++i) {
-            if (map0.containsKey(s.charAt(i))) {
-                if (map0.get(s.charAt(i)) != t.charAt(i)) {
-                    return false;
-                }
-            } else {
-                map0.put(s.charAt(i), t.charAt(i));
+            char cs = s.charAt(i);
+            char ct = t.charAt(i);
+            if (map0[cs] != 0 && map0[cs] != ct
+                    || map1[ct] != 0 && map1[ct] != cs) {
+                return false;
             }
-
-            if (map1.containsKey(t.charAt(i))) {
-                if (map1.get(t.charAt(i)) != s.charAt(i)) {
-                    return false;
-                }
-            } else {
-                map1.put(t.charAt(i), s.charAt(i));
-            }
+            map0[s.charAt(i)] = t.charAt(i);
+            map1[t.charAt(i)] = s.charAt(i);
         }
         return true;
     }
