@@ -4,7 +4,7 @@
 public class FirstMissingPositive {
 
     public int firstMissingPositive(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null) {
             throw new IllegalArgumentException();
         }
         int i = 0;
