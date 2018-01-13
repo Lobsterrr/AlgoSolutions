@@ -9,8 +9,8 @@ public class FirstMissingPositive {
         }
         int i = 0;
         while (i < nums.length) {
-            if (nums[i] > 0 && nums[i] <= nums.length && nums[i] != i + 1
-                    && nums[nums[i] - 1] != nums[i]) {
+            if (nums[i] > 0 && nums[i] <= nums.length
+                    && nums[i] != i + 1 && nums[nums[i] - 1] != nums[i]) {
                 swap(nums, nums[i] - 1, i);
             } else {
                 i++;
