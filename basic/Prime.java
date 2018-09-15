@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Prime {
 
     public boolean isPrime(int n) {
